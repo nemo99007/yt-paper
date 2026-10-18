@@ -177,6 +177,7 @@ def import_(
     csv_path: Path = typer.Option(Path("data/reading_list.csv"), "--csv", help="source,local_pdf,youtube,title,type,timestamp 열을 가진 CSV"),
     limit: Optional[int] = typer.Option(None, "--limit", help="새로 요약할 최대 건수 (시험용)"),
     refresh: bool = typer.Option(False, "--refresh", help="이미 등록된 자료도 다시 요약 (예: 언어/프롬프트 변경 후)"),
+    resume: bool = typer.Option(False, "--resume", help="--refresh 중단 후 재개: 한국어 번역이 이미 있는 자료는 건너뜀"),
     push: bool = typer.Option(False, "--push"),
     commit: bool = typer.Option(True, "--commit/--no-commit"),
 ) -> None:
@@ -198,11 +199,13 @@ def import_(
             if local_pdf and not Path(local_pdf).exists():
                 local_pdf = None
             try:
-                existed = db.get_by_source(parser.canonical_source(source)) is not None
+                prev = db.get_by_source(parser.canonical_source(source))
+                existed = prev is not None
+                redo = refresh and not (resume and prev is not None and prev.detailed_summary_ko)
                 fig = (row.get("figure") or "").strip()
-                res, created = _ingest(db, source, stype, (row.get("title") or "").strip() or None, refresh,
+                res, created = _ingest(db, source, stype, (row.get("title") or "").strip() or None, redo,
                                        local_pdf, int(fig) if fig.isdigit() else None)
-                created = created or (refresh and existed)
+                created = created or (redo and existed)
                 year = (row.get("year") or "").strip()
                 db.set_meta(res.id, (row.get("venue") or "").strip(), (row.get("region") or "").strip(),
                             int(year) if year.isdigit() else None)

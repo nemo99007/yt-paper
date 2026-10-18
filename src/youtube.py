@@ -83,10 +83,31 @@ def sync_video_meta(db: Database, yt) -> int:
     return n
 
 
+def site_url(md_path: str, anchor: str = "") -> str:
+    """docs-relative .md path -> public URL (MkDocs directory URLs)."""
+    path = md_path.removesuffix(".md")
+    path = "" if path == "index" else path.removesuffix("/index") + "/"
+    return config.SITE_URL.rstrip("/") + "/" + path + (f"#{anchor}" if anchor else "")
+
+
 def page_url(res: Resource) -> str | None:
     if not res.markdown_path or not config.SITE_URL:
         return None
-    return config.SITE_URL.rstrip("/") + "/" + res.markdown_path.removesuffix(".md") + "/"
+    return site_url(res.markdown_path)
+
+
+def hierarchy_links(res: Resource) -> list[str]:
+    """Links from a video to the collection pages its paper belongs to."""
+    from . import generator as g
+
+    venue = g.venue_of(res)
+    vs = g.venue_slug(venue)
+    out = [f"📚 {venue}: {site_url(f'{vs}/index.md')}"]
+    if res.region:
+        label = " ".join(x for x in (venue, res.region, str(res.year or "")) if x)
+        out.append(f"📅 {label}: {site_url(f'{vs}/{g.region_slug(res.region)}.md', str(res.year or ''))}")
+    out.append(f"🏷 {venue} · {res.category}: {site_url(f'{vs}/by-topic.md', g.slugify(res.category))}")
+    return out
 
 
 def _clean(text: str) -> str:
@@ -119,6 +140,7 @@ def build_block(res: Resource, extra_links: list[str], insights: int = 5) -> str
         lines.append(f"📄 Summary: {url}")
     if res.source_url.startswith("http"):
         lines.append(f"📑 Paper: {res.source_url}")
+    lines += hierarchy_links(res)
     lines.append("")
     lines.append(res.title)
     if res.authors:

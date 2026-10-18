@@ -145,7 +145,7 @@ def _bilingual(en_md: str, ko_md: str) -> str:
         ko = ko_blocks[ko_i] if ko_i < len(ko_blocks) else ""
         ko_i += 1
         if b.startswith("#") and ko.startswith("#"):
-            out.append(b.rstrip() + " · " + ko.lstrip("# ").strip() + "\n")
+            out.append(b.rstrip() + "\n")  # UI text stays English; only the body is translated
         else:
             out.append(_pair_row(b, ko))
     if ko_i < len(ko_blocks):  # Korean text longer than English: keep the rest
@@ -249,14 +249,14 @@ def render_resource(db: Database, res: Resource) -> str:
         f"| Topic | {res.category} |\n| Type | {res.source_type} |\n| ID | `{res.id}` |\n",
     ]
     if res.one_line_summary:
-        parts.append("## Summary · 요약\n\n" + _pair_row(f"**{res.one_line_summary}**",
+        parts.append("## Summary\n\n" + _pair_row(f"**{res.one_line_summary}**",
                                                          f"**{res.one_line_summary_ko}**" if res.one_line_summary_ko else ""))
     if res.key_insights:
         ko = res.key_insights_ko
-        parts.append("## Key Insights · 핵심 포인트\n\n" + "\n".join(
+        parts.append("## Key Insights\n\n" + "\n".join(
             _pair_row(f"- {x}", f"- {ko[i]}" if i < len(ko) else "") for i, x in enumerate(res.key_insights)))
     if res.detailed_summary:
-        parts.append("## Detailed Summary · 상세 요약\n\n" + _bilingual(res.detailed_summary, res.detailed_summary_ko))
+        parts.append("## Detailed Summary\n\n" + _bilingual(res.detailed_summary, res.detailed_summary_ko))
     if videos:
         parts.append("## Videos\n\n" + "\n\n".join(
             _embed(l) + f" · [Video page](../videos/{l.video.video_id}.md)" for l in videos) + "\n")
