@@ -5,7 +5,7 @@ __pycache__/
 *.pyc
 site/
 .venv/
-papers/
+/papers/
 logs/
 secrets/
 client_secret*.json
