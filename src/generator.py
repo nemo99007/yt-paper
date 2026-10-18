@@ -340,6 +340,8 @@ def render_venue(db: Database, venue: str, papers: list[Resource]) -> tuple[list
     by_cat = Counter(r.category for r in papers)
     lines.append("## Topics\n\n" + _table("| Topic | Papers |", [
         f"| [{c}](by-topic.md#{slugify(c)}) | {by_cat[c]} |" for c in CATEGORIES if by_cat[c]]))
+    if not regions:  # no second level: list the papers here
+        lines += _grouped(db, papers, lambda r: r.year, years, with_region=False)
     _write(config.DOCS_DIR / vs / "index.md", "\n".join(lines))
 
     for g in regions:
@@ -371,7 +373,7 @@ def render_index(db: Database, recent: int = 15) -> None:
         f"{':material-youtube: ' + str(n) if (n := len(db.videos_for(r.id))) else '-'} |"
         for d, r in dated[:recent]]
     lines = [
-        GENERATED_MARK, "\n# YouTube - Paper Reading Archive\n",
+        GENERATED_MARK, "\n# Paper Reading Archive - YouTube\n",
         "A reading archive of technical papers, each summarized and linked to its reading video on the "
         "[Nemo Reading Archive](https://www.youtube.com/@99007nemo) YouTube channel.\n",
         f"**{len(resources)}** papers · **{len(db.list_videos())}** videos\n",

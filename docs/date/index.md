@@ -9,3 +9,9 @@
 | Topic | Papers |
 |---|---|
 | [Verification](by-topic.md#verification) | 1 |
+
+## 2011
+
+| Paper | Topic | Videos |
+|---|---|---|
+| [A Unified Methodology for Pre-Silicon Verification and Post-Silicon Validation](../papers/ref-20261018-9bfe-a-unified-methodology-for-pre-silicon-verification-and-post.md) | Verification | :material-youtube: 1 |
