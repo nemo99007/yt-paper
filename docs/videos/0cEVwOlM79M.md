@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/0cEVwOlM79M" title="[DVCON2023]Check Low-Power Violations by Using Machine Learning Based Classifier" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023]Check Low-Power Violations by Using Machine Learning Based Classifier** — [YouTube에서 보기](https://www.youtube.com/watch?v=0cEVwOlM79M)
+**[DVCON2023]Check Low-Power Violations by Using Machine Learning Based Classifier** — [Watch on YouTube](https://www.youtube.com/watch?v=0cEVwOlM79M)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Check Low-Power Violations by Using Machine Learning Based Classifier](../references/Verification/ref-20261018-c426-check-low-power-violations-by-using-machine-learning-based-c.md) | Verification | - |
+| [Check Low-Power Violations by Using Machine Learning Based Classifier](../papers/ref-20261018-c426-check-low-power-violations-by-using-machine-learning-based-c.md) | Verification | - |

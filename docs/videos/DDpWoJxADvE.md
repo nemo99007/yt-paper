@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/DDpWoJxADvE" title="[DVCON2016]A Metric-driven Methodology For Firmware Verification In Simulation/Emulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2016]A Metric-driven Methodology For Firmware Verification In Simulation/Emulation** — [YouTube에서 보기](https://www.youtube.com/watch?v=DDpWoJxADvE)
+**[DVCON2016]A Metric-driven Methodology For Firmware Verification In Simulation/Emulation** — [Watch on YouTube](https://www.youtube.com/watch?v=DDpWoJxADvE)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [A Metric-driven Methodology For Firmware Verification In Simulation/Emulation Environments](../references/Verification/ref-20261018-9cff-a-metric-driven-methodology-for-firmware-verification-in-sim.md) | Verification | - |
+| [A Metric-driven Methodology For Firmware Verification In Simulation/Emulation Environments](../papers/ref-20261018-9cff-a-metric-driven-methodology-for-firmware-verification-in-sim.md) | Verification | - |

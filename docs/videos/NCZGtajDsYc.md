@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/NCZGtajDsYc" title="[DVCON2015]New Trends in RTL Verification Bug Localization, Scan Chain Methodology, GA Test Gen" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2015]New Trends in RTL Verification Bug Localization, Scan Chain Methodology, GA Test Gen** — [YouTube에서 보기](https://www.youtube.com/watch?v=NCZGtajDsYc)
+**[DVCON2015]New Trends in RTL Verification Bug Localization, Scan Chain Methodology, GA Test Gen** — [Watch on YouTube](https://www.youtube.com/watch?v=NCZGtajDsYc)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [New Trends in RTL Verification: Bug Localization, Scan-Chain-Based Methodology, GA-Based Test Generation](../references/Verification/ref-20261018-0c62-new-trends-in-rtl-verification-bug-localization-scan-chain-b.md) | Verification | - |
+| [New Trends in RTL Verification: Bug Localization, Scan-Chain-Based Methodology, GA-Based Test Generation](../papers/ref-20261018-0c62-new-trends-in-rtl-verification-bug-localization-scan-chain-b.md) | Verification | - |

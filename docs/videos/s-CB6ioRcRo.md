@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/s-CB6ioRcRo" title="[DVCON2023]Closing Functional Coverage  With Deep Reinforcement Learning: A Compression Encoder" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023]Closing Functional Coverage  With Deep Reinforcement Learning: A Compression Encoder** — [YouTube에서 보기](https://www.youtube.com/watch?v=s-CB6ioRcRo)
+**[DVCON2023]Closing Functional Coverage  With Deep Reinforcement Learning: A Compression Encoder** — [Watch on YouTube](https://www.youtube.com/watch?v=s-CB6ioRcRo)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Closing Functional Coverage With Deep Reinforcement Learning: A Compression Encoder Example](../references/Verification/ref-20261018-8ec5-closing-functional-coverage-with-deep-reinforcement-learning.md) | Verification | - |
+| [Closing Functional Coverage With Deep Reinforcement Learning: A Compression Encoder Example](../papers/ref-20261018-8ec5-closing-functional-coverage-with-deep-reinforcement-learning.md) | Verification | - |

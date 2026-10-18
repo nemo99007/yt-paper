@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/gZAx9-JKQNQ" title="[DVCON2016]INTROSPECTION INTO SYSTEMVERILOG WITHOUT TURNING IT INSIDE OUT" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2016]INTROSPECTION INTO SYSTEMVERILOG WITHOUT TURNING IT INSIDE OUT** — [YouTube에서 보기](https://www.youtube.com/watch?v=gZAx9-JKQNQ)
+**[DVCON2016]INTROSPECTION INTO SYSTEMVERILOG WITHOUT TURNING IT INSIDE OUT** — [Watch on YouTube](https://www.youtube.com/watch?v=gZAx9-JKQNQ)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [INTROSPECTION INTO SYSTEMVERILOG WITHOUT TURNING IT INSIDE OUT.](../references/Verification/ref-20261018-9f02-introspection-into-systemverilog-without-turning-it-inside-o.md) | Verification | - |
+| [INTROSPECTION INTO SYSTEMVERILOG WITHOUT TURNING IT INSIDE OUT.](../papers/ref-20261018-9f02-introspection-into-systemverilog-without-turning-it-inside-o.md) | Verification | - |

@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/H947nXpp4No" title="[DVCON2023]Accelerating Functional Verification Through Stabilization of Testbench Using AI/ML" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023]Accelerating Functional Verification Through Stabilization of Testbench Using AI/ML** — [YouTube에서 보기](https://www.youtube.com/watch?v=H947nXpp4No)
+**[DVCON2023]Accelerating Functional Verification Through Stabilization of Testbench Using AI/ML** — [Watch on YouTube](https://www.youtube.com/watch?v=H947nXpp4No)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Accelerating Functional Verification Through Stabilization of Testbench Using AI/ML](../references/Verification/ref-20261018-0879-accelerating-functional-verification-through-stabilization-o.md) | Verification | - |
+| [Accelerating Functional Verification Through Stabilization of Testbench Using AI/ML](../papers/ref-20261018-0879-accelerating-functional-verification-through-stabilization-o.md) | Verification | - |

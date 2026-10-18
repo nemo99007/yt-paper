@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/3KjFoF6fVDU" title="[DVCON2025]AI - accelerating coverage closure using intelligent stimulus generation " loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2025]AI - accelerating coverage closure using intelligent stimulus generation ** — [YouTube에서 보기](https://www.youtube.com/watch?v=3KjFoF6fVDU)
+**[DVCON2025]AI - accelerating coverage closure using intelligent stimulus generation ** — [Watch on YouTube](https://www.youtube.com/watch?v=3KjFoF6fVDU)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [AI - accelerating coverage closure using intelligent stimulus generation](../references/Verification/ref-20261018-ea2b-ai-accelerating-coverage-closure-using-intelligent-stimulus.md) | Verification | - |
+| [AI - accelerating coverage closure using intelligent stimulus generation](../papers/ref-20261018-ea2b-ai-accelerating-coverage-closure-using-intelligent-stimulus.md) | Verification | - |

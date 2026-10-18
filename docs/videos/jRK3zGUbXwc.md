@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/jRK3zGUbXwc" title="[DVCON2023]The Evolution of RISC-V Processor Verification: Open Standards and Verification IP" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023]The Evolution of RISC-V Processor Verification: Open Standards and Verification IP** — [YouTube에서 보기](https://www.youtube.com/watch?v=jRK3zGUbXwc)
+**[DVCON2023]The Evolution of RISC-V Processor Verification: Open Standards and Verification IP** — [Watch on YouTube](https://www.youtube.com/watch?v=jRK3zGUbXwc)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [The Evolution of RISC-V Processor Verification: Open Standards and Verification IP](../references/Verification/ref-20261018-921a-the-evolution-of-risc-v-processor-verification-open-standard.md) | Verification | - |
+| [The Evolution of RISC-V Processor Verification: Open Standards and Verification IP](../papers/ref-20261018-921a-the-evolution-of-risc-v-processor-verification-open-standard.md) | Verification | - |

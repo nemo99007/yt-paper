@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/Wvc4rGGUGJg" title="[DVCON2025]Static Structural Analysis Formal Verification SoC Software Safety Mechanisms Functional" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2025]Static Structural Analysis Formal Verification SoC Software Safety Mechanisms Functional** — [YouTube에서 보기](https://www.youtube.com/watch?v=Wvc4rGGUGJg)
+**[DVCON2025]Static Structural Analysis Formal Verification SoC Software Safety Mechanisms Functional** — [Watch on YouTube](https://www.youtube.com/watch?v=Wvc4rGGUGJg)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Static Structural Analysis and Formal Verification of SoC with Software Safety Mechanisms for Functional Safety](../references/Verification/ref-20261018-1733-static-structural-analysis-and-formal-verification-of-soc-wi.md) | Verification | - |
+| [Static Structural Analysis and Formal Verification of SoC with Software Safety Mechanisms for Functional Safety](../papers/ref-20261018-1733-static-structural-analysis-and-formal-verification-of-soc-wi.md) | Verification | - |

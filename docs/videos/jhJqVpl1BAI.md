@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/jhJqVpl1BAI" title="[DVCON2018] guiding functional verification regression analysis machine learning big data methods" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2018] guiding functional verification regression analysis machine learning big data methods** — [YouTube에서 보기](https://www.youtube.com/watch?v=jhJqVpl1BAI)
+**[DVCON2018] guiding functional verification regression analysis machine learning big data methods** — [Watch on YouTube](https://www.youtube.com/watch?v=jhJqVpl1BAI)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Guiding Functional Verification Regression Analysis Using Machine Learning and Big Data Methods](../references/Verification/ref-20261018-ade1-guiding-functional-verification-regression-analysis-using-ma.md) | Verification | - |
+| [Guiding Functional Verification Regression Analysis Using Machine Learning and Big Data Methods](../papers/ref-20261018-ade1-guiding-functional-verification-regression-analysis-using-ma.md) | Verification | - |

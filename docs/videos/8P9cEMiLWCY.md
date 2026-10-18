@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/8P9cEMiLWCY" title="[DVCON2024_INDIA]Simulated Emulation: Enabling Multiple Iterations During Early-Stage Emulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2024_INDIA]Simulated Emulation: Enabling Multiple Iterations During Early-Stage Emulation** — [YouTube에서 보기](https://www.youtube.com/watch?v=8P9cEMiLWCY)
+**[DVCON2024_INDIA]Simulated Emulation: Enabling Multiple Iterations During Early-Stage Emulation** — [Watch on YouTube](https://www.youtube.com/watch?v=8P9cEMiLWCY)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Simulated Emulation: Enabling Multiple Iterations in a Day During Early-Stage Emulation Bring-up](../references/Emulation/ref-20261018-3821-simulated-emulation-enabling-multiple-iterations-in-a-day-du.md) | Emulation | - |
+| [Simulated Emulation: Enabling Multiple Iterations in a Day During Early-Stage Emulation Bring-up](../papers/ref-20261018-3821-simulated-emulation-enabling-multiple-iterations-in-a-day-du.md) | Emulation | - |

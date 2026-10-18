@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/r5PnSgBREok" title="[DVCON2024_INDIA]Expedited Gate Level Verification:the Potential of Netlist Integrated Emulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2024_INDIA]Expedited Gate Level Verification:the Potential of Netlist Integrated Emulation** — [YouTube에서 보기](https://www.youtube.com/watch?v=r5PnSgBREok)
+**[DVCON2024_INDIA]Expedited Gate Level Verification:the Potential of Netlist Integrated Emulation** — [Watch on YouTube](https://www.youtube.com/watch?v=r5PnSgBREok)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Expedited Gate Level Verification: Unleashing the Potential of Netlist Integrated Emulation Platforms](../references/Emulation/ref-20261018-8aac-expedited-gate-level-verification-unleashing-the-potential-o.md) | Emulation | - |
+| [Expedited Gate Level Verification: Unleashing the Potential of Netlist Integrated Emulation Platforms](../papers/ref-20261018-8aac-expedited-gate-level-verification-unleashing-the-potential-o.md) | Emulation | - |

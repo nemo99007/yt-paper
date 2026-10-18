@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/nqmA1fsXAJM" title="[DVCON2023] Automation for Early Detection of X-propagation in Power-Aware Simulation Verification" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023] Automation for Early Detection of X-propagation in Power-Aware Simulation Verification** — [YouTube에서 보기](https://www.youtube.com/watch?v=nqmA1fsXAJM)
+**[DVCON2023] Automation for Early Detection of X-propagation in Power-Aware Simulation Verification** — [Watch on YouTube](https://www.youtube.com/watch?v=nqmA1fsXAJM)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Automation for Early Detection of X-propagation in Power-Aware Simulation Verification using UPF IEEE 1801](../references/Verification/ref-20261018-8b44-automation-for-early-detection-of-x-propagation-in-power-awa.md) | Verification | - |
+| [Automation for Early Detection of X-propagation in Power-Aware Simulation Verification using UPF IEEE 1801](../papers/ref-20261018-8b44-automation-for-early-detection-of-x-propagation-in-power-awa.md) | Verification | - |

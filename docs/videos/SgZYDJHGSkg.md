@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/SgZYDJHGSkg" title="[DVCON2023] A Survey of Machine Learning Applications in Functional Verification" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023] A Survey of Machine Learning Applications in Functional Verification** — [YouTube에서 보기](https://www.youtube.com/watch?v=SgZYDJHGSkg)
+**[DVCON2023] A Survey of Machine Learning Applications in Functional Verification** — [Watch on YouTube](https://www.youtube.com/watch?v=SgZYDJHGSkg)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [A Survey of Machine Learning Applications in Functional Verification](../references/Verification/ref-20261018-58d3-a-survey-of-machine-learning-applications-in-functional-veri.md) | Verification | [이전 영상 (2024-06-27)](https://youtu.be/BdxT57DYNA8) |
+| [A Survey of Machine Learning Applications in Functional Verification](../papers/ref-20261018-58d3-a-survey-of-machine-learning-applications-in-functional-veri.md) | Verification | [Previous reading (2024-06-27)](https://youtu.be/BdxT57DYNA8) |

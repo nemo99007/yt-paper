@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/RgAPcMcohTs" title="[DVCON2023]A Study on Virtual Prototyping based Design Verification Methodology" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023]A Study on Virtual Prototyping based Design Verification Methodology** — [YouTube에서 보기](https://www.youtube.com/watch?v=RgAPcMcohTs)
+**[DVCON2023]A Study on Virtual Prototyping based Design Verification Methodology** — [Watch on YouTube](https://www.youtube.com/watch?v=RgAPcMcohTs)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [A Study on Virtual Prototyping based Design Verification Methodology](../references/Verification/ref-20261018-2416-a-study-on-virtual-prototyping-based-design-verification-met.md) | Verification | - |
+| [A Study on Virtual Prototyping based Design Verification Methodology](../papers/ref-20261018-2416-a-study-on-virtual-prototyping-based-design-verification-met.md) | Verification | - |

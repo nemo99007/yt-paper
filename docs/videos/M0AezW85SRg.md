@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/M0AezW85SRg" title="[DVCON2018] Improving Verification Predictability and Efficiency Using Big Data" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2018] Improving Verification Predictability and Efficiency Using Big Data** — [YouTube에서 보기](https://www.youtube.com/watch?v=M0AezW85SRg)
+**[DVCON2018] Improving Verification Predictability and Efficiency Using Big Data** — [Watch on YouTube](https://www.youtube.com/watch?v=M0AezW85SRg)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Improving Verification Predictability and Efficiency Using Big Data](../references/Verification/ref-20261018-c017-improving-verification-predictability-and-efficiency-using-b.md) | Verification | - |
+| [Improving Verification Predictability and Efficiency Using Big Data](../papers/ref-20261018-c017-improving-verification-predictability-and-efficiency-using-b.md) | Verification | - |

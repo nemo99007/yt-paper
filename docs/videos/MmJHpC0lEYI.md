@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/MmJHpC0lEYI" title="[DVCON2019] OS-aware IP Development Methodology" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2019] OS-aware IP Development Methodology** — [YouTube에서 보기](https://www.youtube.com/watch?v=MmJHpC0lEYI)
+**[DVCON2019] OS-aware IP Development Methodology** — [Watch on YouTube](https://www.youtube.com/watch?v=MmJHpC0lEYI)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [OS-aware IP Development Methodology](../references/Emulation/ref-20261018-24f2-os-aware-ip-development-methodology.md) | Emulation | - |
+| [OS-aware IP Development Methodology](../papers/ref-20261018-24f2-os-aware-ip-development-methodology.md) | Emulation | - |

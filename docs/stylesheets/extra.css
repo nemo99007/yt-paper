@@ -1,7 +1,7 @@
-/* 반응형 16:9 유튜브 임베드 (모바일 포함) */
+/* responsive 16:9 YouTube embed (incl. mobile) */
 .video-wrapper { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 1em 0 .4em; }
 .video-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 6px; }
-/* 모바일에서 넓은 표는 가로 스크롤 */
+/* wide tables scroll horizontally on mobile */
 .md-typeset table:not([class]) { display: block; overflow-x: auto; }
 
 /* English / Korean paragraph pairs: two columns on wide screens, stacked on phones */

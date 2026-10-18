@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/o-x0DYNRIt0" title="[DVCON2022]Case Study: Successes and Challenges of Validation Content Reuse " loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2022]Case Study: Successes and Challenges of Validation Content Reuse ** — [YouTube에서 보기](https://www.youtube.com/watch?v=o-x0DYNRIt0)
+**[DVCON2022]Case Study: Successes and Challenges of Validation Content Reuse ** — [Watch on YouTube](https://www.youtube.com/watch?v=o-x0DYNRIt0)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Case Study: Successes and Challenges of Validation Content Reuse](../references/Verification/ref-20261018-646f-case-study-successes-and-challenges-of-validation-content-re.md) | Verification | - |
+| [Case Study: Successes and Challenges of Validation Content Reuse](../papers/ref-20261018-646f-case-study-successes-and-challenges-of-validation-content-re.md) | Verification | - |

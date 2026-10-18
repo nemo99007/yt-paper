@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/NZnsCEQcW28" title="[DVCON2025]Design scheme for Emulator-friendly Memory Verification IP to Accelerate Simulation " loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2025]Design scheme for Emulator-friendly Memory Verification IP to Accelerate Simulation ** — [YouTube에서 보기](https://www.youtube.com/watch?v=NZnsCEQcW28)
+**[DVCON2025]Design scheme for Emulator-friendly Memory Verification IP to Accelerate Simulation ** — [Watch on YouTube](https://www.youtube.com/watch?v=NZnsCEQcW28)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Design scheme for Emulator-friendly Memory Verification IP to Accelerate Simulation Performance](../references/Verification/ref-20261018-fb94-design-scheme-for-emulator-friendly-memory-verification-ip-t.md) | Verification | - |
+| [Design scheme for Emulator-friendly Memory Verification IP to Accelerate Simulation Performance](../papers/ref-20261018-fb94-design-scheme-for-emulator-friendly-memory-verification-ip-t.md) | Emulation | - |

@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/-yYSOj4vjM8" title="[DVCON2025]Towards Automated Verification IP Instantiation via LLMs" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2025]Towards Automated Verification IP Instantiation via LLMs** — [YouTube에서 보기](https://www.youtube.com/watch?v=-yYSOj4vjM8)
+**[DVCON2025]Towards Automated Verification IP Instantiation via LLMs** — [Watch on YouTube](https://www.youtube.com/watch?v=-yYSOj4vjM8)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Towards Automated Verification IP Instantiation via LLMs](../references/Verification/ref-20261018-ccb0-towards-automated-verification-ip-instantiation-via-llms.md) | Verification | - |
+| [Towards Automated Verification IP Instantiation via LLMs](../papers/ref-20261018-ccb0-towards-automated-verification-ip-instantiation-via-llms.md) | Verification | - |

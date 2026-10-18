@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/4qtButQK_lU" title="[DVCON2019] Coherency Verification & Deadlock Detection Using Perspec/Portable Stimulus" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2019] Coherency Verification & Deadlock Detection Using Perspec/Portable Stimulus** — [YouTube에서 보기](https://www.youtube.com/watch?v=4qtButQK_lU)
+**[DVCON2019] Coherency Verification & Deadlock Detection Using Perspec/Portable Stimulus** — [Watch on YouTube](https://www.youtube.com/watch?v=4qtButQK_lU)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Coherency Verification & Deadlock Detection Using Perspec/Portable Stimulus](../references/Verification/ref-20261018-90da-coherency-verification-deadlock-detection-using-perspecporta.md) | Verification | - |
+| [Coherency Verification & Deadlock Detection Using Perspec/Portable Stimulus](../papers/ref-20261018-90da-coherency-verification-deadlock-detection-using-perspecporta.md) | Verification | - |

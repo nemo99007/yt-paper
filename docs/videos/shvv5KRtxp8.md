@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/shvv5KRtxp8" title="[DVCON2024] Enabling True System-Level, Mixed-Signal Emulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2024] Enabling True System-Level, Mixed-Signal Emulation** — [YouTube에서 보기](https://www.youtube.com/watch?v=shvv5KRtxp8)
+**[DVCON2024] Enabling True System-Level, Mixed-Signal Emulation** — [Watch on YouTube](https://www.youtube.com/watch?v=shvv5KRtxp8)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Enabling True System-Level, Mixed-Signal Emulation](../references/Emulation/ref-20261018-8099-enabling-true-system-level-mixed-signal-emulation.md) | Emulation | - |
+| [Enabling True System-Level, Mixed-Signal Emulation](../papers/ref-20261018-8099-enabling-true-system-level-mixed-signal-emulation.md) | Emulation | - |

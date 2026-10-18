@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/KsLeNKgw_wU" title="[DVCON2022] PSS action sequence modeling using Machine Learning" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2022] PSS action sequence modeling using Machine Learning** — [YouTube에서 보기](https://www.youtube.com/watch?v=KsLeNKgw_wU)
+**[DVCON2022] PSS action sequence modeling using Machine Learning** — [Watch on YouTube](https://www.youtube.com/watch?v=KsLeNKgw_wU)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [PSS action sequence modeling using Machine Learning](../references/Verification/ref-20261018-e710-pss-action-sequence-modeling-using-machine-learning.md) | Verification | - |
+| [PSS action sequence modeling using Machine Learning](../papers/ref-20261018-e710-pss-action-sequence-modeling-using-machine-learning.md) | Verification | - |

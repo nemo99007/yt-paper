@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/q6NioNTKDLs" title="[DVCON2023]Strategies to Maximize Reusability of UVM Test Scenarios in SoC Verification" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023]Strategies to Maximize Reusability of UVM Test Scenarios in SoC Verification** — [YouTube에서 보기](https://www.youtube.com/watch?v=q6NioNTKDLs)
+**[DVCON2023]Strategies to Maximize Reusability of UVM Test Scenarios in SoC Verification** — [Watch on YouTube](https://www.youtube.com/watch?v=q6NioNTKDLs)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Strategies to Maximize Reusability of UVM Test Scenarios in SoC Verification](../references/Verification/ref-20261018-912a-strategies-to-maximize-reusability-of-uvm-test-scenarios-in.md) | Verification | - |
+| [Strategies to Maximize Reusability of UVM Test Scenarios in SoC Verification](../papers/ref-20261018-912a-strategies-to-maximize-reusability-of-uvm-test-scenarios-in.md) | Verification | - |

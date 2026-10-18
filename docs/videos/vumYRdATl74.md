@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/vumYRdATl74" title="[DVCON2023]Accelerated Verification of NAND Flash Memory using HW Emulator" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023]Accelerated Verification of NAND Flash Memory using HW Emulator** — [YouTube에서 보기](https://www.youtube.com/watch?v=vumYRdATl74)
+**[DVCON2023]Accelerated Verification of NAND Flash Memory using HW Emulator** — [Watch on YouTube](https://www.youtube.com/watch?v=vumYRdATl74)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Accelerated Verification of NAND Flash Memory using HW Emulator](../references/Verification/ref-20261018-cf3b-accelerated-verification-of-nand-flash-memory-using-hw-emula.md) | Verification | - |
+| [Accelerated Verification of NAND Flash Memory using HW Emulator](../papers/ref-20261018-cf3b-accelerated-verification-of-nand-flash-memory-using-hw-emula.md) | Emulation | - |

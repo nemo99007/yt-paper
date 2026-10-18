@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/Y6quamriBzo" title="[DVCON2025]A Large Language Model-Based Frameworkfor Enhancing Integrated Regression" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2025]A Large Language Model-Based Frameworkfor Enhancing Integrated Regression** — [YouTube에서 보기](https://www.youtube.com/watch?v=Y6quamriBzo)
+**[DVCON2025]A Large Language Model-Based Frameworkfor Enhancing Integrated Regression** — [Watch on YouTube](https://www.youtube.com/watch?v=Y6quamriBzo)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [A Large Language Model-Based Framework for Enhancing Integrated Regression](../references/Verification/ref-20261018-8b34-a-large-language-model-based-framework-for-enhancing-integra.md) | Verification | - |
+| [A Large Language Model-Based Framework for Enhancing Integrated Regression](../papers/ref-20261018-8b34-a-large-language-model-based-framework-for-enhancing-integra.md) | Verification | - |

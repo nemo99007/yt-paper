@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/1jqlMFmjzEY" title="[DVCON2024] Complexities & Challenges of UPF Corruption Model in Low Power Emulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2024] Complexities & Challenges of UPF Corruption Model in Low Power Emulation** — [YouTube에서 보기](https://www.youtube.com/watch?v=1jqlMFmjzEY)
+**[DVCON2024] Complexities & Challenges of UPF Corruption Model in Low Power Emulation** — [Watch on YouTube](https://www.youtube.com/watch?v=1jqlMFmjzEY)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Complexities & Challenges of UPF Corruption Model in Low Power Emulation](../references/Emulation/ref-20261018-fbca-complexities-challenges-of-upf-corruption-model-in-low-power.md) | Emulation | - |
+| [Complexities & Challenges of UPF Corruption Model in Low Power Emulation](../papers/ref-20261018-fbca-complexities-challenges-of-upf-corruption-model-in-low-power.md) | Emulation | - |

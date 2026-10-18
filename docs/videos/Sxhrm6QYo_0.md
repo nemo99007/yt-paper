@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/Sxhrm6QYo_0" title="[DVCON2023]Automation Methodology for Bus Performance Verification using IP-XACT" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023]Automation Methodology for Bus Performance Verification using IP-XACT** — [YouTube에서 보기](https://www.youtube.com/watch?v=Sxhrm6QYo_0)
+**[DVCON2023]Automation Methodology for Bus Performance Verification using IP-XACT** — [Watch on YouTube](https://www.youtube.com/watch?v=Sxhrm6QYo_0)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Automation Methodology for Bus Performance Verification using IP-XACT](../references/Verification/ref-20261018-271b-automation-methodology-for-bus-performance-verification-usin.md) | Verification | - |
+| [Automation Methodology for Bus Performance Verification using IP-XACT](../papers/ref-20261018-271b-automation-methodology-for-bus-performance-verification-usin.md) | Verification | - |

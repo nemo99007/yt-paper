@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/Ge6veMYhti4" title="[DVCON2023_JPN]Architectures to Tradeoff Performance vs Debug Software Development on Emulation  " loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023_JPN]Architectures to Tradeoff Performance vs Debug Software Development on Emulation  ** — [YouTube에서 보기](https://www.youtube.com/watch?v=Ge6veMYhti4)
+**[DVCON2023_JPN]Architectures to Tradeoff Performance vs Debug Software Development on Emulation  ** — [Watch on YouTube](https://www.youtube.com/watch?v=Ge6veMYhti4)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Architectures to Tradeoff Performance vs. Debug for Software Development on Emulation Platform](../references/Emulation/ref-20261018-fd31-architectures-to-tradeoff-performance-vs-debug-for-software.md) | Emulation | - |
+| [Architectures to Tradeoff Performance vs. Debug for Software Development on Emulation Platform](../papers/ref-20261018-fd31-architectures-to-tradeoff-performance-vs-debug-for-software.md) | Emulation | - |

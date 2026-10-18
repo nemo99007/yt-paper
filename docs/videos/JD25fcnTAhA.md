@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/JD25fcnTAhA" title="[DVCON2023]Automated Thread Evaluation of Various RISC-V Alternatives Random Instruction Generators" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023]Automated Thread Evaluation of Various RISC-V Alternatives Random Instruction Generators** — [YouTube에서 보기](https://www.youtube.com/watch?v=JD25fcnTAhA)
+**[DVCON2023]Automated Thread Evaluation of Various RISC-V Alternatives Random Instruction Generators** — [Watch on YouTube](https://www.youtube.com/watch?v=JD25fcnTAhA)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Automated Thread Evaluation of Various RISC-V Alternatives using Random Instruction Generators](../references/Verification/ref-20261018-273b-automated-thread-evaluation-of-various-risc-v-alternatives-u.md) | Verification | - |
+| [Automated Thread Evaluation of Various RISC-V Alternatives using Random Instruction Generators](../papers/ref-20261018-273b-automated-thread-evaluation-of-various-risc-v-alternatives-u.md) | Verification | - |

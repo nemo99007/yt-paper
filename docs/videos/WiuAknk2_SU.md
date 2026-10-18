@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/WiuAknk2_SU" title="[DVCON2024] Innovative 4-State Logic Emulation for Power-aware Verification" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2024] Innovative 4-State Logic Emulation for Power-aware Verification** — [YouTube에서 보기](https://www.youtube.com/watch?v=WiuAknk2_SU)
+**[DVCON2024] Innovative 4-State Logic Emulation for Power-aware Verification** — [Watch on YouTube](https://www.youtube.com/watch?v=WiuAknk2_SU)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Innovative 4-State Logic Emulation for Power-aware Verification](../references/Emulation/ref-20261018-1917-innovative-4-state-logic-emulation-for-power-aware-verificat.md) | Emulation | - |
+| [Innovative 4-State Logic Emulation for Power-aware Verification](../papers/ref-20261018-1917-innovative-4-state-logic-emulation-for-power-aware-verificat.md) | Emulation | - |

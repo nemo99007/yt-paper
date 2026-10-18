@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/J8PEI2rbgXM" title="[DVCON2020] ISO 26262 Dependent Failure Analysis using PSS" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2020] ISO 26262 Dependent Failure Analysis using PSS** — [YouTube에서 보기](https://www.youtube.com/watch?v=J8PEI2rbgXM)
+**[DVCON2020] ISO 26262 Dependent Failure Analysis using PSS** — [Watch on YouTube](https://www.youtube.com/watch?v=J8PEI2rbgXM)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [ISO 26262 Dependent Failure Analysis using PSS](../references/Verification/ref-20261018-3557-iso-26262-dependent-failure-analysis-using-pss.md) | Verification | - |
+| [ISO 26262 Dependent Failure Analysis using PSS](../papers/ref-20261018-3557-iso-26262-dependent-failure-analysis-using-pss.md) | Verification | - |

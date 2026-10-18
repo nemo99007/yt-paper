@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/jfiiPcLzO3s" title="[DVCON2022_EUROPE] Generic Core-Monitor for Hardware/Software Co-Debugging targeting Emulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2022_EUROPE] Generic Core-Monitor for Hardware/Software Co-Debugging targeting Emulation** — [YouTube에서 보기](https://www.youtube.com/watch?v=jfiiPcLzO3s)
+**[DVCON2022_EUROPE] Generic Core-Monitor for Hardware/Software Co-Debugging targeting Emulation** — [Watch on YouTube](https://www.youtube.com/watch?v=jfiiPcLzO3s)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Generic Core-Monitor for Hardware/Software Co-Debugging targeting Emulation Platform](../references/Emulation/ref-20261018-0efa-generic-core-monitor-for-hardwaresoftware-co-debugging-targe.md) | Emulation | - |
+| [Generic Core-Monitor for Hardware/Software Co-Debugging targeting Emulation Platform](../papers/ref-20261018-0efa-generic-core-monitor-for-hardwaresoftware-co-debugging-targe.md) | Emulation | - |

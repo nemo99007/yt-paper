@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/7g-3vBeMZLo" title="[DVCON2023]DatagenDV: Python Constrained Random Test Stimulus Framework" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023]DatagenDV: Python Constrained Random Test Stimulus Framework** — [YouTube에서 보기](https://www.youtube.com/watch?v=7g-3vBeMZLo)
+**[DVCON2023]DatagenDV: Python Constrained Random Test Stimulus Framework** — [Watch on YouTube](https://www.youtube.com/watch?v=7g-3vBeMZLo)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [DatagenDV: Python Constrained Random Test Stimulus Framework](../references/Verification/ref-20261018-d08e-datagendv-python-constrained-random-test-stimulus-framework.md) | Verification | - |
+| [DatagenDV: Python Constrained Random Test Stimulus Framework](../papers/ref-20261018-d08e-datagendv-python-constrained-random-test-stimulus-framework.md) | Verification | - |

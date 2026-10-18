@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/8Zp0xkU97Fs" title="[DVCON2022] Machine Learning Based Verification Planning Methodology Using Design and Verification" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2022] Machine Learning Based Verification Planning Methodology Using Design and Verification** — [YouTube에서 보기](https://www.youtube.com/watch?v=8Zp0xkU97Fs)
+**[DVCON2022] Machine Learning Based Verification Planning Methodology Using Design and Verification** — [Watch on YouTube](https://www.youtube.com/watch?v=8Zp0xkU97Fs)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Machine Learning Based Verification Planning Methodology Using Design and Verification Data](../references/Verification/ref-20261018-7aa6-machine-learning-based-verification-planning-methodology-usi.md) | Verification | - |
+| [Machine Learning Based Verification Planning Methodology Using Design and Verification Data](../papers/ref-20261018-7aa6-machine-learning-based-verification-planning-methodology-usi.md) | Verification | - |

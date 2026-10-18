@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/W_odEND1SD8" title="[DVCON2019_INDIA]Unified Test Writing Framework for Pre and Post Silicon Verification" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2019_INDIA]Unified Test Writing Framework for Pre and Post Silicon Verification** — [YouTube에서 보기](https://www.youtube.com/watch?v=W_odEND1SD8)
+**[DVCON2019_INDIA]Unified Test Writing Framework for Pre and Post Silicon Verification** — [Watch on YouTube](https://www.youtube.com/watch?v=W_odEND1SD8)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Unified Test Writing Framework for Pre and Post Silicon Verification](../references/Verification/ref-20261018-678e-unified-test-writing-framework-for-pre-and-post-silicon-veri.md) | Verification | - |
+| [Unified Test Writing Framework for Pre and Post Silicon Verification](../papers/ref-20261018-678e-unified-test-writing-framework-for-pre-and-post-silicon-veri.md) | Verification | - |

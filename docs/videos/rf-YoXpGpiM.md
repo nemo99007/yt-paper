@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/rf-YoXpGpiM" title="[DVCON2012] Failure Triage The Neglected Debugging Problem" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2012] Failure Triage The Neglected Debugging Problem** — [YouTube에서 보기](https://www.youtube.com/watch?v=rf-YoXpGpiM)
+**[DVCON2012] Failure Triage The Neglected Debugging Problem** — [Watch on YouTube](https://www.youtube.com/watch?v=rf-YoXpGpiM)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Failure Triage: The Neglected Debugging Problem](../references/Verification/ref-20261018-aa99-failure-triage-the-neglected-debugging-problem.md) | Verification | - |
+| [Failure Triage: The Neglected Debugging Problem](../papers/ref-20261018-aa99-failure-triage-the-neglected-debugging-problem.md) | Verification | - |

@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/j-UGziu6Uj0" title="[DVCON2025]Refinable Macros and Terminal Boundariesin UPF 4.0: Empowering Soft IPs of theFuture" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2025]Refinable Macros and Terminal Boundariesin UPF 4.0: Empowering Soft IPs of theFuture** — [YouTube에서 보기](https://www.youtube.com/watch?v=j-UGziu6Uj0)
+**[DVCON2025]Refinable Macros and Terminal Boundariesin UPF 4.0: Empowering Soft IPs of theFuture** — [Watch on YouTube](https://www.youtube.com/watch?v=j-UGziu6Uj0)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Refinable Macros and Terminal Boundaries in UPF 4.0: Empowering Soft IPs of the Future](../references/EDA/ref-20261018-3f9c-refinable-macros-and-terminal-boundaries-in-upf-40-empowerin.md) | EDA | - |
+| [Refinable Macros and Terminal Boundaries in UPF 4.0: Empowering Soft IPs of the Future](../papers/ref-20261018-3f9c-refinable-macros-and-terminal-boundaries-in-upf-40-empowerin.md) | EDA | - |

@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/UUzJcTvJEOE" title="[DVCON2023]Creating 5G Test Scenarios, the Constrained-Random way" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023]Creating 5G Test Scenarios, the Constrained-Random way** — [YouTube에서 보기](https://www.youtube.com/watch?v=UUzJcTvJEOE)
+**[DVCON2023]Creating 5G Test Scenarios, the Constrained-Random way** — [Watch on YouTube](https://www.youtube.com/watch?v=UUzJcTvJEOE)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Creating 5G Test Scenarios, the Constrained-Random way](../references/Verification/ref-20261018-f0b1-creating-5g-test-scenarios-the-constrained-random-way.md) | Verification | - |
+| [Creating 5G Test Scenarios, the Constrained-Random way](../papers/ref-20261018-f0b1-creating-5g-test-scenarios-the-constrained-random-way.md) | Verification | - |

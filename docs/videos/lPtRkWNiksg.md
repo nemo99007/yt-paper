@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/lPtRkWNiksg" title="[DVCON2023]The Untapped Power of UVM Resources and Why Engineers Should Use the uvm_resource_db API" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023]The Untapped Power of UVM Resources and Why Engineers Should Use the uvm_resource_db API** — [YouTube에서 보기](https://www.youtube.com/watch?v=lPtRkWNiksg)
+**[DVCON2023]The Untapped Power of UVM Resources and Why Engineers Should Use the uvm_resource_db API** — [Watch on YouTube](https://www.youtube.com/watch?v=lPtRkWNiksg)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [The Untapped Power of UVM Resources and Why Engineers Should Use the uvm_resource_db API](../references/Verification/ref-20261018-40d8-the-untapped-power-of-uvm-resources-and-why-engineers-should.md) | Verification | - |
+| [The Untapped Power of UVM Resources and Why Engineers Should Use the uvm_resource_db API](../papers/ref-20261018-40d8-the-untapped-power-of-uvm-resources-and-why-engineers-should.md) | Verification | - |

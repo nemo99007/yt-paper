@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/9xuC8uR_lGc" title="[DVCON2022]Using PSS-2.0 Hardware-Software Interface 4G/5G Forward Error Correction Emulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2022]Using PSS-2.0 Hardware-Software Interface 4G/5G Forward Error Correction Emulation** — [YouTube에서 보기](https://www.youtube.com/watch?v=9xuC8uR_lGc)
+**[DVCON2022]Using PSS-2.0 Hardware-Software Interface 4G/5G Forward Error Correction Emulation** — [Watch on YouTube](https://www.youtube.com/watch?v=9xuC8uR_lGc)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Using PSS-2.0 Hardware-Software Interface to validate 4G/5G Forward Error Correction Encoder/Decoder IP in Emulation & Silicon](../references/Verification/ref-20261018-e10a-using-pss-20-hardware-software-interface-to-validate-4g5g-fo.md) | Verification | - |
+| [Using PSS-2.0 Hardware-Software Interface to validate 4G/5G Forward Error Correction Encoder/Decoder IP in Emulation & Silicon](../papers/ref-20261018-e10a-using-pss-20-hardware-software-interface-to-validate-4g5g-fo.md) | Verification | - |

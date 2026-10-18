@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/oCvKZyb7hQ0" title="[DVCON2023_INDIA] Netlist Enabled Emulation Platform for Accelerated Gate Level Verification" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023_INDIA] Netlist Enabled Emulation Platform for Accelerated Gate Level Verification** — [YouTube에서 보기](https://www.youtube.com/watch?v=oCvKZyb7hQ0)
+**[DVCON2023_INDIA] Netlist Enabled Emulation Platform for Accelerated Gate Level Verification** — [Watch on YouTube](https://www.youtube.com/watch?v=oCvKZyb7hQ0)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Netlist Enabled Emulation Platform for Accelerated Gate Level Verification](../references/Emulation/ref-20261018-22ca-netlist-enabled-emulation-platform-for-accelerated-gate-leve.md) | Emulation | - |
+| [Netlist Enabled Emulation Platform for Accelerated Gate Level Verification](../papers/ref-20261018-22ca-netlist-enabled-emulation-platform-for-accelerated-gate-leve.md) | Emulation | - |

@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/LPCzFr2vPZc" title="[DVCON2022]Hybrid Emulation: Accelerating Software Driven Verification and Debug" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2022]Hybrid Emulation: Accelerating Software Driven Verification and Debug** — [YouTube에서 보기](https://www.youtube.com/watch?v=LPCzFr2vPZc)
+**[DVCON2022]Hybrid Emulation: Accelerating Software Driven Verification and Debug** — [Watch on YouTube](https://www.youtube.com/watch?v=LPCzFr2vPZc)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Hybrid Emulation: Accelerating Software driven verification and debug](../references/Emulation/ref-20261018-6683-hybrid-emulation-accelerating-software-driven-verification-a.md) | Emulation | - |
+| [Hybrid Emulation: Accelerating Software driven verification and debug](../papers/ref-20261018-6683-hybrid-emulation-accelerating-software-driven-verification-a.md) | Emulation | - |

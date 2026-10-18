@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/gVr4LtO7M2c" title="[DVCON2023]Regvue Modern Hardware/Software Interface (HSI) Documentation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023]Regvue Modern Hardware/Software Interface (HSI) Documentation** — [YouTube에서 보기](https://www.youtube.com/watch?v=gVr4LtO7M2c)
+**[DVCON2023]Regvue Modern Hardware/Software Interface (HSI) Documentation** — [Watch on YouTube](https://www.youtube.com/watch?v=gVr4LtO7M2c)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Regvue Modern Hardware/Software Interface (HSI) Documentation](../references/System-SW/ref-20261018-5ce8-regvue-modern-hardwaresoftware-interface-hsi-documentation.md) | System-SW | - |
+| [Regvue Modern Hardware/Software Interface (HSI) Documentation](../papers/ref-20261018-5ce8-regvue-modern-hardwaresoftware-interface-hsi-documentation.md) | EDA | - |

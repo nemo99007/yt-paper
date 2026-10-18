@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/hhA-6z-ySy0" title="[DVCON2019_INDIA]A Pragmatic Approach Leveraging Portable Stimulus from Subsystem to SoC  Emulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2019_INDIA]A Pragmatic Approach Leveraging Portable Stimulus from Subsystem to SoC  Emulation** — [YouTube에서 보기](https://www.youtube.com/watch?v=hhA-6z-ySy0)
+**[DVCON2019_INDIA]A Pragmatic Approach Leveraging Portable Stimulus from Subsystem to SoC  Emulation** — [Watch on YouTube](https://www.youtube.com/watch?v=hhA-6z-ySy0)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [A pragmatic approach leveraging portable stimulus from subsystem to SoC level and SoC emulation](../references/Verification/ref-20261018-a8ba-a-pragmatic-approach-leveraging-portable-stimulus-from-subsy.md) | Verification | - |
+| [A pragmatic approach leveraging portable stimulus from subsystem to SoC level and SoC emulation](../papers/ref-20261018-a8ba-a-pragmatic-approach-leveraging-portable-stimulus-from-subsy.md) | Verification | - |

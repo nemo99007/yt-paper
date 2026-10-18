@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/5lzMBOmdQkQ" title="[DVCON2013]Pragmatic Verification Reuse in a Vertical World" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2013]Pragmatic Verification Reuse in a Vertical World** — [YouTube에서 보기](https://www.youtube.com/watch?v=5lzMBOmdQkQ)
+**[DVCON2013]Pragmatic Verification Reuse in a Vertical World** — [Watch on YouTube](https://www.youtube.com/watch?v=5lzMBOmdQkQ)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Pragmatic Verification Reuse in a Vertical World](../references/Verification/ref-20261018-04d2-pragmatic-verification-reuse-in-a-vertical-world.md) | Verification | - |
+| [Pragmatic Verification Reuse in a Vertical World](../papers/ref-20261018-04d2-pragmatic-verification-reuse-in-a-vertical-world.md) | Verification | - |

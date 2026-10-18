@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/dkn55xILVts" title="[DVCON2019] Big Data in Verification: Making Your Engineers Smarter" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2019] Big Data in Verification: Making Your Engineers Smarter** — [YouTube에서 보기](https://www.youtube.com/watch?v=dkn55xILVts)
+**[DVCON2019] Big Data in Verification: Making Your Engineers Smarter** — [Watch on YouTube](https://www.youtube.com/watch?v=dkn55xILVts)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Big Data in Verification: Making Your Engineers Smarter](../references/Verification/ref-20261018-7a2b-big-data-in-verification-making-your-engineers-smarter.md) | Verification | - |
+| [Big Data in Verification: Making Your Engineers Smarter](../papers/ref-20261018-7a2b-big-data-in-verification-making-your-engineers-smarter.md) | Verification | - |

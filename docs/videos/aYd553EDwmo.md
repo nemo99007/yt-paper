@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/aYd553EDwmo" title="[DVCON2020]Multimedia IP DMA verification platform" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2020]Multimedia IP DMA verification platform** — [YouTube에서 보기](https://www.youtube.com/watch?v=aYd553EDwmo)
+**[DVCON2020]Multimedia IP DMA verification platform** — [Watch on YouTube](https://www.youtube.com/watch?v=aYd553EDwmo)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Multimedia IP DMA verification platform](../references/Verification/ref-20261018-86a9-multimedia-ip-dma-verification-platform.md) | Verification | - |
+| [Multimedia IP DMA verification platform](../papers/ref-20261018-86a9-multimedia-ip-dma-verification-platform.md) | Verification | - |

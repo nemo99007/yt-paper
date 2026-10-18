@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/2Z9lPq8l_h4" title="[DVCON2014]UVM Testbench Considerations for Acceleration" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2014]UVM Testbench Considerations for Acceleration** — [YouTube에서 보기](https://www.youtube.com/watch?v=2Z9lPq8l_h4)
+**[DVCON2014]UVM Testbench Considerations for Acceleration** — [Watch on YouTube](https://www.youtube.com/watch?v=2Z9lPq8l_h4)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [UVM Testbench Considerations for Acceleration](../references/Emulation/ref-20261018-8282-uvm-testbench-considerations-for-acceleration.md) | Emulation | - |
+| [UVM Testbench Considerations for Acceleration](../papers/ref-20261018-8282-uvm-testbench-considerations-for-acceleration.md) | Verification | - |

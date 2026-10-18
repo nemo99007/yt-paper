@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/BO2BW7FTKBg" title="[DVCon2019] High-Speed Interface IP Validation based on Virtual Emulation Platform" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCon2019] High-Speed Interface IP Validation based on Virtual Emulation Platform** — [YouTube에서 보기](https://www.youtube.com/watch?v=BO2BW7FTKBg)
+**[DVCon2019] High-Speed Interface IP Validation based on Virtual Emulation Platform** — [Watch on YouTube](https://www.youtube.com/watch?v=BO2BW7FTKBg)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [High-Speed Interface IP Validation based on Virtual Emulation Platform](../references/Emulation/ref-20261018-2072-high-speed-interface-ip-validation-based-on-virtual-emulatio.md) | Emulation | - |
+| [High-Speed Interface IP Validation based on Virtual Emulation Platform](../papers/ref-20261018-2072-high-speed-interface-ip-validation-based-on-virtual-emulatio.md) | Emulation | - |

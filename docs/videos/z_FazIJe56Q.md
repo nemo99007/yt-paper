@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/z_FazIJe56Q" title="[DVCON2024_INDIA]Unveiling Advance Hybrid Emulation for Accelerated Android Home Screen Bring-up" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2024_INDIA]Unveiling Advance Hybrid Emulation for Accelerated Android Home Screen Bring-up** — [YouTube에서 보기](https://www.youtube.com/watch?v=z_FazIJe56Q)
+**[DVCON2024_INDIA]Unveiling Advance Hybrid Emulation for Accelerated Android Home Screen Bring-up** — [Watch on YouTube](https://www.youtube.com/watch?v=z_FazIJe56Q)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Unveiling Advance Hybrid Emulation Methodology for Accelerated Android Home Screen Bring-up and System Level Verification](../references/Emulation/ref-20261018-e0d9-unveiling-advance-hybrid-emulation-methodology-for-accelerat.md) | Emulation | - |
+| [Unveiling Advance Hybrid Emulation Methodology for Accelerated Android Home Screen Bring-up and System Level Verification](../papers/ref-20261018-e0d9-unveiling-advance-hybrid-emulation-methodology-for-accelerat.md) | Emulation | - |

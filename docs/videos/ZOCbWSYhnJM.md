@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/ZOCbWSYhnJM" title="[DVCON2024]Functional Safety Workflow Internal IP (NPU) Large Automotive IC Analysis Emulation Usage" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2024]Functional Safety Workflow Internal IP (NPU) Large Automotive IC Analysis Emulation Usage** — [YouTube에서 보기](https://www.youtube.com/watch?v=ZOCbWSYhnJM)
+**[DVCON2024]Functional Safety Workflow Internal IP (NPU) Large Automotive IC Analysis Emulation Usage** — [Watch on YouTube](https://www.youtube.com/watch?v=ZOCbWSYhnJM)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Functional Safety Workflow of Internal IP (NPU) Within Large Automotive IC Through Analysis and Emulation Usage for SW-based Safety Mechanisms](../references/Verification/ref-20261018-fef8-functional-safety-workflow-of-internal-ip-npu-within-large-a.md) | Verification | [이전 영상 (2024-07-30)](https://youtu.be/l5LVIft6xNs) |
+| [Functional Safety Workflow of Internal IP (NPU) Within Large Automotive IC Through Analysis and Emulation Usage for SW-based Safety Mechanisms](../papers/ref-20261018-fef8-functional-safety-workflow-of-internal-ip-npu-within-large-a.md) | Verification | [Previous reading (2024-07-30)](https://youtu.be/l5LVIft6xNs) |

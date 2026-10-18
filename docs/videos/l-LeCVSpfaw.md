@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/l-LeCVSpfaw" title="[DVCON2025]Functional Coverage Closure in SoC Interconnect Verification Iterative Machine Learning" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2025]Functional Coverage Closure in SoC Interconnect Verification Iterative Machine Learning** — [YouTube에서 보기](https://www.youtube.com/watch?v=l-LeCVSpfaw)
+**[DVCON2025]Functional Coverage Closure in SoC Interconnect Verification Iterative Machine Learning** — [Watch on YouTube](https://www.youtube.com/watch?v=l-LeCVSpfaw)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Functional Coverage Closure in SoC Interconnect Verification with Iterative Machine Learning](../references/EDA/ref-20261018-7a35-functional-coverage-closure-in-soc-interconnect-verification.md) | EDA | - |
+| [Functional Coverage Closure in SoC Interconnect Verification with Iterative Machine Learning](../papers/ref-20261018-7a35-functional-coverage-closure-in-soc-interconnect-verification.md) | Verification | - |

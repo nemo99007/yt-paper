@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/MsRDG0FVML8" title="[DVCON2017] EMULATION BASED FULL CHIP LEVEL LOW POWER VALIDATION AT PRE-SILICON STAGE" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2017] EMULATION BASED FULL CHIP LEVEL LOW POWER VALIDATION AT PRE-SILICON STAGE** — [YouTube에서 보기](https://www.youtube.com/watch?v=MsRDG0FVML8)
+**[DVCON2017] EMULATION BASED FULL CHIP LEVEL LOW POWER VALIDATION AT PRE-SILICON STAGE** — [Watch on YouTube](https://www.youtube.com/watch?v=MsRDG0FVML8)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [EMULATION BASED FULL CHIP LEVEL LOW POWER VALIDATION AT PRE-SILICON STAGE](../references/Verification/ref-20261018-466a-emulation-based-full-chip-level-low-power-validation-at-pre.md) | Verification | - |
+| [EMULATION BASED FULL CHIP LEVEL LOW POWER VALIDATION AT PRE-SILICON STAGE](../papers/ref-20261018-466a-emulation-based-full-chip-level-low-power-validation-at-pre.md) | Emulation | - |

@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/iFhYhIOoQYQ" title="[DVCON2025]Leverage Real USB Devices for USB Host DUT verification" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2025]Leverage Real USB Devices for USB Host DUT verification** — [YouTube에서 보기](https://www.youtube.com/watch?v=iFhYhIOoQYQ)
+**[DVCON2025]Leverage Real USB Devices for USB Host DUT verification** — [Watch on YouTube](https://www.youtube.com/watch?v=iFhYhIOoQYQ)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Leverage Real USB Devices for USB Host DUT verification](../references/Verification/ref-20261018-5443-leverage-real-usb-devices-for-usb-host-dut-verification.md) | Verification | - |
+| [Leverage Real USB Devices for USB Host DUT verification](../papers/ref-20261018-5443-leverage-real-usb-devices-for-usb-host-dut-verification.md) | Verification | - |

@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/BCdN7iCwOqU" title="[DVCON2024]Synthetic Traffic based SOC Performance Verification Methodology" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2024]Synthetic Traffic based SOC Performance Verification Methodology** — [YouTube에서 보기](https://www.youtube.com/watch?v=BCdN7iCwOqU)
+**[DVCON2024]Synthetic Traffic based SOC Performance Verification Methodology** — [Watch on YouTube](https://www.youtube.com/watch?v=BCdN7iCwOqU)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Synthetic Traffic based SOC Performance Verification Methodology](../references/Verification/ref-20261018-c74a-synthetic-traffic-based-soc-performance-verification-methodo.md) | Verification | - |
+| [Synthetic Traffic based SOC Performance Verification Methodology](../papers/ref-20261018-c74a-synthetic-traffic-based-soc-performance-verification-methodo.md) | Verification | - |

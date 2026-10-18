@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/Xzi_4Shpd7U" title="[DVCON2025]Reaching 100% Functional Coverage Using Machine Learning: A Journey of Persistent Efforts" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2025]Reaching 100% Functional Coverage Using Machine Learning: A Journey of Persistent Efforts** — [YouTube에서 보기](https://www.youtube.com/watch?v=Xzi_4Shpd7U)
+**[DVCON2025]Reaching 100% Functional Coverage Using Machine Learning: A Journey of Persistent Efforts** — [Watch on YouTube](https://www.youtube.com/watch?v=Xzi_4Shpd7U)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Reaching 100% Functional Coverage Using Machine Learning: A Journey of Persistent Efforts](../references/Verification/ref-20261018-2c1c-reaching-100-functional-coverage-using-machine-learning-a-jo.md) | Verification | - |
+| [Reaching 100% Functional Coverage Using Machine Learning: A Journey of Persistent Efforts](../papers/ref-20261018-2c1c-reaching-100-functional-coverage-using-machine-learning-a-jo.md) | Verification | - |

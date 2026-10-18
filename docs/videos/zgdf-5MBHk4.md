@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/zgdf-5MBHk4" title="[DVCON2020] Accelerating SOC Verification Using Process Automation and Integration" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2020] Accelerating SOC Verification Using Process Automation and Integration** — [YouTube에서 보기](https://www.youtube.com/watch?v=zgdf-5MBHk4)
+**[DVCON2020] Accelerating SOC Verification Using Process Automation and Integration** — [Watch on YouTube](https://www.youtube.com/watch?v=zgdf-5MBHk4)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Accelerating SOC Verification Using Process Automation and Integration](../references/Verification/ref-20261018-f844-accelerating-soc-verification-using-process-automation-and-i.md) | Verification | - |
+| [Accelerating SOC Verification Using Process Automation and Integration](../papers/ref-20261018-f844-accelerating-soc-verification-using-process-automation-and-i.md) | Verification | - |

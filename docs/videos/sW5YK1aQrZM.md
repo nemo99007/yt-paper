@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/sW5YK1aQrZM" title="[DVCON2025]Technical Documents Version Management System Based on Large Language Models" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2025]Technical Documents Version Management System Based on Large Language Models** — [YouTube에서 보기](https://www.youtube.com/watch?v=sW5YK1aQrZM)
+**[DVCON2025]Technical Documents Version Management System Based on Large Language Models** — [Watch on YouTube](https://www.youtube.com/watch?v=sW5YK1aQrZM)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Technical Documents Version Management System Based on Large Language Models](../references/Verification/ref-20261018-2740-technical-documents-version-management-system-based-on-large.md) | Verification | - |
+| [Technical Documents Version Management System Based on Large Language Models](../papers/ref-20261018-2740-technical-documents-version-management-system-based-on-large.md) | Verification | - |

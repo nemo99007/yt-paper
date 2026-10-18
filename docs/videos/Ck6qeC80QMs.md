@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/Ck6qeC80QMs" title="[DVCON2016] Evolution of Triage Real time Improvements in Debug Productivity" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2016] Evolution of Triage Real time Improvements in Debug Productivity** — [YouTube에서 보기](https://www.youtube.com/watch?v=Ck6qeC80QMs)
+**[DVCON2016] Evolution of Triage Real time Improvements in Debug Productivity** — [Watch on YouTube](https://www.youtube.com/watch?v=Ck6qeC80QMs)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Evolution of Triage: Real-time Improvements in Debug Productivity](../references/Verification/ref-20261018-ca4e-evolution-of-triage-real-time-improvements-in-debug-producti.md) | Verification | - |
+| [Evolution of Triage: Real-time Improvements in Debug Productivity](../papers/ref-20261018-ca4e-evolution-of-triage-real-time-improvements-in-debug-producti.md) | Verification | - |

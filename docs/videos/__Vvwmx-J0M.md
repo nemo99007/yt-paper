@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/__Vvwmx-J0M" title="[DVCON2014]Of Camels and Committees" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2014]Of Camels and Committees** — [YouTube에서 보기](https://www.youtube.com/watch?v=__Vvwmx-J0M)
+**[DVCON2014]Of Camels and Committees** — [Watch on YouTube](https://www.youtube.com/watch?v=__Vvwmx-J0M)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Of Camels and Committees](../references/Verification/ref-20261018-2c26-of-camels-and-committees.md) | Verification | - |
+| [Of Camels and Committees: Standards Should Enable Innovation, Not Strangle It](../papers/ref-20261018-2c26-of-camels-and-committees-standards-should-enable-innovation.md) | Verification | - |

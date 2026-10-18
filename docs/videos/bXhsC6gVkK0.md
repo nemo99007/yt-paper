@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/bXhsC6gVkK0" title="[DVCON2013] Maximize Vertical Reuse, Building Module to System Verification Environments with UVM e" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2013] Maximize Vertical Reuse, Building Module to System Verification Environments with UVM e** — [YouTube에서 보기](https://www.youtube.com/watch?v=bXhsC6gVkK0)
+**[DVCON2013] Maximize Vertical Reuse, Building Module to System Verification Environments with UVM e** — [Watch on YouTube](https://www.youtube.com/watch?v=bXhsC6gVkK0)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Maximize Vertical Reuse, Building Module to System Verification Environments with UVM e](../references/Verification/ref-20261018-7acd-maximize-vertical-reuse-building-module-to-system-verificati.md) | Verification | - |
+| [Maximize Vertical Reuse, Building Module to System Verification Environments with UVM e](../papers/ref-20261018-7acd-maximize-vertical-reuse-building-module-to-system-verificati.md) | Verification | - |

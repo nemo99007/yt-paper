@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/Z0j0T3lPedk" title="[DVCON2025]Early Stage Coverage Methodology Common Features SOC Verification Design Metadata, LLMs" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2025]Early Stage Coverage Methodology Common Features SOC Verification Design Metadata, LLMs** — [YouTube에서 보기](https://www.youtube.com/watch?v=Z0j0T3lPedk)
+**[DVCON2025]Early Stage Coverage Methodology Common Features SOC Verification Design Metadata, LLMs** — [Watch on YouTube](https://www.youtube.com/watch?v=Z0j0T3lPedk)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [An Early Stage Coverage Measurement Methodology For Common Features Of System-On-Chip Verification, Using Design Metadata And Large Language Models](../references/Verification/ref-20261018-9206-an-early-stage-coverage-measurement-methodology-for-common-f.md) | Verification | - |
+| [An Early Stage Coverage Measurement Methodology For Common Features Of System-On-Chip Verification, Using Design Metadata And Large Language Models](../papers/ref-20261018-9206-an-early-stage-coverage-measurement-methodology-for-common-f.md) | Verification | - |

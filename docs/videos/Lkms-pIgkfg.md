@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/Lkms-pIgkfg" title="[DVCON2023]Hardware and Software integrated power optimization approach with power aware simulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023]Hardware and Software integrated power optimization approach with power aware simulation** — [YouTube에서 보기](https://www.youtube.com/watch?v=Lkms-pIgkfg)
+**[DVCON2023]Hardware and Software integrated power optimization approach with power aware simulation** — [Watch on YouTube](https://www.youtube.com/watch?v=Lkms-pIgkfg)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [A Hardware and Software integrated power optimization approach with power aware simulations at SOC](../references/Verification/ref-20261018-ed23-a-hardware-and-software-integrated-power-optimization-approa.md) | Verification | - |
+| [A Hardware and Software integrated power optimization approach with power aware simulations at SOC](../papers/ref-20261018-ed23-a-hardware-and-software-integrated-power-optimization-approa.md) | Verification | - |

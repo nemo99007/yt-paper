@@ -13,10 +13,10 @@ resources:
 
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/SwaKnaGIp6o" title="[DVCON2025]Continuous Integration in SoC Design: Challenges and Solutions" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2025]Continuous Integration in SoC Design: Challenges and Solutions** — [YouTube에서 보기](https://www.youtube.com/watch?v=SwaKnaGIp6o)
+**[DVCON2025]Continuous Integration in SoC Design: Challenges and Solutions** — [Watch on YouTube](https://www.youtube.com/watch?v=SwaKnaGIp6o)
 
-## 이 영상에서 다룬 자료
+## Papers in this video
 
-| 자료 | 카테고리 | 시간 |
+| Paper | Topic | Note |
 |---|---|---|
-| [Continuous Integration in SoC Design: Challenges and Solutions](../references/EDA/ref-20261018-ee89-continuous-integration-in-soc-design-challenges-and-solution.md) | EDA | - |
+| [Continuous Integration in SoC Design: Challenges and Solutions](../papers/ref-20261018-ee89-continuous-integration-in-soc-design-challenges-and-solution.md) | Verification | - |
