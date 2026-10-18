@@ -2,20 +2,44 @@
 
 # 기술 자료 아카이브
 
-자료 **0**건 · 영상 **0**개
+자료 **45**건 · 영상 **45**개
 
 ## 카테고리별
 
 | 카테고리 | 자료 수 |
 |---|---|
+| Emulation | 4 |
+| Verification | 36 |
+| EDA | 4 |
+| System-SW | 1 |
 
 ## 유형별
 
 | 유형 | 자료 수 |
 |---|---|
+| PAPER | 45 |
 
 ## 최근 추가된 자료
 
 | 날짜 | 제목 | 카테고리 | 영상 |
 |---|---|---|---|
-| - | 아직 등록된 자료가 없습니다 | - | - |
+| 2026-10-18 | [Automation Methodology for Bus Performance Verification using IP-XACT](references/Verification/ref-20261018-271b-automation-methodology-for-bus-performance-verification-usin.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [Closing Functional Coverage With Deep Reinforcement Learning: A Compression Encoder Example](references/Verification/ref-20261018-8ec5-closing-functional-coverage-with-deep-reinforcement-learning.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [Strategies to Maximize Reusability of UVM Test Scenarios in SoC Verification](references/Verification/ref-20261018-912a-strategies-to-maximize-reusability-of-uvm-test-scenarios-in.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [Synthetic Traffic based SOC Performance Verification Methodology](references/Verification/ref-20261018-c74a-synthetic-traffic-based-soc-performance-verification-methodo.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [Large Language Model for Verification: A Review and Its Application in Data Augmentation](references/Verification/ref-20261018-3545-large-language-model-for-verification-a-review-and-its-appli.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [The Evolution of RISC-V Processor Verification: Open Standards and Verification IP](references/Verification/ref-20261018-921a-the-evolution-of-risc-v-processor-verification-open-standard.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [Automated Thread Evaluation of Various RISC-V Alternatives using Random Instruction Generators](references/Verification/ref-20261018-273b-automated-thread-evaluation-of-various-risc-v-alternatives-u.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [Tackling Missing Bins: Refining Functional Coverage in SystemVerilog for Deterministic Coverage Closure](references/Verification/ref-20261018-4d5c-tackling-missing-bins-refining-functional-coverage-in-system.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [Synthesizable Random Testbench for Multimedia IP Verification](references/Verification/ref-20261018-d099-synthesizable-random-testbench-for-multimedia-ip-verificatio.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [A Hardware and Software integrated power optimization approach with power aware simulations at SOC](references/Verification/ref-20261018-ed23-a-hardware-and-software-integrated-power-optimization-approa.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [Creating 5G Test Scenarios, the Constrained-Random way](references/Verification/ref-20261018-f0b1-creating-5g-test-scenarios-the-constrained-random-way.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [Regvue Modern Hardware/Software Interface (HSI) Documentation](references/System-SW/ref-20261018-5ce8-regvue-modern-hardwaresoftware-interface-hsi-documentation.md) | System-SW | :material-youtube: 1 |
+| 2026-10-18 | [The Untapped Power of UVM Resources and Why Engineers Should Use the uvm_resource_db API](references/Verification/ref-20261018-40d8-the-untapped-power-of-uvm-resources-and-why-engineers-should.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [A Large Language Model-Based Framework for Enhancing Integrated Regression](references/Verification/ref-20261018-8b34-a-large-language-model-based-framework-for-enhancing-integra.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [Functional Safety Workflow of Internal IP (NPU) Within Large Automotive IC Through Analysis and Emulation Usage for SW-based Safety Mechanisms](references/Verification/ref-20261018-fef8-functional-safety-workflow-of-internal-ip-npu-within-large-a.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [A Novel AI-ML Regression Flow for SoC verification](references/Verification/ref-20261018-aa86-a-novel-ai-ml-regression-flow-for-soc-verification.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [VerifLLMBench: An Open-Source Benchmark for Testbenches Generated with Large Language Models](references/Verification/ref-20261018-b468-verifllmbench-an-open-source-benchmark-for-testbenches-gener.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [Towards Automated Verification IP Instantiation via LLMs](references/Verification/ref-20261018-ccb0-towards-automated-verification-ip-instantiation-via-llms.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [Time-Travel Debugging for High-Level Synthesis Code](references/Verification/ref-20261018-5347-time-travel-debugging-for-high-level-synthesis-code.md) | Verification | :material-youtube: 1 |
+| 2026-10-18 | [An Early Stage Coverage Measurement Methodology For Common Features Of System-On-Chip Verification, Using Design Metadata And Large Language Models](references/Verification/ref-20261018-9206-an-early-stage-coverage-measurement-methodology-for-common-f.md) | Verification | :material-youtube: 1 |

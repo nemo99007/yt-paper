@@ -2,4 +2,50 @@
 
 # 영상 목록
 
-아직 등록된 영상이 없습니다.
+| 영상 | 연결된 자료 | 링크 |
+|---|---|---|
+| [[DVCON2025]Towards Automated Verification IP Instantiation via LLMs](-yYSOj4vjM8.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=-yYSOj4vjM8) |
+| [[DVCON2025]Time-Travel Debugging for High-Level Synthesis Code](053-_zK-3xk.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=053-_zK-3xk) |
+| [[DVCON2025]Accelerating Pre-Silicon Verification Coverage with Transaction Sequence Modeling](2on_n4tNWvg.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=2on_n4tNWvg) |
+| [[DVCON2025]AI - accelerating coverage closure using intelligent stimulus generation ](3KjFoF6fVDU.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=3KjFoF6fVDU) |
+| [[DVCON2013]Pragmatic Verification Reuse in a Vertical World](5lzMBOmdQkQ.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=5lzMBOmdQkQ) |
+| [[DVCON2025]Enhancing SDC Verification in SoCs: Heatmap Visualization  Machine Learning Approaches ](67KjBs3Uw-Q.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=67KjBs3Uw-Q) |
+| [[DVCON2024_INDIA]Simulated Emulation: Enabling Multiple Iterations During Early-Stage Emulation](8P9cEMiLWCY.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=8P9cEMiLWCY) |
+| [[DVCON2013]Easy Steps Towards Virtual Prototyping using the SystemVerilog DPI](AoUFwMf9jEI.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=AoUFwMf9jEI) |
+| [[DVCON2024]Synthetic Traffic based SOC Performance Verification Methodology](BCdN7iCwOqU.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=BCdN7iCwOqU) |
+| [[DVCON2021]Synthesizable Random Testbench for Multimedia IP Verification](BEUFeKUEctY.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=BEUFeKUEctY) |
+| [[DVCON2023_JPN]Architectures to Tradeoff Performance vs Debug Software Development on Emulation  ](Ge6veMYhti4.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=Ge6veMYhti4) |
+| [[DVCON2023]Automated Thread Evaluation of Various RISC-V Alternatives Random Instruction Generators](JD25fcnTAhA.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=JD25fcnTAhA) |
+| [[DVCON2024]Large Language Model for Verification: A Review and Its Application in Data Augmentation](KKPVxcHXagQ.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=KKPVxcHXagQ) |
+| [[DVCON2023]Hardware and Software integrated power optimization approach with power aware simulation](Lkms-pIgkfg.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=Lkms-pIgkfg) |
+| [[DVCON2025]VerifLLMBench:An Open-Source Benchmark forTestbenches Generated with Large LanguageModels](LnieLz-qAFw.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=LnieLz-qAFw) |
+| [[DVCON2025]Future Proofing Power Intent Specification UPF 4.0 for Evolving Advanced State Retention](MH85nB2tYmI.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=MH85nB2tYmI) |
+| [[DVCON2025]Design scheme for Emulator-friendly Memory Verification IP to Accelerate Simulation ](NZnsCEQcW28.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=NZnsCEQcW28) |
+| [[DVCON2025]Continuous Integration in SoC Design: Challenges and Solutions](SwaKnaGIp6o.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=SwaKnaGIp6o) |
+| [[DVCON2023]Automation Methodology for Bus Performance Verification using IP-XACT](Sxhrm6QYo_0.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=Sxhrm6QYo_0) |
+| [[DVCON2023]Creating 5G Test Scenarios, the Constrained-Random way](UUzJcTvJEOE.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=UUzJcTvJEOE) |
+| [[DVCON2025]Test bench Framework for Fully Automated Register Tests of Numerous IPs in SoC](VN30Q60D1X4.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=VN30Q60D1X4) |
+| [[DVCON2025]Stimulus Diversification and Coverage Closure of 3D NAND Flash Artificial Intelligence](WfdqMw4b1bo.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=WfdqMw4b1bo) |
+| [[DVCON2025]Static Structural Analysis Formal Verification SoC Software Safety Mechanisms Functional](Wvc4rGGUGJg.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=Wvc4rGGUGJg) |
+| [[DVCON2025]Reaching 100% Functional Coverage Using Machine Learning: A Journey of Persistent Efforts](Xzi_4Shpd7U.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=Xzi_4Shpd7U) |
+| [[DVCON2025]A Large Language Model-Based Frameworkfor Enhancing Integrated Regression](Y6quamriBzo.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=Y6quamriBzo) |
+| [[DVCON2025]Early Stage Coverage Methodology Common Features SOC Verification Design Metadata, LLMs](Z0j0T3lPedk.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=Z0j0T3lPedk) |
+| [[DVCON2024]Functional Safety Workflow Internal IP (NPU) Large Automotive IC Analysis Emulation Usage](ZOCbWSYhnJM.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=ZOCbWSYhnJM) |
+| [[DVCON2014]Of Camels and Committees](__Vvwmx-J0M.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=__Vvwmx-J0M) |
+| [[DVCON2021]The Life of a SystemVerilog Variable ](b7Xs_FX_gzs.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=b7Xs_FX_gzs) |
+| [[DVCON2023]Regvue Modern Hardware/Software Interface (HSI) Documentation](gVr4LtO7M2c.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=gVr4LtO7M2c) |
+| [[DVCON2016]INTROSPECTION INTO SYSTEMVERILOG WITHOUT TURNING IT INSIDE OUT](gZAx9-JKQNQ.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=gZAx9-JKQNQ) |
+| [[DVCON2023]What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard ](gk4Nr1n50Ac.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=gk4Nr1n50Ac) |
+| [[DVCON2025]Leverage Real USB Devices for USB Host DUT verification](iFhYhIOoQYQ.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=iFhYhIOoQYQ) |
+| [[DVCON2025]Refinable Macros and Terminal Boundariesin UPF 4.0: Empowering Soft IPs of theFuture](j-UGziu6Uj0.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=j-UGziu6Uj0) |
+| [[DVCON2023]The Evolution of RISC-V Processor Verification: Open Standards and Verification IP](jRK3zGUbXwc.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=jRK3zGUbXwc) |
+| [[DVCON2025]A Novel AI-ML Regression Flow forSoC verification](jy4eXWjStE8.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=jy4eXWjStE8) |
+| [[DVCON2024]Tackling Missing Bins Refining Functional Coverage SystemVerilog Deterministic Coverage](k6SKMWnJP-g.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=k6SKMWnJP-g) |
+| [[DVCON2025]Functional Coverage Closure in SoC Interconnect Verification Iterative Machine Learning](l-LeCVSpfaw.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=l-LeCVSpfaw) |
+| [[DVCON2023]The Untapped Power of UVM Resources and Why Engineers Should Use the uvm_resource_db API](lPtRkWNiksg.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=lPtRkWNiksg) |
+| [[DVCON2022]Case Study: Successes and Challenges of Validation Content Reuse ](o-x0DYNRIt0.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=o-x0DYNRIt0) |
+| [[DVCON2023]Strategies to Maximize Reusability of UVM Test Scenarios in SoC Verification](q6NioNTKDLs.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=q6NioNTKDLs) |
+| [[DVCON2024_INDIA]Expedited Gate Level Verification:the Potential of Netlist Integrated Emulation](r5PnSgBREok.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=r5PnSgBREok) |
+| [[DVCON2023]Closing Functional Coverage  With Deep Reinforcement Learning: A Compression Encoder](s-CB6ioRcRo.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=s-CB6ioRcRo) |
+| [[DVCON2025]Technical Documents Version Management System Based on Large Language Models](sW5YK1aQrZM.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=sW5YK1aQrZM) |
+| [[DVCON2024_INDIA]Unveiling Advance Hybrid Emulation for Accelerated Android Home Screen Bring-up](z_FazIJe56Q.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=z_FazIJe56Q) |
