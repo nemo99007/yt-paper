@@ -1,0 +1,8 @@
+.env
+data/archive.db
+data/archive.db-*
+__pycache__/
+*.pyc
+site/
+.venv/
+papers/

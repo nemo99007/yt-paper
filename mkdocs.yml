@@ -1,0 +1,63 @@
+site_name: yt-paper 기술 자료 아카이브
+site_description: 논문·arXiv·블로그 요약과 유튜브 영상 매핑
+site_url: https://nemo99007.github.io/yt-paper/
+repo_url: https://github.com/nemo99007/yt-paper
+repo_name: nemo99007/yt-paper
+docs_dir: docs
+
+theme:
+  name: material
+  language: ko
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/weather-night
+        name: 다크 모드로 전환
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 라이트 모드로 전환
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+
+plugins:
+  - search:
+      lang: [en, ko]
+  - tags
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

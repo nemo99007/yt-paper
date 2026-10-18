@@ -1,0 +1,76 @@
+# 폰(GitHub 앱/웹)에서 자료를 추가하거나 영상을 연결하는 워크플로우.
+# Actions → "Add resource (mobile)" → Run workflow → 입력값 채우고 실행.
+# 필요: 저장소 Settings → Secrets → Actions 에 ANTHROPIC_API_KEY 등록.
+name: Add resource (mobile)
+
+on:
+  workflow_dispatch:
+    inputs:
+      source:
+        description: "자료 URL (arXiv, PDF URL, 블로그). 영상만 연결하려면 비워두고 ref_id 입력"
+        required: false
+      youtube:
+        description: "유튜브 URL (선택)"
+        required: false
+      timestamp:
+        description: "영상 내 시간/메모 (예: 04:15, 선택)"
+        required: false
+      title:
+        description: "제목 힌트 (선택)"
+        required: false
+      type:
+        description: "자료 유형"
+        type: choice
+        options: [auto, PAPER, ARXIV, BOOK, BLOG]
+        default: auto
+      ref_id:
+        description: "기존 자료 ID (영상만 연결할 때)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive-write
+  cancel-in-progress: false
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      IN_SOURCE: ${{ inputs.source }}
+      IN_YOUTUBE: ${{ inputs.youtube }}
+      IN_TIMESTAMP: ${{ inputs.timestamp }}
+      IN_TITLE: ${{ inputs.title }}
+      IN_TYPE: ${{ inputs.type }}
+      IN_REF_ID: ${{ inputs.ref_id }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Run yt-paper
+        run: |
+          args=()
+          [ -n "$IN_YOUTUBE" ] && args+=(--youtube "$IN_YOUTUBE")
+          [ -n "$IN_TIMESTAMP" ] && args+=(--timestamp "$IN_TIMESTAMP")
+          if [ -n "$IN_SOURCE" ]; then
+            [ -n "$IN_TITLE" ] && args+=(--title "$IN_TITLE")
+            [ "$IN_TYPE" != "auto" ] && args+=(--type "$IN_TYPE")
+            python -m src.cli add --source "$IN_SOURCE" "${args[@]}" --push
+          elif [ -n "$IN_REF_ID" ] && [ -n "$IN_YOUTUBE" ]; then
+            python -m src.cli link --ref-id "$IN_REF_ID" "${args[@]}" --push
+          else
+            echo "::error::source 또는 (ref_id + youtube) 를 입력하세요."; exit 1
+          fi
+      # GITHUB_TOKEN으로 한 push는 deploy.yml을 다시 트리거하지 않으므로 여기서 직접 배포
+      - run: mkdocs gh-deploy --force
