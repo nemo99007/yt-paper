@@ -1,0 +1,1377 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-2c1c-reaching-100-functional-coverage-using-machine-learning-a-jo/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Reaching 100% Functional Coverage Using Machine Learning: A Journey of Persistent Efforts - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reaching-100-functional-coverage-using-machine-learning-a-journey-of-persistent-efforts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reaching 100% Functional Coverage Using Machine Learning: A Journey of Persistent Efforts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:constrained-random" class="md-tag">Constrained Random</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:cross-coverage" class="md-tag">Cross Coverage</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:decision-tree" class="md-tag">Decision Tree</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:functional-coverage" class="md-tag">Functional Coverage</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:vmanager" class="md-tag">vManager</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2025">2025</a> › <a href="../../dvcon/by-topic/#verification">Verification</a></p>
+<h1 id="reaching-100-functional-coverage-using-machine-learning-a-journey-of-persistent-efforts">Reaching 100% Functional Coverage Using Machine Learning: A Journey of Persistent Efforts<a class="headerlink" href="#reaching-100-functional-coverage-using-machine-learning-a-journey-of-persistent-efforts" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 4 (a) simply shows the overall workflow of the suggested approach and the inputs used in each step. In this paper, the Verisium Manager, hereafter vManager, was used to run regression tests, and the Integrated Metrics Center, hereafter IMC, was used to merge coverage results and generate a report." loading="lazy" src="../../assets/figures/ref-20261018-2c1c.png" /></p>
+<figcaption>Figure 4 (a) simply shows the overall workflow of the suggested approach and the inputs used in each step. In this paper, the Verisium Manager, hereafter vManager, was used to run regression tests, and the Integrated Metrics Center, hereafter IMC, was used to merge coverage results and generate a report. — from the original paper (Jaecheon Kim et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/1022-2.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Jaecheon Kim (Samsung Electronics Co., Ltd.), Taewook Nam (Samsung Electronics Co., Ltd.), Wonil Cho (Samsung Electronics Co., Ltd.)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2025</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-2c1c</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>A Python-based coverage agent uses decision-tree predictions over regression logs and coverage data to identify the random variables behind unfilled cross-coverage bins, then regenerates soft-constrained regression suites to close cross coverage faster than baseline random regression.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>Python 기반 coverage agent가 regression 로그와 커버리지 데이터에 decision tree를 적용해 미충족 cross coverage bin에 영향을 주는 random variable을 찾고, soft constraint가 적용된 regression suite를 다시 생성하여 기존 랜덤 regression보다 빠르게 cross coverage를 닫는다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Cross coverage, not individual coverpoints, is the bottleneck: in the paper's example, coverpoints fill easily but cross_test_xy (2,688 bins) reached only 99.74% (2681/2688) after about 25,000 baseline tests, and the weighted-distribution experiment showed that 5,000 random trials leave uneven bin coverage (max 25, min 3 over 420 bins).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>병목은 개별 coverpoint가 아니라 cross coverage다. 논문 예제에서 cross_test_xy(2,688 bins)는 기준 실험에서 약 25,000 테스트 후에도 99.74%(2681/2688)에 머물렀고, 가중치 실험에서는 420 bin 중 5,000회 randomization의 빈도 편차가 최대 25, 최소 3이었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Even a uniform distribution needs many runs: cross_test_mode (720 bins) required about 6,000 to 7,000 tests to fill, and a 2:8 skew left 3 combinations unreachable in 5,000 trials (20 for 1:9).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>균등 분포라도 많은 실행이 필요하다. cross_test_mode(720 bins)는 약 6,000~7,000 테스트가 필요했고, 2:8 편향에서는 5,000회 시도 후 3개 조합이 도달하지 않았으며 1:9에서는 20개가 도달하지 않았다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The coverage agent treats prediction as feature ranking: a decision tree (white-box) ranks random variables by contribution to each cross bin, the top-N variables form a product set, and a candidate list of 2x N is kept for diversity.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>coverage agent는 예측을 feature ranking으로 다룬다. white-box decision tree가 random variable을 cross bin 기여도 순으로 정렬하고, 상위 N개 변수의 product set을 만들며, 다양성을 위해 예측 개수의 2배 크기 candidate list를 유지한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Failure-tolerant safeguards are required: all generated values are declared as soft constraints so illegal combinations fall back to normal randomization; predictions whose product set exceeds the bin count are rejected; and stalled crosses are rotated out after two regression cycles without change.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>예측 실패에 대비한 안전장치가 필요하다. 생성된 모든 값은 soft constraint로 선언되어 불가능한 조합은 정상 randomization으로 대체되고, product set 크기가 bin 수를 넘는 예측은 기각되며, 두 regression cycle 동안 변화가 없는 cross 조합은 제외된다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>On a real mobile ISP CSI IP (134 cross coverages, 14,616 bins, about 7,000 random variables), the agent reached 100% after 74,956 total tests versus a baseline that stayed below 70% after more than 100,000 runs (the baseline figure is taken from the paper's own table).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>실제 모바일 SoC ISP 블록의 CSI IP(cross 134개, bin 14,616개, random variable 약 7,000개)에서 agent는 총 74,956 테스트 후 100%에 도달했고, 기준 regression은 100,000회 이상 실행 후에도 70%를 넘지 못했다(기준 수치는 논문 표 기준).</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Achieving functional coverage closure with constrained random verification (CRV) is becoming harder as IP RTL grows; the authors identify cross coverage as the main source of closure delay.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>IP RTL의 복잡도가 증가하면서 constrained random verification(CRV)으로 functional coverage closure를 달성하기가 어려워지고 있으며, 저자들은 cross coverage를 closure 지연의 주요 원인으로 지목한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Coverpoints fill easily as test count grows, but crosses built from their combinations stay under-filled. Engineers currently close the gap manually by analyzing reports, running related scenarios more, adjusting configuration distributions, or forcing directed values.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Coverpoint는 테스트 수가 늘면 쉽게 채워지지만, 그 조합으로 만든 cross는 충분히 채워지지 않는다. 현재 엔지니어는 리포트를 분석하고, 관련 시나리오를 집중 실행하거나, 설정 분포를 조정하거나, directed 값을 직접 지정하는 방식으로 수동 대응한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Controlled experiment (Section II): four variables with 2, 6, 5, and 7 values give a 420-bin cross. With uniform weights and 5,000 randomizations, the per-bin frequency ranged from 25 (max) to 3 (min). Skewing one variable to 2:8 left 3 bins unreached, and 1:9 left 20 unreached.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>통제 실험(II장): 2, 6, 5, 7개 값을 가진 네 변수로 420-bin cross를 구성했다. 균등 가중치에서 5,000회 randomization 시 bin별 빈도는 최대 25, 최소 3이었다. 한 변수를 2:8로 편향시키면 3개 bin이 도달하지 않았고, 1:9에서는 20개가 도달하지 않았다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>The approach is a loop in which a Python "coverage agent" watches vManager regression runs. It uses IMC for merging and reporting.</p>
+</div>
+<div class="bi-ko">
+<p>이 방법은 Python "coverage agent"가 vManager regression 실행을 감시하는 루프 구조다. 병합과 리포트 생성에는 IMC를 사용한다.</p>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+    A[vManager regression] --&gt; B[Per-test log, coverage report, coverage DB]
+    B --&gt; C[configs.csv and merged overall report]
+    C --&gt; D{Cross coverage 100%?}
+    D -- No --&gt; E[Decision tree ranks random variables per cross]
+    E --&gt; F[Candidate list, 2x predicted count]
+    F --&gt; G[Product set of top-N variables]
+    G --&gt; H[Soft-constraint randomize, max 1000 tests per suite]
+    H --&gt; A
+    D -- Yes --&gt; I[Closure]</code></pre>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Inputs:</strong> the log (constraint values printed with <code>uvm_field_*</code> macros in one line, <code>knobs.begin_elements = -1</code>), the per-test coverage report (cross name, total bins, touched bins, number of constituent coverpoints), and the per-test coverage database.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>입력:</strong> 로그(<code>uvm_field_*</code> 매크로로 출력된 constraint 값을 한 줄로 기록, <code>knobs.begin_elements = -1</code> 설정), 테스트별 커버리지 리포트(cross 이름, 전체 bin 수, touched bin 수, 구성 coverpoint 수), 테스트별 커버리지 DB.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Feature/target formulation:</strong> features are random variables; the target is the bin index of each cross coverage (0 means untouched). The decision tree is chosen as a white-box model, so feature importance, not classification accuracy, is the actual output. Random 80/20 splits make the ranking vary between iterations.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Feature/target 정의:</strong> feature는 random variable이고, target은 각 cross coverage bin의 번호다(0은 해당 테스트에서 bin이 touch되지 않았음을 뜻한다). Decision tree는 white-box 모델이므로 분류 정확도보다 feature 중요도가 실제 산출물이다. 매 반복마다 80/20 무작위 분할을 사용하므로 순위가 반복마다 달라질 수 있다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Prediction use:</strong> the number of top variables is set by the number of constituent coverpoints in the cross. Their product set is compared with the observed value combinations. Combinations not yet generated become constraints for the next suite.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>예측 활용:</strong> 상위 변수 개수는 해당 cross를 구성하는 coverpoint 수로 정한다. 이 변수들의 product set을 실제로 관측된 값 조합과 비교하고, 아직 생성되지 않은 조합을 다음 regression의 constraint로 사용한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Soft constraints:</strong> all generated values are declared <code>soft</code> in <code>randomize() with</code>, so an impossible combination is silently overridden and the test still runs as a normal regression test and feeds the next training round.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Soft constraint:</strong> 생성된 모든 값을 <code>randomize() with</code>에서 <code>soft</code>로 선언한다. 따라서 불가능한 조합은 무시되고 정상 randomization으로 대체되며, 해당 테스트는 일반 regression 테스트로 실행되어 다음 학습 데이터가 된다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Strategies for failure cases:</strong></li>
+<li>Case 1: too few predicted variables → select tests that touched any cross bin and re-add them.</li>
+<li>Case 2: a wrong prediction whose product set is fully covered → add tests as in Case 1.</li>
+<li>Case 3: product-set size greater than the bin count → reject and move to the next candidate.</li>
+<li>Case 4: wrong top-ranked combination → keep the candidate list at 2x size and drop a combination after two regression cycles with no coverage change.</li>
+<li>Case 5: aliased variables with identical values but different names → keep only one in the candidate list.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>실패 상황별 전략:</strong></li>
+<li>Case 1: 예측 변수 수가 부족한 경우 → cross bin을 하나라도 touch한 테스트를 무작위 선택해 suite에 다시 추가한다.</li>
+<li>Case 2: 잘못된 예측으로 생성된 product set이 모두 커버된 경우 → Case 1과 같이 테스트를 추가한다.</li>
+<li>Case 3: product set 크기가 bin 수보다 큰 경우 → 기각하고 candidate list의 다음 조합으로 넘어간다.</li>
+<li>Case 4: 잘못된 상위 조합이 계속 나오는 경우 → candidate list를 2배 크기로 유지하고, 두 regression cycle 동안 커버리지 변화가 없으면 해당 조합을 제외한다.</li>
+<li>Case 5: 값은 같고 이름만 다른 변수 → candidate list에 하나만 남긴다.</li>
+</ul>
+</div>
+</div>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Simple example (13 random variables, 8 coverpoints, 2 crosses):</strong> 4,378 tests total across 5 suites, max 1,000 per suite, starting after an initial 700-test regression. cross_test_xy rose from 57.66% to 94.78% in iteration 3 after a correct prediction, and reached 100% in iteration 5. cross_test_mode reached 100% in iteration 2.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>단순 예제(random variable 13개, coverpoint 8개, cross 2개):</strong> 초기 700 테스트 regression 이후 적용하여, 5개 suite에 suite당 최대 1,000개, 총 4,378 테스트를 실행했다. cross_test_xy는 iteration 3에서 올바른 예측 후 57.66%에서 94.78%로 상승했고, iteration 5에서 100%에 도달했다. cross_test_mode는 iteration 2에서 100%에 도달했다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Real CSI IP in a mobile SoC ISP block:</strong> 20,290 tests in the initial regression, then 74,956 tests total to 100% functional coverage. The baseline did not exceed 70% after more than 100,000 runs. After the first regression, 21 of 134 crosses were unfilled, covering 7,673 bins.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>모바일 SoC ISP 블록의 실제 CSI IP:</strong> 초기 regression에서 20,290 테스트를 실행했고, 총 74,956 테스트 후 functional coverage 100%에 도달했다. 기준 regression은 100,000회 이상 실행 후에도 70%를 넘지 못했다. 첫 regression 후 전체 134개 cross 중 21개가 미충족이었으며, 해당 bin은 7,673개였다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Trajectory types (Figure 7):</strong> cross_cov_19 closed in the next regression from first-run data alone. cross_cov_14 failed several times before succeeding. cross_cov_7 barely moved and closed only through the fallback strategies.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>진행 양상(Figure 7):</strong> cross_cov_19는 첫 regression 데이터만으로 다음 regression에서 닫혔다. cross_cov_14는 여러 번 예측에 실패한 뒤 성공했다. cross_cov_7은 커버리지가 거의 움직이지 않았고, 보완 전략을 통해서만 닫혔다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Conclusion:</strong> closure is achieved without extra DV effort by reusing regression outputs. The method is an all-or-nothing bet per prediction, with random regression acting as the fallback. The paper does not report results beyond these two cases, and it does not give a comparison against other ML-based test-selection methods.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>결론:</strong> regression 산출물을 재사용하여 추가 DV 노력 없이 closure를 달성한다. 예측 하나하나는 전부 아니면 전무(all-or-nothing) 방식이며, 실패 시 랜덤 regression이 대체 역할을 한다. 논문은 이 두 사례 이상의 결과와 다른 ML 기반 테스트 선택 기법과의 비교는 제시하지 않는다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Caveat:</strong> the method assumes coverpoints fill quickly. The paper states that performance degrades when a random variable is non-uniform and its coverpoint fills late.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>한계:</strong> 방법은 coverpoint가 빠르게 채워진다고 가정한다. 논문은 random variable이 비균등이고 coverpoint가 늦게 채워지는 경우 성능이 저하된다고 명시한다.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/Xzi_4Shpd7U" title="[DVCON2025]Reaching 100% Functional Coverage Using Machine Learning: A Journey of Persistent Efforts" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2025]Reaching 100% Functional Coverage Using Machine Learning: A Journey of Persistent Efforts</strong> — <a href="https://www.youtube.com/watch?v=Xzi_4Shpd7U">Watch on YouTube</a> · <a href="../../videos/Xzi_4Shpd7U/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1392 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-cf3b-accelerated-verification-of-nand-flash-memory-using-hw-emula/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Accelerated Verification of NAND Flash Memory using HW Emulator - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#accelerated-verification-of-nand-flash-memory-using-hw-emulator" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Accelerated Verification of NAND Flash Memory using HW Emulator
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:emulation" class="md-tag">Emulation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:nand-flash" class="md-tag">NAND Flash</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:transaction-based-acceleration" class="md-tag">Transaction-Based Acceleration</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:transistor-level" class="md-tag">Transistor-Level</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:uvm" class="md-tag">UVM</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2023">2023</a> › <a href="../../dvcon/by-topic/#emulation">Emulation</a></p>
+<h1 id="accelerated-verification-of-nand-flash-memory-using-hw-emulator">Accelerated Verification of NAND Flash Memory using HW Emulator<a class="headerlink" href="#accelerated-verification-of-nand-flash-memory-using-hw-emulator" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 8. Emulator Test Environment" loading="lazy" src="../../assets/figures/ref-20261018-cf3b.png" /></p>
+<figcaption>Figure 8. Emulator Test Environment — from the original paper (Seyeol Yang et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/1090-Accelerated-Verification-of-NAND-Flash-Memory-using-HW-Emulator.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Seyeol Yang (Samsung Electronics), Byungwoo Kang (Samsung Electronics), Seoyeon Bae (Samsung Electronics), Choi Jaehyeon (Samsung Electronics), Jintae Kim (Samsung Electronics), Dongeun Lee (Samsung Electronics), Junho Ahn (Samsung Electronics)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2023</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Emulation</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-cf3b</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>Samsung ports a mixed RTL/transistor/analog NAND Flash model to the Cadence PZ2 emulator via synthesizable rewrites, RAM-mapped cell arrays, port reduction, and direct register access, reporting a 101.4X runtime speedup over Verilog simulation on 5,000 test cases.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>삼성전자는 RTL, 트랜지스터, 아날로그 모델이 혼합된 NAND Flash DUT를 합성 가능한 형태로 재작성하고, 메모리 셀 배열을 에뮬레이터 RAM에 매핑하며, 포트 축소와 direct register access를 적용해 Cadence PZ2 에뮬레이터에 이식했고, 5,000개 테스트 케이스 기준 Verilog 시뮬레이션 대비 101.4X 런타임 가속을 보고했다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Emulator-compatibility rewrites are mechanical but mandatory: tranif0/tranif1 must become unidirectional nmos/pmos, #delay-controlled inout ports must be split (e.g., with a D-FF), #delay analog units (delay 10ns) are replaced by counter-based logic, and multi-driven nets must be reduced to a single driver or an OR gate.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>에뮬레이터 호환을 위한 재작성은 기계적이지만 필수적이다. tranif0/tranif1은 단방향 nmos/pmos로 바꿔야 하고, #delay로 제어되는 inout 포트는 분리해야 하며(예: D-FF 사용), #delay 아날로그 유닛(delay 10ns)은 카운터 기반 로직으로 대체하고, 다중 구동 신호는 단일 드라이버 또는 OR 게이트로 줄여야 한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Memory cell arrays (Blocks x Word line x String x Bit line bits, which would exceed 100 GB of registers) are mapped onto emulator RAM rather than synthesized into gates and flip-flops; Vth is modeled as an extra 16-bit dimension with a HW/SW split, where the SW side (Erase/Program/Read processor) computes Vth values and reads/writes the indexed Vth cell model.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>메모리 셀 배열(Blocks x Word line x String x Bit line 비트 수, 100GB 이상의 레지스터에 해당)은 게이트와 플립플롭으로 합성하지 않고 에뮬레이터 RAM에 매핑한다. Vth는 셀 모델에 16비트 차원을 추가해 모델링하며, HW/SW로 분할한다. SW 측 Erase/Program/Read processor가 Vth 값을 계산하고 하드웨어의 인덱스 [N] Vth 셀 모델에 읽기/쓰기를 수행한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Port reduction (signals forced into DUT nodes, assertions moved inside the DUT) gave more than 5X runtime improvement, and cell presets for redundant verification gave more than 4X, per the paper's section II figures.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>포트 축소(동작 옵션 신호를 DUT 노드에 강제 적용, assertion을 DUT 내부로 이동)로 5X 이상의 런타임 개선을 얻었고, 중복 검증 제거를 위한 cell preset으로 4X 이상의 개선을 얻었다고 논문 2장에서 보고한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>On 5,000 test cases, Verilog simulation took 3751h; emulation with direct memory access took 186h (X20.2), adding interface optimization 42h (X89.3), and adding assertion-checker move 37h (X101.4). Dump time fell from 5179h to 283h (about 18X).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>5,000개 테스트 케이스 기준 Verilog 시뮬레이션은 3751h, direct memory access 적용 에뮬레이션은 186h(X20.2), 인터페이스 최적화 추가 시 42h(X89.3), assertion checker 이동 추가 시 37h(X101.4)였다. Dump 시간은 5179h에서 283h로(약 18X) 줄었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The trade-off is compile time: emulation compile was 2.5h vs 0.3h for simulation (about 8X slower). The authors judge this acceptable because frequent design changes and large regression volume dominate the total cost, though the I/O datapath timing is still better checked in timing-accurate simulation.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>트레이드오프는 컴파일 시간이다. 에뮬레이션 컴파일은 2.5h로 시뮬레이션 0.3h 대비 약 8X 느리다. 저자들은 빈번한 설계 변경과 대량의 회귀 테스트가 전체 비용을 지배하므로 이를 수용 가능하다고 판단했지만, I/O 데이터패스의 타이밍은 여전히 타이밍 정확 시뮬레이션에서 검증하는 것이 낫다고 밝힌다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>NAND Flash feature sets grow with each generation while the development and verification schedule stays roughly fixed. Each new algorithm multiplies the number of test cases, and a few very long simulations consume the limited simulation resources.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>NAND Flash는 세대가 바뀔 때마다 기능이 늘어나지만 개발 및 검증 일정은 거의 그대로이다. 새 알고리즘마다 테스트 케이스 수가 크게 늘고, 소수의 매우 긴 시뮬레이션이 제한된 시뮬레이션 자원을 소모한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The DUT mixes design styles that are not directly emulatable: RTL, gate-level, transistor-level netlists (bidirectional <code>tranif0</code>/<code>tranif1</code>), and analog behavioral models (delay units, pumps, voltage generators) that are non-synthesizable.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>DUT는 에뮬레이션에 바로 올릴 수 없는 여러 설계 방식이 섞여 있다. RTL, 게이트 수준, 트랜지스터 수준 넷리스트(양방향 <code>tranif0</code>/<code>tranif1</code>), 그리고 합성 불가능한 아날로그 행동 모델(지연 유닛, 펌프, 전압 발생기)이 포함된다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The core cell model is non-trivial to map. Naively synthesizing all word lines and bit lines would need more than 100 GB of registers, and per-cell Vth modeling adds further size.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>코어 셀 모델의 매핑도 단순하지 않다. 모든 워드라인과 비트라인을 그대로 합성하려면 100GB 이상의 레지스터가 필요하며, 셀별 Vth 모델링은 크기를 더 키운다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Goal: run regression on the Cadence PZ2 emulator with transaction-based acceleration (TBA) while keeping the existing UVM-based simulation testbench.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>목표: 기존 UVM 기반 시뮬레이션 테스트벤치를 유지하면서 transaction-based acceleration(TBA)을 적용해 Cadence PZ2 에뮬레이터에서 회귀 테스트를 수행하는 것이다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>Flow of the work (diagram summarizes the structure described in the paper):</p>
+</div>
+<div class="bi-ko">
+<p>작업 흐름은 다음과 같다(다이어그램은 논문에서 설명한 구조를 요약한 것이다).</p>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+    A["Mixed DUT: RTL / gate / transistor / analog model"] --&gt; B["Synthesizable conversion rules"]
+    B --&gt; C["Core model: Scheduler + RAM-mapped cell array + Vth model"]
+    C --&gt; D["DUT on Cadence PZ2 emulator"]
+    E["UVM testbench on simulator host"] &lt;--&gt;|"TBA: fewer ports, direct register access"| D</code></pre>
+<div class="bi">
+<div class="bi-en">
+<ol>
+<li><strong>Synthesizable conversion of design styles</strong></li>
+<li>Bidirectional transistors (<code>tranif0</code>/<code>tranif1</code>) are rewritten as unidirectional <code>nmos</code>/<code>pmos</code> with correct source/drain direction.</li>
+<li>Bidirectional ports controlled by <code>#delay</code> (feedback through inout in analog units) are split into separate ports; the precedence that <code>#delay</code> enforced in simulation is restored with a D-FF.</li>
+<li>Delay-unit models are replaced by counter-driven logic (the paper's DELAY_MODEL uses a CLK10-driven counter with a parameter selecting 10 or 20 cycles).</li>
+<li>Multi-driven signals are removed by keeping one driver or ORing the outputs at the higher level.</li>
+</ol>
+</div>
+<div class="bi-ko">
+<ol>
+<li><strong>설계 방식별 합성 가능 변환</strong></li>
+<li>양방향 트랜지스터(<code>tranif0</code>/<code>tranif1</code>)는 소스/드레인 방향을 올바르게 맞춘 단방향 <code>nmos</code>/<code>pmos</code>로 다시 작성한다.</li>
+<li><code>#delay</code>로 제어되는 양방향 포트(아날로그 유닛에서 inout을 통한 피드백)는 별도 포트로 분리하고, 시뮬레이션에서 <code>#delay</code>가 보장하던 선후 관계는 D-FF로 복원한다.</li>
+<li>지연 유닛 모델은 카운터 기반 로직으로 대체한다(논문의 DELAY_MODEL은 CLK10으로 구동되는 카운터를 사용하며, 파라미터로 10 또는 20 사이클을 선택한다).</li>
+<li>다중 구동 신호는 단일 드라이버를 유지하거나 상위 계층에서 출력을 OR로 묶어 제거한다.</li>
+</ol>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ol>
+<li><strong>Core behavior model</strong></li>
+<li>Data latch: the page buffer's set/reset/read logic, originally written with always-blocks that are non-synthesizable, is replaced by a new Scheduler Module. Its Synchronizer aligns asynchronous controls (SO_PRECHARGE, MON_S, SET_S, RESET_S) to Clock/Reset, and a Re-timer makes the synchronizer outputs mutually exclusive.</li>
+<li>Memory cell: the array is stored in emulator RAM rather than gates/flip-flops. Programmed cells are 0 and erased cells are 1. Program/read transfer data between the page buffer and the array.</li>
+<li>Vth: one 16-bit dimension is added to the cell model so that each cell's Vth can be tracked. Because the full model is too large to synthesize, the Erase/Program/Read processor runs in software, computes Vth, and reads/writes the Vth cell model at index [N] in hardware.</li>
+</ol>
+</div>
+<div class="bi-ko">
+<ol>
+<li><strong>코어 동작 모델</strong></li>
+<li>데이터 래치: 페이지 버퍼의 set/reset/read 로직은 원래 합성 불가능한 always 블록으로 작성되어 있었으며, 이를 새로운 Scheduler 모듈로 대체한다. Scheduler의 Synchronizer는 비동기 제어 신호(SO_PRECHARGE, MON_S, SET_S, RESET_S)를 Clock/Reset에 맞추고, Re-timer는 Synchronizer 출력이 상호 배타적이 되도록 한다.</li>
+<li>메모리 셀: 셀 배열은 게이트와 플립플롭 대신 에뮬레이터 RAM에 저장한다. 프로그램된 셀은 0, 소거된 셀은 1로 표현한다. 프로그램과 읽기 과정에서 데이터는 페이지 버퍼와 셀 배열 사이를 이동한다.</li>
+<li>Vth: 셀 모델에 16비트 차원을 추가해 각 셀의 Vth를 추적한다. 전체 모델은 합성하기에 너무 크므로, Erase/Program/Read processor를 SW에서 실행해 Vth를 계산하고, 하드웨어의 인덱스 [N] Vth 셀 모델에 읽기/쓰기를 수행한다.</li>
+</ol>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ol>
+<li><strong>Emulation performance improvements</strong></li>
+<li>Port reduction: the simulator-to-emulator interface carried every IO/ALE/CLE-related port, and the transfer of all port states on each change was costly. Operation-option signals are instead forced at the corresponding nodes, and assertions are moved inside the emulated DUT, with the necessary signals made synthesizable at the top module.</li>
+<li>Direct register (memory) access: WRITE/READ data bypasses the I/O port behavior and goes directly to the register/memory. The I/O datapath's timing-dependent behavior is still left to timing-accurate simulation.</li>
+<li>Cell presets remove unnecessary duplicate verification.</li>
+</ol>
+</div>
+<div class="bi-ko">
+<ol>
+<li><strong>에뮬레이션 성능 개선 기법</strong></li>
+<li>포트 축소: 시뮬레이터와 에뮬레이터 사이 인터페이스가 IO/ALE/CLE 관련 포트를 모두 전달했고, 변화가 생길 때마다 모든 포트 상태를 전송하는 것이 비용이 컸다. 동작 옵션 신호는 해당 노드에 강제 적용하고, assertion은 에뮬레이트되는 DUT 내부로 옮기며, 필요한 신호는 최상위 모듈에서 합성 가능하도록 변경했다.</li>
+<li>Direct register(memory) access: WRITE/READ 데이터를 I/O 포트 동작 대신 레지스터/메모리로 직접 전달한다. 타이밍에 의존하는 I/O 데이터패스 동작은 여전히 타이밍 정확 시뮬레이션에서 검증한다.</li>
+<li>Cell preset: 불필요한 중복 검증을 제거한다.</li>
+</ol>
+</div>
+</div>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Table 1 (5,000 test cases, 18 KB data size with I/O interface, runtime in hours):</li>
+<li>Verilog simulation: 3751h</li>
+<li>Emulation with I/O interface: 749h (X5)</li>
+<li>
+<ul>
+<li>Memory direct access: 186h (X20.2)</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Interface optimization: 42h (X89.3)</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Assertion checker move: 37h (X101.4)</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>표 1(테스트 케이스 5,000개, I/O 인터페이스 사용 시 데이터 크기 18KB, 런타임 단위 시간):</li>
+<li>Verilog 시뮬레이션: 3751h</li>
+<li>I/O 인터페이스 사용 에뮬레이션: 749h (X5)</li>
+<li>
+<ul>
+<li>Memory direct access: 186h (X20.2)</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>인터페이스 최적화: 42h (X89.3)</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Assertion checker 이동: 37h (X101.4)</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Table 2: compile time 0.3h (simulation) vs 2.5h (emulation), about 8X slower. Run time 3751h vs 37h (101X). Dump time 5179h vs 283h (18X).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>표 2: 컴파일 시간은 시뮬레이션 0.3h, 에뮬레이션 2.5h로 약 8X 느리다. 런타임은 3751h 대 37h(101X). Dump 시간은 5179h 대 283h(18X).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The abstract claims more than 100X over the Verilog simulator. Section II states "more than five times" for the synthesizable model and port reduction, and "more than four times" for cell presets. These are reported as separate contributions in the paper, not a single consolidated breakdown.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>초록은 Verilog 시뮬레이터 대비 100X 이상을 주장한다. 2장에서는 합성 가능 모델과 포트 축소에 대해 "5배 이상", cell preset에 대해 "4배 이상"이라고 보고한다. 논문은 이를 하나로 통합한 분해 결과가 아니라 별도 기여로 제시한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Conclusions: the emulator environment lets the team verify more complex Flash behaviors within the same schedule and can serve as a replacement for functional verification and long-running simulation. System-level NAND operation is expected to be verifiable early. The paper gives no coverage metrics, no discussion of debug experience, and no details on the Vth processor interface beyond the high-level description.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>결론: 에뮬레이터 환경으로 같은 일정 안에서 더 복잡한 Flash 동작을 검증할 수 있으며, 기능 검증과 장시간 시뮬레이션을 대체하는 수단으로 유용하다고 본다. 시스템 수준 NAND 동작도 조기에 검증할 수 있을 것으로 기대한다. 다만 커버리지 지표, 디버그 경험에 대한 논의, Vth processor 인터페이스의 상세 내용은 고수준 설명 이상으로 제시되지 않는다.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/vumYRdATl74" title="[DVCON2023]Accelerated Verification of NAND Flash Memory using HW Emulator" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2023]Accelerated Verification of NAND Flash Memory using HW Emulator</strong> — <a href="https://www.youtube.com/watch?v=vumYRdATl74">Watch on YouTube</a> · <a href="../../videos/vumYRdATl74/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

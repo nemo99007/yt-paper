@@ -1,0 +1,1383 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-ea2b-ai-accelerating-coverage-closure-using-intelligent-stimulus/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>AI - accelerating coverage closure using intelligent stimulus generation - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai-accelerating-coverage-closure-using-intelligent-stimulus-generation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI - accelerating coverage closure using intelligent stimulus generation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:coverage-closure" class="md-tag">Coverage Closure</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:functional-coverage" class="md-tag">Functional Coverage</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:input-bias" class="md-tag">Input Bias</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:soc-interconnect" class="md-tag">SoC Interconnect</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:xcelium-simai" class="md-tag">Xcelium SimAI</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2025">2025</a> › <a href="../../dvcon/by-topic/#verification">Verification</a></p>
+<h1 id="ai-accelerating-coverage-closure-using-intelligent-stimulus-generation">AI - accelerating coverage closure using intelligent stimulus generation<a class="headerlink" href="#ai-accelerating-coverage-closure-using-intelligent-stimulus-generation" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 3 Script utilizing input files to generate plug n play coverage files." loading="lazy" src="../../assets/figures/ref-20261018-ea2b.png" /></p>
+<figcaption>Figure 3 Script utilizing input files to generate plug n play coverage files. — from the original paper (Jainender Kumar et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/1100.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Jainender Kumar (Samsung-India), Ronak Bhatt (Samsung-India), Garima Srivastava (Samsung-India), Ashutosh Sinha (Cadence-India), Prashant Teotia (Cadence-India)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2025</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-ea2b</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>The paper proposes using the Cadence Xcelium SimAI "input-bias" feature, driven by a Perl-generated per-initiator/target bias file, to break coverage saturation in SoC bus-matrix regressions, reporting roughly 54–56% simulation-time reduction on a ~600K-bin mobile fabric.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>Cadence Xcelium SimAI의 "input-bias" 기능과 Perl 스크립트로 생성한 initiator/target별 바이어스 파일을 활용해 SoC 버스 매트릭스 regression의 커버리지 포화를 해소하는 방법을 제안하며, 약 600K bin 규모 모바일 패브릭에서 시뮬레이션 시간을 54~56% 이상 줄였다고 보고한다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Cross-coverage explodes with interconnect size: the Table I SoCs have 134–202 initiators, 383–598 targets, and 594K–1659K cover bins, and the paper states that a multi-die setup of the same die raises bin count 3–4x.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Interconnect 규모에 따라 cross coverage가 급증한다. Table I의 SoC는 initiator 134–202개, target 383–598개, cover bin 594K–1659K개이며, 같은 die를 multi-die로 구성하면 bin 수가 3–4배 증가한다고 문서는 밝힌다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Plain randomization saturates because it keeps hitting the same bins. The input-bias file reweights constraints toward non-hit bins while keeping stimulus random, which the paper credits with avoiding saturation.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>단순 randomization은 같은 bin을 반복해서 맞히기 때문에 포화된다. input-bias 파일은 stimulus의 무작위성을 유지하면서 제약 조건의 가중치를 미달성 bin 쪽으로 재조정하여 포화를 피한다고 주장한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Reported results on a ~100-initiator / ~380-target fabric with ~600K bins: 89%→100% coverage took ~8.4K sim hours originally versus ~3.8K with AI (&gt;54% reduction); 46%→100% took ~8.7K versus ~3.8K (&gt;56%). Training earlier in the regression gave larger gains.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>약 100개 initiator, 약 380개 target, 약 600K bin 규모 패브릭의 결과: 89%→100% 도달에 원래 약 8.4K 시뮬레이션 시간이 필요했으나 AI 적용 시 약 3.8K로 줄었다(54% 이상 감소). 46%→100%는 약 8.7K에서 약 3.8K로 줄었다(56% 이상). regression 초기에 학습시킬수록 이득이 컸다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The bias file lists only legal initiator–target–bin combinations, e.g., APB passive targets are restricted to READ, so simulation time is not wasted on illegal crosses. Because the same Perl script generates it, the setup is portable across projects.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>바이어스 파일은 합법적인 initiator–target–bin 조합만 포함한다. 예를 들어 APB passive target은 READ만 허용되어 불법 cross에 시간을 낭비하지 않는다. 같은 Perl 스크립트로 생성되므로 프로젝트 간 이식이 쉽다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Caveat: all evidence comes from a single proprietary-tool study on anonymized designs. The text is internally inconsistent (saturation at 98% vs. '89% to 98%', and a 30% headline vs. 54–56% in Table II), and it omits ML model details and run-to-run variance, so teams should validate on their own design.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>주의: 근거는 독점 도구를 사용한 단일 산업 사례 연구 하나뿐이다. 본문도 내부적으로 일관되지 않다(98% 포화 vs. '89%에서 98%', 헤드라인 30% vs. Table II의 54–56%). ML 모델 세부 사항과 실행 간 편차도 생략되어 있으므로, 자신의 설계에서 검증해야 한다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Modern SoC bus matrices connect many initiators and targets over mixed protocols. Cover groups cross parameters such as initiator, target, size, length, burst type, and direction. The paper cites an example of 150 initiators × 500 targets producing more than half a million bins.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>최신 SoC 버스 매트릭스는 다수의 initiator와 target을 혼합 프로토콜로 연결한다. Cover group은 initiator, target, size, length, burst 종류, direction 등 파라미터의 교차곱으로 구성된다. 문서는 150 initiator × 500 target 예시에서 50만 개 이상의 bin이 생성된다고 제시한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Randomized stimulus saturates: after a point, the randomization engine keeps hitting the same bins, so successive iterations add little coverage. Closure then takes thousands of iterations and substantial manual effort, which lengthens time-to-market.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Randomized stimulus는 포화된다. 일정 시점 이후 randomization 엔진이 같은 bin을 반복해서 맞히므로 반복 실행에서 커버리지 증가가 미미해진다. 이에 따라 closure에 수천 회의 반복과 많은 수작업이 필요하고 time-to-market이 늘어난다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Illegal or unreachable bins waste simulation time, and simulation farms have memory and compute limits.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>불법 또는 도달 불가능한 bin은 시뮬레이션 시간을 낭비하며, 시뮬레이션 팜은 메모리와 연산 자원에 제약이 있다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Table I reports 134/149/143/202 initiators, 400/383/407/598 targets, and 1033K/604K/594K/1659K cover bins for SoC 1–4.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Table I은 SoC 1–4의 initiator 134/149/143/202개, target 400/383/407/598개, cover bin 1033K/604K/594K/1659K개를 보고한다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p><strong>Coverage generation (Perl script).</strong> Inputs are initiator constraints, target address space, and initiator–target reachability. The script builds per-initiator covergroups that cross BurstLength, BurstKind, BurstSize, and Direction, gated by <code>iff (target_target == TARGET_n)</code>. It also emits monitor connection files for a UVM environment and filters illegal or invalid bins. Initiator and target databases (Figures 4 and 5) hold these fields. For APB, active targets allow READ and WRITE while passive targets allow READ only, which prevents illegal crosses and RTL-altering writes.</p>
+</div>
+<div class="bi-ko">
+<p><strong>커버리지 생성 (Perl 스크립트).</strong> 입력은 initiator 제약 조건, target 주소 공간, initiator–target 도달성 정보이다. 스크립트는 BurstLength, BurstKind, BurstSize, Direction을 교차하고 <code>iff (target_target == TARGET_n)</code>로 게이팅한 initiator별 covergroup을 생성한다. 또한 UVM 환경용 monitor 연결 파일을 출력하고, 불법 또는 무효 bin을 걸러낸다. Initiator 및 target 데이터베이스(Figure 4, 5)가 이 필드를 관리한다. APB의 경우 active target은 READ와 WRITE를 허용하고 passive target은 READ만 허용하여, 불법 cross와 RTL 동작을 바꿀 수 있는 쓰기를 방지한다.</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p><strong>AI flow.</strong> The flow has three stages:</p>
+</div>
+<div class="bi-ko">
+<p><strong>AI 흐름.</strong> 세 단계로 구성된다.</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Base regression:</strong> The simulator logs all random variables during any regression, regardless of coverage level. The AI tool then emits configuration/path info, coverage bit-vectors, and randomization data.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Base regression:</strong> 시뮬레이터는 커버리지 수준과 무관하게 모든 regression에서 random 변수를 기록한다. AI 도구는 이로부터 설정/경로 정보, 커버리지 bit-vector, randomization 데이터를 생성한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Synthesis:</strong> An iterative learning loop, with user-defined use cases and convergence policies (for example, coverage maximization to target uncovered bins), produces a synthesized regression and saves models and reports.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Synthesis:</strong> 사용자가 정의한 use case와 수렴 정책(예: 미커버 bin을 겨냥하는 coverage maximization)을 바탕으로 반복 학습 루프를 돌려 synthesized regression을 만들고, 모델과 리포트를 저장한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Synthesized run:</strong> A one-time input-bias file, generated by the same Perl script, specifies valid bins per initiator and accessible target. The example file restricts initiator index 83 and target index 210 to Direction [1,2], Length [1], Kind [2], and Size [1,2,4,8]. The learning matrix is updated each run.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Synthesized run:</strong> Perl 스크립트가 생성한 1회성 input-bias 파일이 initiator별, 접근 가능한 target별 유효 bin을 지정한다. 예시 파일은 initiator 인덱스 83과 target 인덱스 210에 대해 Direction [1,2], Length [1], Kind [2], Size [1,2,4,8]로 제한한다. 매 실행마다 학습 행렬이 갱신된다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Claimed features: automatic constraint learning; zero-hit cover-group detection that drives the convergence strategy; biased stimulus that keeps randomization; and elimination of redundant tests.</p>
+</div>
+<div class="bi-ko">
+<p>주장하는 기능: 자동 제약 학습, 수렴 전략을 결정하는 zero-hit cover group 탐지, randomization을 유지하는 바이어스 stimulus, 중복 테스트 제거.</p>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+    A[Perl script: constraints, address map, reachability] --&gt; B[Per-initiator covergroups + monitor files]
+    A --&gt; C[Input-bias file: legal initiator/target/bin sets]
+    B --&gt; D[Base random regression]
+    D --&gt; E[AI tool: learning model, coverage bit-vectors]
+    E --&gt; F[Synthesized regression: coverage-maximization policy]
+    C --&gt; F
+    F --&gt; G{Coverage closed?}
+    G -- No, zero-hit groups remain --&gt; E
+    G -- Yes --&gt; H[Closure]</code></pre>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Mobile platform</strong> (~100 initiators, ~380 targets, &gt;300K target bins, ~600K total): the original regression needed &gt;8,400 hours after reaching ~98% coverage, while the input-bias approach reached 100% in ~3,800 hours.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>모바일 플랫폼</strong> (약 100 initiator, 약 380 target, target bin 30만 개 이상, 전체 약 60만 bin): 원래 regression은 약 98% 커버리지 도달 후 100%까지 8,400시간 이상이 필요했으나, input-bias 방식은 약 3,800시간에 100%에 도달했다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Table II:</strong> 89%→100% took ~8.4K hours originally versus ~3.8K with AI (&gt;54% reduction). 46%→100% took ~8.7K hours versus ~3.8K (&gt;56%).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Table II:</strong> 89%→100%는 원래 약 8.4K시간에서 AI 적용 시 약 3.8K시간으로 줄었다(54% 이상 감소). 46%→100%는 약 8.7K시간에서 약 3.8K시간으로 줄었다(56% 이상).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Hard-to-hit cover group</strong> (wlbt_core, 9,250 bins): the original regression ran &gt;8,700 hours to ~85%, while input bias reached 100% in ~3,800 hours.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Hard-to-hit cover group</strong> (wlbt_core, 9,250 bin): 원래 regression은 약 85%까지 8,700시간 이상이 걸렸으나, input bias는 약 3,800시간에 100%에 도달했다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Figure 7 shows that applying AI earlier in the regression yields larger gains.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Figure 7은 regression 초기에 AI를 적용할수록 이득이 크다는 것을 보여준다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The conclusion claims 100% closure in at least 30% less time across SoCs with 0.7–1M bins, and says the method is scalable, portable, and applicable to multi-die designs.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>결론은 0.7–1M bin 규모 SoC에서 최소 30% 적은 시간에 100% closure를 달성한다고 주장하며, 방법이 확장 가능하고 이식성이 있으며 multi-die 설계에도 적용 가능하다고 밝힌다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Limitations: the evidence is a single industrial study using a proprietary tool. The paper does not detail the ML model, the number of trials, or run-to-run variance. Its headline figures are also inconsistent (98% saturation vs. "89% to 98%", and 30% vs. 54–56%).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>한계: 근거는 독점 도구를 사용한 단일 산업 사례 연구이다. ML 모델 세부 사항, 시행 횟수, 실행 간 편차는 제시되지 않는다. 헤드라인 수치도 일관되지 않다(98% 포화 vs. "89%에서 98%", 30% vs. 54–56%).</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/3KjFoF6fVDU" title="[DVCON2025]AI - accelerating coverage closure using intelligent stimulus generation " loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p>**[DVCON2025]AI - accelerating coverage closure using intelligent stimulus generation ** — <a href="https://www.youtube.com/watch?v=3KjFoF6fVDU">Watch on YouTube</a> · <a href="../../videos/3KjFoF6fVDU/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

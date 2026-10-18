@@ -1,0 +1,1407 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-2fe4-automated-rtl-update-for-abutted-design/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Automated RTL Update for Abutted Design - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#automated-rtl-update-for-abutted-design" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Automated RTL Update for Abutted Design
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:abutted-floorplan" class="md-tag">Abutted Floorplan</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:ip-xact" class="md-tag">IP-XACT</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:json-metadata" class="md-tag">JSON Metadata</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:mobile-ap-soc" class="md-tag">Mobile AP SoC</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:rtl-automation" class="md-tag">RTL Automation</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2020">2020</a> › <a href="../../dvcon/by-topic/#eda">EDA</a></p>
+<h1 id="automated-rtl-update-for-abutted-design">Automated RTL Update for Abutted Design<a class="headerlink" href="#automated-rtl-update-for-abutted-design" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Fig. 7. RTL Update Automation Flow" loading="lazy" src="../../assets/figures/ref-20261018-2fe4.png" /></p>
+<figcaption>Fig. 7. RTL Update Automation Flow — from the original paper (Wonkyung Lee et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/automated-rtl-update-for-abutted-design_paper.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Wonkyung Lee (Samsung Electronics Co., Ltd., Seoul, Korea), Ayoung Kwon (Samsung Electronics Co., Ltd., Seoul, Korea), Soyeong Kwon (Samsung Electronics Co., Ltd., Seoul, Korea), Youngsik Kim (Samsung Electronics Co., Ltd., Seoul, Korea), Seonil Brian Choi (Samsung Electronics Co., Ltd., Seoul, Korea)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2020</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>EDA</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-2fe4</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>The paper proposes a metadata-driven flow that takes JSON-described abutted-floorplan change requests from physical designers and automatically regenerates block-level and SoC-top RTL connections via IP-XACT-based scripts, with version tags for cross-block consistency.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>이 논문은 물리 설계자가 JSON으로 기술한 abutted floorplan 변경 요청을 받아, IP-XACT 기반 스크립트로 블록 및 SoC top RTL 연결을 자동 재생성하고, 블록 간 일관성을 버전 태그로 보장하는 메타데이터 기반 흐름을 제안한다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Abutted floorplan removes top-level routing channels to save area, but it forces many RTL changes late in the flow (test-mode control IP moves, feed-through routing, register slices, and split flip-flops), which must be repeated whenever P&amp;R changes.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Abutted floorplan은 top-level routing 채널을 제거해 면적을 줄이지만, P&amp;R 이후 feed-through 연결, SoC top 로직의 블록 내 재배치, register slice, flip-flop 분리 등 많은 RTL 변경을 늦은 단계에 요구하며 P&amp;R이 바뀔 때마다 반복된다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The approach records each abutted change request (abutted key, source, destination, and block path) in a JSON file; Python tooling with a template engine turns these into integration scripts for function blocks and SoC top.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>변경 요청은 abutted key, source, destination, path(블록 목록)로 구성된 JSON 파일에 기록되며, Python 파서와 템플릿 엔진이 이를 블록 및 SoC top 통합 스크립트로 변환한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Connection changes from the proposed flow: the test-mode control IP port connections doubled, data-communication port connections rose 7.3x, and pad test-signal port connections rose 6.9x (about 2 to 7x overall); the example data path went from 3 to 11 interface connections plus 2 register slice instances.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>제안 흐름에서 연결 수 변화는 다음과 같다. 테스트 모드 제어 IP 포트 연결은 두 배가 되었고, 블록 간 데이터 통신 포트 연결은 7.3배, 패드 테스트 신호 포트 연결은 6.9배 증가했으며, 전체적으로 최소 2~7배 증가했다. 예시 데이터 경로는 인터페이스 연결 3개에서 11개로, register slice 인스턴스 2개가 추가되었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Version tagging of every connection written by the scripts, plus a version check at block delivery, keeps all function blocks in sync when many blocks are updated in parallel.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>스크립트가 작성하는 모든 연결에 고유 버전 태그를 붙이고 블록을 SoC top 통합에 전달할 때 이를 확인하여, 여러 블록을 병렬로 갱신할 때도 블록 간 불일치를 막는다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Functional verification runs on RTL without abutted information (since abutted changes are functionally neutral), and the modified connections are then compared against the original with equivalence checking.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>abutted 변경은 기능적으로 중립이므로 abutted 정보 없이 RTL에서 기능 검증을 수행하고, 이후 원본 RTL과의 연결 일치 여부를 equivalence check로 확인한다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Abutted floorplan reduces chip area by eliminating top-level routing channels. Physical designers then request RTL changes after P&amp;R: feed-through connections that pass through intermediate function blocks, and relocation of SoC-top logic into function blocks.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Abutted floorplan은 top-level 라우팅 채널을 제거해 칩 면적을 줄인다. 그 결과 물리 설계자는 P&amp;R 이후 중간 기능 블록을 통과하는 feed-through 연결과, SoC top 로직을 기능 블록 내부로 옮기는 RTL 변경을 요청한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The SoC is split into many function blocks (about 30 in the example) because of EDA capacity limits. RTL edits must therefore be made by many block integration engineers in parallel, quickly, and without mismatch between blocks.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>EDA 툴 용량 한계 때문에 SoC는 많은 기능 블록으로 나뉘며(예시에서 약 30개), RTL 수정은 여러 블록 통합 엔지니어가 동시에, 빠르고 블록 간 불일치 없이 수행해야 한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>In the existing IP-XACT flow, interface connections cover about 50% of ports. The remaining ad-hoc connections number over 50,000 in a typical SoC. Manual editing of these connections is error-prone and slow.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>기존 IP-XACT 흐름에서 인터페이스 연결은 전체 포트의 약 50%를 차지한다. 나머지 ad-hoc 연결은 일반적인 SoC에서 50,000개를 넘는다. 이를 수작업으로 수정하면 오류가 나기 쉽고 시간이 많이 든다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Three abutted change categories were identified: (1) relocation of the test-mode control IP (about 50 test modes), (2) register slices for inter-block data communication on top-level channels, and (3) splitting pad-to-block test flip-flops into per-block instances.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>식별된 abutted 변경 유형은 세 가지다. (1) 테스트 모드 제어 IP 이동(테스트 모드 약 50개), (2) top-level 채널 기반 블록 간 데이터 통신용 register slice, (3) 패드-블록 간 테스트 flip-flop을 블록별로 분리하는 작업.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>IP-XACT as metadata.</strong> Bus definitions, abstraction definitions, components, and designs are used. Components hold port, bus-interface, SFR, and file information. Designs hold instances and connections. Interface connections are made by matching logical port names. Ad-hoc connections are made by explicit port-to-port links and tie-offs (0/1).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>메타데이터로서의 IP-XACT.</strong> Bus definition, abstraction definition, component, design을 사용한다. Component에는 포트, bus interface, SFR, 파일 정보가 들어가고, design에는 인스턴스와 연결 정보가 들어간다. 인터페이스 연결은 논리 포트 이름 매칭으로 이루어지고, ad-hoc 연결은 명시적 포트 간 연결과 상수(0/1) 연결로 이루어진다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>System-level IP automation.</strong> Specifications are entered in a dedicated editor. Scripts generate the RTL for the test-mode IP, instantiate it, and wire its ports. Block designers execute these scripts for integration.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>시스템 레벨 IP 자동화.</strong> 전용 편집기로 사양을 입력한다. 스크립트가 테스트 모드 IP의 RTL을 생성하고, 인스턴스화하며, 포트를 연결한다. 블록 설계자는 이 스크립트를 실행해 통합을 수행한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>JSON request format.</strong> Each abutted change is described by an abutted key (test-control IP name, register-slice data-communication IP, or pad test-signal IP), a source, a destination, and a path (ordered block list). Example: the direct C-to-E connection becomes C to E routed through H.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>JSON 요청 형식.</strong> 각 abutted 변경은 abutted key(테스트 제어 IP 이름, 데이터 통신용 register slice IP, 또는 패드 테스트 신호 IP), source, destination, path(순서가 있는 블록 목록)로 기술한다. 예: 직접 연결된 C-E가 H를 경유하도록 바뀐다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Automation implementation.</strong> Python libraries parse the JSON and generate integration scripts through a template engine. Block scripts run automatically at the final step of block integration. Block RTL is then released to SoC top, where the top-level connection script is run.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>자동화 구현.</strong> Python 라이브러리가 JSON을 파싱하고 템플릿 엔진으로 통합 스크립트를 생성한다. 블록 스크립트는 블록 통합의 마지막 단계에서 자동 실행된다. 이후 블록 RTL이 SoC top으로 전달되고, top-level 연결 스크립트가 실행된다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Version tagging.</strong> Every connection written by the scripts carries a unique version tag. The tag is checked when each block is delivered to SoC-top integration, so mismatched blocks are caught.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>버전 태깅.</strong> 스크립트가 작성하는 모든 연결에 고유 버전 태그를 붙인다. 블록을 SoC top 통합에 전달할 때 이 태그를 검사해 버전 불일치를 찾아낸다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Verification.</strong> Functional simulation is run on RTL without abutted information, since the change is functionally neutral. Equivalence checking then confirms that the connections in the abutted RTL match the original.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>검증.</strong> abutted 정보 없이 RTL에서 기능 시뮬레이션을 수행한다. 기능적 변경이 없기 때문이다. 이후 equivalence check로 abutted RTL의 연결이 원본과 일치하는지 확인한다.</li>
+</ul>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart TD
+    A["Physical designer: abutted P&amp;R result"] --&gt; B["JSON: abutted key, source, destination, path"]
+    B --&gt; C["Python parser and template engine"]
+    C --&gt; D["Block integration scripts"]
+    C --&gt; E["SoC top connection script"]
+    D --&gt; F["Block RTL updated and version-tagged"]
+    F --&gt; G["Version check at SoC top delivery"]
+    E --&gt; G
+    G --&gt; H["RTL to physical and verification"]
+    H --&gt; I["Equivalence check vs original RTL"]</code></pre>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Port connections for the test-mode control IP doubled.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>테스트 모드 제어 IP의 포트 연결 수가 두 배가 되었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Port connections for data communication between blocks increased 7.3x, and for pad test-signal transmission 6.9x. The paper describes the overall increase as at least 2x to 7x.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>블록 간 데이터 통신 포트 연결은 7.3배, 패드 테스트 신호 전송 포트 연결은 6.9배 증가했다. 논문은 전체 증가폭을 최소 2배에서 7배로 기술한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>In the data-path example (Fig. 5), the connections for the Block A to Block E path went from 3 interface connections to 11, plus 2 register slice instances in Blocks B and D.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>데이터 경로 예시(Fig. 5)에서 Block A에서 Block E로 가는 연결은 인터페이스 연결 3개에서 11개로 늘었고, Block B와 D에 register slice 인스턴스 2개가 추가되었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>A bus interface connection covers 80 port connections in the data-communication case.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>데이터 통신 사례에서 bus interface 연결 하나가 80개의 포트 연결을 담당한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The paper states that all new connections are generated automatically "within thousands of seconds" and that RTL for blocks and SoC top was produced without errors. The source text does not give Table 1 values, so no further quantitative breakdown is reported.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>논문은 신규 연결이 모두 "수천 초(within thousands of seconds)" 안에 자동 생성되고, 블록 및 SoC top RTL이 오류 없이 생성되었다고 밝힌다. 원문에는 Table 1의 수치가 없으므로 더 구체적인 정량 분석은 보고되지 않는다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The authors conclude that this flow lets late-stage abutted changes be applied repeatedly, with no added turnaround time (TAT) and no human-induced errors, despite the large RTL delta. The solution was validated on an actual mobile AP SoC project.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>저자들은 이 흐름으로 늦은 단계의 abutted 변경을 반복 적용할 수 있으며, RTL 변경량이 크더라도 사람에 의한 오류 없이 TAT를 늘리지 않는다고 결론짓는다. 실제 mobile AP SoC 프로젝트에 적용해 검증했다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Limitations: the text reports no quantitative comparison against manual effort beyond the connection counts, and it does not describe the tool or standard versions used.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>한계: 연결 수 외에 수작업 대비 공수에 대한 정량 비교가 없고, 사용한 툴이나 표준 버전은 설명되지 않는다.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/49BqlsA06io" title="[DVCon2020] Automated RTL Update for Abutted Design" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCon2020] Automated RTL Update for Abutted Design</strong> — <a href="https://www.youtube.com/watch?v=49BqlsA06io">Watch on YouTube</a> · <a href="../../videos/49BqlsA06io/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

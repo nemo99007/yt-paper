@@ -1,0 +1,1344 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-271b-automation-methodology-for-bus-performance-verification-usin/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Automation Methodology for Bus Performance Verification using IP-XACT - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#automation-methodology-for-bus-performance-verification-using-ip-xact" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Automation Methodology for Bus Performance Verification using IP-XACT
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:bus-performance" class="md-tag">Bus Performance</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:emulation" class="md-tag">Emulation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:ip-xact" class="md-tag">IP-XACT</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:tat" class="md-tag">TAT</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:traffic-generator" class="md-tag">Traffic Generator</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2023">2023</a> › <a href="../../dvcon/by-topic/#verification">Verification</a></p>
+<h1 id="automation-methodology-for-bus-performance-verification-using-ip-xact">Automation Methodology for Bus Performance Verification using IP-XACT<a class="headerlink" href="#automation-methodology-for-bus-performance-verification-using-ip-xact" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 6. Input and output diagram of proposing methodology" loading="lazy" src="../../assets/figures/ref-20261018-271b.png" /></p>
+<figcaption>Figure 6. Input and output diagram of proposing methodology — from the original paper (Taeyoung Jeon et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/1055-Automation-Methodology-for-Bus-Performance-Verification-using-IP-XACT.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Taeyoung Jeon (Samsung Electronics), Gunseo Koo (Samsung Electronics), Youngsik Kim (Samsung Electronics), Seonil Brian Choi (Samsung Electronics). Affiliation: Samsung Electronics Co., Ltd., Hwasung-si, Korea</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2023</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-271b</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>AUTO_TGMON automates generation of TG database and TG configuration files for emulation-based bus performance verification by cross-checking an Excel bus specification against IP-XACT metadata, reducing reported TAT from about 2 weeks to under 1 minute on a mobile SoC project.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>AUTO_TGMON은 Excel 버스 스펙과 IP-XACT 메타데이터를 교차 검증하여 에뮬레이션 기반 버스 성능 검증용 TG database 파일과 TG configuration 파일을 자동 생성하며, 모바일 SoC 프로젝트에서 보고된 TAT를 약 2주에서 1분 미만으로 줄였습니다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Using IP-XACT as signal-level metadata lets the flow build TG database files (full protocol signal lists) without manually reading RTL; the bus spec only needs the port hierarchy of the VALID signals (e.g., ARVALID/AWVALID), which the methodology expands to the full signal set.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>IP-XACT를 신호 수준 메타데이터로 활용하면 RTL을 수동으로 읽지 않고도 TG database 파일(전체 프로토콜 신호 목록)을 생성할 수 있습니다. 버스 스펙에는 VALID 신호(예: ARVALID/AWVALID)의 포트 계층만 있으면 되며, 이를 방법론이 전체 신호 집합으로 확장합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Cross-checking the bus spec against IP-XACT turns manual errors into categorized, early reports: on 190 masters the flow raised 22 errors (8 at extraction for empty/NaN/out-of-range cells, 14 at find-intersection for targets missing from IP-XACT or stale spec entries).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>버스 스펙과 IP-XACT를 교차 검증하면 수작업 오류가 조기에 분류된 보고서로 바뀝니다. 190개 마스터에서 22개 오류가 발생했습니다(Extraction 단계 8개: 빈 셀, NaN, 범위 초과 값 / Find intersection 단계 14개: IP-XACT에 없는 타겟 또는 오래된 스펙 항목).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Reported TAT for TG file preparation dropped from 2 weeks (previous project) to within 1 minute for 155 verification targets on the latest mobile device design, and the resulting bus performance test found 17 bugs.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>최신 모바일 디바이스 설계의 155개 검증 타겟에 대해 TG 파일 준비 TAT가 이전 프로젝트의 2주에서 1분 이내로 줄었다고 보고되었으며, 이 결과로 수행된 버스 성능 테스트에서 17개 버그가 발견되었습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Automation coverage is bounded by IP-XACT availability: targets whose IP designers do not supply IP-XACT cannot be automated, and bus-spec drift from RTL remains a risk that is only caught as an error, not fixed automatically.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>자동화 범위는 IP-XACT 제공 여부에 의해 제한됩니다. IP 설계자가 IP-XACT를 제공하지 않는 타겟은 자동화할 수 없으며, RTL과 스펙의 불일치는 자동 수정되지 않고 오류로만 검출됩니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The abstract claims over 90% of verification targets are processed automatically; the body text does not give a breakdown supporting this figure, so it should be read as the authors' reported claim.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>초록은 검증 타겟의 90% 이상이 자동으로 처리된다고 주장하지만, 본문에는 이를 뒷받침하는 세부 분석이 없으므로 저자들의 보고 주장으로 이해해야 합니다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Modern SoCs integrate growing numbers of DMA masters (the paper cites over a hundred), with bus components such as MMU, bus arbiters, and CDC/async bridges on each data path. Bus performance verification measures bandwidth, latency, and multiple outstanding (MO) per master, pre-silicon, at full-chip level, because traffic runs at several GB/s and cycle-based simulation is too slow. Emulation is therefore used.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>최신 SoC는 DMA 마스터 수가 늘어나고 있으며(논문은 100개 이상을 언급), 각 데이터 경로에는 MMU, 버스 arbiter, CDC/비동기 브리지 같은 버스 컴포넌트가 포함됩니다. 버스 성능 검증은 트래픽이 수 GB/s 수준이고 cycle 기반 시뮬레이션은 너무 느리기 때문에, 실리콘 이전 단계에서 전체 칩 수준으로 마스터별 bandwidth, latency, MO(Multiple Outstanding)를 측정합니다. 따라서 에뮬레이션을 사용합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>To avoid bringing up every master, a Traffic Generator (TG) replaces each verification target. The TG needs a TG database file (signal hierarchy and bit-widths for every protocol signal, AXI/ACE) and a TG configuration file (target bandwidth, destination address range, QoS, cache hint) read at run time.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>모든 마스터를 bring-up하지 않기 위해 각 검증 타겟을 TG(Traffic Generator)로 대체합니다. TG에는 TG database 파일(AXI/ACE 프로토콜 신호별 계층 및 비트폭)과 실행 시 읽히는 TG configuration 파일(목표 bandwidth, 목적지 주소 범위, QoS, cache hint)이 필요합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The problem is preparation effort. Example from the paper: 50 signals per TG × 100 TGs = 5,000 signal entries. Manual creation is slow and error-prone, and database errors are not caught at emulation image build; they surface later as inaccurate results.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>문제는 준비 工数입니다. 논문 예시: TG 1개당 50개 신호 × TG 100개 = 5,000개 신호 항목. 수작업은 느리고 오류가 발생하기 쉬우며, database 오류는 emulation image build 단계에서 검출되지 않고 이후 테스트 결과가 부정확해지는 형태로 나타납니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The prior manual flow was: pick a target in the bus spec, locate the master port in a hand-drawn Visio architecture diagram (which may not match current RTL), then search the RTL for the exact hierarchy. The bus spec named only the IP, not the full port hierarchy.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>기존 수작업 절차: 버스 스펙에서 타겟을 고르고, 손으로 그린 Visio 아키텍처 다이어그램에서 마스터 포트 위치를 찾은 뒤(현재 RTL과 맞지 않을 수 있음), RTL에서 정확한 계층을 검색했습니다. 버스 스펙에는 IP 이름만 있고 전체 포트 계층은 없었습니다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The methodology is named AUTO_TGMON. Inputs are (1) the bus specification in Excel format, read without preprocessing so users can fix errors and simply re-run, and (2) the IP-XACT of the design. Outputs are the TG database file (signal lists from IP-XACT plus port hierarchy from the spec) and the TG configuration file (bandwidth, burst size and length from the spec).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>방법론의 이름은 AUTO_TGMON입니다. 입력은 (1) Excel 형식의 버스 스펙(전처리 없이 읽으므로 사용자가 오류를 수정하고 다시 실행하기만 하면 됨)과 (2) 설계의 IP-XACT입니다. 출력은 TG database 파일(IP-XACT의 신호 목록 + 스펙의 포트 계층)과 TG configuration 파일(스펙의 bandwidth, burst size 및 length)입니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The bus spec was changed to supply the full port hierarchy rather than only the IP name; the authors say this change markedly improved automation accuracy.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>버스 스펙은 IP 이름만 제공하던 방식에서 전체 포트 계층을 제공하도록 변경되었습니다. 저자들은 이 변경이 자동화 정확도를 크게 높였다고 설명합니다.</li>
+</ul>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+  A["Bus spec (Excel)"] --&gt; C["Extraction"]
+  B["IP-XACT"] --&gt; C
+  C --&gt; D["Find intersection"]
+  D --&gt; E["Output generation"]
+  E --&gt; F["TG database file"]
+  E --&gt; G["TG configuration file"]</code></pre>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Extraction</strong>: both inputs are parsed into object-oriented class instances, so the code changes minimally if input formats change. Empty cells, not-a-number values, and out-of-range values are reported (e.g., a 10 MHz max clock for MODEM DMA0 was flagged). Users may waive errors that do not apply, such as read-only masters with no write hierarchy.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Extraction</strong>: 두 입력을 객체지향 클래스 인스턴스로 파싱하므로 입력 형식이 크게 바뀌어도 코드 수정이 최소화됩니다. 빈 셀, NaN, 범위를 벗어난 값을 보고합니다(예: MODEM DMA0의 최대 클럭 10 MHz가 오류로 표시됨). 읽기 전용 마스터처럼 해당되지 않는 오류는 사용자가 무시할 수 있습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Find intersection</strong>: only VALID signal hierarchy is compared, since the spec holds ARVALID/AWVALID paths. Three outcomes: (1) target found in IP-XACT, so it is automatable; (2) target in spec but not in IP-XACT, reported as an error (either the IP does not use IP-XACT, which cannot be automated, or the hand-updated spec is stale); (3) master port in IP-XACT but not in spec (MMU, arbiter, CDC), ignored because it is not a verification target.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Find intersection</strong>: 스펙이 ARVALID/AWVALID 경로만 가지므로 VALID 신호 계층만 비교합니다. 결과는 세 가지입니다. (1) IP-XACT에서 타겟을 찾음 → 자동화 가능. (2) 스펙에는 있으나 IP-XACT에 없음 → 오류(IP가 IP-XACT를 사용하지 않는 경우 자동화 불가, 또는 수작업으로 갱신된 스펙이 오래된 경우). (3) IP-XACT에는 있으나 스펙에는 없는 마스터 포트(MMU, arbiter, CDC) → 검증 타겟이 아니므로 무시.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Output generation</strong>: for matched targets, the ARVALID/AWVALID hierarchy is expanded to the full protocol signal list (ARADDR, ARREADY, etc.) using IP-XACT metadata. The TG configuration file takes traffic settings from the bus spec.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Output generation</strong>: 매칭된 타겟의 ARVALID/AWVALID 계층은 IP-XACT 메타데이터를 이용해 전체 프로토콜 신호 목록(ARADDR, ARREADY 등)으로 확장됩니다. TG configuration 파일의 트래픽 설정은 버스 스펙에서 가져옵니다.</li>
+</ul>
+</div>
+</div>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Development test environment: 190 masters. Outputs were generated within one minute. The run produced 22 errors: 8 at extraction (fixable with small spec edits) and 14 at find-intersection (requiring design-team deliberation and spec updates; targets could change with RTL updates).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>개발 테스트 환경: 마스터 190개. 출력 파일은 1분 이내에 생성되었습니다. 실행에서 22개 오류가 발생했습니다. Extraction 단계 8개(작은 스펙 수정으로 해결 가능), Find intersection 단계 14개(설계팀과 협의 후 스펙 수정 필요, RTL 변경에 따라 타겟이 바뀔 수 있음).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Latest mobile device design: 155 verification targets were selected. TG database and configuration files were generated within 1 minute, versus 2 weeks of work in the previous project. The bus performance test found 17 bugs; workarounds included changing target performance metrics in the spec or adjusting burst length and clock frequency to meet requirements.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>최신 모바일 디바이스 설계: 검증 타겟 155개 선정. TG database 및 configuration 파일이 1분 이내에 생성되었으며, 이전 프로젝트에서는 2주 작업이었습니다. 버스 성능 테스트에서 17개 버그가 발견되었고, 스펙의 목표 성능 지표를 바꾸거나 burst length와 클럭 주파수를 조정하여 요구 사항을 맞추는 방식으로 대응했습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The authors conclude that the TAT drops from 2 weeks to under 1 minute and that the methodology is applicable to any verification item using TGs, since the TG files do not depend on bus performance verification specifically. The abstract additionally claims over 90% of verification targets are processed automatically, but the body does not provide a supporting breakdown. Limitations evident from the text include the dependency on IP-XACT availability and on keeping the Excel spec synchronized with RTL.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>저자들은 TAT가 2주에서 1분 미만으로 줄었고, TG 파일은 버스 성능 검증에 종속되지 않으므로 TG를 사용하는 모든 검증 항목에 적용 가능하다고 결론짓습니다. 초록은 추가로 검증 타겟의 90% 이상이 자동 처리된다고 주장하지만, 본문에는 이를 뒷받침하는 세부 분석이 없습니다. 본문에서 확인되는 한계는 IP-XACT 제공 여부에 대한 의존성과 Excel 스펙을 RTL과 동기화해야 한다는 점입니다.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/Sxhrm6QYo_0" title="[DVCON2023]Automation Methodology for Bus Performance Verification using IP-XACT" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2023]Automation Methodology for Bus Performance Verification using IP-XACT</strong> — <a href="https://www.youtube.com/watch?v=Sxhrm6QYo_0">Watch on YouTube</a> · <a href="../../videos/Sxhrm6QYo_0/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

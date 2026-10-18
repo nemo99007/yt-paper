@@ -1,0 +1,1410 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-8099-enabling-true-system-level-mixed-signal-emulation/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Enabling True System-Level, Mixed-Signal Emulation - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#enabling-true-system-level-mixed-signal-emulation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Enabling True System-Level, Mixed-Signal Emulation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:emulation" class="md-tag">Emulation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:mixed-signal" class="md-tag">Mixed-Signal</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:rnm" class="md-tag">RNM</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:systemverilog-real" class="md-tag">SystemVerilog Real</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:ixcom" class="md-tag">ixcom</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/europe/">Europe</a> › <a href="../../dvcon/by-year/#2024">2024</a> › <a href="../../dvcon/by-topic/#emulation">Emulation</a></p>
+<h1 id="enabling-true-system-level-mixed-signal-emulation">Enabling True System-Level, Mixed-Signal Emulation<a class="headerlink" href="#enabling-true-system-level-mixed-signal-emulation" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 2. Bias generator instantiations within the emulation run." loading="lazy" src="../../assets/figures/ref-20261018-8099.png" /></p>
+<figcaption>Figure 2. Bias generator instantiations within the emulation run. — from the original paper (Nimay Shah et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/157-Enabling-True-System-Level-Mixed-Signal-Emulation.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Nimay Shah (Analog Devices, Wilmington, MA, USA), Paul Wright (Analog Devices, Limerick, Ireland), Pranav Dhayagude (Analog Devices, Wilmington, MA, USA), Raj Mitra (Cadence Design Systems, Burlington, MA, USA), Adam Sherer (Cadence Design Systems, Burlington, MA, USA); DVCon Europe</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon Europe 2024</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Emulation</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-8099</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>The paper extends an emulation compiler (ixcom) and RNM coding guidelines so that SystemVerilog real-number models (RNMs) of analog/mixed-signal blocks can be synthesized and run on an emulator in simulation-acceleration mode, validated on a CP-PLL, an A-PLL, and the bias generator of a 4T4R ORAN transceiver SoC with a 320x speedup over simulation.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>ixcom 에뮬레이션 컴파일러와 RNM 코딩 가이드라인을 확장하여, 아날로그/혼합신호 블록의 SystemVerilog real-number model(RNM)을 수정 없이 합성해 simulation-acceleration 모드에서 에뮬레이터에 실행할 수 있게 하고, CP-PLL, A-PLL, 4T4R ORAN 트랜시버 SoC의 bias generator로 검증하여 시뮬레이션 대비 320배 속도 향상을 보고한 논문입니다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Real-number models can be synthesized directly on the emulator (SV-2009 real types, SV-2012 nettypes with resolution functions, # delays, floating-point and math operations), avoiding the months-long recoding into fixed-point models that prior approaches required (e.g., the image sensor case).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Real-number model을 에뮬레이터에서 직접 합성할 수 있습니다(SV-2009 real 타입, resolution function을 포함한 SV-2012 nettype, # delay, 부동소수점 및 수학 연산 지원). 이로써 기존 방식에서 필요했던, 수개월이 걸리는 fixed-point 모델 재코딩(예: 이미지 센서 사례)을 피할 수 있습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>On the 4T4R ORAN SoC, the full RNM bias generator reduced maximum emulation frequency from 959 kHz (all-digital bias generator) to 635 kHz (33% degradation); the self-trim run took 45 s on emulation vs. 14400 s in pure simulation (320x speedup), with FPU utilization of 52.47%.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>4T4R ORAN SoC에서 RNM 기반 bias generator를 적용하면 최대 에뮬레이션 주파수가 959 kHz(all-digital bias generator)에서 635 kHz로 떨어집니다(33% 저하). Self-trim 실행 시간은 에뮬레이션 45 s, 순수 시뮬레이션 14400 s로 320배 속도 향상이며, FPU 사용률은 52.47%입니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Hard limits to plan around: <span class="arithmatex">\(atan/\)</span>asin/$acos are unsupported (A-PLL used a user-code arctan approximation), <span class="arithmatex">\(sin/\)</span>cos inputs must be bounded to ±40π, dynamic arrays, concurrent/immediate assertions and coverage on real types, force/release of real types, and automatic connect-module insertion are not supported.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>계획 시 고려해야 할 제약: <span class="arithmatex">\(atan/\)</span>asin/$acos는 미지원(A-PLL은 사용자 코드 arctan 근사를 사용), <span class="arithmatex">\(sin/\)</span>cos 입력은 ±40π로 제한, dynamic array, real 타입에 대한 concurrent/immediate assertion 및 coverage, real 타입의 force/release, 자동 connect module 삽입은 지원되지 않습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Analog-side integration uses three model categories: emulation-compliant library components, extracted LUT models generated by an internal tool requiring no modification, and a minimal set of hand-written SV guarded by `ifdef emulation/simulation splits; supplies are assumed always on in emulation so supply checks are disabled and inputs are converted to logic types.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>아날로그 측 통합은 세 가지 모델 범주를 사용합니다. 에뮬레이션 호환 라이브러리 컴포넌트, 내부 도구로 추출한 LUT 모델(수정 불필요), 그리고 `ifdef emulation/simulation 분기가 필요한 최소한의 수작업 SV입니다. 에뮬레이션에서는 전원이 항상 켜져 있다고 가정하므로 supply check를 비활성화하고 입력을 logic 타입으로 변환합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>A VPI plus Python script traces every connection from top-level IO to leaf instances and reports signal types (logic, interconnect, coerced wreal, real variable, custom nettype) in a spreadsheet to find DMS connectivity issues before the emulation build.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>VPI와 Python 스크립트가 최상위 IO에서 leaf 인스턴스까지 모든 연결을 추적하고, 신호 타입(logic, interconnect, coerced wreal, real variable, custom nettype)을 스프레드시트로 보고하여 에뮬레이션 빌드 전에 DMS 연결 문제를 찾아냅니다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Emulators only handle synthesizable digital logic, so analog/mixed-signal (AMS) content is typically black-boxed in SoC emulation. Analog blocks are replaced by register-only stubs, and calibration loops that depend on analog feedback cannot be verified end-to-end before tapeout.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>에뮬레이터는 합성 가능한 디지털 로직만 처리하므로, SoC 에뮬레이션에서 아날로그/혼합신호(AMS) 부분은 보통 black box로 처리됩니다. 아날로그 블록은 레지스터만 가진 스텁으로 대체되고, 아날로그 피드백에 의존하는 calibration loop는 tapeout 전에 end-to-end로 검증할 수 없습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Full AMS co-simulation is limited by analog simulator runtime. Fixed-point bit-model conversion of SystemVerilog Real Number Models (RNM) was shown on an image sensor (5.6 s of real system function in 2.1 h of emulation), but required months of recoding, a larger emulation footprint (accuracy vs. size tradeoff), and ongoing synchronization with the RNM simulation models.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>AMS co-simulation은 아날로그 시뮬레이터의 런타임 때문에 테스트 수가 제한됩니다. SystemVerilog Real Number Model(RNM)을 fixed-point bit 모델로 변환하는 방식은 이미지 센서에서 시연되었습니다(에뮬레이션 2.1 h 동안 실제 시스템 기능 5.6 s). 그러나 이 방식은 수개월의 재코딩, 정확도 대 모델 크기 간 trade-off(에뮬레이션 footprint 증가), 그리고 RNM 시뮬레이션 모델과의 지속적인 동기화가 필요했습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Goal: synthesize the original RNMs to floating-point fidelity without recoding, keeping the existing UVM simulation-acceleration flow (testbench on CPU simulator, DUT on emulator).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>목표: 원래 RNM을 재코딩하지 않고 floating-point 충실도로 합성하며, 기존 UVM simulation-acceleration 흐름(CPU 시뮬레이터의 testbench, 에뮬레이터의 DUT)을 유지하는 것입니다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>The approach combines RNM coding guidelines, enhancements to the front-end compiler (ixcom) on the emulation platform, and validation on real designs.</p>
+</div>
+<div class="bi-ko">
+<p>접근법은 RNM 코딩 가이드라인, 에뮬레이션 플랫폼 front-end 컴파일러(ixcom)의 확장, 실제 설계를 통한 검증을 결합합니다.</p>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+  A[RNM source&lt;br/&gt;SV real, nettypes, # delays] --&gt; B[Coding guidelines&lt;br/&gt;ifdef emu/sim splits]
+  B --&gt; C[Enhanced ixcom compiler&lt;br/&gt;real, nettype, math support]
+  C --&gt; D[Emulator FPU compute]
+  E[UVM testbench on CPU simulator] --&gt;|simulation acceleration| D</code></pre>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Datatypes</strong>: real, shortreal, realtime, their unpacked arrays and structs; SV-2012 nettypes including synthesizable resolution functions (no dynamic arrays).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>데이터 타입</strong>: real, shortreal, realtime 및 이들의 unpacked 배열과 struct. SV-2012 nettype은 합성 가능한 resolution function을 포함하여 지원됩니다(dynamic array 사용 불가).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Delays</strong>: <code>#</code> delays are supported in always-with-delay, continuous assign with delay, always with explicit event plus delay, and rise/fall gate-primitive delays.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Delay</strong>: always-with-delay, delay가 있는 continuous assign, 명시적 event와 delay가 있는 always, rise/fall gate primitive delay를 지원합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Math</strong>: real operators from IEEE 1800-2017 Table 11-1 (except <code>inside</code>) and most math functions from Table 20-4. <span class="arithmatex">\(sin/\)</span>cos inputs bounded to ±40π; inverse trig functions are not supported. Conversion functions ($rtoi, $itor, $realtobits, $bitstoreal, $shortrealtobits, $bitstoshortreal) are supported. Argument reduction to ±2π is done in user code with $floor.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>수학 연산</strong>: IEEE 1800-2017 Table 11-1의 real 연산자(<code>inside</code> 제외)와 Table 20-4의 대부분의 수학 함수를 지원합니다. <span class="arithmatex">\(sin/\)</span>cos 입력은 ±40π로 제한되며, 역삼각 함수는 미지원입니다. 변환 함수($rtoi, $itor, $realtobits, $bitstoreal, $shortrealtobits, $bitstoshortreal)는 지원됩니다. ±2π로의 인자 축소는 $floor를 이용한 사용자 코드로 구현합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>DMS connectivity</strong>: the compiler adds datatype coercion (not 1:1 with simulators), but automatic connect-module (CM) insertion is not supported. A VPI and a Python post-processor trace each hierarchical connection and flag problem segments in a spreadsheet.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>DMS 연결</strong>: 컴파일러는 datatype coercion을 추가하지만 시뮬레이터와 1:1로 일치하지는 않으며, 자동 connect module(CM) 삽입은 지원되지 않습니다. VPI와 Python 후처리 스크립트가 계층 연결 각각을 추적하고 문제 구간을 스프레드시트로 표시합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Unsupported</strong>: dynamic arrays, concurrent and immediate assertions and coverage on real types, force/release of real types.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>미지원 항목</strong>: dynamic array, real 타입에 대한 concurrent 및 immediate assertion과 coverage, real 타입의 force/release.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Model categories</strong> for the bias generator: (1) Analog Devices simulation library components, updated to be emulation-compliant; (2) extracted LUT models generated by an internal tool, which needed no changes; (3) minimal hand-written SV, restricted to `ifdef emulation/simulation differences, discipline management and hand-instantiated connect modules.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Bias generator 모델 범주</strong>: (1) Analog Devices 시뮬레이션 라이브러리 컴포넌트(에뮬레이션 호환으로 업데이트), (2) 내부 도구로 추출한 LUT 모델(수정 불필요), (3) `ifdef emulation/simulation 차이, 디바이스 관리, 수동 인스턴스화된 connect module이 필요한 경우에 한정된 최소한의 수작업 SV.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Integration</strong>: the <code>analog_top</code> module was removed from the <code>-moduleStubList</code> of ixcom, and a configuration view instantiates two bias generator instances (Figure 2). Supplies are undriven on emulation (assumed always on), so supply checks are disabled with `ifdef and their inputs are converted to logic types (Figure 3).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>통합</strong>: ixcom의 <code>-moduleStubList</code>에서 <code>analog_top</code> 모듈을 제외하고, configuration view로 두 개의 bias generator 인스턴스를 인스턴스화합니다(Figure 2). 에뮬레이션에서 supply 핀은 구동되지 않으므로(항상 켜져 있다고 가정), supply check는 `ifdef로 비활성화하고 입력은 logic 타입으로 변환합니다(Figure 3).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Validation</strong>: the bias generator model is netlisted from the analog design environment and checked against transistor-level, RNM-simulation and RNM-emulation runs for power-down and trim use cases.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>검증</strong>: bias generator 모델은 아날로그 설계 환경에서 netlist되며, power-down 및 trim 사용 사례에 대해 transistor-level, RNM 시뮬레이션, RNM 에뮬레이션 실행 결과와 비교됩니다.</li>
+</ul>
+</div>
+</div>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>CP-PLL</strong>: a charge-pump PLL served as the basic proof-of-concept to validate guidelines and tool enhancements.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>CP-PLL</strong>: charge-pump PLL을 기본 proof-of-concept로 사용하여 가이드라인과 도구 확장을 검증했습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Bias generator self-trim</strong> (4T4R ORAN transceiver running Ubuntu): the trim routine, triggered by register writes from the processor, completes on both simulation (Figure 4) and emulation (Figure 5). Waveforms are not identical because the constraint-randomization solver outputs differ.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Bias generator self-trim</strong>(Ubuntu를 실행하는 4T4R ORAN 트랜시버): 프로세서의 레지스터 쓰기로 시작되는 trim 루틴이 시뮬레이션(Figure 4)과 에뮬레이션(Figure 5) 모두에서 완료됩니다. 제약 randomization solver의 출력이 달라 파형은 동일하지 않습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Performance</strong>: maximum emulation frequency drops from 959 kHz (all-digital bias generator) to 635 kHz (33% degradation). Runtime is 45 s on emulation vs. 14400 s in pure DMS simulation, a 320x speedup. FPU utilization is 52.47%. The authors expect larger gains on more complex cases.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>성능</strong>: 최대 에뮬레이션 주파수는 959 kHz(all-digital bias generator)에서 635 kHz로 떨어집니다(33% 저하). 런타임은 에뮬레이션 45 s, 순수 DMS 시뮬레이션 14400 s로, 320배 속도 향상입니다. FPU 사용률은 52.47%입니다. 저자들은 더 복잡한 사례에서 더 큰 이득을 기대합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>A-PLL</strong>: phase detection uses a user-code arctan approximation (Figure 6) based on published references. The PLL locks to the reference (Figure 7), and the results closely match Xcelium reference simulations.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>A-PLL</strong>: 위상 검출은 공개된 참고문헌에 기반한 사용자 코드 arctan 근사(Figure 6)를 사용합니다. PLL은 기준 클럭에 lock되며(Figure 7), 결과는 Xcelium 참조 시뮬레이션과 밀접하게 일치합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Conclusions</strong>: the authors state the tools and methodology are ready for production use with known limitations and workarounds. Future work includes making the Analog Devices simulation library fully emulation-compliant and expanding RNM/DMS construct support in the tools and hardware.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>결론</strong>: 저자들은 알려진 제약과 검증된 우회 방법을 갖춘 상태로 도구와 방법론이 프로덕션 사용 준비가 되었다고 밝힙니다. 향후 과제는 Analog Devices 시뮬레이션 라이브러리를 완전히 에뮬레이션 호환으로 만드는 것과, 도구 및 하드웨어에서 RNM/DMS 구문 지원을 확대하는 것입니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Note: the source text is complete; no truncation.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>원문이 완전하며 잘린 부분은 없습니다.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/shvv5KRtxp8" title="[DVCON2024] Enabling True System-Level, Mixed-Signal Emulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2024] Enabling True System-Level, Mixed-Signal Emulation</strong> — <a href="https://www.youtube.com/watch?v=shvv5KRtxp8">Watch on YouTube</a> · <a href="../../videos/shvv5KRtxp8/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

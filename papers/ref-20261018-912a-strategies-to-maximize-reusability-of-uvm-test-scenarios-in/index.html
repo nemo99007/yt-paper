@@ -1,0 +1,1445 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-912a-strategies-to-maximize-reusability-of-uvm-test-scenarios-in/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Strategies to Maximize Reusability of UVM Test Scenarios in SoC Verification - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#strategies-to-maximize-reusability-of-uvm-test-scenarios-in-soc-verification" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Strategies to Maximize Reusability of UVM Test Scenarios in SoC Verification
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:code-reusability" class="md-tag">Code Reusability</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:pss" class="md-tag">PSS</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:scenario-generation" class="md-tag">Scenario Generation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:soc-verification" class="md-tag">SoC Verification</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:uvm" class="md-tag">UVM</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2023">2023</a> › <a href="../../dvcon/by-topic/#verification">Verification</a></p>
+<h1 id="strategies-to-maximize-reusability-of-uvm-test-scenarios-in-soc-verification">Strategies to Maximize Reusability of UVM Test Scenarios in SoC Verification<a class="headerlink" href="#strategies-to-maximize-reusability-of-uvm-test-scenarios-in-soc-verification" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 1. A three-level inheritance code structure to maximize code reusability" loading="lazy" src="../../assets/figures/ref-20261018-912a.png" /></p>
+<figcaption>Figure 1. A three-level inheritance code structure to maximize code reusability — from the original paper (Hyeonman Park et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/1050-Strategies-to-Maximize-Reusability-of-UVM-Test-Scenarios-in-SoC-Verification.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Hyeonman Park, Namyoung Kim, Kyoungmin Lee, Hongkyu Kim, Jaein Hong, Kiseok Bae (Samsung Electronics Inc.)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2023</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-912a</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>The paper proposes a three-level UVM class inheritance structure that isolates reusable IP sequences from product-specific code, plus a metadata-driven interpreter that auto-generates composite system-control scenarios, reporting about 86-88% code reuse and an 87% reduction in scenario count on two automotive SoC generations.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>이 논문은 재사용 가능한 IP 시퀀스를 제품 종속 코드에서 분리하는 3단계 UVM 클래스 상속 구조와, 메타데이터를 읽어 복합 시스템 제어 시나리오를 자동 생성하는 인터프리터를 제안하며, 두 세대 자동차용 SoC에서 약 86~88%의 코드 재사용률과 시나리오 수 87% 감소를 보고한다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Three-level class layering (first: IP functions and VIP/interface/register-model handles; second: sequence library; third: product binding via macros) lets the first two levels be reused unchanged; only the third level changes per product.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>3단계 클래스 계층화(1단계: IP 기능과 VIP/인터페이스/레지스터 모델 핸들, 2단계: 시퀀스 라이브러리, 3단계: 매크로를 통한 제품 바인딩)로 1·2단계를 수정 없이 재사용하고, 제품별 변경은 3단계에만 국한된다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>On BLOCK1, about 86% of UVM code lines fall in the reusable first and second levels (Table 2); across BLOCK1-4 of the second-generation product, about 88% of total code is reused or auto-generated, with about 14% requiring edits (Table 4).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>BLOCK1에서 UVM 코드 라인의 약 86%가 재사용 가능한 1·2단계에 속한다(Table 2). 2세대 제품의 BLOCK1~4 전체에서는 코드의 약 88%가 수정 없이 재사용되거나 자동 생성되며, 약 14%의 코드 라인만 편집이 필요하다(Table 4).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Replacing hand-written scenario frameworks with metadata (sequence order via ';', '&amp;', and newline operators) plus an interpreter reached the same block coverage with only 13% of the scenarios, a reduction of 87% (Table 3).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>수작업 시나리오 프레임워크 대신 메타데이터(';', '&amp;', 줄바꿈 연산자로 시퀀스 순서 기술)와 인터프리터를 사용하자 같은 블록 커버리지를 전체 시나리오의 13%만으로 달성했으며, 이는 87% 감소에 해당한다(Table 3).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>System-control functions (resets, low power, GPIO pad control) are wrapped into product-independent APIs such as system_reset(kind) so scenario writers need no hardware-implementation details; the API bodies remain product-dependent.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>시스템 제어 기능(리셋, 저전력, GPIO 패드 제어)을 system_reset(kind)와 같은 제품 독립적 API로 감싸 시나리오 작성자가 하드웨어 구현 세부사항을 알 필요가 없게 한다. 단, API 내부 구현은 여전히 제품 종속적이다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The approach targets intra-platform reuse on UVM for early bring-up (shift-left), positioned against PSS-EDA tools that focus mainly on cross-platform C-test reuse and leave power/reset control to manual coding.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>이 접근은 조기 bring-up(shift-left)을 위해 동일 플랫폼 내 UVM 재사용에 초점을 둔다. 주로 플랫폼 간 C 테스트 재사용에 집중하고 전력/리셋 제어는 수작업 코딩이 필요한 기존 PSS-EDA 도구와 대비된다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>SoC functional verification dominates overall TAT, so both simulation time and scenario development time must shrink. This paper targets the second lever: reusing scenario code.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>SoC 기능 검증은 전체 TAT의 대부분을 차지하므로 시뮬레이션 시간과 시나리오 개발 시간을 모두 줄여야 한다. 이 논문은 두 번째 축인 시나리오 코드 재사용을 다룬다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>PSS-EDA tools (Accellera PSS 1.0) mainly compose IP-level data-manipulation sequences and emphasize reuse across simulation, emulation, and silicon. The paper argues that system-control logic (reset, power, GPIO pad control) is where most design bugs occur, yet PSS tools do not provide it by default and it must be hand-coded.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>PSS-EDA 도구(Accellera PSS 1.0)는 주로 IP 수준 데이터 조작 시퀀스를 조합하며, 시뮬레이션·에뮬레이션·실리콘 간 재사용에 중점을 둔다. 논문은 설계 버그의 대부분이 시스템 제어 로직(리셋, 전력, GPIO 패드 제어)에서 발생하지만, PSS 도구는 이를 기본 제공하지 않아 수작업 코딩이 필요하다고 지적한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Conventional practice either inlines system-control code into each IP sequence (code growth, no reuse) or places it in product-specific "common tasks" (reusable only within one product).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>기존 방식은 시스템 제어 코드를 각 IP 시퀀스에 직접 삽입하거나(코드 증가, 재사용 불가), 제품별 "common task"에 두는 방식(한 제품 내에서만 재사용 가능)이다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Complex scenarios are built from hand-written frameworks. The paper notes that the conventional flow cannot create scenarios with more than four sequences or more than two concurrent sequences without adding new frameworks.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>복합 시나리오는 수작업 프레임워크로 구성된다. 논문은 기존 흐름에서 시퀀스 4개를 초과하거나 동시에 2개를 초과하는 시나리오는 새 프레임워크를 추가하지 않고는 만들 수 없다고 밝힌다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p><strong>Three-level class inheritance (Figs. 1-2).</strong> The example is a UART IP with four instances and TX/RX functions, giving two functions × four instances = eight operation sequences.</p>
+</div>
+<div class="bi-ko">
+<p><strong>3단계 클래스 상속 (Fig. 1-2).</strong> 예시는 인스턴스 4개와 TX/RX 기능을 가진 UART IP이며, 2개 기능 × 4개 인스턴스 = 8개 동작 시퀀스가 된다.</p>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart TD
+    L1["Level 1: IP base class&lt;br/&gt;functions, enable variables,&lt;br/&gt;VIP / interface / register-model handles"] --&gt; L2["Level 2: sequence library&lt;br/&gt;ip_usi_uart_tx_seq_c, ip_usi_uart_rx_seq_c&lt;br/&gt;enable L1 variables"]
+    L2 --&gt; L3["Level 3: product binding&lt;br/&gt;macro-mapped instances,&lt;br/&gt;handle connection, address map"]
+    L3 --&gt; S["Scenario / test"]</code></pre>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Level 1 holds all IP functions, the variables that trigger them, and the VIP/interface/register-model handles. Changes to functions are localized here.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>1단계는 모든 IP 기능, 이를 트리거하는 변수, VIP/인터페이스/레지스터 모델 핸들을 보유한다. 기능 변경은 이 단계에 국한된다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Level 2 wraps the functions as sequences that enable Level 1 variables, forming a library for composite scenarios.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>2단계는 기능을 1단계 변수를 활성화하는 시퀀스로 감싸 복합 시나리오용 라이브러리를 구성한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Level 3 binds sequences to the target product (instance count, register model, hardware hierarchy). Only this level is modified per product.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>3단계는 시퀀스를 대상 제품(인스턴스 수, 레지스터 모델, 하드웨어 계층)에 바인딩한다. 제품마다 수정되는 것은 이 단계뿐이다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p><strong>System-control APIs (Fig. 3, Table 1).</strong> System functions move from inline code to common tasks and then to a single product-independent API (for example, <code>system_reset(kind)</code> or <code>control_hardware_reset("POR" | "WDT0" | "WDT1")</code>). Hardware-dependent bodies stay inside the API, so scenario writers use it without hardware details.</p>
+</div>
+<div class="bi-ko">
+<p><strong>시스템 제어 API (Fig. 3, Table 1).</strong> 시스템 기능은 인라인 코드에서 common task로, 다시 제품 독립적인 단일 API(예: <code>system_reset(kind)</code> 또는 <code>control_hardware_reset("POR" | "WDT0" | "WDT1")</code>)로 옮겨진다. 하드웨어 종속 구현은 API 내부에 남아 시나리오 작성자는 하드웨어 세부사항 없이 사용할 수 있다.</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p><strong>Metadata-driven scenario flow (Figs. 4-6).</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>메타데이터 기반 시나리오 흐름 (Fig. 4-6).</strong></p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The conventional flow (Fig. 4a) requires building a framework first and then placing sequences in it.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>기존 흐름(Fig. 4a)은 프레임워크를 먼저 만든 뒤 시퀀스를 배치한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The proposed flow (Fig. 4b) has the developer pick sequences and APIs from repositories and describe the order in metadata. An interpreter then generates the framework and the UVM test class.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>제안 흐름(Fig. 4b)은 개발자가 저장소에서 시퀀스와 API를 골라 메타데이터로 순서를 기술하면, 인터프리터가 프레임워크와 UVM 테스트 클래스를 생성한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Operators: newline = serial, <code>&amp;</code> = parallel, <code>{a; b; c}</code> = sequential group inside a parallel branch.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>연산자: 줄바꿈 = 직렬, <code>&amp;</code> = 병렬, <code>{a; b; c}</code> = 병렬 분기 안의 순차 그룹.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Example (Fig. 5): <code>seq_a</code> then <code>{seq_b; seq_c; seq_d} &amp; task_0</code>, then <code>seq_e &amp; task_1</code>, then <code>task_2</code>. The interpreter emits a class whose task body calls <code>seq_a.start()</code>, forks the <code>seq_b→seq_c→seq_d</code> chain alongside <code>task_0()</code>, and so on.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>예시(Fig. 5): <code>seq_a</code> 다음 <code>{seq_b; seq_c; seq_d} &amp; task_0</code>, 다음 <code>seq_e &amp; task_1</code>, 다음 <code>task_2</code>. 인터프리터는 <code>seq_a.start()</code>를 호출하고, <code>seq_b→seq_c→seq_d</code> 체인을 <code>task_0()</code>과 fork로 병렬 실행하는 클래스를 생성한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Fig. 6 applies this to UART: parallel operation of all instances, sequential operation, and system-level and block-level reset mid-operation. The paper states this needs no UVM background.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Fig. 6은 UART에 적용한 사례로, 모든 인스턴스의 병렬 동작, 순차 동작, 동작 중 시스템 및 블록 단위 리셋을 검증한다. 논문은 UVM 배경 지식이 필요 없다고 밝힌다.</li>
+</ul>
+</div>
+</div>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Code reuse (Table 2, BLOCK1, five IPs):</strong> about 86% of lines are in the reusable Levels 1-2; the remaining 14% is adapted per SoC.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>코드 재사용 (Table 2, BLOCK1, IP 5개):</strong> 약 86%의 라인이 재사용 가능한 1~2단계에 속하며, 나머지 14%는 SoC별로 조정한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Code distribution (Table 4, four blocks, second-generation product):</strong> about 88% of code is reused unchanged or auto-generated; about 14% of lines need editing. The paper's own numbers differ slightly (86% vs 88%) across sections.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>코드 분포 (Table 4, 블록 4개, 2세대 제품):</strong> 약 88%의 코드가 수정 없이 재사용되거나 자동 생성되며, 약 14%의 라인은 편집이 필요하다. 논문 내 수치(86% 대 88%)는 섹션마다 약간 다르다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Scenario count (Table 3):</strong> the same block coverage on both generations is reached with 13% of the scenarios, a reduction of 87%.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>시나리오 수 (Table 3):</strong> 두 세대 모두 같은 블록 커버리지를 전체 시나리오의 13%로 달성하여 87% 감소했다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Setup:</strong> two automotive SoC generations on the same architecture. The first generation was re-organized into the new structure; the second was built by reusing Levels 1-2.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>설정:</strong> 같은 아키텍처의 자동차용 SoC 2세대. 1세대는 새 구조로 재구성되었고, 2세대는 1~2단계를 재사용하여 구축되었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Claims:</strong> earlier bug discovery through early scenario availability, fewer human-coding errors, and maintained verification quality. The paper gives no per-bug data, schedule numbers, or simulation-runtime results.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>주장:</strong> 시나리오를 조기에 확보하여 버그를 더 일찍 발견하고, 수작업 코딩 오류를 줄이며, 검증 품질을 유지한다고 한다. 버그별 데이터, 일정 수치, 시뮬레이션 런타임 결과는 제시되지 않았다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Scope:</strong> the method targets reuse within one execution platform (UVM), complementing rather than replacing PSS cross-platform reuse. The paper does not quantify the cost of building the interpreter or the metadata syntax.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>범위:</strong> 단일 실행 플랫폼(UVM) 내 재사용을 대상으로 하며, PSS의 플랫폼 간 재사용을 대체하기보다 보완한다. 인터프리터 구축 비용과 메타데이터 문법의 비용은 정량화되지 않았다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Note: the document is a full paper, not truncated. The author hint (g.pavithra) does not match the byline, so the document's byline is used.</p>
+</div>
+<div class="bi-ko">
+<p>참고: 문서는 잘린 부분 없이 전체 논문이다. 저자 힌트(g.pavithra)는 본문 저자 표기와 일치하지 않으므로 문서의 저자 표기를 사용했다.</p>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/q6NioNTKDLs" title="[DVCON2023]Strategies to Maximize Reusability of UVM Test Scenarios in SoC Verification" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2023]Strategies to Maximize Reusability of UVM Test Scenarios in SoC Verification</strong> — <a href="https://www.youtube.com/watch?v=q6NioNTKDLs">Watch on YouTube</a> · <a href="../../videos/q6NioNTKDLs/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1383 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-9555-system-level-power-estimation-of-ssds-under-real-workloads-u/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>System-Level Power Estimation of SSDs under Real Workloads using Emulation - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#system-level-power-estimation-of-ssds-under-real-workloads-using-emulation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              System-Level Power Estimation of SSDs under Real Workloads using Emulation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:dram-power" class="md-tag">DRAM Power</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:emulation" class="md-tag">Emulation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:nand" class="md-tag">NAND</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:ssd-power" class="md-tag">SSD Power</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:uvm" class="md-tag">UVM</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2023">2023</a> › <a href="../../dvcon/by-topic/#emulation">Emulation</a></p>
+<h1 id="system-level-power-estimation-of-ssds-under-real-workloads-using-emulation">System-Level Power Estimation of SSDs under Real Workloads using Emulation<a class="headerlink" href="#system-level-power-estimation-of-ssds-under-real-workloads-using-emulation" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 3. Overview of SSD system-level power estimation methodology" loading="lazy" src="../../assets/figures/ref-20261018-9555.png" /></p>
+<figcaption>Figure 3. Overview of SSD system-level power estimation methodology — from the original paper (Sangmin Kim et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/1099-System-Level-Power-Estimation-of-SSDs-under-Real-Workloads-using-Emulation.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Sangmin Kim (Samsung Electronics), Kwanghyo Ahn (Samsung Electronics), Changhoon Han (Samsung Electronics), Hyunsik Kim (Samsung Electronics), Jaewoo Im (Samsung Electronics)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2023</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Emulation</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-9555</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>Proposes an emulation-based SSD system power estimation flow that converts silicon-measured per-command NAND/DRAM power and emulated command activity into time-resolved average and peak power, with a maximum error of 8% on a commercial SSD.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>실리콘에서 측정한 명령별 NAND/DRAM 전력과 에뮬레이션으로 얻은 명령 활동을 결합해 시간 분해 평균 및 피크 전력을 추정하는 에뮬레이션 기반 SSD 시스템 전력 추정 방법을 제안하며, 상용 SSD에서 최대 오차 8%를 보고한다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Per-command silicon power combined with command-state tracing from modified NAND behavior-model status registers and DDR4 monitor flags yields time-resolved power, enabling peak estimation that equation-based average-power models (J. Ji et al. [2]) cannot provide.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>명령별 실리콘 전력과, 수정된 NAND 행동 모델 상태 레지스터 및 DDR4 모니터 플래그에서 얻은 명령 상태 추적을 결합하면 시간 분해 전력을 얻을 수 있다. 이를 통해 수식 기반 평균 전력 모델 [2]로는 불가능한 피크 전력 추정이 가능해진다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Emulation with real firmware makes 10-100 ms power windows feasible for a controller of tens of millions of instances, whereas the silicon measurements were taken over a seconds range, so the two are not time-aligned.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>실제 펌웨어를 실행하는 에뮬레이션으로 수천만 인스턴스 규모 컨트롤러에 대해 10–100 ms 전력 추정 구간이 가능하다. 반면 실리콘 측정은 초 단위 범위에서 이루어졌으므로 두 측정의 시간 구간은 정렬되어 있지 않다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Total average power errors are 2%, 3%, 5%, and 2% (average 3%, max 5%) across sequential/random read/write, but component-level average errors reach 9% for NAND and 10% for DRAM (random read).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>전체 평균 전력 오차는 순차 읽기/쓰기, 랜덤 읽기/쓰기에서 각각 2%, 3%, 5%, 2%(평균 3%, 최대 5%)이다. 컴포넌트 단위 평균 오차는 NAND 9%, DRAM 10%(랜덤 읽기)까지 커진다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Total peak power errors are 8%, 4%, 5%, and 4% (average 5%, max 8%), yet Table II shows component peak errors up to 22% for DRAM (sequential read, 0.78) and 12% for NAND (sequential read, 0.88); the 8% figure applies to the system total only.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>전체 피크 전력 오차는 8%, 4%, 5%, 4%(평균 5%, 최대 8%)이다. 그러나 Table II에서 컴포넌트 피크 오차는 DRAM 순차 읽기 22%(0.78), NAND 순차 읽기 12%(0.88)까지 나타난다. 8% 수치는 시스템 전체에만 해당한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The authors attribute peak error to corner-case stimulus missing from the emulated workload, so peak accuracy depends on deliberately constructed test cases. DRAM refresh tracing was disabled to limit dump size and modeled analytically from tREFI, tRFC, and IDD5B instead.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>저자들은 피크 오차의 원인을 에뮬레이션 워크로드에 빠진 코너 케이스 자극으로 본다. 따라서 피크 정확도는 의도적으로 구성한 테스트 케이스에 의존한다. DRAM 리프레시 추적은 덤프 크기를 줄이기 위해 비활성화했고, tREFI, tRFC, IDD5B로 해석적으로 모델링했다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>SSD performance keeps rising (the paper cites PCIe 5.0 parts with sequential read up to 13,000 MB/s [1]), and higher throughput raises power, so accurate system-level power estimation matters.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>SSD 성능은 계속 높아지고 있으며(논문은 PCIe 5.0 제품의 순차 읽기 최대 13,000 MB/s를 인용 [1]), 처리량 증가는 전력 증가로 이어지므로 정확한 시스템 레벨 전력 추정이 중요하다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>An SSD consists of a controller SoC, NAND flash, and DRAM cache. A mature SoC power flow exists for the controller, but NAND and DRAM power are hard to estimate.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>SSD는 컨트롤러 SoC, NAND 플래시, DRAM 캐시로 구성된다. 컨트롤러는 성숙한 SoC 전력 추정 흐름을 사용할 수 있지만, NAND와 DRAM의 전력은 추정이 어렵다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Prior work by J. Ji et al. [2] estimates NAND and DRAM average power with equation-based models. It does not capture power fluctuation within a command, so it cannot give peak power. Peak power matters because instantaneous current must not exceed the PMIC maximum input current.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>J. Ji 등 [2]의 기존 연구는 수식 기반 모델로 NAND와 DRAM의 평균 전력을 추정한다. 명령 내부의 전력 변동을 반영하지 못하므로 피크 전력을 구할 수 없다. 순간 전류가 PMIC의 최대 입력 전류를 넘지 않아야 하므로 피크 전력도 중요하다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Requirements: the controller design is tens of millions of instances, firmware must run, and the simulated window must be long (about 100 ms), because peak power appears only in corner cases. The authors therefore use emulation-based hardware/software co-verification.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>요구 조건: 컨트롤러 설계는 수천만 인스턴스 규모이고 펌웨어를 실행해야 하며, 피크 전력은 코너 케이스에서만 나타나므로 시뮬레이션 구간이 길어야 한다(약 100 ms). 따라서 저자들은 에뮬레이션 기반 하드웨어/소프트웨어 공동 검증을 사용한다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>The UVM-based verification environment runs on a hardware emulator (Veloce, Siemens EDA [9]) together with the SSD hardware and firmware. Power is estimated per component and then combined.</p>
+</div>
+<div class="bi-ko">
+<p>UVM 기반 검증 환경이 하드웨어 에뮬레이터(Veloce, Siemens EDA [9])에서 SSD 하드웨어 및 펌웨어와 함께 동작한다. 전력은 컴포넌트별로 추정한 뒤 합산한다.</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>NAND:</strong> The behavior model is modified to add internal status registers that record the active command (Read, Program, Erase, Read DMA, Write DMA), the SLC/TLC mode, and multi-plane status bits. A dump file per NAND channel logs timestamps and each way's status (Fig. 4). Silicon-measured input power is taken for each command, conditioned on SLC/TLC and multi-plane operation. The behavior model's AC timing parameters are set to the values measured alongside the power, so simulated read/write performance matches the measured performance. Power is the sum of per-command power applied at each command's occurrence, accumulated per channel.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>NAND:</strong> 행동 모델(behavior model)을 수정하여 활성 명령(Read, Program, Erase, Read DMA, Write DMA), SLC/TLC 모드, 멀티 플레인 상태 비트를 기록하는 내부 상태 레지스터를 추가한다. NAND 채널마다 타임스탬프와 각 way의 상태를 기록하는 덤프 파일을 생성한다(Fig. 4). 명령별 입력 전력은 실리콘 측정값을 사용하며 SLC/TLC 모드와 멀티 플레인 동작에 따라 구분한다. 행동 모델의 AC 타이밍 파라미터는 전력과 함께 측정한 값으로 설정하여 시뮬레이션상의 읽기/쓰기 성능이 측정값과 일치하도록 한다. 각 명령이 발생하는 시점에 명령별 전력을 적용하고 채널별로 누적한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>DRAM:</strong> The emulator DDR4 model [4] is mostly encrypted, but monitoring signals are exposed in an unencrypted module. Condition flags generate a DRAM command dump for precharge, activate, write, and read. The refresh flag is disabled because frequent refresh enlarges the dump file in multi-millisecond runs. Refresh power is computed analytically from the average refresh interval tREFI, the refresh cycle time tRFC (JEDEC DDR4 [6]), and the burst refresh current IDD5B. The per-command calculation follows DRAMPower [5] with measured IDD values.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>DRAM:</strong> 에뮬레이터의 DDR4 메모리 모델 [4]은 대부분 암호화되어 있으나 모니터링 신호는 비암호화 모듈로 제공된다. 조건 플래그로 precharge, activate, write, read 명령의 DRAM 명령 덤프를 생성한다. 리프레시 플래그는 빈번한 리프레시가 수 ms 단위 실행의 덤프 파일 크기를 키우므로 비활성화한다. 리프레시 전력은 JEDEC DDR4 표준 [6]의 평균 리프레시 간격 tREFI, 리프레시 사이클 시간 tRFC, 버스트 리프레시 전류 IDD5B로 계산한다. 명령별 계산은 실측 IDD 값을 사용하는 DRAMPower [5] 방식과 유사하다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Controller:</strong> FSDB waveform dumps are fed to Synopsys PrimePower [7], a gate-level power tool. Process, temperature, and voltage are set close to nominal to correlate with silicon. Probing controller state signals is described as a way to track operation at peak power. UPF-based power-aware simulation with isolation, retention, and power-gating signals is mentioned as a possible extension but was not used, because only maximum-performance cases were evaluated.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>컨트롤러:</strong> FSDB 파형 덤프를 게이트 레벨 전력 도구인 Synopsys PrimePower [7]에 입력한다. 실리콘과의 상관관계를 높이기 위해 공정, 온도, 전압 조건을 공칭 조건에 가깝게 설정한다. 컨트롤러 상태 신호를 프로브하여 피크 전력 상황의 동작을 추적하는 방법이 설명되어 있다. 격리/보존/파워 게이팅 신호를 다루는 UPF 기반 전력 인지 시뮬레이션은 확장 가능한 방법으로 언급되지만 사용하지 않았다. 최대 성능 시나리오만 평가했기 때문이다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>System power:</strong> With an external PMIC, the component currents are summed. With an internal PMIC, the PMIC efficiency is measured across output currents to build an efficiency curve (similar to [8]). The PMIC output current is then converted to input current using that curve.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>시스템 전력:</strong> 외부 PMIC를 사용하는 경우 컴포넌트 전류를 합산한다. 내부 PMIC를 사용하는 경우 출력 전류별 PMIC 효율을 측정하여 효율 곡선을 만들고([8]과 유사) 이를 이용해 PMIC 출력 전류를 입력 전류로 변환한다.</li>
+</ul>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+  A["UVM env + SSD RTL + firmware on emulator"] --&gt; B["NAND behavior model status regs"]
+  A --&gt; C["DDR4 model monitor flags"]
+  A --&gt; D["FSDB dumps"]
+  B --&gt; E["NAND cmd dump per channel/way"]
+  C --&gt; F["DRAM cmd dump PRE ACT RD WR"]
+  E --&gt; G["Silicon per-cmd power lookup"]
+  F --&gt; H["DRAMPower-style IDD calc + refresh"]
+  D --&gt; I["PrimePower controller power"]
+  G --&gt; J["Component power vs time"]
+  H --&gt; J
+  I --&gt; J
+  J --&gt; K["PMIC efficiency conversion"]
+  K --&gt; L["SSD average and peak power"]</code></pre>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Setup:</strong> The methodology was applied to a commercial SSD over four I/O scenarios: sequential read/write and random read/write. Values in the tables are normalized to silicon measurements (measured = 1.00). The same product firmware ran on silicon and in simulation. Estimation covered 10–100 ms, while silicon measurements covered a seconds range.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>실험 조건:</strong> 상용 SSD에 방법론을 적용하여 순차 읽기/쓰기, 랜덤 읽기/쓰기의 4가지 I/O 시나리오를 평가했다. 표의 값은 실리콘 측정값으로 정규화했다(measured = 1.00). 실리콘과 시뮬레이션에 동일한 제품 펌웨어를 사용했다. 추정은 10–100 ms 구간에서 수행되었고 실리콘 측정은 초 단위 범위에서 이루어졌다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Average power (Table I):</strong> Total estimates were 0.98 (SR), 1.03 (SW), 0.95 (RR), and 1.02 (RW). This gives an average error of 3% and a maximum of 5%. Component maxima were NAND 9% (RR, 0.91), DRAM 10% (RR, 0.90), and controller 3% (RW, 0.97). The authors note that the periodic waveform repeats several times within the window, which supports the accuracy of the average estimate.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>평균 전력(Table I):</strong> 전체 추정값은 SR 0.98, SW 1.03, RR 0.95, RW 1.02였다. 평균 오차는 3%, 최대 오차는 5%이다. 컴포넌트별 최대 오차는 NAND 9%(RR, 0.91), DRAM 10%(RR, 0.90), 컨트롤러 3%(RW, 0.97)이다. 저자들은 파형이 추정 구간 내에서 여러 번 주기적으로 반복되어 평균 추정의 정확도가 확보되었다고 설명한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Peak power (Table II):</strong> Total estimates were 0.92 (SR), 0.96 (SW), 0.95 (RR), and 0.96 (RW). This gives an average error of about 5% and a maximum of 8%. Component-level peak errors are larger: DRAM 0.78 for SR (22%), NAND 0.88 for SR (12%), and controller at most 5%. The abstract's 8% maximum applies to the system total.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>피크 전력(Table II):</strong> 전체 추정값은 SR 0.92, SW 0.96, RR 0.95, RW 0.96이다. 평균 오차는 약 5%, 최대 오차는 8%이다. 컴포넌트 단위 피크 오차는 더 크다. DRAM은 SR에서 0.78(22%), NAND는 SR에서 0.88(12%)이며, 컨트롤러는 최대 5%이다. 초록의 8% 최대 오차는 시스템 전체 값에 해당한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Error source:</strong> The authors attribute the peak error to corner cases. If the emulated workload does not reproduce the silicon peak event, that event is missed. Recreating such events requires specific test cases, which verification engineers would need to collect over time.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>오차 원인:</strong> 저자들은 피크 오차의 원인을 코너 케이스로 본다. 에뮬레이션 워크로드가 실리콘의 피크 이벤트를 재현하지 못하면 해당 이벤트를 놓치게 된다. 이를 재현하려면 특정 테스트 케이스가 필요하며, 검증 엔지니어가 시간을 두고 수집해야 한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Limitations (as stated or evident in the text):</strong> Only one commercial SSD and one emulation platform (Veloce) were used, though the authors state the method is not vendor-specific. Smaller designs may use Verilog simulation. Power-saving modes were not evaluated. The sentence introducing the controller peak-power analysis in the source is incomplete.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>한계(본문에 명시되었거나 본문에서 확인되는 사항):</strong> 상용 SSD 1종과 Veloce 플랫폼 1종만 사용했다. 저자들은 이 방법이 벤더 특정적이지 않다고 밝히지만, 검증된 범위는 이에 한정된다. 소규모 설계에는 Verilog 시뮬레이션을 사용할 수 있다. 전력 절감 모드는 평가하지 않았다. 원문에서 컨트롤러 피크 전력 분석을 소개하는 문장은 미완성 상태이다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Conclusion:</strong> Combining silicon-measured per-command power with emulation-based command tracing gives system-level average and peak power estimates for SSDs with a maximum error of 8%.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>결론:</strong> 실리콘에서 측정한 명령별 전력과 에뮬레이션 기반 명령 추적을 결합하여, 최대 오차 8%로 SSD의 시스템 레벨 평균 및 피크 전력을 추정할 수 있다.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/x32Ey9cnaMw" title="[DVCON2023] System-Level Power Estimation of SSDs under Real Workloads using Emulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2023] System-Level Power Estimation of SSDs under Real Workloads using Emulation</strong> — <a href="https://www.youtube.com/watch?v=x32Ey9cnaMw">Watch on YouTube</a> · <a href="../../videos/x32Ey9cnaMw/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

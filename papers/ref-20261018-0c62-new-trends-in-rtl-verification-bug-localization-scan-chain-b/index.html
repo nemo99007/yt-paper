@@ -1,0 +1,1315 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-0c62-new-trends-in-rtl-verification-bug-localization-scan-chain-b/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>New Trends in RTL Verification: Bug Localization, Scan-Chain-Based Methodology, GA-Based Test Generation - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#new-trends-in-rtl-verification-bug-localization-scan-chain-based-methodology-ga-based-test-generation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              New Trends in RTL Verification: Bug Localization, Scan-Chain-Based Methodology, GA-Based Test Generation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:bug-localization" class="md-tag">Bug Localization</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:coverage-closure" class="md-tag">Coverage Closure</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:emulation" class="md-tag">Emulation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:genetic-algorithm" class="md-tag">Genetic Algorithm</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:scan-chain" class="md-tag">Scan-Chain</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/europe/">Europe</a> › <a href="../../dvcon/by-year/#2015">2015</a> › <a href="../../dvcon/by-topic/#verification">Verification</a></p>
+<h1 id="new-trends-in-rtl-verification-bug-localization-scan-chain-based-methodology-ga-based-test-generation">New Trends in RTL Verification: Bug Localization, Scan-Chain-Based Methodology, GA-Based Test Generation<a class="headerlink" href="#new-trends-in-rtl-verification-bug-localization-scan-chain-based-methodology-ga-based-test-generation" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Fig. 1 The proposed methodology for automated bug localization." loading="lazy" src="../../assets/figures/ref-20261018-0c62.png" /></p>
+<figcaption>Fig. 1 The proposed methodology for automated bug localization. — from the original paper (Khaled Salah et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/new-trends-in-rtl-verification-bug-localization-scan-chain-based-methodology-ga-based-test-generation.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Khaled Salah (Mentor Graphics, Cairo, Egypt)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon Europe 2015</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-0c62</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>The paper proposes three RTL verification techniques: a coverage-based suspiciousness ranking for bug localization, an auto-instrumented run-time scan-chain for FPGA emulation debugging, and a GA-guided stimulus feedback loop that closes functional coverage faster than random testing.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>이 논문은 세 가지 RTL 검증 기법을 제안합니다. 커버리지 기반 의심도 랭킹을 이용한 버그 로컬라이제이션, FPGA 에뮬레이션 디버그를 위한 자동 계측 기반 run-time scan-chain, 그리고 커버리지 피드백을 사용하는 GA 기반 자극 생성입니다. GA 기법은 랜덤 테스트보다 빠르게 기능 커버리지를 닫습니다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Coverage-based suspiciousness ranking (failed tests executing a statement divided by passed tests executing it) localized 29 injected bugs in a &gt;5000-line RTL design in 1–10 min, versus 1–3 h for manual debug (Table II); the method assumes a single bug and rich, correct testcases.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>커버리지 기반 의심도 랭킹(구문을 실행한 실패 테스트 수를 같은 구문을 실행한 성공 테스트 수로 나눈 값)은 5000라인 이상 RTL 설계에 주입된 29개 버그를 1~10분에 로컬라이즈했으며, 수동 디버그는 1~3시간이 걸렸습니다(Table II). 이 방법은 버그가 하나라는 가정과 풍부하고 올바른 testcase를 전제로 합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The scan-chain utility wraps every reg with a mux and glue logic so signal values can be forced at run time on emulation without recompiling the whole design; the authors report negligible area overhead but longer compile time, with no quantitative data.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>scan-chain 유틸리티는 모든 reg를 mux와 glue logic으로 감싸 전체 설계를 재컴파일하지 않고도 에뮬레이션 중 신호 값을 강제로 바꿀 수 있게 합니다. 저자들은 면적 오버헤드가 무시할 만하다고 보고하지만 컴파일 시간은 늘어난다고 밝혔고, 정량적 데이터는 제시하지 않았습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>GA-guided stimulus generation (fitness = functional coverage %, population 50, 200 generations, multi-point crossover) reached 100% coverage on 12 designs with 90–155 stimulus versus 120–215 for random, a per-design reduction of 7.7–46.7% (about 32% aggregate, derived from Table III).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>GA 기반 자극 생성(fitness = 기능 커버리지 %, population 50, 200 generations, multi-point crossover)은 12개 설계에서 100% 커버리지에 도달했으며, 자극 수는 90~155회로 랜덤의 120~215회에 비해 설계별로 7.7~46.7% 줄었습니다(Table III 기준 전체 약 32%, 표에서 계산한 값).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Run time per design fell from 3–4 s (random) to 1–2.6 s (GA) in Table III; however, results come from a short proof-of-concept with Verilog case studies, a random-only baseline, and no variance or statistical reporting.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Table III에서 설계당 실행 시간은 랜덤 3~4초에서 GA 1~2.6초로 줄었습니다. 다만 이 결과는 Verilog 사례 연구 기반의 짧은 proof-of-concept이며, 기준선은 랜덤뿐이고, 분산이나 통계적 보고는 없습니다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Manual RTL bug localization is slow for large designs. Prior localization work is mostly gate-level and small-scale, and assertion-based formal approaches do not scale to large RTL.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>수동 RTL 버그 로컬라이제이션은 대형 설계에서 시간이 많이 듭니다. 기존 로컬라이제이션 연구는 대부분 gate-level과 소규모 설계를 대상으로 하며, assertion 기반 형식 기법은 대형 RTL로 확장되지 않습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>FPGA-based RTL emulation is fast but gives poor run-time visibility. In offline debug flows, changing an internal value requires a full recompile, which slows iteration.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>FPGA 기반 RTL 에뮬레이션은 빠르지만 run-time 가시성이 낮습니다. 오프라인 디버그 흐름에서는 내부 값을 바꾸려면 전체 설계를 재컴파일해야 하므로 반복 속도가 떨어집니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Constrained-random (CRT) coverage closure needs manual analysis of coverage reports and manual constraint edits to reach 100% coverage. The paper seeks an automated feedback loop from coverage analysis to test generation.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>CRT(Constrained-Random Testing)의 커버리지 closure에는 커버리지 리포트의 수동 분석과 제약 조건의 수동 수정이 필요합니다. 이 논문은 커버리지 분석에서 테스트 생성으로 이어지는 자동 피드백 루프를 목표로 합니다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>The paper covers three independent techniques.</p>
+</div>
+<div class="bi-ko">
+<p>이 논문은 서로 독립적인 세 가지 기법을 다룹니다.</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p><strong>1. Coverage-based bug localization.</strong> The full regression is run until coverage reaches 100%. For each test, the set of executed statements and its pass/fail status are recorded. The suspiciousness of a statement is defined as (number of failed tests executing it) / (number of successful tests executing it), and statements are ranked from highest to lowest. This is a heuristic borrowed from software fault localization (Tarantula and related coverage-based methods). The approach assumes a single incorrect statement and rich, correct testcases. It localizes but does not repair the bug.</p>
+</div>
+<div class="bi-ko">
+<p><strong>1. 커버리지 기반 버그 로컬라이제이션.</strong> 커버리지가 100%에 도달할 때까지 전체 regression을 실행합니다. 각 테스트에 대해 실행된 구문 집합과 pass/fail 상태를 기록합니다. 구문의 의심도는 (해당 구문을 실행한 실패 테스트 수) / (해당 구문을 실행한 성공 테스트 수)로 정의하며, 높은 값부터 순위를 매깁니다. 이는 소프트웨어 결함 로컬라이제이션(Tarantula 및 관련 커버리지 기반 방법)에서 빌려온 휴리스틱입니다. 이 접근법은 잘못된 구문이 하나뿐이라는 가정과 풍부하고 올바른 testcase를 전제로 합니다. 버그를 로컬라이즈할 뿐 수정하지는 않습니다.</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p><strong>2. RTL scan-chain for emulation debug.</strong> A utility tool instruments each <code>reg</code> in the RTL with a glue block: a mux with an extra input that is controlled by an Enable_Scan signal, plus a run-time value input (C_RUNTIME in Fig. 3). Using the example <code>out &lt;= (A+B)*C</code>, the value of C can be forced at run time without recompiling. The authors state that the area overhead is negligible relative to the performance gained, but that the instrumented design needs more compilation time.</p>
+</div>
+<div class="bi-ko">
+<p><strong>2. 에뮬레이션 디버그용 RTL scan-chain.</strong> 유틸리티 도구가 RTL의 각 <code>reg</code>에 glue 블록을 삽입합니다. 이는 추가 입력을 가진 mux이며 Enable_Scan 신호로 제어되고, run-time 값 입력(Fig. 3의 C_RUNTIME)을 가집니다. <code>out &lt;= (A+B)*C</code> 예제에서 C 값은 재컴파일 없이 run time에 강제로 바꿀 수 있습니다. 저자들은 면적 오버헤드가 얻는 성능 이득에 비해 무시할 만하다고 밝히지만, 계측된 설계는 컴파일 시간이 더 필요하다고 말합니다.</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p><strong>3. GA-based test generation.</strong> Stimulus parameters are encoded as chromosomes. Fitness is the functional coverage ratio. The operators are selection (fitness-proportional), multi-point crossover, mutation, and generational replacement. Termination occurs at a maximum number of generations (200 in the paper's figure) or when the fitness threshold is reached, with population size 50. Coverage collected in each stimulus cycle is fed back to the GA, which generates guided random stimulus aimed at coverage holes. Fig. 4 shows three options: manually generated, randomly generated, and GA-guided random stimulus.</p>
+</div>
+<div class="bi-ko">
+<p><strong>3. GA 기반 테스트 생성.</strong> 자극 파라미터를 chromosome으로 인코딩합니다. Fitness는 기능 커버리지 비율입니다. 연산자는 selection(적합도 비례), multi-point crossover, mutation, 세대 교체(generational replacement)입니다. 종료 조건은 최대 세대 수(논문 그림 기준 200)이거나 fitness 임계값 도달이며, population 크기는 50입니다. 각 자극 주기에서 수집한 커버리지는 GA로 피드백되어 커버리지 hole을 겨냥한 guided random 자극을 생성합니다. Fig. 4는 수동 생성, 랜덤 생성, GA 기반 guided random 자극의 세 가지 옵션을 보여줍니다.</p>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+  A[Run stimulus] --&gt; B{Coverage 100%?}
+  B -- Yes --&gt; E[End]
+  B -- No --&gt; C[Collect coverage holes]
+  C --&gt; D[GA: select, crossover, mutate]
+  D --&gt; A</code></pre>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Bug localization:</strong> For 29 injected bugs in a design of more than 5000 RTL lines (Table II), the proposed method took 1–10 min, while manual debug took 1–3 h. The abstract claims detection in several-thousand-line designs within minutes with a 100% success rate. The paper does not give a separate accuracy breakdown.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>버그 로컬라이제이션:</strong> 5000라인 이상 RTL 설계에 주입된 29개 버그(Table II)에 대해 제안 방법은 1~10분이 걸린 반면, 수동 디버그는 1~3시간이 걸렸습니다. 초록은 수천 라인 규모 설계에서 수 분 내 탐지와 100% 성공률을 주장하지만, 별도의 정확도 분석은 제시하지 않습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Scan-chain:</strong> The results are qualitative only. The paper reports negligible area overhead and increased compile time, with no measured values.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Scan-chain:</strong> 결과는 정성적입니다. 면적 오버헤드는 무시할 만하고 컴파일 시간은 늘어난다고 보고하지만, 측정된 수치는 없습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>GA test generation (Table III, 12 designs):</strong> Random testing needed 120–215 stimulus and 3–4 s run time. The GA approach needed 90–155 stimulus and 1–2.6 s. The per-design stimulus reduction ranged from 7.7% (design #7) to 46.7% (design #9), and the aggregate reduction is about 32% (computed from the table). The design identities and the variance across runs are not reported.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>GA 테스트 생성(Table III, 12개 설계):</strong> 랜덤 테스트는 120~215회 자극과 3~4초의 실행 시간이 필요했습니다. GA 접근법은 90~155회 자극과 1~2.6초가 필요했습니다. 설계별 자극 감소율은 7.7%(설계 #7)에서 46.7%(설계 #9)였으며, 전체 감소율은 표에서 계산한 약 32%입니다. 설계 식별자와 실행 간 분산은 보고되지 않았습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Limitations:</strong> This is a proof-of-concept paper. The case studies are Verilog designs, the only baseline is random testing, and no statistical analysis is given. Related coverage-directed methods (for example, Fine and Ziv; Benjamin et al.) are cited but not compared against.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>한계:</strong> 이 논문은 proof-of-concept입니다. 사례 연구는 Verilog 설계이며, 유일한 기준선은 랜덤 테스트이고, 통계 분석은 없습니다. Fine and Ziv, Benjamin et al. 등 관련 커버리지 지향 방법은 인용만 되고 비교되지 않았습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Conclusion:</strong> The authors position the three techniques as ways to reduce debug time, emulation debug effort, and coverage-closure effort. The evidence is preliminary and mostly from the authors' own case studies.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>결론:</strong> 저자들은 세 기법을 디버그 시간, 에뮬레이션 디버그 노력, 커버리지 closure 노력을 줄이는 방법으로 제시합니다. 근거는 예비적이며 대부분 저자들의 사례 연구에서 나온 것입니다.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/NCZGtajDsYc" title="[DVCON2015]New Trends in RTL Verification Bug Localization, Scan Chain Methodology, GA Test Gen" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2015]New Trends in RTL Verification Bug Localization, Scan Chain Methodology, GA Test Gen</strong> — <a href="https://www.youtube.com/watch?v=NCZGtajDsYc">Watch on YouTube</a> · <a href="../../videos/NCZGtajDsYc/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

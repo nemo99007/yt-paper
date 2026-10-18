@@ -1,0 +1,1617 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-8aac-expedited-gate-level-verification-unleashing-the-potential-o/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Expedited Gate Level Verification: Unleashing the Potential of Netlist Integrated Emulation Platforms - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#expedited-gate-level-verification-unleashing-the-potential-of-netlist-integrated-emulation-platforms" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Expedited Gate Level Verification: Unleashing the Potential of Netlist Integrated Emulation Platforms
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:gate-level-emulation" class="md-tag">Gate Level Emulation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:netlist" class="md-tag">Netlist</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:oversampling" class="md-tag">Oversampling</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:palladium-z2" class="md-tag">Palladium Z2</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:saif" class="md-tag">SAIF</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/india/">India</a> › <a href="../../dvcon/by-year/#2024">2024</a> › <a href="../../dvcon/by-topic/#emulation">Emulation</a></p>
+<h1 id="expedited-gate-level-verification-unleashing-the-potential-of-netlist-integrated-emulation-platforms">Expedited Gate Level Verification: Unleashing the Potential of Netlist Integrated Emulation Platforms<a class="headerlink" href="#expedited-gate-level-verification-unleashing-the-potential-of-netlist-integrated-emulation-platforms" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 1. Typical Netlist Compilation Flow" loading="lazy" src="../../assets/figures/ref-20261018-8aac.png" /></p>
+<figcaption>Figure 1. Typical Netlist Compilation Flow — from the original paper (Samhith Kumar Pottem et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/5B1-DVCon_India_2024_Final_Paper_3974.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Samhith Kumar Pottem, Vasudeva Reddy Ambati, Rahul S S, Sarang Kalbande, Garima Srivastava (Samsung Semiconductor India Research), Hyundon Kim (Samsung Electronics)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon India 2024</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Emulation</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-8aac</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>The paper presents a netlist-integrated Gate Level Emulation (GLE) platform on custom ASIC emulators (Cadence Palladium Z2) that cuts netlist compile time through intermittent and explicit netlist flows and raises emulator clock rate through oversampling and hybrid/stub partitioning, reporting roughly 55x faster execution than GLS and about 60% test coverage versus about 10% for GLS.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>본 논문은 커스텀 ASIC 에뮬레이터(Cadence Palladium Z2) 기반의 netlist 통합 Gate Level Emulation(GLE) 플랫폼을 제시한다. Intermittent 및 explicit netlist 플로우로 netlist 컴파일 시간을 줄이고, oversampling과 hybrid/stub 파티셔닝으로 에뮬레이터 클럭 속도를 높이며, GLS 대비 약 55배 빠른 실행 시간과 GLS의 약 10% 대비 약 60% 테스트 커버리지를 보고한다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Compile-flow choice dominates netlist turnaround: Table II totals are 42:36 h for the RTL-style netlist flow, 20:01 h for the intermittent flow, and 04:57 h for the explicit flow, with HW synthesis (20:05:44 in the RTL flow) and Elaboration (09:50:30 RTL vs 00:15:00 explicit) as the largest contributors.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>컴파일 플로우 선택이 netlist 턴어라운드를 좌우한다. Table II 총 시간은 RTL 방식 netlist 플로우 42:36 h, intermittent 플로우 20:01 h, explicit 플로우 04:57 h이며, 가장 큰 비중은 HW synthesis(RTL 플로우 20:05:44)와 Elaboration(RTL 09:50:30 대 explicit 00:15:00)이다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Oversampling ratio trades speed against capacity and correctness: with the x1 ratio the operating speed is 800 KHz for full netlist, 1000 KHz for hybrid, and 1400 KHz for stubbed, versus 400/600/800 KHz without oversampling (x2). Smaller ratios cost capacity and can break designs with asynchronous loops, so each design needs a per-design check.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Oversampling 비율은 속도와 용량·정확성 사이의 트레이드오프다. x1 비율에서 동작 속도는 full netlist 800 KHz, hybrid 1000 KHz, stubbed 1400 KHz이며, oversampling을 쓰지 않은 x2에서는 각각 400/600/800 KHz다. 비율을 낮추면 용량 비용이 늘고 비동기 루프가 있는 설계에서 기능이 깨질 수 있어 설계별 검증이 필요하다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Hybrid (only selected IPs at gate level) and stub (blocks excluded when they are independent) partitioning raise speed further; relative to full netlist at x1, the derived gains are about 1.25x (hybrid) and 1.75x (stubbed).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Hybrid(선택한 IP만 gate level)와 stub(독립 블록 제외) 파티셔닝은 속도를 추가로 높인다. x1 기준 full netlist 대비 파생 이득은 hybrid 약 1.25배, stubbed 약 1.75배다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Across the two SoCs (1B and 2B gates), Table IV reports ASIC full-netlist speeds of 1100 KHz and 780 KHz, rising to 1400 KHz and 1050 KHz after expedition, against GLS speeds of 0.6 and 0.45 KHz in the same table's GLS column. The claimed figures (55x in the abstract, 50-60x in the conclusion, about 7x compile and 6x runtime) do not reconcile cleanly with the tables, and the GLS baseline and coverage metric are not defined, so the headline numbers should be treated with caution.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Table IV는 1B, 2B 게이트 SoC에서 ASIC full netlist 속도가 각각 1100 KHz, 780 KHz이고 expedition 적용 후 1400 KHz, 1050 KHz로 오르며, 같은 표의 GLS 열은 0.6 KHz, 0.45 KHz임을 보여준다. 다만 초록의 55배, 결론의 50-60배, 컴파일 약 7배 및 런타임 약 6배 수치는 표와 깔끔하게 맞지 않으며, GLS 기준선과 커버리지 측정 방식도 정의되어 있지 않으므로 주의해서 해석해야 한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Table I shows ASIC emulation compiling in 18 h at 600 KHz versus FPGA at 24 h at 2000 KHz for a 1.5B-gate design. The text calls the FPGA clock 'slightly higher', which understates the gap in the table, while the ASIC advantage is in compile time, scalability, and debug support.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Table I에서 1.5B 게이트 설계의 컴파일 시간은 ASIC 18 h, FPGA 24 h이고, 동작 클럭은 ASIC 600 KHz, FPGA 2000 KHz다. 본문은 FPGA 클럭이 '약간 높다'고 서술하지만 표의 차이는 그보다 크며, ASIC의 장점은 컴파일 시간, 확장성, 디버그 지원에 있다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Gate Level Simulation (GLS) is needed to capture physical implementation effects and switching activity (for example, dynamic power and DFT scan validation), but a single test can take multiple days in simulation.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Gate Level Simulation(GLS)은 물리 구현 효과와 스위칭 액티비티(예: 동적 전력, DFT scan 검증)를 포착하는 데 필요하지만, 시뮬레이션에서는 테스트 하나에 며칠이 걸릴 수 있다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The authors' earlier FPGA-based GLE work (DVCon India 2023, ref. [1]) reduced per-scenario validation time but had long compile times and reduced runtime performance on SoCs with billions of gates.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>저자들의 이전 FPGA 기반 GLE 연구(DVCon India 2023, 참고문헌 [1])는 시나리오별 검증 시간을 줄였지만, 수십억 게이트 SoC에서 컴파일 시간이 길고 런타임 성능이 떨어지는 문제가 있었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Post-tape-out bugs force costly SoC re-spins. The paper states that GLS coverage typically reaches only about 10% because it starts after RTL sign-off and runs for a short window before Metal Tape-Out (MTO).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Tape-out 이후 버그는 값비싼 SoC 재제작(re-spin)으로 이어진다. 논문은 GLS가 RTL sign-off 이후에 시작되어 Metal Tape-Out(MTO) 전까지의 짧은 기간에만 실행되므로 커버리지가 약 10% 수준에 그친다고 밝힌다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Goal: a GLE platform on custom ASIC emulators with compile-time and runtime expedition techniques, tested on an automotive chipset and an Exynos premium mobile SoC.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>목표: 자동차용 칩셋과 Exynos 프리미엄 모바일 SoC를 대상으로, 컴파일 시간과 런타임 성능을 개선하는 expedition 기법을 적용한 커스텀 ASIC 에뮬레이터 기반 GLE 플랫폼을 구현하는 것이다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>The generic netlist compile flow (Figure 1) is:</p>
+</div>
+<div class="bi-ko">
+<p>일반적인 netlist 컴파일 플로우(Figure 1)는 다음과 같다.</p>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+    A[Incremental import] --&gt; B[Front-end: parse, analysis]
+    B --&gt; C[Abstraction and normalization]
+    C --&gt; D[Incisive wrapper: partition, distributed synthesis]
+    D --&gt; E[Back-end pre-compile: flatten, parallel]
+    E --&gt; F[Compile: design DB]
+    F --&gt; G[Emulator + SW testbench]
+    G -. runtime swap .- H[Simulator for non-synthesizable logic]</code></pre>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Front-end: incremental import of design files, primitives, memory models, and synthesizable analog models. Analysis checks syntax, semantics, and custom rules.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Front-end: 설계 파일, primitive, 메모리 모델, 합성 가능한 아날로그 모델을 incremental하게 import한다. Analysis 단계는 문법, 의미, 사용자 정의 규칙을 점검한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Distributed synthesis runs at module level across workstations for designs of tens of millions to billions of gates. A library mapping file links physical and logical library paths.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Distributed synthesis는 수천만에서 수십억 게이트 설계를 모듈 단위로 여러 워크스테이션에 분산해 수행한다. Library mapping 파일이 물리 라이브러리 경로와 논리 라이브러리 경로를 연결한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Back-end: the flattened netlist is compiled into the design database loaded on the emulator, with runtime switching between the simulator-hosted testbench and the DUT.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Back-end: flatten된 netlist를 컴파일해 에뮬레이터에 로드할 design DB를 만들며, 런타임에 시뮬레이터에서 실행되는 testbench와 DUT 사이를 전환할 수 있다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Compile-time expedition:</p>
+</div>
+<div class="bi-ko">
+<p>컴파일 시간 expedition:</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Intermittent flow</strong> (Figure 2): netlist files are analysed once into a logical library. Elaboration of the RTL hierarchy finds unbound netlist modules, imports them with I/O interface extraction, and bypasses the front-end.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Intermittent 플로우</strong>(Figure 2): netlist 파일을 한 번 분석해 논리 라이브러리로 구성한다. RTL 계층 elaboration 중에 바인딩되지 않은 netlist 모듈을 찾아 I/O 인터페이스 정보를 추출하여 import하며, front-end를 건너뛴다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Explicit netlist flow</strong> (Figure 3): already-synthesized netlists go straight to the synthesis stage, bypassing front-end and Incisive compile. It needs explicit netlist object references, a complete netlist, technology-compatible cell libraries, and RTL-format cells converted to gates. It is provided for backward compatibility.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Explicit netlist 플로우</strong>(Figure 3): 이미 합성된 netlist를 바로 synthesis 단계로 넘겨 front-end와 Incisive 컴파일을 모두 우회한다. 명시적인 netlist 객체 참조, 완전한 netlist, 공정 기술과 호환되는 cell library가 필요하며, RTL 형식 cell은 gate로 변환해야 한다. 하위 호환성을 위해 제공되는 방식이다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Runtime expedition:</p>
+</div>
+<div class="bi-ko">
+<p>런타임 expedition:</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Oversampling</strong>: the ratio is the number of emulator cycles per fastest design clock cycle, configurable to 0.5, 1, or any even number. The default mode refreshes each net at least once every two emulator cycles (x2). Smaller ratios speed up the design but increase capacity cost and risk functional errors in designs with asynchronous loops. Figure 4 shows clock alignment for ratios 1, 3, and 2.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Oversampling</strong>: 비율은 가장 빠른 설계 클럭 한 주기당 에뮬레이터 사이클 수이며, 0.5, 1 또는 임의의 짝수로 설정할 수 있다. 기본 모드는 각 net을 최소 두 에뮬레이터 사이클마다 한 번 갱신한다(x2). 비율을 낮추면 설계 속도는 빨라지지만 용량 비용이 늘고 비동기 루프가 있는 설계에서 기능 오류가 생길 수 있다. Figure 4는 비율 1, 3, 2에서의 클럭 정렬을 보여준다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Hybrid</strong>: only the IPs under verification are gate-level, and the rest stay RTL.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Hybrid</strong>: 검증 대상 IP만 gate level로 두고 나머지는 RTL로 유지한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Stub</strong>: independent blocks under verification are kept, and other blocks are removed before compilation.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Stub</strong>: 검증 대상 블록은 유지하고, 독립적으로 동작하는 다른 블록은 컴파일 전에 제거한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Scenarios validated: zero-delay and unit-delay GLS, Dynamic Power Analysis using SAIF files, and scan data validation for DFT. The paper lists BIST as a future scope.</p>
+</div>
+<div class="bi-ko">
+<p>검증 시나리오: zero-delay 및 unit-delay GLS, SAIF 파일을 이용한 동적 전력 분석(Dynamic Power Analysis), DFT scan 데이터 검증. BIST 시나리오는 향후 과제로 제시된다.</p>
+</div>
+</div>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>Compile-stage times (Table II, hh<img alt="🇲🇲" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f1f2-1f1f2.svg" title=":mm:" />ss):</p>
+</div>
+<div class="bi-ko">
+<p>컴파일 단계별 시간(Table II, hh<img alt="🇲🇲" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f1f2-1f1f2.svg" title=":mm:" />ss):</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>RTL</th>
+<th>Intermittent</th>
+<th>Explicit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Elaboration</td>
+<td>09:50:30</td>
+<td>14:25:00</td>
+<td>00:15:00</td>
+</tr>
+<tr>
+<td>HW Synthesize</td>
+<td>20:05:44</td>
+<td>00:42:00</td>
+<td>00:19:00</td>
+</tr>
+<tr>
+<td>Compile</td>
+<td>06:32:00</td>
+<td>02:38:00</td>
+<td>03:03:00</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>42:36:00</td>
+<td>20:01:00</td>
+<td>04:57:00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bi-ko">
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>RTL</th>
+<th>Intermittent</th>
+<th>Explicit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Elaboration</td>
+<td>09:50:30</td>
+<td>14:25:00</td>
+<td>00:15:00</td>
+</tr>
+<tr>
+<td>HW Synthesize</td>
+<td>20:05:44</td>
+<td>00:42:00</td>
+<td>00:19:00</td>
+</tr>
+<tr>
+<td>Compile</td>
+<td>06:32:00</td>
+<td>02:38:00</td>
+<td>03:03:00</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>42:36:00</td>
+<td>20:01:00</td>
+<td>04:57:00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Table III (KHz):</p>
+</div>
+<div class="bi-ko">
+<p>Table III (KHz):</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Full net</th>
+<th>Hybrid</th>
+<th>Stubbed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x1 oversampling</td>
+<td>800</td>
+<td>1000</td>
+<td>1400</td>
+</tr>
+<tr>
+<td>x2 (no oversampling)</td>
+<td>400</td>
+<td>600</td>
+<td>800</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bi-ko">
+<table>
+<thead>
+<tr>
+<th>모드</th>
+<th>Full net</th>
+<th>Hybrid</th>
+<th>Stubbed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x1 oversampling</td>
+<td>800</td>
+<td>1000</td>
+<td>1400</td>
+</tr>
+<tr>
+<td>x2 (oversampling 없음)</td>
+<td>400</td>
+<td>600</td>
+<td>800</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Table I (1.5B-gate design): FPGA 24 h / 2000 KHz; ASIC 18 h / 600 KHz.</p>
+</div>
+<div class="bi-ko">
+<p>Table I (1.5B 게이트 설계): FPGA 24 h / 2000 KHz; ASIC 18 h / 600 KHz.</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Table IV (compile hours / operating speed):</p>
+</div>
+<div class="bi-ko">
+<p>Table IV (컴파일 시간 h / 동작 속도):</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>SoC1 (1B gates): full net GLS 18 h / 0.6 KHz; full net ASIC 12 h / 1100 KHz; with expedition GLS 15 h / 0.9 KHz; with expedition ASIC 8 h / 1400 KHz.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>SoC1 (1B 게이트): full net GLS 18 h / 0.6 KHz; full net ASIC 12 h / 1100 KHz; expedition 적용 GLS 15 h / 0.9 KHz; expedition 적용 ASIC 8 h / 1400 KHz.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>SoC2 (2B gates): full net GLS 34 h / 0.45 KHz; full net ASIC 18 h / 780 KHz; with expedition GLS 25 h / 0.7 KHz; with expedition ASIC 13 h / 1050 KHz.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>SoC2 (2B 게이트): full net GLS 34 h / 0.45 KHz; full net ASIC 18 h / 780 KHz; expedition 적용 GLS 25 h / 0.7 KHz; expedition 적용 ASIC 13 h / 1050 KHz.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Reported headline claims:</p>
+</div>
+<div class="bi-ko">
+<p>보고된 주요 주장:</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Compile time reduced about 7x and runtime speed improved about 6x.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>컴파일 시간 약 7배 감소, 런타임 속도 약 6배 향상.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Scenario execution time difference of 50-60x (55x in the abstract).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>시나리오 실행 시간 차이 50-60배(초록에서는 55배).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Test coverage of about 60%, against about 10% for GLS.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>테스트 커버리지 약 60%, GLS의 약 10% 대비.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Caveats: the headline ratios are not fully consistent with the tables. The GLS baseline and the coverage metric are not defined, and the Table IV column labels are ambiguous. The paper also says the FPGA clock is 'slightly higher' than the ASIC clock, but Table I shows 2000 vs 600 KHz. The limitations section notes that emulators cannot handle SDF timing, so hot-swap to a simulator for timing is being explored. A 4-state UPF power-aware integration is also in development.</p>
+</div>
+<div class="bi-ko">
+<p>유의점: 주요 배수 수치는 표와 완전히 일치하지 않는다. GLS 기준선과 커버리지 측정 방식이 정의되어 있지 않고, Table IV의 열 레이블도 모호하다. 본문은 FPGA 클럭이 ASIC보다 '약간 높다'고 하지만 Table I은 2000 KHz 대 600 KHz를 보여준다. 한계점 절에서는 에뮬레이터가 SDF 타이밍을 처리할 수 없어 타이밍은 시뮬레이터로 넘기는 hot-swap을 검토 중이라고 밝히며, 4-state UPF 전력 인지 검증과의 통합도 개발 중이라고 한다.</p>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/r5PnSgBREok" title="[DVCON2024_INDIA]Expedited Gate Level Verification:the Potential of Netlist Integrated Emulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2024_INDIA]Expedited Gate Level Verification:the Potential of Netlist Integrated Emulation</strong> — <a href="https://www.youtube.com/watch?v=r5PnSgBREok">Watch on YouTube</a> · <a href="../../videos/r5PnSgBREok/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

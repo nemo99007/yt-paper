@@ -1,0 +1,1376 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-3557-iso-26262-dependent-failure-analysis-using-pss/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>ISO 26262 Dependent Failure Analysis using PSS - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#iso-26262-dependent-failure-analysis-using-pss" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ISO 26262 Dependent Failure Analysis using PSS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:cache-coherency" class="md-tag">Cache Coherency</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:dfa" class="md-tag">DFA</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:ftr" class="md-tag">FTR</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:iso-26262" class="md-tag">ISO 26262</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:pss" class="md-tag">PSS</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2020">2020</a> › <a href="../../dvcon/by-topic/#verification">Verification</a></p>
+<h1 id="iso-26262-dependent-failure-analysis-using-pss">ISO 26262 Dependent Failure Analysis using PSS<a class="headerlink" href="#iso-26262-dependent-failure-analysis-using-pss" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 9. False sharing with error injection and interference stimuli" loading="lazy" src="../../assets/figures/ref-20261018-3557.png" /></p>
+<figcaption>Figure 9. False sharing with error injection and interference stimuli — from the original paper (Moonki Jang et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/iso-26262-dependent-failure-analysis-using-pss.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Moonki Jang (Samsung Electronics), Jiwoong Kim (Samsung Electronics), Dongjoo Kim (Samsung Electronics), Shai Fuss (Cadence Design Systems), Zeev Kirshenbaum (Cadence Design Systems)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2020</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-3557</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>The paper uses reusable, constrained-random PSS action models to generate Dependent Failure Initiator (DFI) fault injections combined with coherency coupling-factor interference on an automotive SoC, then aggregates per-scenario results into Fault Tolerance Reports (FTR) that feed the ISO 26262 Dependent Failure Analysis (DFA).</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>이 논문은 PSS의 재사용 가능한 constrained-random 액션 모델로 자동차용 SoC에서 DFI(Dependent Failure Initiator) 결함 주입과 coherency 커플링 팩터 간섭을 결합해 생성하고, 시나리오별 결과를 FTR(Fault Tolerance Report)로 집계하여 ISO 26262 DFA(Dependent Failure Analysis)에 반영하는 방법을 제시합니다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>DFA treats faults in shared memory as DFIs (uncorrectable ECC via backdoor, MMU translation faults via page-descriptor valid-bit corruption, RAS error injection) and treats coherency traffic as coupling factors: false sharing within one 64-byte cache line, DVM broadcast, exclusive-access locking, CPU cluster power-down, and dynamic clock changes.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>DFA는 공유 메모리의 결함(ECC backdoor 손상, page descriptor의 valid 비트 손상을 통한 MMU translation fault, RAS 오류 주입)을 DFI로 보고, coherency 트래픽을 커플링 팩터로 봅니다. 대표적인 커플링 팩터는 하나의 64-byte 캐시 라인을 공유하는 false sharing, DVM broadcast, exclusive access 잠금, CPU 클러스터 power-down, 동적 clock 변경입니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>A PSS select with weights expresses the mixed workload: 85% read_increment_write traffic and 15% error injection, split as [5] each across RAS, MMU translation fault, and ECC error actions in the example code (the text also mentions CPU internal exception). Interference actions run in parallel with the false-sharing scenario in a repeat(10) loop.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>PSS의 가중치 select로 혼합 워크로드를 표현합니다. 예제에서는 85%는 read_increment_write 정상 트래픽, 15%는 RAS, MMU translation fault, ECC 오류 액션에 각각 [5]씩 배분한 오류 주입입니다(본문에는 CPU internal exception도 언급). 간섭 액션은 repeat(10) 루프 안에서 false-sharing 시나리오와 parallel로 실행됩니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Each run prints injected fault info (type, address, injection and recovery-completion times), executed interference actions, maximum FTTI, and external recovery-monitor output. Gathering these over hundreds of generated fault conditions identifies which coupling factor delays recovery most; the FTR is then reflected in the DFA report.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>실행마다 주입 결함 정보(종류, 주소, 주입 및 복구 완료 시각), 수행된 간섭 액션, 최대 FTTI, 외부 복구 모니터 출력이 출력됩니다. 수백 개의 생성된 결함 조건에 걸쳐 이를 모으면 복구를 가장 크게 지연시키는 커플링 팩터를 찾을 수 있으며, 그 결과가 FTR을 거쳐 DFA 보고서에 반영됩니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Verification closure uses self-checking (all written data is read back), a PSS covergroup crossing processor tag, error action, and parallel traffic, and merging coverage across runs in Cadence vManager.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>검증 종료 기준은 self-checking(기록된 모든 데이터를 나중에 읽어 검증), 처리기 태그·오류 액션·병렬 트래픽을 교차하는 PSS covergroup, 그리고 vManager에서의 다중 실행 커버리지 병합으로 구성됩니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The paper reports only qualitative outcomes: simulation-level DFA was performed and safety specifications were prepared. It gives no numeric FTTI values, coverage percentages, or silicon/emulation results, so the quantitative benefit is not established.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>논문이 보고하는 결과는 정성적입니다. 시뮬레이션 수준의 DFA를 수행하고 안전 사양을 준비했다는 내용만 있으며, 'hundreds' 외의 구체적 FTTI 값, 커버리지 비율, 실리콘이나 에뮬레이션 결과는 없어 정량적 효과는 입증되지 않았습니다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>ISO 26262 Part 11 defines Dependent Failure Analysis (DFA) to check whether an error in one shared resource (memory, interconnect, IO) can propagate to other elements and break independence or freedom from interference.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>ISO 26262 Part 11은 DFA(Dependent Failure Analysis)를 정의합니다. 공유 자원(메모리, 인터커넥트, IO)의 오류가 다른 요소로 전파되어 독립성이나 간섭 없음(freedom from interference)을 깨뜨리는지 확인하는 방법입니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Dependent failures are classified as cascading failures (root cause, then dependent failure of other elements) and common cause failures (one event causes failure in two or more elements).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Dependent failure는 cascading failure(근본 원인이 한 요소를 실패시키고 이어서 다른 요소의 dependent failure를 유발)와 common cause failure(단일 사건이 둘 이상의 요소를 동시에 실패시킴)로 분류됩니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>DFA requires generating DFIs at chosen time points and combining them with many coupling factors, which means hundreds of scenarios. Manual directed tests do not scale, so the authors adopt PSS constrained-random generation with metric-driven verification.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>DFA에서는 원하는 시점에 DFI를 여러 조건으로 생성하고 많은 커플링 팩터와 조합해야 하므로 시나리오가 수백 개 규모가 됩니다. 수동 directed test로는 확장이 어려워, 저자들은 PSS의 constrained-random 생성과 metric-driven verification(MDV)을 채택했습니다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>The DFA flow in the paper has three steps: identify DFIs, find coupling factors, and confirm safety mechanisms.</p>
+</div>
+<div class="bi-ko">
+<p>논문의 DFA 흐름은 세 단계입니다. DFI 식별, 커플링 팩터 탐색, 안전 메커니즘 확인입니다.</p>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+  A[FMEA items] --&gt; B[DFI selection: ECC / MMU / RAS fault in shared memory]
+  B --&gt; C[Coupling factor: false sharing, DVM, exclusive access, power/clock change]
+  C --&gt; D[PSS scenario: fault injection parallel with interference]
+  D --&gt; E[Per-run log: fault info, interference, max FTTI, recovery monitor]
+  E --&gt; F[FTR]
+  F --&gt; G[DFA report]</code></pre>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>DFI injection:</strong> Uncorrectable ECC errors are created by backdoor modification of a memory data beat that no longer matches its ECC. MMU translation faults are created by corrupting the valid field of a page descriptor. RAS errors are injected into L1/L2/L3 caches to raise error interrupts; the core and cluster are then reset during recovery to observe the effect on coherency.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>DFI 주입:</strong> Uncorrectable ECC 오류는 backdoor로 메모리 데이터 beat를 바꿔 ECC와 불일치하게 만들어 생성합니다. MMU translation fault는 page descriptor의 valid 필드를 손상시켜 생성합니다. RAS 오류는 L1/L2/L3 캐시에 주입해 error interrupt를 발생시키며, 복구 중 코어와 클러스터를 리셋하여 coherency에 미치는 영향을 관찰합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Coupling factors:</strong> False sharing places data from different coherent masters in one 64-byte line, so each write triggers snoops that affect all masters. DVM requests, sent during address remapping, can hang if an MMU is in reset. An exclusive monitor lock can block other PEs indefinitely if an error occurs in the locked region. CPU cluster power-down and clock-level changes are also coupling factors.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>커플링 팩터:</strong> False sharing은 서로 다른 coherent master의 데이터를 하나의 64-byte 캐시 라인에 배치하여, 쓰기마다 snoop이 발생해 모든 master에 영향을 줍니다. DVM 요청은 address remapping 중에 발생하며, MMU가 리셋 상태이면 응답이 돌아오지 않을 수 있습니다. Exclusive monitor 잠금은 잠긴 영역에서 오류가 나면 다른 PE를 무기한 블록시킬 수 있습니다. CPU 클러스터 power-down과 clock level 변경도 커플링 팩터입니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>PSS modeling:</strong> Faults and coupling factors are modeled as reusable actions. The library supplies false-sharing, true-sharing, and RAS actions, along with core selection, synchronization, and memory allocation from configuration tables. Project-specific actions are layered on top.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>PSS 모델링:</strong> 결함과 커플링 팩터는 재사용 가능한 액션으로 모델링합니다. 라이브러리는 false-sharing, true-sharing, RAS 액션을 제공하며, 코어 선택·동기화·메모리 할당은 구성 테이블을 기반으로 처리합니다. 프로젝트 전용 액션은 그 위에 추가됩니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Scenario structure:</strong> <code>activity_selection</code> uses a weighted <code>select</code>: <code>[85]</code> read_increment_write, plus <code>[5]</code> each for <code>ras_core_error_inject</code>, <code>core_remap_ttbr_error_inject</code>, and <code>ecc_memory_error_inject</code>. It is embedded into <code>cdn_coherency_ops_c::false_sharing_random_operator</code>. A second action runs the error-injecting false sharing in <code>parallel</code> with a <code>repeat (10)</code> loop that selects clock change, core power activity, or exclusive cache access.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>시나리오 구조:</strong> <code>activity_selection</code>은 가중치 <code>select</code>를 사용합니다. <code>[85]</code>는 read_increment_write이고, <code>ras_core_error_inject</code>, <code>core_remap_ttbr_error_inject</code>, <code>ecc_memory_error_inject</code>에 각각 <code>[5]</code>가 배정됩니다. 이 액션은 <code>cdn_coherency_ops_c::false_sharing_random_operator</code>에 내장됩니다. 두 번째 액션은 오류 주입 false sharing을 <code>parallel</code>로 실행하고, <code>repeat (10)</code> 루프에서 clock 변경, 코어 전원 동작, exclusive cache access 중 하나를 선택합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Self-checking and coverage:</strong> Written data is read back to check validity. A covergroup defines <code>proc_x_err_x_traffic</code> as a cross of error-injecting processor, error type, and parallel traffic. Coverage is merged across runs in vManager.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Self-checking과 커버리지:</strong> 기록된 데이터는 테스트 중 다시 읽어 유효성을 확인합니다. Covergroup <code>proc_x_err_x_traffic</code>은 오류를 주입한 처리기, 오류 종류, 병렬 트래픽의 교차 커버리지를 정의합니다. 커버리지는 vManager에서 여러 실행에 걸쳐 병합합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>FTR generation:</strong> Each scenario prints injected fault details, interference actions, max FTTI (time to recover from an uncontrolled state), and external recovery-monitor output for failed recoveries. Results across hundreds of conditions identify the interference stimulus that most affects recovery. The FTR is reflected in the DFA report.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>FTR 생성:</strong> 각 시나리오는 주입된 결함 정보, 수행된 간섭 액션, 최대 FTTI(비제어 상태에서 복구까지의 시간), 실패한 복구에 대한 외부 복구 모니터 출력을 출력합니다. 수백 개 조건의 결과를 모아 복구에 가장 큰 영향을 준 간섭 자극을 찾고, FTR을 DFA 보고서에 반영합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Tooling:</strong> Cadence Perspec System Verifier with the System Modeling Library (SML), and vManager for analysis. The work was done at simulation level.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>도구:</strong> Cadence Perspec System Verifier와 System Modeling Library(SML)를 사용했고, 분석에는 vManager를 사용했습니다. 작업은 시뮬레이션 수준에서 수행되었습니다.</li>
+</ul>
+</div>
+</div>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The authors performed a simulation-level DFA of how coherency affects the system when a fault occurs in shared memory. This let them analyze dependent failures systematically and prepare safety specifications.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>저자들은 공유 메모리 결함 발생 시 coherency가 시스템에 미치는 영향에 대해 시뮬레이션 수준의 DFA를 수행했습니다. 이를 통해 dependent failure를 체계적으로 분석하고 안전 사양을 준비할 수 있었다고 설명합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>PSS model reuse and constrained-random generation made it easy to produce tests across the conditions defined in safety requirements. The authors describe PSS as an optimized way to reproduce specific target conditions.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>PSS 모델의 재사용성과 constrained-random 테스트 생성 덕분에 안전 요구사항에 정의된 다양한 조건의 테스트를 쉽게 만들 수 있었습니다. 저자들은 PSS를 특정 목표 조건을 재현하는 데 최적화된 방법으로 평가합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The paper does not give quantitative results (no FTTI values, coverage percentages, or run counts beyond "hundreds"). The claimed benefits are qualitative.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>논문은 정량적 결과(FTTI 값, 커버리지 비율, '수백 개' 이외의 실행 수)를 제시하지 않으며, 주장하는 이점은 정성적입니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The authors suggest the requirement-analysis and verification approach can also apply to general SoC verification beyond functional safety.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>저자들은 이 요구사항 분석 및 검증 접근법이 기능 안전 외의 일반 SoC 검증에도 적용될 수 있다고 제안합니다.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/J8PEI2rbgXM" title="[DVCON2020] ISO 26262 Dependent Failure Analysis using PSS" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2020] ISO 26262 Dependent Failure Analysis using PSS</strong> — <a href="https://www.youtube.com/watch?v=J8PEI2rbgXM">Watch on YouTube</a> · <a href="../../videos/J8PEI2rbgXM/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1470 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-f7f6-whats-next-for-systemverilog-in-the-upcoming-ieee-1800-stand/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#whats-next-for-systemverilog-in-the-upcoming-ieee-1800-standard" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:covergroup" class="md-tag">Covergroup</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:ieee-1800" class="md-tag">IEEE 1800</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:lrm" class="md-tag">LRM</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:mantis" class="md-tag">Mantis</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:systemverilog" class="md-tag">SystemVerilog</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2023">2023</a> › <a href="../../dvcon/by-topic/#verification">Verification</a></p>
+<h1 id="whats-next-for-systemverilog-in-the-upcoming-ieee-1800-standard">What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard<a class="headerlink" href="#whats-next-for-systemverilog-in-the-upcoming-ieee-1800-standard" title="Permanent link">&para;</a></h1>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/1114-Whats-Next-for-SystemVerilog-in-the-Upcoming-IEEE-1800-standard.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Dave Rich (affiliation not stated in the document)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2023</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-f7f6</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>Dave Rich reviews the goals and the key enhancements, errata, and clarifications being approved for the upcoming IEEE 1800 SystemVerilog revision (P1800-2023), as tracked by the P1800 Working Group in the Mantis database.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>Dave Rich는 Mantis 데이터베이스에서 P1800 Working Group이 관리하는 차기 IEEE 1800 SystemVerilog 개정(P1800-2023)의 목표와 주요 enhancement, erratum, clarification 항목을 정리한다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The P1800-2023 draft had 26 enhancements, 109 errata, and 61 clarifications approved at the time of writing; these categories overlap, so an issue's Mantis ID is a more reliable reference than its category.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>P1800-2023 초안은 작성 시점에 26개 enhancement, 109개 erratum, 61개 clarification이 승인되었다. 이 범주들은 서로 겹치므로, 범주보다 Mantis ID로 이슈를 참조하는 것이 더 정확하다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Covergroup extension (Mantis 4703, 'covergroup extends g1') lets a derived class add coverpoints, cross them with base-class coverpoints, and override bins (e.g., ignore_bins), removing the need to replicate base coverpoints.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Covergroup 확장(Mantis 4703, 'covergroup extends g1')을 사용하면 파생 클래스에서 coverpoint를 추가하고, 기반 클래스 coverpoint와 cross하며, ignore_bins 등으로 bin을 override할 수 있어 VIP 기반 클래스의 coverpoint 복제가 필요 없어진다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Real-number support is deliberately limited: random weights over real ranges use only the ':/' form, and covergroup bins over reals need the type_option.real_interval option to discretize, since expressions such as (0.1 + 0.2) == 0.3 can never evaluate true.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>실수(real) 지원은 의도적으로 제한된다. 실수 범위에 대한 랜덤 가중치는 ':/' 형식만 사용할 수 있고, 실수 기반 covergroup bin은 이산화를 위해 type_option.real_interval 옵션이 필요하다. (0.1 + 0.2) == 0.3은 결코 true로 평가되지 않기 때문이다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Method chaining disambiguates by parentheses: F.member is a hierarchical reference to a static variable inside F, while F().member selects a member of the returned class handle (123 vs 0 in the paper's example).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>메서드 체이닝은 괄호로 구분된다. F.member는 F 내부 static 변수에 대한 계층적 참조이고, F().member는 반환된 클래스 핸들의 멤버를 선택한다(논문 예시에서 0 대 123).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Mantis 2841 permits non-integral expressions such as int'(threshold) directly in constraints, removing the need for a shadow integral variable computed in pre_randomize(); the new ref static qualifier (Mantis 2583) makes ref arguments legal in fork/join_none, but automatic ref arguments remain barred from nonblocking targets, force, and join_any/join_none references.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Mantis 2841은 constraint에서 int'(threshold)와 같은 비정수형 식을 직접 허용하여 pre_randomize()에서 계산하는 보조 정수 변수를 불필요하게 만든다. 새 ref static 지정자(Mantis 2583)는 ref 인수를 fork/join_none에서 합법화하지만, automatic ref 인수는 여전히 nonblocking 대상, force, join_any/join_none 참조가 금지된다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The last SystemVerilog LRM revision was completed in 2016 and published as IEEE 1800-2017. Since then, tool vendors have added extensions and clarifying changes independently, leaving users and other tool vendors with unclear specifications. Examples include built-in functions such as $sformatf being accepted in constant expressions even though the LRM does not allow it.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>SystemVerilog LRM의 마지막 개정은 2016년에 완료되어 IEEE 1800-2017로 발행되었다. 이후 툴 벤더들이 독립적으로 확장 기능과 명확화 변경을 추가하면서 사용자와 다른 툴 벤더 모두 언어 명세를 해석하기 어려워졌다. 예를 들어 LRM이 허용하지 않는 $sformatf 같은 내장 함수가 constant expression에서 사용되는 경우가 있다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Users respond by avoiding SystemVerilog features, continuing with Verilog-1995 syntax, or adding workaround packages and other languages (Chisel, Perl, Python, Ruby).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>사용자들은 SystemVerilog 기능 도입을 피하고 Verilog-1995 문법을 계속 쓰거나, 우회용 패키지와 다른 언어(Chisel, Perl, Python, Ruby)를 도입하고 있다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The P1800 project was created in late 2019 with a target publication of 2024. A Working Group of end users and tool vendors submits issues through the Mantis database. Issues fall into three categories: Enhancements (new features), Errata (obvious mistakes or contradictions in the LRM), and Clarifications (ambiguous or missing text).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>P1800 프로젝트는 2019년 말에 생성되었으며 2024년 발행을 목표로 한다. 최종 사용자와 툴 벤더로 구성된 Working Group이 Mantis 데이터베이스를 통해 이슈를 제출한다. 이슈는 Enhancement(신규 기능), Errata(LRM의 명백한 오류 또는 모순), Clarification(모호하거나 누락된 설명)의 세 범주로 나뉜다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Status at writing: 26 enhancements, 109 errata, and 61 clarifications approved. The categories overlap, and issues can change category during review.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>작성 시점의 상태는 26개 enhancement, 109개 erratum, 61개 clarification 승인이다. 범주는 서로 겹치며, 검토 과정에서 이슈의 범주가 바뀔 수 있다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>This is an overview paper, not an experimental or architectural study. It reviews the issue-processing methodology and a selected set of Mantis items:</p>
+</div>
+<div class="bi-ko">
+<p>이 문서는 실험이나 아키텍처 연구가 아닌 개요 논문이다. 이슈 처리 방법론과 선별된 Mantis 항목을 검토한다.</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p><strong>Enhancements</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>Enhancements</strong></p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Covergroup extension (Mantis 4703):</strong> a derived class can use <code>covergroup extends g1;</code> to override a base coverpoint's bins (e.g., <code>ignore_bins</code>) and cross a new coverpoint with a base-class coverpoint, avoiding replication in VIP base-class libraries.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Covergroup 확장(Mantis 4703):</strong> 파생 클래스에서 <code>covergroup extends g1;</code>을 사용해 기반 coverpoint의 bin을 override(예: <code>ignore_bins</code>)하고, 새 coverpoint를 기반 클래스 coverpoint와 cross할 수 있다. VIP 기반 클래스 라이브러리에서 복제를 피할 수 있다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Unpacked array map() (Mantis 7610):</strong> an element-wise method with implicit <code>item</code> and <code>item.index</code>, returning a new array whose type follows the <code>with()</code> expression. Examples: <code>B = A.map() with (byte'(item));</code> and <code>C = A.map(a) with (a + B[a.index]);</code>.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Unpacked array map()(Mantis 7610):</strong> 암시적 <code>item</code>과 <code>item.index</code>를 사용하는 요소별 메서드로, 반환 배열의 타입은 <code>with()</code> 식을 따른다. 예: <code>B = A.map() with (byte'(item));</code>, <code>C = A.map(a) with (a + B[a.index]);</code>.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>**Boolean <code>ifdef (Mantis 1084):** ``</code>ifdef (A &amp;&amp; B) <code>and</code> <code>ifdef (A || B) `` replace the nested-</code>ifdef<code>/intermediate-</code>define` workaround. Only definedness is tested, not macro value.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>**Boolean <code>ifdef(Mantis 1084):** ``</code>ifdef (A &amp;&amp; B) <code>및</code> <code>ifdef (A || B) ``는 중첩</code>ifdef<code>와 중간</code>define`을 쓰는 우회 방식을 대체한다. 매크로의 정의 여부만 검사하며 값은 검사하지 않는다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Multiline strings (Mantis 7308):</strong> triple-quoted literals (<code>"""..."""</code>) that may contain single and double quotes. Related issues: 1397, 1507, 7562.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>다중 행 문자열(Mantis 7308):</strong> 작은따옴표와 큰따옴표를 포함할 수 있는 삼중 따옴표 리터럴(<code>"""..."""</code>). 관련 이슈: 1397, 1507, 7562.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Real-number modeling (Mantis 7295, 7669):</strong> real types are allowed in random variables and constraints. Only the <code>:/</code> weight form is valid over real ranges, since <code>:=</code> would give an infinite weight. Covergroups use <code>type_option.real_interval = 0.01</code> to split <code>[0.75:0.85]</code> into 10 nonoverlapping bins.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>실수 모델링(Mantis 7295, 7669):</strong> 랜덤 변수와 constraint에서 real 타입을 허용한다. 실수 범위에는 <code>:/</code> 가중치 형식만 유효하며, <code>:=</code>는 무한한 가중치를 의미하므로 허용되지 않는다. Covergroup은 <code>type_option.real_interval = 0.01</code>로 <code>[0.75:0.85]</code>를 겹치지 않는 10개 bin으로 나눈다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Method call chaining (Mantis 2735):</strong> a function result can select a member directly. Parentheses distinguish <code>F().member</code> (returned handle) from <code>F.member</code> (Verilog hierarchical reference to a static variable).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>메서드 체이닝(Mantis 2735):</strong> 함수 반환값에서 멤버를 바로 선택할 수 있다. 괄호로 <code>F().member</code>(반환된 핸들)와 <code>F.member</code>(정적 변수에 대한 Verilog 계층 참조)를 구분한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Static ref arguments (Mantis 2583):</strong> a <code>ref static</code> formal guarantees a static actual lifetime, making <code>fork ... join_none</code> monitors on ref arguments legal. Ref arguments must match type exactly, and automatic actuals are barred from nonblocking targets, force statements, and join_any/join_none references.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Static ref 인수(Mantis 2583):</strong> <code>ref static</code> 형식 인수는 실제 인수가 static 수명을 가짐을 보장하여, ref 인수에 대한 <code>fork ... join_none</code> 모니터를 합법화한다. Ref 인수는 타입이 정확히 일치해야 하며, automatic 실제 인수는 nonblocking 대상, force 문, join_any/join_none 참조가 금지된다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p><strong>Errata</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>Errata</strong></p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Mantis 7172:</strong> <code>@(clocking_block)</code> was documented as equivalent to <code>@(posedge phi1)</code>. The LRM now states that the clocking event fires in the Observed region, after the Active/Reactive region, which avoids sampling races.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Mantis 7172:</strong> <code>@(clocking_block)</code>이 <code>@(posedge phi1)</code>와 동등하다고 문서화되어 있었다. 이제 LRM은 clocking event가 Active/Reactive 영역 이후의 Observed 영역에서 발생한다고 명시하여 샘플링 레이스를 피한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Mantis 2841:</strong> the constraint-expression rule (integral types only) is contradicted by constraint guards with object handles. The fix permits non-integral expressions such as <code>randvar &lt; int'(threshold);</code>.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Mantis 2841:</strong> 정수형만 허용한다는 constraint 식 규칙이 object handle을 쓰는 constraint guard와 모순된다. 수정안은 <code>randvar &lt; int'(threshold);</code>와 같은 비정수형 식을 허용한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p><strong>Clarifications</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>Clarifications</strong></p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Mantis 1014:</strong> the rules for compiler directives that must stand alone on a line, such as <code>`ifdef NAME text `endif</code>, are clarified.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Mantis 1014:</strong> <code>`ifdef NAME text `endif</code>처럼 한 줄에 단독으로 있어야 하는 compiler directive의 규칙을 명확히 했다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Mantis 225:</strong> "blocking statement," "blocking assignment," and "non-blocking assignment" are formally defined. <code>A &lt;= #1 2;</code> and <code>A = 3;</code> are not blocking statements, while <code>A = #4 5;</code> is.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Mantis 225:</strong> "blocking statement", "blocking assignment", "non-blocking assignment"를 공식 정의했다. <code>A &lt;= #1 2;</code>와 <code>A = 3;</code>은 blocking statement가 아니고, <code>A = #4 5;</code>는 blocking statement이다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Mantis 325:</strong> the single-number shorthand for packed arrays was rejected because the endianness was ambiguous. The LRM now states that the shorthand applies only to unpacked arrays.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Mantis 325:</strong> packed array의 단일 숫자 축약 표기는 엔디언이 모호하여 기각되었다. LRM은 이제 이 축약 표기가 unpacked array에만 적용됨을 명시한다.</li>
+</ul>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+    A[Issue filed in Mantis by WG members] --&gt; B{Category}
+    B --&gt; C[Enhancement]
+    B --&gt; D[Erratum]
+    B --&gt; E[Clarification]
+    C --&gt; F[Committee approval]
+    D --&gt; F
+    E --&gt; F
+    F --&gt; G[P1800-2023 draft, pending IEEE balloting]</code></pre>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The paper reports no experimental results. Its outcome is a catalog of the approved changes and the process that produced them: 26 enhancements, 109 errata, and 61 clarifications approved for the draft.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>이 논문은 실험 결과를 보고하지 않는다. 결과물은 승인된 변경 목록과 그 결과를 만든 절차로, 초안에 대해 enhancement 26개, erratum 109개, clarification 61개가 승인되었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Some features, such as method chaining and the clarified compiler-directive rules, were already implemented by many tools, so the standard formalizes existing behavior. Others, such as covergroup extension and real-number constraints, are new language capabilities.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Method chaining이나 compiler directive 명확화 규칙처럼 이미 많은 툴이 구현한 동작은 표준으로 공식화되었다. Covergroup 확장이나 실수 constraint처럼 새로운 언어 기능도 포함된다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Some proposals were dropped as unjustified or redundant, such as the packed-array shorthand. Many issues were resolved by other changes.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>packed array 축약 표기처럼 정당화되지 않았거나 중복된 제안은 기각되었고, 많은 이슈는 다른 변경으로 해결되었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The author states that P1800-2023 is not yet a formally approved IEEE standard, and all features remain subject to final IEEE balloting. The stated motive is to keep the language current and to let users protect their verification IP investment.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>저자는 P1800-2023이 아직 공식 승인된 IEEE 표준이 아니며, 모든 기능이 최종 IEEE 투표 승인에 따른다고 밝힌다. 언어를 최신 상태로 유지하고 사용자의 검증 IP 투자를 보호하는 것이 제시된 목적이다.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/gk4Nr1n50Ac" title="[DVCON2023]What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard " loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p>**[DVCON2023]What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard ** — <a href="https://www.youtube.com/watch?v=gk4Nr1n50Ac">Watch on YouTube</a> · <a href="../../videos/gk4Nr1n50Ac/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

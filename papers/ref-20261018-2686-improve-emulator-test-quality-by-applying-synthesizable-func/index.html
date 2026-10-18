@@ -1,0 +1,1435 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-2686-improve-emulator-test-quality-by-applying-synthesizable-func/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Improve emulator test quality by applying synthesizable functional coverage - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#improve-emulator-test-quality-by-applying-synthesizable-functional-coverage" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Improve emulator test quality by applying synthesizable functional coverage
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:emulation" class="md-tag">Emulation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:functional-coverage" class="md-tag">Functional Coverage</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:systemverilog" class="md-tag">SystemVerilog</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:ucis" class="md-tag">UCIS</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:uvm" class="md-tag">UVM</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2023">2023</a> › <a href="../../dvcon/by-topic/#verification">Verification</a></p>
+<h1 id="improve-emulator-test-quality-by-applying-synthesizable-functional-coverage">Improve emulator test quality by applying synthesizable functional coverage<a class="headerlink" href="#improve-emulator-test-quality-by-applying-synthesizable-functional-coverage" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 2. Integration of synthesizable functional coverage module" loading="lazy" src="../../assets/figures/ref-20261018-2686.png" /></p>
+<figcaption>Figure 2. Integration of synthesizable functional coverage module — from the original paper (Hoyeon Hwang et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/1087-Improve-emulator-test-quality-by-applying-synthesizable-functional-coverage.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Hoyeon Hwang (Samsung Electronics), Taeseong Kim (Samsung Electronics), Sanghyun Park (Samsung Electronics), Yong-Kwan Cho (Samsung Electronics), Dohyung Kim (Samsung Electronics), Wonil Cho (Samsung Electronics), Sanggyu Park (Samsung Electronics)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2023</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-2686</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>The paper proposes seven common coding guidelines for synthesizable SystemVerilog functional coverage that work across two commercial emulators (C-vendor and M-vendor) and simulation, shows how to integrate the coverage module in the DUT wrapper, and reports TAT and full-combination case studies.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>이 논문은 두 상용 에뮬레이터(C-vendor, M-vendor)와 시뮬레이션에서 함께 쓸 수 있는 합성 가능한 SystemVerilog functional coverage 코딩 가이드라인 7개를 제시하고, DUT wrapper에 coverage 모듈을 통합하는 방법과 TAT 및 full-combination 사례 연구를 보고한다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>M-vendor emulator limits a coverpoint to 4,096 bins; split wide coverpoints into slices (e.g., a 13-bit size as a 1-bit slice crossed with a 12-bit slice) to keep the cross equivalent while fitting the limit.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>M-vendor 에뮬레이터는 coverpoint당 4,096 bin으로 제한되므로, 넓은 coverpoint는 slice로 나누어 cross하면 제한을 지키면서 원래 coverage와 동등하게 만들 수 있다(예: 13-bit 크기를 1-bit slice와 12-bit slice의 cross로 분할).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>For C-vendor emulator, apply ignore_bins on the coverpoints rather than inside the cross. In the paper's example this reduced emulator internal memory from 16 to 4 with the same cross bin count of 4.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>C-vendor 에뮬레이터에서는 cross 내부가 아니라 coverpoint에 ignore_bins를 적용하는 편이 낫다. 논문 예시에서 cross bin 수는 4로 같았지만 에뮬레이터 내부 메모리는 16에서 4로 줄었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Coverage data is collected in background memory during the run and dumped once at the end, so run-time impact is small: 191,797 bins added only 1-2 min of dump time, and average run-times changed by about +48 s (C-vendor) and -2 min (M-vendor).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Coverage 데이터는 실행 중 배경 메모리에 저장되고 테스트 종료 후 한 번 dump되므로 실행 시간 영향이 작다. 191,797 bin에서 dump 시간은 1~2분이었고, 평균 실행 시간 변화는 C-vendor에서 약 +48초, M-vendor에서 약 -2분이었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Latch the data signals and sample with an event such as @(posedge all_scn_done) because the sample() method is not synthesizable; place the coverage module in the DUT wrapper (not the UVC) to avoid pulling DUT signals across the UVC.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>sample()은 합성되지 않으므로 데이터 신호를 래치한 뒤 @(posedge all_scn_done) 같은 이벤트로 샘플링한다. Coverage 모듈은 UVC 대신 DUT wrapper에 두어 UVC로 DUT 신호를 끌어오는 성능 저하를 피한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>In the paper's case studies, a 2,632-bin corner-case set was estimated at 421.12 h in emulation versus 157,920 h in simulation; a 4,846-bin full-combination set exposed a bug that random testing had not confirmed. The TAT figures rest on stated per-bin assumptions.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>사례 연구에서 2,632 bin의 corner case는 에뮬레이션 421.12 h, 시뮬레이션 157,920 h로 추정되었고, 4,846 bin의 full-combination에서는 랜덤 테스트로 확인되지 않던 특정 조합의 버그가 발견되었다. 다만 TAT 수치는 bin당 테스트 수에 대한 가정에 기반한다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Emulators reach low-probability corner cases and shorten turnaround time (TAT), but verification progress is harder to quantify than in simulation. The authors want emulation to report functional coverage the way simulation does.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>에뮬레이터는 발생 확률이 낮은 corner case를 찾고 TAT(turnaround time)를 줄이지만, 검증 진행률을 시뮬레이션만큼 정량적으로 파악하기 어렵다. 저자들은 에뮬레이션에서도 시뮬레이션과 같은 방식으로 functional coverage를 보고하고자 한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Each emulator vendor (C-vendor and M-vendor in the paper, anonymized) has its own coverage solution with vendor-specific syntax. Simulation covergroups cannot be reused as-is because of synthesizability limits, <code>sample()</code> method, <code>with</code> clauses, covergroup arguments, and capacity limits.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>각 벤더(논문에서는 C-vendor, M-vendor로 익명 처리)는 고유한 coverage 솔루션과 벤더 전용 문법을 가진다. 시뮬레이션 covergroup은 합성 불가 문법, <code>sample()</code> 메서드, <code>with</code> 절, covergroup 인자, 용량 제한 때문에 그대로 재사용하기 어렵다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Three design considerations are identified: capacity (M-vendor: max 4,096 bins per coverpoint, total bins bounded by board capacity; C-vendor: internal counter addressing up to 2,147,483,647), speed (coverage dump cost), and syntax support.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>세 가지 설계 고려사항을 제시한다: 용량(M-vendor는 coverpoint당 최대 4,096 bin, 전체 bin 수는 보드 용량에 제한됨, C-vendor는 내부 카운터 주소가 최대 2,147,483,647까지), 속도(coverage dump 비용), 문법 지원 여부.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>The paper gives seven guideline items for writing common coverage:</p>
+</div>
+<div class="bi-ko">
+<p>논문은 공통 coverage 작성을 위한 가이드라인 7개를 제시한다:</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ol>
+<li>Bin-count limit: split large coverpoints into slices and cross them (Table II).</li>
+</ol>
+</div>
+<div class="bi-ko">
+<ol>
+<li>Bin 수 제한: 큰 coverpoint를 slice로 나누어 cross한다(표 II).</li>
+</ol>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ol>
+<li>Cross resource reduction with <code>ignore_bins</code>: put <code>ignore_bins</code> on coverpoints for C-vendor, not on the cross (Table III, 16 vs 4 internal memory units).</li>
+</ol>
+</div>
+<div class="bi-ko">
+<ol>
+<li><code>ignore_bins</code>를 이용한 cross 자원 절감: C-vendor에서는 cross 내부가 아니라 coverpoint에 <code>ignore_bins</code>를 적용한다(표 III, 내부 메모리 16 → 4).</li>
+</ol>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ol>
+<li>Separate crosses that share a coverpoint into separate covergroups to avoid implicit multi-way crosses that enlarge the counter address space (Table IV).</li>
+</ol>
+</div>
+<div class="bi-ko">
+<ol>
+<li>Coverpoint를 공유하는 cross가 여러 개면 covergroup을 분리하여 주소 공간이 커지는 암묵적 다중 cross를 피한다(표 IV).</li>
+</ol>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ol>
+<li>Sampling: replace <code>sample()</code> with latched signals and an event sampling clock (<code>@(posedge clk)</code> or a completion event); Figure 1 shows the latch-then-sample timing for two asynchronous data paths.</li>
+</ol>
+</div>
+<div class="bi-ko">
+<ol>
+<li>샘플링: <code>sample()</code> 대신 래치된 신호와 샘플링 이벤트(<code>@(posedge clk)</code> 또는 완료 이벤트)를 사용한다. 그림 1은 비동기 두 데이터 패스에 대한 latch 후 sample 타이밍을 보여준다.</li>
+</ol>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ol>
+<li>Multiple instances: replace covergroup arguments with a module parameter, instantiating the wrapper module per value (Table VI, M-vendor).</li>
+</ol>
+</div>
+<div class="bi-ko">
+<ol>
+<li>다중 인스턴스: covergroup 인자 대신 모듈 parameter를 사용하고 값마다 wrapper 모듈을 인스턴스화한다(표 VI, M-vendor).</li>
+</ol>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ol>
+<li>Coverpoint guards: replace <code>with</code> bins with <code>iff</code> guards on coverpoints (Table VII).</li>
+</ol>
+</div>
+<div class="bi-ko">
+<ol>
+<li>Coverpoint guard: <code>with</code> bin 대신 coverpoint에 <code>iff</code> guard를 사용한다(표 VII).</li>
+</ol>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ol>
+<li><code>set_inst_name</code>: call it in an initial block for C-vendor when a covergroup is instantiated multiple times (Table VIII).</li>
+</ol>
+</div>
+<div class="bi-ko">
+<ol>
+<li><code>set_inst_name</code>: C-vendor에서 covergroup을 여러 번 인스턴스화할 때 initial 블록에서 호출한다(표 VIII).</li>
+</ol>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Reusable syntax that works in both environments (Table IX): <code>ignore_bins</code>, unsized <code>bins x[] = {[0:255]}</code>, wildcard bins, and transition bins.</p>
+</div>
+<div class="bi-ko">
+<p>양쪽 환경에서 동작하는 재사용 문법(표 IX): <code>ignore_bins</code>, unsized <code>bins x[] = {[0:255]}</code>, wildcard bins, transition bins.</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Integration: the usual UVC scoreboard placement is replaced by a synthesizable coverage module in the DUT wrapper. An interface <code>cov_intf</code> carries <code>done</code> and <code>data_path</code> signals; <code>data_path_cov</code> is a module with a covergroup sampled on <code>posedge cov_if.done</code>. The authors argue this avoids the performance penalty of pulling DUT signals out to the UVC. The module can also be reused in non-UVM environments.</p>
+</div>
+<div class="bi-ko">
+<p>통합 방식: 보통 UVC scoreboard에 두던 functional coverage를 합성 가능한 coverage 모듈로 옮겨 DUT wrapper에 배치한다. 인터페이스 <code>cov_intf</code>가 <code>done</code>과 <code>data_path</code> 신호를 전달하고, <code>data_path_cov</code> 모듈의 covergroup은 <code>posedge cov_if.done</code>에서 샘플링한다. 저자들은 이 방식이 DUT 신호를 UVC로 끌어오는 성능 저하를 피하며, UVM이 아닌 환경에서도 재사용할 수 있다고 주장한다.</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Merge: when simulation and emulation share coverage code and block hierarchy, databases can be merged with vendor tools. Cross-vendor merging via the UCIS API is planned as a next step.</p>
+</div>
+<div class="bi-ko">
+<p>Merge: 시뮬레이션과 에뮬레이션이 같은 coverage 코드와 블록 계층을 공유하면 벤더 도구로 데이터베이스를 병합할 수 있다. 벤더 간 병합은 UCIS API를 이용하는 것이 다음 단계 계획이다.</p>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+  DUT[DUT internal signals] --&gt; IF[cov_intf]
+  IF --&gt; COV[data_path_cov module in DUT wrapper]
+  COV --&gt; MEM[Emulator coverage memory]
+  MEM --&gt; DUMP[Coverage DB dump after run]
+  DUMP --&gt; MERGE[Merge with simulation coverage]</code></pre>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>Run-time with and without functional coverage (Table I):</p>
+</div>
+<div class="bi-ko">
+<p>Coverage 적용 전후 실행 시간(표 I):</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>C-vendor: 12m25s without, 13m13s with (coverage DB dump 1m2s).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>C-vendor: 미적용 12m25s, 적용 13m13s(coverage DB dump 1m2s).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>M-vendor: 26m31s without, 24m27s with (dump 1m20s).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>M-vendor: 미적용 26m31s, 적용 24m27s(dump 1m20s).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The paper cites 191,797 bins with only 1-2 min added for the dump.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>논문은 191,797 bin에서 dump에 1~2분만 추가되었다고 보고한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Case studies:</p>
+</div>
+<div class="bi-ko">
+<p>사례 연구:</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Corner-case hunting: 2,632 bins. The emulator ran all scenarios in about 2 weeks. Table XI estimates 157,920 h for simulation (2,632 × 60 h, assuming one test per bin) and 421.12 h for emulation (footnoted as 2,632 × 10 min). Note: 2,632 × 10 min is about 438.7 h, not 421.12 h, so the emulation figure does not match its stated footnote.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Corner case 탐색: 2,632 bin. 에뮬레이터로 모든 시나리오를 약 2주에 수행했다. 표 XI은 시뮬레이션을 157,920 h(2,632 × 60 h, 테스트 1회당 bin 1개를 가정)로, 에뮬레이션을 421.12 h(각주에 2,632 × 10 min으로 표기)로 추정한다. 참고로 2,632 × 10 min은 약 438.7 h이므로, 에뮬레이션 수치는 자체 각주와 일치하지 않는다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Full combination: 4,846 bins. Full coverage was reached in emulation and a bug appeared only in a specific combination. Random generation had previously left it unclear whether that combination was covered.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Full combination: 4,846 bin. 에뮬레이션에서 전체 조합 coverage를 달성했고, 특정 조합에서만 나타나는 버그를 발견했다. 랜덤 생성으로는 그 조합의 커버 여부를 알기 어려웠다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Conclusion: the seven guidelines allow the same coverage code to run on two emulator vendors and in simulation, and the paper claims TAT reduction and full-combination coverage. Limitations: evidence is two industrial case studies, the TAT numbers depend on the per-bin test-count assumption, and the UCIS cross-vendor merge is not yet demonstrated.</p>
+</div>
+<div class="bi-ko">
+<p>결론: 7개 가이드라인으로 같은 coverage 코드를 두 에뮬레이터 벤더와 시뮬레이션에서 실행할 수 있으며, 저자들은 TAT 단축과 full-combination coverage의 효과를 주장한다. 한계: 근거는 두 개의 산업 사례 연구뿐이고, TAT 수치는 bin당 테스트 수 가정에 의존하며, UCIS 기반 벤더 간 병합은 아직 시연되지 않았다.</p>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/-DOx49XtD4M" title="[DVCON2023] Improve emulator test quality by applying synthesizable functional coverage" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2023] Improve emulator test quality by applying synthesizable functional coverage</strong> — <a href="https://www.youtube.com/watch?v=-DOx49XtD4M">Watch on YouTube</a> · <a href="../../videos/-DOx49XtD4M/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

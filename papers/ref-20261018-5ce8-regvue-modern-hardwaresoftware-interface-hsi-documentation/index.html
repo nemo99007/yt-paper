@@ -1,0 +1,1355 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-5ce8-regvue-modern-hardwaresoftware-interface-hsi-documentation/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Regvue Modern Hardware/Software Interface (HSI) Documentation - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#regvue-modern-hardwaresoftware-interface-hsi-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Regvue Modern Hardware/Software Interface (HSI) Documentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:europa-clipper" class="md-tag">Europa Clipper</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:rdf-json" class="md-tag">RDF JSON</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:register-documentation" class="md-tag">Register Documentation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:typescriptvue" class="md-tag">TypeScript/Vue</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:web-application" class="md-tag">Web Application</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2023">2023</a> › <a href="../../dvcon/by-topic/#eda">EDA</a></p>
+<h1 id="regvue-modern-hardwaresoftware-interface-hsi-documentation">Regvue Modern Hardware/Software Interface (HSI) Documentation<a class="headerlink" href="#regvue-modern-hardwaresoftware-interface-hsi-documentation" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 9. A working prototype of Regvue Desktop" loading="lazy" src="../../assets/figures/ref-20261018-5ce8.png" /></p>
+<figcaption>Figure 9. A working prototype of Regvue Desktop — from the original paper (Rob Donnelly et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/1136-Regvue-Modern-HardwareSoftware-Interface-HSI-Documentation.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Rob Donnelly (Jet Propulsion Laboratory, California Institute of Technology), Josh Geden (Jet Propulsion Laboratory, California Institute of Technology)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2023</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>EDA</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-5ce8</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>Regvue is a design-agnostic, web-based register documentation tool driven by a JSON-based Register Description Format (RDF), built with TypeScript and Vue and deployed as static files, which replaces static Word/PDF/HTML register docs with searchable, encode/decode-capable, permalinked views and was used on the NASA Europa Clipper mission.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>Regvue는 JSON 기반 Register Description Format(RDF)으로 구동되는 설계 독립형 웹 레지스터 문서화 도구로, TypeScript와 Vue로 구현되고 정적 파일로 배포되며, 검색, 인코드/디코드, 퍼머링크 기능으로 기존의 Word/PDF/HTML 레지스터 문서를 대체하고 NASA Europa Clipper 미션에 사용되었습니다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Static Word/PDF/HTML register docs cannot decode register values or share a precise section; Regvue addresses this with live field encode/decode, incremental fuzzy search, and direct permalinks to blocks, registers, and fields.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>기존 Word/PDF/HTML 레지스터 문서는 레지스터 값을 필드로 디코드하거나 특정 섹션을 정확히 공유할 수 없습니다. Regvue는 실시간 필드 인코드/디코드, 증분형 퍼지 검색, 블록·레지스터·필드에 대한 직접 퍼머링크로 이 문제를 해결합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>RDF is a JSON schema (JSON Schema standard, versioned) chosen over CMSIS-SVD/IP-XACT XML to minimize post-processing: parsing reduces to a single JSON.parse() call, and RDF files can include other RDF files to build system-, chip-, and module-level views.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>RDF는 버전이 관리되는 JSON Schema 기반 형식으로, CMSIS-SVD/IP-XACT XML 대신 후처리를 최소화하도록 설계되었습니다. 파싱은 단일 JSON.parse() 호출로 끝나며, RDF 파일은 다른 RDF 파일을 include하여 시스템·칩·모듈 수준 뷰를 구성할 수 있습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Hosting is minimal: the app is a static bundle (GitHub Pages, GitLab Pages, or localhost via Python). Hosting RDF JSON in GitHub Enterprise gives free versioning (via Git URLs) and access control, but the Fetch API's same-origin policy forces the app to be hosted on GitHub too, since GitHub raw links do not offer CORS relief.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>호스팅 요구사항은 최소입니다. 앱은 정적 번들(GitHub Pages, GitLab Pages, Python 로컬 서버)로 배포됩니다. GitHub Enterprise에 RDF JSON을 호스팅하면 Git URL을 통한 버전 관리와 접근 제어를 무료로 얻지만, Fetch API의 동일 출처 정책 때문에 GitHub raw 링크가 CORS 완화를 제공하지 않아 앱도 GitHub에 함께 호스팅해야 합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>On Europa Clipper, an existing tool (Register Translator) was extended to auto-generate RDF JSON for most FPGA designs; two designs needed ad hoc Python parsers and a shell script composed the top-level Europa Compute Element RDF JSON from FPGA-level files.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Europa Clipper에서는 기존 도구인 Register Translator를 확장하여 대부분의 FPGA 설계에 대한 RDF JSON을 자동 생성했습니다. 두 설계는 임시 Python 파서가 필요했고, 최상위 Europa Compute Element RDF JSON은 셸 스크립트가 FPGA 수준 파일을 조합해 만들었습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Architecturally, the team dropped a Python/Tk Register Explorer and the cefpython embedded-browser approach because of packaging and support problems; for desktop delivery, Tauri (OS web view) is preferred over Electron, which they note ships a 100+ MB Chromium per app, with Tauri described as 1–2 orders of magnitude smaller. A Regvue Desktop prototype reads/writes registers over a UART serial console.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>구조적으로 팀은 Python/Tk 기반 Register Explorer와 cefpython 내장 브라우저 방식을 패키징 및 지원 문제로 포기했습니다. 데스크톱 배포에는 Electron(Chromium 포함으로 앱당 100+ MB) 대신 OS 웹 뷰를 쓰는 Tauri가 선호되며, 설명에 따르면 1~2 자릿수 더 작습니다. Regvue Desktop 프로토타입은 UART 시리얼 콘솔로 레지스터를 읽고 쓸 수 있습니다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Register documentation is usually delivered as Word, PDF, or static HTML. These formats cannot decode a register read value into fields, and sharing a specific part requires the document, the section number, and the heading, which the colleague must then navigate to manually.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>레지스터 문서는 보통 Word, PDF 또는 정적 HTML로 제공됩니다. 이 형식들은 레지스터 읽기 값을 필드로 디코드할 수 없고, 특정 부분을 공유하려면 문서, 섹션 번호, 제목을 모두 전달해야 하며 수신자는 이를 수동으로 찾아가야 합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The authors (JPL) wanted an interactive register documentation tool and an earlier concept, Register Explorer (live-hardware register peek/poke GUI), motivated the work.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>저자들(JPL)은 대화형 레지스터 문서 도구를 원했으며, 실제 하드웨어 레지스터를 조회·기록하는 GUI인 Register Explorer라는 이전 개념이 이 작업의 출발점이었습니다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Input format:</strong> Design-specific data is loaded from JSON files that follow the Register Description Format (RDF), a schema created for Regvue and loosely inspired by CMSIS-SVD. JSON was chosen because JavaScript parses it natively with <code>JSON.parse()</code>, whereas XML formats (CMSIS-SVD, IP-XACT) need DOMParser-based handling. RDF files support <code>include</code>s, so system-level views can compose chip-level and module-level RDF files.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>입력 형식:</strong> 설계별 데이터는 Register Description Format(RDF) 를 따르는 JSON 파일로 로드됩니다. RDF는 Regvue를 위해 만든 스키마이며 CMSIS-SVD에서 일부 영감을 얻었습니다. JSON은 JavaScript가 <code>JSON.parse()</code>로 기본 파싱하므로 선택되었고, XML 형식(CMSIS-SVD, IP-XACT)은 DOMParser 기반 처리가 필요합니다. RDF는 <code>include</code>를 지원하므로 시스템 수준 뷰가 칩 수준과 모듈 수준 RDF 파일을 조합할 수 있습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Schema validation:</strong> RDF is described with JSON Schema (draft 2020-12). Regvue validates documents and reports errors to the user; schema versioning is embedded in each document so that breaking changes can be supported alongside older versions.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>스키마 검증:</strong> RDF는 JSON Schema(draft 2020-12)로 기술됩니다. Regvue는 문서를 검증하고 오류를 사용자에게 보고하며, 각 문서에 스키마 버전 정보가 포함되어 호환성을 깨는 변경을 이전 버전과 함께 지원할 수 있습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Features:</strong> incremental fuzzy search over names, descriptions, and offsets of blocks, registers, and fields; real-time bidirectional field/register encode/decode; byte-swap toggling for endianness mismatches between hardware and software; enumerated values mapping raw values to symbols (e.g., 0x0 to IDLE); binary/decimal/hex display; multiple resets per field, with unaffected resets shown as "?"; and permalinks that never change.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>기능:</strong> 블록, 레지스터, 필드의 이름·설명·오프셋을 대상으로 한 증분형 퍼지 검색, 실시간 양방향 필드/레지스터 인코드·디코드, 하드웨어와 소프트웨어 간 엔디언 불일치를 위한 바이트 스왑 토글, 원시 값을 기호 값으로 매핑하는 열거형 값(예: 0x0 → IDLE), 2진/10진/16진 표시, 필드마다 여러 리셋 지원(영향을 받지 않는 리셋은 "?"로 표시), 변하지 않는 퍼머링크를 제공합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Web app and hosting:</strong> The app is a static deployment; one instance can serve any number of designs via URL. Loading via URL is preferred over the filesystem because only URL loading supports includes. At JPL, the app runs on GitHub Pages and RDF JSON files are stored in GitHub Enterprise repositories, which provides versioning (through the Git URL) and access control. The constraint is that Fetch obeys the same-origin policy, so the app must be co-hosted with the data on GitHub, because GitHub raw links do not provide CORS relaxation.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>웹 앱 및 호스팅:</strong> 정적 배포 방식이며, 하나의 인스턴스가 URL을 통해 임의 개수의 설계를 제공할 수 있습니다. URL 로드가 파일시스템 로드보다 선호되는데, include를 지원하는 것은 URL 로드뿐이기 때문입니다. JPL에서는 앱을 GitHub Pages에서 실행하고 RDF JSON 파일은 GitHub Enterprise 저장소에 보관하여 버전 관리(Git URL 기반)와 접근 제어를 얻습니다. 제약은 Fetch가 동일 출처 정책을 따르므로, GitHub raw 링크가 CORS 완화를 제공하지 않는 한 앱과 데이터를 GitHub에 함께 호스팅해야 한다는 점입니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Implementation:</strong> TypeScript (compile-time type checking) and the Vue component framework, where features such as search and the register layout are components.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>구현:</strong> 컴파일 시점 타입 검사를 위한 TypeScript와 Vue 컴포넌트 프레임워크를 사용하며, 검색과 레지스터 레이아웃 등이 컴포넌트로 구현됩니다.</li>
+</ul>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+  A[Register Translator / ad hoc Python] --&gt; B[Module RDF JSON]
+  B --&gt; C[FPGA RDF JSON]
+  C --&gt; D[Top-level ECE RDF JSON via shell script]
+  D --&gt; E[Static host: GitHub Pages]
+  E --&gt; F[Regvue web app loads RDF via URL]</code></pre>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Europa Clipper usage:</strong> An in-house tool, Register Translator, was updated to emit RDF JSON and generated it for most FPGA designs. Two designs needed ad hoc Python scripts. The top-level Europa Compute Element (ECE) RDF JSON is produced by a simple shell script that includes the FPGA-level files.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Europa Clipper 사용:</strong> 기존 사내 도구인 Register Translator를 RDF JSON을 출력하도록 갱신했고, 대부분의 FPGA 설계에 대해 이를 생성했습니다. 두 설계는 임시 Python 스크립트가 필요했습니다. 최상위 Europa Compute Element(ECE) RDF JSON은 FPGA 수준 파일을 include하는 간단한 셸 스크립트로 만들어졌습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Design history:</strong> A Tk-based Register Explorer proved too hard to implement, especially the register layout view. An HTML/CSS/JS prototype worked well, and embedding it in Tk via cefpython worked, but packaging for three operating systems and cefpython's uneven support were problems. The team therefore moved to a web app.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>설계 이력:</strong> Tk 기반 Register Explorer는 특히 레지스터 레이아웃 뷰 구현이 어려웠습니다. HTML/CSS/JS 프로토타입은 잘 동작했고, cefpython으로 Tk에 내장하는 방식도 동작했지만 세 가지 운영체제용 패키징과 cefpython의 불안정한 지원이 문제였습니다. 이에 팀은 웹 앱으로 방향을 전환했습니다.</li>
+</ul>
+</div>
+</div>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Regvue is deployed for Europa Clipper and is being prepared for open-source release under Apache 2.0 and/or MIT, under the NASA-JPL GitHub organization. Release status is described as in progress.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Regvue는 Europa Clipper에 배포되었으며, NASA-JPL GitHub 조직을 통해 Apache 2.0 및/또는 MIT 라이선스 오픈소스 공개가 진행 중입니다. 공개 상태는 진행 중으로 기술되어 있습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Future work targets a desktop version. Electron was rejected because each app ships a full Chromium (100+ MB). Tauri, which uses the OS web view, is described as 1 to 2 orders of magnitude smaller. A working Regvue Desktop prototype reads and writes registers over a UART serial console, but deployment is not yet ready.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>향후 과제는 데스크톱 버전입니다. Electron은 앱마다 전체 Chromium을 포함해 100+ MB가 되어 제외되었습니다. OS 웹 뷰를 사용하는 Tauri는 1~2 자릿수 더 작다고 설명됩니다. Regvue Desktop 프로토타입은 UART 시리얼 콘솔로 레지스터를 읽고 쓸 수 있으나, 배포 준비는 아직 완료되지 않았습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The paper does not report quantitative evaluation (no user study or benchmark numbers).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>본 논문은 정량적 평가(사용자 연구나 벤치마크 수치)를 보고하지 않습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Truncation note: none; the full document text was provided.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>잘림 여부: 없음. 전체 문서 본문이 제공되었습니다.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/gVr4LtO7M2c" title="[DVCON2023]Regvue Modern Hardware/Software Interface (HSI) Documentation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2023]Regvue Modern Hardware/Software Interface (HSI) Documentation</strong> — <a href="https://www.youtube.com/watch?v=gVr4LtO7M2c">Watch on YouTube</a> · <a href="../../videos/gVr4LtO7M2c/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

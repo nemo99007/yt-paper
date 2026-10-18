@@ -1,0 +1,1599 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-ee89-continuous-integration-in-soc-design-challenges-and-solution/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Continuous Integration in SoC Design: Challenges and Solutions - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#continuous-integration-in-soc-design-challenges-and-solutions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Continuous Integration in SoC Design: Challenges and Solutions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:continuous-integration" class="md-tag">Continuous Integration</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:git-lfs" class="md-tag">Git LFS</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:gitlab-ci" class="md-tag">GitLab CI</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:hpc" class="md-tag">HPC</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:jacamar-ci" class="md-tag">Jacamar CI</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2025">2025</a> › <a href="../../dvcon/by-topic/#verification">Verification</a></p>
+<h1 id="continuous-integration-in-soc-design-challenges-and-solutions">Continuous Integration in SoC Design: Challenges and Solutions<a class="headerlink" href="#continuous-integration-in-soc-design-challenges-and-solutions" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 4. CI Implementation and date flow." loading="lazy" src="../../assets/figures/ref-20261018-ee89.png" /></p>
+<figcaption>Figure 4. CI Implementation and date flow. — from the original paper (Liu Wei et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/1028.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Liu Wei (SDTECH Information Technology), Li Jianjun (SDTECH Information Technology), Yang Liangfeng (SDTECH Information Technology), Li Liang (SDTECH Information Technology)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2025</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-ee89</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>The paper describes a lightweight SoC CI system that combines GitLab CI, a Jacamar CI command adapter, and a Python regression script to run build and simulation jobs on an existing Slurm/LSF/PBS HPC cluster, with Git repositories moved to local disk and large files handled by Git LFS.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>이 논문은 GitLab CI, Jacamar CI 명령 어댑터, Python 회귀 스크립트를 결합해 기존 Slurm/LSF/PBS HPC 클러스터에서 빌드 및 시뮬레이션 작업을 실행하는 경량 SoC CI 시스템을 제시하며, Git 저장소는 로컬 디스크로 옮기고 대용량 파일은 Git LFS로 관리합니다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Running CI jobs on the existing HPC cluster through a command adapter (Jacamar CI) avoids dedicated CI compute. The paper argues that CI demand peaks early in development and regression demand peaks later, so the two loads complement each other.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>별도 CI 전용 컴퓨팅 없이 Jacamar CI 명령 어댑터를 통해 기존 HPC 클러스터에서 CI 작업을 실행합니다. 저자들은 CI 부하는 개발 초기에, 회귀 테스트 부하는 후반에 집중되므로 두 부하가 상호 보완된다고 주장합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Git repositories must sit on local disk rather than NFS-mounted working directories. The authors report that this change removed their perceived command latency. Git 2.38+ scalar clone with sparse checkout and Git LFS (with locking for binaries) address the remaining repository-size and binary-merge problems.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Git 저장소는 NFS 마운트된 작업 디렉터리가 아닌 로컬 디스크에 있어야 합니다. 저자들은 이 변경으로 명령 지연이 체감상 사라졌다고 보고합니다. 나머지 저장소 크기 및 바이너리 병합 문제는 Git 2.38+의 scalar clone과 sparse checkout, 그리고 바이너리에 대한 잠금 기능이 있는 Git LFS로 해결합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Gate every merge with CI on the feature branch, then re-run CI on main after merge. Failed jobs block merging. Fixed random seeds keep results reproducible. Jobs run under the trigger user's identity so failed cases can be re-simulated with waveform dumps from existing builds, and so HPC quotas per team are respected.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>feature 브랜치에서 병합 전 CI를 게이트로 실행하고, 병합 후 main에서도 CI를 다시 실행합니다. 실패한 작업이 있으면 병합이 차단됩니다. 고정 random seed로 결과 재현성을 확보합니다. 작업은 트리거한 사용자의 신원으로 실행되므로, 실패 케이스는 기존 빌드 산출물로 파형 덤프를 포함해 재시뮬레이션할 수 있으며 팀별 HPC 할당량도 지킵니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Reported deployment results: 19 testbench builds and 23 simulation jobs finishing within an hour, versus about one day per cycle for manual integration. Over 15 months with 41 developers: 3,303 merges, 8,213 pipelines, 1,344 failures caught early, and root cause identified within 5 minutes versus over 30 minutes in traditional flows.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>보고된 도입 결과: 19개 testbench 빌드와 23개 시뮬레이션 작업이 1시간 이내에 완료되며, 유사 프로젝트의 수동 통합 사이클은 약 1일이 걸렸습니다. 개발자 41명, 15개월 동안 병합 3,303건, 파이프라인 8,213건을 기록했고 조기에 잡은 실패는 1,344건, 근본 원인 파악 시간은 CI 실패 후 5분 이내로 전통 방식의 30분 이상과 비교됩니다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>SoC build and simulation depend on HPC job schedulers (Slurm, LSF, PBS). Mainstream CI tools are not compatible with this infrastructure out of the box.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>SoC 빌드와 시뮬레이션은 HPC 작업 스케줄러(Slurm, LSF, PBS)에 의존하며, 주류 CI 도구는 이 인프라와 기본적으로 호환되지 않습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Dedicated CI compute has a dilemma. If it is small, large-scale parallel testing is impossible. If it is large, costs are excessive. Prior industry workarounds (scheduled runs, batching merges, queued jobs) suffer from poor real-time feedback and added complexity.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>전용 CI 컴퓨팅 자원은 딜레마를 가집니다. 규모가 작으면 대규모 병렬 테스트가 불가능하고, 규모가 크면 비용이 과도합니다. 기존 업계의 우회 방법(정기 실행, 병합 묶음 처리, 작업 큐)은 실시간 피드백이 나쁘고 복잡성을 더합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Git has known problems for chip design: performance degradation in large repositories, binary merge conflicts, and repository growth from large files. Perforce and SVN handle these better, with Perforce scaling to large files and both supporting binary locking.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>칩 설계에서 Git은 알려진 문제가 있습니다. 대형 저장소에서의 성능 저하, 바이너리 병합 충돌, 대용량 파일로 인한 저장소 증가가 그것입니다. Perforce와 SVN은 이를 더 잘 처리하며, Perforce는 대용량 파일에 강하고 둘 다 바이너리 잠금을 지원합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Load is complementary over time. Early development is CI-heavy and regression is idle. Later, merges decrease while regression grows. Sharing HPC across both can make CI possible without extra HPC hardware.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>부하는 시간에 따라 상호 보완적입니다. 개발 초기에는 CI 부하가 크고 회귀 테스트는 유휴 상태입니다. 후반에는 병합이 줄고 회귀 테스트가 커집니다. 두 부하가 HPC를 공유하면 추가 HPC 하드웨어 없이도 CI가 가능해집니다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>Core components: a version control system (GitLab), a CI platform (GitLab CI with Runner), a job scheduler (Slurm/LSF/PBS), a command adapter (Jacamar CI, which converts <code>sim -b a_test</code> into a scheduler command such as <code>srun -n 1 sim -b a_test</code>), and the HPC cluster.</p>
+</div>
+<div class="bi-ko">
+<p>핵심 구성 요소: 버전 관리 시스템(GitLab), CI 플랫폼(Runner를 포함한 GitLab CI), 작업 스케줄러(Slurm/LSF/PBS), 명령 어댑터(Jacamar CI, <code>sim -b a_test</code>를 <code>srun -n 1 sim -b a_test</code> 같은 스케줄러 명령으로 변환), 그리고 HPC 클러스터입니다.</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Infrastructure: two servers. One hosts the Git server. The other hosts the Runner, the adapter, and the scheduler. Repositories are kept on local disks. The Runner's local storage and the user work server are exported over NFS to the cluster, so the cluster can build and simulate directly from them.</p>
+</div>
+<div class="bi-ko">
+<p>인프라: 서버 두 대를 사용합니다. 한 대는 Git 서버를 호스팅하고, 다른 한 대는 Runner, 어댑터, 스케줄러를 호스팅합니다. 저장소는 로컬 디스크에 보관합니다. Runner의 로컬 스토리지와 사용자 작업 서버는 NFS로 클러스터에 공유되어, 클러스터가 이들로부터 직접 빌드와 시뮬레이션을 수행할 수 있습니다.</p>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+  A[Push to feature branch] --&gt; B[Merge Request]
+  B --&gt;|webhook| C[GitLab CI pipeline]
+  C --&gt; D[Runner clones branch into pipeline-ID dir]
+  D --&gt; E[Jacamar CI submits as trigger user]
+  E --&gt; F[Slurm/LSF/PBS on HPC: build, then sims]
+  F --&gt; G{All jobs pass?}
+  G --&gt;|yes| H[Merge to main]
+  G --&gt;|no| A
+  H --&gt; I[Post-merge CI on main]</code></pre>
+<div class="bi">
+<div class="bi-en">
+<p>Branch and merge policy:</p>
+</div>
+<div class="bi-ko">
+<p>브랜치 및 병합 정책:</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The main branch accepts only merges. Before RTL freeze, feature branches are per person and kept small.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>main 브랜치는 병합만 허용합니다. RTL freeze 이전에는 사람별 feature 브랜치를 만들며, 작업량을 작게 유지합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Each MR runs CI tests at IP, subsystem, and SoC levels. Builds run in parallel, each in its own directory. Simulations for a build start when that build ends, and each is a separate job.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>각 MR은 IP, 서브시스템, SoC 수준의 CI 테스트를 실행합니다. 빌드는 각자 별도 디렉터리에서 병렬로 수행되고, 어떤 빌드의 시뮬레이션은 그 빌드가 끝나면 시작되며, 각 시뮬레이션은 별도 작업입니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Any failing job blocks the merge. Developers run <code>git rebase main</code> before pushing.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>실패한 작업이 하나라도 있으면 병합이 차단됩니다. 개발자는 push 전에 <code>git rebase main</code>을 수행합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>CI re-runs after merge to main, to catch interaction effects and identify the offending merge.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>main 병합 후 CI를 다시 실행하여 상호작용 효과를 잡고, 문제를 일으킨 병합을 특정합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Automatic runs do not dump waveforms, for speed. Failed cases are re-run with dumps from the existing build artifacts.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>자동 실행은 속도를 위해 파형을 덤프하지 않습니다. 실패한 케이스는 기존 빌드 산출물을 사용해 덤프 옵션으로 재실행합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Jobs execute under the trigger's identity, so output files are owned by the trigger and HPC usage stays within each team's quota.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>작업은 트리거한 사용자의 신원으로 실행되므로 산출 파일의 소유자가 트리거 사용자가 되며, 팀별 HPC 사용량도 할당 정책 안에 머뭅니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Fixed random seeds are used in all CI cases to avoid pass-then-fail nondeterminism.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>모든 CI 케이스에 고정 random seed를 사용해, 통과했다가 실패하는 비결정성을 피합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>For cross-role changes, cherry-pick lets a DV engineer pull a DE's branch commit into main without rewriting the DE's authorship.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>역할 간 변경의 경우, cherry-pick으로 DV 엔지니어가 DE의 브랜치 커밋을 main에 가져올 수 있으며, DE의 작성자 정보는 유지됩니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Regression script and pipeline generation:</p>
+</div>
+<div class="bi-ko">
+<p>회귀 스크립트와 파이프라인 생성:</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>A Python regression tool runs one test per CI invocation (<code>sim -t example_test_a</code>), returning exit code 0 for pass and non-zero for fail.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Python 기반 회귀 도구는 CI 호출 한 번당 테스트 하나를 실행합니다(<code>sim -t example_test_a</code>). 통과 시 종료 코드 0, 실패 시 0이 아닌 값을 반환합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Builds and simulation options are defined in YAML. <code>sim -b</code> builds only, and <code>sim -so</code> simulates from an existing executable.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>빌드와 시뮬레이션 옵션은 YAML로 정의합니다. <code>sim -b</code>는 빌드만, <code>sim -so</code>는 기존 실행 파일로 시뮬레이션만 수행합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><code>sim -genci -tag ci</code> emits GitLab jobs with build-to-sim dependencies. The parent pipeline generates a child pipeline, using GitLab's parent-child mechanism.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><code>sim -genci -tag ci</code>는 빌드에서 시뮬레이션으로 이어지는 의존성을 가진 GitLab 작업을 생성합니다. 부모 파이프라인이 GitLab의 parent-child 메커니즘을 사용해 자식 파이프라인을 생성합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Runner and adapter configuration:</p>
+</div>
+<div class="bi-ko">
+<p>Runner 및 어댑터 설정:</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The Runner uses a custom executor that is Jacamar CI, configured in <code>config.toml</code>.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Runner는 <code>config.toml</code>에서 custom executor로 Jacamar CI를 지정합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><code>custom_build_dir = true</code> creates a per-pipeline directory named from <code>${CI_PIPELINE_ID}</code>.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><code>custom_build_dir = true</code>로 <code>${CI_PIPELINE_ID}</code>를 이름으로 하는 파이프라인별 디렉터리를 만듭니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><code>group_permissions = true</code> lets users in the same Linux group see each other's logs and waveforms.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><code>group_permissions = true</code>로 같은 Linux 그룹의 사용자끼리 로그와 파형을 볼 수 있습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>A root cron job deletes directories older than 24 hours each day at noon. Log pruning is also scheduled.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>root 권한 cron 작업이 매일 정오에 24시간이 지난 디렉터리를 삭제합니다. 로그 정리도 주기적으로 수행합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Git scaling for SoC repositories:</p>
+</div>
+<div class="bi-ko">
+<p>SoC 저장소를 위한 Git 확장 방안:</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Local-disk repositories remove NFS latency.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>로컬 디스크 저장소로 NFS 지연을 제거합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><code>scalar clone</code> (Git 2.38+) with sparse checkout limits the working tree to needed directories and prefetches remote objects in the background.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Git 2.38+의 <code>scalar clone</code>과 sparse checkout으로 작업 트리를 필요한 디렉터리로 제한하고, 원격 객체를 백그라운드에서 미리 가져옵니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Git LFS stores large files in GitLab-managed storage, keeping only pointers in the repository. LFS locking handles binary files.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Git LFS는 대용량 파일을 GitLab 관리 스토리지에 저장하고, 저장소에는 포인터만 둡니다. 바이너리 파일은 LFS 잠금으로 처리합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Third-party IP stays on NFS outside the repository, with a version-path filelist kept in Git so version history is still tracked.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>서드파티 IP는 저장소 밖 NFS에 두고, 버전 경로 목록 파일을 Git에 보관해 버전 이력을 추적합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Tool selection: GitLab CI was chosen over Jenkins. Jenkins uses Groovy and needs dedicated maintenance. GitLab CI uses YAML. The GitLab community edition and Jacamar CI are open source and free.</p>
+</div>
+<div class="bi-ko">
+<p>도구 선택: Jenkins 대신 GitLab CI를 선택했습니다. Jenkins는 Groovy를 사용하고 전담 유지보수 인력이 필요합니다. GitLab CI는 YAML을 사용합니다. GitLab 커뮤니티 에디션과 Jacamar CI는 오픈소스이며 무료입니다.</p>
+</div>
+</div>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>Reported deployment figures (one project):</p>
+</div>
+<div class="bi-ko">
+<p>보고된 도입 수치(단일 프로젝트):</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Pipeline: 19 testbench builds and 23 simulation jobs, completing within an hour. Traditional manual integration in similar projects took about one day per cycle.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>파이프라인: 19개 testbench 빌드와 23개 시뮬레이션 작업이 1시간 이내에 완료됩니다. 유사 프로젝트의 수동 통합은 사이클당 약 1일이 걸렸습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Load: up to 40 pipelines per day at peak, with 7 to 8 running concurrently.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>부하: 피크 시 하루 최대 40개 파이프라인, 동시에 7~8개가 실행됩니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Scope: 15-month development period, 41 developers, 3,303 merges, 8,213 pipelines. The paper reports 6,743 successes and 1,344 failures. These two numbers sum to 8,087, not 8,213, and the paper does not explain the difference.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>범위: 15개월 개발 기간, 개발자 41명, 병합 3,303건, 파이프라인 8,213건입니다. 논문은 성공 6,743건, 실패 1,344건으로 보고합니다. 두 수치의 합은 8,087로 8,213과 다르며, 논문은 그 차이를 설명하지 않습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Debug speed: developers typically identified root causes within 5 minutes of a CI failure, versus over 30 minutes in traditional flows. Some cases exceeded 24 hours.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>디버그 속도: 개발자는 CI 실패 후 보통 5분 이내에 근본 원인을 파악했으며, 전통 방식은 30분 이상이 걸렸습니다. 일부 사례는 24시간을 넘었습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Estimated savings: the paper multiplies 1,344 early-caught failures by 2.5 hours per integration issue (an average from prior traditional projects) to get over 3,360 hours saved. This is an estimate, not a measured result.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>추정 절감 효과: 논문은 조기에 잡은 실패 1,344건에 기존 프로젝트의 통합 이슈당 평균 2.5시간을 곱해 3,360시간 이상의 절감을 도출합니다. 이는 측정값이 아니라 추정치입니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Conclusions: the authors claim a lightweight CI system that uses existing HPC, avoids extra hardware, detects errors early, reduces bug propagation, and keeps main consistently passing. Limitations: the paper gives no measured HPC cost or utilization data, no quantitative comparison with other CI approaches, and the Figure 7 pipeline chart data is not described in the text.</p>
+</div>
+<div class="bi-ko">
+<p>결론: 저자들은 기존 HPC를 활용해 추가 하드웨어 없이 조기 오류 검출, 버그 전파 감소, main 브랜치의 지속적 정상 상태 유지를 달성하는 경량 CI 시스템이라고 주장합니다. 한계: 논문은 측정된 HPC 비용이나 활용률 데이터를 제시하지 않으며, 다른 CI 방식과의 정량 비교도 없고, Figure 7의 파이프라인 차트 데이터는 본문에서 설명되지 않습니다.</p>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/SwaKnaGIp6o" title="[DVCON2025]Continuous Integration in SoC Design: Challenges and Solutions" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2025]Continuous Integration in SoC Design: Challenges and Solutions</strong> — <a href="https://www.youtube.com/watch?v=SwaKnaGIp6o">Watch on YouTube</a> · <a href="../../videos/SwaKnaGIp6o/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

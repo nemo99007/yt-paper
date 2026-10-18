@@ -1,0 +1,1380 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-c74a-synthetic-traffic-based-soc-performance-verification-methodo/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Synthetic Traffic based SOC Performance Verification Methodology - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#synthetic-traffic-based-soc-performance-verification-methodology" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Synthetic Traffic based SOC Performance Verification Methodology
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:emulation" class="md-tag">Emulation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:ip-xact" class="md-tag">IP-XACT</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:performance-verification" class="md-tag">Performance Verification</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:synthetic-traffic" class="md-tag">Synthetic Traffic</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:traffic-generator" class="md-tag">Traffic Generator</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2024">2024</a> › <a href="../../dvcon/by-topic/#verification">Verification</a></p>
+<h1 id="synthetic-traffic-based-soc-performance-verification-methodology">Synthetic Traffic based SOC Performance Verification Methodology<a class="headerlink" href="#synthetic-traffic-based-soc-performance-verification-methodology" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 1. Performance Verification Flow" loading="lazy" src="../../assets/figures/ref-20261018-c74a.png" /></p>
+<figcaption>Figure 1. Performance Verification Flow — from the original paper (Jeonggu Lee et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/1063-1.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Jeonggu Lee (Samsung Electronics), Taewon Park (Samsung Electronics), Hyungtae Park (Samsung Electronics), Taeyoung Jeon (Samsung Electronics), Hyunjae Woo (Samsung Electronics), Youngsik Kim (Samsung Electronics), Seonil Brian Choi (Samsung Electronics)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2024</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-c74a</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>The paper proposes STB-PV, a pre-silicon SOC performance verification flow that uses emulator-based traffic generators/performance monitors (TG/PM), scenario-manager automation, and IP-XACT-driven TG insertion to verify backbone (STB-ST) and system-IP (STB-BP) performance before RTL freeze instead of relying on late RTB-PV.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>이 논문은 에뮬레이터 기반 트래픽 생성기/성능 모니터(TG/PM), 시나리오 매니저 자동화, IP-XACT 기반 TG 삽입을 결합한 사전 실리콘 SOC 성능 검증 흐름(STB-PV)을 제안하며, 이를 통해 RTL freeze 이전에 백본(STB-ST)과 시스템 IP(STB-BP) 성능을 검증한다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>PCIe latency, not bandwidth, dominates emulator-to-host traffic: the paper cites about 7+ hours for 1G 4-byte reads versus about 10 minutes for 64-byte reads, so the TG/PM buffers transactions in HW and transmits only final results per frame (e.g., 1 ms).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>에뮬레이터-호스트 간 통신에서는 대역폭보다 PCIe 지연 오버헤드가 병목이다. 논문은 4바이트 읽기 1G회에 7시간 이상, 64바이트 읽기에 약 10분이 걸린다고 제시하며, 이에 따라 TG/PM은 HW 버퍼에 트랜잭션을 모으고 프레임 단위(예: 1 ms)로 최종 결과만 전송한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>IP-XACT-based TG insertion cut total setup time from 16 hours to 20 minutes (-98%) and raised scenario count from 50 (manual max) to 4150 (83x) per Figure 10.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>IP-XACT 기반 TG 삽입으로 전체 설정 시간이 16시간에서 20분으로 줄었다(-98%). 시나리오 수는 수동 최대 50개에서 4150개로 늘었다(83배, 그림 10 기준).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>STB-ST/STB-BP lets backbone (NoC, memory controller) and system IPs (SysMMU, up/down sizer, local bus) be verified before RTL freeze; RTL vs. model results agreed within 5%, and this exposed an ARQ buffer bug (10500 vs. 12799 MB/s, 82.0%).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>STB-ST/STB-BP를 통해 RTL freeze 이전에 백본(NoC, 메모리 컨트롤러)과 시스템 IP(SysMMU, up/down sizer, local bus)를 검증할 수 있다. RTL과 모델 결과는 5% 이내로 일치했으며, 이 과정에서 ARQ 버퍼 버그(10500 vs. 12799 MB/s, 82.0%)가 검출되었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Average-BW traffic misses performance bugs; varied traffic patterns and address-trace replay (for MMU/LLC-sensitive IPs) are needed to expose degradation and measure MMU hit rate.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>평균 BW 트래픽만으로는 성능 버그를 놓치므로, 다양한 트래픽 패턴과 주소 트레이스 리플레이(MMU/LLC처럼 주소에 민감한 블록용)가 필요하다. 리플레이를 통해 MMU hit rate도 평가할 수 있다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>On a flagship mobile AP SOC, over 2000 scenario experiments ran with 400 TG/PM inserted automatically, and almost all system performance bugs were fixed before RTB-PV began.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>플래그십 모바일 AP SOC에 적용하여 400개의 TG/PM을 자동 삽입한 상태에서 2000개 이상의 시나리오 실험을 수행했고, RTB-PV 시작 전에 시스템 성능 버그 대부분을 수정했다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Modern SOC use cases chain more than 20 functional IPs (CPU/GPU/NPU/CAM/DPU). If one IP misses its performance target, the scenario may be downgraded, a spec may be cut, or silicon may need a re-spin.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>최신 SOC 유스케이스는 20개 이상의 기능 IP(CPU/GPU/NPU/CAM/DPU)가 연동된다. IP 하나라도 성능 목표를 만족하지 못하면 시나리오 다운그레이드, 스펙 축소, 또는 실리콘 재스핀이 필요할 수 있다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>RTB-PV (real traffic, real RTL IPs) is the most faithful check, but IP bring-up for it lands just before RTL freeze. Preparing scenarios for more than 20 IPs takes over a month, so only a few worst-case scenarios are covered. Bugs found late cannot be fixed in time.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>RTB-PV(실제 트래픽, 실제 RTL IP 사용)는 가장 충실한 검증이지만, 해당 IP 브링업이 RTL freeze 직전에 이루어진다. 20개 이상 IP의 시나리오 준비에 한 달 이상 걸려 최악 시나리오 위주로만 커버할 수 있으며, 늦게 발견된 버그는 제때 수정하기 어렵다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Bus topology and memory subsystem changes affect many IPs, so backbone performance must be verified early.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>버스 토폴로지와 메모리 서브시스템 변경은 많은 IP에 영향을 주므로 백본 성능을 조기에 검증해야 한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The first STB attempt (end of 2018) measured only DRAM utilization and ran slowly because TG operation increased wall-clock time.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>최초의 STB 시도(2018년 말)는 DRAM 사용률만 측정했고, TG 동작이 wall-clock 시간을 늘려 속도가 느렸다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Emulator-to-host communication over PCIe has ample bandwidth (up to 32 GB/s), but per-transaction latency overhead is the bottleneck. The paper reports a 4-byte transaction at 5–7 µs per the PCIe spec and about 14 µs in practice.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>에뮬레이터와 호스트 간 PCIe 통신은 대역폭(최대 32 GB/s)에는 여유가 있으나 트랜잭션당 지연 오버헤드가 병목이다. 논문은 4바이트 트랜잭션이 PCIe 스펙상 5~7 µs이지만 실제로는 약 14 µs 걸린다고 보고한다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>TG/PM (Traffic Generator / Performance Monitor):</strong> The SW part runs on the host and handles user configuration and summary output. The HW part runs in the emulator, and the two communicate through a DPI interface. A HW buffer batches transactions so that the number of host round-trips drops. The TG generates AXI traffic from user settings (frequency, target BW, burst length, address pattern, AXID pattern). The PM computes BW, MO, and latency in the emulator and sends average, min, and max values per frame unit (e.g., 1 ms) to the host.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>TG/PM(Traffic Generator / Performance Monitor):</strong> SW 부분은 호스트에서 사용자 설정과 요약 출력을 담당한다. HW 부분은 에뮬레이터에서 동작하며, 두 부분은 DPI 인터페이스로 통신한다. HW 버퍼가 트랜잭션을 묶어 호스트 왕복 횟수를 줄인다. TG는 사용자 설정(주파수, 목표 BW, burst length, 주소 패턴, AXID 패턴)에 따라 AXI 트래픽을 생성한다. PM은 에뮬레이터 내부에서 BW, MO, 지연을 계산하고 프레임 단위(예: 1 ms)로 평균, 최소, 최대 값을 호스트에 전달한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>TG enhancements:</strong> Beyond average-BW traffic, the TG supports varied traffic patterns. Replay mode reproduces real address traces, which matters for address-sensitive blocks such as MMU and LLC.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>TG 기능 강화:</strong> 평균 BW 트래픽 외에 다양한 트래픽 패턴을 지원한다. 리플레이 모드는 실제 주소 트레이스를 재현하며, MMU나 LLC처럼 주소에 민감한 블록에 중요하다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Scenario Manager (SM):</strong> Written in synthesizable SystemVerilog with DPI. The SM parser turns user constraints (BW, address pattern, burst length/size, QoS) into a scenario file of descriptors. The SM controller drives all TGs and PMs, monitors their status, and indexes each scenario so each PM stores results separately.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Scenario Manager(SM):</strong> 합성 가능한 SystemVerilog와 DPI로 구현된다. SM 파서는 사용자 제약(BW, 주소 패턴, burst length/size, QoS)을 디스크립터로 구성된 시나리오 파일로 변환한다. SM 컨트롤러는 모든 TG와 PM을 구동하고 상태를 모니터링하며, 각 시나리오에 인덱스를 부여해 PM이 결과를 시나리오별로 저장하게 한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>IP-XACT automation:</strong> The flow takes a verification target list, searches the design metadata provided by IP-XACT for the attachment points and signal information, and generates a TG database file for the emulation image build. Because IP-XACT is far smaller than the RTL, parsing is fast.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>IP-XACT 자동화:</strong> 검증 대상 목록을 입력받아 IP-XACT가 제공하는 설계 메타데이터에서 연결 지점과 신호 정보를 찾고, 에뮬레이션 이미지 빌드에 쓰이는 TG 데이터베이스 파일을 생성한다. IP-XACT는 RTL보다 훨씬 작아 파싱이 빠르다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>STB-ST (system-tier stress test):</strong> Targets the NoC and memory controller backbone. Several TGs generate scenario-based traffic across path combinations, and PMs on each path measure BW, latency, DRAM utilization, and MO. The QoS and urgent mechanisms are checked so that real-time IPs (display, camera) keep their guaranteed service.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>STB-ST(시스템 수준 스트레스 테스트):</strong> NoC와 메모리 컨트롤러 백본을 대상으로 한다. 여러 TG가 시나리오 기반 트래픽을 다양한 경로 조합으로 생성하고, 각 경로의 PM이 BW, 지연, DRAM 사용률, MO를 측정한다. 실시간 IP(디스플레이, 카메라)의 보장 서비스를 위해 QoS 및 urgent 메커니즘도 점검한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>STB-BP (bus performance test):</strong> The functional IP's AXI master port is replaced by a TG so that internal buses, SysMMU, up/down sizer, and local buses can be scanned all the way to DRAM. Checks include min/avg/peak latency, max MO, and max BW.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>STB-BP(버스 성능 테스트):</strong> 기능 IP의 AXI 마스터 포트를 TG로 대체해, 내부 버스, SysMMU, up/down sizer, local bus를 거쳐 DRAM까지 경로 전체를 점검한다. 점검 항목은 최소/평균/최대 지연, 최대 MO, 최대 BW이다.</li>
+</ul>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+    A[Verification target list] --&gt; B[IP-XACT metadata search]
+    B --&gt; C[TG database file]
+    C --&gt; D[Emulation image build with TG/PM]
+    D --&gt; E[STB-ST: NoC and memory backbone]
+    E --&gt; F[STB-BP: system IPs at master ports]
+    F --&gt; G[RTB-PV: few worst-case scenarios]</code></pre>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Accuracy (Figure 9):</strong> The RTL-vs-model comparison on BW, latency, and MO agreed within 5%. This comparison exposed an ARQ buffer size bug (RTL 10500 MB/s vs. model 12799 MB/s, 82.0%, Fail) and a long-latency issue caused by clock gating.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>정확도(그림 9):</strong> BW, 지연, MO에 대한 RTL과 모델의 비교는 5% 이내로 일치했다. 이 비교로 ARQ 버퍼 크기 버그(RTL 10500 MB/s vs. 모델 12799 MB/s, 82.0%, Fail)와 clock gating으로 인한 긴 지연 문제가 검출되었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Efficiency (Figure 10):</strong> TG automation and scenario generation each dropped from 8 hours to 10 minutes. Total time dropped from 16 hours to 20 minutes (-98%). Scenario count rose from 50 (manual, max) to 4150 (83x).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>효율(그림 10):</strong> TG 자동화와 시나리오 생성은 각각 8시간에서 10분으로 줄었다. 전체 시간은 16시간에서 20분으로 줄었다(-98%). 시나리오 수는 수동 최대 50개에서 4150개로 늘었다(83배).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Industrial application:</strong> The flow was applied to a flagship mobile AP SOC. Over 2000 scenario experiments were completed with STB-ST and STB-BP before RTL freeze, and 400 TG/PM instances were inserted automatically. Almost all system performance bugs were fixed before RTB-PV started.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>산업 적용:</strong> 플래그십 모바일 AP SOC에 적용했다. RTL freeze 이전에 STB-ST와 STB-BP로 2000개 이상의 시나리오 실험을 완료했고, 400개의 TG/PM을 자동 삽입했다. RTB-PV 시작 전에 시스템 성능 버그 대부분이 수정되었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Limitations and open items:</strong> The paper is an industrial case study with no formal comparison against other methods. Scenario counts differ between the Conclusion (over 2000) and Figure 10 (4150). Future work is to make TG traffic more realistic for mimicking real scenarios.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>한계 및 향후 과제:</strong> 산업 사례 연구이며 다른 방법과의 정량 비교는 없다. 시나리오 수는 결론부(2000개 이상)와 그림 10(4150개)에서 다르게 제시된다. 향후에는 실제 시나리오를 모사하도록 TG 트래픽의 현실성을 높일 계획이다.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/BCdN7iCwOqU" title="[DVCON2024]Synthetic Traffic based SOC Performance Verification Methodology" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2024]Synthetic Traffic based SOC Performance Verification Methodology</strong> — <a href="https://www.youtube.com/watch?v=BCdN7iCwOqU">Watch on YouTube</a> · <a href="../../videos/BCdN7iCwOqU/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

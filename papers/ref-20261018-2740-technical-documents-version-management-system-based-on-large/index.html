@@ -1,0 +1,1521 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-2740-technical-documents-version-management-system-based-on-large/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Technical Documents Version Management System Based on Large Language Models - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#technical-documents-version-management-system-based-on-large-language-models" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Technical Documents Version Management System Based on Large Language Models
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:ensemble-learning" class="md-tag">Ensemble Learning</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:llm" class="md-tag">LLM</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:m-phy" class="md-tag">M-PHY</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:requirements-extraction" class="md-tag">Requirements Extraction</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:sentence-embedding" class="md-tag">Sentence Embedding</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2025">2025</a> › <a href="../../dvcon/by-topic/#verification">Verification</a></p>
+<h1 id="technical-documents-version-management-system-based-on-large-language-models">Technical Documents Version Management System Based on Large Language Models<a class="headerlink" href="#technical-documents-version-management-system-based-on-large-language-models" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 2. Block diagram of the document version management system." loading="lazy" src="../../assets/figures/ref-20261018-2740.png" /></p>
+<figcaption>Figure 2. Block diagram of the document version management system. — from the original paper (S. S. Zalivaka et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/1027-2.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>S. S. Zalivaka (SK hynix memory solutions Poland)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2025</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-2740</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>A two-stage LLM pipeline reuses previous-version requirements via sentence-embedding similarity (Th=0.9) and classifies the residual sentences with an MLP-fused ensemble of 43 context-window Mistral-7B classifiers, reaching 90.05% requirement recall on M-PHY 6.0 versus roughly 80% for prior fixed-text classifiers.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>두 단계 LLM 파이프라인으로, 이전 버전 요구사항은 문장 임베딩 유사도(Th=0.9)로 재사용하고 나머지 문장은 MLP로 결합한 43개 컨텍스트 윈도우 Mistral-7B 분류기 앙상블로 분류하여, M-PHY 6.0에서 요구사항 재현율 90.05%를 달성했습니다(기존 고정 텍스트 분류기 약 80% 대비).</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Version-aware reuse: comparing v.x requirements against v.y atomic parts by embedding similarity recovered 100% of inherited requirements (3 exact matches and 550 good matches with Th=0.9), so the classifier only needs to handle the residual sentences.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>버전 인식 재사용: v.x 요구사항과 v.y의 atomic part를 임베딩 유사도로 비교한 결과 상속된 요구사항의 100%를 복구했습니다(Th=0.9에서 exact match 3건, good match 550건). 따라서 분류기는 나머지 문장만 처리하면 됩니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Context-window ensemble: classifiers with S from 2 to 100 produce ceil(N/S) data points, so accuracy falls as S grows; an MLP over K classifier probabilities cut training-set errors from 8 (K=11) to 0 (K=16), and K=15 was used for inference.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>컨텍스트 윈도우 앙상블: S가 2~100인 분류기는 ceil(N/S)개의 데이터 포인트를 생성하므로 S가 커질수록 정확도가 떨어집니다. K개 분류기 확률을 입력받는 MLP는 학습 세트 오류를 K=11일 때 8건에서 K=16일 때 0건으로 줄였고, 추론에는 K=15를 사용했습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Reported overall recall on M-PHY 6.0 is 1122/1246 requirements (90.05%), but only 569 of about 694 new requirements (~80%) were found, and the model was trained on a single 4.1 specification, so generalization is unproven.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>M-PHY 6.0에서 보고된 전체 재현율은 1246개 중 1122개(90.05%)이지만, 약 694개의 신규 요구사항 중 569개(약 80%)만 찾았고, 모델은 단일 4.1 명세로만 학습되어 일반화 성능은 입증되지 않았습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Levenshtein string matching needs no embedding model or GPU and ran in 1.9 s, but recognized only 86.27% of requirements (47 missed) because it ignores semantics; the sensitivity to Th (below 0.3 yields false positives, above 0.95 yields exact matches only) must be tuned.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Levenshtein 문자열 매칭은 임베딩 모델이나 GPU가 필요 없고 1.9초 만에 실행되지만, 의미를 고려하지 않아 요구사항의 86.27%만 재현했고 47건을 놓쳤습니다. Th 튜닝도 중요합니다(0.3 미만이면 오탐, 0.95 초과면 exact match만 검출).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Compute cost: embedding took about 3-5 min and ensemble classification about 15 min (923 s) on 2x H100; each Mistral classifier took about 2 h to train with 4-bit quantization. Table I's non-requirement count (1770 vs 1646 target) is not reconciled in the text.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>연산 비용: 임베딩은 약 3~5분, 앙상블 분류는 2×H100 기준 약 15분(923초)이 걸렸습니다. Mistral 분류기 하나의 학습은 4비트 양자화 상태로 약 2시간이 걸렸습니다. 표 I의 non-requirement 수(목표 1646 대비 1770)는 본문에서 정합성이 설명되지 않았습니다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Requirements are extracted manually from technical specifications (here MIPI M-PHY) by verification engineers, which is labor-intensive for long documents.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>기술 명세(여기서는 MIPI M-PHY)의 요구사항은 검증 엔지니어가 수작업으로 추출하며, 긴 문서일수록 노동 집약적입니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The authors cite prior work reporting more than 80% accuracy for requirement extraction, but these methods ignore previous document versions [4] and analyze fixed-size text units (sentence or paragraph) [2-3]. Generic LLMs perform worse without domain-specific training [3].</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>저자들은 기존 연구가 요구사항 추출에서 80% 이상의 정확도를 보고했다고 인용하지만, 이들 방법은 이전 문서 버전을 고려하지 않고([4]) 고정된 크기의 텍스트 단위(문장 또는 문단)를 분석한다고 지적합니다([2-3]). 도메인 학습 없이는 범용 LLM의 성능도 떨어집니다([3]).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>PDF parsing is error-prone. Converting to .docx with pdf2docx and parsing with Unstructured still required manual review of sentence splits, figures, tables and footnotes.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>PDF 파싱은 오류가 많습니다. pdf2docx로 .docx로 변환하고 Unstructured로 파싱해도 문장 분리, 그림, 표, 각주 처리를 위해 수작업 검토가 필요했습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Datasets: M-PHY 4.1 (219 pages, 4629 sentences; 772 requirements, 3857 non-requirements) for training, and M-PHY 6.0 (249 pages, 2892 sentences; 1246 requirements, 1646 non-requirements) for validation.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>데이터셋: 학습용 M-PHY 4.1(219페이지, 4629문장, 요구사항 772개, 비요구사항 3857개), 검증용 M-PHY 6.0(249페이지, 2892문장, 요구사항 1246개, 비요구사항 1646개).</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>Stage 1 compares embeddings of the v.x requirements (Ex) with the embeddings of all atomic parts of v.y (Ey). The best-matching vector gives a similarity S in [0,1], which is compared against the threshold Th.</p>
+</div>
+<div class="bi-ko">
+<p>1단계에서는 v.x 요구사항의 임베딩(Ex)과 v.y의 모든 atomic part 임베딩(Ey)을 비교합니다. 가장 가까운 벡터의 유사도 S(0~1)를 임계값 Th와 비교합니다.</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>S = 1.0: class 0 (exact match).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>S = 1.0: 클래스 0(exact match)</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Th &lt; S &lt; 1.0: class 1 (good match), used as an extra feature for classifier training.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Th &lt; S &lt; 1.0: 클래스 1(good match). 분류기 학습 시 추가 특징으로 사용합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>S &lt; Th: stage 2 is triggered. A classifier labels the sentence as class 2 (requirement) or class 3 (non-requirement).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>S &lt; Th: 2단계 실행. 분류기가 클래스 2(요구사항) 또는 클래스 3(비요구사항)을 결정합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>The stage-2 classifier is a multi-label LLM with an S-sentence context window. A dataset of N sentences yields ceil(N/S) data points, and the last window is padded with a filler sentence. An ensemble uses K classifiers with windows S0 &lt; ... &lt; SK-1. Each produces N labels, and a small network fuses these K outputs into the final per-sentence label.</p>
+</div>
+<div class="bi-ko">
+<p>2단계 분류기는 S 문장 컨텍스트 윈도우를 갖는 multi-label LLM입니다. N개 문장의 데이터셋은 ceil(N/S)개의 데이터 포인트를 만들며, 마지막 윈도우는 채움 문장으로 패딩합니다. 앙상블은 윈도우 크기가 S0 &lt; ... &lt; SK-1인 K개 분류기를 사용합니다. 각 분류기는 N개의 레이블을 생성하며, 작은 신경망이 이 K개의 출력을 결합해 문장별 최종 레이블을 만듭니다.</p>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+  A[v.x requirements] --&gt; B[LLM embeddings Ex]
+  C[v.y atomic parts] --&gt; D[LLM embeddings Ey]
+  B --&gt; E{Similarity S vs Th}
+  D --&gt; E
+  E --&gt;|S = 1.0| F[Class 0: exact match]
+  E --&gt;|Th &lt; S &lt; 1.0| G[Class 1: good match]
+  E --&gt;|S &lt; Th| H[Ensemble of K LLM classifiers]
+  H --&gt; I[Class 2: requirement]
+  H --&gt; J[Class 3: non-requirement]</code></pre>
+<div class="bi">
+<div class="bi-en">
+<p>Experimental setup:</p>
+</div>
+<div class="bi-ko">
+<p>실험 설정:</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Embeddings: Sentence Transformers with SFR-Embedding-Mistral. Three comparison backends were tested: Qdrant vector DB, Sentence Transformers semantic search, and Levenshtein distance. Th = 0.9 for all.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>임베딩: SFR-Embedding-Mistral을 사용하는 Sentence Transformers. 비교 백엔드는 Qdrant 벡터 DB, Sentence Transformers 의미 검색, Levenshtein 거리의 세 가지를 시험했습니다. 모든 경우 Th = 0.9입니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Base classifiers: Mistral v0.1 (7B) with S in {2..30, 35, 40, ..., 100}, giving 43 classifiers. Each was trained on a 70/30 split for 30 epochs with Adam (lr 1e-4, weight decay), and quantized to 4 bits.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>기본 분류기: Mistral v0.1(7B), S ∈ {2..30, 35, 40, ..., 100}, 총 43개. 70/30 분할로 30 epoch 학습했으며 Adam(lr 1e-4, weight decay)을 사용했고 4비트로 양자화했습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Ensemble network: K inputs, then 1024, 512, 256, 128 ReLU hidden layers, and a 1-unit sigmoid output. Dropout p = 0.2, Adam lr 1e-3, 30 epochs. Training takes under one minute on CPU.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>앙상블 네트워크: K 입력, 이후 1024, 512, 256, 128 ReLU 은닉층과 1 유닛 sigmoid 출력. Dropout p = 0.2, Adam lr 1e-3, 30 epoch. CPU에서도 1분 미만 학습입니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Ensemble evaluation: 43 single classifiers were compared with 43 sequential ensembles (first 1 classifier, then 2, up to all 43), using the number of misclassified sentences as the metric.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>앙상블 평가: 43개 단일 분류기와 43개 순차 앙상블(1개, 2개, ... 43개)을 오분류 문장 수 기준으로 비교했습니다.</li>
+</ul>
+</div>
+</div>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Single classifiers: F1 decreases as S increases, because larger S gives fewer training data points. The authors recommend S ≤ 30 so that at least about 100 data points remain. Some dips (for example S = 75) are attributed to poor text-block splitting.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>단일 분류기: S가 커질수록 F1이 떨어지는데, S가 커지면 학습 데이터 포인트가 줄기 때문입니다. 저자들은 최소 약 100개의 데이터 포인트를 유지하기 위해 S ≤ 30을 권장합니다. S = 75 같은 일부 하락은 텍스트 블록 분할 품질 문제로 설명합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Ensemble: K = 11 gives 8 errors and K = 16 gives 0 errors on the training data. Adding more classifiers beyond that gives no significant gain. K = 15 was used for inference.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>앙상블: 학습 데이터 기준 K = 11에서 8건, K = 16에서 0건의 오류가 나타났습니다. 그 이상 분류기를 늘려도 유의미한 향상이 없었습니다. 추론에는 K = 15를 사용했습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Transfer to M-PHY 6.0: the K = 15 ensemble recognized 100% of inherited requirements but only 80% of new requirements. The authors attribute this to limited data from a single specification.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>M-PHY 6.0 전이 성능: K = 15 앙상블은 상속된 요구사항의 100%를 인식했지만 신규 요구사항은 80%만 인식했습니다. 저자들은 단일 명세에서 얻은 데이터가 제한적이기 때문이라고 설명합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Table I (2×H100 for the vector DB and semantic search runs; Intel i7 for Levenshtein):</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>표 I(벡터 DB 및 의미 검색은 2×H100, Levenshtein은 Intel i7 사용):</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Exact (T=0)</th>
+<th>Good (T=1)</th>
+<th>New req. (T=2)</th>
+<th>Non-req. (T=3)</th>
+<th>Recognized</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vector DB / semantic search</td>
+<td>3/3</td>
+<td>550/550</td>
+<td>569/694</td>
+<td>1770/1646</td>
+<td>90.05%</td>
+</tr>
+<tr>
+<td>Levenshtein</td>
+<td>3/3</td>
+<td>490/550</td>
+<td>582/694</td>
+<td>1817/1646</td>
+<td>86.27%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bi-ko">
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>Exact (T=0)</th>
+<th>Good (T=1)</th>
+<th>신규 요구사항 (T=2)</th>
+<th>비요구사항 (T=3)</th>
+<th>인식률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>벡터 DB / 의미 검색</td>
+<td>3/3</td>
+<td>550/550</td>
+<td>569/694</td>
+<td>1770/1646</td>
+<td>90.05%</td>
+</tr>
+<tr>
+<td>Levenshtein</td>
+<td>3/3</td>
+<td>490/550</td>
+<td>582/694</td>
+<td>1817/1646</td>
+<td>86.27%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Compute time: embedding 248 s (vector DB) or 167 s (semantic search), plus about 923 s of classification. Levenshtein takes 1.9 s for matching.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>계산 시간: 임베딩은 248초(벡터 DB) 또는 167초(의미 검색), 분류는 약 923초가 걸렸습니다. Levenshtein 매칭은 1.9초입니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Combined result: 553 inherited plus 569 new requirements, for 1122 of 1246 (90.05%). The authors report this improves on the fixed-text classifier from [3], which was at about 80%.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>종합 결과: 상속 553개와 신규 569개를 합쳐 1246개 중 1122개(90.05%)를 찾았습니다. 저자들은 이것이 [3]의 고정 텍스트 분류기(약 80%)보다 개선되었다고 보고합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Caveats from the paper: the threshold is sensitive (Th &lt; 0.3 causes false positives, Th &gt; 0.95 detects only exact matches). The approach requires full-text input and has been tested on only one or two specifications. The authors estimate that tens of thousands of labeled data points are needed for robust generalization.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>논문이 언급한 한계: 임계값에 민감합니다(Th &lt; 0.3이면 오탐, Th &gt; 0.95이면 exact match만 검출). 전체 텍스트 입력이 필요하며, 한두 개 명세에서만 시험했습니다. 저자들은 견고한 일반화를 위해 수만 개 이상의 레이블 데이터가 필요하다고 추정합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Conclusion: combining embedding-based version reuse with a context-window LLM ensemble is a practical pre-screening step for engineer review. The workflow uses a dark-blue/purple highlight for inherited requirements and yellow/orange/white probability bands for new candidates, and engineers confirm or reject them before linking to test benches and checkers.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>결론: 임베딩 기반 버전 재사용과 컨텍스트 윈도우 LLM 앙상블의 결합은 엔지니어 검토 전 단계의 실용적인 사전 스크리닝입니다. 워크플로에서는 상속 요구사항을 진한 파랑/보라색으로, 신규 후보를 확률 구간별 노랑/주황/흰색으로 강조하며, 엔지니어가 이를 확인 또는 기각한 뒤 테스트 벤치와 체커에 연결합니다.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/sW5YK1aQrZM" title="[DVCON2025]Technical Documents Version Management System Based on Large Language Models" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2025]Technical Documents Version Management System Based on Large Language Models</strong> — <a href="https://www.youtube.com/watch?v=sW5YK1aQrZM">Watch on YouTube</a> · <a href="../../videos/sW5YK1aQrZM/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

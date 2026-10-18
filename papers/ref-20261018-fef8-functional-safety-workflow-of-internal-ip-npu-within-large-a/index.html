@@ -1,0 +1,1415 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-fef8-functional-safety-workflow-of-internal-ip-npu-within-large-a/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Functional Safety Workflow of Internal IP (NPU) Within Large Automotive IC Through Analysis and Emulation Usage for SW-based Safety Mechanisms - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#functional-safety-workflow-of-internal-ip-npu-within-large-automotive-ic-through-analysis-and-emulation-usage-for-sw-based-safety-mechanisms" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Functional Safety Workflow of Internal IP (NPU) Within Large Automotive IC Through Analysis and Emulation Usage for SW-based Safety Mechanisms
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:diagnostic-coverage" class="md-tag">Diagnostic Coverage</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:emulation" class="md-tag">Emulation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:fault-injection" class="md-tag">Fault Injection</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:iso-26262" class="md-tag">ISO 26262</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:veloce" class="md-tag">Veloce</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2024">2024</a> › <a href="../../dvcon/by-topic/#verification">Verification</a></p>
+<h1 id="functional-safety-workflow-of-internal-ip-npu-within-large-automotive-ic-through-analysis-and-emulation-usage-for-sw-based-safety-mechanisms">Functional Safety Workflow of Internal IP (NPU) Within Large Automotive IC Through Analysis and Emulation Usage for SW-based Safety Mechanisms<a class="headerlink" href="#functional-safety-workflow-of-internal-ip-npu-within-large-automotive-ic-through-analysis-and-emulation-usage-for-sw-based-safety-mechanisms" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 2. Fault campaign using an emulation flow." loading="lazy" src="../../assets/figures/ref-20261018-fef8.png" /></p>
+<figcaption>Figure 2. Fault campaign using an emulation flow. — from the original paper (Andrey Likhopoy et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/1040.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Andrey Likhopoy (Samsung Electronics), Sangkyu Park (Samsung Electronics), Hyeonuk Noh (Samsung Electronics), Wonil Cho (Samsung Electronics), Inhwan Kim (Siemens EDA), Robert Serphillips (Siemens EDA), Chanjin Kim (Siemens EDA), Justin Lee (Siemens EDA), James Kim (Siemens EDA), Sougata Bhattacharjee (Samsung Semiconductor India Research), Gulshan Kumar Sharma (Samsung Semiconductor India Research), Akshaya Kumar Jain (Samsung Semiconductor India Research)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2024</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-fef8</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>The paper presents an ISO 26262 functional-safety fault campaign for an automotive NPU's SW-based safety mechanisms, run on Siemens Veloce emulation with runtime pruning and UU-case analysis, reaching the ASIL B diagnostic coverage target (91.21% with margin).</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>이 논문은 자동차 NPU의 SW 기반 안전 메커니즘에 대해 Siemens Veloce 에뮬레이션으로 수행한 ISO 26262 기능 안전 fault campaign을 제시하며, 런타임 가지치기와 UU 케이스 분석을 통해 ASIL B 진단 커버리지 목표(마진 포함 91.21%)를 달성했다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Pre-injection and runtime pruning drive FC turnaround: FIN count is 2N for N fault nets (SA0/SA1), then dead logic, memories with no read ports, and FIN=FDN faults are optimized out; state save/restore before the trigger, parallel Check Runs, and early termination on DO cases cut runtime.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>사전 주입 및 런타임 가지치기가 FC 소요 시간을 줄인다. FIN 개수는 N개의 fault net에 대해 2N(SA0/SA1)이며, 이후 dead logic, 읽기 포트가 없는 메모리, FIN=FDN fault를 최적화로 제거한다. 트리거 이전 상태 save/restore, Check Run 병렬 실행, DO 케이스의 early termination으로 런타임을 줄인다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>UU analysis and test-scenario iteration are the main DC levers: PU0 DO share rose from 36.70% to 90.26% over 5 iterations and PU2 from 38.29% to 81.96% over 8 iterations.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>UU 분석과 test scenario 반복이 DC를 끌어올리는 핵심 수단이다. PU0의 DO 비율은 5회 반복에서 36.70%에서 90.26%로, PU2는 8회 반복에서 38.29%에서 81.96%로 상승했다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Test scenarios for FC should mirror functional-verification scenarios rather than SW scenarios, since SW does not exercise all IP features; useful patterns include MSB-only/all-ones data, one LUT active at a time, mixed-sign MAC outputs, and 0/all-1 register write-read checks.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>FC용 test scenario는 SW 시나리오가 아니라 기능 검증 시나리오를 기반으로 해야 한다. SW 시나리오는 IP 기능을 모두 활용하지 않기 때문이다. 유용한 패턴으로는 MSB만 1인 데이터와 all-1 데이터, 한 번에 하나의 LUT만 활성화, 부호가 섞인 MAC 출력, 레지스터에 0과 all-1을 쓰고 읽기 등이 있다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Safe-fault classification relies on formal COI analysis plus expert judgement (spec-out, debug, clock-gating, invalid-range, performance faults); these must be justified per fault because they directly raise the reported DC.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Safe fault 분류는 형식 검증 기반 COI 분석과 전문가 판단(spec-out, debug, clock-gating, invalid-range, performance fault)에 의존한다. 이 분류는 보고되는 DC를 직접 높이므로 fault별 근거가 필요하다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Final results: SM3 self-test reaches 91.49% total DC (target 91.21%), and SM1/SM2 CPU reaches 61.13% (target 60%); however, the MEM block's final DC of 83.92% is below its 90% expected value, which the paper does not discuss.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>최종 결과로 SM3 self-test는 전체 DC 91.49%(목표 91.21%), SM1/SM2 CPU는 61.13%(목표 60%)를 달성했다. 다만 MEM 블록의 최종 DC 83.92%는 기대값 90%에 미치지 못하며, 논문에서는 이를 다루지 않는다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Under ISO 26262, hazards are rated by ASIL (S, E, C). For ASIL B, SPFM must be at least 90%. Diagnostic coverage (DC) is the fraction of failures detected by a safety mechanism (SM).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>ISO 26262에서는 위험을 ASIL(S, E, C)로 등급화하며, ASIL B의 경우 SPFM이 90% 이상이어야 한다. 진단 커버리지(DC)는 안전 메커니즘(SM)이 검출한 고장의 비율이다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The fault campaign (FC) is limited by fault-injection runtime and data management over the campaign.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>fault campaign(FC)은 fault injection 런타임과 캠페인 전반의 데이터 관리에 의해 제약을 받는다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The target is an NPU IP (PU0, PU1, PU2, MEM, CTRL) inside an automotive SoC that performs safe video sensing. Faults are reported to the Safety Island FMU.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>대상은 자동차 SoC 내부의 NPU IP(PU0, PU1, PU2, MEM, CTRL)로, 안전한 비디오 센싱을 수행한다. 고장 정보는 Safety Island의 FMU로 보고된다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Memory SMs (parity/ECC, SM9–SM13) were verified by simulation. This paper covers the SW-based SMs (SM1/SM2 CPU ECC/STL, SM3 self-test) using emulation.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>메모리 SM(parity/ECC, SM9–SM13)은 시뮬레이션으로 검증되었다. 본 논문은 에뮬레이션을 사용해 SW 기반 SM(SM1/SM2 CPU ECC/STL, SM3 self-test)을 다룬다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Targets: DC of 90% plus a 1.21% margin, so at least 91.21%. Expected DC per block was allocated from FIT-rate distribution. SM3 covers all blocks; SM1/SM2 cover the CPU at 60%.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>목표: 90%에 1.21% 마진을 더한 DC, 즉 최소 91.21%. 블록별 기대 DC는 FIT rate 분포를 기준으로 배분했다. SM3는 모든 블록을 커버하며, SM1/SM2는 CPU를 60% 목표로 커버한다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>Flow: SafetyScope fault list, RTL, and fault detection nets (FDN) feed Compile DB, which stores the fault list in the FuSa DB. Veloce compilation produces the fault injection nets (FIN). Veloce Fault App runs injection, and results return to the FuSa DB for ASIL/FMEDA metrics.</p>
+</div>
+<div class="bi-ko">
+<p>흐름: SafetyScope fault list, RTL, fault detection net(FDN)이 Compile DB에 입력되고, Compile DB는 fault list를 FuSa DB에 저장한다. Veloce 컴파일은 fault injection net(FIN)을 생성한다. Veloce Fault App이 주입을 수행하고, 결과는 ASIL/FMEDA 지표 산출을 위해 FuSa DB로 되돌아간다.</p>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+  A[SafetyScope fault list + RTL + FDN] --&gt; B[Compile DB / FuSa DB]
+  B --&gt; C[Veloce compile: FIN + optimization]
+  C --&gt; D[Golden Run: record FDN]
+  D --&gt; E[Check Run per fault, parallel]
+  E --&gt; F{Classify DO / DU / UO / UU}
+  F --&gt;|UU| G[UU analysis: Fast Triage, Config check, Read check]
+  G --&gt; H[Update test scenarios / Safe classification]
+  H --&gt; E
+  F --&gt;|Done| I[Merge, DC and FMEDA]</code></pre>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Permanent faults only (SA0/SA1). Fault count is 2N for N nets.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>영구 고장(SA0/SA1)만 고려한다. fault 개수는 net당 2개씩이므로 2N이다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Pre-injection pruning: Deadlogic (no fanout reader), memory with no read ports, and FinAndFdn faults. Vector Analysis removes constant nodes.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>주입 전 가지치기: Deadlogic(fanout reader 없음), 읽기 포트가 없는 메모리, FinAndFdn fault. Vector Analysis는 상수 노드를 제거한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Golden Run records FDN values. Each Check Run is compared against the reference. Outcomes are DO, DU, UO, UU. The DUT state before the trigger is saved and restored to skip initialization. Early termination applies once the alarm and observe nets resolve.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Golden Run은 FDN 값을 기록한다. 각 Check Run은 이 기준값과 비교된다. 결과는 DO, DU, UO, UU로 분류된다. 트리거 이전의 DUT 상태를 저장하고 복원하여 초기화 시간을 생략한다. alarm 및 observe net이 결정되면 early termination을 적용한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>DC accounting: the numerator is DU + DO + compile-optimized items (dead logic, no port in memory, FIN=FDN) + COI + Safe. The denominator is the fault list minus the compile-optimized FIN=FDN items.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>DC 계산: 분자는 DU + DO + 컴파일 최적화 항목(dead logic, 메모리 읽기 포트 없음, FIN=FDN) + COI + Safe의 합이다. 분모는 전체 fault list에서 컴파일 최적화된 FIN=FDN 항목을 뺀 값이다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Test-scenario guidelines: model the CPU-driven flow (WDT, CMNS, CRC compare, alarm_pass/fail/hang). Use functional-verification scenarios as the base, since they cover more IP features. Use intermediate values instead of extremes so a single-bit change is not saturated. Activate one LUT at a time. Create MAC outputs with mixed sign. For registers, write and read back 0 and all-1.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>test scenario 가이드라인: CPU 주도 흐름(WDT, CMNS, CRC 비교, alarm_pass/fail/hang)을 모델링한다. 더 많은 IP 기능을 커버하는 기능 검증 시나리오를 기반으로 한다. 극단값 대신 중간값을 사용해 1비트 변화가 포화되지 않도록 한다. LUT는 한 번에 하나만 활성화한다. MAC 출력은 부호가 섞이도록 만든다. 레지스터는 0과 all-1을 쓰고 읽어 검사한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>UU debugging: Fast Triage compares Golden and Check waveforms along the FIN-to-alarm/observe path. Configuration check uses Codelink to verify ECC/parity/WDT enables against synchronized SW and waveform. Read-transition check confirms whether memory reads occur (enable and address).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>UU 디버깅: Fast Triage는 FIN에서 alarm/observe 경로까지 Golden과 Check 파형을 비교한다. Configuration check는 Codelink로 SW 및 동기화된 파형을 함께 보며 ECC/parity/WDT 활성화 여부를 확인한다. Read-transition check는 enable과 address로 메모리 읽기 발생 여부를 확인한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Safe classification: formal COI analysis for faults outside the cone of influence. Expert judgement covers spec-out, debug, clock-gating (power), invalid-range (configuration), and performance faults.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Safe 분류: COI 밖의 고장은 형식 검증 기반 COI 분석으로 처리한다. 전문가 판단은 spec-out, debug, clock-gating(전력), invalid-range(설정), performance 고장을 대상으로 한다.</li>
+</ul>
+</div>
+</div>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>PU2 needed 8 iterations. PU0 went from 36.70% DO after the first iteration to 90.26% after the fifth.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>PU2는 8회 반복이 필요했다. PU0는 첫 반복의 DO 36.70%에서 다섯 번째 반복에서 90.26%로 상승했다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>SM3 final DC (expected in parentheses): PU0 96.44 (96), PU1 96.44 (96), MEM 83.92 (90), PU2 86.43 (80), CTRL 63.38 (60), PERI 81.82 (80). Total 91.49% (expected 91.41%).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>SM3 최종 DC(괄호 안은 기대값): PU0 96.44(96), PU1 96.44(96), MEM 83.92(90), PU2 86.43(80), CTRL 63.38(60), PERI 81.82(80). 전체 91.49%(기대값 91.41%).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The MEM block's final DC is below its 90% expected value. The paper does not discuss this gap.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>MEM 블록의 최종 DC는 기대값 90%에 미치지 못한다. 논문은 이 차이를 다루지 않는다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>SM1/SM2 (CPU): memory 89.63% (expected 90), logic 60.98% (60). Total 61.13% (expected 60.31%). ARM provided limited test scenarios, so further UU analysis is planned as future work.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>SM1/SM2(CPU): 메모리 89.63%(기대값 90), 로직 60.98%(60). 전체 61.13%(기대값 60.31%). ARM이 제공한 시나리오가 제한적이어서 추가 UU 분석은 향후 과제로 남겼다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The final SM3 suite has 30 optimized test scenarios. The paper states that the 91.21% ASIL B target was achieved with SW-based SMs using emulation. Runtime optimization of the scenarios is left for future work.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>최종 SM3 스위트는 최적화된 30개의 test scenario로 구성된다. 논문은 에뮬레이션 기반 SW 안전 메커니즘으로 ASIL B 목표인 91.21%를 달성했다고 밝힌다. 시나리오 런타임 최적화는 향후 과제다.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/ZOCbWSYhnJM" title="[DVCON2024]Functional Safety Workflow Internal IP (NPU) Large Automotive IC Analysis Emulation Usage" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2024]Functional Safety Workflow Internal IP (NPU) Large Automotive IC Analysis Emulation Usage</strong> · 📝 <a href="https://youtu.be/l5LVIft6xNs">Previous reading (2024-07-30)</a> — <a href="https://www.youtube.com/watch?v=ZOCbWSYhnJM">Watch on YouTube</a> · <a href="../../videos/ZOCbWSYhnJM/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

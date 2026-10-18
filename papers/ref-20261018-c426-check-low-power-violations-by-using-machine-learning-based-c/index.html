@@ -1,0 +1,1371 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-c426-check-low-power-violations-by-using-machine-learning-based-c/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Check Low-Power Violations by Using Machine Learning Based Classifier - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#check-low-power-violations-by-using-machine-learning-based-classifier" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Check Low-Power Violations by Using Machine Learning Based Classifier
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:bag-of-words" class="md-tag">Bag-of-Words</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:isolation-check" class="md-tag">Isolation check</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:low-power-verification" class="md-tag">Low-power verification</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:violation-triage" class="md-tag">Violation triage</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:xgboost" class="md-tag">XGBoost</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2023">2023</a> › <a href="../../dvcon/by-topic/#verification">Verification</a></p>
+<h1 id="check-low-power-violations-by-using-machine-learning-based-classifier">Check Low-Power Violations by Using Machine Learning Based Classifier<a class="headerlink" href="#check-low-power-violations-by-using-machine-learning-based-classifier" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 4. The overall flow of proposed approach." loading="lazy" src="../../assets/figures/ref-20261018-c426.png" /></p>
+<figcaption>Figure 4. The overall flow of proposed approach. — from the original paper (Chi-Ming Lee et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/1027-Check-Low-Power-Violations-by-Using-Machine-Learning-Based-Classifier.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Chi-Ming Lee (MediaTek Inc., Hsinchu, Taiwan), Chung-An Wang (MediaTek Inc.), Cheok-Yan Goh (MediaTek Inc.), Chia-Cheng Tsai (MediaTek Inc.), Chien-Hsin Yeh (MediaTek Inc.), Chia-Shun Yeh (MediaTek Inc.), Chin-Tang Lai (MediaTek Inc.)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2023</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-c426</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>The paper applies an XGBoost ensemble over Bag-of-Words violation-log features, novelty tokens, and token-cluster features to classify Isolation clamp violations as waivable or high-risk, reducing manual review by 12–50% across three MediaTek low-power designs while keeping all true design issues in the high-risk set.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>XGBoost 앙상블을 Bag-of-Words 기반 violation 로그 특징, novelty token, token-cluster 특징과 결합해 Isolation clamp violation을 waivable과 high-risk로 분류하며, 3개 MediaTek low-power 설계에서 수동 리뷰 작업을 12~50% 줄이면서도 모든 true design issue를 high-risk 집합에 유지함.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Violation triage is framed as supervised binary classification over tokenized simulation violation logs (tokenize, clean, BoW, DTM), trained on historical waived vs. true-issue violations; pretrained NLP models are judged unsuitable because design signal names carry no general-language semantics.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Violation triage를 토큰화된 시뮬레이션 violation 로그에 대한 지도 이진 분류 문제(tokenize, clean, BoW, DTM)로 정의하고, 과거 waived violation과 true-issue violation으로 학습함. 설계 신호 이름은 일반 언어의 의미를 갖지 않으므로 사전 학습된 NLP 모델은 적합하지 않다고 판단함.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Common tokens between training and test designs were only 200/359 (A), 292/429 (B), and 597/956 (C). Novelty-token (1 dimension) and token-cluster (30 dimensions, K-means over character-level BoW of non-common tokens) features recover information otherwise dropped from the DTM.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>학습 설계와 테스트 설계 간 공통 token 수는 A 200/359, B 292/429, C 597/956에 불과함. Novelty token 특징(1차원)과 token-cluster 특징(30차원, non-common token의 문자 단위 BoW에 K-means 적용)이 DTM에서 버려지는 정보를 복원함.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Ablation over five configurations (SVM baseline, XGBoost with preprocessing only, +novelty, +token-cluster, +5-fold ensemble): the full ensemble reaches recall 1 on all three testing designs, with review reduction of 50% (A), 12% (B), and 18% (C), averaged over five seeds.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>5가지 구성(전처리만 적용한 SVM 기준선, 전처리 XGBoost, novelty 추가, token-cluster 추가, 5-fold 앙상블)에 대한 ablation에서 전체 앙상블은 세 테스트 설계 모두에서 recall 1에 도달했고, 5개 seed 평균 기준 review reduction은 A 50%, B 12%, C 18%임.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Inference uses the max predicted probability across five fold models with a 0.5 threshold; the full preprocessing, feature engineering, training, and inference pipeline runs in about 3 minutes per design on a 2-core CPU.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>추론은 5개 fold 모델의 최대 예측 확률을 사용하고 임계값은 0.5임. 설계당 전처리·특징 생성·학습·추론 전체 파이프라인이 2-core CPU에서 약 3분 걸림.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Scope is limited: only the Isolation clamp value check on three designs, with the training set drawn from other designs' Isolation checks. The text notes a recall vs. review-reduction trade-off, and exact per-configuration values appear only in Fig. 8, which is not available as text.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>범위는 세 설계의 Isolation clamp value check로 제한됨. 본문은 recall과 review reduction 사이의 trade-off를 언급하며, 구성별 세부 수치는 텍스트가 아닌 Fig. 8에만 있음.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<h1 id="check-low-power-violations-by-using-machine-learning-based-classifier_1">Check Low-Power Violations by Using Machine Learning Based Classifier<a class="headerlink" href="#check-low-power-violations-by-using-machine-learning-based-classifier_1" title="Permanent link">&para;</a></h1>
+</div>
+<div class="bi-ko">
+<p>[Check Low-Power Violations by Using Machine Learning Based Classifier]</p>
+</div>
+</div>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Simulation-based verification emits violations that designers must manually triage into waivable false alarms or true design issues. As design complexity grows, violation counts grow, the time-limited review may stay incomplete, and unfound issues surface after RTL freeze, forcing ECOs and delaying tape-out.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>시뮬레이션 기반 검증은 violation을 출력하며, 설계자는 이를 수동으로 waivable(오탐) 또는 true design issue로 분류해야 함. 설계 복잡도가 증가하면 violation 수도 늘어나고, 시간이 제한된 리뷰가 미완료로 남아 issue가 RTL freeze 이후에야 발견되고 ECO와 tape-out 지연이 발생함.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The authors treat violation text as a classification problem, following spam-filtering practice, because violation signal names encode physical characteristics.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>저자들은 spam filtering 방식을 따라 violation 텍스트를 분류 문제로 다룸. violation 신호 이름이 물리적 특성을 인코딩하기 때문임.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The case study is the Isolation clamp value check, a low-power check that verifies correct isolation cell types between two power domains.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>사례 연구 대상은 Isolation clamp value check이며, 두 power domain 사이에서 올바른 isolation cell 유형을 검증하는 low-power 검사임.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>The approach has three stages: data preprocessing, feature engineering, and ensemble modeling.</p>
+</div>
+<div class="bi-ko">
+<p>접근법은 데이터 전처리, 특징 공학, 앙상블 모델링의 세 단계로 구성됨.</p>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+    A[Violation logs] --&gt; B[Tokenize and clean]
+    B --&gt; C[BoW vocabulary and DTM]
+    C --&gt; D[Novelty feature 1-dim]
+    C --&gt; E[Token-cluster feature 30-dim]
+    D --&gt; F[5-fold XGBoost ensemble]
+    E --&gt; F
+    F --&gt; G{prob &gt; 0.5?}
+    G --&gt;|yes| H[High-risk: review]
+    G --&gt;|no| I[Low-risk: waivable]
+    H --&gt; J[Validated labels for incremental learning]
+    I --&gt; J</code></pre>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Preprocessing:</strong> Signals are word-tokenized (e.g., <code>Common1_Common2_A1_B2_[C3]</code> splits on underscores). Cleaning lowercases tokens, removes common prefix tokens, and strips digits and brackets. Each log becomes a BoW count vector, and the vectors are stacked into a Document-term Matrix. Vocabulary is restricted to tokens common to training and test designs.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>전처리:</strong> 신호를 단어 단위로 토큰화함(예: <code>Common1_Common2_A1_B2_[C3]</code>은 밑줄 기준으로 분리). 정제 단계에서 소문자 변환, 공통 prefix token 제거, 숫자와 대괄호 제거를 수행함. 각 로그는 BoW 카운트 벡터가 되고, 이 벡터들을 쌓아 Document-term Matrix를 구성함. 어휘는 학습 설계와 테스트 설계 모두에 공통으로 존재하는 token으로 제한됨.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Novelty feature:</strong> A binary flag marking whether a violation contains any token present in the new design's distinct token set but absent from historical waived violations. For training data from historical designs, the reference set is true issues versus waived violations.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Novelty 특징:</strong> violation에 새 설계의 distinct token 집합에는 있으나 과거 waived violation에는 없는 token이 하나라도 있는지를 나타내는 이진 플래그. 과거 설계 학습 데이터의 경우 기준 집합은 true issue와 waived violation의 비교임.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Token-cluster feature:</strong> Non-common tokens are encoded as character-level BoW vectors (one dimension per letter) and grouped with K-means. Per-violation cluster occurrence counts become features, so tokens with similar word structure are not discarded.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Token-cluster 특징:</strong> non-common token을 문자 단위 BoW(알파벳당 한 차원)로 인코딩하고 K-means로 묶음. violation별 cluster 출현 횟수를 특징으로 사용하여 단어 구조가 유사한 token이 버려지지 않도록 함.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Ensemble:</strong> Base learners are XGBoost models trained with 5-fold cross-validation (5 models). For each violation, the highest candidate probability is the final prediction. Probability above 0.5 is high-risk, otherwise low-risk. Pretrained NLP models are explicitly not used.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>앙상블:</strong> 기반 학습기는 5-fold 교차 검증으로 학습한 XGBoost 모델 5개임. violation마다 후보 확률 중 최댓값을 최종 예측으로 선택함. 확률이 0.5를 초과하면 high-risk, 그렇지 않으면 low-risk로 판정함. 사전 학습된 NLP 모델은 사용하지 않음.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Training data:</strong> Historical designs (7000 violations, 284 true issues, per Table IV) are shared across all three testing designs.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>학습 데이터:</strong> 과거 설계(Table IV 기준 violation 7000개, true issue 284개)를 세 테스트 설계가 공유함.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>Key quantities:</p>
+</div>
+<div class="bi-ko">
+<p>주요 지표:</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Recall = (true issues in predicted high-risk set) / (total true issues). The target is recall 1.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Recall = (high-risk 예측 집합에 포함된 true issue 수) / (전체 true issue 수). 목표는 recall 1.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Review reduction = fraction of violations eliminated from manual review as low-risk.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Review reduction = low-risk로 판정되어 수동 리뷰에서 제외된 violation의 비율.</li>
+</ul>
+</div>
+</div>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Dataset (Table IV):</strong> Testing designs A, B, C contain 2002, 1001, and 3177 violations, with 166, 117, and 539 true issues respectively. This reading maps the four-column table to historical, A, B, C in order.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>데이터셋 (Table IV):</strong> 테스트 설계 A, B, C는 각각 violation 2002, 1001, 3177개와 true issue 166, 117, 539개를 포함함. 4열 표를 historical, A, B, C 순서로 읽은 해석임.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Ablation (Table VI, five seeds averaged):</strong> Configurations are (1) SVM with preprocessing, (2) XGBoost with preprocessing, (3) XGBoost with novelty feature, (4) XGBoost with novelty and token-cluster features, and (5) the ensemble with all features. Configuration 5 is the proposed approach.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Ablation (Table VI, 5개 seed 평균):</strong> 구성은 (1) 전처리만 적용한 SVM, (2) 전처리 XGBoost, (3) novelty 특징 추가 XGBoost, (4) novelty와 token-cluster 특징 추가 XGBoost, (5) 모든 특징을 사용한 앙상블이며, 구성 5가 제안 방식임.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Headline results:</strong> Configuration 5 reaches recall 1 on A, B, and C. Review reduction at that recall is 50%, 12%, and 18%. Adding methods increases recall toward 1 and lowers review reduction, so the trade-off is explicit. Per-configuration values are only shown in Fig. 8 and are not in the text.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>주요 결과:</strong> 구성 5는 A, B, C 모두에서 recall 1에 도달함. 이 recall을 유지할 때 review reduction은 각각 50%, 12%, 18%임. 방법을 추가할수록 recall은 1에 가까워지고 review reduction은 낮아지므로 trade-off가 명시적으로 존재함. 구성별 세부 값은 Fig. 8에만 나오며 본문 텍스트에는 없음.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Cost:</strong> About 3 minutes per design on a 2-core CPU.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>비용:</strong> 설계당 2-core CPU에서 약 3분.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Claimed benefits:</strong> Fewer false alarms, shift-left of issue discovery, and incremental retraining from validated labels.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>주장된 이점:</strong> 오탐 감소, issue 발견의 shift-left, 검증된 라벨을 이용한 점진적 재학습.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Limitations:</strong> Evaluation covers one check type and three designs. The paper states that other text-based checks could be applicable but does not test them.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>한계:</strong> 검증은 한 종류의 검사와 세 설계로 제한됨. 본문은 다른 텍스트 기반 검사에도 적용 가능할 것이라고 언급하지만 실험으로 검증하지는 않음.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/0cEVwOlM79M" title="[DVCON2023]Check Low-Power Violations by Using Machine Learning Based Classifier" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2023]Check Low-Power Violations by Using Machine Learning Based Classifier</strong> — <a href="https://www.youtube.com/watch?v=0cEVwOlM79M">Watch on YouTube</a> · <a href="../../videos/0cEVwOlM79M/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

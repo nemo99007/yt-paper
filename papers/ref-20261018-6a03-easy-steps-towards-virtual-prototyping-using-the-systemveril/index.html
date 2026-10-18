@@ -1,0 +1,1373 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-6a03-easy-steps-towards-virtual-prototyping-using-the-systemveril/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Easy Steps Towards Virtual Prototyping using the SystemVerilog DPI - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#easy-steps-towards-virtual-prototyping-using-the-systemverilog-dpi" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Easy Steps Towards Virtual Prototyping using the SystemVerilog DPI
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:dpi-c" class="md-tag">DPI-C</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:hwsw-co-verification" class="md-tag">HW/SW Co-verification</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:tlm" class="md-tag">TLM</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:uvm" class="md-tag">UVM</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:virtual-prototyping" class="md-tag">Virtual Prototyping</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2013">2013</a> › <a href="../../dvcon/by-topic/#verification">Verification</a></p>
+<h1 id="easy-steps-towards-virtual-prototyping-using-the-systemverilog-dpi">Easy Steps Towards Virtual Prototyping using the SystemVerilog DPI<a class="headerlink" href="#easy-steps-towards-virtual-prototyping-using-the-systemverilog-dpi" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 4 Mixed Software/Hardware Simulation The SystemVerilog Direct Programming Interface DPI was designed to integrate the C language with the hardware" loading="lazy" src="../../assets/figures/ref-20261018-6a03.png" /></p>
+<figcaption>Figure 4 Mixed Software/Hardware Simulation The SystemVerilog Direct Programming Interface DPI was designed to integrate the C language with the hardware — from the original paper (Dave Rich et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/easy-steps-towards-virtual-prototyping-using-the-systemverilog-dpi.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Dave Rich (Mentor Graphics, Inc., Fremont, CA)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2013</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-6a03</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>The paper shows how SystemVerilog DPI-C bridges C software and an HDL testbench so that software bus transactions become procedure calls into UVM/BFM bus agents, with tunable time compression, transaction-based interrupt and payload handling, and IPC-based control, letting the hardware verification environment be reused by the virtual prototype.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>이 논문은 SystemVerilog DPI-C로 C 소프트웨어와 HDL 테스트벤치를 연결하여, 소프트웨어의 버스 트랜잭션을 UVM/BFM 버스 에이전트에 대한 프로시저 호출로 변환하는 방법을 보인다. 여기에는 조정 가능한 시간 압축, 트랜잭션 기반의 인터럽트 및 페이로드 처리, IPC 기반 제어가 포함되어, 하드웨어 검증 환경을 가상 프로토타입에서 재사용할 수 있게 한다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>DPI-C raises the HW/SW boundary to procedure-call level: the C routine blocks on exported APB_read/APB_write tasks while SystemVerilog simulation time advances, whereas PLI is aimed at pin-level transactions and tool interfaces.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>DPI-C는 HW/SW 경계를 프로시저 호출 수준으로 끌어올린다. C 루틴은 export된 APB_read/APB_write 태스크에서 블록되는 동안 SystemVerilog 시뮬레이션 시간이 진행되며, PLI는 핀 수준 트랜잭션과 툴 인터페이스를 대상으로 한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Time compression: hardware time advances only on the bus cycles the virtual prototype selects, so thousands of consecutive idle cycles can be skipped. Idle time is injected with an APB_idle(n) task or with constrained-random cycles derived from the instruction count, and a fork/join_any monitor reports interrupts back to the software side.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>시간 압축: 하드웨어 시간은 가상 프로토타입이 선택한 버스 사이클 동안에만 진행되므로, 연속된 수천 개의 유휴 사이클을 건너뛸 수 있다. 유휴 시간은 APB_idle(n) 태스크나 명령어 수로부터 도출한 constrained-random 사이클로 주입하며, fork/join_any 모니터가 인터럽트를 소프트웨어 측에 보고한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Transactions are packed structs (Operation, Address, ReqDuration, InterruptMode Ignore/Complete/Abort, Length, Payload) that cross the language boundary as byte arrays. Dynamic payloads are handled by a fixed maximum size with Length, by fixed-size chunks (for example, a 5K payload sent as 3 transactions over 2K blocks), or by a two-call allocate-then-fill scheme.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>트랜잭션은 Operation, Address, ReqDuration, InterruptMode(Ignore/Complete/Abort), Length, Payload로 구성된 패킹된 구조체이며, 언어 경계를 바이트 배열로 넘는다. 가변 크기 페이로드는 최대 고정 크기와 Length, 고정 크기 블록 분할(예: 5K 페이로드를 2K 블록 3개 트랜잭션으로 전송), 또는 두 번의 호출로 할당 후 채우기 방식으로 처리한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Control direction is a design choice: the SystemVerilog side can be master by importing a C task (import "DPI-C" task c_code), or the virtual prototype can be master, with an IPC socket connecting the hardware-side C client. The only difference is which process initiates the socket.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>제어 방향은 설계 선택 사항이다. SystemVerilog 측이 master가 되어 C 태스크를 import(import "DPI-C" task c_code)하거나, 가상 프로토타입이 master가 되어 IPC 소켓으로 하드웨어 측 C 클라이언트와 연결할 수 있다. 차이는 소켓을 어느 프로세스가 시작하느냐뿐이다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The paper reports no quantitative benchmarks. Its performance statements are qualitative, for example that a virtual platform may run within one or two orders of magnitude of the real system. Timing parameters should be validated on the target project.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>논문은 정량적 벤치마크를 제시하지 않는다. 성능에 대한 서술은 정성적이며, 예를 들어 가상 플랫폼이 실제 시스템의 1~2 자릿수 이내에서 동작할 수 있다는 정도이다. 타이밍 파라미터는 대상 프로젝트에서 직접 검증해야 한다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Hardware and software are verified separately, and full-system verification only starts once an FPGA or emulation platform is available, which is often too late in the project schedule.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>하드웨어와 소프트웨어는 별도로 검증되며, 전체 시스템 검증은 FPGA나 에뮬레이션 플랫폼이 준비된 뒤에야 시작된다. 이는 프로젝트 일정상 너무 늦은 경우가 많다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>A virtual prototype (VP) runs target software on a fast host using high-level models. Adding HDL-level hardware models slows it dramatically and limits simulation to small OS fragments or short code segments.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>가상 프로토타입(VP)은 고성능 호스트에서 높은 수준의 모델로 대상 소프트웨어를 실행한다. 여기에 HDL 수준 하드웨어 모델을 추가하면 속도가 크게 떨어지고, 시뮬레이션은 작은 OS 조각이나 짧은 코드 세그먼트로 제한된다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Block-level hardware verification (VIP or bus-functional models) is efficient, but it lacks software-driven stimulus. Driving a bus through an ISS at pin or cycle accuracy is inefficient.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>블록 수준 하드웨어 검증(VIP 또는 bus-functional 모델)은 효율적이지만 소프트웨어 주도 자극이 부족하다. ISS로 버스를 핀 또는 사이클 정확도로 구동하는 방식도 비효율적이다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Goal: verify the communication between software and hardware rather than the whole system. Software bus transactions should drive the HDL bus at procedure-call abstraction, and the hardware testbench should be reusable from the VP.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>목표: 전체 시스템이 아니라 소프트웨어와 하드웨어 사이의 통신을 검증한다. 소프트웨어 버스 트랜잭션을 프로시저 호출 추상화 수준에서 HDL 버스로 구동하고, 하드웨어 테스트벤치를 VP에서 재사용할 수 있게 한다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Abstraction levels follow the SystemC TLM-2.0 coding styles: Untimed (UT), Loosely-timed (LT), Approximately-timed (AT), and Cycle-accurate (CC). Software can use any level. Synthesizable hardware is usually CC, while testbenches can be higher level. The UVM register abstraction layer maps procedural calls to memory references.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>추상화 수준은 SystemC TLM-2.0 코딩 스타일을 따른다: Untimed(UT), Loosely-timed(LT), Approximately-timed(AT), Cycle-accurate(CC). 소프트웨어는 어느 수준이든 사용할 수 있다. 합성 가능한 하드웨어는 대체로 CC이고, 테스트벤치는 더 높은 수준일 수 있다. UVM 레지스터 추상화 계층은 프로시저 호출을 메모리 참조로 매핑한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>DPI-C link: an SV function or task appears as a C routine, and a C routine appears as an SV task or function. Only compatible types are passed, by value. In the Figure 5 example, C_routine calls the exported APB_read and APB_write tasks and stays blocked until they complete.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>DPI-C 링크: SV 함수나 태스크는 C 루틴처럼 보이고, C 루틴은 SV 태스크나 함수처럼 보인다. 호환 가능한 타입만 값으로 전달된다. 그림 5의 예에서 C_routine은 export된 APB_read와 APB_write 태스크를 호출하고, 완료될 때까지 블록된 상태로 있다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Time compression (Figure 6): hardware time advances only during bus cycles chosen by the VP. Two ways to add idle time are an explicit idle task, APB_idle(cycles) (Figure 7), or adding the instruction count to each bus operation and injecting constrained-random idle cycles. Interrupts (Figure 8) use a fork/join_any monitor that waits for either the requested cycles or IRQ!=0, then returns iRequested and actualCycles. The completion model is agreed per application: report the interrupt during the operation, or abort and return "incomplete" (InterruptMode Ignore, Complete, or Abort).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>시간 압축(그림 6): 하드웨어 시간은 VP가 선택한 버스 사이클 동안에만 진행된다. 유휴 시간을 추가하는 방법은 두 가지로, 명시적 유휴 태스크 APB_idle(cycles)(그림 7)을 쓰거나, 각 버스 연산에 명령어 수를 더하고 constrained-random 유휴 사이클을 주입하는 방식이다. 인터럽트(그림 8)는 요청된 사이클 수 또는 IRQ!=0을 기다리는 fork/join_any 모니터를 사용하며, iRequested와 actualCycles를 반환한다. 완료 모델은 응용에 따라 합의한다. 연산 중 인터럽트를 보고하거나, 연산을 중단하고 "미완료"를 즉시 반환한다(InterruptMode Ignore, Complete, Abort).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Transaction specification (Figure 9): a struct with Operation (read, write, idle, burst), 32-bit Address, ReqStart, ReqDuration, TrStart, TrEnd, InterruptMode, InterruptReq, InterruptTime, Length, and Payload bytes. Each side of the boundary allocates and manages memory for the transaction. Dynamic payloads use one of three methods: a fixed maximum size with Length, fixed-size blocks over multiple operations, or a two-call allocate-then-fill scheme.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>트랜잭션 명세(그림 9): Operation(read, write, idle, burst), 32비트 Address, ReqStart, ReqDuration, TrStart, TrEnd, InterruptMode, InterruptReq, InterruptTime, Length, 그리고 Payload 바이트로 구성된 구조체이다. 경계의 각 측이 트랜잭션의 메모리를 할당하고 관리한다. 가변 크기 페이로드는 세 가지 방법 중 하나로 처리한다. 최대 고정 크기와 Length 사용, 여러 연산에 걸친 고정 크기 블록 전송, 또는 두 번의 호출로 할당 후 채우기.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Control flow:</li>
+<li>SV-master: a C thread is started from an initial block with import "DPI-C" task c_code (Figure 10). The C code consumes time by calling the exported task v_code.</li>
+<li>VP-master: the virtual backplane's software bus model sends an IPC message over a socket and waits for a response. The hardware-side C client receives the message, executes the transaction through DPI into the SV bus functional model, and returns the result (Figure 11).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>제어 흐름:</li>
+<li>SV master: 초기 블록에서 import "DPI-C" task c_code로 C 스레드를 시작한다(그림 10). C 코드는 export된 태스크 v_code를 호출하여 시간을 소비한다.</li>
+<li>VP master: 가상 백플레인의 소프트웨어 버스 모델이 IPC 소켓으로 메시지를 보내고 응답을 기다린다. 하드웨어 측 C 클라이언트가 메시지를 받아 DPI를 통해 SV bus functional 모델에 트랜잭션을 실행하고 결과를 반환한다(그림 11).</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>UVM integration (Figure 12): DPI-invoked C code starts UVM sequences. The sequences can come from a pure UVM test, from the VP process, or from both. The UVM register model (for example regA.read() and regA.write()) maps addresses to the correct interface, so the existing hardware testbench is reused.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>UVM 통합(그림 12): DPI로 호출된 C 코드가 UVM 시퀀스를 시작한다. 시퀀스는 순수 UVM 테스트, VP 프로세스, 또는 둘의 조합에서 생성될 수 있다. UVM 레지스터 모델(예: regA.read(), regA.write())이 주소를 올바른 인터페이스로 매핑하므로 기존 하드웨어 테스트벤치를 재사용한다.</li>
+</ul>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+  SW[Virtual Prototype SW&lt;br/&gt;native C / ISS] --&gt;|bus call via backplane| BM[Software Bus Model]
+  BM --&gt;|IPC message| CT[C thread&lt;br/&gt;DPI client]
+  CT --&gt;|DPI-C task call| SV[SV bus agent / UVM sequence]
+  SV --&gt;|pin-level| DUT[DUT]
+  DUT -.-&gt;|IRQ| SV
+  SV -.-&gt;|status / read data| CT
+  CT -.-&gt;|IPC response| BM</code></pre>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The paper has no quantitative benchmarks or speedup measurements. Its performance statements are qualitative: a VP may run within one or two orders of magnitude of the real system, and hardware-level models have a severe impact on speed. The paper argues for skipping idle bus cycles rather than modeling every one.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>논문에는 정량적 벤치마크나 속도 향상 측정 결과가 없다. 성능에 대한 서술은 정성적이다. 가상 프로토타입은 실제 시스템의 1~2 자릿수 이내에서 동작할 수 있으며, 하드웨어 수준 모델은 속도에 심각한 영향을 준다. 논문은 모든 유휴 버스 사이클을 모델링하기보다 건너뛰는 것을 주장한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The techniques were deployed on several projects. The virtual prototypes were internal platforms, open-source Python stimulus generators, and commercial systems such as Wind River Simics.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>이 기법은 여러 프로젝트에 적용되었다. 가상 프로토타입은 내부 플랫폼, 오픈소스 Python 자극 생성기, 그리고 Wind River Simics 같은 상용 시스템이었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Open issues not covered in detail: handling multiple interface threads, and interactive debugging of two processes communicating over IPC sockets.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>자세히 다루지 않은 미해결 과제: 여러 인터페이스 스레드 처리, IPC 소켓으로 통신하는 두 프로세스의 대화형 디버깅.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Conclusion: DPI-C plus UVM supports a transaction-level HW/SW co-verification environment in which the hardware testbench is reused by the virtual prototype, with the timing accuracy of each side set independently.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>결론: DPI-C와 UVM의 결합은 트랜잭션 수준의 HW/SW 공동 검증 환경을 지원한다. 이 환경에서는 하드웨어 테스트벤치를 가상 프로토타입이 재사용하며, 양측의 타이밍 정확도를 독립적으로 설정할 수 있다.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/AoUFwMf9jEI" title="[DVCON2013]Easy Steps Towards Virtual Prototyping using the SystemVerilog DPI" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2013]Easy Steps Towards Virtual Prototyping using the SystemVerilog DPI</strong> — <a href="https://www.youtube.com/watch?v=AoUFwMf9jEI">Watch on YouTube</a> · <a href="../../videos/AoUFwMf9jEI/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

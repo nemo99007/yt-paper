@@ -1,0 +1,1546 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-ccb0-towards-automated-verification-ip-instantiation-via-llms/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Towards Automated Verification IP Instantiation via LLMs - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#towards-automated-verification-ip-instantiation-via-llms" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Towards Automated Verification IP Instantiation via LLMs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:formal-verification" class="md-tag">Formal Verification</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:llm" class="md-tag">LLM</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:rag" class="md-tag">RAG</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:vip-instantiation" class="md-tag">VIP Instantiation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:verilog" class="md-tag">Verilog</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2025">2025</a> › <a href="../../dvcon/by-topic/#verification">Verification</a></p>
+<h1 id="towards-automated-verification-ip-instantiation-via-llms">Towards Automated Verification IP Instantiation via LLMs<a class="headerlink" href="#towards-automated-verification-ip-instantiation-via-llms" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Fig. 3- Proposed LLM-based framework for code generation for VIP instantiation" loading="lazy" src="../../assets/figures/ref-20261018-ccb0.png" /></p>
+<figcaption>Fig. 3- Proposed LLM-based framework for code generation for VIP instantiation — from the original paper (Ghaith Bany Hamad et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/1016-2.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Ghaith Bany Hamad (Nvidia Corp.), Michael Marcotte (Nvidia Corp.), Syed Suhaib (Nvidia Corp.)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2025</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-ccb0</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>A RAG-based LLM flow that automatically instantiates FIFO and arbiter VIP assertions from Verilog RTL, reaching 7/7 and 11/12 correct instantiations with Llama-3-70b, outperforming ICL and baseline prompting without any fine-tuning.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>Llama-3-70b와 RAG를 사용해 Verilog RTL에서 FIFO 및 arbiter VIP assertion을 자동으로 instantiate하며, fine-tuning 없이 7/7 및 11/12의 정확한 instantiation을 달성하여 ICL과 baseline 프롬프팅보다 우수한 결과를 보인 LLM 기반 흐름이다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>With Llama-3-70b and RAG, FIFO VIP instantiation was 7/7 correct and arbiter VIP instantiation was 11/12 correct (1 incorrect). ICL with chipmixtral_8x7b reached 4/7 (FIFO) and 1/12 (arbiter), and the baseline reached 0 correct in all 19 instances.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Llama-3-70b와 RAG 조합에서 FIFO VIP instantiation은 7/7 정답, arbiter VIP instantiation은 11/12 정답(1건 오답)이었다. chipmixtral_8x7b 기반 ICL은 FIFO 4/7, arbiter 1/12였고, baseline은 총 19건 모두 정답이 없었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>RAG supplies VIP knowledge at inference time from a vector database of internal VIP documents and module-to-VIP instantiation pairs, so no model fine-tuning is needed. New knowledge is added by updating the database, and the underlying LLM can be swapped for newer models.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>RAG는 내부 VIP 문서와 모듈-VIP instantiation 쌍으로 구성된 vector database에서 추론 시점에 VIP 지식을 제공하므로 모델 fine-tuning이 필요 없다. 새 지식은 데이터베이스 갱신으로 추가되며, 기반 LLM도 더 나은 모델로 교체할 수 있다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Token-bounded, non-overlapping, syntactically complete partitioning of cleaned RTL, combined with pre-selecting chunks by FIFO/arbiter naming conventions, limits LLM calls on files with hundreds of thousands of lines.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>토큰 한도 내에서 중복 없이 문법적으로 완결된 단위로 정제된 RTL을 분할하고, FIFO/arbiter 명명 규칙으로 chunk를 사전 선별하여, 수십만 라인 규모 파일에서도 LLM 호출 횟수를 제한한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Post-processing acts as a hallucination filter: an instantiation with 2 or more 'unknown' signal flags is discarded as a false positive, and missing FIFO depth and data width are deterministically extracted from the source and injected into the output.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>후처리가 hallucination 필터 역할을 한다. unknown 신호 플래그가 2개 이상인 출력은 false positive로 폐기되며, 누락된 FIFO depth와 data width는 소스에서 결정론적으로 추출되어 출력에 주입된다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Evaluation is small (7 FIFO and 12 arbiter instances, few DUTs), 'correct' requires all signals correct, and the paper contradicts itself on which model served the baseline and ICL runs (fine-tuned llama in Section V vs chipmixtral_8x7b in Section VI), so the numbers should be treated as indicative.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>평가 규모가 작고(FIFO 7건, arbiter 12건, DUT 수도 적음), 'correct'는 모든 신호가 맞아야 하며, 논문은 baseline과 ICL 실행에 사용된 모델을 Section V(fine-tuned llama)와 Section VI(chipmixtral_8x7b)에서 서로 다르게 기술한다. 따라서 수치는 참고 수준으로 해석해야 한다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Formal verification (FV) accounts for about 56% of ASIC design time (as cited in the paper). Building formal testbenches by hand requires skilled experts, which limits how far FV can scale.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Formal verification(FV)은 ASIC 설계 시간의 평균 약 56%를 차지한다(논문이 인용한 수치). Formal testbench를 수작업으로 만드는 데는 숙련된 전문가가 필요해 FV 확장에 제약이 있다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Prior LLM work on hardware assertion generation (AssertLLM, Orenes-Vera et al.) produces assertions below human-level quality, so it is not yet viable for FV teams.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>기존 LLM 기반 하드웨어 assertion 생성 연구(AssertLLM, Orenes-Vera 등)의 결과물은 사람 수준에 못 미쳐 FV 팀이 실제로 쓰기에는 아직 부족하다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Verification IPs (VIPs) package reusable checkers for protocols and standards. Deploying them is hard under tight schedules and when engineers lack VIP expertise.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Verification IP(VIP)는 프로토콜과 표준을 검증하는 재사용 가능한 checker를 패키징한 것이다. 그러나 일정이 빠듯하거나 엔지니어에게 VIP 전문성이 없으면 배포가 어렵다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Generic LLMs (GPT, Llama2/3) lack VIP-specific knowledge. Fine-tuning takes weeks and is costly. Feeding whole RTL files into the prompt hits context-window limits (the paper cites Llama2 at 2048 tokens), which truncates responses.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>범용 LLM(GPT, Llama2/3)에는 VIP 전용 지식이 없다. Fine-tuning은 수 주가 걸리고 비용이 많이 든다. RTL 파일 전체를 프롬프트에 넣으면 context window 한도에 걸리며(논문은 Llama2를 2048 토큰으로 언급), 응답이 잘린다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>The flow has four stages: data pre-processing, prompt augmentation, VIP instantiation, and post-processing. Targets are <code>assert_vip_fifo</code> and <code>assert_vip_arb</code>.</p>
+</div>
+<div class="bi-ko">
+<p>흐름은 데이터 전처리, 프롬프트 증강, VIP instantiation, 후처리의 4단계로 구성된다. 대상은 <code>assert_vip_fifo</code>와 <code>assert_vip_arb</code>이다.</p>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+    A["Raw RTL (SystemVerilog/Verilog)"] --&gt; B["Deterministic cleaning: remove comments, ifdef/ifndef, define/include-related items, blank lines"]
+    B --&gt; C["Recursive token-bounded partitioning (non-overlapping, syntactically complete)"]
+    C --&gt; D["Pre-select chunks by FIFO/arbiter naming conventions"]
+    D --&gt; E{"Prompt augmentation"}
+    E --&gt;|Baseline| F["Raw partition only"]
+    E --&gt;|ICL| G["Ruleset + one-shot example"]
+    E --&gt;|RAG| H["Top-k chunks from vector DB of VIP docs and examples"]
+    F --&gt; I["LLM VIP instantiation"]
+    G --&gt; I
+    H --&gt; I
+    I --&gt; J["Post-processing: drop outputs with 2+ unknown signals; inject FIFO depth/width from source"]
+    J --&gt; K["Aggregated VIP instantiation output"]</code></pre>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Pre-processing:</strong> A deterministic filter removes comments, <code>ifdef</code>/<code>ifndef</code> blocks, port declarations tied to <code>defines</code>/<code>includes</code>, and resulting blank lines. A proprietary recursive algorithm then splits the code into partitions that obey a maximum token count and keep blocks intact. The partitions do not overlap and together cover the whole file. Rules are registered in driver functions, so new VIPs can be added. The pipeline is multi-threaded.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>전처리:</strong> 결정론적 필터가 주석, <code>ifdef</code>/<code>ifndef</code> 블록, <code>defines</code>/<code>includes</code>와 관련된 포트 선언, 그리고 그로 인해 생기는 빈 줄을 제거한다. 이후 독자적인 재귀 알고리즘이 최대 토큰 수를 지키면서 블록 무결성을 유지하도록 코드를 분할한다. 파티션은 중복되지 않으며 전체 파일을 빠짐없이 덮는다. 규칙은 driver 함수에 등록되므로 새 VIP를 추가할 수 있다. 파이프라인은 multi-threading으로 동작한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Prompt augmentation:</strong> Three variants are compared. Baseline uses raw partitions. ICL appends FIFO/arbiter rulesets from FV experts and a one-shot VIP example. RAG retrieves relevant chunks from a vector database containing internal VIP documentation and module-code/VIP-instantiation pairs. The rulesets are shared by ICL and RAG.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>프롬프트 증강:</strong> 세 가지 방식을 비교한다. Baseline은 원본 파티션만 사용한다. ICL은 FV 전문가가 정의한 FIFO/arbiter 규칙셋과 one-shot 예시를 덧붙인다. RAG는 내부 VIP 문서와 모듈 코드/VIP instantiation 쌍을 담은 vector database에서 관련 chunk를 검색한다. 규칙셋은 ICL과 RAG가 공유한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>LLM instantiation:</strong> RAG uses the open-source Llama-3-70b-instruct endpoint, which shows that domain fine-tuning is not required. Section V says the baseline and ICL used a llama model fine-tuned on internal code documentation. Section VI names chipmixtral_8x7b_chat_tp4_trt_h100 for those runs, so the paper is inconsistent on this point.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>LLM instantiation:</strong> RAG는 오픈소스 Llama-3-70b-instruct endpoint를 사용하며, 이는 도메인 fine-tuning이 필요하지 않음을 보여준다. Section V에서는 baseline과 ICL에 내부 코드 문서로 fine-tuning한 llama 모델을 사용했다고 하지만, Section VI는 같은 실행에 chipmixtral_8x7b_chat_tp4_trt_h100을 명시한다. 논문 내에서 이 부분이 일관되지 않다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Runtime optimization:</strong> Chunks are pre-selected with naming-convention heuristics, so only likely FIFO and arbiter chunks reach the LLM. This can produce false positives, which post-processing removes.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>런타임 최적화:</strong> 명명 규칙 기반 휴리스틱으로 chunk를 사전 선별하여 FIFO와 arbiter가 있을 가능성이 높은 chunk만 LLM에 보낸다. 이 과정에서 false positive가 생길 수 있으며 후처리에서 제거된다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Post-processing:</strong> The prompt instructs the LLM to flag any signal not found in the partition as unknown. Two or more unknown flags mark the instantiation as a hallucination, and it is discarded. For FIFOs, depth and data width are often absent from the instantiating module, so an automatic retrieval step reads them from the FIFO's source module and injects them into the output.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>후처리:</strong> 프롬프트는 파티션에서 찾을 수 없는 신호를 unknown으로 표시하도록 LLM에 지시한다. Unknown 플래그가 2개 이상이면 hallucination으로 보고 해당 출력을 폐기한다. FIFO의 경우 depth와 data width가 instantiation 모듈에 없는 경우가 많아, 자동 검색 단계가 FIFO 소스 모듈에서 이 값을 읽어 출력에 주입한다.</li>
+</ul>
+</div>
+</div>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<p>Table I (correct = all signals correct; incorrect = incomplete or wrong signals; missing = no instantiation):</p>
+</div>
+<div class="bi-ko">
+<p>표 I (correct = 모든 신호가 정확함, incorrect = 신호가 불완전하거나 잘못됨, missing = instantiation 없음):</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<table>
+<thead>
+<tr>
+<th>VIP</th>
+<th>LLM</th>
+<th>Augmentation</th>
+<th>Correct</th>
+<th>Incorrect</th>
+<th>Missing</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>assert_vip_fifo</td>
+<td>chipmixtral_8x7b</td>
+<td>Baseline</td>
+<td>0</td>
+<td>0</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr>
+<td>assert_vip_fifo</td>
+<td>chipmixtral_8x7b</td>
+<td>ICL</td>
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>7</td>
+</tr>
+<tr>
+<td>assert_vip_fifo</td>
+<td>Llama-3-70b</td>
+<td>RAG</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>7</td>
+</tr>
+<tr>
+<td>assert_vip_arb</td>
+<td>chipmixtral_8x7b</td>
+<td>Baseline</td>
+<td>0</td>
+<td>0</td>
+<td>12</td>
+<td>12</td>
+</tr>
+<tr>
+<td>assert_vip_arb</td>
+<td>chipmixtral_8x7b</td>
+<td>ICL</td>
+<td>1</td>
+<td>4</td>
+<td>7</td>
+<td>12</td>
+</tr>
+<tr>
+<td>assert_vip_arb</td>
+<td>Llama-3-70b</td>
+<td>RAG</td>
+<td>11</td>
+<td>1</td>
+<td>0</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bi-ko">
+<table>
+<thead>
+<tr>
+<th>VIP</th>
+<th>LLM</th>
+<th>증강 방식</th>
+<th>Correct</th>
+<th>Incorrect</th>
+<th>Missing</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>assert_vip_fifo</td>
+<td>chipmixtral_8x7b</td>
+<td>Baseline</td>
+<td>0</td>
+<td>0</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr>
+<td>assert_vip_fifo</td>
+<td>chipmixtral_8x7b</td>
+<td>ICL</td>
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>7</td>
+</tr>
+<tr>
+<td>assert_vip_fifo</td>
+<td>Llama-3-70b</td>
+<td>RAG</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>7</td>
+</tr>
+<tr>
+<td>assert_vip_arb</td>
+<td>chipmixtral_8x7b</td>
+<td>Baseline</td>
+<td>0</td>
+<td>0</td>
+<td>12</td>
+<td>12</td>
+</tr>
+<tr>
+<td>assert_vip_arb</td>
+<td>chipmixtral_8x7b</td>
+<td>ICL</td>
+<td>1</td>
+<td>4</td>
+<td>7</td>
+<td>12</td>
+</tr>
+<tr>
+<td>assert_vip_arb</td>
+<td>Llama-3-70b</td>
+<td>RAG</td>
+<td>11</td>
+<td>1</td>
+<td>0</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The baseline produced no correct instantiations, which the authors take as evidence that raw prompts are insufficient.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Baseline은 정답을 하나도 만들지 못했으며, 저자들은 이를 원본 프롬프트만으로는 부족하다는 근거로 본다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>ICL improved results but was inconsistent, especially for the more complex arbiter task.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>ICL은 성능을 개선했지만 결과가 일관되지 않았고, 특히 더 복잡한 arbiter 작업에서 그랬다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>RAG performed best on both VIPs and was the only setting with high reliability across both tasks.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>RAG는 두 VIP 모두에서 가장 좋은 성능을 보였으며, 두 작업 전반에서 안정적인 결과를 낸 유일한 방식이었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The authors argue the RAG gain is more useful because it relies on a general open-source model. The flow can therefore move to newer LLMs without retraining.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>저자들은 RAG의 이득이 범용 오픈소스 모델을 사용해 얻어졌다는 점에서 더 가치가 있다고 주장한다. 따라서 재학습 없이 더 새로운 LLM으로 흐름을 옮길 수 있다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The paper claims "far fewer hallucinations" and "syntactically and logically sound" output, but it gives no separate hallucination-rate metric.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>논문은 "훨씬 적은 hallucination"과 "문법적·논리적으로 건전한 출력"을 주장하지만, 별도의 hallucination 비율 지표는 제시하지 않는다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Limitations: only two VIP types and a small number of instances (7 and 12). The paper does not report statistical analysis or the number of DUTs per run. The model-attribution inconsistency noted above also limits comparison across rows.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>한계: VIP 종류는 두 가지뿐이고 인스턴스 수도 적다(7건, 12건). 통계 분석이나 실행별 DUT 수는 보고되지 않았다. 위에서 언급한 모델 기술의 불일치 때문에 행 간 비교에도 제약이 있다.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/-yYSOj4vjM8" title="[DVCON2025]Towards Automated Verification IP Instantiation via LLMs" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2025]Towards Automated Verification IP Instantiation via LLMs</strong> — <a href="https://www.youtube.com/watch?v=-yYSOj4vjM8">Watch on YouTube</a> · <a href="../../videos/-yYSOj4vjM8/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

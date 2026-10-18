@@ -1,0 +1,1558 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-273b-automated-thread-evaluation-of-various-risc-v-alternatives-u/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Automated Thread Evaluation of Various RISC-V Alternatives using Random Instruction Generators - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#automated-thread-evaluation-of-various-risc-v-alternatives-using-random-instruction-generators" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Automated Thread Evaluation of Various RISC-V Alternatives using Random Instruction Generators
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        배경 및 문제 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 아키텍처 및 방법론
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실험 결과 및 결론
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:fault-simulation" class="md-tag">Fault Simulation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:model-driven-design" class="md-tag">Model-driven Design</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:risc-v" class="md-tag">RISC-V</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:random-instruction-generation" class="md-tag">Random Instruction Generation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:safety-verification-iso-26262" class="md-tag">Safety Verification (ISO 26262)</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../others/">Others</a> › <a href="../../others/by-topic/#verification">Verification</a></p>
+<h1 id="automated-thread-evaluation-of-various-risc-v-alternatives-using-random-instruction-generators">Automated Thread Evaluation of Various RISC-V Alternatives using Random Instruction Generators<a class="headerlink" href="#automated-thread-evaluation-of-various-risc-v-alternatives-using-random-instruction-generators" title="Permanent link">&para;</a></h1>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/1069-Automated-Thread-Evaluation-of-Various-RISC-V-Alternatives-using-Random-Instruction-Generators.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Endri Kaja, Nicolas Gerlin, Dominik Stoffel, Wolfgang Kunz, Wolfgang Ecker (Infineon Technologies AG / TU München / TU Kaiserslautern). 학회명은 본문에 명시되지 않음.</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>Others</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-273b</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>MetaRTL 기반 모델 구동 RTL 생성, MetaFS 결함 시뮬레이션, 랜덤 RISC-V 명령어 생성기를 결합해 여러 RISC-V CPU 변형의 안전성(고장 커버리지)을 저비용으로 자동 평가하는 기법을 제안한 논문.</strong></p>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>MetaRTL(모델 기반 RTL 생성)과 MetaFS(모델 기반 결함 주입)를 결합해 CPU 구성 변경 시에도 테스트벤치와 결함 목록을 자동 재생성하는 흐름을 제시함</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>EFI(전수 결함 주입)와 SFI(통계적 결함 주입) 캠페인을 같은 프레임워크에서 지원하며, 결함 모델은 stuck-at, SEU, Timing fault를 포함함</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>랜덤 명령어 길이(100~300)가 고장 커버리지에 영향을 주며, 이 논문에서는 Forwarding Unit 결함이 300개 명령어에서 최대 99% 커버리지에 도달함</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>전체 캠페인 수행 노력이 1 person-day로 보고되어, 정형/ATPG/BIST 대비 저오버헤드 접근으로 제시됨. 다만 정량적 비교 실험은 본문에 없음</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>분기/점프가 메모리 범위를 벗어나 Fetch stage 결함 활성화가 낮다는 한계가 확인되었고, 향후 과제로 제시됨</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<h3 id="_1">배경 및 문제 정의<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>자동차 등 안전 필수(safety-critical) 설계는 ISO 26262 요구에 따라 하드웨어 결함(방사선, 노화, 공정 결함 등)에 대한 검증이 필요하다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>결함 주입(fault injection)은 안전성 평가의 권장 기법이지만, 시간-to-market 압박 속에서 자동화와 낮은 수작업 비용이 요구된다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>기존 방식은 상용 정형 도구(Cadence JasperGold FSV, OneSpin)처럼 벤더 종속적이거나, BIST/ATPG처럼 면적·성능 오버헤드가 크다는 한계가 있다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>본 논문은 모델 기반 RTL 생성(MetaRTL)과 모델 기반 결함 시뮬레이션(MetaFS)을 결합하고, 랜덤 RISC-V 명령어 생성기를 입력 자극으로 사용해 여러 RISC-V CPU 구성의 고장 커버리지를 자동으로 평가하는 것을 목표로 한다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<h3 id="_2">핵심 아키텍처 및 방법론<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p>전체 흐름은 다음과 같이 정리할 수 있다.</p>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+    A[MetaRISC 메타모델] --&gt; B[MetaRTL: RISC-V CPU RTL 생성]
+    B --&gt; C[MetaFS: 결함 목록/테스트벤치 생성]
+    D[랜덤 명령어 생성기&lt;br/&gt;길이·제약·파일형식] --&gt; E[CPU 서브시스템 시뮬레이션]
+    C --&gt; E
+    E --&gt; F[골든 시뮬레이션과 비교]
+    F --&gt; G[Safe/Dangerous × Detected/Undetected 분류]</code></pre>
+<div class="bi">
+<div class="bi-en">
+<ol>
+<li><strong>MetaRTL 기반 RTL 생성 (Section I, III)</strong>: Python API로 기술된 메타모델(Encoding Tree, Instructions, Architectural States, Exceptions)에서 다양한 RISC-V 변형(RV32IMC, Exceptions 추가, MAC 확장)을 생성한다.</li>
+</ol>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ol>
+<li><strong>혼합 granularity 결함 주입기 (Section I, Fig. 1)</strong>: 결함 주입 대상 부분만 gate-level로 유지하고 나머지는 RTL로 표현한다. Saboteur 제어선을 Primary Input으로 전파하며, 원본과의 formal equivalence check로 변환 오류를 확인한다.</li>
+</ol>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ol>
+<li><strong>MetaFS 결함 시뮬레이션 (Section IV, Fig. 3, 4)</strong>: Simulation Controller가 SFI, EFI, DFI 캠페인을 정의하고, Fault List가 신호와 결함 모델(Sa0, Sa1, BF, TimingFault)을 관리하며, Simulation Analyzer가 Strobe(functional/checker)를 지정한다. SystemVerilog와 C++ 테스트벤치를 자동 생성한다.</li>
+</ol>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ol>
+<li><strong>결과 분류 (Section IV, Fig. 5)</strong>: Safe Undetected, Safe Detected, Dangerous Undetected, Dangerous Detected의 네 범주로 결함을 분류한다.</li>
+</ol>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ol>
+<li><strong>랜덤 명령어 생성 (Section V)</strong>: 명령어 클래스 제약(예: load, csr만 생성), read-after-write 의존성 제약, 시퀀스 길이, hex/bin 파일 형식, 데이터 메모리 시작 주소를 설정 가능한 파라미터로 제공한다.</li>
+</ol>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>검증 대상 서브시스템은 CPU, 프로그램/데이터 메모리, SPI, UART, Interrupt Controller, bus fabric과 bus bridge로 구성된다. CPU만 바꿔가며 세 가지 변형을 비교한다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>결함은 ALU, Forwarding Unit, Prefetcher, Fetch stage에 주입된다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>시뮬레이션은 Cadence Xcelium에서 수행되었다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<h3 id="_3">실험 결과 및 결론<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p><strong>EFI 캠페인 (Fig. 6–8)</strong></p>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>ALU</th>
+<th>Fw Unit</th>
+<th>Prefetcher</th>
+<th>Fetch stage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RV32IMC (Fig. 6)</td>
+<td>2555</td>
+<td>871</td>
+<td>1873</td>
+<td>4351</td>
+</tr>
+<tr>
+<td>RV32IMC-Exceptions (Fig. 7)</td>
+<td>2555</td>
+<td>871</td>
+<td>1873</td>
+<td>18936</td>
+</tr>
+<tr>
+<td>RV32IMC-MAC (Fig. 8)</td>
+<td>2555</td>
+<td>871</td>
+<td>1873</td>
+<td>18936</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>테스트 길이는 100, 150, 200, 250, 300 명령어를 사용했다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>RV32IMC에서는 ALU 결함을 제외하고 명령어 수가 늘수록 커버리지가 꾸준히 증가했다. Forwarding Unit 결함은 300개 명령어에서 최대 99%에 도달했다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Prefetcher는 가장 가파르게 증가하고 250개 이후 안정화되었다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Fetch stage 결함은 활성화가 낮았는데, 랜덤 점프·분기가 메모리 범위를 벗어나는 것이 원인으로 제시되었다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Exception Unit 추가 시 Fetch stage 주입 결함 수가 4351에서 18936으로 늘었고, 나머지 구성에서는 커버리지가 약간 증가했다(Forwarding Unit은 변화 없음).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>MAC 확장은 ALU 결함에서 약간의 커버리지 증가를 가져왔다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p><strong>SFI 캠페인 (Fig. 9)</strong></p>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>테스트 길이 300개에서 stuck-at, SEU, Timing fault를 무작위 위치·시점에 주입했다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>EFI 대비 커버리지가 크게 낮았고, 이는 SEU와 Timing fault가 선택된 컴포넌트에 낮은 영향을 주었음을 의미한다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p><strong>결론</strong></p>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>논문은 EFI 캠페인에서 300개 명령어 기준 40%~99% 범위의 허용 가능한 고장 커버리지를 얻었다고 보고한다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>전체 캠페인 수행에 1 person-day가 소요되었다고 한다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>향후 과제로 결함 모델 확장, 분기의 메모리 범위 내 제한, 상용·오픈소스 도구와의 비교가 제시되었다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>내부 정책으로 프레임워크는 당분간 오픈소스로 공개되지 않는다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<p><strong>한계 (엔지니어 관점)</strong></p>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>본문에 정량적 비교 대상(다른 도구, 기존 BIST 등)과 통계적 신뢰도(SFI 샘플 수, 신뢰구간) 정보가 없다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>SFI 결과는 그래프로만 제시되어 수치 확인이 어렵다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>학회명과 발표 연도가 본문에 명시되어 있지 않다.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<p>&nbsp;</p>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/JD25fcnTAhA" title="[DVCON2023]Automated Thread Evaluation of Various RISC-V Alternatives Random Instruction Generators" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2023]Automated Thread Evaluation of Various RISC-V Alternatives Random Instruction Generators</strong> — <a href="https://www.youtube.com/watch?v=JD25fcnTAhA">Watch on YouTube</a> · <a href="../../videos/JD25fcnTAhA/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

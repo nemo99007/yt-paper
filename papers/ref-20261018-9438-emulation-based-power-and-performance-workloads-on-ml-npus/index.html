@@ -1,0 +1,1471 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-9438-emulation-based-power-and-performance-workloads-on-ml-npus/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Emulation based Power and Performance Workloads on ML NPUs - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#emulation-based-power-and-performance-workloads-on-ml-npus" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Emulation based Power and Performance Workloads on ML NPUs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:co-emulation" class="md-tag">Co-emulation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:emulation" class="md-tag">Emulation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:npu" class="md-tag">NPU</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:power-verification" class="md-tag">Power Verification</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:saif" class="md-tag">SAIF</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2022">2022</a> › <a href="../../dvcon/by-topic/#emulation">Emulation</a></p>
+<h1 id="emulation-based-power-and-performance-workloads-on-ml-npus">Emulation based Power and Performance Workloads on ML NPUs<a class="headerlink" href="#emulation-based-power-and-performance-workloads-on-ml-npus" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 1. Co-Emulation" loading="lazy" src="../../assets/figures/ref-20261018-9438.png" /></p>
+<figcaption>Figure 1. Co-Emulation — from the original paper (Pragati Mishra et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/Emulation-based-Power-and-Performance-Workloads-on-ML-NPUs.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Pragati Mishra (Arm Ltd, Bengaluru), Ritu Suresh (Arm Ltd, Cambridge), Issac P Zacharia (Arm Ltd, Cambridge), Jitendra Aggarwal (Arm Ltd, Bengaluru)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2022</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Emulation</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-9438</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>Arm migrated an ML NPU simulation testbench to an Accellera-style HW/SW co-emulation setup, using offline SAIF generation for power and RTL counters for performance, which cut run times by 560x to 860x per test.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>Arm은 ML NPU 시뮬레이션 테스트벤치를 Accellera 방식의 HW/SW co-emulation 환경으로 이전했으며, 전력은 오프라인 SAIF 생성으로, 성능은 RTL 카운터로 측정하여 테스트별로 560x~860x의 실행 시간 단축을 달성했습니다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Splitting the simulation testbench at the HDL/HVL boundary (DUT and synthesizable TB on the emulator, non-synthesizable TB on the simulator) and linking them with SystemVerilog transaction tasks/functions gave a 330x run-time gain before optimization.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>테스트벤치를 HDL/HVL 경계에서 분할하고(DUT와 합성 가능한 TB는 에뮬레이터, 합성 불가능한 TB는 시뮬레이터에서 실행), SystemVerilog 트랜잭션 task/function으로 연결하여 최적화 전 330x의 실행 시간 이득을 얻었습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Enlarging the transaction buffer to remove redundant SW calls, plus more efficient memory read/write handling, added another 2-2.5x and brought the overall gain to 600-800x.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>트랜잭션 버퍼 크기를 늘려 중복 SW 호출을 제거하고, 메모리 read/write 처리를 효율화하여 추가로 2-2.5x를 얻었으며, 전체 이득은 600-800x가 되었습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Raw toggle data is dumped during the emulation run and converted offline into SAIF/FSDB with an emulator-specific script, so power collection does not occupy the emulator.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Raw toggle 데이터는 에뮬레이션 실행 중에 덤프되고, 에뮬레이터 전용 스크립트로 오프라인에서 SAIF/FSDB로 변환되므로 전력 데이터 수집이 에뮬레이터를 점유하지 않습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Average power is computed from 0-delay toggle activity on the post-route netlist, because RTL-based power estimates deviate 15-20% from silicon; SDF-annotated power is not possible in emulation.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>RTL 기반 전력 추정은 실리콘 대비 15-20% 편차가 있어, 평균 전력은 post-route netlist에서 0-delay toggle 활동으로 계산합니다. 에뮬레이션에서는 SDF annotated 전력 분석이 불가능합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Emulation makes multi-billion-cycle power and performance runs feasible (performance runs can occupy the emulator for days), enabling several power analysis iterations before tape-out.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>수십억 사이클 규모의 전력 및 성능 실행이 가능해져(성능 테스트는 에뮬레이터를 며칠간 점유) tape-out 이전에 여러 차례 전력 분석을 반복할 수 있습니다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Average power (battery life) is derived from toggle activity captured as SAIF and fed to power tools. Peak power requires finding hot spots over billions of cycles using user-defined sampling.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>평균 전력(배터리 수명)은 toggle 활동을 SAIF로 캡처하여 전력 툴에 입력하는 방식으로 구합니다. 피크 전력은 사용자가 정한 샘플링 방식으로 수십억 사이클에 걸쳐 hot spot을 찾아야 합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The paper states that software simulators run only a few hundred thousand cycles, which is insufficient for accurate power analysis. Hardware emulators (FPGA- or processor-based) run at MHz speeds and can execute billions of cycles.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>논문은 소프트웨어 시뮬레이터가 수십만 사이클 정도만 실행할 수 있어 정확한 전력 분석에는 부족하다고 설명합니다. 하드웨어 에뮬레이터(FPGA 또는 processor 기반)는 MHz 속도로 동작하여 수십억 사이클을 실행할 수 있습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>For Arm NPUs, simulation-based power and performance workloads took several weeks to a month, which made simulation the bottleneck. This motivated migrating the design to an emulation platform.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>Arm NPU의 전력 및 성능 워크로드는 시뮬레이션에서 수 주에서 한 달까지 걸려 병목이 되었고, 이것이 에뮬레이션 플랫폼으로 설계를 이전하는 동기가 되었습니다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The testbench was split into a dual-top hierarchy. The HW top holds the DUT and synthesizable TB modules and runs on the emulator. The SW top holds the non-synthesizable modules and runs on the simulator. The split follows the Accellera co-emulation methodology.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>테스트벤치를 dual-top 계층으로 분할했습니다. HW top에는 DUT와 합성 가능한 TB 모듈을 두어 에뮬레이터에서 실행하고, SW top에는 합성 불가능한 모듈을 두어 시뮬레이터에서 실행합니다. 분할은 Accellera co-emulation 방법론을 따릅니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>HW-SW communication is transaction-based, using SystemVerilog tasks and functions. Each SW-side call has a matching HW-side task or function that serves as a hierarchical reference.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>HW-SW 통신은 SystemVerilog task 및 function을 이용한 트랜잭션 기반 방식입니다. SW 쪽의 각 호출에 대응하는 HW 쪽 task 또는 function이 계층적 참조 역할을 합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>After migration, throughput was low. Redundant SW calls were removed by increasing the transaction buffer size, which gave a large improvement.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>이전 후 처리량이 낮았습니다. 트랜잭션 버퍼 크기를 키워 중복 SW 호출을 줄였고, 이로 인해 큰 개선이 있었습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Performance: NPU counters were added in RTL to measure bandwidth at various pipeline layers. Scripts break the counter data down per layer and report bandwidth and hardware utilization metrics.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>성능 측정: 대역폭을 파이프라인 계층별로 계산하기 위해 RTL에 NPU 카운터를 추가했습니다. 스크립트로 카운터 데이터를 계층별로 분해하여 대역폭과 하드웨어 utilization 지표를 산출합니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Power: raw toggle data is dumped during the emulation run. An emulator-specific offline script then converts it into SAIF/FSDB, using the forward SAIF, hierarchy, and output options as inputs. This keeps the emulator free. The power tool computes average power on the post-route netlist using 0-delay toggling. The tests enable all compute resources to create a worst-case, possibly unrealistic, power scenario.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>전력 측정: 에뮬레이션 실행 중 raw toggle 데이터를 덤프합니다. 이후 에뮬레이터 전용 오프라인 스크립트가 forward SAIF, 계층 구조, 출력 옵션을 입력으로 받아 SAIF/FSDB로 변환하므로 에뮬레이터를 점유하지 않습니다. 전력 툴은 post-route netlist에서 0-delay toggle을 이용해 평균 전력을 계산합니다. 테스트는 모든 연산 자원을 활성화하여 현실에서는 발생하지 않을 수도 있는 최악의 전력 시나리오를 만듭니다.</li>
+</ul>
+</div>
+</div>
+<pre class="mermaid"><code>flowchart LR
+  TB["Simulation testbench"] --&gt; SPLIT{"Split at HDL/HVL boundary"}
+  SPLIT --&gt; HW["HW top: DUT + synthesizable TB on emulator"]
+  SPLIT --&gt; SW["SW top: non-synthesizable TB on simulator"]
+  HW &lt;--&gt;|"SV tasks/functions transactions"| SW
+  HW --&gt; RAW["Raw toggle dump during run"]
+  RAW --&gt; SAIF["Offline conversion to SAIF/FSDB"]
+  SAIF --&gt; PWR["Power tool on post-route netlist"]</code></pre>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Challenges and fixes: compiler optimizations caused simulation-vs-emulation mismatches, which were resolved with appropriate synthesis compiler switches. Toggle mismatches in power benchmarks were resolved by switching off the emulator logic optimization engine. Emulator debug features were used to regress the HDL-HVL boundary. Performance benchmarks occupy the emulator for days, and stability was handled by the EDA vendor. Online streaming of raw toggle data directly to power tools was still in progress.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>문제와 해결: 컴파일러 최적화로 인해 시뮬레이션과 에뮬레이션 간 불일치가 발생했고, 합성 시 적절한 컴파일러 스위치를 추가하여 해결했습니다. 전력 벤치마크의 toggle 불일치는 에뮬레이터의 로직 최적화 엔진을 끄는 방식으로 해결했습니다. HDL-HVL 경계에 대한 회귀 검증과 디버그에는 에뮬레이터 디버그 기능을 사용했습니다. 성능 벤치마크는 에뮬레이터를 며칠간 점유하며, 안정성은 EDA 벤더가 담당했습니다. raw toggle 데이터를 전력 툴로 직접 스트리밍하는 online streaming 모드는 진행 중입니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Limitations: SDF-annotated power is not possible in emulation. RTL-based power has a 15-20% deviation from silicon, so post-route netlists are used. All RTL/TB memories must be replaced with synthesizable models.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>한계: 에뮬레이션에서는 SDF annotated 전력 측정이 불가능합니다. RTL 기반 전력은 실리콘 대비 15-20% 편차가 있어 post-route netlist를 사용합니다. 모든 RTL/TB 메모리는 합성 가능한 모델로 교체해야 합니다.</li>
+</ul>
+</div>
+</div>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Migration gave a 330x run-time speedup over simulation. Optimizing the HW-SW channel and memory read/write calls added 2-2.5x, for an overall gain of 600-800x.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>에뮬레이션 이전으로 시뮬레이션 대비 330x의 실행 시간 향상을 얻었습니다. HW-SW 채널과 메모리 read/write 호출을 최적화하여 추가로 2-2.5x를 얻었고, 전체 이득은 600-800x입니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Per-test results (seconds):</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>테스트별 결과(초 단위):</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Simulation</th>
+<th>Emulation</th>
+<th>Optimized Emulation</th>
+<th>Gain (Sim vs Emu)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Test 1</td>
+<td>233,352</td>
+<td>692</td>
+<td>385</td>
+<td>600x</td>
+</tr>
+<tr>
+<td>Test 2</td>
+<td>344,232</td>
+<td>1,264</td>
+<td>493</td>
+<td>700x</td>
+</tr>
+<tr>
+<td>Test 3</td>
+<td>257,075</td>
+<td>1,036</td>
+<td>458</td>
+<td>560x</td>
+</tr>
+<tr>
+<td>Test 4</td>
+<td>374,534</td>
+<td>1,020.08</td>
+<td>488</td>
+<td>760x</td>
+</tr>
+<tr>
+<td>Test 5</td>
+<td>381,338</td>
+<td>900</td>
+<td>441</td>
+<td>860x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bi-ko">
+<table>
+<thead>
+<tr>
+<th>테스트</th>
+<th>시뮬레이션</th>
+<th>에뮬레이션</th>
+<th>최적화된 에뮬레이션</th>
+<th>이득 (시뮬레이션 대비 에뮬레이션)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Test 1</td>
+<td>233,352</td>
+<td>692</td>
+<td>385</td>
+<td>600x</td>
+</tr>
+<tr>
+<td>Test 2</td>
+<td>344,232</td>
+<td>1,264</td>
+<td>493</td>
+<td>700x</td>
+</tr>
+<tr>
+<td>Test 3</td>
+<td>257,075</td>
+<td>1,036</td>
+<td>458</td>
+<td>560x</td>
+</tr>
+<tr>
+<td>Test 4</td>
+<td>374,534</td>
+<td>1,020.08</td>
+<td>488</td>
+<td>760x</td>
+</tr>
+<tr>
+<td>Test 5</td>
+<td>381,338</td>
+<td>900</td>
+<td>441</td>
+<td>860x</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The listed gain figures match the simulation-to-optimized-emulation ratios (for example, 233,352 / 385 ≈ 606x). The paper reports no quantified accuracy numbers beyond the claim that emulation results are closer to actual power.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>표에 기재된 이득 수치는 시뮬레이션 대비 최적화된 에뮬레이션 시간의 비율과 일치합니다(예: 233,352 / 385 ≈ 606x). 논문은 실제 전력에 더 가깝다는 주장 외에 정량화된 정확도 수치는 제시하지 않습니다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Conclusion: emulation proved to be a better verification technique for NPU power and performance workloads, because the speed allows repeated power analysis before tape-out.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>결론: NPU 전력 및 성능 워크로드에 있어 에뮬레이션은 더 나은 검증 기법임이 입증되었으며, 속도 덕분에 tape-out 이전에 전력 분석을 반복할 수 있습니다.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/RQPen0RqbUs" title="[DVCON2022]Emulation Based Power and Performance Workloads on ML NPUs" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2022]Emulation Based Power and Performance Workloads on ML NPUs</strong> — <a href="https://www.youtube.com/watch?v=RQPen0RqbUs">Watch on YouTube</a> · <a href="../../videos/RQPen0RqbUs/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

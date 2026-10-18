@@ -1,0 +1,1485 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Paper reading archive — summaries linked to YouTube reading videos">
+      
+      
+      
+        <link rel="canonical" href="https://nemo99007.github.io/yt-paper/papers/ref-20261018-ed23-a-hardware-and-software-integrated-power-optimization-approa/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>A Hardware and Software integrated power optimization approach with power aware simulations at SOC - yt-paper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a-hardware-and-software-integrated-power-optimization-approach-with-power-aware-simulations-at-soc" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yt-paper" class="md-header__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yt-paper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              A Hardware and Software integrated power optimization approach with power aware simulations at SOC
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dvcon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DVCon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Videos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yt-paper" class="md-nav__button md-logo" aria-label="yt-paper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yt-paper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nemo99007/yt-paper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo99007/yt-paper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dvcon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVCon
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DVCon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/europe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Europe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/india/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    India
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/japan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dvcon/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    By Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background and Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-and-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture and Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-and-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes-on-data-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes on Data Quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:clock-gating" class="md-tag">Clock Gating</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:power-gating" class="md-tag">Power Gating</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:power-aware-simulation" class="md-tag">Power-Aware Simulation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:soc-low-power" class="md-tag">SoC Low Power</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:upf" class="md-tag">UPF</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<!-- generated by yt-paper; edits will be overwritten -->
+<p><a href="../../dvcon/">DVCon</a> › <a href="../../dvcon/us/">US</a> › <a href="../../dvcon/by-year/#2023">2023</a> › <a href="../../dvcon/by-topic/#verification">Verification</a></p>
+<h1 id="a-hardware-and-software-integrated-power-optimization-approach-with-power-aware-simulations-at-soc">A Hardware and Software integrated power optimization approach with power aware simulations at SOC<a class="headerlink" href="#a-hardware-and-software-integrated-power-optimization-approach-with-power-aware-simulations-at-soc" title="Permanent link">&para;</a></h1>
+<figure class="rep-fig">
+<p><img alt="Figure 4. Master and Slave configuration to control the different Power domain" loading="lazy" src="../../assets/figures/ref-20261018-ed23.png" /></p>
+<figcaption>Figure 4. Master and Slave configuration to control the different Power domain — from the original paper (Eldin Ben Jacob et al.)</figcaption>
+</figure>
+<p><a class="md-button md-button--primary" href="https://dvcon-proceedings.org/wp-content/uploads/1093-A-HW-and-SW-integrated-power-optimization-approaches-with-power-aware-simulations-at-SOC.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span> Original paper</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authors</td>
+<td>Eldin Ben Jacob (Samsung Semiconductors India Research, Bangalore, India), Harshal Kothari (Samsung Semiconductors India Research), Sriram Kazhiyur Soundarrajan (Samsung Semiconductors India Research), Somasunder Kattepura Sreenath (Samsung Semiconductors India Research)</td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>DVCon US 2023</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PAPER</td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>ref-20261018-ed23</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<p><strong>A hybrid HW/SW power-control scheme combined with UPF-based power-aware (PA) simulation for a multi-domain SoC, reporting up to 83% scenario-level power reduction, ±0.5% front-end power-estimation accuracy, and up to 30% silicon power savings in the abstract.</strong></p>
+</div>
+<div class="bi-ko">
+<p><strong>다중 전력 도메인 SoC를 위해 HW/SW 하이브리드 전력 제어와 UPF 기반 Power-Aware(PA) 시뮬레이션을 결합한 접근법으로, 시나리오 단위 최대 83% 전력 절감, 프런트엔드 전력 추정 ±0.5% 정확도, 초록 기준 실리콘에서 최대 30% 전력 절감을 보고한다.</strong></p>
+</div>
+</div>
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Hardware-triggered power transitions complete in about 40 clock cycles, whereas software-triggered transitions over the slow APB clock need about 200 cycles. Hardware-only control missed the power targets in some scenarios, so the paper adopts combined HW/SW control.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>하드웨어 트리거 전력 전이는 약 40 클록 사이클에 완료되는 반면, 느린 APB 클록을 거치는 소프트웨어 트리거 전이는 약 200 사이클이 필요하다. HW 단독 제어는 일부 시나리오에서 전력 목표를 달성하지 못했으므로, 논문은 HW/SW 결합 제어를 채택한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The power-aware flow loads UPF 2.0/3.0 and Liberty files into a one-time compile, mimics the PMIC in the testbench, and adds checkers for isolation, level shifter, retention, power switch and power state table. RTL tests were also run with native low-power simulation, and the reported power estimation accuracy is about ±0.5%.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>PA 흐름은 UPF 2.0/3.0 및 Liberty 파일을 한 번만 컴파일하여 로드하고, 테스트벤치에서 PMIC 동작을 모사하며, isolation, level shifter, retention, power switch, power state table에 대한 체커를 추가한다. RTL 테스트도 네이티브 low-power 시뮬레이션으로 실행했으며, 보고된 전력 추정 정확도는 약 ±0.5%이다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Initial power was 2.1x–3.4x the specified values. Architecture tweaks driven by power-pin and functional-scenario analysis brought scenario-level savings of up to 83%. At block level, the full module measured about 41 mW against a 50 mW plan (18% less), idle power with rail on dropped from 8.44 mW to 5.86 mW (30.6%), and the power-gated block consumed 0.58 mW against 0.65 mW planned (11%).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>초기 전력은 명시된 값의 2.1배~3.4배였다. 전력 핀 및 기능 시나리오 분석을 바탕으로 한 아키텍처 조정으로 시나리오 단위 최대 83% 절감을 달성했다. 블록 수준에서는 전체 모듈이 계획 50 mW 대비 약 41 mW(18% 감소)를 기록했고, 전원 레일이 켜진 상태의 유휴 전력은 8.44 mW에서 5.86 mW(30.6%)로 줄었으며, 전원 게이팅된 블록은 계획 0.65 mW 대비 0.58 mW(11%)를 소비했다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Assertion-based clock checkers across the SoC identified more than 100 free-running clocks that were moved under clock shut-off logic. The power-down order is clock shut-off, then isolation enable, then power shut-off, then reset assertion. Deeper power-down saves more power but increases wake-up latency.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>SoC 전반의 assertion 기반 클록 체커가 100개 이상의 free-running 클록을 식별하여 clock shut-off 로직 아래로 옮겼다. 전력 차단 순서는 clock shut-off, isolation enable, power shut-off, reset assertion이다. 더 깊은 전력 차단은 전력을 더 많이 절감하지만 웨이크업 지연 시간이 늘어난다.</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-summary">Detailed Summary<a class="headerlink" href="#detailed-summary" title="Permanent link">&para;</a></h2>
+<h3 id="background-and-problem">Background and Problem<a class="headerlink" href="#background-and-problem" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The SoC has 75 power domains, 79 clock domains and 37 voltage domains (intro). Later text cites more than 70 power domains across 13 blocks, and the conclusion refers to 1 global master and 14 blocks. These counts are not fully consistent.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>SoC는 75개 전력 도메인, 79개 클록 도메인, 37개 전압 도메인을 가진다(서론). 이후 본문에서는 13개 블록에 걸쳐 70개 이상의 전력 도메인이라고 언급하며, 결론에서는 1개의 전역 마스터와 14개 블록을 언급한다. 이 수치들은 완전히 일치하지 않는다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>HDLs cannot express power intent, so IEEE 1801 UPF 2.0/3.0 is used at RTL and carried through UPF-based synthesis. Liberty files supply library-cell power and timing data, and the simulator applies low-power semantics to cell instances.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>HDL로는 전력 의도(power intent)를 표현할 수 없으므로, RTL에서는 IEEE 1801 UPF 2.0/3.0을 사용하고 UPF 기반 합성으로 이어진다. Liberty 파일은 라이브러리 셀의 전력 및 타이밍 정보를 제공하며, 시뮬레이터는 셀 인스턴스에 low-power 의미론을 적용한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Hardware-controlled power sequencing reduces software overhead, but it multiplies the scenarios that must be verified. Power-rail on/off sequencing is safety-critical.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>하드웨어가 전력 시퀀싱을 제어하면 소프트웨어 오버헤드는 줄지만, 검증해야 할 시나리오는 크게 늘어난다. 전원 레일의 on/off 시퀀싱은 안전성에 중요하다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Initial measured power was 2.1x–3.4x the specified values in each scenario. Power-pin control and the lack of HW-only margin motivated a combined HW/SW approach.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>시나리오별 초기 측정 전력은 명시된 값의 2.1배~3.4배였다. 전력 핀 제어와 HW 단독 제어의 여유 부족이 HW/SW 결합 접근법의 동기가 되었다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>Tool-vendor differences in interpreting IEEE 1801 caused significant manual bring-up effort. A utility was built to resolve these discrepancies.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>IEEE 1801 해석에 대한 EDA 벤더별 차이로 인해 환경 구축에 상당한 수작업이 필요했다. 이 불일치를 해결하는 유틸리티를 개발했다.</li>
+</ul>
+</div>
+</div>
+<h3 id="architecture-and-methodology">Architecture and Methodology<a class="headerlink" href="#architecture-and-methodology" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart LR
+  A[Power/voltage/clock domain analysis] --&gt; B[Define verification scope]
+  B --&gt; C[One-time compile: UPF + Liberty]
+  C --&gt; D[PMIC behavior mimicked in testbench]
+  D --&gt; E[Isolation / level-shifter / retention ops]
+  E --&gt; F[Checkers]</code></pre>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Testbench:</strong> a SystemVerilog model drives the DUT top-level power balls using <code>$supply_on/off</code> tasks, while CPU firmware masters control each IP's power domains according to the power manager IP's use case.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>테스트벤치:</strong> SystemVerilog 모델이 <code>$supply_on/off</code> 태스크로 DUT 최상위 power ball을 구동하고, CPU 펌웨어 마스터가 전력 관리 IP의 사용 사례에 따라 각 IP의 전력 도메인을 제어한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Checkers:</strong> isolation, level-shifter, retention, power switch and power state table checks confirm that the DUT exercises the intended power intent.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>체커:</strong> isolation, level shifter, retention, power switch, power state table 검사로 DUT가 의도된 전력 의도를 실제로 수행하는지 확인한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Low-power entry (step 1):</strong> gating is idle-based and limits toggles at IP boundaries. IPs quiesce and handshake with the NoC and power controller over Q-channel or C-channel.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Low-power 진입(1단계):</strong> 유휴 시간 기반 게이팅으로 IP 경계의 토글 수를 제한한다. IP는 Q-channel 또는 C-channel을 통해 NoC 및 전력 컨트롤러와 quiesce 및 핸드셰이크한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Clock shut-off (step 2):</strong> an FSM cuts all clocks at the IP boundary. Assertion checkers monitor free-running clocks against the clock-tree architecture and found more than 100 such clocks.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Clock shut-off(2단계):</strong> FSM이 IP 경계의 모든 클록을 차단한다. Assertion 체커가 클록 트리 구조를 기준으로 free-running 클록을 모니터링했으며 100개 이상을 찾아냈다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Power gating (step 3):</strong> the virtual rail is switched off through power switches. Signals are driven to X in simulation, and outputs are isolated to 0 or 1 with clamp cells to avoid X-propagation. Clamp values are checked by assertions.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>Power gating(3단계):</strong> power switch로 가상 레일을 차단한다. 시뮬레이션에서는 신호를 X로 구동하고, X 전파를 막기 위해 clamp 셀로 출력을 0 또는 1로 isolation한다. Clamp 값은 assertion으로 검사한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Power-down sequence:</strong> low-power entry → clock shut-off → isolation enable → power shut-off → reset assertion. Selected memories and flops use retention.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>전력 차단 순서:</strong> low-power 진입 → clock shut-off → isolation enable → power shut-off → reset assertion. 선택된 메모리와 플롭은 retention을 사용한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Phases:</strong> OPR, CSO, RET and PSO. Transitions can be triggered by HW events from the core/security subsystem or Always-On registers, or by SW through APB register writes. SW controls include PLL-boundary clock gating, retention, clock shut-off and block resets. The power controller also supports clock gearing through a programmable AXI interface.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>단계:</strong> OPR, CSO, RET, PSO. 전이는 core/security 서브시스템 또는 Always-On 레지스터의 HW 이벤트로 트리거하거나, APB 레지스터 쓰기를 통해 SW로 트리거할 수 있다. SW 제어에는 PLL 경계의 클록 게이팅, retention, clock shut-off, 블록 리셋이 포함된다. 전력 컨트롤러는 프로그래밍 가능한 AXI 인터페이스를 통한 clock gearing도 지원한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Verification:</strong> all RTL tests were rerun as native low-power simulations. Retention and isolation strategies were added to UPF 3.0 for PG netlists. SoC-level code (branch, expression, toggle, FSM) and functional (including low-power) coverage were closed.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>검증:</strong> 모든 RTL 테스트를 네이티브 low-power 시뮬레이션으로 다시 실행했다. PG 넷리스트를 위해 retention 및 isolation 전략을 UPF 3.0에 추가했다. SoC 수준의 코드(branch, expression, toggle, FSM) 및 기능(low-power 포함) 커버리지를 클로저했다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Trade-off:</strong> deeper power saving raises transition latency, so intermediate low-power states between IP-level clock gating and chip-level standby were defined.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>트레이드오프:</strong> 전력 절감 수준을 높이면 전이 지연 시간이 늘어나므로, IP 수준 클록 게이팅과 칩 수준 standby 사이에 중간 low-power 상태를 정의했다.</li>
+</ul>
+</div>
+</div>
+<h3 id="results-and-conclusions">Results and Conclusions<a class="headerlink" href="#results-and-conclusions" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>HW vs SW trigger:</strong> hardware-triggered transitions need about 40 clock cycles, and software-triggered ones need about 200 cycles because of the slow APB clock. Hardware-only control missed power targets in some scenarios, so a combination was adopted.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>HW 대 SW 트리거:</strong> 하드웨어 트리거 전이는 약 40 클록 사이클이 필요하고, 소프트웨어 트리거는 느린 APB 클록 때문에 약 200 사이클이 필요하다. HW 단독 제어는 일부 시나리오에서 전력 목표를 달성하지 못해 두 방식을 결합했다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>SoC-level scenarios (table extraction is garbled, so the mapping is approximate):</strong> A 0%, B 42%, C 68%, D 52%, E 83% power saved. The shallowest state, Level 0, saves 0%.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>SoC 수준 시나리오(표 추출이 깨져 있어 매핑은 근사치):</strong> A 0%, B 42%, C 68%, D 52%, E 83% 전력 절감. 가장 얕은 상태인 Level 0은 0%를 절감한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Block-level figures:</strong> the full module consumed about 41 mW against a 50 mW plan (18% less). Idle with rail on dropped from 8.44 mW to 5.86 mW (30.6%). The power-gated minimal-function block consumed 0.58 mW against 0.65 mW planned (11%).</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>블록 수준 수치:</strong> 전체 모듈은 계획 50 mW 대비 약 41 mW(18% 감소)를 소비했다. 전원 레일이 켜진 상태의 유휴 전력은 8.44 mW에서 5.86 mW(30.6%)로 줄었다. 전원 게이팅된 최소 기능 블록은 계획 0.65 mW 대비 0.58 mW(11%)를 소비했다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Estimation accuracy:</strong> front-end power estimation was reported at ±0.5%. Early silicon power values were said to correlate strongly with the verification-scenario estimates.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>추정 정확도:</strong> 프런트엔드 전력 추정은 ±0.5%로 보고되었다. 초기 실리콘 전력 값은 검증 시나리오 추정치와 강한 상관관계가 있다고 한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Silicon savings:</strong> the abstract claims savings of up to 30% on silicon.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>실리콘 절감:</strong> 초록에서는 실리콘에서 최대 30% 절감을 주장한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Master-slave management:</strong> the conclusion says it reduced low-power-state power by about 1/10th of total top-level power, though the exact baseline is not fully specified.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>마스터-슬레이브 관리:</strong> 결론에 따르면 low-power 상태의 전력을 최상위 전체 전력의 약 1/10 수준으로 줄였으나, 정확한 기준선은 완전히 명시되어 있지 않다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li><strong>Projected, not measured:</strong> intermittent power-saver strategies are expected to yield a further 10–75% saving when no functional datapath is needed.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li><strong>예측값이며 측정값이 아님:</strong> 간헐적 전력 절감 전략은 기능 데이터패스가 필요하지 않을 때 추가로 10~75% 절감을 기대한다고 한다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The sequences are now used by software teams to develop final product drivers.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>이 시퀀스는 현재 소프트웨어 팀이 최종 제품 드라이버 개발에 사용하고 있다.</li>
+</ul>
+</div>
+</div>
+<h3 id="notes-on-data-quality">Notes on Data Quality<a class="headerlink" href="#notes-on-data-quality" title="Permanent link">&para;</a></h3>
+<div class="bi">
+<div class="bi-en">
+<ul>
+<li>The paper's counts (75 vs &gt;70 power domains; 13 vs 14 blocks) and the scenario table are inconsistent or partly garbled. Figures above are reported as stated in the text.</li>
+</ul>
+</div>
+<div class="bi-ko">
+<ul>
+<li>논문의 수치(전력 도메인 75 대 70 이상, 블록 13 대 14)와 시나리오 표는 불일치하거나 일부 깨져 있다. 위 수치는 본문에 기재된 대로 옮겼다.</li>
+</ul>
+</div>
+</div>
+<div class="bi">
+<div class="bi-en">
+<!-- mermaid is kept in English version only -->
+</div>
+<div class="bi-ko">
+<ul>
+<li>mermaid 다이어그램은 영어 버전에만 포함한다.</li>
+</ul>
+</div>
+</div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/Lkms-pIgkfg" title="[DVCON2023]Hardware and Software integrated power optimization approach with power aware simulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<p><strong>[DVCON2023]Hardware and Software integrated power optimization approach with power aware simulation</strong> — <a href="https://www.youtube.com/watch?v=Lkms-pIgkfg">Watch on YouTube</a> · <a href="../../videos/Lkms-pIgkfg/">Video page</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
