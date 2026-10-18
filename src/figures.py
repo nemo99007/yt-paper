@@ -72,8 +72,10 @@ def _graphics(page: pymupdf.Page) -> list[pymupdf.Rect]:
     band = page.rect.height * 0.11
     rects = [pymupdf.Rect(d["rect"]) for d in page.get_drawings()]
     rects += [pymupdf.Rect(i["bbox"]) for i in page.get_image_info()]
+    top, bottom = page.rect.y0 + band, page.rect.y1 - band * 0.6
+    # drop what lies in the bands; keep tall graphics that only start (or end) inside them
     return [r for r in rects if (r.width > 2 or r.height > 2)
-            and r.y0 > page.rect.y0 + band and r.y1 < page.rect.y1 - band * 0.6]
+            and ((r.y0 > top and r.y1 < bottom) or (r.height > 40 and r.y1 > top and r.y0 < bottom))]
 
 
 def crop(pdf: Path, cap: Caption, out: Path) -> bool:
@@ -88,7 +90,7 @@ def crop(pdf: Path, cap: Caption, out: Path) -> bool:
             col = pymupdf.Rect(page.rect.x0 + 20, 0, pw / 2, 0)
         else:
             col = pymupdf.Rect(pw / 2, 0, page.rect.x1 - 20, 0)
-        top = page.rect.y0 + page.rect.height * 0.11  # below the running header
+        top = page.rect.y0 + page.rect.height * 0.04  # page margin; header logos are filtered in _graphics
         graphics = _graphics(page)
         for x0, y0, x1, y1, text, *_ in page.get_text("blocks"):
             tb = pymupdf.Rect(x0, y0, x1, y1)

@@ -7,14 +7,13 @@ region: US
 year: 2020
 category: Verification
 tags:
-- PSS (Portable Test and Stimulus Standard)
-- Post-Silicon Validation
-- Performance Validation
+- PSS
+- Post-Silicon
+- Perspec
 - Test Chip
-- Multicore Traffic Profile
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/post-silicon-performance-validation-using-pss.pdf
-authors: 'Dayoung Kim, Jaehun Lee, Daeseo Cha (Samsung Electronics); Phu L. Huynh, Jake Kim (Cadence Design Systems). 학회/발표처는 원문에 명시되지 않음. 참고: 제목 힌트의 저자 ''Laura Hyslop''은 원문에서 확인되지 않음'
+authors: Dayoung Kim (Samsung Electronics), Jaehun Lee (Samsung Electronics), Daeseo Cha (Samsung Electronics), Phu L. Huynh (Cadence Design Systems), Jake Kim (Cadence Design Systems)
 youtube_videos:
 - video_id: oT47WOHEeJ8
   url: https://www.youtube.com/watch?v=oT47WOHEeJ8
@@ -28,11 +27,16 @@ youtube_videos:
 
 # Post-Silicon Performance Validation Using PSS
 
+<figure class="rep-fig" markdown>
+![Figure 3. Memory TP Scenario](../assets/figures/ref-20261018-b4a5.png){ loading=lazy }
+<figcaption>Figure 3. Memory TP Scenario — from the original paper (Dayoung Kim et al.)</figcaption>
+</figure>
+
 [:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/post-silicon-performance-validation-using-pss.pdf){ .md-button .md-button--primary target=_blank }
 
 | | |
 |---|---|
-| Authors | Dayoung Kim, Jaehun Lee, Daeseo Cha (Samsung Electronics); Phu L. Huynh, Jake Kim (Cadence Design Systems). 학회/발표처는 원문에 명시되지 않음. 참고: 제목 힌트의 저자 'Laura Hyslop'은 원문에서 확인되지 않음 |
+| Authors | Dayoung Kim (Samsung Electronics), Jaehun Lee (Samsung Electronics), Daeseo Cha (Samsung Electronics), Phu L. Huynh (Cadence Design Systems), Jake Kim (Cadence Design Systems) |
 | Venue | DVCon US 2020 |
 | Topic | Verification |
 | Type | PAPER |
@@ -43,12 +47,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Samsung 테스트 칩(쿼드코어 CPU 블록 5개)의 PPA 검증을 위해 Cadence Perspec 기반 PSS로 트래픽 프로파일, 벤치마크, 장시간 DMA+메모리 스트레스 시나리오를 재사용 가능하게 모델링하고, 설정 CSV만 바꾸면 환경을 재구성할 수 있음을 보인 사례 논문.**
+**Samsung and Cadence use PSS (Perspec) to build configuration-driven, reusable performance and long-running DMA/memory traffic scenarios for post-silicon validation of a multi-cluster CPU test chip, reporting a 4–9% design-methodology gain measured through these PSS scenarios.**
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+**삼성전자와 Cadence는 PSS(Perspec)를 사용해 다중 클러스터 CPU 테스트 칩의 포스트 실리콘 성능 검증을 위한 설정 기반의 재사용 가능한 성능 및 장시간 DMA/메모리 트래픽 시나리오를 구축했으며, 이 PSS 시나리오로 측정한 새 설계 방법론의 성능 향상을 4~9%로 보고했다.**
 
 </div>
 </div>
@@ -58,12 +62,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- PSS의 action 단위 모델링으로 코어 선택, 방향, 대역폭, 트랜잭션 수 같은 제어 노브를 scenario 수준에서 다루면, IPC와 동기화 코드는 도구가 자동 생성한다. 엔지니어는 C 코드 레벨 디버깅을 실패 원인 분리 단계에서만 하게 된다.
+- Composing a single traffic-profile action (sml_traffic_profile) over a parallel core subset (multicore_sml_tp) lets the tool generate the per-core C code, IPC, and synchronization points automatically, so engineers debug at action level and drop to C only on failures.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 단일 트래픽 프로파일 액션(sml_traffic_profile)을 병렬 코어 서브셋(multicore_sml_tp)에 구성하면 툴이 코어별 C 코드, IPC, 동기화 지점을 자동 생성하므로, 엔지니어는 액션 수준에서 디버깅하고 실패 시에만 C 수준으로 내려간다.
 
 </div>
 </div>
@@ -71,12 +75,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 프로세서/메모리 토폴로지를 CSV 설정 테이블에서 PSS 데이터 타입(sml_cluster_tag_e, sml_processor_tag_e 등)으로 자동 생성하고, 시나리오가 프로젝트 고유 이름을 참조하지 않도록 설계하면 클러스터 수가 바뀌어도 시나리오 재사용이 가능하다. 단, 특정 클러스터를 이름으로 지정한 테스트(예: dma_tp_cl0)는 재작성이 필요하다.
+- Reusability comes from keeping cluster and processor names out of the scenarios and generating the PSS types from CSV configuration tables; per the paper, a future 10-cluster design (C0–C9) would need only a config change, though project-specific tests such as dma_tp_cl0 must be rewritten.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 시나리오에서 클러스터 및 프로세서 이름을 제외하고 CSV 설정 테이블로부터 PSS 타입을 생성하여 재사용성을 확보한다. 논문에 따르면 향후 10개 클러스터(C0~C9) 설계는 설정 변경만으로 가능하나, dma_tp_cl0처럼 프로젝트 고유의 테스트는 다시 작성해야 한다.
 
 </div>
 </div>
@@ -84,12 +88,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 벤치마크(Dhrystone, CoreMark, lmbench, gzip)를 PSS action으로 감싸고 PMU 사이클 카운터 start/stop action으로 감싸면, 설계 방법론 차이에 따른 성능 차이를 일관된 조건에서 측정할 수 있다.
+- The same PSS scenarios run unmodified in simulation and emulation and produce the same results, which supports reusing pre-silicon stimulus for post-silicon bring-up.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 동일한 PSS 시나리오를 수정 없이 시뮬레이션과 에뮬레이션에서 실행해 같은 결과를 얻었으며, 이는 포스트 실리콘 bring-up에서 프리 실리콘 자극을 재사용할 수 있음을 뒷받침한다.
 
 </div>
 </div>
@@ -97,12 +101,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- repeat 문으로 시뮬레이션용 시나리오를 실리콘에서 9999회 반복하는 식으로 장시간 테스트를 만들 수 있다. 다만 논문의 결과 그래프는 simulation time 기준이며, 실리콘 성능 수치는 본문에 없다.
+- The reported design-methodology benefit is 4–9% for BLK_CPU1/BLK_CPU2 versus BLK_CPU0; the normalized table values (0.91–0.98, BLK_CPU0 = 1) do not state the metric's direction, so interpret them with care.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 보고된 설계 방법론 효과는 BLK_CPU0 대비 BLK_CPU1/BLK_CPU2에서 4~9%이다. 정규화된 표 값(0.91~0.98, BLK_CPU0 = 1)은 지표의 방향이 명시되어 있지 않으므로 해석에 주의해야 한다.
 
 </div>
 </div>
@@ -110,40 +114,29 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 원문 결과 표는 BLK_CPU0을 1로 정규화한 값(BLK_CPU1 0.95~0.98, BLK_CPU2 0.91~0.94)을 보여주며, 본문은 4~9% 개선이라고 설명한다. 표의 지표 방향(낮을수록 좋은지)이 명시되지 않아 해석 시 주의가 필요하다. 생산성 향상도 정량 측정 없이 정성적으로만 서술되어 있다.
+- Productivity gains are asserted qualitatively and no effort or schedule measurements are provided, so the claims should be treated as anecdotal.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 생산성 향상은 정성적으로만 주장되며 공수나 일정에 대한 측정 데이터가 없으므로 일화적 주장으로 봐야 한다.
 
 </div>
 </div>
 
 ## Detailed Summary
 
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-### 배경 및 문제 정의
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
+### Background and Problem
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 신규 반도체 기술(라이브러리 셀, on-chip monitor IP, 물리 구현 기법)은 양산 전에 테스트 칩으로 검증되어야 하며, 이 논문은 Samsung 테스트 칩의 PPA(Power, Performance, Area) 개선을 측정하는 과정을 다룬다.
+- The test chip has five quad-core CPU blocks (20 cores, Table 1) built with different cell libraries and physical implementations, so performance must be measured per block under CPU, memory, and I/O activity.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 테스트 칩은 쿼드코어 CPU 블록 5개(표 1 기준 코어 20개)로 구성되며, 블록마다 서로 다른 cell library와 물리 구현 기법을 사용하므로 CPU, 메모리, I/O 활동이 동시에 일어나는 상황에서 블록별 성능을 측정해야 한다.
 
 </div>
 </div>
@@ -151,12 +144,27 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 칩 내 임베디드 프로세서 코어와 펌웨어가 늘어나면서, 프로세서/메모리/IO 서브시스템의 동작, 통신, 동기화, 성능을 검증하는 테스트 소프트웨어를 만드는 시간과 인력 부담이 커진다.
+- Hand-written embedded C tests are slow to produce, give poor coverage, and make resource allocation, IPC, and synchronization error-prone.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 수작업 임베디드 C 테스트는 작성에 시간이 오래 걸리고 커버리지가 낮으며, 자원 할당, IPC, 동기화에서 오류가 발생하기 쉽다.
+
+</div>
+</div>
+
+### Architecture and Methodology
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- A PSS traffic profile generator (TPG) builds memory TP scenarios: `sml_traffic_profile` is the base action (core, direction, MB/s, transaction count), and `multicore_sml_tp` runs it in parallel over a selected core subset.
+
+</div>
+<div class="bi-ko" markdown>
+
+- PSS 기반 트래픽 프로파일 생성기(TPG)가 메모리 TP 시나리오를 구성한다. 기본 액션은 sml_traffic_profile(코어, 방향, MB/s, 트랜잭션 수)이고, multicore_sml_tp는 선택된 코어 서브셋에서 이를 병렬로 실행한다.
 
 </div>
 </div>
@@ -164,12 +172,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 문제는 (1) 설계 구성(클러스터 수, 셀 라이브러리, 물리 구현)이 바뀔 때마다 테스트를 다시 작성해야 하고, (2) 수동으로 작성한 실사용 시나리오는 커버리지가 낮으며, (3) 여러 bus master가 동시에 동작할 때 자원 충돌, 메모리 할당, IPC, 동기화를 손으로 구현하기 어렵다는 점이다.
+- Dhrystone, CoreMark, lmbench, and gzip are wrapped as PSS actions with PMCCNTR start/stop bracketing.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- Dhrystone, CoreMark, lmbench, gzip은 PMCCNTR 시작/정지 액션으로 감싼 PSS 액션으로 구현된다.
 
 </div>
 </div>
@@ -177,12 +185,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-### 핵심 아키텍처 및 방법론
+- `dma_tp` runs a DMA scenario on one core while the remaining cores run the TP scenario on the same cluster. `repeat` statements extend it to long post-silicon runs (9999 iterations in Fig. 15).
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- dma_tp는 한 코어에서 DMA 시나리오를 실행하는 동안 같은 클러스터의 나머지 코어가 TP 시나리오를 실행한다. repeat 문으로 포스트 실리콘 장시간 실행을 구성한다(그림 15에서 9999회 반복).
 
 </div>
 </div>
@@ -190,48 +198,36 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-테스트 칩은 BLK_CPU0~BLK_CPU4 다섯 개의 CPU 블록을 포함하며, 각 블록은 쿼드코어(총 20코어, 클러스터 CL0~CL4)다. BLK_CPU0은 기존 Samsung DM, BLK_CPU1/2는 신규 DM을 적용한 블록이다. 기술 흐름은 다음과 같다.
+- Project-specific data lives in CSV tables, from which the PSS model (types and knobs) is generated.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 프로젝트 고유 정보는 CSV 테이블에 두며, 이로부터 PSS 모델(타입과 knob)을 생성한다.
 
 </div>
 </div>
 
 ```mermaid
 flowchart LR
-    CSV["CSV 설정 테이블<br/>(Processor / Memory / Page)"] --> PERSPEC["Perspec (PSS 도구)"]
-    PERSPEC --> MODEL["자동 생성 PSS 모델<br/>(data types, knobs, helper)"]
-    MODEL --> ACT["Atomic actions<br/>sml_traffic_profile, coremark, dma_scenario ..."]
-    ACT --> SCN["Compound scenarios<br/>multicore_sml_tp, dma_tp, si_dma_tp"]
-    SCN --> C["생성된 C 코드 + IPC/동기화"]
-    C --> HW["테스트 칩 (PCB 보드 실행)"]
+  CSV[CSV config tables] --> Model[PSS model: types, knobs]
+  Model --> Actions[sml_traffic_profile / benchmarks / DMA]
+  Actions --> Scen[multicore_sml_tp / dma_tp]
+  Scen --> Gen[Generated C + IPC sync]
+  Gen --> Board[PCB post-silicon run]
 ```
 
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-논문이 제시한 4단계 접근법은 다음과 같다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
+### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-1. **성능 측정 시나리오 생성**: STA 타이밍 리포트로 클럭 속도와 최대 대역폭을 정하고, Traffic Profile Generator(TPG)를 PSS로 구현한다.
+- The new Samsung design methodology on BLK_CPU1 and BLK_CPU2 shows a 4–9% performance gain over BLK_CPU0, measured by PSS scenarios (Fig. 16, based on simulation time).
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- BLK_CPU1과 BLK_CPU2에 적용한 새 삼성 설계 방법론은 PSS 시나리오로 측정했을 때 BLK_CPU0 대비 4~9%의 성능 향상을 보인다(그림 16, 시뮬레이션 시간 기준).
 
 </div>
 </div>
@@ -239,12 +235,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-2. **표준 벤치마크 래핑**: Dhrystone, CoreMark, lmbench, gzip을 PSS action으로 감싸고, 코어, 메모리 블록 등을 제어 노브로 노출한다. `start_pm_counter`/`stop_pm_counter` action은 ARM PMCCNTR 레지스터를 리셋/시작/정지해 사이클 수를 얻는다.
+- Scenarios run unmodified in simulation and emulation with identical results.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 시나리오는 시뮬레이션과 에뮬레이션에서 수정 없이 실행되었고 결과가 동일했다.
 
 </div>
 </div>
@@ -252,291 +248,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-3. **장시간 테스트 합성**: 짧은 테스트를 조합하고 run-time loop로 감싸 PCB 보드에서 측정 가능한 길이로 만든다.
+- The paper claims a new configuration can be validated in a few days, but productivity gains are not quantified.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-4. **재사용 가능한 PSS 환경**: 프로젝트 의존 설정은 CSV에 두고, 시나리오는 프로젝트 고유 이름을 참조하지 않게 작성한다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**주요 시나리오 구성**
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **메모리 TP(traffic profile)**: `sml_traffic_profile` 원자 action은 코어 하나가 메모리에 접근하는 것을 나타내며, 제어 노브는 코어, 방향(read/write/random), 대역폭(MB/s), 트랜잭션 수다. `multicore_sml_tp`는 `procs_subset` 구조체로 여러 코어를 `parallel`로 묶는다. `procs_subset`의 `size`, `A0_selected`~`E3_selected`, `num_CL0`~`num_CL4`는 Table 1에서 PSS 도구가 자동 생성한다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **DMA + 메모리 TP (`dma_tp`)**: 한 클러스터 안에서 코어 하나는 `start_pm_counter → dma_scenario → stop_pm_counter`를 실행하고, 나머지 세 코어는 `multicore_sml_tp`를 수행한다. 제약식으로 선택된 클러스터의 코어만 쓰도록 한다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **시스템 연결성 시나리오**: DMA0(LPDDR4→UART 표시), DMA1(QSPI/SPI→LPDDR4) 등 여러 HW 자원을 동시에 활성화해 corner case와 전력을 측정한다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**자동 생성된 동기화**
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-CL0 예시(Fig. 11)에서 A0이 Sync point 1(시작 시 IPC로 A1~A3에 시작 신호)과 Sync point 2(A1~A3 완료 대기 후 `stop_pm_counter`)를 담당한다. 도구가 이 IPC 메시지와 대기 코드를 C 코드로 자동 생성한다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**Post-silicon 장시간 테스트**
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-`repeat (count)` 구문으로 시뮬레이션 시나리오를 실리콘에서 반복한다. 예: `si_dma_tp`는 `dma_tp`를 9999회 반복한다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**재사용성**
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-현재 칩의 `sml_cluster_tag_e`는 CL0~CL3(본문)으로 설명되지만, Table 1에는 CL4까지 있어 본문과 표가 일치하지 않는다. 다음 버전에서 클러스터가 10개로 늘어나도 `dma_tp`는 이름을 참조하지 않으므로 재사용할 수 있고, 변경은 설정 파일에 한정된다고 주장한다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-### 실험 결과 및 결론
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**측정 결과 (Fig. 16 / 결과 표, BLK_CPU0 = 1 정규화)**
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-| 시나리오 | BLK_CPU0 | BLK_CPU1 | BLK_CPU2 |
-|---|---|---|---|
-| Memory Access (Write_Read) | 1 | 0.98 | 0.91 |
-| Dhrystone | 1 | 0.97 | 0.91 |
-| Gzip compress | 1 | 0.97 | 0.93 |
-| Lmbench | 1 | 0.96 | 0.91 |
-| Stress (Traffic Profile + DMA) | 1 | 0.95 | 0.94 |
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 본문은 신규 DM이 PSS 시나리오 기준 **4~9% 성능 향상**을 보인다고 서술한다. 표 값 1-0.91=9%, 1-0.96=4%와 대응하므로 낮을수록 좋은 지표(시간/사이클)로 보인다. 다만 원문이 지표 방향을 명시하지 않았다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 결과는 **simulation time** 기준이라고 명시되어 있다. 시뮬레이션과 에뮬레이션에서 수정 없이 같은 결과를 냈다고 주장하지만, 이 결과는 실리콘 측정값이 아니다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**결론과 한계**
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- PSS로 성능 측정 시나리오와 시스템 검증 시나리오를 자동 생성하고 코드 생성 작업을 크게 줄였다고 주장한다. 또한 설정 변경만으로 환경을 며칠 안에 재구성할 수 있다고 한다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 생산성 향상의 "추정치"를 수동 코딩 대비로 제시하겠다고 했으나, 본문에는 정량 수치가 없다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 클러스터 수 변경에 따른 재구성 시간("a few days")과 생산성 향상은 정성적 주장이다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 제목 힌트의 저자 'Laura Hyslop'은 원문에서 찾을 수 없으며, 원문 저자는 Kim, Lee, Cha, Huynh, Kim이다. 참고문헌 [4]는 DVCon 2019 발표이지만, 본 논문의 발표 학회는 명시되지 않았다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
+- 논문은 새 설정을 며칠 내에 검증할 수 있다고 주장하지만, 생산성 향상은 정량화되어 있지 않다.
 
 </div>
 </div>

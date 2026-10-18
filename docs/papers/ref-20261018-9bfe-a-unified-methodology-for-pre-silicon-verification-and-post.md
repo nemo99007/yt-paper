@@ -7,14 +7,14 @@ region: null
 year: 2011
 category: Verification
 tags:
-- Post-Silicon Validation
+- Post-Silicon
 - Exerciser
+- Threadmill
 - Test-template
-- CDV
-- POWER7
+- Coverage-driven verification
 source_type: PAPER
 source_url: https://past.date-conference.com/proceedings-archive/2011/DATE11/PDFFILES/12.4_3.PDF
-authors: Allon Adir (IBM Research - Haifa), Shady Copty (IBM Research - Haifa), Shimon Landa (IBM Research - Haifa), Amir Nahir (IBM Research - Haifa), Gil Shurek (IBM Research - Haifa), Avi Ziv (IBM Research - Haifa), Charles Meissner (IBM Server and Technology Group, Austin, TX), John Schumann (IBM Server and Technology Group, Austin, TX)
+authors: Allon Adir (IBM Research - Haifa), Shady Copty (IBM Research - Haifa), Shimon Landa (IBM Research - Haifa), Amir Nahir (IBM Research - Haifa), Gil Shurek (IBM Research - Haifa), Avi Ziv (IBM Research - Haifa), Charles Meissner (IBM Server and Technology Group, Austin), John Schumann (IBM Server and Technology Group, Austin); DATE 2011 (EDAA)
 youtube_videos:
 - video_id: wZv0WaC4JkM
   url: https://www.youtube.com/watch?v=wZv0WaC4JkM
@@ -37,7 +37,7 @@ youtube_videos:
 
 | | |
 |---|---|
-| Authors | Allon Adir (IBM Research - Haifa), Shady Copty (IBM Research - Haifa), Shimon Landa (IBM Research - Haifa), Amir Nahir (IBM Research - Haifa), Gil Shurek (IBM Research - Haifa), Avi Ziv (IBM Research - Haifa), Charles Meissner (IBM Server and Technology Group, Austin, TX), John Schumann (IBM Server and Technology Group, Austin, TX) |
+| Authors | Allon Adir (IBM Research - Haifa), Shady Copty (IBM Research - Haifa), Shimon Landa (IBM Research - Haifa), Amir Nahir (IBM Research - Haifa), Gil Shurek (IBM Research - Haifa), Avi Ziv (IBM Research - Haifa), Charles Meissner (IBM Server and Technology Group, Austin), John Schumann (IBM Server and Technology Group, Austin); DATE 2011 (EDAA) |
 | Venue | DATE 2011 |
 | Topic | Verification |
 | Type | PAPER |
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**The paper proposes a unified pre-silicon/post-silicon verification methodology that shares one verification plan, a common test-template language, and common coverage models, and realizes it as Threadmill, a bare-metal directable exerciser that uses accelerators to measure coverage of silicon-side tools, which was applied to IBM POWER7.**
+**Proposes a unified pre-/post-silicon verification methodology that shares one verification plan, a common test-template language, and common coverage models across simulation, acceleration, and silicon, realized in the bare-metal directable exerciser Threadmill and applied to IBM POWER7.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**이 논문은 하나의 검증 계획, 공통 test-template 언어, 공통 coverage 모델을 공유하는 pre-silicon/post-silicon 통합 검증 방법론을 제안하고, 이를 가속기로 silicon 측 도구의 coverage를 측정하는 bare-metal directable exerciser인 Threadmill로 구현하여 IBM POWER7에 적용한 결과를 보고한다.**
+**사전 실리콘 검증과 사후 실리콘 검증이 하나의 검증 계획, 공통 test-template 언어, 공통 coverage 모델을 공유하도록 하는 통합 방법론을 제안하며, 이를 베어메탈 directable exerciser인 Threadmill로 구현해 IBM POWER7에 적용한다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Silicon runs are dominated by setup: a 10,000-instruction test finishes in under 1 ms, but power-on and loading can exceed one minute, giving execution utilization below 0.002%. The post-silicon generator therefore trades generation precision for lightweight, high-volume generation.
+- Silicon has far lower observability than simulation or acceleration, so coverage of post-silicon exercisers is measured by running them on accelerators in a silicon-like environment.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Silicon 실행은 setup 시간이 지배적이다. 10,000 instruction 테스트는 1 ms 이내에 끝나지만 power-on과 loading에는 1분 이상 걸려 실행 utilization이 0.002% 미만이다. 따라서 post-silicon generator는 생성 정밀도를 낮추고 가볍고 대량의 생성을 택해야 한다.
+- 실리콘은 시뮬레이션이나 가속기보다 관찰성이 현저히 낮으므로, post-silicon exerciser의 coverage는 가속기에서 실리콘과 유사한 환경으로 실행해 측정한다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Silicon has too little observability to measure coverage. Accelerators act as a third platform that is fast enough to run simple exercisers and observable enough to measure their coverage, and accelerator coverage was used to build an exerciser test-template regression before first silicon.
+- Post-silicon generation must be lightweight: Threadmill generates tests statically without a reference model and checks results by re-running the same test multiple times with controlled variability (e.g., machine mode or thread priority changes).
 
 </div>
 <div class="bi-ko" markdown>
 
-- Silicon은 coverage를 측정할 만큼 관측성이 부족하다. 가속기는 제3의 플랫폼으로서 exerciser를 충분히 빠르게 실행하면서도 그 coverage를 측정할 수 있게 해주며, 가속기 coverage는 first silicon 이전에 exerciser test-template 회귀 suite를 만드는 데 사용되었다.
+- post-silicon 생성기는 가벼워야 하며, Threadmill은 reference model 없이 정적으로 테스트를 생성하고 동일 테스트를 여러 번 실행하되 machine mode나 thread priority 등을 바꿔 가며 결과를 비교하는 방식으로 검사한다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Threadmill has no reference model. Its checking relies on multi-pass comparison of the same test case with controlled variability (machine mode, thread priorities) and restricted nondeterministic resources. The authors report this is effective for control-path and mixed control/data-path bugs but is limited in scope.
+- On POWER7, the Exercisers-on-Accelerators (EoA) effort reached 88.70% core coverage versus 92.78% for core simulation, with a combined total of 98.06%; control-oriented units (IFU, ISU) were close to simulation.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Threadmill에는 reference model이 없다. 대신 동일한 테스트를 여러 번 실행하는 multi-pass 비교로 검사하며, 실행 간 변동성(machine mode, thread priority 변경)을 주고 비결정적 자원은 제한한다. 저자들은 이 방식이 control-path 및 control/data-path 혼합 버그에 효과적이지만 범위가 제한적이라고 보고한다.
+- POWER7에서 EoA(Exercisers-on-Accelerators) 노력은 core coverage 88.70%를 달성해 core simulation의 92.78%에 근접했고, 합산 total은 98.06%였다. 제어 중심 유닛(IFU, ISU)은 시뮬레이션과 가까웠다.
 
 </div>
 </div>
@@ -102,25 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- On POWER7, EoA (exercisers on accelerators) reached a core-level total coverage of 98.06, versus 92.78 for core simulation and 96.18 for unit simulation, as read from the Core Total row of Table I, and one show-stopper bug was found shortly before the first tape-out.
+- Threadmill's EoA phase caught a show-stopper bug shortly before the first tape-out that would otherwise have forced an additional tape-out; the paper supports its benefits with experience and qualitative claims rather than controlled comparisons.
 
 </div>
 <div class="bi-ko" markdown>
 
-- POWER7에서 EoA(accelerator 상의 exerciser)는 Table I의 Core Total 행을 기준으로 core 수준 total coverage 98.06을 달성했으며, 이는 core simulation 92.78, unit simulation 96.18과 비교된다. 또한 first tape-out 직전에 show-stopper 버그 하나가 발견되었다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- A shared declarative test-template language let bugs move between Genesys-Pro (simulation), Threadmill (accelerator), and silicon for recreation and fix validation. Overly specific templates were noted to run out of variation on silicon and start repeating tests.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 공유된 선언형 test-template 언어 덕분에 버그가 Genesys-Pro(simulation), Threadmill(accelerator), silicon 사이에서 재현 및 수정 검증을 위해 이동할 수 있었다. 지나치게 구체적인 template은 silicon에서 변형 여지가 소진되어 유사한 테스트를 반복하게 된다고 지적되었다.
+- Threadmill의 EoA 단계는 첫 tape-out 직전에 show-stopper 버그를 찾아내 추가 tape-out을 막았다. 다만 논문은 통제된 비교가 아니라 경험과 정성적 주장으로 이점을 뒷받침한다.
 
 </div>
 </div>
@@ -132,12 +119,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Pre-silicon coverage-driven verification (CDV) is mature, using a verification plan, test-templates, and coverage analysis. Post-silicon validation has far less published methodology and mostly focuses on on-line checking and debugging.
+- Post-silicon validation finds bugs that escape pre-silicon verification, yet its methodology is little published and silicon offers limited observability.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Pre-silicon coverage-driven verification(CDV)은 검증 계획, test-template, coverage 분석을 갖춘 성숙한 방법론이다. 반면 post-silicon validation은 공개된 방법론이 적고, 주로 on-line 검사와 디버깅 기능에 집중되어 있다.
+- Post-silicon validation은 pre-silicon 검증을 빠져나간 버그를 찾아내지만, 관련 방법론은 거의 공개되어 있지 않고 실리콘은 관찰성이 제한적이다.
 
 </div>
 </div>
@@ -145,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Pre- and post-silicon verification each miss bugs the other finds, so the paper argues for a bridge built on shared methodology rather than copying tools between domains.
+- Silicon runs are short relative to setup: a 10,000-instruction test runs in under 1 ms, but preparation can exceed one minute, giving under 0.002% utilization.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Pre-silicon과 post-silicon은 서로 놓치는 버그가 다르므로, 도구를 단순 복사하기보다 공유 방법론으로 두 영역을 연결해야 한다는 것이 논문의 주장이다.
+- 실리콘 실행 시간은 준비 시간에 비해 매우 짧다. 10,000개 명령 테스트는 1 ms 미만에 실행되지만 준비에는 1분 이상이 걸려 활용률이 0.002% 미만이다.
 
 </div>
 </div>
@@ -158,18 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Silicon differs from simulation in three ways that block direct reuse of a pre-silicon generator:
-  - **Speed and setup:** a 10,000-instruction test runs in under 1 ms, but power-on and loading take over a minute (utilization below 0.002%). The silicon platform therefore needs a continuously running exerciser that generates, executes, and checks tests in a loop.
-  - **Observability:** silicon exposes little internal state, so scoreboards, assertions, and coverage measurement are limited.
-  - **Simplicity:** hardware failures are hard to debug, and early bring-up may lack an OS or file I/O, so the tool must be simple and self-contained.
+- Pre-silicon generators (Genesys-Pro) rely on constraint solving and reference-model-driven biasing, which is too heavy for silicon, so the methodology cannot simply be copied across domains.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Silicon은 다음 세 가지 측면에서 simulation과 달라 pre-silicon generator를 그대로 재사용할 수 없다.
-  - **속도 및 setup:** 10,000 instruction 테스트는 1 ms 미만에 끝나지만, power-on과 loading에 1분 이상 걸린다(utilization 0.002% 미만). 따라서 생성, 실행, 검사를 루프로 계속 수행하는 exerciser가 필요하다.
-  - **관측성:** 내부 상태 노출이 적어 scoreboard, assertion, coverage 측정이 제한된다.
-  - **단순성:** 하드웨어 실패는 디버그가 어렵고, 초기 bring-up 단계에는 OS나 파일 I/O가 없을 수 있으므로 도구는 단순하고 자기완결적이어야 한다.
+- Pre-silicon 생성기(Genesys-Pro)는 제약 조건 해결과 reference model 기반 bias에 의존하므로 실리콘에 적용하기엔 무겁고, 방법론을 단순 복사할 수 없다.
 
 </div>
 </div>
@@ -179,12 +160,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-The unified methodology (Fig. 3) is built on three components: one verification plan, directable stimuli generators for each platform, and common functional coverage models. It spans three platforms:
+- One verification plan, a shared test-template language, and shared coverage models span simulation, acceleration, and silicon; each line item is mapped to target platforms.
 
 </div>
 <div class="bi-ko" markdown>
 
-통합 방법론(Fig. 3)은 세 가지 요소로 구성된다. 하나의 검증 계획, 각 플랫폼에 맞는 directable stimuli generator, 공통 functional coverage 모델이다. 이는 세 플랫폼에 걸쳐 적용된다.
+- 하나의 검증 계획, 공유 test-template 언어, 공유 coverage 모델을 시뮬레이션, 가속기, 실리콘에 걸쳐 사용하며, 각 line item을 대상 플랫폼에 매핑한다.
 
 </div>
 </div>
@@ -192,12 +173,12 @@ The unified methodology (Fig. 3) is built on three components: one verification 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Simulation:** pre-silicon generation with Genesys-Pro, which uses constraint solving, biasing, and a reference model.
+- Accelerators serve as a third platform: fast enough to run exercisers and observable enough to measure coverage. Silicon regression suites are harvested from accelerator coverage shortly before first silicon.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Simulation:** 제약 해결, bias, reference model을 쓰는 Genesys-Pro로 pre-silicon 생성을 수행한다.
+- 가속기는 세 번째 플랫폼으로 쓰인다. Exerciser를 실행할 만큼 빠르고 coverage를 측정할 만큼 관찰 가능하다. 첫 실리콘 도착 직전에 가속기 coverage를 바탕으로 실리콘용 regression suite를 만든다.
 
 </div>
 </div>
@@ -205,145 +186,27 @@ The unified methodology (Fig. 3) is built on three components: one verification 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Acceleration:** exercisers run on accelerators, where coverage is measurable.
+- Threadmill is a bare-metal exerciser. An offline builder embeds the test-template and architecture model into a self-contained image. Generation is static (no reference model), and checking compares repeated runs of the same test under controlled variability (e.g., machine mode, thread priority). Reserved registers hold interesting data values.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Acceleration:** exerciser를 가속기에서 실행하며, 이 단계에서 coverage 측정이 가능하다.
+- Threadmill은 베어메탈 exerciser다. 오프라인 builder가 test-template과 아키텍처 모델을 자체 완결형 이미지에 내장한다. 생성은 정적으로(reference model 없이) 이뤄지며, 검사는 제어된 변동(예: machine mode, thread priority)을 준 동일 테스트의 반복 실행 결과를 비교하는 방식이다. 관심 있는 데이터 값은 예약된 레지스터에 둔다.
 
 </div>
 </div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Silicon:** the same test-template language drives exercisers on the chip.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **Silicon:** 같은 test-template 언어로 칩 위의 exerciser를 구동한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Each verification plan line item is tied to target platforms and converted into test-templates in each tool's language. Coverage from accelerators is used to build a regression suite of exerciser test-templates shortly before first silicon returns.
-
-</div>
-<div class="bi-ko" markdown>
-
-검증 계획의 각 line item은 대상 플랫폼과 연결되고, 각 도구의 언어로 된 test-template으로 변환된다. 가속기에서 얻은 coverage로 first silicon이 돌아오기 직전에 exerciser test-template 회귀 suite를 만든다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Threadmill is the bare-metal exerciser that implements this flow:
-
-</div>
-<div class="bi-ko" markdown>
-
-Threadmill은 이 흐름을 구현한 bare-metal exerciser다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- An off-line **builder** converts the test-template and architectural model into data structures embedded in an executable image. No file or database access is needed at run time.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 오프라인 **builder**가 test-template과 architectural model을 실행 이미지에 내장되는 데이터 구조로 변환한다. 실행 중에는 파일이나 데이터베이스 접근이 필요 없다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The image contains a thin OS-like service layer, the embedded data structures, and fixed exercising code. It loops indefinitely through generate, execute, and check.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 이미지는 얇은 OS 유사 서비스 계층, 내장 데이터 구조, 고정된 exercising 코드로 구성된다. 생성, 실행, 검사를 무한 반복한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Generation is static and lightweight (no reference model). Event constructs that are costly to generate are removed from the template language, and many Genesys-Pro testing-knowledge items are dropped.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 생성은 정적이고 가볍다(reference model 없음). 생성 비용이 큰 event 구문은 template 언어에서 제외되었고, Genesys-Pro의 많은 testing knowledge 항목도 사용하지 않는다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- For data-oriented events (for example, divide-by-zero), registers are reserved to hold interesting values, and the generator guarantees they are not modified.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 데이터 중심 event(예: divide-by-zero)를 위해 특정 레지스터를 흥미로운 값을 담도록 예약하며, 테스트 중 수정되지 않도록 보장한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Checking uses multi-pass comparison. The same test is run several times and selected resources (registers, part of memory) are compared. Nondeterministic resources, such as the final value of a shared location written by several threads, are restricted. Variability between passes, such as changing machine mode or thread priorities, increases bug exposure.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 검사는 multi-pass 비교를 사용한다. 같은 테스트를 여러 번 실행하고 선택된 자원(레지스터, 메모리 일부)을 비교한다. 여러 스레드가 같은 위치에 쓰는 경우처럼 비결정적인 자원은 제한한다. Machine mode나 thread priority를 바꾸는 식의 pass 간 변동성은 버그 노출 확률을 높인다.
-
-</div>
-</div>
-
-```mermaid
-flowchart LR
-    TT[Test-template + arch model + config] --> B[Builder, off-line]
-    B --> IMG[Exerciser image]
-    IMG --> L[Silicon / accelerator]
-    subgraph Loop
-    G[Generate static] --> E[Execute] --> C[Multi-pass compare]
-    C --> G
-    end
-    L --> Loop
-    VP[Shared verification plan] --> TT
-    COV[Accelerator coverage] --> TT
-```
 
 ### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Target:** the method and Threadmill were applied to core verification of IBM POWER7 (eight SMT cores, up to four threads per core, 64-bit Power Architecture). This was the first use of the unified methodology in a large industrial project.
+- Applied to IBM POWER7 (8 SMT cores, up to 4 threads per core), where EoA coverage was tightly integrated with core verification.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **적용 대상:** 이 방법론과 Threadmill은 IBM POWER7(SMT 코어 8개, 코어당 최대 4 스레드, 64-bit Power Architecture)의 core 검증에 적용되었다. 대형 산업 프로젝트에서 통합 방법론이 처음 사용된 사례다.
+- IBM POWER7(코어당 SMT 8개, 스레드 최대 4개)에 적용했으며, EoA coverage를 core 검증과 긴밀하게 통합했다.
 
 </div>
 </div>
@@ -351,12 +214,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Bugs:** EoA found high-impact bugs, including a show-stopper found shortly before the first tape-out that would otherwise have forced an extra tape-out. Multiple exercisers were used, but Threadmill was the only one using declarative test-templates.
+- Core coverage: EoA 88.70% vs. core simulation 92.78%, combined total 98.06%.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **버그:** EoA는 영향이 큰 버그를 찾았고, 그중 first tape-out 직전에 발견된 show-stopper 버그는 추가 tape-out을 유발했을 것이라고 보고된다. 여러 exerciser가 사용되었지만 선언형 test-template을 쓴 것은 Threadmill뿐이었다.
+- Core coverage: EoA 88.70% 대 core simulation 92.78%, 합산 total 98.06%.
 
 </div>
 </div>
@@ -364,64 +227,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Coverage (Table I, core-level row):** Unit Sim 96.18, Core Sim 92.78, EoA 88.70, combined Total 98.06. The paper states that for control-oriented units (IFU, ISU), EoA coverage is almost similar to core simulation coverage.
+- EoA caught a show-stopper bug before first tape-out; bring-up was shorter and more complex bugs were found earlier by bare-metal tools. Evidence is experiential, not a controlled comparison.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Coverage(Table I, core 수준 행):** Unit Sim 96.18, Core Sim 92.78, EoA 88.70, 결합 Total 98.06. 논문은 control 중심 유닛(IFU, ISU)에서 EoA coverage가 core simulation coverage와 거의 유사하다고 서술한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Bring-up:** harvested test-templates gave the bring-up team a starting point and a progress-tracking means. The authors report a shorter bring-up, more complex bugs found earlier, and found by bare-metal tools that are easier to debug.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **Bring-up:** 수집된 test-template은 bring-up 팀에 출발점과 진행 상황 추적 수단을 제공했다. 저자들은 bring-up이 더 짧아졌고, 더 복잡한 버그가 더 일찍, 디버그가 쉬운 bare-metal 도구로 발견되었다고 보고한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Root-cause workflow:** a silicon bug was narrowed on the accelerator with Threadmill templates and then recreated in simulation. Bug-fix validation reused the recreation templates across platforms.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **근본 원인 분석 흐름:** silicon 버그는 가속기에서 Threadmill template으로 범위를 좁힌 뒤 simulation에서 재현되었다. 수정 검증에는 재현용 template들이 플랫폼 간에 재사용되었다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Limitations and future work:** multi-pass checking is limited. The authors plan to extend the bridge to checking and coverage, and to add address-translation paths to better exercise cache coherency and memory/I/O subsystems.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **한계 및 향후 과제:** multi-pass 검사는 제한적이다. 저자들은 연결 개념을 검사와 coverage로 확장하고, cache coherency 및 메모리/I/O 서브시스템을 더 잘 검증하기 위해 address translation 경로를 추가할 계획이다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Conclusion:** a directable declarative generator can be adapted to post-silicon with a simple, fast generation engine, and the trade-off between generation smartness and speed should be tuned to the platform.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **결론:** 선언형 directable generator는 단순하고 빠른 생성 엔진으로 post-silicon에 적응될 수 있으며, 생성의 지능성과 속도 사이의 절충은 플랫폼 요구에 맞게 조정되어야 한다.
+- EoA는 첫 tape-out 전에 show-stopper 버그를 찾았다. Bring-up은 더 짧았고, 복잡한 버그가 더 일찍, 베어메탈 도구로 발견되었다. 근거는 통제된 비교가 아닌 경험적 관찰이다.
 
 </div>
 </div>

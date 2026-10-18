@@ -30,8 +30,11 @@ Rules:
 - The readers are domain experts: be precise and dense, no introductory filler.
 - extracted_title and authors_or_venue keep the original spelling; include affiliations when given.
 - tags: 3-5 short keywords (1-3 words each, common abbreviations preferred, e.g. "UVM", "Emulation", "UPF").
-- key_insights: 3-5 concrete takeaways with the paper's own numbers where available.
-- detailed_summary is Markdown and must contain these three sections in this order:
+- This is a digest, not a retelling: keep only what an expert needs to judge the paper and decide
+  whether to read it. Skip background the reader already knows, examples, and step-by-step detail.
+- key_insights: 3-5 concrete takeaways, one sentence each, with the paper's own numbers where available.
+- detailed_summary is Markdown, about 200-300 words in total, with these three sections in this order,
+  each 2-4 short bullets or a short paragraph:
   ### Background and Problem
   ### Architecture and Methodology
   ### Results and Conclusions
