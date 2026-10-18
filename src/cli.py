@@ -10,7 +10,7 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
-from . import config, generator, llm, parser, publisher, youtube
+from . import config, figures, generator, llm, parser, publisher, youtube
 from .database import Database, DatabaseError
 from .schemas import CATEGORIES, SOURCE_TYPES, Resource, YouTubeVideo
 
@@ -40,8 +40,21 @@ def _attach_videos(db: Database, res: Resource, urls: list[str], timestamp: str 
     return added
 
 
+def _figure(db: Database, res: Resource, pdf: Path | None, number: int | None) -> None:
+    """Crop the representative figure into docs/assets/figures/{id}.png."""
+    if pdf is None or not pdf.exists():
+        return
+    rel = f"assets/figures/{res.id}.png"
+    try:
+        cap = figures.representative(pdf, number, config.DOCS_DIR / rel)
+    except RuntimeError as e:
+        log.warning("그림 추출 실패: %s (%s)", res.id, e)
+        return
+    db.set_figure(res.id, rel if cap else None, cap.text if cap else "")
+
+
 def _ingest(db: Database, source: str, stype: str | None, title: str | None, refresh: bool,
-            local_pdf: str | None = None) -> tuple[Resource, bool]:
+            local_pdf: str | None = None, figure: int | None = None) -> tuple[Resource, bool]:
     """자료를 파싱·요약해 DB에 넣는다. 이미 있으면(refresh 아님) LLM 호출 없이 기존 자료를 돌려준다.
 
     local_pdf가 주어지면 본문은 로컬 파일에서 읽고, 출처(source_url)는 source URL로 기록한다.
@@ -50,14 +63,17 @@ def _ingest(db: Database, source: str, stype: str | None, title: str | None, ref
     existing = db.get_by_source(key)
     if existing and not refresh:
         log.info("이미 등록된 자료입니다: %s (%s). 요약을 건너뜁니다.", existing.id, existing.title)
+        if figure is not None:
+            _figure(db, existing, Path(local_pdf) if local_pdf else None, figure)
         return existing, False
+    caps = [c.text for c in figures.captions(Path(local_pdf))] if local_pdf else None
     if local_pdf:
         doc = parser.parse_pdf_file(Path(local_pdf), stype or "PAPER")  # type: ignore[arg-type]
         doc = doc.model_copy(update={"source_url": key})
     else:
         doc = parser.parse_source(source, stype)  # type: ignore[arg-type]
-    result = llm.extract(doc, title_hint=title)
-    return db.upsert_resource({
+    result = llm.extract(doc, title_hint=title, figure_captions=caps)
+    res, created = db.upsert_resource({
         "title": result.extracted_title or title or doc.title_hint or key,
         "source_type": stype or doc.source_type,
         "source_url": doc.source_url,
@@ -67,7 +83,13 @@ def _ingest(db: Database, source: str, stype: str | None, title: str | None, ref
         "one_line_summary": result.one_line_summary,
         "key_insights": result.key_insights,
         "detailed_summary": result.detailed_summary,
+        "one_line_summary_ko": result.one_line_summary_ko,
+        "key_insights_ko": result.key_insights_ko,
+        "detailed_summary_ko": result.detailed_summary_ko,
     })
+    _figure(db, res, Path(local_pdf) if local_pdf else None,
+            figure if figure is not None else result.representative_figure)
+    return db.get_resource(res.id) or res, created
 
 
 def _publish(db: Database, message: str, push: bool) -> None:
@@ -154,6 +176,7 @@ def rebuild(
 def import_(
     csv_path: Path = typer.Option(Path("data/reading_list.csv"), "--csv", help="source,local_pdf,youtube,title,type,timestamp 열을 가진 CSV"),
     limit: Optional[int] = typer.Option(None, "--limit", help="새로 요약할 최대 건수 (시험용)"),
+    refresh: bool = typer.Option(False, "--refresh", help="이미 등록된 자료도 다시 요약 (예: 언어/프롬프트 변경 후)"),
     push: bool = typer.Option(False, "--push"),
     commit: bool = typer.Option(True, "--commit/--no-commit"),
 ) -> None:
@@ -168,16 +191,23 @@ def import_(
     try:
         for i, row in enumerate(rows, 1):
             source = row["source"].strip()
-            if limit is not None and new >= limit and db.get_by_source(parser.canonical_source(source)) is None:
+            if limit is not None and new >= limit and (refresh or db.get_by_source(parser.canonical_source(source)) is None):
                 continue
             stype = (row.get("type") or "").strip().upper() or None
             local_pdf = (row.get("local_pdf") or "").strip() or None
             if local_pdf and not Path(local_pdf).exists():
                 local_pdf = None
             try:
-                res, created = _ingest(db, source, stype, (row.get("title") or "").strip() or None, False, local_pdf)
-                youtube = [u for u in (row.get("youtube") or "").split() if u]
-                _attach_videos(db, res, youtube, (row.get("timestamp") or "").strip() or None)
+                existed = db.get_by_source(parser.canonical_source(source)) is not None
+                fig = (row.get("figure") or "").strip()
+                res, created = _ingest(db, source, stype, (row.get("title") or "").strip() or None, refresh,
+                                       local_pdf, int(fig) if fig.isdigit() else None)
+                created = created or (refresh and existed)
+                year = (row.get("year") or "").strip()
+                db.set_meta(res.id, (row.get("venue") or "").strip(), (row.get("region") or "").strip(),
+                            int(year) if year.isdigit() else None)
+                yt_urls = [u for u in (row.get("youtube") or "").split() if u]
+                _attach_videos(db, res, yt_urls, (row.get("timestamp") or "").strip() or None)
                 generator.refresh(db, db.get_resource(res.id) or res)
                 new += created
                 skipped += not created
@@ -188,6 +218,11 @@ def import_(
             except (parser.ParseError, llm.LLMError, generator.GeneratorError) as e:
                 failed.append((source, str(e)))
                 console.print(f"[{i}/{len(rows)}] [red]실패[/red] {source}: {e}")
+        try:
+            n = youtube.sync_video_meta(db, youtube.service(interactive=False))
+            log.info("YouTube 업로드 날짜 갱신: %d개", n)
+        except Exception as e:  # 로그인 전이면 날짜만 생략
+            log.info("YouTube 메타데이터 갱신 생략: %s", e)
         generator.rebuild_all(db)
         console.print(f"[green]완료:[/green] 새로 추가 {new}건, 기존 {skipped}건, 실패 {len(failed)}건")
         for src, err in failed:
@@ -209,6 +244,25 @@ def yt_auth() -> None:
         console.print(f"[green]로그인 완료:[/green] {ch[0]['snippet']['title'] if ch else '(채널 없음)'}")
     except youtube.YouTubeError as e:
         _fail(str(e))
+
+
+@app.command("yt-meta")
+def yt_meta(
+    push: bool = typer.Option(False, "--push"),
+    commit: bool = typer.Option(True, "--commit/--no-commit"),
+) -> None:
+    """등록된 영상의 제목·업로드 날짜를 YouTube에서 가져와 페이지를 다시 만듭니다."""
+    db = Database()
+    try:
+        n = youtube.sync_video_meta(db, youtube.service(interactive=False))
+        generator.rebuild_all(db)
+        console.print(f"[green]영상 정보 갱신:[/green] {n}개")
+        if commit:
+            _publish(db, "docs: Sync video titles and upload dates", push)
+    except (youtube.YouTubeError, DatabaseError, generator.GeneratorError) as e:
+        _fail(str(e))
+    finally:
+        db.close()
 
 
 @app.command("yt-desc")

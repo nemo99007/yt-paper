@@ -16,17 +16,31 @@ class LLMExtractionResult(BaseModel):
 
     model_config = ConfigDict(extra="forbid")
 
-    extracted_title: str = Field(description="원문에서 파악한 정확한 제목 (원문 언어 그대로)")
-    authors_or_venue: str = Field(description="저자 및 발표 학회/출처. 예: 'Jane Doe, John Roe (DVCon US 2026)'")
-    category: Category = Field(description="가장 적합한 기술 카테고리 하나")
-    tags: list[str] = Field(description="전문 기술 태그 3~5개 (영문 또는 국문)")
-    one_line_summary: str = Field(description="한국어 1줄 핵심 요약")
-    key_insights: list[str] = Field(description="엔지니어 관점의 핵심 인사이트 3~5개 (한국어)")
+    extracted_title: str = Field(description="Exact title as written in the document")
+    authors_or_venue: str = Field(description="Only the authors with affiliations, e.g. 'Jane Doe (Samsung), John Roe (Siemens EDA)'; no comments")
+    category: Category = Field(description="The single best-fitting technical category")
+    tags: list[str] = Field(description="3-5 short technical keywords in English")
+    one_line_summary: str = Field(description="One-sentence English summary of the core contribution")
+    key_insights: list[str] = Field(description="3-5 key takeaways for engineers, in English")
     detailed_summary: str = Field(
         description=(
-            "마크다운 상세 요약 (한국어). 반드시 '### 배경 및 문제 정의', '### 핵심 아키텍처 및 방법론', "
-            "'### 실험 결과 및 결론' 섹션을 포함. 필요시 $...$ 수식이나 ```mermaid 코드 블록 사용"
+            "Detailed Markdown summary in English with the sections '### Background and Problem', "
+            "'### Architecture and Methodology', '### Results and Conclusions'. Use $...$ math or "
+            "```mermaid blocks where helpful"
         )
+    )
+    one_line_summary_ko: str = Field(description="Korean translation of one_line_summary")
+    key_insights_ko: list[str] = Field(description="Korean translation of key_insights, same order and count")
+    detailed_summary_ko: str = Field(
+        description=(
+            "Korean translation of detailed_summary with the sections '### 배경 및 문제', "
+            "'### 구조 및 방법론', '### 결과 및 결론' in the same order. Keep technical terms in English. "
+            "Do not repeat mermaid blocks (they are shown once from the English version)"
+        )
+    )
+    representative_figure: int | None = Field(
+        description="Number N of the figure (from the provided 'Figure N' caption list) that best represents "
+                    "the paper's architecture or method; null if no caption list is given"
     )
 
 
@@ -52,6 +66,14 @@ class Resource(BaseModel):
     one_line_summary: str = ""
     key_insights: list[str] = Field(default_factory=list)
     detailed_summary: str = ""
+    one_line_summary_ko: str = ""
+    key_insights_ko: list[str] = Field(default_factory=list)
+    detailed_summary_ko: str = ""
+    figure_path: str | None = None     # relative to docs/, e.g. assets/figures/ref-xxx.png
+    figure_caption: str = ""
+    venue: str = ""          # e.g. "DVCon", "DATE" ("" → Others)
+    region: str = ""         # e.g. "US", "Europe", "India"
+    year: int | None = None
     markdown_path: str | None = None
     created_at: str = ""
 

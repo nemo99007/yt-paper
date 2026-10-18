@@ -13,7 +13,7 @@ from pathlib import Path
 
 from . import config
 from .database import Database
-from .schemas import Resource
+from .schemas import Resource, YouTubeVideo
 
 log = logging.getLogger(__name__)
 
@@ -66,6 +66,23 @@ def service(interactive: bool = True):
     return build("youtube", "v3", credentials=creds, cache_discovery=False)
 
 
+def sync_video_meta(db: Database, yt) -> int:
+    """Fill title and upload date (publishedAt) of every stored video from the API (1 unit per 50 videos)."""
+    videos = db.list_videos()
+    n = 0
+    for i in range(0, len(videos), 50):
+        chunk = {v.video_id: v for v in videos[i:i + 50]}
+        resp = yt.videos().list(part="snippet", id=",".join(chunk), maxResults=50).execute()
+        for item in resp.get("items", []):
+            sn = item["snippet"]
+            v = chunk[item["id"]]
+            if v.published_at != sn.get("publishedAt") or v.video_title != sn.get("title"):
+                db.upsert_video(YouTubeVideo(video_id=v.video_id, video_url=v.video_url,
+                                             video_title=sn.get("title"), published_at=sn.get("publishedAt")))
+                n += 1
+    return n
+
+
 def page_url(res: Resource) -> str | None:
     if not res.markdown_path or not config.SITE_URL:
         return None
@@ -99,9 +116,9 @@ def build_block(res: Resource, extra_links: list[str], insights: int = 5) -> str
     lines = [MARK]
     lines += extra_links
     if url := page_url(res):
-        lines.append(f"📄 요약 페이지: {url}")
+        lines.append(f"📄 Summary: {url}")
     if res.source_url.startswith("http"):
-        lines.append(f"📑 원문: {res.source_url}")
+        lines.append(f"📑 Paper: {res.source_url}")
     lines.append("")
     lines.append(res.title)
     if res.authors:
@@ -109,7 +126,7 @@ def build_block(res: Resource, extra_links: list[str], insights: int = 5) -> str
     if res.one_line_summary:
         lines += ["", f"📝 {res.one_line_summary}"]
     if res.key_insights and insights:
-        lines += ["", "💡 핵심 포인트"] + [f"• {k}" for k in res.key_insights[:insights]]
+        lines += ["", "💡 Key insights"] + [f"• {k}" for k in res.key_insights[:insights]]
     if res.tags:
         lines += ["", " ".join(_hashtag(t) for t in res.tags if _hashtag(t) != "#")]
     lines.append(MARK)
@@ -132,7 +149,7 @@ def plans(db: Database, yt, only: list[str] | None = None) -> list[Plan]:
                 if m := _YT_ID_RE.search(url):
                     prev = m.group(1)
                     extra.append(f"▶ {label}: https://youtu.be/{prev}")
-                    targets.setdefault(prev, (res, [f"▶ 최신 영상: https://youtu.be/{vid}"]))
+                    targets.setdefault(prev, (res, [f"▶ Latest reading: https://youtu.be/{vid}"]))
             targets[vid] = (res, extra)
     if only:
         targets = {k: v for k, v in targets.items() if k in only}

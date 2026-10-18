@@ -3,3 +3,24 @@
 .video-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 6px; }
 /* 모바일에서 넓은 표는 가로 스크롤 */
 .md-typeset table:not([class]) { display: block; overflow-x: auto; }
+
+/* English / Korean paragraph pairs: two columns on wide screens, stacked on phones */
+.bi {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1.2rem;
+  padding: .35rem 0;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+.bi > div > :first-child { margin-top: 0; }
+.bi > div > :last-child { margin-bottom: 0; }
+.bi-ko { color: var(--md-default-fg-color--light); }
+@media screen and (max-width: 44.9375em) {
+  .bi { grid-template-columns: 1fr; }
+  .bi-ko { padding-top: .3rem; }
+}
+
+/* representative figure at the top of a paper page */
+.rep-fig { margin: 0 0 1rem; text-align: center; }
+.rep-fig img { max-height: 28rem; width: auto; max-width: 100%; border: 1px solid var(--md-default-fg-color--lightest); background: #fff; }
+.rep-fig figcaption { font-size: .7rem; color: var(--md-default-fg-color--light); }

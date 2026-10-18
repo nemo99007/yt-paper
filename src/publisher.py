@@ -34,7 +34,7 @@ def publish(db: Database, message: str, push: bool = False) -> bool:
         if _git("rev-parse", "--is-inside-work-tree", check=False).returncode != 0:
             raise PublishError(f"Git 저장소가 아닙니다: {config.ROOT}\n  → `git init -b main` 후 다시 실행하세요.")
 
-        _git("add", "docs/", "data/index_dump.json")
+        _git("add", "docs/", "data/index_dump.json", "mkdocs.yml")
         if _git("diff", "--cached", "--quiet", check=False).returncode == 0:
             log.info("변경 사항이 없어 커밋을 건너뜁니다.")
         else:

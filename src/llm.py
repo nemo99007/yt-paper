@@ -20,19 +20,23 @@ from .schemas import LLMExtractionResult, ParsedDocument
 
 log = logging.getLogger(__name__)
 
-SYSTEM_PROMPT = """당신은 반도체 검증·에뮬레이션·컴퓨터 아키텍처 분야의 시니어 엔지니어입니다.
-주어진 기술 문서(논문, 프리프린트, 서적 일부, 블로그)를 읽고 엔지니어 독자를 위한 구조화된 요약을 작성합니다.
+SYSTEM_PROMPT = """You are a senior engineer in semiconductor verification, emulation and computer architecture.
+Read the given technical document (conference paper, preprint, book excerpt or blog post) and write a
+structured summary for engineers.
 
-규칙:
-- extracted_title, authors_or_venue는 원문 표기를 그대로 사용합니다.
-- one_line_summary, key_insights, detailed_summary는 한국어로 씁니다. 기술 용어는 영문 그대로 둬도 됩니다.
-- tags는 3~5개, key_insights는 3~5개로 씁니다.
-- detailed_summary는 마크다운이며 다음 세 섹션을 이 순서로 반드시 포함합니다:
-  ### 배경 및 문제 정의
-  ### 핵심 아키텍처 및 방법론
-  ### 실험 결과 및 결론
-- 구조나 흐름을 설명할 때 도움이 되면 ```mermaid 코드 블록을, 수식은 $...$ 를 사용합니다.
-- 문서에 없는 수치나 사실을 지어내지 않습니다. 본문이 잘려 있으면 있는 내용 안에서만 요약합니다."""
+Rules:
+- Write the English fields in English and the *_ko fields as faithful Korean translations of them
+  (same structure, same numbers; keep technical terms such as UVM, UPF, emulator in English).
+- The readers are domain experts: be precise and dense, no introductory filler.
+- extracted_title and authors_or_venue keep the original spelling; include affiliations when given.
+- tags: 3-5 short keywords (1-3 words each, common abbreviations preferred, e.g. "UVM", "Emulation", "UPF").
+- key_insights: 3-5 concrete takeaways with the paper's own numbers where available.
+- detailed_summary is Markdown and must contain these three sections in this order:
+  ### Background and Problem
+  ### Architecture and Methodology
+  ### Results and Conclusions
+- Use a ```mermaid block when a flow or structure is easier to show as a diagram, and $...$ for math.
+- Never invent numbers or facts. If the text is truncated, summarize only what is present."""
 
 FALLBACK_BETA = "server-side-fallback-2026-07-01"
 
@@ -61,7 +65,7 @@ def backend() -> str:
     return b
 
 
-def _user_prompt(doc: ParsedDocument, title_hint: str | None) -> str:
+def _user_prompt(doc: ParsedDocument, title_hint: str | None, figure_captions: list[str] | None) -> str:
     hints = []
     if title_hint or doc.title_hint:
         hints.append(f"제목 힌트: {title_hint or doc.title_hint}")
@@ -70,6 +74,11 @@ def _user_prompt(doc: ParsedDocument, title_hint: str | None) -> str:
     hints.append(f"자료 유형: {doc.source_type}")
     if doc.truncated:
         hints.append("주의: 본문이 길어 뒷부분이 잘렸습니다.")
+    if figure_captions:
+        hints.append("Figure captions (pick representative_figure from these numbers):\n"
+                     + "\n".join(f"- {c[:200]}" for c in figure_captions))
+    else:
+        hints.append("No figure captions were found; set representative_figure to null.")
     return "\n".join(hints) + f"\n\n<document>\n{doc.text}\n</document>\n\n위 문서를 스키마에 맞게 요약하세요."
 
 
@@ -106,12 +115,14 @@ def _extract_cli(user: str) -> LLMExtractionResult:
     return result
 
 
-def extract(doc: ParsedDocument, title_hint: str | None = None) -> LLMExtractionResult:
-    user = _user_prompt(doc, title_hint)
+def extract(doc: ParsedDocument, title_hint: str | None = None,
+            figure_captions: list[str] | None = None) -> LLMExtractionResult:
+    user = _user_prompt(doc, title_hint, figure_captions)
     if backend() == "cli":
         result = _extract_cli(user)
         result.tags = _clip(result.tags, 5)
         result.key_insights = _clip(result.key_insights, 5)
+        result.key_insights_ko = _clip(result.key_insights_ko, 5)
         return result
 
     kwargs: dict = {
@@ -159,4 +170,5 @@ def extract(doc: ParsedDocument, title_hint: str | None = None) -> LLMExtraction
     log.info("요약 완료: served_by=%s, input=%s, output=%s tokens", resp.model, usage.input_tokens, usage.output_tokens)
     result.tags = _clip(result.tags, 5)
     result.key_insights = _clip(result.key_insights, 5)
+    result.key_insights_ko = _clip(result.key_insights_ko, 5)
     return result

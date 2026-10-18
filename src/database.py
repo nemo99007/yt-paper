@@ -32,7 +32,15 @@ CREATE TABLE IF NOT EXISTS resources (
     key_insights TEXT,
     detailed_summary TEXT,
     markdown_path TEXT,
-    created_at TIMESTAMP
+    created_at TIMESTAMP,
+    venue TEXT,
+    region TEXT,
+    year INTEGER,
+    one_line_summary_ko TEXT,
+    key_insights_ko TEXT,
+    detailed_summary_ko TEXT,
+    figure_path TEXT,
+    figure_caption TEXT
 );
 CREATE TABLE IF NOT EXISTS youtube_videos (
     video_id TEXT PRIMARY KEY,
@@ -50,7 +58,14 @@ CREATE INDEX IF NOT EXISTS idx_resources_category ON resources(category);
 """
 
 RESOURCE_COLS = ("id", "title", "source_type", "source_url", "authors", "category", "tags",
-                 "one_line_summary", "key_insights", "detailed_summary", "markdown_path", "created_at")
+                 "one_line_summary", "key_insights", "detailed_summary", "markdown_path", "created_at",
+                 "venue", "region", "year", "one_line_summary_ko", "key_insights_ko",
+                 "detailed_summary_ko", "figure_path", "figure_caption")
+JSON_COLS = ("tags", "key_insights", "key_insights_ko")
+# Columns added after the first release; ALTER TABLE adds them to older databases.
+_MIGRATIONS = {"venue": "TEXT", "region": "TEXT", "year": "INTEGER", "one_line_summary_ko": "TEXT",
+               "key_insights_ko": "TEXT", "detailed_summary_ko": "TEXT", "figure_path": "TEXT",
+               "figure_caption": "TEXT"}
 
 
 class DatabaseError(RuntimeError):
@@ -63,10 +78,11 @@ def _now() -> str:
 
 def _row_to_resource(row: sqlite3.Row) -> Resource:
     d = dict(row)
-    d["tags"] = json.loads(d.get("tags") or "[]")
-    d["key_insights"] = json.loads(d.get("key_insights") or "[]")
+    for k in JSON_COLS:
+        d[k] = json.loads(d.get(k) or "[]")
     d["authors"] = d.get("authors") or ""
-    for k in ("one_line_summary", "detailed_summary", "created_at"):
+    for k in ("one_line_summary", "detailed_summary", "created_at", "venue", "region",
+              "one_line_summary_ko", "detailed_summary_ko", "figure_caption"):
         d[k] = d.get(k) or ""
     return Resource(**d)
 
@@ -84,6 +100,10 @@ class Database:
         self.conn.row_factory = sqlite3.Row
         self.conn.execute("PRAGMA foreign_keys = ON")
         self.conn.executescript(SCHEMA)
+        have = {r["name"] for r in self.conn.execute("PRAGMA table_info(resources)")}
+        for col, typ in _MIGRATIONS.items():
+            if col not in have:
+                self.conn.execute(f"ALTER TABLE resources ADD COLUMN {col} {typ}")
         if fresh and dump_path.exists():
             self.import_from_json(dump_path)
 
@@ -126,8 +146,8 @@ class Database:
         rec.update({k: v for k, v in data.items() if k in RESOURCE_COLS and k not in ("id", "created_at")})
         res = Resource(**rec)
         row = res.model_dump()
-        row["tags"] = json.dumps(res.tags, ensure_ascii=False)
-        row["key_insights"] = json.dumps(res.key_insights, ensure_ascii=False)
+        for k in JSON_COLS:
+            row[k] = json.dumps(row[k], ensure_ascii=False)
         with self.transaction() as c:
             c.execute(
                 f"INSERT INTO resources ({','.join(RESOURCE_COLS)}) VALUES ({','.join('?' * len(RESOURCE_COLS))}) "
@@ -135,6 +155,16 @@ class Database:
                 [row[k] for k in RESOURCE_COLS],
             )
         return res, existing is None
+
+    def set_meta(self, resource_id: str, venue: str, region: str, year: int | None) -> None:
+        with self.transaction() as c:
+            c.execute("UPDATE resources SET venue = ?, region = ?, year = ? WHERE id = ?",
+                      (venue, region, year, resource_id))
+
+    def set_figure(self, resource_id: str, path: str | None, caption: str) -> None:
+        with self.transaction() as c:
+            c.execute("UPDATE resources SET figure_path = ?, figure_caption = ? WHERE id = ?",
+                      (path, caption, resource_id))
 
     def set_markdown_path(self, resource_id: str, rel_path: str) -> None:
         with self.transaction() as c:
@@ -239,8 +269,8 @@ class Database:
         with self.conn:
             for r in data.get("resources", []):
                 r = Resource(**r).model_dump()
-                r["tags"] = json.dumps(r["tags"], ensure_ascii=False)
-                r["key_insights"] = json.dumps(r["key_insights"], ensure_ascii=False)
+                for k in JSON_COLS:
+                    r[k] = json.dumps(r[k], ensure_ascii=False)
                 self.conn.execute(f"INSERT OR REPLACE INTO resources ({','.join(RESOURCE_COLS)}) "
                                   f"VALUES ({','.join('?' * len(RESOURCE_COLS))})", [r[k] for k in RESOURCE_COLS])
             for v in data.get("youtube_videos", []):
