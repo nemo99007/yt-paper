@@ -156,7 +156,13 @@ def _bilingual(en_md: str, ko_md: str) -> str:
 # --- hierarchy helpers -------------------------------------------------------
 
 def venue_of(res: Resource) -> str:
-    return res.venue or OTHERS
+    """Collection: the main venues stand alone; every other conference goes under Others."""
+    return res.venue if res.venue in VENUE_ORDER else OTHERS
+
+
+def group_of(res: Resource) -> str | None:
+    """Second level: region for the main venues, the conference name inside Others."""
+    return res.region if venue_of(res) != OTHERS else res.venue
 
 
 def venue_slug(venue: str) -> str:
@@ -175,7 +181,7 @@ def _venues(resources: list[Resource]) -> list[str]:
 
 
 def _regions(resources: list[Resource]) -> list[str]:
-    present = {r.region for r in resources if r.region}
+    present = {g for r in resources if (g := group_of(r))}
     return [g for g in REGION_ORDER if g in present] + sorted(present - set(REGION_ORDER))
 
 
@@ -193,7 +199,7 @@ def _paper_row(r: Resource, db: Database, with_region: bool) -> str:
     n = len(db.videos_for(r.id))
     cells = [f"[{_cell(r.title)}](../{r.markdown_path or resource_rel_path(r)})"]
     if with_region:
-        cells.append(r.region or "-")
+        cells.append(group_of(r) or "-")
     cells += [r.category, ":material-youtube: " + str(n) if n else "-"]
     return "| " + " | ".join(cells) + " |"
 
@@ -225,8 +231,8 @@ def render_resource(db: Database, res: Resource) -> str:
         ],
     }
     crumbs = [f"[{venue}](../{vs}/index.md)"]
-    if res.region:
-        crumbs.append(f"[{res.region}](../{vs}/{region_slug(res.region)}.md)")
+    if group := group_of(res):
+        crumbs.append(f"[{group}](../{vs}/{region_slug(group)}.md)")
     if res.year:
         crumbs.append(f"[{res.year}](../{vs}/by-year.md#{res.year})")
     crumbs.append(f"[{res.category}](../{vs}/by-topic.md#{slugify(res.category)})")
@@ -234,7 +240,7 @@ def render_resource(db: Database, res: Resource) -> str:
     is_url = res.source_url.startswith(("http://", "https://"))
     source = (f"[:material-open-in-new: Original paper]({res.source_url}){{ .md-button .md-button--primary target=_blank }}"
               if is_url else f":material-file-pdf-box: Local file: `{res.source_url}`")
-    where = " ".join(x for x in (venue, res.region, str(res.year or "")) if x)
+    where = " ".join(x for x in (venue, group_of(res), str(res.year or "")) if x)
     parts = [_frontmatter(meta), GENERATED_MARK, " › ".join(crumbs) + "\n", f"# {res.title}\n"]
     if res.figure_path and (config.DOCS_DIR / res.figure_path).exists():
         cap = _cell(res.figure_caption or "Representative figure")
@@ -300,7 +306,7 @@ def render_videos_index(db: Database) -> str:
 
 
 def _grouped(db: Database, items: list[Resource], key, order: list, with_region: bool) -> list[str]:
-    head = "| Paper | Region | Topic | Videos |" if with_region else "| Paper | Topic | Videos |"
+    head = "| Paper | Region / Conference | Topic | Videos |" if with_region else "| Paper | Topic | Videos |"
     groups: dict = defaultdict(list)
     for r in items:
         groups[key(r) if key(r) in order else "Other"].append(r)
@@ -323,21 +329,22 @@ def render_venue(db: Database, venue: str, papers: list[Resource]) -> tuple[list
     lines = [GENERATED_MARK, f"\n# {venue}\n",
              f"**{len(papers)}** papers · [By year](by-year.md) · [By topic](by-topic.md)\n"]
     if regions and years:
-        count = Counter((r.region, r.year) for r in papers)
+        count = Counter((group_of(r), r.year) for r in papers)
         rows = []
         for g in regions:
             cells = [f"[{c}]({region_slug(g)}.md#{y})" if (c := count[(g, y)]) else "" for y in years]
             rows.append(f"| [{g}]({region_slug(g)}.md) | " + " | ".join(cells) +
-                        f" | {sum(1 for r in papers if r.region == g)} |")
-        lines.append("## Region × Year\n\n" + _table("| Region | " + " | ".join(map(str, years)) + " | Total |", rows))
+                        f" | {sum(1 for r in papers if group_of(r) == g)} |")
+        label = "Conference" if venue == OTHERS else "Region"
+        lines.append(f"## {label} × Year\n\n" + _table(f"| {label} | " + " | ".join(map(str, years)) + " | Total |", rows))
     by_cat = Counter(r.category for r in papers)
     lines.append("## Topics\n\n" + _table("| Topic | Papers |", [
         f"| [{c}](by-topic.md#{slugify(c)}) | {by_cat[c]} |" for c in CATEGORIES if by_cat[c]]))
     _write(config.DOCS_DIR / vs / "index.md", "\n".join(lines))
 
     for g in regions:
-        items = [r for r in papers if r.region == g]
-        body = [GENERATED_MARK, f"\n# {venue} {g}\n", f"**{len(items)}** papers\n"]
+        items = [r for r in papers if group_of(r) == g]
+        body = [GENERATED_MARK, f"\n# {g if venue == OTHERS else venue + ' ' + g}\n", f"**{len(items)}** papers\n"]
         body += _grouped(db, items, lambda r: r.year, years, with_region=False)
         path = f"{vs}/{region_slug(g)}.md"
         _write(config.DOCS_DIR / path, "\n".join(body))
@@ -364,7 +371,7 @@ def render_index(db: Database, recent: int = 15) -> None:
         f"{':material-youtube: ' + str(n) if (n := len(db.videos_for(r.id))) else '-'} |"
         for d, r in dated[:recent]]
     lines = [
-        GENERATED_MARK, "\n# yt-paper\n",
+        GENERATED_MARK, "\n# YouTube - Paper Reading Archive\n",
         "A reading archive of technical papers, each summarized and linked to its reading video on the "
         "[Nemo Reading Archive](https://www.youtube.com/@99007nemo) YouTube channel.\n",
         f"**{len(resources)}** papers · **{len(db.list_videos())}** videos\n",

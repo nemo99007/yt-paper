@@ -2,7 +2,7 @@
 
 # DVCon US
 
-**79** papers
+**84** papers
 
 ## 2025
 
@@ -41,6 +41,7 @@
 | [Large Language Model for Verification: A Review and Its Application in Data Augmentation](../papers/ref-20261018-3545-large-language-model-for-verification-a-review-and-its-appli.md) | Verification | :material-youtube: 1 |
 | [Synthetic Traffic based SOC Performance Verification Methodology](../papers/ref-20261018-c74a-synthetic-traffic-based-soc-performance-verification-methodo.md) | Verification | :material-youtube: 1 |
 | [Tackling Missing Bins: Refining Functional Coverage in SystemVerilog for Deterministic Coverage Closure](../papers/ref-20261018-4d5c-tackling-missing-bins-refining-functional-coverage-in-system.md) | Verification | :material-youtube: 1 |
+| [Variation-Aware Modeling Method for MRAM Behavior Model using System-Verilog](../papers/ref-20261018-d4fc-variation-aware-modeling-method-for-mram-behavior-model-usin.md) | Verification | :material-youtube: 1 |
 
 ## 2023
 
@@ -51,9 +52,11 @@
 | [A Survey of Machine Learning Applications in Functional Verification](../papers/ref-20261018-58d3-a-survey-of-machine-learning-applications-in-functional-veri.md) | Verification | :material-youtube: 1 |
 | [Accelerated Verification of NAND Flash Memory using HW Emulator](../papers/ref-20261018-cf3b-accelerated-verification-of-nand-flash-memory-using-hw-emula.md) | Emulation | :material-youtube: 1 |
 | [Accelerating Functional Verification Through Stabilization of Testbench Using AI/ML](../papers/ref-20261018-0879-accelerating-functional-verification-through-stabilization-o.md) | Verification | :material-youtube: 1 |
+| [Automated Thread Evaluation of Various RISC-V Alternatives using Random Instruction Generators](../papers/ref-20261018-273b-automated-thread-evaluation-of-various-risc-v-alternatives-u.md) | Verification | :material-youtube: 1 |
 | [Automation for Early Detection of X-propagation in Power-Aware Simulation Verification using UPF IEEE 1801](../papers/ref-20261018-8b44-automation-for-early-detection-of-x-propagation-in-power-awa.md) | Verification | :material-youtube: 1 |
 | [Automation Methodology for Bus Performance Verification using IP-XACT](../papers/ref-20261018-271b-automation-methodology-for-bus-performance-verification-usin.md) | Verification | :material-youtube: 1 |
 | [Check Low-Power Violations by Using Machine Learning Based Classifier](../papers/ref-20261018-c426-check-low-power-violations-by-using-machine-learning-based-c.md) | Verification | :material-youtube: 1 |
+| [Closing Functional Coverage With Deep Reinforcement Learning: A Compression Encoder Example](../papers/ref-20261018-8ec5-closing-functional-coverage-with-deep-reinforcement-learning.md) | Verification | :material-youtube: 1 |
 | [Complex Safety Mechanisms Require Interoperability and Automation For Validation And Metric Closure](../papers/ref-20261018-a877-complex-safety-mechanisms-require-interoperability-and-autom.md) | Verification | :material-youtube: 1 |
 | [Creating 5G Test Scenarios, the Constrained-Random way](../papers/ref-20261018-f0b1-creating-5g-test-scenarios-the-constrained-random-way.md) | Verification | :material-youtube: 1 |
 | [DatagenDV: Python Constrained Random Test Stimulus Framework](../papers/ref-20261018-d08e-datagendv-python-constrained-random-test-stimulus-framework.md) | Verification | :material-youtube: 1 |
@@ -94,11 +97,13 @@
 | [Automated RTL Update for Abutted Design](../papers/ref-20261018-2fe4-automated-rtl-update-for-abutted-design.md) | EDA | :material-youtube: 1 |
 | [ISO 26262 Dependent Failure Analysis using PSS](../papers/ref-20261018-3557-iso-26262-dependent-failure-analysis-using-pss.md) | Verification | :material-youtube: 1 |
 | [Multimedia IP DMA verification platform](../papers/ref-20261018-86a9-multimedia-ip-dma-verification-platform.md) | Verification | :material-youtube: 1 |
+| [Post-Silicon Performance Validation Using PSS](../papers/ref-20261018-b4a5-post-silicon-performance-validation-using-pss.md) | Verification | :material-youtube: 1 |
 
 ## 2019
 
 | Paper | Topic | Videos |
 |---|---|---|
+| [Big Data in Verification: Making Your Engineers Smarter](../papers/ref-20261018-7a2b-big-data-in-verification-making-your-engineers-smarter.md) | Verification | :material-youtube: 1 |
 | [Coherency Verification & Deadlock Detection Using Perspec/Portable Stimulus](../papers/ref-20261018-90da-coherency-verification-deadlock-detection-using-perspecporta.md) | Verification | :material-youtube: 1 |
 | [High-Speed Interface IP Validation based on Virtual Emulation Platform](../papers/ref-20261018-2072-high-speed-interface-ip-validation-based-on-virtual-emulatio.md) | Emulation | :material-youtube: 1 |
 | [OS-aware IP Development Methodology](../papers/ref-20261018-24f2-os-aware-ip-development-methodology.md) | Emulation | :material-youtube: 1 |

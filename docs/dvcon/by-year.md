@@ -4,7 +4,7 @@
 
 ## 2025
 
-| Paper | Region | Topic | Videos |
+| Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [A Large Language Model-Based Framework for Enhancing Integrated Regression](../papers/ref-20261018-8b34-a-large-language-model-based-framework-for-enhancing-integra.md) | US | Verification | :material-youtube: 1 |
 | [A Novel AI-ML Regression Flow for SoC verification](../papers/ref-20261018-aa86-a-novel-ai-ml-regression-flow-for-soc-verification.md) | US | Verification | :material-youtube: 1 |
@@ -29,7 +29,7 @@
 
 ## 2024
 
-| Paper | Region | Topic | Videos |
+| Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [Are My Fault Campaigns Providing Accurate Results for ISO 26262 Certification?](../papers/ref-20261018-2473-are-my-fault-campaigns-providing-accurate-results-for-iso-26.md) | US | Verification | :material-youtube: 1 |
 | [Bus Trace System: Automating Bus Traffic Debugging in IP-XACT Based SoC Beyond Traditional Debugging Methods](../papers/ref-20261018-dded-bus-trace-system-automating-bus-traffic-debugging-in-ip-xact.md) | US | Verification | :material-youtube: 1 |
@@ -43,10 +43,11 @@
 | [Synthetic Traffic based SOC Performance Verification Methodology](../papers/ref-20261018-c74a-synthetic-traffic-based-soc-performance-verification-methodo.md) | US | Verification | :material-youtube: 1 |
 | [Tackling Missing Bins: Refining Functional Coverage in SystemVerilog for Deterministic Coverage Closure](../papers/ref-20261018-4d5c-tackling-missing-bins-refining-functional-coverage-in-system.md) | US | Verification | :material-youtube: 1 |
 | [Unveiling Advance Hybrid Emulation Methodology for Accelerated Android Home Screen Bring-up and System Level Verification](../papers/ref-20261018-e0d9-unveiling-advance-hybrid-emulation-methodology-for-accelerat.md) | India | Emulation | :material-youtube: 1 |
+| [Variation-Aware Modeling Method for MRAM Behavior Model using System-Verilog](../papers/ref-20261018-d4fc-variation-aware-modeling-method-for-mram-behavior-model-usin.md) | US | Verification | :material-youtube: 1 |
 
 ## 2023
 
-| Paper | Region | Topic | Videos |
+| Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [A Hardware and Software integrated power optimization approach with power aware simulations at SOC](../papers/ref-20261018-ed23-a-hardware-and-software-integrated-power-optimization-approa.md) | US | Verification | :material-youtube: 1 |
 | [A Novel Framework to Accelerate System Validation on Emulation](../papers/ref-20261018-ba2c-a-novel-framework-to-accelerate-system-validation-on-emulati.md) | Europe | Emulation | :material-youtube: 1 |
@@ -55,13 +56,16 @@
 | [Accelerated Verification of NAND Flash Memory using HW Emulator](../papers/ref-20261018-cf3b-accelerated-verification-of-nand-flash-memory-using-hw-emula.md) | US | Emulation | :material-youtube: 1 |
 | [Accelerating Functional Verification Through Stabilization of Testbench Using AI/ML](../papers/ref-20261018-0879-accelerating-functional-verification-through-stabilization-o.md) | US | Verification | :material-youtube: 1 |
 | [Architectures to Tradeoff Performance vs. Debug for Software Development on Emulation Platform](../papers/ref-20261018-fd31-architectures-to-tradeoff-performance-vs-debug-for-software.md) | Japan | Emulation | :material-youtube: 1 |
+| [Automated Thread Evaluation of Various RISC-V Alternatives using Random Instruction Generators](../papers/ref-20261018-273b-automated-thread-evaluation-of-various-risc-v-alternatives-u.md) | US | Verification | :material-youtube: 1 |
 | [Automation for Early Detection of X-propagation in Power-Aware Simulation Verification using UPF IEEE 1801](../papers/ref-20261018-8b44-automation-for-early-detection-of-x-propagation-in-power-awa.md) | US | Verification | :material-youtube: 1 |
 | [Automation Methodology for Bus Performance Verification using IP-XACT](../papers/ref-20261018-271b-automation-methodology-for-bus-performance-verification-usin.md) | US | Verification | :material-youtube: 1 |
 | [Check Low-Power Violations by Using Machine Learning Based Classifier](../papers/ref-20261018-c426-check-low-power-violations-by-using-machine-learning-based-c.md) | US | Verification | :material-youtube: 1 |
+| [Closing Functional Coverage With Deep Reinforcement Learning: A Compression Encoder Example](../papers/ref-20261018-8ec5-closing-functional-coverage-with-deep-reinforcement-learning.md) | US | Verification | :material-youtube: 1 |
 | [Complex Safety Mechanisms Require Interoperability and Automation For Validation And Metric Closure](../papers/ref-20261018-a877-complex-safety-mechanisms-require-interoperability-and-autom.md) | US | Verification | :material-youtube: 1 |
 | [Creating 5G Test Scenarios, the Constrained-Random way](../papers/ref-20261018-f0b1-creating-5g-test-scenarios-the-constrained-random-way.md) | US | Verification | :material-youtube: 1 |
 | [DatagenDV: Python Constrained Random Test Stimulus Framework](../papers/ref-20261018-d08e-datagendv-python-constrained-random-test-stimulus-framework.md) | US | Verification | :material-youtube: 1 |
 | [Early Detection of Functional Corner Case Bugs using Methodologies of the ISO 26262](../papers/ref-20261018-d1ce-early-detection-of-functional-corner-case-bugs-using-methodo.md) | US | Verification | :material-youtube: 1 |
+| [Hybrid Emulation for faster Android Home screen bring up and Software Development](../papers/ref-20261018-3f06-hybrid-emulation-for-faster-android-home-screen-bring-up-and.md) | Europe | Emulation | :material-youtube: 1 |
 | [Improve emulator test quality by applying synthesizable functional coverage](../papers/ref-20261018-2686-improve-emulator-test-quality-by-applying-synthesizable-func.md) | US | Verification | :material-youtube: 1 |
 | [Netlist Enabled Emulation Platform for Accelerated Gate Level Verification](../papers/ref-20261018-22ca-netlist-enabled-emulation-platform-for-accelerated-gate-leve.md) | India | Emulation | :material-youtube: 1 |
 | [Regvue Modern Hardware/Software Interface (HSI) Documentation](../papers/ref-20261018-5ce8-regvue-modern-hardwaresoftware-interface-hsi-documentation.md) | US | EDA | :material-youtube: 1 |
@@ -73,7 +77,7 @@
 
 ## 2022
 
-| Paper | Region | Topic | Videos |
+| Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [An Accelerated System Level CPU Verification through Simulation-Emulation Co-Existence](../papers/ref-20261018-98d5-an-accelerated-system-level-cpu-verification-through-simulat.md) | Europe | Emulation | :material-youtube: 1 |
 | [Case Study: Successes and Challenges of Validation Content Reuse](../papers/ref-20261018-646f-case-study-successes-and-challenges-of-validation-content-re.md) | US | Verification | :material-youtube: 1 |
@@ -88,25 +92,27 @@
 
 ## 2021
 
-| Paper | Region | Topic | Videos |
+| Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [Synthesizable Random Testbench for Multimedia IP Verification](../papers/ref-20261018-d099-synthesizable-random-testbench-for-multimedia-ip-verificatio.md) | US | Verification | :material-youtube: 1 |
 | [The Life of a SystemVerilog Variable](../papers/ref-20261018-f51f-the-life-of-a-systemverilog-variable.md) | US | Verification | :material-youtube: 1 |
 
 ## 2020
 
-| Paper | Region | Topic | Videos |
+| Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [Accelerating SOC Verification Using Process Automation and Integration](../papers/ref-20261018-f844-accelerating-soc-verification-using-process-automation-and-i.md) | US | Verification | :material-youtube: 1 |
 | [Automated RTL Update for Abutted Design](../papers/ref-20261018-2fe4-automated-rtl-update-for-abutted-design.md) | US | EDA | :material-youtube: 1 |
 | [ISO 26262 Dependent Failure Analysis using PSS](../papers/ref-20261018-3557-iso-26262-dependent-failure-analysis-using-pss.md) | US | Verification | :material-youtube: 1 |
 | [Multimedia IP DMA verification platform](../papers/ref-20261018-86a9-multimedia-ip-dma-verification-platform.md) | US | Verification | :material-youtube: 1 |
+| [Post-Silicon Performance Validation Using PSS](../papers/ref-20261018-b4a5-post-silicon-performance-validation-using-pss.md) | US | Verification | :material-youtube: 1 |
 
 ## 2019
 
-| Paper | Region | Topic | Videos |
+| Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [A pragmatic approach leveraging portable stimulus from subsystem to SoC level and SoC emulation](../papers/ref-20261018-a8ba-a-pragmatic-approach-leveraging-portable-stimulus-from-subsy.md) | India | Verification | :material-youtube: 1 |
+| [Big Data in Verification: Making Your Engineers Smarter](../papers/ref-20261018-7a2b-big-data-in-verification-making-your-engineers-smarter.md) | US | Verification | :material-youtube: 1 |
 | [Coherency Verification & Deadlock Detection Using Perspec/Portable Stimulus](../papers/ref-20261018-90da-coherency-verification-deadlock-detection-using-perspecporta.md) | US | Verification | :material-youtube: 1 |
 | [High-Speed Interface IP Validation based on Virtual Emulation Platform](../papers/ref-20261018-2072-high-speed-interface-ip-validation-based-on-virtual-emulatio.md) | US | Emulation | :material-youtube: 1 |
 | [OS-aware IP Development Methodology](../papers/ref-20261018-24f2-os-aware-ip-development-methodology.md) | US | Emulation | :material-youtube: 1 |
@@ -114,7 +120,7 @@
 
 ## 2018
 
-| Paper | Region | Topic | Videos |
+| Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [Guiding Functional Verification Regression Analysis Using Machine Learning and Big Data Methods](../papers/ref-20261018-ade1-guiding-functional-verification-regression-analysis-using-ma.md) | Europe | Verification | :material-youtube: 1 |
 | [Improving Verification Predictability and Efficiency Using Big Data](../papers/ref-20261018-c017-improving-verification-predictability-and-efficiency-using-b.md) | US | Verification | :material-youtube: 1 |
@@ -123,7 +129,7 @@
 
 ## 2017
 
-| Paper | Region | Topic | Videos |
+| Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [EARLY SOFTWARE DEVELOPMENT AND VERIFICATION METHODOLOGY USING HYBRID EMULATION PLATFORM](../papers/ref-20261018-c6c6-early-software-development-and-verification-methodology-usin.md) | US | Emulation | :material-youtube: 1 |
 | [EMULATION BASED FULL CHIP LEVEL LOW POWER VALIDATION AT PRE-SILICON STAGE](../papers/ref-20261018-466a-emulation-based-full-chip-level-low-power-validation-at-pre.md) | US | Emulation | :material-youtube: 1 |
@@ -131,7 +137,7 @@
 
 ## 2016
 
-| Paper | Region | Topic | Videos |
+| Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [A Metric-driven Methodology For Firmware Verification In Simulation/Emulation Environments](../papers/ref-20261018-9cff-a-metric-driven-methodology-for-firmware-verification-in-sim.md) | Europe | Verification | :material-youtube: 1 |
 | [Evolution of Triage: Real-time Improvements in Debug Productivity](../papers/ref-20261018-ca4e-evolution-of-triage-real-time-improvements-in-debug-producti.md) | US | Verification | :material-youtube: 1 |
@@ -140,20 +146,20 @@
 
 ## 2015
 
-| Paper | Region | Topic | Videos |
+| Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [New Trends in RTL Verification: Bug Localization, Scan-Chain-Based Methodology, GA-Based Test Generation](../papers/ref-20261018-0c62-new-trends-in-rtl-verification-bug-localization-scan-chain-b.md) | Europe | Verification | :material-youtube: 1 |
 
 ## 2014
 
-| Paper | Region | Topic | Videos |
+| Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [Of Camels and Committees: Standards Should Enable Innovation, Not Strangle It](../papers/ref-20261018-2c26-of-camels-and-committees-standards-should-enable-innovation.md) | US | Verification | :material-youtube: 1 |
 | [UVM Testbench Considerations for Acceleration](../papers/ref-20261018-8282-uvm-testbench-considerations-for-acceleration.md) | US | Verification | :material-youtube: 1 |
 
 ## 2013
 
-| Paper | Region | Topic | Videos |
+| Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [Easy Steps Towards Virtual Prototyping using the SystemVerilog DPI](../papers/ref-20261018-6a03-easy-steps-towards-virtual-prototyping-using-the-systemveril.md) | US | Verification | :material-youtube: 1 |
 | [Maximize Vertical Reuse, Building Module to System Verification Environments with UVM e](../papers/ref-20261018-7acd-maximize-vertical-reuse-building-module-to-system-verificati.md) | US | Verification | :material-youtube: 1 |
@@ -161,6 +167,6 @@
 
 ## 2012
 
-| Paper | Region | Topic | Videos |
+| Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [Failure Triage: The Neglected Debugging Problem](../papers/ref-20261018-aa99-failure-triage-the-neglected-debugging-problem.md) | US | Verification | :material-youtube: 1 |

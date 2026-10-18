@@ -1,4 +1,4 @@
-site_name: yt-paper
+site_name: YouTube - Paper Reading Archive
 site_description: Paper reading archive — summaries linked to YouTube reading videos
 site_url: https://nemo99007.github.io/yt-paper/
 repo_url: https://github.com/nemo99007/yt-paper
@@ -77,10 +77,10 @@ nav:
   - Japan: dvcon/japan.md
   - By Year: dvcon/by-year.md
   - By Topic: dvcon/by-topic.md
-- Others:
-  - others/index.md
-  - By Year: others/by-year.md
-  - By Topic: others/by-topic.md
+- DATE:
+  - date/index.md
+  - By Year: date/by-year.md
+  - By Topic: date/by-topic.md
 - Videos: videos/index.md
 - Tags: tags.md
 # <<< nav

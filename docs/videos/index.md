@@ -98,6 +98,7 @@
 | [[DVCON2024]Are My Fault Campaigns Providing Accurate Results for ISO 26262 Certification?](s_005FQmF7A.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=s_005FQmF7A) |
 | [[DVCON2024] Enabling True System-Level, Mixed-Signal Emulation](shvv5KRtxp8.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=shvv5KRtxp8) |
 | [[DVCON2023]Accelerated Verification of NAND Flash Memory using HW Emulator](vumYRdATl74.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=vumYRdATl74) |
+| [[DATE2011]A Unified Methodology for Pre-Silicon Verification and Post-Silicon Validation](wZv0WaC4JkM.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=wZv0WaC4JkM) |
 | [[DVCON2023] System-Level Power Estimation of SSDs under Real Workloads using Emulation](x32Ey9cnaMw.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=x32Ey9cnaMw) |
 | [[DVCON2018] UVM Acceleration Using Hardware Emulator at Pre-silicon Stage](xKAp0lC5BjI.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=xKAp0lC5BjI) |
 | [[DVCON2024] Bus Trace System: Automating Bus Traffic Debugging in IP-XACT Based SoC Beyond ... Debug](zHAIrWaCa3Y.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=zHAIrWaCa3Y) |

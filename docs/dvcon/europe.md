@@ -2,7 +2,7 @@
 
 # DVCon Europe
 
-**7** papers
+**8** papers
 
 ## 2024
 
@@ -15,6 +15,7 @@
 | Paper | Topic | Videos |
 |---|---|---|
 | [A Novel Framework to Accelerate System Validation on Emulation](../papers/ref-20261018-ba2c-a-novel-framework-to-accelerate-system-validation-on-emulati.md) | Emulation | :material-youtube: 1 |
+| [Hybrid Emulation for faster Android Home screen bring up and Software Development](../papers/ref-20261018-3f06-hybrid-emulation-for-faster-android-home-screen-bring-up-and.md) | Emulation | :material-youtube: 1 |
 
 ## 2022
 
