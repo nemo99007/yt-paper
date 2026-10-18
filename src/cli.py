@@ -10,7 +10,7 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
-from . import config, generator, llm, parser, publisher
+from . import config, generator, llm, parser, publisher, youtube
 from .database import Database, DatabaseError
 from .schemas import CATEGORIES, SOURCE_TYPES, Resource, YouTubeVideo
 
@@ -195,6 +195,53 @@ def import_(
         if commit and (new or skipped):
             _publish(db, f"docs: Import {new} resources from {csv_path.name}", push)
     except DatabaseError as e:
+        _fail(str(e))
+    finally:
+        db.close()
+
+
+@app.command("yt-auth")
+def yt_auth() -> None:
+    """YouTube 계정 로그인 (최초 1회). 출력되는 주소를 브라우저에서 엽니다."""
+    try:
+        yt = youtube.service()
+        ch = yt.channels().list(part="snippet", mine=True).execute().get("items", [])
+        console.print(f"[green]로그인 완료:[/green] {ch[0]['snippet']['title'] if ch else '(채널 없음)'}")
+    except youtube.YouTubeError as e:
+        _fail(str(e))
+
+
+@app.command("yt-desc")
+def yt_desc(
+    video: list[str] = typer.Option([], "--video", "-v", help="특정 영상 ID만 (여러 번 지정 가능)"),
+    apply_: bool = typer.Option(False, "--apply", help="실제로 YouTube에 반영 (없으면 미리보기만)"),
+    show: int = typer.Option(1, "--show", help="미리보기로 전체 설명란을 출력할 개수"),
+) -> None:
+    """유튜브 설명란 맨 위에 저자·요약·태그·링크 블록을 넣습니다 (기존 설명은 유지)."""
+    db = Database()
+    try:
+        yt = youtube.service(interactive=False)
+        plans = youtube.plans(db, yt, only=[parser.youtube_id(v) or v for v in video] or None)
+        todo = [p for p in plans if p.changed]
+        console.print(f"대상 영상 {len(plans)}개 중 변경 {len(todo)}개")
+        for p in todo[:show]:
+            console.rule(f"{p.video_id}  {p.title}")
+            console.print(p.new, markup=False, highlight=False)
+        if not apply_:
+            console.print("[yellow]미리보기만 했습니다. 반영하려면 --apply 를 붙이세요.[/yellow]")
+            return
+        ok = 0
+        for p in todo:
+            try:
+                youtube.apply(yt, p)
+                ok += 1
+                console.print(f"[green]반영[/green] {p.video_id} {p.title}")
+            except youtube.YouTubeError as e:
+                console.print(f"[red]실패[/red] {e}")
+                if "quota" in str(e).lower():
+                    break
+        console.print(f"[green]완료:[/green] {ok}/{len(todo)}개 반영")
+    except youtube.YouTubeError as e:
         _fail(str(e))
     finally:
         db.close()

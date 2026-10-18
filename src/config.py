@@ -35,6 +35,11 @@ MAX_TEXT_CHARS: int = int(os.getenv("MAX_TEXT_CHARS") or 40000)
 GIT_REMOTE: str = os.getenv("GIT_REMOTE") or "origin"
 GIT_BRANCH: str = os.getenv("GIT_BRANCH") or "main"
 
+SECRETS_DIR: Path = ROOT / "secrets"
+YT_TOKEN_PATH: Path = SECRETS_DIR / "youtube_token.json"
+YT_OAUTH_PORT: int = int(os.getenv("YT_OAUTH_PORT") or 8765)
+SITE_URL: str = os.getenv("SITE_URL") or "https://nemo99007.github.io/yt-paper/"
+
 HTTP_TIMEOUT: float = 60.0
 USER_AGENT: str = "yt-paper/1.0 (personal knowledge archive)"
 

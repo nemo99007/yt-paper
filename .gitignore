@@ -7,3 +7,6 @@ site/
 .venv/
 papers/
 logs/
+secrets/
+client_secret*.json
+token*.json
