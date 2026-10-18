@@ -26,6 +26,9 @@ VIDEOS_DIR: Path = DOCS_DIR / "videos"
 ANTHROPIC_MODEL: str = os.getenv("ANTHROPIC_MODEL") or "claude-sonnet-5-5"
 ANTHROPIC_FALLBACKS: str = (os.getenv("ANTHROPIC_FALLBACKS") or "default").strip().lower()
 LLM_MAX_TOKENS: int = int(os.getenv("LLM_MAX_TOKENS") or 16000)
+LLM_BACKEND: str = (os.getenv("LLM_BACKEND") or "auto").strip().lower()  # auto | api | cli
+CLI_MODEL: str | None = (os.getenv("CLI_MODEL") or "").strip() or None
+CLI_TIMEOUT: int = int(os.getenv("CLI_TIMEOUT") or 600)
 LLM_EFFORT: str | None = (os.getenv("LLM_EFFORT") or "").strip().lower() or None
 MAX_TEXT_CHARS: int = int(os.getenv("MAX_TEXT_CHARS") or 40000)
 

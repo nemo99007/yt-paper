@@ -6,7 +6,12 @@ constrains decoding to the JSON schema and returns a validated model instance.
 """
 from __future__ import annotations
 
+import json
 import logging
+import os
+import shutil
+import subprocess
+import tempfile
 
 import anthropic
 
@@ -44,7 +49,15 @@ def _clip(items: list[str], n: int) -> list[str]:
     return seen[:n]
 
 
-def extract(doc: ParsedDocument, title_hint: str | None = None) -> LLMExtractionResult:
+def backend() -> str:
+    """'api' (ANTHROPIC_API_KEY) or 'cli' (Claude Code `claude -p`, uses the logged-in subscription)."""
+    b = config.LLM_BACKEND
+    if b == "auto":
+        return "api" if os.getenv("ANTHROPIC_API_KEY") else ("cli" if shutil.which("claude") else "api")
+    return b
+
+
+def _user_prompt(doc: ParsedDocument, title_hint: str | None) -> str:
     hints = []
     if title_hint or doc.title_hint:
         hints.append(f"제목 힌트: {title_hint or doc.title_hint}")
@@ -53,7 +66,47 @@ def extract(doc: ParsedDocument, title_hint: str | None = None) -> LLMExtraction
     hints.append(f"자료 유형: {doc.source_type}")
     if doc.truncated:
         hints.append("주의: 본문이 길어 뒷부분이 잘렸습니다.")
-    user = "\n".join(hints) + f"\n\n<document>\n{doc.text}\n</document>\n\n위 문서를 스키마에 맞게 요약하세요."
+    return "\n".join(hints) + f"\n\n<document>\n{doc.text}\n</document>\n\n위 문서를 스키마에 맞게 요약하세요."
+
+
+def _extract_cli(user: str) -> LLMExtractionResult:
+    exe = shutil.which("claude")
+    if exe is None:
+        raise LLMError("claude CLI를 찾을 수 없습니다. Claude Code를 설치하거나 ANTHROPIC_API_KEY를 설정하세요.")
+    cmd = [exe, "-p", "--output-format", "json",
+           "--json-schema", json.dumps(LLMExtractionResult.model_json_schema(), ensure_ascii=False),
+           "--system-prompt", SYSTEM_PROMPT, "--tools", "", "--no-session-persistence",
+           "--setting-sources", "", "--strict-mcp-config"]
+    if config.CLI_MODEL:
+        cmd += ["--model", config.CLI_MODEL]
+    log.info("Claude Code 요약 요청: model=%s, 본문 %d자", config.CLI_MODEL or "(기본)", len(user))
+    try:
+        with tempfile.TemporaryDirectory() as cwd:  # 프로젝트 CLAUDE.md 등을 읽지 않도록 빈 폴더에서 실행
+            proc = subprocess.run(cmd, input=user, capture_output=True, text=True, cwd=cwd,
+                                  timeout=config.CLI_TIMEOUT)
+    except subprocess.TimeoutExpired as e:
+        raise LLMError(f"claude CLI 응답 시간 초과({config.CLI_TIMEOUT}s)") from e
+    try:
+        data = json.loads(proc.stdout)
+    except json.JSONDecodeError as e:
+        raise LLMError(f"claude CLI 출력 해석 실패 (exit {proc.returncode}): {(proc.stderr or proc.stdout)[-300:]}") from e
+    if data.get("is_error") or data.get("structured_output") is None:
+        raise LLMError(f"claude CLI 오류: {data.get('subtype')} {str(data.get('result'))[:300]}")
+    try:
+        result = LLMExtractionResult.model_validate(data["structured_output"])
+    except ValueError as e:
+        raise LLMError(f"스키마에 맞지 않는 응답: {e}") from e
+    log.info("요약 완료(claude CLI): %.1fs", (data.get("duration_ms") or 0) / 1000)
+    return result
+
+
+def extract(doc: ParsedDocument, title_hint: str | None = None) -> LLMExtractionResult:
+    user = _user_prompt(doc, title_hint)
+    if backend() == "cli":
+        result = _extract_cli(user)
+        result.tags = _clip(result.tags, 5)
+        result.key_insights = _clip(result.key_insights, 5)
+        return result
 
     kwargs: dict = {
         "model": config.ANTHROPIC_MODEL,

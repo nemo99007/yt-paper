@@ -13,6 +13,8 @@ cp .env.example .env                      # ANTHROPIC_API_KEY 입력
 git init -b main
 ```
 
+> **API 키가 없어도 됩니다.** `.env`의 `LLM_BACKEND=auto`(기본)는 `ANTHROPIC_API_KEY`가 없으면 PC에 로그인된 Claude Code(`claude -p`)로 요약합니다. 이 방식은 Claude 구독 사용량을 씁니다. GitHub Actions(폰에서 추가)는 PC가 아니므로 API 키 Secret이 필요합니다.
+
 ## 2. 명령어
 
 ```bash
