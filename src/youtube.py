@@ -106,6 +106,8 @@ def hierarchy_links(res: Resource) -> list[str]:
     if group := g.group_of(res):
         label = " ".join(x for x in (venue if venue != g.OTHERS else "", group, str(res.year or "")) if x)
         out.append(f"📅 {label}: {site_url(f'{vs}/{g.region_slug(group)}.md', str(res.year or ''))}")
+    elif res.year:  # no second level (e.g. DATE): year section on the collection page
+        out.append(f"📅 {venue} {res.year}: {site_url(f'{vs}/index.md', str(res.year))}")
     out.append(f"🏷 {venue} · {res.category}: {site_url(f'{vs}/by-topic.md', g.slugify(res.category))}")
     return out
 
