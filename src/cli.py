@@ -1,7 +1,9 @@
-"""yt-paper CLI: python -m src.cli {add|link|rebuild|list}."""
+"""yt-paper CLI: python -m src.cli {add|import|link|rebuild|list}."""
 from __future__ import annotations
 
+import csv
 import logging
+from pathlib import Path
 from typing import Optional
 
 import typer
@@ -38,6 +40,36 @@ def _attach_videos(db: Database, res: Resource, urls: list[str], timestamp: str 
     return added
 
 
+def _ingest(db: Database, source: str, stype: str | None, title: str | None, refresh: bool,
+            local_pdf: str | None = None) -> tuple[Resource, bool]:
+    """자료를 파싱·요약해 DB에 넣는다. 이미 있으면(refresh 아님) LLM 호출 없이 기존 자료를 돌려준다.
+
+    local_pdf가 주어지면 본문은 로컬 파일에서 읽고, 출처(source_url)는 source URL로 기록한다.
+    """
+    key = parser.canonical_source(source)
+    existing = db.get_by_source(key)
+    if existing and not refresh:
+        log.info("이미 등록된 자료입니다: %s (%s). 요약을 건너뜁니다.", existing.id, existing.title)
+        return existing, False
+    if local_pdf:
+        doc = parser.parse_pdf_file(Path(local_pdf), stype or "PAPER")  # type: ignore[arg-type]
+        doc = doc.model_copy(update={"source_url": key})
+    else:
+        doc = parser.parse_source(source, stype)  # type: ignore[arg-type]
+    result = llm.extract(doc, title_hint=title)
+    return db.upsert_resource({
+        "title": result.extracted_title or title or doc.title_hint or key,
+        "source_type": stype or doc.source_type,
+        "source_url": doc.source_url,
+        "authors": result.authors_or_venue or doc.authors_hint or "",
+        "category": result.category,
+        "tags": result.tags,
+        "one_line_summary": result.one_line_summary,
+        "key_insights": result.key_insights,
+        "detailed_summary": result.detailed_summary,
+    })
+
+
 def _publish(db: Database, message: str, push: bool) -> None:
     if not publisher.publish(db, message, push=push):
         raise typer.Exit(2)
@@ -60,25 +92,7 @@ def add(
         _fail(f"--type은 {', '.join(SOURCE_TYPES)} 중 하나여야 합니다.")
     db = Database()
     try:
-        key = parser.canonical_source(source)
-        existing = db.get_by_source(key)
-        if existing and not refresh:
-            log.info("이미 등록된 자료입니다: %s (%s). 요약을 건너뛰고 영상 매핑만 처리합니다.", existing.id, existing.title)
-            res, created = existing, False
-        else:
-            doc = parser.parse_source(source, stype)  # type: ignore[arg-type]
-            result = llm.extract(doc, title_hint=title)
-            res, created = db.upsert_resource({
-                "title": result.extracted_title or title or doc.title_hint or key,
-                "source_type": stype or doc.source_type,
-                "source_url": doc.source_url,
-                "authors": result.authors_or_venue or doc.authors_hint or "",
-                "category": result.category,
-                "tags": result.tags,
-                "one_line_summary": result.one_line_summary,
-                "key_insights": result.key_insights,
-                "detailed_summary": result.detailed_summary,
-            })
+        res, created = _ingest(db, source, stype, title, refresh)
         _attach_videos(db, res, youtube, timestamp)
         res = db.get_resource(res.id) or res
         generator.refresh(db, res)
@@ -131,6 +145,53 @@ def rebuild(
         if commit:
             _publish(db, "docs: Rebuild all pages", push)
     except (DatabaseError, generator.GeneratorError) as e:
+        _fail(str(e))
+    finally:
+        db.close()
+
+
+@app.command("import")
+def import_(
+    csv_path: Path = typer.Option(Path("data/reading_list.csv"), "--csv", help="source,local_pdf,youtube,title,type,timestamp 열을 가진 CSV"),
+    limit: Optional[int] = typer.Option(None, "--limit", help="새로 요약할 최대 건수 (시험용)"),
+    push: bool = typer.Option(False, "--push"),
+    commit: bool = typer.Option(True, "--commit/--no-commit"),
+) -> None:
+    """CSV 목록을 한 번에 등록합니다. 이미 등록된 자료는 건너뛰고(영상 매핑만), 실패해도 다음 줄로 계속합니다."""
+    if not csv_path.exists():
+        _fail(f"CSV 파일이 없습니다: {csv_path}")
+    with csv_path.open(encoding="utf-8-sig", newline="") as f:
+        rows = [r for r in csv.DictReader(f) if (r.get("source") or "").strip()]
+    db = Database()
+    new = skipped = 0
+    failed: list[tuple[str, str]] = []
+    try:
+        for i, row in enumerate(rows, 1):
+            source = row["source"].strip()
+            if limit is not None and new >= limit and db.get_by_source(parser.canonical_source(source)) is None:
+                continue
+            stype = (row.get("type") or "").strip().upper() or None
+            local_pdf = (row.get("local_pdf") or "").strip() or None
+            if local_pdf and not Path(local_pdf).exists():
+                local_pdf = None
+            try:
+                res, created = _ingest(db, source, stype, (row.get("title") or "").strip() or None, False, local_pdf)
+                youtube = [u for u in (row.get("youtube") or "").split() if u]
+                _attach_videos(db, res, youtube, (row.get("timestamp") or "").strip() or None)
+                generator.refresh(db, db.get_resource(res.id) or res)
+                new += created
+                skipped += not created
+                console.print(f"[{i}/{len(rows)}] {'[green]추가[/green]' if created else '건너뜀'} {res.id} {res.title}")
+            except (parser.ParseError, llm.LLMError, generator.GeneratorError) as e:
+                failed.append((source, str(e)))
+                console.print(f"[{i}/{len(rows)}] [red]실패[/red] {source}: {e}")
+        generator.rebuild_all(db)
+        console.print(f"[green]완료:[/green] 새로 추가 {new}건, 기존 {skipped}건, 실패 {len(failed)}건")
+        for src, err in failed:
+            console.print(f"  [red]-[/red] {src}: {err}")
+        if commit and (new or skipped):
+            _publish(db, f"docs: Import {new} resources from {csv_path.name}", push)
+    except DatabaseError as e:
         _fail(str(e))
     finally:
         db.close()

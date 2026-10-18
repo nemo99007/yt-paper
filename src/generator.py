@@ -47,7 +47,7 @@ def _embed(link: VideoLink) -> str:
     title = (v.video_title or v.video_id).replace('"', "&quot;")
     caption = f"**{v.video_title or v.video_id}**"
     if link.timestamp_note:
-        caption += f" · ⏱ {link.timestamp_note}"
+        caption += f" · {'⏱' if start is not None else '📝'} {link.timestamp_note}"
     return (
         f'<div class="video-wrapper"><iframe src="{src}" title="{title}" loading="lazy" '
         'allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" '

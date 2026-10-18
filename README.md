@@ -21,6 +21,10 @@ python -m src.cli add --source ~/works/dvcon/papers/2025/europe/DVConEU_2025_pap
   --youtube "https://www.youtube.com/watch?v=xxxxxxxxxxx" --timestamp "04:15" --push
 python -m src.cli add --source https://arxiv.org/abs/1706.03762
 
+# 목록 파일로 한 번에 등록 (data/reading_list.csv)
+python -m src.cli import --limit 3      # 3편만 시험
+python -m src.cli import --push         # 전체
+
 # 기존 자료에 영상 추가
 python -m src.cli link --ref-id ref-20261018-a1b2 --youtube https://youtu.be/yyyyyyyyyyy --timestamp 05:30 --push
 
@@ -35,6 +39,7 @@ mkdocs serve -a 0.0.0.0:8000
 - 같은 출처(같은 PDF 파일명 또는 URL)를 다시 넣으면 요약을 다시 하지 않고 영상 연결만 추가합니다. 다시 요약하려면 `--refresh`를 붙이세요.
 - `--youtube`는 여러 번 쓸 수 있습니다. `[url](url)`처럼 마크다운 링크 형태로 붙여 넣어도 영상 ID를 찾아냅니다.
 - 커밋하지 않으려면 `--no-commit`을 붙이세요.
+- `data/reading_list.csv` 열: `source`(PDF/웹 URL, 페이지에 표시되는 출처), `local_pdf`(있으면 본문을 이 파일에서 읽음), `youtube`(공백으로 여러 개), `title`, `type`, `timestamp`(시간 `04:15` 또는 메모·마크다운 링크). `import`는 이미 등록된 줄은 요약을 건너뛰고, 실패한 줄이 있어도 다음 줄로 계속합니다.
 
 ## 3. GitHub에 올리기 (최초 1회)
 
