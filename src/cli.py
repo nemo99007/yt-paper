@@ -182,6 +182,9 @@ def import_(
                 new += created
                 skipped += not created
                 console.print(f"[{i}/{len(rows)}] {'[green]추가[/green]' if created else '건너뜀'} {res.id} {res.title}")
+            except llm.LLMAuthError as e:
+                console.print(f"[{i}/{len(rows)}] [red]중단[/red] {e}  (지금까지 결과는 저장하고, 다시 실행하면 이어서 진행)")
+                break
             except (parser.ParseError, llm.LLMError, generator.GeneratorError) as e:
                 failed.append((source, str(e)))
                 console.print(f"[{i}/{len(rows)}] [red]실패[/red] {source}: {e}")

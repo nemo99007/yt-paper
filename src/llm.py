@@ -41,6 +41,10 @@ class LLMError(RuntimeError):
     pass
 
 
+class LLMAuthError(LLMError):
+    """인증 실패: 다음 자료도 똑같이 실패하므로 일괄 작업을 멈춰야 한다."""
+
+
 def _clip(items: list[str], n: int) -> list[str]:
     seen: list[str] = []
     for x in (s.strip() for s in items):
@@ -91,6 +95,8 @@ def _extract_cli(user: str) -> LLMExtractionResult:
     except json.JSONDecodeError as e:
         raise LLMError(f"claude CLI 출력 해석 실패 (exit {proc.returncode}): {(proc.stderr or proc.stdout)[-300:]}") from e
     if data.get("is_error") or data.get("structured_output") is None:
+        if "authenticat" in str(data.get("result")).lower():
+            raise LLMAuthError("Claude Code 로그인이 만료되었습니다. 터미널에서 claude 실행 후 /login 하세요.")
         raise LLMError(f"claude CLI 오류: {data.get('subtype')} {str(data.get('result'))[:300]}")
     try:
         result = LLMExtractionResult.model_validate(data["structured_output"])
@@ -126,7 +132,7 @@ def extract(doc: ParsedDocument, title_hint: str | None = None) -> LLMExtraction
     try:
         resp = client.beta.messages.parse(**kwargs)
     except anthropic.AuthenticationError as e:
-        raise LLMError("API 키가 없거나 잘못되었습니다. .env의 ANTHROPIC_API_KEY를 확인하세요.") from e
+        raise LLMAuthError("API 키가 없거나 잘못되었습니다. .env의 ANTHROPIC_API_KEY를 확인하세요.") from e
     except anthropic.PermissionDeniedError as e:
         raise LLMError(f"권한 없음: {e.message}") from e
     except anthropic.NotFoundError as e:
