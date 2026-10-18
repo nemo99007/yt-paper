@@ -29,7 +29,7 @@ youtube_videos:
 # Expedited Gate Level Verification: Unleashing the Potential of Netlist Integrated Emulation Platforms
 
 <figure class="rep-fig" markdown>
-![Figure 1. Typical Netlist Compilation Flow](../assets/figures/ref-20261018-8aac.png){ loading=lazy }
+![Figure 1. Typical Netlist Compilation Flow](../assets/figures/ref-20261018-8aac.png?v=1792305785){ loading=lazy }
 <figcaption>Figure 1. Typical Netlist Compilation Flow — from the original paper (Samhith Kumar Pottem et al.)</figcaption>
 </figure>
 

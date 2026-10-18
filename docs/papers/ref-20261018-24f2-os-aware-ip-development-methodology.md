@@ -29,7 +29,7 @@ youtube_videos:
 # OS-aware IP Development Methodology
 
 <figure class="rep-fig" markdown>
-![Figure 5 proposed methodology](../assets/figures/ref-20261018-24f2.png){ loading=lazy }
+![Figure 5 proposed methodology](../assets/figures/ref-20261018-24f2.png?v=1792311327){ loading=lazy }
 <figcaption>Figure 5 proposed methodology — from the original paper (Hyunjae Woo et al.)</figcaption>
 </figure>
 

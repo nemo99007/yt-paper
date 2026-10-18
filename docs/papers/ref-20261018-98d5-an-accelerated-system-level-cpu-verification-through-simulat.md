@@ -29,7 +29,7 @@ youtube_videos:
 # An Accelerated System Level CPU Verification through Simulation-Emulation Co-Existence
 
 <figure class="rep-fig" markdown>
-![Figure 11 : Unified Compilation flow for Power Aware Run](../assets/figures/ref-20261018-98d5.png){ loading=lazy }
+![Figure 11 : Unified Compilation flow for Power Aware Run](../assets/figures/ref-20261018-98d5.png?v=1792309940){ loading=lazy }
 <figcaption>Figure 11 : Unified Compilation flow for Power Aware Run — from the original paper (Ruchi Misra et al.)</figcaption>
 </figure>
 

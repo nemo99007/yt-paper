@@ -29,7 +29,7 @@ youtube_videos:
 # Design scheme for Emulator-friendly Memory Verification IP to Accelerate Simulation Performance
 
 <figure class="rep-fig" markdown>
-![Figure 1. Key Idea of Design Scheme for Emulator-friendly Memory Verification IP](../assets/figures/ref-20261018-fb94.png){ loading=lazy }
+![Figure 1. Key Idea of Design Scheme for Emulator-friendly Memory Verification IP](../assets/figures/ref-20261018-fb94.png?v=1792306355){ loading=lazy }
 <figcaption>Figure 1. Key Idea of Design Scheme for Emulator-friendly Memory Verification IP — from the original paper (Sunghyeon Kang et al.)</figcaption>
 </figure>
 

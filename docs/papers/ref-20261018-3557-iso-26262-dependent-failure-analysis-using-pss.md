@@ -29,7 +29,7 @@ youtube_videos:
 # ISO 26262 Dependent Failure Analysis using PSS
 
 <figure class="rep-fig" markdown>
-![Figure 9. False sharing with error injection and interference stimuli](../assets/figures/ref-20261018-3557.png){ loading=lazy }
+![Figure 9. False sharing with error injection and interference stimuli](../assets/figures/ref-20261018-3557.png?v=1792311086){ loading=lazy }
 <figcaption>Figure 9. False sharing with error injection and interference stimuli — from the original paper (Moonki Jang et al.)</figcaption>
 </figure>
 

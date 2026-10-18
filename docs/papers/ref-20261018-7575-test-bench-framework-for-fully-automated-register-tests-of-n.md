@@ -29,7 +29,7 @@ youtube_videos:
 # Test bench Framework for Fully Automated Register Tests of Numerous IPs in SoC
 
 <figure class="rep-fig" markdown>
-![Figure 5. Working flow of the test bench framework](../assets/figures/ref-20261018-7575.png){ loading=lazy }
+![Figure 5. Working flow of the test bench framework](../assets/figures/ref-20261018-7575.png?v=1792306637){ loading=lazy }
 <figcaption>Figure 5. Working flow of the test bench framework — from the original paper (Wonyeong So et al.)</figcaption>
 </figure>
 

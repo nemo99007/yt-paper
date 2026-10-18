@@ -29,7 +29,7 @@ youtube_videos:
 # Of Camels and Committees: Standards Should Enable Innovation, Not Strangle It
 
 <figure class="rep-fig" markdown>
-![Fig. 1. Phasing in UVM](../assets/figures/ref-20261018-2c26.png){ loading=lazy }
+![Fig. 1. Phasing in UVM](../assets/figures/ref-20261018-2c26.png?v=1792306108){ loading=lazy }
 <figcaption>Fig. 1. Phasing in UVM — from the original paper (Tom Fitzpatrick et al.)</figcaption>
 </figure>
 

@@ -29,7 +29,7 @@ youtube_videos:
 # An Early Stage Coverage Measurement Methodology For Common Features Of System-On-Chip Verification, Using Design Metadata And Large Language Models
 
 <figure class="rep-fig" markdown>
-![Figure 3. Overall Architecture for the CTC](../assets/figures/ref-20261018-9206.png){ loading=lazy }
+![Figure 3. Overall Architecture for the CTC](../assets/figures/ref-20261018-9206.png?v=1792306800){ loading=lazy }
 <figcaption>Figure 3. Overall Architecture for the CTC — from the original paper (Myeongwhan Hyun et al.)</figcaption>
 </figure>
 

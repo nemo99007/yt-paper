@@ -29,7 +29,7 @@ youtube_videos:
 # A Hardware and Software integrated power optimization approach with power aware simulations at SOC
 
 <figure class="rep-fig" markdown>
-![Figure 4. Master and Slave configuration to control the different Power domain](../assets/figures/ref-20261018-ed23.png){ loading=lazy }
+![Figure 4. Master and Slave configuration to control the different Power domain](../assets/figures/ref-20261018-ed23.png?v=1792309178){ loading=lazy }
 <figcaption>Figure 4. Master and Slave configuration to control the different Power domain — from the original paper (Eldin Ben Jacob et al.)</figcaption>
 </figure>
 

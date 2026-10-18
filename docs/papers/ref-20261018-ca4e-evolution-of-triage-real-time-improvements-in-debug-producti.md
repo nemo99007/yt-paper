@@ -29,7 +29,7 @@ youtube_videos:
 # Evolution of Triage: Real-time Improvements in Debug Productivity
 
 <figure class="rep-fig" markdown>
-![Figure 4. Categorizing a regression failure](../assets/figures/ref-20261018-ca4e.png){ loading=lazy }
+![Figure 4. Categorizing a regression failure](../assets/figures/ref-20261018-ca4e.png?v=1792311712){ loading=lazy }
 <figcaption>Figure 4. Categorizing a regression failure — from the original paper (Gordon Allan et al.)</figcaption>
 </figure>
 

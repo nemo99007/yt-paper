@@ -29,7 +29,7 @@ youtube_videos:
 # Stimulus Diversification and Coverage Closure of 3D NAND Flash with Artificial Intelligence
 
 <figure class="rep-fig" markdown>
-![Figure 1. Machine Learning in DV flow](../assets/figures/ref-20261018-cee6.png){ loading=lazy }
+![Figure 1. Machine Learning in DV flow](../assets/figures/ref-20261018-cee6.png?v=1792306065){ loading=lazy }
 <figcaption>Figure 1. Machine Learning in DV flow — from the original paper (Goutham Pallela et al.)</figcaption>
 </figure>
 

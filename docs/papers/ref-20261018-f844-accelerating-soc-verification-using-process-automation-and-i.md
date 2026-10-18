@@ -29,7 +29,7 @@ youtube_videos:
 # Accelerating SOC Verification Using Process Automation and Integration
 
 <figure class="rep-fig" markdown>
-![Figure 4: Integrated Platform and Internal Queue for Automation and Verification](../assets/figures/ref-20261018-f844.png){ loading=lazy }
+![Figure 4: Integrated Platform and Internal Queue for Automation and Verification](../assets/figures/ref-20261018-f844.png?v=1792311395){ loading=lazy }
 <figcaption>Figure 4: Integrated Platform and Internal Queue for Automation and Verification — from the original paper (Seonghee Yim et al.)</figcaption>
 </figure>
 

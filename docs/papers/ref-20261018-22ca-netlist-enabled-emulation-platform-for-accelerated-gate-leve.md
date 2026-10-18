@@ -28,7 +28,7 @@ youtube_videos:
 # Netlist Enabled Emulation Platform for Accelerated Gate Level Verification
 
 <figure class="rep-fig" markdown>
-![Figure 3. Netlist Database Generation Flow](../assets/figures/ref-20261018-22ca.png){ loading=lazy }
+![Figure 3. Netlist Database Generation Flow](../assets/figures/ref-20261018-22ca.png?v=1792310287){ loading=lazy }
 <figcaption>Figure 3. Netlist Database Generation Flow — from the original paper (Samhith Kumar Pottem et al.)</figcaption>
 </figure>
 

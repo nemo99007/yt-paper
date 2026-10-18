@@ -29,7 +29,7 @@ youtube_videos:
 # A pragmatic approach leveraging portable stimulus from subsystem to SoC level and SoC emulation
 
 <figure class="rep-fig" markdown>
-![Figure 2 Subsystem Testbench architecture](../assets/figures/ref-20261018-a8ba.png){ loading=lazy }
+![Figure 2 Subsystem Testbench architecture](../assets/figures/ref-20261018-a8ba.png?v=1792310181){ loading=lazy }
 <figcaption>Figure 2 Subsystem Testbench architecture — from the original paper (Karandeep Singh et al.)</figcaption>
 </figure>
 

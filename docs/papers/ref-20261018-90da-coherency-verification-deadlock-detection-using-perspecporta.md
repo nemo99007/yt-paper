@@ -29,7 +29,7 @@ youtube_videos:
 # Coherency Verification & Deadlock Detection Using Perspec/Portable Stimulus
 
 <figure class="rep-fig" markdown>
-![Figure 5: Deadlock Detection Verification Environment](../assets/figures/ref-20261018-90da.png){ loading=lazy }
+![Figure 5: Deadlock Detection Verification Environment](../assets/figures/ref-20261018-90da.png?v=1792311151){ loading=lazy }
 <figcaption>Figure 5: Deadlock Detection Verification Environment — from the original paper (Moonki Jang et al.)</figcaption>
 </figure>
 

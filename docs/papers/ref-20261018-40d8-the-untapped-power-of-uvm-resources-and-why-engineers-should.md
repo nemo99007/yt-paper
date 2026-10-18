@@ -29,7 +29,7 @@ youtube_videos:
 # The Untapped Power of UVM Resources and Why Engineers Should Use the uvm_resource_db API
 
 <figure class="rep-fig" markdown>
-![Figure 1 - uvm_resource_pool Block Diagram](../assets/figures/ref-20261018-40d8.png){ loading=lazy }
+![Figure 1 - uvm_resource_pool Block Diagram](../assets/figures/ref-20261018-40d8.png?v=1792309052){ loading=lazy }
 <figcaption>Figure 1 - uvm_resource_pool Block Diagram — from the original paper (Clifford E. Cummings et al.)</figcaption>
 </figure>
 

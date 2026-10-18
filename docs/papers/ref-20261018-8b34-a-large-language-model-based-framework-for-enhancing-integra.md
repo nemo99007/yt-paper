@@ -29,7 +29,7 @@ youtube_videos:
 # A Large Language Model-Based Framework for Enhancing Integrated Regression
 
 <figure class="rep-fig" markdown>
-![Figure 1. Architecture overview](../assets/figures/ref-20261018-8b34.png){ loading=lazy }
+![Figure 1. Architecture overview](../assets/figures/ref-20261018-8b34.png?v=1792309018){ loading=lazy }
 <figcaption>Figure 1. Architecture overview — from the original paper (Jin Choi et al.)</figcaption>
 </figure>
 

@@ -29,7 +29,7 @@ youtube_videos:
 # Enabling True System-Level, Mixed-Signal Emulation
 
 <figure class="rep-fig" markdown>
-![Figure 2. Bias generator instantiations within the emulation run.](../assets/figures/ref-20261018-8099.png){ loading=lazy }
+![Figure 2. Bias generator instantiations within the emulation run.](../assets/figures/ref-20261018-8099.png?v=1792310419){ loading=lazy }
 <figcaption>Figure 2. Bias generator instantiations within the emulation run. — from the original paper (Nimay Shah et al.)</figcaption>
 </figure>
 

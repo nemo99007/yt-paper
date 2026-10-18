@@ -29,7 +29,7 @@ youtube_videos:
 # Continuous Integration in SoC Design: Challenges and Solutions
 
 <figure class="rep-fig" markdown>
-![Figure 4. CI Implementation and date flow.](../assets/figures/ref-20261018-ee89.png){ loading=lazy }
+![Figure 4. CI Implementation and date flow.](../assets/figures/ref-20261018-ee89.png?v=1792305937){ loading=lazy }
 <figcaption>Figure 4. CI Implementation and date flow. — from the original paper (Liu Wei et al.)</figcaption>
 </figure>
 

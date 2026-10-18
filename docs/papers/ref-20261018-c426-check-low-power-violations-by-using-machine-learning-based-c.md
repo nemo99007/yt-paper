@@ -29,7 +29,7 @@ youtube_videos:
 # Check Low-Power Violations by Using Machine Learning Based Classifier
 
 <figure class="rep-fig" markdown>
-![Figure 4. The overall flow of proposed approach.](../assets/figures/ref-20261018-c426.png){ loading=lazy }
+![Figure 4. The overall flow of proposed approach.](../assets/figures/ref-20261018-c426.png?v=1792309730){ loading=lazy }
 <figcaption>Figure 4. The overall flow of proposed approach. — from the original paper (Chi-Ming Lee et al.)</figcaption>
 </figure>
 

@@ -29,7 +29,7 @@ youtube_videos:
 # Accelerating Functional Verification Through Stabilization of Testbench Using AI/ML
 
 <figure class="rep-fig" markdown>
-![Figure 7: L2 Cache Test Bench Environment](../assets/figures/ref-20261018-0879.png){ loading=lazy }
+![Figure 7: L2 Cache Test Bench Environment](../assets/figures/ref-20261018-0879.png?v=1792309900){ loading=lazy }
 <figcaption>Figure 7: L2 Cache Test Bench Environment — from the original paper (Srikanth Vadanaparthi et al.)</figcaption>
 </figure>
 

@@ -29,7 +29,7 @@ youtube_videos:
 # Machine Learning Based Verification Planning Methodology Using Design and Verification Data
 
 <figure class="rep-fig" markdown>
-![Figure 2 shows the system that is configured to apply the experimental flow to each development stage of SOC projects. During an entire SOC development, design and verification data are released almost every week with a new name called label from the design repository. Design data includes registers, integration information, and RTL](../assets/figures/ref-20261018-7aa6.png){ loading=lazy }
+![Figure 2 shows the system that is configured to apply the experimental flow to each development stage of SOC projects. During an entire SOC development, design and verification data are released almost every week with a new name called label from the design repository. Design data includes registers, integration information, and RTL](../assets/figures/ref-20261018-7aa6.png?v=1792311857){ loading=lazy }
 <figcaption>Figure 2 shows the system that is configured to apply the experimental flow to each development stage of SOC projects. During an entire SOC development, design and verification data are released almost every week with a new name called label from the design repository. Design data includes registers, integration information, and RTL — from the original paper (Hanna Jang et al.)</figcaption>
 </figure>
 

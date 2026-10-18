@@ -29,7 +29,7 @@ youtube_videos:
 # Pragmatic Verification Reuse in a Vertical World
 
 <figure class="rep-fig" markdown>
-![Figure 3. Passive Block-Level in Top Environment](../assets/figures/ref-20261018-04d2.png){ loading=lazy }
+![Figure 3. Passive Block-Level in Top Environment](../assets/figures/ref-20261018-04d2.png?v=1792306611){ loading=lazy }
 <figcaption>Figure 3. Passive Block-Level in Top Environment — from the original paper (Mark Litterick et al.)</figcaption>
 </figure>
 

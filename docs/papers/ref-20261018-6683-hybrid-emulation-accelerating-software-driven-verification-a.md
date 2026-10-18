@@ -29,7 +29,7 @@ youtube_videos:
 # Hybrid Emulation: Accelerating Software driven verification and debug
 
 <figure class="rep-fig" markdown>
-![Figure 2. Hybrid platform block diagram](../assets/figures/ref-20261018-6683.png){ loading=lazy }
+![Figure 2. Hybrid platform block diagram](../assets/figures/ref-20261018-6683.png?v=1792310644){ loading=lazy }
 <figcaption>Figure 2. Hybrid platform block diagram — from the original paper (Issac P Zacharia et al.)</figcaption>
 </figure>
 

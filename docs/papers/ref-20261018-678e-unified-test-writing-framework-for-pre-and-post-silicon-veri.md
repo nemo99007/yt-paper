@@ -29,7 +29,7 @@ youtube_videos:
 # Unified Test Writing Framework for Pre and Post Silicon Verification
 
 <figure class="rep-fig" markdown>
-![Fig. 5: Python-SV Simulation Flow](../assets/figures/ref-20261018-678e.png){ loading=lazy }
+![Fig. 5: Python-SV Simulation Flow](../assets/figures/ref-20261018-678e.png?v=1792310113){ loading=lazy }
 <figcaption>Fig. 5: Python-SV Simulation Flow — from the original paper (Rahulkumar Patel et al.)</figcaption>
 </figure>
 

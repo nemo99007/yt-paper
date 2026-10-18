@@ -29,7 +29,7 @@ youtube_videos:
 # A Study on Virtual Prototyping based Design Verification Methodology
 
 <figure class="rep-fig" markdown>
-![Figure 2. The Proposed Verification Methodology.](../assets/figures/ref-20261018-2416.png){ loading=lazy }
+![Figure 2. The Proposed Verification Methodology.](../assets/figures/ref-20261018-2416.png?v=1792310844){ loading=lazy }
 <figcaption>Figure 2. The Proposed Verification Methodology. — from the original paper (Woojoo Kim et al.)</figcaption>
 </figure>
 

@@ -29,7 +29,7 @@ youtube_videos:
 # Pre-Silicon Validation of Production BIOS, Software Use Cases and Accelerator IP Workloads using Hybrid System Level Emulation SoC Platform
 
 <figure class="rep-fig" markdown>
-![Figure 1 : Hybrid SLE Platform](../assets/figures/ref-20261018-05e4.png){ loading=lazy }
+![Figure 1 : Hybrid SLE Platform](../assets/figures/ref-20261018-05e4.png?v=1792310682){ loading=lazy }
 <figcaption>Figure 1 : Hybrid SLE Platform — from the original paper (Neeraj Gupta et al.)</figcaption>
 </figure>
 

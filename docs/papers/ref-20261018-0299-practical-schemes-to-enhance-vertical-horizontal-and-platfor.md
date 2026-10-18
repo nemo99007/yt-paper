@@ -29,7 +29,7 @@ youtube_videos:
 # PRACTICAL SCHEMES TO ENHANCE VERTICAL, HORIZONTAL AND PLATFORM REUSABILITY OF VERIFICATION COMPONENTS IN AMBA BASED SOC DESIGN
 
 <figure class="rep-fig" markdown>
-![Figure 2 shows the overall architecture of AMBA Unified Verification System (AUVS), composed of AUVS TPI sequence, AUVS environment, and AUVS harness. AUVS can be considered a pre-built UVM based verification platform which provides users with a reusable AMBA transaction generation mechanism. Three major components](../assets/figures/ref-20261018-0299.png){ loading=lazy }
+![Figure 2 shows the overall architecture of AMBA Unified Verification System (AUVS), composed of AUVS TPI sequence, AUVS environment, and AUVS harness. AUVS can be considered a pre-built UVM based verification platform which provides users with a reusable AMBA transaction generation mechanism. Three major components](../assets/figures/ref-20261018-0299.png?v=1792310257){ loading=lazy }
 <figcaption>Figure 2 shows the overall architecture of AMBA Unified Verification System (AUVS), composed of AUVS TPI sequence, AUVS environment, and AUVS harness. AUVS can be considered a pre-built UVM based verification platform which provides users with a reusable AMBA transaction generation mechanism. Three major components — from the original paper (Ieryung Park et al.)</figcaption>
 </figure>
 

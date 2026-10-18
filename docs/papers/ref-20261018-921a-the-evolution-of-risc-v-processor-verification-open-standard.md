@@ -29,7 +29,7 @@ youtube_videos:
 # The Evolution of RISC-V Processor Verification: Open Standards and Verification IP
 
 <figure class="rep-fig" markdown>
-![Figure 5: The third generation CORE-V-VERIF environment](../assets/figures/ref-20261018-921a.png){ loading=lazy }
+![Figure 5: The third generation CORE-V-VERIF environment](../assets/figures/ref-20261018-921a.png?v=1792309400){ loading=lazy }
 <figcaption>Figure 5: The third generation CORE-V-VERIF environment — from the original paper (Lee Moore et al.)</figcaption>
 </figure>
 

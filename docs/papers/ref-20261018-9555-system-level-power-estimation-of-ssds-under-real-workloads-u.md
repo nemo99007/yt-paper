@@ -29,7 +29,7 @@ youtube_videos:
 # System-Level Power Estimation of SSDs under Real Workloads using Emulation
 
 <figure class="rep-fig" markdown>
-![Figure 3. Overview of SSD system-level power estimation methodology](../assets/figures/ref-20261018-9555.png){ loading=lazy }
+![Figure 3. Overview of SSD system-level power estimation methodology](../assets/figures/ref-20261018-9555.png?v=1792310779){ loading=lazy }
 <figcaption>Figure 3. Overview of SSD system-level power estimation methodology — from the original paper (Sangmin Kim et al.)</figcaption>
 </figure>
 

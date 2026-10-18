@@ -29,7 +29,7 @@ youtube_videos:
 # The Life of a SystemVerilog Variable
 
 <figure class="rep-fig" markdown>
-![Figure 1](../assets/figures/ref-20261018-f51f.png){ loading=lazy }
+![Figure 1](../assets/figures/ref-20261018-f51f.png?v=1792306286){ loading=lazy }
 <figcaption>Figure 1 — from the original paper (Dave Rich et al.)</figcaption>
 </figure>
 

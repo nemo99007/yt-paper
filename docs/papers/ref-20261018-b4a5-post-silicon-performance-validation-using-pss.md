@@ -10,6 +10,7 @@ tags:
 - PSS
 - Post-Silicon
 - Perspec
+- Performance Validation
 - Test Chip
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/post-silicon-performance-validation-using-pss.pdf
@@ -28,8 +29,8 @@ youtube_videos:
 # Post-Silicon Performance Validation Using PSS
 
 <figure class="rep-fig" markdown>
-![Figure 3. Memory TP Scenario](../assets/figures/ref-20261018-b4a5.png){ loading=lazy }
-<figcaption>Figure 3. Memory TP Scenario — from the original paper (Dayoung Kim et al.)</figcaption>
+![Figure 1. Test-chip (TC) Block Diagram](../assets/figures/ref-20261018-b4a5.png?v=1792334273){ loading=lazy }
+<figcaption>Figure 1. Test-chip (TC) Block Diagram — from the original paper (Dayoung Kim et al.)</figcaption>
 </figure>
 
 [:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/post-silicon-performance-validation-using-pss.pdf){ .md-button .md-button--primary target=_blank }
@@ -47,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Samsung and Cadence use PSS (Perspec) to build configuration-driven, reusable performance and long-running DMA/memory traffic scenarios for post-silicon validation of a multi-cluster CPU test chip, reporting a 4–9% design-methodology gain measured through these PSS scenarios.**
+**Uses PSS and Perspec to build reusable, auto-synchronized multicore memory, benchmark, and DMA traffic scenarios for post-silicon performance validation of a multi-cluster Samsung test chip, measuring 4–9% gains for new design methodology.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**삼성전자와 Cadence는 PSS(Perspec)를 사용해 다중 클러스터 CPU 테스트 칩의 포스트 실리콘 성능 검증을 위한 설정 기반의 재사용 가능한 성능 및 장시간 DMA/메모리 트래픽 시나리오를 구축했으며, 이 PSS 시나리오로 측정한 새 설계 방법론의 성능 향상을 4~9%로 보고했다.**
+**PSS와 Perspec을 사용해 다중 클러스터 Samsung 테스트 칩의 post-silicon 성능 검증을 위한 재사용 가능한 자동 동기화 멀티코어 메모리, 벤치마크, DMA 트래픽 시나리오를 구축했으며, 새 설계 방법론에서 4–9% 성능 향상을 측정했다고 보고한다.**
 
 </div>
 </div>
@@ -62,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Composing a single traffic-profile action (sml_traffic_profile) over a parallel core subset (multicore_sml_tp) lets the tool generate the per-core C code, IPC, and synchronization points automatically, so engineers debug at action level and drop to C only on failures.
+- Driving the PSS model from CSV processor/memory configuration tables makes scenarios portable across cluster counts; only the config files change, and only cluster-named actions (e.g., dma_tp_cl0) must be rewritten.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 단일 트래픽 프로파일 액션(sml_traffic_profile)을 병렬 코어 서브셋(multicore_sml_tp)에 구성하면 툴이 코어별 C 코드, IPC, 동기화 지점을 자동 생성하므로, 엔지니어는 액션 수준에서 디버깅하고 실패 시에만 C 수준으로 내려간다.
+- PSS 모델을 processor/memory 구성 CSV 테이블로 구동하면 클러스터 수가 달라져도 시나리오를 이식할 수 있으며, 설정 파일만 바꾸고 클러스터 이름이 들어간 액션(예: dma_tp_cl0)만 다시 작성하면 된다.
 
 </div>
 </div>
@@ -75,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Reusability comes from keeping cluster and processor names out of the scenarios and generating the PSS types from CSV configuration tables; per the paper, a future 10-cluster design (C0–C9) would need only a config change, though project-specific tests such as dma_tp_cl0 must be rewritten.
+- Composing a DMA action with parallel multicore traffic-profile actions lets Perspec generate the IPC and synchronization C code automatically; C-level debugging was needed only when a test failed.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 시나리오에서 클러스터 및 프로세서 이름을 제외하고 CSV 설정 테이블로부터 PSS 타입을 생성하여 재사용성을 확보한다. 논문에 따르면 향후 10개 클러스터(C0~C9) 설계는 설정 변경만으로 가능하나, dma_tp_cl0처럼 프로젝트 고유의 테스트는 다시 작성해야 한다.
+- DMA 액션을 병렬 멀티코어 트래픽 프로파일 액션과 결합하면 Perspec이 IPC 및 동기화 C 코드를 자동 생성하며, C 수준 디버깅은 테스트 실패 시에만 필요했다.
 
 </div>
 </div>
@@ -88,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The same PSS scenarios run unmodified in simulation and emulation and produce the same results, which supports reusing pre-silicon stimulus for post-silicon bring-up.
+- Wrapping Dhrystone, CoreMark, lmbench, and gzip as PSS actions with PMCCNTR start/stop counters allows the benchmarks to be combined with concurrent DMA and memory traffic.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 동일한 PSS 시나리오를 수정 없이 시뮬레이션과 에뮬레이션에서 실행해 같은 결과를 얻었으며, 이는 포스트 실리콘 bring-up에서 프리 실리콘 자극을 재사용할 수 있음을 뒷받침한다.
+- Dhrystone, CoreMark, lmbench, gzip을 start/stop PMCCNTR 카운터와 함께 PSS 액션으로 감싸면, 벤치마크를 동시 DMA 및 메모리 트래픽과 조합할 수 있다.
 
 </div>
 </div>
@@ -101,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The reported design-methodology benefit is 4–9% for BLK_CPU1/BLK_CPU2 versus BLK_CPU0; the normalized table values (0.91–0.98, BLK_CPU0 = 1) do not state the metric's direction, so interpret them with care.
+- The paper reports a 4–9% performance enhancement for the new Samsung design methodology over BLK_CPU0, and the same scenarios ran unmodified in simulation and emulation with identical results.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 보고된 설계 방법론 효과는 BLK_CPU0 대비 BLK_CPU1/BLK_CPU2에서 4~9%이다. 정규화된 표 값(0.91~0.98, BLK_CPU0 = 1)은 지표의 방향이 명시되어 있지 않으므로 해석에 주의해야 한다.
+- 논문은 BLK_CPU0 대비 새 Samsung 설계 방법론의 4–9% 성능 향상을 보고하며, 동일한 시나리오가 시뮬레이션과 에뮬레이션에서 수정 없이 동일한 결과를 냈다고 한다.
 
 </div>
 </div>
@@ -114,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Productivity gains are asserted qualitatively and no effort or schedule measurements are provided, so the claims should be treated as anecdotal.
+- Productivity gains are stated qualitatively (e.g., a new environment validated in a few days) with no measured effort or schedule data, so the ROI claim is not quantified.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 생산성 향상은 정성적으로만 주장되며 공수나 일정에 대한 측정 데이터가 없으므로 일화적 주장으로 봐야 한다.
+- 생산성 향상은 정성적으로만 제시되며(예: 며칠 내 새 환경 검증), 측정된 공수나 일정 데이터가 없어 ROI 주장은 정량화되지 않았다.
 
 </div>
 </div>
@@ -131,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The test chip has five quad-core CPU blocks (20 cores, Table 1) built with different cell libraries and physical implementations, so performance must be measured per block under CPU, memory, and I/O activity.
+- Post-silicon performance validation of a Samsung test chip with five CPU blocks (BLK_CPU0–BLK_CPU4), each quad-core (20 cores, clusters CL0–CL4), used to evaluate new cell libraries, on-chip monitors, and physical implementation techniques.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 테스트 칩은 쿼드코어 CPU 블록 5개(표 1 기준 코어 20개)로 구성되며, 블록마다 서로 다른 cell library와 물리 구현 기법을 사용하므로 CPU, 메모리, I/O 활동이 동시에 일어나는 상황에서 블록별 성능을 측정해야 한다.
+- 다섯 개의 CPU 블록(BLK_CPU0–BLK_CPU4, 각 쿼드코어, 총 20코어, 클러스터 CL0–CL4)으로 구성된 Samsung 테스트 칩의 post-silicon 성능 검증이며, 새 cell library, on-chip monitor, 물리 구현 기법을 평가하는 데 쓰인다.
 
 </div>
 </div>
@@ -144,12 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Hand-written embedded C tests are slow to produce, give poor coverage, and make resource allocation, IPC, and synchronization error-prone.
+- Hand-written embedded test software is costly to build and must be redone for each configuration, so the goal is long-running, concurrent scenarios covering CPU, memory, and DMA traffic with resource allocation and IPC handled automatically.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 수작업 임베디드 C 테스트는 작성에 시간이 오래 걸리고 커버리지가 낮으며, 자원 할당, IPC, 동기화에서 오류가 발생하기 쉽다.
+- 손으로 작성한 임베디드 테스트 SW는 구축 비용이 크고 구성이 바뀔 때마다 다시 만들어야 하므로, 리소스 할당을 자동화한 CPU·메모리·DMA 동시 트래픽 장시간 시나리오가 목표다.
 
 </div>
 </div>
@@ -159,12 +160,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- A PSS traffic profile generator (TPG) builds memory TP scenarios: `sml_traffic_profile` is the base action (core, direction, MB/s, transaction count), and `multicore_sml_tp` runs it in parallel over a selected core subset.
+- Four-step approach: traffic-profile scenarios, standard benchmarks, long-running composed tests, and a reusable environment.
 
 </div>
 <div class="bi-ko" markdown>
 
-- PSS 기반 트래픽 프로파일 생성기(TPG)가 메모리 TP 시나리오를 구성한다. 기본 액션은 sml_traffic_profile(코어, 방향, MB/s, 트랜잭션 수)이고, multicore_sml_tp는 선택된 코어 서브셋에서 이를 병렬로 실행한다.
+- 4단계 접근: 트래픽 프로파일 시나리오, 표준 벤치마크, 장시간 조합 테스트, 재사용 가능한 환경.
 
 </div>
 </div>
@@ -172,12 +173,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Dhrystone, CoreMark, lmbench, and gzip are wrapped as PSS actions with PMCCNTR start/stop bracketing.
+- The per-core action `sml_traffic_profile` (direction, MB/s, transaction count) is composed into `multicore_sml_tp` using `parallel`/`foreach` over a `procs_subset` knob constrained by cluster.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Dhrystone, CoreMark, lmbench, gzip은 PMCCNTR 시작/정지 액션으로 감싼 PSS 액션으로 구현된다.
+- 코어 단위 액션 `sml_traffic_profile`(방향, MB/s, 트랜잭션 수)을 `parallel`/`foreach`와 클러스터 기준 `procs_subset` 제약을 사용해 `multicore_sml_tp`로 조합한다.
 
 </div>
 </div>
@@ -185,12 +186,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- `dma_tp` runs a DMA scenario on one core while the remaining cores run the TP scenario on the same cluster. `repeat` statements extend it to long post-silicon runs (9999 iterations in Fig. 15).
+- `dma_tp` runs `start_pm_counter`, `dma_scenario`, and `stop_pm_counter` on one core while three other cores run `multicore_sml_tp`. Generated C code implements two sync points (A0 starts A1–A3; A0 waits for their completion).
 
 </div>
 <div class="bi-ko" markdown>
 
-- dma_tp는 한 코어에서 DMA 시나리오를 실행하는 동안 같은 클러스터의 나머지 코어가 TP 시나리오를 실행한다. repeat 문으로 포스트 실리콘 장시간 실행을 구성한다(그림 15에서 9999회 반복).
+- `dma_tp`는 한 코어에서 `start_pm_counter`, `dma_scenario`, `stop_pm_counter`를 실행하고, 나머지 세 코어는 `multicore_sml_tp`를 실행한다. 생성된 C 코드는 두 개의 sync point(A0이 A1–A3을 시작시키고, A0이 이들의 완료를 기다림)를 구현한다.
 
 </div>
 </div>
@@ -198,23 +199,23 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Project-specific data lives in CSV tables, from which the PSS model (types and knobs) is generated.
+- `si_dma_tp` wraps `dma_tp` in a PSS `repeat(count)` loop for silicon runs (the example uses 9999 iterations).
 
 </div>
 <div class="bi-ko" markdown>
 
-- 프로젝트 고유 정보는 CSV 테이블에 두며, 이로부터 PSS 모델(타입과 knob)을 생성한다.
+- `si_dma_tp`는 실리콘 실행을 위해 `dma_tp`를 PSS `repeat(count)` 루프로 감싼다(예시는 9999회 반복).
 
 </div>
 </div>
 
 ```mermaid
 flowchart LR
-  CSV[CSV config tables] --> Model[PSS model: types, knobs]
-  Model --> Actions[sml_traffic_profile / benchmarks / DMA]
-  Actions --> Scen[multicore_sml_tp / dma_tp]
-  Scen --> Gen[Generated C + IPC sync]
-  Gen --> Board[PCB post-silicon run]
+  CFG[CSV config tables] --> PSS[PSS model: types, knobs]
+  PSS --> ACT[Actions: traffic profile, benchmarks, DMA]
+  ACT --> COMP[dma_tp / multicore_sml_tp composition]
+  COMP --> GEN[Generated C + IPC sync]
+  GEN --> RUN[Simulation / Emulation / PCB silicon]
 ```
 
 ### Results and Conclusions
@@ -222,12 +223,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The new Samsung design methodology on BLK_CPU1 and BLK_CPU2 shows a 4–9% performance gain over BLK_CPU0, measured by PSS scenarios (Fig. 16, based on simulation time).
+- Normalized to BLK_CPU0 = 1, BLK_CPU1 scores 0.95–0.98 and BLK_CPU2 scores 0.91–0.94 across Write_Read, Dhrystone, Gzip, Lmbench, and Traffic Profile + DMA; the text reports a 4–9% enhancement from the new Samsung design methodology.
 
 </div>
 <div class="bi-ko" markdown>
 
-- BLK_CPU1과 BLK_CPU2에 적용한 새 삼성 설계 방법론은 PSS 시나리오로 측정했을 때 BLK_CPU0 대비 4~9%의 성능 향상을 보인다(그림 16, 시뮬레이션 시간 기준).
+- BLK_CPU0 = 1로 정규화했을 때, Write_Read, Dhrystone, Gzip, Lmbench, Traffic Profile + DMA 전반에서 BLK_CPU1은 0.95–0.98, BLK_CPU2는 0.91–0.94를 보였다. 본문은 새 Samsung 설계 방법론으로 4–9% 성능 향상이 있다고 보고한다.
 
 </div>
 </div>
@@ -235,12 +236,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Scenarios run unmodified in simulation and emulation with identical results.
+- The same scenarios ran without modification in simulation and emulation and gave the same results.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 시나리오는 시뮬레이션과 에뮬레이션에서 수정 없이 실행되었고 결과가 동일했다.
+- 동일한 시나리오가 시뮬레이션과 에뮬레이션에서 수정 없이 실행되어 같은 결과를 냈다.
 
 </div>
 </div>
@@ -248,12 +249,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The paper claims a new configuration can be validated in a few days, but productivity gains are not quantified.
+- Reconfiguring for a different cluster count needs only config changes, reportedly done in a few days. Productivity gains are asserted qualitatively, with no measured effort data.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 논문은 새 설정을 며칠 내에 검증할 수 있다고 주장하지만, 생산성 향상은 정량화되어 있지 않다.
+- 클러스터 수가 다른 구성으로 바꾸려면 설정 변경만 필요하며 며칠이면 가능하다고 한다. 다만 생산성 향상은 정성적으로만 주장되며 측정된 공수 데이터는 없다.
 
 </div>
 </div>

@@ -29,7 +29,7 @@ youtube_videos:
 # A Unified Methodology for Pre-Silicon Verification and Post-Silicon Validation
 
 <figure class="rep-fig" markdown>
-![Fig. 3. A uniﬁed veriﬁcation methodology](../assets/figures/ref-20261018-9bfe.png){ loading=lazy }
+![Fig. 3. A uniﬁed veriﬁcation methodology](../assets/figures/ref-20261018-9bfe.png?v=1792328936){ loading=lazy }
 <figcaption>Fig. 3. A uniﬁed veriﬁcation methodology — from the original paper (Allon Adir et al.)</figcaption>
 </figure>
 

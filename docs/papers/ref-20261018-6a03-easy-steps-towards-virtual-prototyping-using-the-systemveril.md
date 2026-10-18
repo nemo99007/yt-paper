@@ -29,7 +29,7 @@ youtube_videos:
 # Easy Steps Towards Virtual Prototyping using the SystemVerilog DPI
 
 <figure class="rep-fig" markdown>
-![Figure 4 Mixed Software/Hardware Simulation The SystemVerilog Direct Programming Interface DPI was designed to integrate the C language with the hardware](../assets/figures/ref-20261018-6a03.png){ loading=lazy }
+![Figure 4 Mixed Software/Hardware Simulation The SystemVerilog Direct Programming Interface DPI was designed to integrate the C language with the hardware](../assets/figures/ref-20261018-6a03.png?v=1792306151){ loading=lazy }
 <figcaption>Figure 4 Mixed Software/Hardware Simulation The SystemVerilog Direct Programming Interface DPI was designed to integrate the C language with the hardware — from the original paper (Dave Rich et al.)</figcaption>
 </figure>
 

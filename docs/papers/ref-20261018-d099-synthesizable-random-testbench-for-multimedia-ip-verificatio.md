@@ -29,7 +29,7 @@ youtube_videos:
 # Synthesizable Random Testbench for Multimedia IP Verification
 
 <figure class="rep-fig" markdown>
-![Fig. 1 shows three different testbench architectures with own pros and cons. In the simple testbench architecture, shown in Fig. 1(a), a few essential components are integrated with the Design under Verification (DUV). The test program, which accesses DUV, verification IPs and SDRAMs to control overall test behaviors, is written in C/C++](../assets/figures/ref-20261018-d099.png){ loading=lazy }
+![Fig. 1 shows three different testbench architectures with own pros and cons. In the simple testbench architecture, shown in Fig. 1(a), a few essential components are integrated with the Design under Verification (DUV). The test program, which accesses DUV, verification IPs and SDRAMs to control overall test behaviors, is written in C/C++](../assets/figures/ref-20261018-d099.png?v=1792309227){ loading=lazy }
 <figcaption>Fig. 1 shows three different testbench architectures with own pros and cons. In the simple testbench architecture, shown in Fig. 1(a), a few essential components are integrated with the Design under Verification (DUV). The test program, which accesses DUV, verification IPs and SDRAMs to control overall test behaviors, is written in C/C++ — from the original paper (Sanggyu Park et al.)</figcaption>
 </figure>
 

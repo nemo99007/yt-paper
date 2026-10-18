@@ -28,7 +28,7 @@ youtube_videos:
 # VerifLLMBench: An Open-Source Benchmark for Testbenches Generated with Large Language Models
 
 <figure class="rep-fig" markdown>
-![Fig. 1: LLM TB Generation to Build Flow](../assets/figures/ref-20261018-b468.png){ loading=lazy }
+![Fig. 1: LLM TB Generation to Build Flow](../assets/figures/ref-20261018-b468.png?v=1792308907){ loading=lazy }
 <figcaption>Fig. 1: LLM TB Generation to Build Flow — from the original paper (Nishanth Somashekara Murthy et al.)</figcaption>
 </figure>
 

@@ -29,7 +29,7 @@ youtube_videos:
 # Improve emulator test quality by applying synthesizable functional coverage
 
 <figure class="rep-fig" markdown>
-![Figure 2. Integration of synthesizable functional coverage module](../assets/figures/ref-20261018-2686.png){ loading=lazy }
+![Figure 2. Integration of synthesizable functional coverage module](../assets/figures/ref-20261018-2686.png?v=1792309797){ loading=lazy }
 <figcaption>Figure 2. Integration of synthesizable functional coverage module — from the original paper (Hoyeon Hwang et al.)</figcaption>
 </figure>
 

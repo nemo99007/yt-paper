@@ -29,7 +29,7 @@ youtube_videos:
 # EARLY SOFTWARE DEVELOPMENT AND VERIFICATION METHODOLOGY USING HYBRID EMULATION PLATFORM
 
 <figure class="rep-fig" markdown>
-![Figure 2. Hybrid Platform Overview.](../assets/figures/ref-20261018-c6c6.png){ loading=lazy }
+![Figure 2. Hybrid Platform Overview.](../assets/figures/ref-20261018-c6c6.png?v=1792310876){ loading=lazy }
 <figcaption>Figure 2. Hybrid Platform Overview. — from the original paper (Woojoo Kim et al.)</figcaption>
 </figure>
 

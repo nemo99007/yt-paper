@@ -29,7 +29,7 @@ youtube_videos:
 # AI - accelerating coverage closure using intelligent stimulus generation
 
 <figure class="rep-fig" markdown>
-![Figure 3 Script utilizing input files to generate plug n play coverage files.](../assets/figures/ref-20261018-ea2b.png){ loading=lazy }
+![Figure 3 Script utilizing input files to generate plug n play coverage files.](../assets/figures/ref-20261018-ea2b.png?v=1792305980){ loading=lazy }
 <figcaption>Figure 3 Script utilizing input files to generate plug n play coverage files. — from the original paper (Jainender Kumar et al.)</figcaption>
 </figure>
 

@@ -29,7 +29,7 @@ youtube_videos:
 # Unveiling Advance Hybrid Emulation Methodology for Accelerated Android Home Screen Bring-up and System Level Verification
 
 <figure class="rep-fig" markdown>
-![Figure 1. SoC development stages and their cost comparison based on scaling transistor size](../assets/figures/ref-20261018-e0d9.png){ loading=lazy }
+![Figure 1. SoC development stages and their cost comparison based on scaling transistor size](../assets/figures/ref-20261018-e0d9.png?v=1792305814){ loading=lazy }
 <figcaption>Figure 1. SoC development stages and their cost comparison based on scaling transistor size — from the original paper (Rinkesh Yadav et al.)</figcaption>
 </figure>
 

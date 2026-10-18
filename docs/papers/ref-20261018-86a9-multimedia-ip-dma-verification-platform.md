@@ -29,7 +29,7 @@ youtube_videos:
 # Multimedia IP DMA verification platform
 
 <figure class="rep-fig" markdown>
-![Figure 1. The architecture of general multimedia IP that has bus interface.](../assets/figures/ref-20261018-86a9.png){ loading=lazy }
+![Figure 1. The architecture of general multimedia IP that has bus interface.](../assets/figures/ref-20261018-86a9.png?v=1792309861){ loading=lazy }
 <figcaption>Figure 1. The architecture of general multimedia IP that has bus interface. — from the original paper (Suhyung Kim et al.)</figcaption>
 </figure>
 

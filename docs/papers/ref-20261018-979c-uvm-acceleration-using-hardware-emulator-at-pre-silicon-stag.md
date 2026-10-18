@@ -29,7 +29,7 @@ youtube_videos:
 # UVM Acceleration Using Hardware Emulator at Pre-silicon Stage
 
 <figure class="rep-fig" markdown>
-![Figure 2 Dual Domain Framework](../assets/figures/ref-20261018-979c.png){ loading=lazy }
+![Figure 2 Dual Domain Framework](../assets/figures/ref-20261018-979c.png?v=1792311286){ loading=lazy }
 <figcaption>Figure 2 Dual Domain Framework — from the original paper (Sunil Roe et al.)</figcaption>
 </figure>
 

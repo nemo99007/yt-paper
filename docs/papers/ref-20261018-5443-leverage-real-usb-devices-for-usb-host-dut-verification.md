@@ -29,7 +29,7 @@ youtube_videos:
 # Leverage Real USB Devices for USB Host DUT verification
 
 <figure class="rep-fig" markdown>
-![Figure 4. Device virtual solution connecting USB mass storage device and Device Transactor](../assets/figures/ref-20261018-5443.png){ loading=lazy }
+![Figure 4. Device virtual solution connecting USB mass storage device and Device Transactor](../assets/figures/ref-20261018-5443.png?v=1792306480){ loading=lazy }
 <figcaption>Figure 4. Device virtual solution connecting USB mass storage device and Device Transactor — from the original paper (Suchir Gupta et al.)</figcaption>
 </figure>
 

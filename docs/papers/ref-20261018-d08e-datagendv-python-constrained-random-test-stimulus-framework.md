@@ -29,7 +29,7 @@ youtube_videos:
 # DatagenDV: Python Constrained Random Test Stimulus Framework
 
 <figure class="rep-fig" markdown>
-![Fig. 1. DatagenDV data flow.](../assets/figures/ref-20261018-d08e.png){ loading=lazy }
+![Fig. 1. DatagenDV data flow.](../assets/figures/ref-20261018-d08e.png?v=1792309669){ loading=lazy }
 <figcaption>Fig. 1. DatagenDV data flow. — from the original paper (Jonathan George et al.)</figcaption>
 </figure>
 

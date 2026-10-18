@@ -29,7 +29,7 @@ youtube_videos:
 # Enhancing SDC Verification in SoCs: Heatmap Visualization and Machine Learning Approaches for Optimal Coverage Closure
 
 <figure class="rep-fig" markdown>
-![Figure 6. SDC coverage closure flow with optimized test suite finding.](../assets/figures/ref-20261018-c3f8.png){ loading=lazy }
+![Figure 6. SDC coverage closure flow with optimized test suite finding.](../assets/figures/ref-20261018-c3f8.png?v=1792306448){ loading=lazy }
 <figcaption>Figure 6. SDC coverage closure flow with optimized test suite finding. — from the original paper (Seungkyu Baek et al.)</figcaption>
 </figure>
 

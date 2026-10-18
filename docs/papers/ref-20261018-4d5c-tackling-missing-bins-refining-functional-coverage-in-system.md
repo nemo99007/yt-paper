@@ -29,7 +29,7 @@ youtube_videos:
 # Tackling Missing Bins: Refining Functional Coverage in SystemVerilog for Deterministic Coverage Closure
 
 <figure class="rep-fig" markdown>
-![Figure 2. Process of Refining Coverage](../assets/figures/ref-20261018-4d5c.png){ loading=lazy }
+![Figure 2. Process of Refining Coverage](../assets/figures/ref-20261018-4d5c.png?v=1792309265){ loading=lazy }
 <figcaption>Figure 2. Process of Refining Coverage — from the original paper (Jikjoo Lee et al.)</figcaption>
 </figure>
 

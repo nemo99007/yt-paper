@@ -29,7 +29,7 @@ youtube_videos:
 # Reaching 100% Functional Coverage Using Machine Learning: A Journey of Persistent Efforts
 
 <figure class="rep-fig" markdown>
-![Figure 4 (a) simply shows the overall workflow of the suggested approach and the inputs used in each step. In this paper, the Verisium Manager, hereafter vManager, was used to run regression tests, and the Integrated Metrics Center, hereafter IMC, was used to merge coverage results and generate a report.](../assets/figures/ref-20261018-2c1c.png){ loading=lazy }
+![Figure 4 (a) simply shows the overall workflow of the suggested approach and the inputs used in each step. In this paper, the Verisium Manager, hereafter vManager, was used to run regression tests, and the Integrated Metrics Center, hereafter IMC, was used to merge coverage results and generate a report.](../assets/figures/ref-20261018-2c1c.png?v=1792306019){ loading=lazy }
 <figcaption>Figure 4 (a) simply shows the overall workflow of the suggested approach and the inputs used in each step. In this paper, the Verisium Manager, hereafter vManager, was used to run regression tests, and the Integrated Metrics Center, hereafter IMC, was used to merge coverage results and generate a report. — from the original paper (Jaecheon Kim et al.)</figcaption>
 </figure>
 

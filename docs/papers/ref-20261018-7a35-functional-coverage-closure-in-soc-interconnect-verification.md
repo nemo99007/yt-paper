@@ -29,7 +29,7 @@ youtube_videos:
 # Functional Coverage Closure in SoC Interconnect Verification with Iterative Machine Learning
 
 <figure class="rep-fig" markdown>
-![Figure 2 presents a high-level overview of the proposed iterative flow. Initially, the design verification team develops a regression and produces a target specification. The regression mainly consists of a number of constrained random tests and their random seed counts. The target specification contains a list of target scenarios. For SoC](../assets/figures/ref-20261018-7a35.png){ loading=lazy }
+![Figure 2 presents a high-level overview of the proposed iterative flow. Initially, the design verification team develops a regression and produces a target specification. The regression mainly consists of a number of constrained random tests and their random seed counts. The target specification contains a list of target scenarios. For SoC](../assets/figures/ref-20261018-7a35.png?v=1792306714){ loading=lazy }
 <figcaption>Figure 2 presents a high-level overview of the proposed iterative flow. Initially, the design verification team develops a regression and produces a target specification. The regression mainly consists of a number of constrained random tests and their random seed counts. The target specification contains a list of target scenarios. For SoC — from the original paper (Jihye Kwon et al.)</figcaption>
 </figure>
 

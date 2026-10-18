@@ -29,7 +29,7 @@ youtube_videos:
 # A Novel Framework to Accelerate System Validation on Emulation
 
 <figure class="rep-fig" markdown>
-![Figure 3: A Novel Framework to Accelerate System Validation on Emulation](../assets/figures/ref-20261018-ba2c.png){ loading=lazy }
+![Figure 3: A Novel Framework to Accelerate System Validation on Emulation](../assets/figures/ref-20261018-ba2c.png?v=1792310091){ loading=lazy }
 <figcaption>Figure 3: A Novel Framework to Accelerate System Validation on Emulation — from the original paper (Manoj Sharma Khandelwal et al.)</figcaption>
 </figure>
 

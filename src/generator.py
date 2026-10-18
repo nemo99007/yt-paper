@@ -244,7 +244,7 @@ def render_resource(db: Database, res: Resource) -> str:
     parts = [_frontmatter(meta), GENERATED_MARK, " › ".join(crumbs) + "\n", f"# {res.title}\n"]
     if res.figure_path and (config.DOCS_DIR / res.figure_path).exists():
         cap = _cell(res.figure_caption or "Representative figure")
-        parts.append(f'<figure class="rep-fig" markdown>\n![{cap}](../{res.figure_path}){{ loading=lazy }}\n'
+        parts.append(f'<figure class="rep-fig" markdown>\n![{cap}](../{res.figure_path}?v={int((config.DOCS_DIR / res.figure_path).stat().st_mtime)}){{ loading=lazy }}\n'
                      f"<figcaption>{cap} — from the original paper"
                      f"{' (' + _cell(res.authors.split(',')[0].split('(')[0].strip()) + ' et al.)' if res.authors else ''}"
                      "</figcaption>\n</figure>\n")

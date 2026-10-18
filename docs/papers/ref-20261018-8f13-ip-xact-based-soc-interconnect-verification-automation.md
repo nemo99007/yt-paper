@@ -29,7 +29,7 @@ youtube_videos:
 # IP-XACT based SoC Interconnect Verification Automation
 
 <figure class="rep-fig" markdown>
-![Figure 10. Working flow and GUI of IP-XACT based interconnect verification environment generation](../assets/figures/ref-20261018-8f13.png){ loading=lazy }
+![Figure 10. Working flow and GUI of IP-XACT based interconnect verification environment generation](../assets/figures/ref-20261018-8f13.png?v=1792311181){ loading=lazy }
 <figcaption>Figure 10. Working flow and GUI of IP-XACT based interconnect verification environment generation — from the original paper (YoungRae Cho et al.)</figcaption>
 </figure>
 

@@ -29,7 +29,7 @@ youtube_videos:
 # Innovative 4-State Logic Emulation for Power-aware Verification
 
 <figure class="rep-fig" markdown>
-![Figure 2. X Propagation](../assets/figures/ref-20261018-1917.png){ loading=lazy }
+![Figure 2. X Propagation](../assets/figures/ref-20261018-1917.png?v=1792310584){ loading=lazy }
 <figcaption>Figure 2. X Propagation — from the original paper (Kyoungmin Park et al.)</figcaption>
 </figure>
 

@@ -29,7 +29,7 @@ youtube_videos:
 # Using PSS-2.0 Hardware-Software Interface to validate 4G/5G Forward Error Correction Encoder/Decoder IP in Emulation & Silicon
 
 <figure class="rep-fig" markdown>
-![Figure 2: PSS HSI based development flow](../assets/figures/ref-20261018-e10a.png){ loading=lazy }
+![Figure 2: PSS HSI based development flow](../assets/figures/ref-20261018-e10a.png?v=1792310716){ loading=lazy }
 <figcaption>Figure 2: PSS HSI based development flow — from the original paper (Vinit Shenoy et al.)</figcaption>
 </figure>
 

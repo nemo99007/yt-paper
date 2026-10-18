@@ -29,7 +29,7 @@ youtube_videos:
 # Future Proofing Power Intent Specification through Unified Power Format (UPF) 4.0 for Evolving Advanced State Retention Strategies
 
 <figure class="rep-fig" markdown>
-![Figure 6. Single-Control Retention: Clock Behaviour [4]](../assets/figures/ref-20261018-e797.png){ loading=lazy }
+![Figure 6. Single-Control Retention: Clock Behaviour [4]](../assets/figures/ref-20261018-e797.png?v=1792305850){ loading=lazy }
 <figcaption>Figure 6. Single-Control Retention: Clock Behaviour [4] — from the original paper (Lakshmanan Balasubramanian et al.)</figcaption>
 </figure>
 

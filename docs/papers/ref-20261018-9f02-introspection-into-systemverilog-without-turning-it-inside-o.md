@@ -29,7 +29,7 @@ youtube_videos:
 # INTROSPECTION INTO SYSTEMVERILOG WITHOUT TURNING IT INSIDE OUT.
 
 <figure class="rep-fig" markdown>
-![Figure 8 VPI application using DPI](../assets/figures/ref-20261018-9f02.png){ loading=lazy }
+![Figure 8 VPI application using DPI](../assets/figures/ref-20261018-9f02.png?v=1792306191){ loading=lazy }
 <figcaption>Figure 8 VPI application using DPI — from the original paper (Dave Rich et al.)</figcaption>
 </figure>
 

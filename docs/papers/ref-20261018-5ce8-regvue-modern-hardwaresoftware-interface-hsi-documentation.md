@@ -29,7 +29,7 @@ youtube_videos:
 # Regvue Modern Hardware/Software Interface (HSI) Documentation
 
 <figure class="rep-fig" markdown>
-![Figure 9. A working prototype of Regvue Desktop](../assets/figures/ref-20261018-5ce8.png){ loading=lazy }
+![Figure 9. A working prototype of Regvue Desktop](../assets/figures/ref-20261018-5ce8.png?v=1792309083){ loading=lazy }
 <figcaption>Figure 9. A working prototype of Regvue Desktop — from the original paper (Rob Donnelly et al.)</figcaption>
 </figure>
 

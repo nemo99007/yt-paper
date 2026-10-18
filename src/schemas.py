@@ -40,7 +40,9 @@ class LLMExtractionResult(BaseModel):
     )
     representative_figure: int | None = Field(
         description="Number N of the figure (from the provided 'Figure N' caption list) that best represents "
-                    "the paper's architecture or method; null if no caption list is given"
+                    "the paper's architecture or method. Prefer a block diagram, architecture, flow or key-result "
+                    "chart; avoid code listings, tables, screenshots and waveforms unless nothing else exists. "
+                    "Null if no caption list is given"
     )
 
 

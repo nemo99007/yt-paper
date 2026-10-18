@@ -29,7 +29,7 @@ youtube_videos:
 # Synthetic Traffic based SOC Performance Verification Methodology
 
 <figure class="rep-fig" markdown>
-![Figure 1. Performance Verification Flow](../assets/figures/ref-20261018-c74a.png){ loading=lazy }
+![Figure 1. Performance Verification Flow](../assets/figures/ref-20261018-c74a.png?v=1792309470){ loading=lazy }
 <figcaption>Figure 1. Performance Verification Flow — from the original paper (Jeonggu Lee et al.)</figcaption>
 </figure>
 

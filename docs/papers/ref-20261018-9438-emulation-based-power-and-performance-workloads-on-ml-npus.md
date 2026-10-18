@@ -29,7 +29,7 @@ youtube_videos:
 # Emulation based Power and Performance Workloads on ML NPUs
 
 <figure class="rep-fig" markdown>
-![Figure 1. Co-Emulation](../assets/figures/ref-20261018-9438.png){ loading=lazy }
+![Figure 1. Co-Emulation](../assets/figures/ref-20261018-9438.png?v=1792310616){ loading=lazy }
 <figcaption>Figure 1. Co-Emulation — from the original paper (Pragati Mishra et al.)</figcaption>
 </figure>
 

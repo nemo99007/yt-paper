@@ -15,7 +15,8 @@ import pymupdf
 
 log = logging.getLogger(__name__)
 
-CAPTION_RE = re.compile(r"^\s*(?:Figure|Fig\.?)\s*(\d+)\s*[.:\-–—]?\s*(.*)", re.I | re.S)
+# a caption needs a separator after the number; "Fig. 1 shows ..." is a body-text reference
+CAPTION_RE = re.compile(r"^\s*(?:Figure|Fig\.?)\s*(\d+)\s*[.:\-–—]\s*(.*)", re.I | re.S)
 MIN_HEIGHT = 50.0   # pt; smaller regions are probably not a figure
 ZOOM = 2.0
 

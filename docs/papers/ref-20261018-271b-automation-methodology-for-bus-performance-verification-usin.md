@@ -29,7 +29,7 @@ youtube_videos:
 # Automation Methodology for Bus Performance Verification using IP-XACT
 
 <figure class="rep-fig" markdown>
-![Figure 6. Input and output diagram of proposing methodology](../assets/figures/ref-20261018-271b.png){ loading=lazy }
+![Figure 6. Input and output diagram of proposing methodology](../assets/figures/ref-20261018-271b.png?v=1792309630){ loading=lazy }
 <figcaption>Figure 6. Input and output diagram of proposing methodology — from the original paper (Taeyoung Jeon et al.)</figcaption>
 </figure>
 

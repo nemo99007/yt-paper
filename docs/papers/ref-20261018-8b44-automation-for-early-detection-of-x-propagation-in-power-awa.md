@@ -29,7 +29,7 @@ youtube_videos:
 # Automation for Early Detection of X-propagation in Power-Aware Simulation Verification using UPF IEEE 1801
 
 <figure class="rep-fig" markdown>
-![Figure 5. Automated generation checkers with assertions in Python](../assets/figures/ref-20261018-8b44.png){ loading=lazy }
+![Figure 5. Automated generation checkers with assertions in Python](../assets/figures/ref-20261018-8b44.png?v=1792311114){ loading=lazy }
 <figcaption>Figure 5. Automated generation checkers with assertions in Python — from the original paper (Tony Gladvin George et al.)</figcaption>
 </figure>
 

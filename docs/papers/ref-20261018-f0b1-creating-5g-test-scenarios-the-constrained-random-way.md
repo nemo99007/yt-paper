@@ -29,7 +29,7 @@ youtube_videos:
 # Creating 5G Test Scenarios, the Constrained-Random way
 
 <figure class="rep-fig" markdown>
-![Fig. 4: Flow chart indicating one of the possible ways a sequence can generate a scenario.](../assets/figures/ref-20261018-f0b1.png){ loading=lazy }
+![Fig. 4: Flow chart indicating one of the possible ways a sequence can generate a scenario.](../assets/figures/ref-20261018-f0b1.png?v=1792309133){ loading=lazy }
 <figcaption>Fig. 4: Flow chart indicating one of the possible ways a sequence can generate a scenario. — from the original paper (Keshav Kannan et al.)</figcaption>
 </figure>
 

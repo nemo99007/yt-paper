@@ -29,7 +29,7 @@ youtube_videos:
 # Strategies to Maximize Reusability of UVM Test Scenarios in SoC Verification
 
 <figure class="rep-fig" markdown>
-![Figure 1. A three-level inheritance code structure to maximize code reusability](../assets/figures/ref-20261018-912a.png){ loading=lazy }
+![Figure 1. A three-level inheritance code structure to maximize code reusability](../assets/figures/ref-20261018-912a.png?v=1792309501){ loading=lazy }
 <figcaption>Figure 1. A three-level inheritance code structure to maximize code reusability — from the original paper (Hyeonman Park et al.)</figcaption>
 </figure>
 

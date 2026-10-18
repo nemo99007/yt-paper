@@ -29,7 +29,7 @@ youtube_videos:
 # Complexities & Challenges of UPF Corruption Model in Low Power Emulation
 
 <figure class="rep-fig" markdown>
-![Figure 2 UPF enabled emulation verification flow](../assets/figures/ref-20261018-fbca.png){ loading=lazy }
+![Figure 2 UPF enabled emulation verification flow](../assets/figures/ref-20261018-fbca.png?v=1792310553){ loading=lazy }
 <figcaption>Figure 2 UPF enabled emulation verification flow — from the original paper (Progyna Khondkar et al.)</figcaption>
 </figure>
 

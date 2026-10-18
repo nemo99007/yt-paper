@@ -29,7 +29,7 @@ youtube_videos:
 # Functional Safety Workflow of Internal IP (NPU) Within Large Automotive IC Through Analysis and Emulation Usage for SW-based Safety Mechanisms
 
 <figure class="rep-fig" markdown>
-![Figure 2. Fault campaign using an emulation flow.](../assets/figures/ref-20261018-fef8.png){ loading=lazy }
+![Figure 2. Fault campaign using an emulation flow.](../assets/figures/ref-20261018-fef8.png?v=1792308991){ loading=lazy }
 <figcaption>Figure 2. Fault campaign using an emulation flow. — from the original paper (Andrey Likhopoy et al.)</figcaption>
 </figure>
 

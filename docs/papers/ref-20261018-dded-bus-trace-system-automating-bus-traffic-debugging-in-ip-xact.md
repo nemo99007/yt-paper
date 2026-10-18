@@ -29,7 +29,7 @@ youtube_videos:
 # Bus Trace System: Automating Bus Traffic Debugging in IP-XACT Based SoC Beyond Traditional Debugging Methods
 
 <figure class="rep-fig" markdown>
-![Figure 1. BTS overview](../assets/figures/ref-20261018-dded.png){ loading=lazy }
+![Figure 1. BTS overview](../assets/figures/ref-20261018-dded.png?v=1792310347){ loading=lazy }
 <figcaption>Figure 1. BTS overview — from the original paper (Wonyeong So et al.)</figcaption>
 </figure>
 

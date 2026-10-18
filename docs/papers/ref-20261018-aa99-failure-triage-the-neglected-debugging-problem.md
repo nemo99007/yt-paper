@@ -29,7 +29,7 @@ youtube_videos:
 # Failure Triage: The Neglected Debugging Problem
 
 <figure class="rep-fig" markdown>
-![Figure 3: Failure Triage Flow](../assets/figures/ref-20261018-aa99.png){ loading=lazy }
+![Figure 3: Failure Triage Flow](../assets/figures/ref-20261018-aa99.png?v=1792311743){ loading=lazy }
 <figcaption>Figure 3: Failure Triage Flow — from the original paper (Sean Safarpour et al.)</figcaption>
 </figure>
 

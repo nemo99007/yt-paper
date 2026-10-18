@@ -29,7 +29,7 @@ youtube_videos:
 # Towards Automated Verification IP Instantiation via LLMs
 
 <figure class="rep-fig" markdown>
-![Fig. 3- Proposed LLM-based framework for code generation for VIP instantiation](../assets/figures/ref-20261018-ccb0.png){ loading=lazy }
+![Fig. 3- Proposed LLM-based framework for code generation for VIP instantiation](../assets/figures/ref-20261018-ccb0.png?v=1792306932){ loading=lazy }
 <figcaption>Fig. 3- Proposed LLM-based framework for code generation for VIP instantiation — from the original paper (Ghaith Bany Hamad et al.)</figcaption>
 </figure>
 

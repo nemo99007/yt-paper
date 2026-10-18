@@ -29,7 +29,7 @@ youtube_videos:
 # EMULATION BASED FULL CHIP LEVEL LOW POWER VALIDATION AT PRE-SILICON STAGE
 
 <figure class="rep-fig" markdown>
-![Figure 2 Power feature validation flow at the pre-silicon stage](../assets/figures/ref-20261018-466a.png){ loading=lazy }
+![Figure 2 Power feature validation flow at the pre-silicon stage](../assets/figures/ref-20261018-466a.png?v=1792311366){ loading=lazy }
 <figcaption>Figure 2 Power feature validation flow at the pre-silicon stage — from the original paper (Kyoungmin Park et al.)</figcaption>
 </figure>
 

@@ -29,7 +29,7 @@ youtube_videos:
 # Complex Safety Mechanisms Require Interoperability and Automation For Validation And Metric Closure
 
 <figure class="rep-fig" markdown>
-![Figure 2: Three step workflow for efficient fault injection](../assets/figures/ref-20261018-a877.png){ loading=lazy }
+![Figure 2: Three step workflow for efficient fault injection](../assets/figures/ref-20261018-a877.png?v=1792309698){ loading=lazy }
 <figcaption>Figure 2: Three step workflow for efficient fault injection — from the original paper (Daeseo Cha et al.)</figcaption>
 </figure>
 

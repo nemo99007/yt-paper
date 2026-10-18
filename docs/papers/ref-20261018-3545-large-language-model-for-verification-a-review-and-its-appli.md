@@ -29,7 +29,7 @@ youtube_videos:
 # Large Language Model for Verification: A Review and Its Application in Data Augmentation
 
 <figure class="rep-fig" markdown>
-![Figure 1 LLM Mutation-Based-Testing Framework](../assets/figures/ref-20261018-3545.png){ loading=lazy }
+![Figure 1 LLM Mutation-Based-Testing Framework](../assets/figures/ref-20261018-3545.png?v=1792309434){ loading=lazy }
 <figcaption>Figure 1 LLM Mutation-Based-Testing Framework — from the original paper (Dan Yu et al.)</figcaption>
 </figure>
 

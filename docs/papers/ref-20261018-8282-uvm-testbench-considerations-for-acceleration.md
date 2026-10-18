@@ -29,7 +29,7 @@ youtube_videos:
 # UVM Testbench Considerations for Acceleration
 
 <figure class="rep-fig" markdown>
-![Fig. 1. Relative Runtimes for Simulation and Acceleration](../assets/figures/ref-20261018-8282.png){ loading=lazy }
+![Fig. 1. Relative Runtimes for Simulation and Acceleration](../assets/figures/ref-20261018-8282.png?v=1792310812){ loading=lazy }
 <figcaption>Fig. 1. Relative Runtimes for Simulation and Acceleration — from the original paper (Kathleen A Meade et al.)</figcaption>
 </figure>
 

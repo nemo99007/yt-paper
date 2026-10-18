@@ -29,7 +29,7 @@ youtube_videos:
 # Guiding Functional Verification Regression Analysis Using Machine Learning and Big Data Methods
 
 <figure class="rep-fig" markdown>
-![Figure 1. ML Based Regression Testing Bug Detection Proposed Framework](../assets/figures/ref-20261018-ade1.png){ loading=lazy }
+![Figure 1. ML Based Regression Testing Bug Detection Proposed Framework](../assets/figures/ref-20261018-ade1.png?v=1792311687){ loading=lazy }
 <figcaption>Figure 1. ML Based Regression Testing Bug Detection Proposed Framework — from the original paper (Eman El Mandouh et al.)</figcaption>
 </figure>
 

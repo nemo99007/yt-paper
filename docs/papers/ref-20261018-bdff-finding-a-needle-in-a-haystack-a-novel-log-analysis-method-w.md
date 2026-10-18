@@ -29,7 +29,7 @@ youtube_videos:
 # Finding a Needle in a Haystack: A Novel Log Analysis Method with Test Clustering in Distributed Systems
 
 <figure class="rep-fig" markdown>
-![Figure 1. Flow of the Proposed Algorithm.](../assets/figures/ref-20261018-bdff.png){ loading=lazy }
+![Figure 1. Flow of the Proposed Algorithm.](../assets/figures/ref-20261018-bdff.png?v=1792311782){ loading=lazy }
 <figcaption>Figure 1. Flow of the Proposed Algorithm. — from the original paper (Jin Choi et al.)</figcaption>
 </figure>
 

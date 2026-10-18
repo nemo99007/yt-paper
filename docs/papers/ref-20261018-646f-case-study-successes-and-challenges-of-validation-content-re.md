@@ -29,7 +29,7 @@ youtube_videos:
 # Case Study: Successes and Challenges of Validation Content Reuse
 
 <figure class="rep-fig" markdown>
-![Figure 1. IP Validation software stack](../assets/figures/ref-20261018-646f.png){ loading=lazy }
+![Figure 1. IP Validation software stack](../assets/figures/ref-20261018-646f.png?v=1792306556){ loading=lazy }
 <figcaption>Figure 1. IP Validation software stack — from the original paper (Mike Chin et al.)</figcaption>
 </figure>
 

@@ -29,7 +29,7 @@ youtube_videos:
 # Technical Documents Version Management System Based on Large Language Models
 
 <figure class="rep-fig" markdown>
-![Figure 2. Block diagram of the document version management system.](../assets/figures/ref-20261018-2740.png){ loading=lazy }
+![Figure 2. Block diagram of the document version management system.](../assets/figures/ref-20261018-2740.png?v=1792306400){ loading=lazy }
 <figcaption>Figure 2. Block diagram of the document version management system. — from the original paper (S. S. Zalivaka et al.)</figcaption>
 </figure>
 

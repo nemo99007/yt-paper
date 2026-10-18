@@ -29,7 +29,7 @@ youtube_videos:
 # Accelerated Verification of NAND Flash Memory using HW Emulator
 
 <figure class="rep-fig" markdown>
-![Figure 8. Emulator Test Environment](../assets/figures/ref-20261018-cf3b.png){ loading=lazy }
+![Figure 8. Emulator Test Environment](../assets/figures/ref-20261018-cf3b.png?v=1792309836){ loading=lazy }
 <figcaption>Figure 8. Emulator Test Environment — from the original paper (Seyeol Yang et al.)</figcaption>
 </figure>
 

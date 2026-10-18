@@ -29,7 +29,7 @@ youtube_videos:
 # Accelerating Pre-Silicon Verification Coverage with Transaction Sequence Modeling
 
 <figure class="rep-fig" markdown>
-![Figure 3. State transitions of a Lock DUT. State s3 is the Unlock state.](../assets/figures/ref-20261018-133d.png){ loading=lazy }
+![Figure 3. State transitions of a Lock DUT. State s3 is the Unlock state.](../assets/figures/ref-20261018-133d.png?v=1792306519){ loading=lazy }
 <figcaption>Figure 3. State transitions of a Lock DUT. State s3 is the Unlock state. — from the original paper (Jayanth Raman et al.)</figcaption>
 </figure>
 

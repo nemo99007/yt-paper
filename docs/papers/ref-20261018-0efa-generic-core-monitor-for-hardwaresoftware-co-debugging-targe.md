@@ -29,7 +29,7 @@ youtube_videos:
 # Generic Core-Monitor for Hardware/Software Co-Debugging targeting Emulation Platform
 
 <figure class="rep-fig" markdown>
-![Fig 2: CPU-Independent iVC Interface](../assets/figures/ref-20261018-0efa.png){ loading=lazy }
+![Fig 2: CPU-Independent iVC Interface](../assets/figures/ref-20261018-0efa.png?v=1792309963){ loading=lazy }
 <figcaption>Fig 2: CPU-Independent iVC Interface — from the original paper (Shreya Morgansgate et al.)</figcaption>
 </figure>
 

@@ -29,7 +29,7 @@ youtube_videos:
 # High-Speed Interface IP Validation based on Virtual Emulation Platform
 
 <figure class="rep-fig" markdown>
-![Figure 4. Proposed Work: Virtual Emulation Platform](../assets/figures/ref-20261018-2072.png){ loading=lazy }
+![Figure 4. Proposed Work: Virtual Emulation Platform](../assets/figures/ref-20261018-2072.png?v=1792311219){ loading=lazy }
 <figcaption>Figure 4. Proposed Work: Virtual Emulation Platform — from the original paper (Jaehun Lee et al.)</figcaption>
 </figure>
 

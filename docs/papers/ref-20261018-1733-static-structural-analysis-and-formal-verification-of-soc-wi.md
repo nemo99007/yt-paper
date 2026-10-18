@@ -29,7 +29,7 @@ youtube_videos:
 # Static Structural Analysis and Formal Verification of SoC with Software Safety Mechanisms for Functional Safety
 
 <figure class="rep-fig" markdown>
-![Figure 5. Configuration and the operation flow of formal verification, with Questa® Equivalent RTL](../assets/figures/ref-20261018-1733.png){ loading=lazy }
+![Figure 5. Configuration and the operation flow of formal verification, with Questa® Equivalent RTL](../assets/figures/ref-20261018-1733.png?v=1792306677){ loading=lazy }
 <figcaption>Figure 5. Configuration and the operation flow of formal verification, with Questa® Equivalent RTL — from the original paper (Hyunsun Ahn et al.)</figcaption>
 </figure>
 

@@ -29,7 +29,7 @@ youtube_videos:
 # Automated RTL Update for Abutted Design
 
 <figure class="rep-fig" markdown>
-![Fig. 7. RTL Update Automation Flow](../assets/figures/ref-20261018-2fe4.png){ loading=lazy }
+![Fig. 7. RTL Update Automation Flow](../assets/figures/ref-20261018-2fe4.png?v=1792311247){ loading=lazy }
 <figcaption>Fig. 7. RTL Update Automation Flow — from the original paper (Wonkyung Lee et al.)</figcaption>
 </figure>
 

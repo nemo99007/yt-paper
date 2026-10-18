@@ -29,7 +29,7 @@ youtube_videos:
 # Early Detection of Functional Corner Case Bugs using Methodologies of the ISO 26262
 
 <figure class="rep-fig" markdown>
-![Figure 9. Verification with ML based PSS action sequence model](../assets/figures/ref-20261018-d1ce.png){ loading=lazy }
+![Figure 9. Verification with ML based PSS action sequence model](../assets/figures/ref-20261018-d1ce.png?v=1792310917){ loading=lazy }
 <figcaption>Figure 9. Verification with ML based PSS action sequence model — from the original paper (Moonki Jang et al.)</figcaption>
 </figure>
 

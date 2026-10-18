@@ -29,7 +29,7 @@ youtube_videos:
 # A Metric-driven Methodology For Firmware Verification In Simulation/Emulation Environments
 
 <figure class="rep-fig" markdown>
-![Figure 3 – Monitor interface and points of connection Data flow from these tracked points to the monitors and their temporary storage (the address array) are marked](../assets/figures/ref-20261018-9cff.png){ loading=lazy }
+![Figure 3 – Monitor interface and points of connection Data flow from these tracked points to the monitors and their temporary storage (the address array) are marked](../assets/figures/ref-20261018-9cff.png?v=1792310315){ loading=lazy }
 <figcaption>Figure 3 – Monitor interface and points of connection Data flow from these tracked points to the monitors and their temporary storage (the address array) are marked — from the original paper (Goran SAVIĆ et al.)</figcaption>
 </figure>
 

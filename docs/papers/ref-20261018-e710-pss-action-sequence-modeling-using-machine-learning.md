@@ -29,7 +29,7 @@ youtube_videos:
 # PSS action sequence modeling using Machine Learning
 
 <figure class="rep-fig" markdown>
-![Figure 2. Structure of PSS action sequence model A. PSS scenario generation](../assets/figures/ref-20261018-e710.png){ loading=lazy }
+![Figure 2. Structure of PSS action sequence model A. PSS scenario generation](../assets/figures/ref-20261018-e710.png?v=1792311820){ loading=lazy }
 <figcaption>Figure 2. Structure of PSS action sequence model A. PSS scenario generation — from the original paper (Moonki Jang et al.)</figcaption>
 </figure>
 

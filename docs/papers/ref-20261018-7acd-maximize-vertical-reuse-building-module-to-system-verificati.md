@@ -29,7 +29,7 @@ youtube_videos:
 # Maximize Vertical Reuse, Building Module to System Verification Environments with UVM e
 
 <figure class="rep-fig" markdown>
-![Figure 3. Common testflow example](../assets/figures/ref-20261018-7acd.png){ loading=lazy }
+![Figure 3. Common testflow example](../assets/figures/ref-20261018-7acd.png?v=1792310151){ loading=lazy }
 <figcaption>Figure 3. Common testflow example — from the original paper (Horace Chan et al.)</figcaption>
 </figure>
 

@@ -29,7 +29,7 @@ youtube_videos:
 # Are My Fault Campaigns Providing Accurate Results for ISO 26262 Certification?
 
 <figure class="rep-fig" markdown>
-![Figure 5. Fault campaign methodology Active Safety Mechanism](../assets/figures/ref-20261018-2473.png){ loading=lazy }
+![Figure 5. Fault campaign methodology Active Safety Mechanism](../assets/figures/ref-20261018-2473.png?v=1792310383){ loading=lazy }
 <figcaption>Figure 5. Fault campaign methodology Active Safety Mechanism — from the original paper (Hyunsun Ahn et al.)</figcaption>
 </figure>
 

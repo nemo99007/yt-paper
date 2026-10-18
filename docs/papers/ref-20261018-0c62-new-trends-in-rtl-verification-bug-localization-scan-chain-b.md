@@ -29,7 +29,7 @@ youtube_videos:
 # New Trends in RTL Verification: Bug Localization, Scan-Chain-Based Methodology, GA-Based Test Generation
 
 <figure class="rep-fig" markdown>
-![Fig. 1 The proposed methodology for automated bug localization.](../assets/figures/ref-20261018-0c62.png){ loading=lazy }
+![Fig. 1 The proposed methodology for automated bug localization.](../assets/figures/ref-20261018-0c62.png?v=1792311664){ loading=lazy }
 <figcaption>Fig. 1 The proposed methodology for automated bug localization. — from the original paper (Khaled Salah et al.)</figcaption>
 </figure>
 

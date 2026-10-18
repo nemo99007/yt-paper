@@ -29,7 +29,7 @@ youtube_videos:
 # Refinable Macros and Terminal Boundaries in UPF 4.0: Empowering Soft IPs of the Future
 
 <figure class="rep-fig" markdown>
-![Figure 3 illustrates the use of Refinable Macros in a bottom-up verification flow.](../assets/figures/ref-20261018-3f9c.png){ loading=lazy }
+![Figure 3 illustrates the use of Refinable Macros in a bottom-up verification flow.](../assets/figures/ref-20261018-3f9c.png?v=1792305886){ loading=lazy }
 <figcaption>Figure 3 illustrates the use of Refinable Macros in a bottom-up verification flow. — from the original paper (Amit Srivastava et al.)</figcaption>
 </figure>
 

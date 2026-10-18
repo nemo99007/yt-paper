@@ -29,7 +29,7 @@ youtube_videos:
 # Simulated Emulation: Enabling Multiple Iterations in a Day During Early-Stage Emulation Bring-up
 
 <figure class="rep-fig" markdown>
-![Fig 3: SEM compile flow: No use-model change for the user](../assets/figures/ref-20261018-3821.png){ loading=lazy }
+![Fig 3: SEM compile flow: No use-model change for the user](../assets/figures/ref-20261018-3821.png?v=1792305733){ loading=lazy }
 <figcaption>Fig 3: SEM compile flow: No use-model change for the user — from the original paper (Shalini Maheshwari et al.)</figcaption>
 </figure>
 
