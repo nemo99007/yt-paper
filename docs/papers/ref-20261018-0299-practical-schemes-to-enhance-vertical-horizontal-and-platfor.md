@@ -7,14 +7,14 @@ region: US
 year: 2017
 category: Verification
 tags:
-- AMBA
 - UVM
+- AMBA VIP
 - Reusability
 - HAL
-- VIP
+- SoC Verification
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/practical-schemes-to-enhance-vertical-horizontal-and-platform-reusability-of-verification-components-in-amba-based-soc-design.pdf
-authors: Ieryung Park (SK Hynix), Nara Cho (SK Hynix), Yonghee Im (SK Hynix); SK Hynix, SoC IP&DV, Bundang, Sungnam, Korea
+authors: Ieryung Park (SK Hynix), Nara Cho (SK Hynix), Yonghee Im (SK Hynix)
 youtube_videos:
 - video_id: kdJTvnCGU0Q
   url: https://www.youtube.com/watch?v=kdJTvnCGU0Q
@@ -29,15 +29,15 @@ youtube_videos:
 # PRACTICAL SCHEMES TO ENHANCE VERTICAL, HORIZONTAL AND PLATFORM REUSABILITY OF VERIFICATION COMPONENTS IN AMBA BASED SOC DESIGN
 
 <figure class="rep-fig" markdown>
-![Figure 2 shows the overall architecture of AMBA Unified Verification System (AUVS), composed of AUVS TPI sequence, AUVS environment, and AUVS harness. AUVS can be considered a pre-built UVM based verification platform which provides users with a reusable AMBA transaction generation mechanism. Three major components](../assets/figures/ref-20261018-0299.png?v=1792310257){ loading=lazy }
-<figcaption>Figure 2 shows the overall architecture of AMBA Unified Verification System (AUVS), composed of AUVS TPI sequence, AUVS environment, and AUVS harness. AUVS can be considered a pre-built UVM based verification platform which provides users with a reusable AMBA transaction generation mechanism. Three major components — from the original paper (Ieryung Park et al.)</figcaption>
+![Figure 2. AUVS architecture](../assets/figures/ref-20261018-0299.png?v=1792379353){ loading=lazy }
+<figcaption>Figure 2. AUVS architecture — from the original paper (Ieryung Park et al.)</figcaption>
 </figure>
 
 [:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/practical-schemes-to-enhance-vertical-horizontal-and-platform-reusability-of-verification-components-in-amba-based-soc-design.pdf){ .md-button .md-button--primary target=_blank }
 
 | | |
 |---|---|
-| Authors | Ieryung Park (SK Hynix), Nara Cho (SK Hynix), Yonghee Im (SK Hynix); SK Hynix, SoC IP&DV, Bundang, Sungnam, Korea |
+| Authors | Ieryung Park (SK Hynix), Nara Cho (SK Hynix), Yonghee Im (SK Hynix) |
 | Venue | DVCon US 2017 |
 | Topic | Verification |
 | Type | PAPER |
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Proposes AUVS, a pre-built UVM AMBA verification platform with a vendor-independent TPI sequence API to cut testbench build time and enable VIP platform reuse, and FLS, a HAL-based sequence layer whose bus operations are bound through callbacks so test sequences survive SFR protocol changes (vertical and horizontal reuse).**
+**The paper proposes AUVS, a pre-built UVM platform with per-protocol wrapper agents and a VIP-independent TPI sequence API, and FLS, a HAL-callback scheme that lets test sequences survive SFR bus protocol changes, to improve vertical, horizontal and platform reuse in AMBA-based SoC verification.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**AMBA 기반 SoC 검증에서 testbench 구축 시간을 줄이고 VIP를 바꿔도 시퀀스를 재사용할 수 있도록, 벤더 독립 TPI API를 갖춘 사전 구성 UVM 플랫폼 AUVS와 HAL 콜백으로 버스 동작을 연결하는 FLS를 제안한다. FLS를 통해 SFR 프로토콜이 바뀌어도 테스트 시퀀스를 유지할 수 있다(vertical, horizontal 재사용).**
+**AUVS는 프로토콜별 래퍼 에이전트와 VIP 독립 TPI 시퀀스 API로 testbench 구축과 VIP 종속성을 줄이고, FLS는 HAL 콜백으로 SFR 버스 프로토콜이 바뀌어도 테스트 시퀀스를 재사용하게 하여 AMBA 기반 SoC 검증 컴포넌트의 수직, 수평, 플랫폼 재사용성을 높이는 UVM 기법을 제안한다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- AUVS pre-instantiates AXI/AHB/APB agents from one environment: the VIP vendor is chosen by a compile-time `define (AUVS_USE_SVT_AXI, AUVS_USE_QVIP_AXI, or in-house default) and agent counts by AUVS_*_AGT_MAX, removing per-IP agent, config, and connection boilerplate (Problem 1). The paper does not quantify the resulting build-time saving.
+- Cited industry data attribute 22% of verification time to testbench build-up and 23% to test scenario coding (45% total preparation) versus 36% to debugging, which motivates reuse as the target.
 
 </div>
 <div class="bi-ko" markdown>
 
-- AUVS는 하나의 환경에서 AXI/AHB/APB agent를 미리 인스턴스화한다. VIP 벤더는 컴파일 시 `define(AUVS_USE_SVT_AXI, AUVS_USE_QVIP_AXI, 기본값 in-house)으로, agent 개수는 AUVS_*_AGT_MAX로 선택하여 IP별 agent, config, 연결 보일러플레이트를 없앤다(Problem 1). 논문은 build 시간 절감 효과를 수치로 제시하지 않는다.
+- 인용된 산업 데이터에 따르면 검증 시간의 22%가 testbench 구축, 23%가 테스트 시나리오 코딩에 쓰여 준비 작업이 45%로, 디버그 36%보다 많아 재사용이 핵심 목표로 제시된다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- auvs_tpi_sequence exposes agt_id-indexed axi_write/axi_read, ahb_*, and apb_* tasks, so test sequences inheriting TPI are claimed to run unchanged when the underlying VIP changes (Problem 2). Vendor-specific item creation and timing is hidden inside each TPI task.
+- AUVS selects the vendor AMBA VIP (SVT, QVIP or in-house) at compile time via `define, and an AUVS harness publishes all interfaces through uvm_config_db so the environment is instantiated with user configuration only.
 
 </div>
 <div class="bi-ko" markdown>
 
-- auvs_tpi_sequence는 agt_id로 지정하는 axi_write/axi_read, ahb_*, apb_* 태스크를 제공한다. TPI를 상속한 테스트 시퀀스는 기반 VIP가 바뀌어도 수정 없이 동작한다고 주장한다(Problem 2). 벤더별 아이템 생성과 타이밍은 각 TPI 태스크 내부에 숨겨져 있다.
+- AUVS는 컴파일 시점에 `define으로 VIP(SVT, QVIP 또는 in-house)를 선택하며, AUVS harness가 모든 interface를 uvm_config_db에 등록해 사용자 설정만으로 환경을 인스턴스화한다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- FLS HAL API tasks (e.g., ddrc_hal::init) use only write_driver/read_driver, which invoke virtual bus_write/bus_read via uvm_do_callback. Changing the SFR port from AHB to AXI means replacing only the callback tasks (Snippet 13), not the sequence, targeting vertical and horizontal reuse (Problem 3).
+- Test sequences written against AUVS TPI tasks (axi_write/read, ahb_*, apb_*, selected by agt_id) are claimed to run unchanged when the underlying VIP changes, addressing platform reuse.
 
 </div>
 <div class="bi-ko" markdown>
 
-- FLS HAL API 태스크(예: ddrc_hal::init)는 write_driver/read_driver만 사용하며, 이 태스크들은 uvm_do_callback을 통해 가상 태스크 bus_write/bus_read를 호출한다. SFR 포트를 AHB에서 AXI로 바꿀 때는 시퀀스가 아니라 콜백 태스크(Snippet 13)만 교체하면 된다. 이는 vertical 및 horizontal 재사용을 겨냥한다(Problem 3).
+- AUVS TPI 태스크(agt_id로 선택하는 axi_write/read, ahb_*, apb_*)에 맞춰 작성된 테스트 시퀀스는 VIP가 바뀌어도 수정 없이 동작한다고 주장되며, 이는 플랫폼 재사용성 문제를 다룬다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The motivating figures (22% testbench build-up, 23% test scenario coding, 36% debugging; 45% prep vs 36% verification) are cited from an external Mentor 2014 source [1], not measured by the authors. No speedup or project measurement is reported, so benefits must be validated in your own flow.
+- FLS writes sequences using only address/data driver tasks in a HAL; bus operations are bound through uvm_callback, so an AHB-to-AXI SFR port change needs only the callback bus tasks replaced.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 동기로 든 수치(testbench 구축 22%, 시나리오 코딩 23%, 디버그 36%, 준비 45% 대 검증 36%)는 외부 Mentor 2014 자료 [1]에서 인용한 것이며 저자가 측정한 값이 아니다. 속도 향상이나 프로젝트 측정 결과도 보고되지 않았으므로 자신의 flow에서 직접 검증해야 한다.
+- FLS는 주소와 데이터만 쓰는 드라이버 태스크로 HAL 시퀀스를 작성하고, 버스 동작은 uvm_callback으로 바인딩하므로 AHB에서 AXI로 SFR 포트가 바뀌면 콜백 버스 태스크만 교체하면 된다.
 
 </div>
 </div>
@@ -115,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Snippets are illustrative: QVIP and in-house AXI bodies are elided with '...', and Snippet 11's mr_read() calls write_driver() instead of read_driver(), which looks like a copy-paste error that should be checked before reuse.
+- The paper reports no quantitative results (no measured build-time or effort reduction); benefits are argued qualitatively, and examples cover only AHB and AXI with APB and QVIP bodies elided.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 스니펫은 예시 코드다. QVIP와 in-house AXI 본문은 '...'으로 생략되어 있으며, Snippet 11의 mr_read()는 read_driver() 대신 write_driver()를 호출한다. 복사-붙여넣기 오류로 보이므로 재사용 전에 확인해야 한다.
+- 논문은 정량적 결과(구축 시간이나 공수 감소 측정치)를 제시하지 않으며 효과는 정성적으로 주장된다. 예시는 AHB와 AXI에 한정되고 APB와 QVIP 본문은 생략되어 있다.
 
 </div>
 </div>
@@ -132,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The authors cite a 2014 Mentor study [1]: 22% of verification time goes to testbench build-up, 23% to test scenario coding, and 36% to debugging. Preparation (45%) therefore exceeds the 36% spent on actual verification work. These figures are quoted, not measured by the paper.
+- Cites a prior study [1]: testbench build-up is 22% and test scenario coding 23% of verification time (45% preparation) versus 36% for debugging.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 저자들은 2014년 Mentor 자료 [1]을 인용한다. 검증 시간의 22%는 testbench 구축, 23%는 테스트 시나리오 코딩, 36%는 디버깅에 쓰인다. 따라서 준비 작업(45%)이 실제 검증 작업(36%)보다 많다. 이 수치들은 인용된 것이며 논문 저자가 측정한 값이 아니다.
+- 선행 연구 [1]를 인용: testbench 구축이 검증 시간의 22%, 테스트 시나리오 코딩이 23%를 차지해 준비 작업이 45%이며, 디버그(36%)보다 많다.
 
 </div>
 </div>
@@ -145,51 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- SystemVerilog and UVM supply reusable components but do not guarantee reuse; reuse depends on how engineers build components. The paper classifies reuse into three types: vertical, horizontal, and platform.
+- Three reuse problems: (1) repeated testbench construction for each IP block; (2) platform reuse of sequences across multiple AMBA VIP vendors (licensing, co-emulation synthesizability, simulator compatibility, in-house VIP); (3) vertical reuse (IP to subsystem, e.g., AHB driver to AXI bus) and horizontal reuse (SFR port protocol change across projects).
 
 </div>
 <div class="bi-ko" markdown>
 
-- SystemVerilog와 UVM은 재사용 가능한 컴포넌트를 제공하지만 재사용을 보장하지는 않는다. 재사용은 엔지니어가 컴포넌트를 어떻게 만드는지에 달려 있다. 논문은 재사용을 vertical, horizontal, platform 세 가지로 분류한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Problem 1 (testbench build): IP-level verification needs nearly one testbench per IP block. Agent and interface creation, configuration, connection, and sequence creation are repeated each time.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Problem 1 (testbench 구축): IP 수준 검증에는 IP 블록마다 거의 하나씩 testbench가 필요하다. agent 및 interface 생성, 설정, 연결, sequence 작성이 매번 반복된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Problem 2 (platform reuse): Multiple AMBA VIP vendors are used because of license limits, co-emulation synthesizability, simulator compatibility, and in-house VIPs. Test sequences are then tied to each VIP.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Problem 2 (platform 재사용): 라이선스 제약, co-emulation 합성 가능성, 시뮬레이터 호환성, in-house VIP 등의 이유로 여러 AMBA VIP 벤더를 사용한다. 이때 테스트 시퀀스가 VIP마다 묶이게 된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Problem 3 (vertical and horizontal reuse): An AHB driver used at IP level cannot be reused at subsystem level when the bus is AXI. Across projects, an SFR access port can change from AHB to AXI, which breaks sequences.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Problem 3 (vertical 및 horizontal 재사용): IP 수준의 AHB driver는 버스가 AXI인 subsystem 수준에서 재사용할 수 없다. 프로젝트 간에는 SFR 접근 포트가 AHB에서 AXI로 바뀔 수 있으며, 이로 인해 시퀀스가 깨진다.
+- 세 가지 재사용 문제: (1) IP 블록마다 testbench를 반복 구축하는 문제, (2) 여러 AMBA VIP 벤더에 걸친 시퀀스 플랫폼 재사용 문제(라이선스, co-emulation 합성 가능성, 시뮬레이터 호환성, in-house VIP), (3) 수직 재사용(IP에서 서브시스템으로, 예: AHB 드라이버를 AXI 버스로 이전)과 수평 재사용(프로젝트 간 SFR 포트 프로토콜 변경).
 
 </div>
 </div>
@@ -199,12 +160,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-The paper proposes two schemes. AUVS addresses Problems 1 and 2, and FLS addresses Problem 3.
+- **AUVS**: pre-built UVM platform with AXI/AHB/APB wrapper agents, each wrapping a compile-time-selected VIP. A harness instantiates interface arrays and registers virtual interfaces in the config DB; the environment builds agents and connects them to a virtual sequencer. Protocol parameters (addr_width, data_width) live in the interface and can be overridden.
 
 </div>
 <div class="bi-ko" markdown>
 
-논문은 두 가지 방식을 제안한다. AUVS는 Problem 1과 2를, FLS는 Problem 3을 해결한다.
+- **AUVS**: AXI/AHB/APB 래퍼 에이전트로 구성된 사전 구축 UVM 플랫폼이며, 각 에이전트는 컴파일 시점에 선택된 VIP를 감싼다. harness가 interface 배열을 인스턴스화하고 virtual interface를 config DB에 등록하며, 환경은 에이전트를 생성해 가상 sequencer에 연결한다. 프로토콜 파라미터(addr_width, data_width)는 interface에 있으며 외부에서 덮어쓸 수 있다.
 
 </div>
 </div>
@@ -212,12 +173,12 @@ The paper proposes two schemes. AUVS addresses Problems 1 and 2, and FLS address
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**AUVS (AMBA Unified Verification System)**: a pre-built UVM platform with master and slave interfaces per protocol.
+- **TPI**: a uvm_sequence base class exposing VIP-independent read/write tasks that take `agt_id`, so test sequences need no edits when the VIP changes.
 
 </div>
 <div class="bi-ko" markdown>
 
-**AUVS (AMBA Unified Verification System)**: 프로토콜별 master 및 slave interface를 갖춘 사전 구성 UVM 플랫폼이다.
+- **TPI**: VIP에 독립적인 읽기/쓰기 태스크를 제공하는 uvm_sequence 기반 클래스이며, `agt_id`로 대상 에이전트를 지정한다. 따라서 VIP가 바뀌어도 테스트 시퀀스를 수정할 필요가 없다.
 
 </div>
 </div>
@@ -225,141 +186,23 @@ The paper proposes two schemes. AUVS addresses Problems 1 and 2, and FLS address
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- `auvs_axi_master_interface` holds the vendor VIP selected at compile time (`AUVS_USE_SVT_AXI`, `AUVS_USE_QVIP_AXI`, or in-house by default). Protocol parameters such as addr_width and data_width default to 32 and can be overridden in tb_top.
+- **FLS**: `hal_base` provides `write_driver`/`read_driver` (address and data only), which call virtual `bus_write`/`bus_read` in a callback (`hal_callback_base`). The DDR controller example implements its init sequence through HAL API tasks, with AHB via TPI, and AXI swapped in by callback replacement.
 
 </div>
 <div class="bi-ko" markdown>
 
-- `auvs_axi_master_interface`는 컴파일 시 선택된 벤더 VIP를 포함한다(`AUVS_USE_SVT_AXI`, `AUVS_USE_QVIP_AXI`, 기본값은 in-house). addr_width, data_width 같은 프로토콜 파라미터는 기본값 32를 가지며 tb_top에서 덮어쓸 수 있다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- `auvs_harness` (included with `` `include ``, because interfaces cannot be inherited) instantiates interface arrays sized by `AUVS_AXI_MST_AGT_MAX` and registers the virtual interfaces in the UVM config DB.
-
-</div>
-<div class="bi-ko" markdown>
-
-- `auvs_harness`는 `` `include ``로 포함된다(interface는 상속할 수 없기 때문이다). `AUVS_AXI_MST_AGT_MAX`로 크기가 정해진 interface 배열을 인스턴스화하고 가상 interface를 UVM config DB에 등록한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- `auvs_env` build_phase fetches the VIFs, creates `auvs_axi_master_agent` and its config, and copies the widths. connect_phase binds each agent's sequencer into the virtual sequencer `auvs_sequencer`.
-
-</div>
-<div class="bi-ko" markdown>
-
-- `auvs_env`의 build_phase는 VIF를 가져오고 `auvs_axi_master_agent`와 config를 생성하며 폭 정보를 복사한다. connect_phase는 각 agent의 sequencer를 가상 sequencer `auvs_sequencer`에 연결한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- `auvs_axi_master_agent` is a placeholder wrapper. It instantiates the chosen vendor agent in build_phase and sets `seqr.target_seqr` in connect_phase.
-
-</div>
-<div class="bi-ko" markdown>
-
-- `auvs_axi_master_agent`는 대리(placeholder) 래퍼다. build_phase에서 선택된 벤더 agent를 인스턴스화하고, connect_phase에서 `seqr.target_seqr`를 설정한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- `auvs_tpi_sequence` (extends uvm_sequence) provides vendor-neutral tasks such as `axi_write(agt_id, axi_id, addr, burst, size, data)`. Each task creates a vendor-specific item with `uvm_create_on`, sets its fields and delays, then calls `finish_item`.
-
-</div>
-<div class="bi-ko" markdown>
-
-- `auvs_tpi_sequence`(uvm_sequence 상속)는 `axi_write(agt_id, axi_id, addr, burst, size, data)`와 같은 벤더 중립 태스크를 제공한다. 각 태스크는 `uvm_create_on`으로 벤더별 아이템을 만들고, 필드와 delay를 설정한 뒤 `finish_item`을 호출한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- A test sequence extends TPI and fetches `auvs_seqr` from the config DB in pre_body(). Its body then uses only TPI tasks.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 테스트 시퀀스는 TPI를 상속하고 pre_body()에서 config DB로부터 `auvs_seqr`를 가져온다. 이후 body는 TPI 태스크만 사용한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**FLS (Firmware-Like Sequences) with HAL**: a Hardware Abstraction Layer sits between the test sequence and the agents.
-
-</div>
-<div class="bi-ko" markdown>
-
-**FLS (Firmware-Like Sequences)와 HAL**: 테스트 시퀀스와 agent 사이에 Hardware Abstraction Layer를 둔다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- `hal_base` (uvm_object) provides `write_driver(addr, data)` and `read_driver(addr, data)`. Each calls `uvm_do_callback` into the virtual tasks `bus_write`/`bus_read` of `hal_callback_base`.
-
-</div>
-<div class="bi-ko" markdown>
-
-- `hal_base`(uvm_object)는 `write_driver(addr, data)`와 `read_driver(addr, data)`를 제공한다. 두 태스크는 `uvm_do_callback`을 통해 `hal_callback_base`의 가상 태스크 `bus_write`/`bus_read`를 호출한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The HAL API (`ddrc_hal`: mr_write, set_address, set_phy_delay, set_ddrc_start with read-modify-write, init) is written only with driver tasks and is protocol-independent.
-
-</div>
-<div class="bi-ko" markdown>
-
-- HAL API(`ddrc_hal`: mr_write, set_address, set_phy_delay, read-modify-write를 사용하는 set_ddrc_start, init)는 driver 태스크만으로 작성되며 프로토콜에 독립적이다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- `ddrc_hal_callback#(T)` binds the bus tasks to AUVS TPI (`ahb_write`/`ahb_read`). Moving to AXI means replacing only these callback tasks (Snippet 13). RAL operations can be used the same way.
-
-</div>
-<div class="bi-ko" markdown>
-
-- `ddrc_hal_callback#(T)`는 bus 태스크를 AUVS TPI(`ahb_write`/`ahb_read`)에 연결한다. AXI로 바꿀 때는 이 callback 태스크만 교체하면 된다(Snippet 13). RAL 연산도 같은 방식으로 사용할 수 있다.
+- **FLS**: `hal_base`는 `write_driver`/`read_driver`(주소와 데이터만 사용)를 제공하며, 이들은 `hal_callback_base`의 가상 `bus_write`/`bus_read`를 콜백으로 호출한다. DDR 컨트롤러 예시는 HAL API 태스크로 초기화 시퀀스를 구현하며, AHB는 TPI를 통해 쓰고 AXI는 콜백 교체로 적용한다.
 
 </div>
 </div>
 
 ```mermaid
 flowchart TB
-  TS[Test sequence] --> HAL["HAL API tasks (ddrc_hal)"]
-  HAL --> DRV["write_driver / read_driver"]
-  DRV -->|uvm_do_callback| CB["hal_callback_base: bus_write / bus_read"]
-  CB --> TPI["auvs_tpi_sequence: ahb_* / axi_*"]
-  TPI --> ENV["auvs_env + AUVS agents"]
-  ENV --> VIP["Vendor VIP: SVT / QVIP / in-house"]
+  S[Test sequence] --> H[HAL API tasks, protocol-free]
+  H --> C[HAL callback: bus_write / bus_read]
+  C --> T[AUVS TPI tasks: axi / ahb / apb]
+  T --> A[AUVS agents]
+  A --> V[Vendor VIP: SVT / QVIP / in-house]
 ```
 
 ### Results and Conclusions
@@ -367,12 +210,12 @@ flowchart TB
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The paper contains no simulation data, benchmark, or measured build-time reduction. Its claims are qualitative, such as "reducing testbench build-up time dramatically."
+- No quantitative measurements are reported; time savings and reuse gains are asserted, supported by code snippets only.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 논문에는 시뮬레이션 데이터, 벤치마크, 측정된 build 시간 단축 결과가 없다. "testbench 구축 시간을 획기적으로 줄인다"와 같은 주장은 정성적인 수준이다.
+- 정량적 측정 결과는 보고되지 않으며, 시간 절감과 재사용 효과는 코드 스니펫으로만 뒷받침되는 주장이다.
 
 </div>
 </div>
@@ -380,12 +223,12 @@ flowchart TB
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Conclusion: AUVS reduces build-up time (Problem 1) and removes sequence dependence on VIPs (Problem 2). FLS keeps sequences reusable when SFR port protocols change (Problem 3). The authors expect that using both together covers vertical, horizontal, and platform reuse.
+- Claimed outcomes: AUVS reduces testbench build-up (Problem 1) and removes sequence dependence on VIPs (Problem 2); FLS enables sequence reuse across SFR protocol changes (Problem 3). Combined, the authors expect coverage of all three reuse axes.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 결론: AUVS는 testbench 구축 시간을 줄이고(Problem 1), 시퀀스의 VIP 의존성을 제거한다(Problem 2). FLS는 SFR 포트 프로토콜이 바뀌어도 시퀀스를 재사용하게 한다(Problem 3). 저자들은 두 방식을 함께 쓰면 vertical, horizontal, platform 재사용을 모두 달성할 수 있다고 본다.
+- 주장된 성과: AUVS는 testbench 구축 시간을 줄이고(문제 1) 시퀀스의 VIP 종속성을 제거하며(문제 2), FLS는 SFR 프로토콜 변경에도 시퀀스 재사용을 가능하게 한다(문제 3). 두 기법을 결합하면 세 가지 재사용 축을 모두 다룬다고 저자들은 기대한다.
 
 </div>
 </div>
@@ -393,12 +236,12 @@ flowchart TB
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Caveats: the code is illustrative. Vendor bodies are elided, the agent index `agt_id=0` is hardcoded in the HAL callback, and Snippet 11's `mr_read()` calls `write_driver()`, which appears to be a typo.
+- Scope limits: AHB and AXI examples only, APB and QVIP bodies elided, and a short industrial practice paper rather than a validated benchmark.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 유의점: 코드는 예시다. 벤더 본문은 생략되어 있고, HAL callback에서는 agent 인덱스 `agt_id=0`이 하드코딩되어 있다. Snippet 11의 `mr_read()`는 `read_driver()` 대신 `write_driver()`를 호출하는데, 이는 오타로 보인다.
+- 범위 한계: AHB와 AXI 예시만 있고 APB와 QVIP 본문은 생략되었으며, 검증된 벤치마크가 아닌 짧은 산업 실무 논문이다.
 
 </div>
 </div>

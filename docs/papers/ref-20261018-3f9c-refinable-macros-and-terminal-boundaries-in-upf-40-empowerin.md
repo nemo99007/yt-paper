@@ -10,8 +10,8 @@ tags:
 - UPF 4.0
 - Refinable Macro
 - Terminal Boundary
-- Power Intent
-- Soft IP
+- Low-Power Verification
+- Implementation UPF
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/1082.pdf
 authors: Amit Srivastava (Synopsys Inc), John Decker (Cadence Design Systems), Lakshmanan Balasubramanian (Texas Instruments (India) Pvt. Ltd)
@@ -29,8 +29,8 @@ youtube_videos:
 # Refinable Macros and Terminal Boundaries in UPF 4.0: Empowering Soft IPs of the Future
 
 <figure class="rep-fig" markdown>
-![Figure 3 illustrates the use of Refinable Macros in a bottom-up verification flow.](../assets/figures/ref-20261018-3f9c.png?v=1792305886){ loading=lazy }
-<figcaption>Figure 3 illustrates the use of Refinable Macros in a bottom-up verification flow. — from the original paper (Amit Srivastava et al.)</figcaption>
+![Figure 3. Refinable Macro in a Bottom-up Verification Flow](../assets/figures/ref-20261018-3f9c.png?v=1792377924){ loading=lazy }
+<figcaption>Figure 3. Refinable Macro in a Bottom-up Verification Flow — from the original paper (Amit Srivastava et al.)</figcaption>
 </figure>
 
 [:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1082.pdf){ .md-button .md-button--primary target=_blank }
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**UPF 4.0 introduces Refinable Macros (UPF_is_refinable_macro TRUE) and terminal-boundary semantics so SoC integrators can add implementation-specific power intent to a pre-verified SIP via load_upf -implementation without modifying the IP's original UPF.**
+**UPF 4.0 introduces Refinable Macros, a terminal-boundary construct that lets SoC integrators add implementation-specific power intent to a pre-verified SIP through a restricted Implementation UPF (load_upf -implementation) without modifying the IP's original UPF.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**UPF 4.0은 Refinable Macro(UPF_is_refinable_macro TRUE)와 terminal boundary 의미론을 도입하여, SoC 통합자가 IP의 원본 UPF를 수정하지 않고 load_upf -implementation으로 사전 검증된 SIP의 전력 의도(power intent)에 구현 세부 사항을 추가할 수 있게 한다.**
+**UPF 4.0은 Refinable Macro라는 터미널 경계 구조를 도입하여, SoC 통합자가 IP의 원본 UPF를 수정하지 않고 제한된 Implementation UPF(load_upf -implementation)를 통해 사전 검증된 SIP에 구현 특화 power intent를 추가할 수 있게 합니다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Marking an SIP with UPF_is_refinable_macro TRUE (set_design_attributes) creates a refinable terminal boundary, so integrators can refine it through an Implementation UPF loaded with load_upf -implementation while the IP's original power intent and standalone verification stay intact.
+- Marking an SIP with set_design_attributes -is_refinable_macro (UPF_is_refinable_macro TRUE) makes its boundary refinable, so the IP's original UPF and standalone verification remain untouched.
 
 </div>
 <div class="bi-ko" markdown>
 
-- SIP에 UPF_is_refinable_macro TRUE를 설정(set_design_attributes)하면 refinable terminal boundary가 생성되어, 통합자는 load_upf -implementation으로 로드한 Implementation UPF를 통해 IP를 정제할 수 있으며, IP의 원본 전력 의도와 독립 검증은 그대로 유지된다.
+- set_design_attributes -is_refinable_macro (UPF_is_refinable_macro TRUE)로 SIP를 마킹하면 경계가 refinable해지므로, IP의 원본 UPF와 독립 검증 결과는 그대로 유지됩니다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The Implementation UPF is restricted to an allowlist (Table 1); for example, set_isolation -update is limited to -elements, -location, -isolation_supply, -instance, and -force_isolation, and create_power_domain -update is limited to -elements, -available_supplies, -boundary_supplies, and -define_func_type.
+- Implementation UPF is restricted by a per-command whitelist (Table 1); for example, set_isolation -update may only change -elements, -location, -isolation_supply, -instance, or -force_isolation.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Implementation UPF는 허용 목록(Table 1)으로 제한된다. 예를 들어 set_isolation -update는 -elements, -location, -isolation_supply, -instance, -force_isolation으로만 제한되고, create_power_domain -update는 -elements, -available_supplies, -boundary_supplies, -define_func_type으로만 제한된다.
+- Implementation UPF는 명령별 화이트리스트(Table 1)로 제한되며, 예를 들어 set_isolation -update는 -elements, -location, -isolation_supply, -instance, -force_isolation 옵션만 변경할 수 있습니다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Path-based isolation without terminal boundaries can cause simulation vs. synthesis mismatch: isolation cells inferred during standalone synthesis are kept in the netlist for all IP instances, while RTL simulation omits them when supplies are shorted in the SoC. Marking the IP as a macro enforces boundary semantics and keeps the two consistent.
+- Soft Macro terminal boundaries prevent simulation-synthesis mismatch: with shorted supplies, RTL simulation would otherwise omit isolation cells that synthesis inserted in the shared macro netlist.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Terminal boundary 없이 path-based isolation을 사용하면 시뮬레이션과 합성 간 불일치가 생길 수 있다. standalone 합성에서 추론된 isolation cell은 모든 IP 인스턴스의 netlist에 남는 반면, SoC에서 supply가 단락된 경우 RTL 시뮬레이션은 이를 생략한다. IP를 macro로 표시하면 경계 의미론이 적용되어 두 결과가 일치한다.
+- Soft Macro 터미널 경계는 시뮬레이션-합성 불일치를 막습니다. 공급이 단락된 경우 공유 매크로 netlist에 합성으로 삽입된 isolation cell을 RTL 시뮬레이션이 생략하는 문제를 방지합니다.
 
 </div>
 </div>
@@ -102,25 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The paper reports no quantitative benchmarks; its benefits (reduced re-validation, faster turnaround, fewer silicon risks) are qualitative, and the example is a single IP case study with GATED/AON domains, so tool support should be validated before relying on it.
+- The paper gives no quantitative benchmark; its benefits (fewer IP re-validations, optimization such as removing redundant isolation) are qualitative and supported by one worked example with GATED and AON domains.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 논문은 정량적 벤치마크를 제시하지 않는다. 재검증 감소, 개발 기간 단축, 실리콘 위험 감소 등의 효과는 정성적으로 기술되어 있으며, 사례도 GATED/AON 도메인을 가진 단일 IP에 한정되므로 툴 지원을 검증한 뒤 의존해야 한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- In the case study the IP omits -location on its isolation strategy so the SoC integrator can choose the isolation location for PnR; a hard-coded -location cannot be overridden by refinable macro refinement.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 사례 연구에서 IP는 isolation 전략에 -location을 지정하지 않아, SoC 통합자가 PnR을 위해 isolation 위치를 선택할 수 있다. 하드코딩된 -location은 Refinable Macro 정제로 덮어쓸 수 없다.
+- 논문은 정량적 벤치마크를 제시하지 않습니다. IP 재검증 감소, 공급이 묶인 경우 중복 isolation 제거 같은 이점은 정성적이며, GATED와 AON 도메인을 쓴 하나의 사례로만 뒷받침됩니다.
 
 </div>
 </div>
@@ -132,12 +119,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- SoCs integrate many SIPs, each with its own power management architecture and typically its own UPF file. Integrating them often requires implementation-specific additions during synthesis and place-and-route (PnR).
+- SoCs integrate many SIPs, each carrying its own UPF power intent. UPF 3.1 Soft Macros give terminal boundaries for bottom-up implementation, but they freeze the IP's power intent and block SoC-level refinement (e.g., isolation placement during PnR, power switches, DFT logic).
 
 </div>
 <div class="bi-ko" markdown>
 
-- SoC는 각각 고유한 전력 관리 구조와 보통 별도의 UPF 파일을 가진 여러 SIP를 통합한다. 이들을 통합하려면 합성과 place-and-route(PnR) 단계에서 구현 세부 사항을 추가해야 하는 경우가 많다.
+- SoC는 각각 고유한 UPF power intent를 가진 여러 SIP를 통합합니다. UPF 3.1의 Soft Macro는 bottom-up implementation을 위한 터미널 경계를 제공하지만 IP의 power intent를 고정하여 SoC 수준의 개선(PnR 중 isolation 배치, power switch, DFT 로직 등)을 막습니다.
 
 </div>
 </div>
@@ -145,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- UPF 3.1 (IEEE 1801-2018) defines Successive Refinement (Constraint UPF → Configuration UPF → Implementation UPF). It supports bottom-up implementation flows but has no defined semantics for bottom-up verification flows involving SIPs.
+- Integrators then edit the original UPF, which forces IP re-validation or risks silicon bugs.
 
 </div>
 <div class="bi-ko" markdown>
 
-- UPF 3.1(IEEE 1801-2018)은 Successive Refinement(Constraint UPF → Configuration UPF → Implementation UPF)를 정의한다. 이 방식은 bottom-up 구현 흐름을 지원하지만, SIP가 포함된 bottom-up 검증 흐름에 대한 의미론은 정의하지 않는다.
+- 이 때문에 통합자는 원본 UPF를 직접 수정해야 하며, 이는 IP 재검증을 강요하거나 실리콘 버그 위험을 키웁니다.
 
 </div>
 </div>
@@ -158,25 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- UPF 3.1 Soft Macros are self-contained terminal boundaries, but they cannot be refined from the parent scope. Integrators are therefore pushed to edit the IP's UPF intrusively, which forces re-validation or risks silicon bugs.
+- Path-based isolation in UPF 3.1 needs global design visibility. Without boundaries, simulation and synthesis can insert different isolation cells when supplies are shorted in an instance.
 
 </div>
 <div class="bi-ko" markdown>
 
-- UPF 3.1의 Soft Macro는 자체 완결적인 terminal boundary이지만 부모 scope에서 정제할 수 없다. 그 결과 통합자는 IP의 UPF를 침습적으로 수정하게 되고, 이는 재검증이나 실리콘 버그 위험으로 이어진다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Path-based isolation (UPF 2.0) requires global design visibility. Without terminal boundaries, standalone synthesis infers isolation cells that are kept for every instance, while RTL simulation drops them when the instance's supplies are shorted (Figure 4). This can hide issues such as incorrect clamping during normal operation.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Path-based isolation(UPF 2.0)은 전체 설계에 대한 가시성이 필요하다. Terminal boundary가 없으면 standalone 합성은 isolation cell을 추론해 모든 인스턴스에 유지하지만, RTL 시뮬레이션은 해당 인스턴스의 supply가 단락되면 이를 제거한다(Figure 4). 이로 인해 정상 동작 중 잘못된 clamping 같은 문제가 가려질 수 있다.
+- UPF 3.1의 path-based isolation은 전역 설계 가시성이 필요합니다. 경계가 없으면 인스턴스에서 공급이 단락될 때 시뮬레이션과 합성이 서로 다른 isolation cell을 삽입할 수 있습니다.
 
 </div>
 </div>
@@ -186,12 +160,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Refinable Macro (UPF 4.0):** a new construct that forms a refinable terminal boundary. It is marked with either `set_design_attributes -models SIP -attribute {UPF_is_refinable_macro TRUE}` or `set_design_attributes -models {.} -is_refinable_macro`.
+- A Refinable Macro is a refinable terminal boundary, set via `set_design_attributes -models {.} -is_refinable_macro` (or `UPF_is_refinable_macro TRUE`).
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Refinable Macro(UPF 4.0):** refinable terminal boundary를 형성하는 새로운 구조다. `set_design_attributes -models SIP -attribute {UPF_is_refinable_macro TRUE}` 또는 `set_design_attributes -models {.} -is_refinable_macro`로 표시한다.
+- Refinable Macro는 refinable한 터미널 경계이며, `set_design_attributes -models {.} -is_refinable_macro`(또는 `UPF_is_refinable_macro TRUE`)로 설정합니다.
 
 </div>
 </div>
@@ -199,12 +173,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Implementation UPF:** refinements are loaded with `load_upf <file> -scope <IP_instance> -implementation`. Only the commands and options in Table 1 are permitted. Examples include create_power_switch, map_power_switch, map_retention_cell, use_interface_cell, set_level_shifter, set_retention -update (limited to -instance and -retention_supply), set_port_attributes, set_design_attributes, set_scope, and load_upf. Commands that change the fundamental power architecture are excluded.
+- Refinements live in an Implementation UPF, loaded with `load_upf <file> -scope <inst> -implementation`. Table 1 whitelists the allowed commands and options, such as create_power_switch, map_retention_cell, and set_isolation -update limited to specific options.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Implementation UPF:** `load_upf <file> -scope <IP_instance> -implementation`으로 정제 내용을 로드한다. Table 1에 명시된 명령과 옵션만 허용된다. 예로 create_power_switch, map_power_switch, map_retention_cell, use_interface_cell, set_level_shifter, set_retention -update(-instance, -retention_supply로 제한), set_port_attributes, set_design_attributes, set_scope, load_upf 등이 있다. 기본 전력 구조를 바꾸는 명령은 제외된다.
+- 세부 refinement는 Implementation UPF에 담기며, `load_upf <file> -scope <inst> -implementation`으로 로드합니다. Table 1은 허용되는 명령과 옵션을 화이트리스트로 정의합니다(예: create_power_switch, map_retention_cell, 특정 옵션으로 제한된 set_isolation -update).
 
 </div>
 </div>
@@ -212,33 +186,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Terminal boundary types:** Soft Macros, Hard Macros, and Refinable Macros all stop cross-domain tracing at the boundary and rely on boundary supply constraints. Benefits include bounded path analysis, partitioning for parallel processing, and consistent simulation/synthesis behavior.
+- Worked example: the IP declares a PGD→AON isolation without `-location`. The SoC implementation UPF adds `-location self` via `set_isolation -update`, and the IP's `ip.upf` stays unchanged.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Terminal boundary 유형:** Soft Macro, Hard Macro, Refinable Macro 모두 경계에서 도메인 간 추적을 멈추고 경계 supply 제약에 의존한다. 경계 내부로 분석이 제한되고, 설계를 분할해 병렬 처리할 수 있으며, 시뮬레이션과 합성의 동작이 일관되게 유지된다.
-
-</div>
-</div>
-
-```mermaid
-flowchart LR
-  A["ip.upf: refinable macro, isolation without -location"] --> C["load_upf -scope ip1 (IP UPF, unchanged)"]
-  B["ip.socimpl.upf: set_isolation -location self -update"] --> D["load_upf -scope ip1 -implementation"]
-  C --> E["Integrated power intent with IP verification preserved"]
-  D --> E
-```
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Case study:** a pre-verified IP has AON and PGD (gated) domains, with the PGD domain switched by a SoC-implemented power switch. The IP defines an isolation strategy `o_PGD_to_AON` without `-location`, so the integrator can choose the location. The SoC implementation UPF then sets `set_isolation o_PGD_to_AON -domain PGD -location self -update`. The SoC-level UPF loads the IP UPF normally and the implementation UPF with `-implementation`, so refinements are checked against UPF 4.0 rules.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **사례 연구:** 사전 검증된 IP는 AON 및 PGD(gated) 도메인을 가지며, PGD 도메인은 SoC에 구현된 power switch로 제어된다. IP는 isolation 전략 `o_PGD_to_AON`을 `-location` 없이 정의하여 위치 선택을 통합자에게 맡긴다. 이후 SoC 구현 UPF에서 `set_isolation o_PGD_to_AON -domain PGD -location self -update`를 설정한다. SoC 레벨 UPF는 IP UPF를 일반 방식으로, 구현 UPF는 `-implementation` 옵션으로 로드하여 UPF 4.0 규칙에 따라 정제를 검사한다.
+- 사례: IP는 `-location` 없이 PGD→AON isolation을 선언합니다. SoC implementation UPF는 `set_isolation -update`로 `-location self`를 추가하며, `ip.upf`는 변경되지 않습니다.
 
 </div>
 </div>
@@ -248,12 +201,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The paper is a forward-looking description of UPF 4.0 features. It presents no quantitative measurements, benchmarks, or tool comparison; its benefits are stated qualitatively.
+- The paper reports no quantitative benchmark. Its claims (preserved IP verification, avoided re-validation, removal of redundant isolation when supplies are tied) are qualitative and rest on one example.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 본 논문은 UPF 4.0 기능을 앞으로의 방향으로 기술한 것이다. 정량적 측정, 벤치마크, 툴 비교는 제시하지 않으며, 효과는 정성적으로만 서술된다.
+- 논문은 정량적 벤치마크를 제시하지 않습니다. 주장(IP 검증 보존, 재검증 회피, 공급이 묶인 경우 중복 isolation 제거)은 정성적이며 하나의 사례에 근거합니다.
 
 </div>
 </div>
@@ -261,38 +214,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Claimed benefits: non-intrusive refinement, preserved IP verification integrity and avoided re-validation, system-level optimization (such as removing redundant isolation cells when supplies are connected), reduced simulation/synthesis mismatch, and tool-enforced compliance.
+- It positions Refinable Macros and terminal boundaries as the UPF 4.0 answer to SIP integration in bottom-up verification flows. It is a standards-oriented paper, not an experimental evaluation.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 주장하는 효과: 비침습적 정제, IP 검증 무결성 유지 및 재검증 회피, 시스템 수준 최적화(예: supply가 연결된 경우 중복 isolation cell 제거), 시뮬레이션/합성 불일치 감소, 툴 기반 규정 준수 검사.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Table 2 summarizes the three features (Refinable Macros, Terminal Boundaries, Implementation UPF) and their benefits.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Table 2는 세 가지 기능(Refinable Macro, Terminal Boundary, Implementation UPF)과 각각의 효과를 요약한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Conclusion: Refinable Macros and enhanced terminal-boundary definitions in UPF 4.0 aim to let designers integrate pre-verified SIPs more efficiently and safely without compromising verification integrity.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 결론: UPF 4.0의 Refinable Macro와 강화된 terminal boundary 정의는 IP 검증 무결성을 해치지 않으면서 사전 검증된 SIP를 더 효율적이고 안전하게 통합하도록 하는 것을 목표로 한다.
+- Refinable Macro와 터미널 경계를 bottom-up verification flow에서 SIP 통합을 위한 UPF 4.0의 해법으로 제시합니다. 실험 평가가 아니라 표준 지향 논문입니다.
 
 </div>
 </div>

@@ -7,14 +7,14 @@ region: US
 year: 2023
 category: Verification
 tags:
-- Low-power verification
+- Low-Power Verification
+- Isolation Check
 - XGBoost
 - Bag-of-Words
-- Violation triage
-- Isolation check
+- Violation Triage
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/1027-Check-Low-Power-Violations-by-Using-Machine-Learning-Based-Classifier.pdf
-authors: Chi-Ming Lee (MediaTek Inc., Hsinchu, Taiwan), Chung-An Wang (MediaTek Inc.), Cheok-Yan Goh (MediaTek Inc.), Chia-Cheng Tsai (MediaTek Inc.), Chien-Hsin Yeh (MediaTek Inc.), Chia-Shun Yeh (MediaTek Inc.), Chin-Tang Lai (MediaTek Inc.)
+authors: Chi-Ming Lee (MediaTek Inc.), Chung-An Wang (MediaTek Inc.), Cheok-Yan Goh (MediaTek Inc.), Chia-Cheng Tsai (MediaTek Inc.), Chien-Hsin Yeh (MediaTek Inc.), Chia-Shun Yeh (MediaTek Inc.), Chin-Tang Lai (MediaTek Inc.)
 youtube_videos:
 - video_id: 0cEVwOlM79M
   url: https://www.youtube.com/watch?v=0cEVwOlM79M
@@ -29,7 +29,7 @@ youtube_videos:
 # Check Low-Power Violations by Using Machine Learning Based Classifier
 
 <figure class="rep-fig" markdown>
-![Figure 4. The overall flow of proposed approach.](../assets/figures/ref-20261018-c426.png?v=1792309730){ loading=lazy }
+![Figure 4. The overall flow of proposed approach.](../assets/figures/ref-20261018-c426.png?v=1792378989){ loading=lazy }
 <figcaption>Figure 4. The overall flow of proposed approach. — from the original paper (Chi-Ming Lee et al.)</figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ youtube_videos:
 
 | | |
 |---|---|
-| Authors | Chi-Ming Lee (MediaTek Inc., Hsinchu, Taiwan), Chung-An Wang (MediaTek Inc.), Cheok-Yan Goh (MediaTek Inc.), Chia-Cheng Tsai (MediaTek Inc.), Chien-Hsin Yeh (MediaTek Inc.), Chia-Shun Yeh (MediaTek Inc.), Chin-Tang Lai (MediaTek Inc.) |
+| Authors | Chi-Ming Lee (MediaTek Inc.), Chung-An Wang (MediaTek Inc.), Cheok-Yan Goh (MediaTek Inc.), Chia-Cheng Tsai (MediaTek Inc.), Chien-Hsin Yeh (MediaTek Inc.), Chia-Shun Yeh (MediaTek Inc.), Chin-Tang Lai (MediaTek Inc.) |
 | Venue | DVCon US 2023 |
 | Topic | Verification |
 | Type | PAPER |
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**The paper applies an XGBoost ensemble over Bag-of-Words violation-log features, novelty tokens, and token-cluster features to classify Isolation clamp violations as waivable or high-risk, reducing manual review by 12–50% across three MediaTek low-power designs while keeping all true design issues in the high-risk set.**
+**An ML pipeline (BoW tokenization, novelty and token-cluster features, 5-fold XGBoost ensemble) triages isolation-clamp low-power violations, keeping all true issues on three designs while cutting manual review effort by 12–50%.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**XGBoost 앙상블을 Bag-of-Words 기반 violation 로그 특징, novelty token, token-cluster 특징과 결합해 Isolation clamp violation을 waivable과 high-risk로 분류하며, 3개 MediaTek low-power 설계에서 수동 리뷰 작업을 12~50% 줄이면서도 모든 true design issue를 high-risk 집합에 유지함.**
+**BoW 토큰화, novelty 및 token-cluster 피처, 5-fold XGBoost 앙상블로 구성된 ML 파이프라인이 isolation clamp 저전력 violation을 분류하여, 3개 설계에서 모든 true design issue를 유지하면서 수동 리뷰 공수를 12~50% 줄입니다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Violation triage is framed as supervised binary classification over tokenized simulation violation logs (tokenize, clean, BoW, DTM), trained on historical waived vs. true-issue violations; pretrained NLP models are judged unsuitable because design signal names carry no general-language semantics.
+- On three testing designs (A, B, C) the full ensemble reached recall 1 (all 166, 117, and 539 true issues retained) while review reduction was 50%, 12%, and 18%, respectively.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Violation triage를 토큰화된 시뮬레이션 violation 로그에 대한 지도 이진 분류 문제(tokenize, clean, BoW, DTM)로 정의하고, 과거 waived violation과 true-issue violation으로 학습함. 설계 신호 이름은 일반 언어의 의미를 갖지 않으므로 사전 학습된 NLP 모델은 적합하지 않다고 판단함.
+- 3개 테스트 설계(A, B, C)에서 전체 앙상블은 recall 1을 달성하여 true design issue 166, 117, 539건을 모두 유지했으며, 리뷰 감소율은 각각 50%, 12%, 18%였습니다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Common tokens between training and test designs were only 200/359 (A), 292/429 (B), and 597/956 (C). Novelty-token (1 dimension) and token-cluster (30 dimensions, K-means over character-level BoW of non-common tokens) features recover information otherwise dropped from the DTM.
+- Only tokens shared between training and testing designs enter the DTM (e.g., 200 of 359 words for A, 292 of 429 for B, 597 of 956 for C), so non-common tokens would be lost without the added features.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 학습 설계와 테스트 설계 간 공통 token 수는 A 200/359, B 292/429, C 597/956에 불과함. Novelty token 특징(1차원)과 token-cluster 특징(30차원, non-common token의 문자 단위 BoW에 K-means 적용)이 DTM에서 버려지는 정보를 복원함.
+- 학습 및 테스트 설계 간 공통 토큰만 DTM에 포함되므로(A 359개 중 200개, B 429개 중 292개, C 956개 중 597개 단어), 추가 피처가 없으면 non-common 토큰의 정보가 손실됩니다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Ablation over five configurations (SVM baseline, XGBoost with preprocessing only, +novelty, +token-cluster, +5-fold ensemble): the full ensemble reaches recall 1 on all three testing designs, with review reduction of 50% (A), 12% (B), and 18% (C), averaged over five seeds.
+- The 1-dimensional novelty feature (tokens unseen in historical waived violations) and the 30-dimensional token-cluster features (K-means over character-level BoW) recover signal from non-common tokens.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 5가지 구성(전처리만 적용한 SVM 기준선, 전처리 XGBoost, novelty 추가, token-cluster 추가, 5-fold 앙상블)에 대한 ablation에서 전체 앙상블은 세 테스트 설계 모두에서 recall 1에 도달했고, 5개 seed 평균 기준 review reduction은 A 50%, B 12%, C 18%임.
+- 1차원 novelty 피처(과거 waived violation에 없던 토큰)와 30차원 token-cluster 피처(문자 단위 BoW에 대한 K-means)가 non-common 토큰에서 신호를 복원합니다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Inference uses the max predicted probability across five fold models with a 0.5 threshold; the full preprocessing, feature engineering, training, and inference pipeline runs in about 3 minutes per design on a 2-core CPU.
+- The final model is a 5-fold cross-validated XGBoost ensemble that picks the highest predicted probability, with a fixed 0.5 threshold for high-risk classification; training plus inference takes about 3 minutes per design on a 2-core CPU.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 추론은 5개 fold 모델의 최대 예측 확률을 사용하고 임계값은 0.5임. 설계당 전처리·특징 생성·학습·추론 전체 파이프라인이 2-core CPU에서 약 3분 걸림.
+- 최종 모델은 5-fold 교차검증 XGBoost 앙상블로, 가장 높은 예측 확률을 선택하며 고위험 분류 임계값은 0.5로 고정됩니다. 설계당 학습과 추론에 2-core CPU 기준 약 3분이 걸립니다.
 
 </div>
 </div>
@@ -115,42 +115,29 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Scope is limited: only the Isolation clamp value check on three designs, with the training set drawn from other designs' Isolation checks. The text notes a recall vs. review-reduction trade-off, and exact per-configuration values appear only in Fig. 8, which is not available as text.
+- Evidence is narrow: one check type (Isolation clamp value), three designs, and a single fixed threshold, so the claimed generalization to other check flows is untested in the paper.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 범위는 세 설계의 Isolation clamp value check로 제한됨. 본문은 recall과 review reduction 사이의 trade-off를 언급하며, 구성별 세부 수치는 텍스트가 아닌 Fig. 8에만 있음.
+- 근거가 제한적입니다. 검사 종류 하나(Isolation clamp value), 설계 3개, 고정 임계값 하나만 사용했으므로 다른 검사 흐름으로의 일반화는 논문에서 검증되지 않았습니다.
 
 </div>
 </div>
 
 ## Detailed Summary
 
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-# Check Low-Power Violations by Using Machine Learning Based Classifier
-
-</div>
-<div class="bi-ko" markdown>
-
-[Check Low-Power Violations by Using Machine Learning Based Classifier]
-
-</div>
-</div>
-
 ### Background and Problem
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Simulation-based verification emits violations that designers must manually triage into waivable false alarms or true design issues. As design complexity grows, violation counts grow, the time-limited review may stay incomplete, and unfound issues surface after RTL freeze, forcing ECOs and delaying tape-out.
+- Manual review of simulator-generated low-power violations (isolation clamp value check) is labor-intensive; as violation counts grow, time-limited reviews can stay unfinished, so design issues surface after RTL freeze and require ECO.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 시뮬레이션 기반 검증은 violation을 출력하며, 설계자는 이를 수동으로 waivable(오탐) 또는 true design issue로 분류해야 함. 설계 복잡도가 증가하면 violation 수도 늘어나고, 시간이 제한된 리뷰가 미완료로 남아 issue가 RTL freeze 이후에야 발견되고 ECO와 tape-out 지연이 발생함.
+- 시뮬레이터가 생성한 저전력 violation(isolation clamp value 검사)의 수동 리뷰는 노동집약적입니다. violation 수가 늘면 시간이 제한된 리뷰가 끝나지 않아 설계 이슈가 RTL freeze 이후에야 드러나고 ECO가 필요해집니다.
 
 </div>
 </div>
@@ -158,25 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The authors treat violation text as a classification problem, following spam-filtering practice, because violation signal names encode physical characteristics.
+- The authors frame triage as supervised binary classification (waivable false alarm vs. high-risk true issue), treating violation signal names as text in the spirit of spam filtering.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 저자들은 spam filtering 방식을 따라 violation 텍스트를 분류 문제로 다룸. violation 신호 이름이 물리적 특성을 인코딩하기 때문임.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The case study is the Isolation clamp value check, a low-power check that verifies correct isolation cell types between two power domains.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 사례 연구 대상은 Isolation clamp value check이며, 두 power domain 사이에서 올바른 isolation cell 유형을 검증하는 low-power 검사임.
+- 저자들은 violation 신호 이름을 텍스트로 취급하고 스팸 필터링 방식을 따라, 분류 문제를 지도학습 이진 분류(waivable 오탐 vs. high-risk true issue)로 정식화합니다.
 
 </div>
 </div>
@@ -186,146 +160,64 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-The approach has three stages: data preprocessing, feature engineering, and ensemble modeling.
+- Preprocessing: tokenize signal names, lowercase, strip common prefixes, digits, and brackets, then build Bag-of-words vectors and a Document-Term Matrix restricted to tokens common to training and testing designs.
 
 </div>
 <div class="bi-ko" markdown>
 
-접근법은 데이터 전처리, 특징 공학, 앙상블 모델링의 세 단계로 구성됨.
+- 전처리: 신호 이름을 토큰화하고 소문자화하며, 공통 prefix, 숫자, 괄호를 제거한 뒤 BoW 벡터를 만들고, 학습 설계와 테스트 설계에 공통된 토큰으로 제한한 DTM을 구성합니다.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- Feature engineering: a 1-dimensional novelty feature (tokens absent from historical waived violations) and 30-dimensional token-cluster features (K-means over character-level BoW of non-common tokens).
+
+</div>
+<div class="bi-ko" markdown>
+
+- 피처 엔지니어링: 과거 waived violation에 없던 토큰을 나타내는 1차원 novelty 피처와, non-common 토큰의 문자 단위 BoW에 대한 K-means로 만든 30차원 token-cluster 피처를 사용합니다.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- Model: XGBoost base learners trained in 5-fold cross-validation; the highest predicted probability is the output, with 0.5 as the high-risk threshold.
+
+</div>
+<div class="bi-ko" markdown>
+
+- 모델: 5-fold 교차검증으로 학습한 XGBoost 기본 모델을 사용하며, 가장 높은 예측 확률을 출력으로 택하고 고위험 임계값은 0.5입니다.
 
 </div>
 </div>
 
 ```mermaid
 flowchart LR
-    A[Violation logs] --> B[Tokenize and clean]
-    B --> C[BoW vocabulary and DTM]
-    C --> D[Novelty feature 1-dim]
-    C --> E[Token-cluster feature 30-dim]
-    D --> F[5-fold XGBoost ensemble]
-    E --> F
-    F --> G{prob > 0.5?}
-    G -->|yes| H[High-risk: review]
-    G -->|no| I[Low-risk: waivable]
-    H --> J[Validated labels for incremental learning]
-    I --> J
+  A[Violation logs] --> B[Tokenize and clean]
+  B --> C[BoW / DTM on common tokens]
+  C --> D[Novelty + token-cluster features]
+  D --> E[5-fold XGBoost ensemble]
+  E --> F{prob > 0.5}
+  F -->|yes| G[High-risk: review]
+  F -->|no| H[Low-risk: waivable]
 ```
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Preprocessing:** Signals are word-tokenized (e.g., `Common1_Common2_A1_B2_[C3]` splits on underscores). Cleaning lowercases tokens, removes common prefix tokens, and strips digits and brackets. Each log becomes a BoW count vector, and the vectors are stacked into a Document-term Matrix. Vocabulary is restricted to tokens common to training and test designs.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **전처리:** 신호를 단어 단위로 토큰화함(예: `Common1_Common2_A1_B2_[C3]`은 밑줄 기준으로 분리). 정제 단계에서 소문자 변환, 공통 prefix token 제거, 숫자와 대괄호 제거를 수행함. 각 로그는 BoW 카운트 벡터가 되고, 이 벡터들을 쌓아 Document-term Matrix를 구성함. 어휘는 학습 설계와 테스트 설계 모두에 공통으로 존재하는 token으로 제한됨.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Novelty feature:** A binary flag marking whether a violation contains any token present in the new design's distinct token set but absent from historical waived violations. For training data from historical designs, the reference set is true issues versus waived violations.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **Novelty 특징:** violation에 새 설계의 distinct token 집합에는 있으나 과거 waived violation에는 없는 token이 하나라도 있는지를 나타내는 이진 플래그. 과거 설계 학습 데이터의 경우 기준 집합은 true issue와 waived violation의 비교임.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Token-cluster feature:** Non-common tokens are encoded as character-level BoW vectors (one dimension per letter) and grouped with K-means. Per-violation cluster occurrence counts become features, so tokens with similar word structure are not discarded.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **Token-cluster 특징:** non-common token을 문자 단위 BoW(알파벳당 한 차원)로 인코딩하고 K-means로 묶음. violation별 cluster 출현 횟수를 특징으로 사용하여 단어 구조가 유사한 token이 버려지지 않도록 함.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Ensemble:** Base learners are XGBoost models trained with 5-fold cross-validation (5 models). For each violation, the highest candidate probability is the final prediction. Probability above 0.5 is high-risk, otherwise low-risk. Pretrained NLP models are explicitly not used.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **앙상블:** 기반 학습기는 5-fold 교차 검증으로 학습한 XGBoost 모델 5개임. violation마다 후보 확률 중 최댓값을 최종 예측으로 선택함. 확률이 0.5를 초과하면 high-risk, 그렇지 않으면 low-risk로 판정함. 사전 학습된 NLP 모델은 사용하지 않음.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Training data:** Historical designs (7000 violations, 284 true issues, per Table IV) are shared across all three testing designs.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **학습 데이터:** 과거 설계(Table IV 기준 violation 7000개, true issue 284개)를 세 테스트 설계가 공유함.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Key quantities:
-
-</div>
-<div class="bi-ko" markdown>
-
-주요 지표:
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Recall = (true issues in predicted high-risk set) / (total true issues). The target is recall 1.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Recall = (high-risk 예측 집합에 포함된 true issue 수) / (전체 true issue 수). 목표는 recall 1.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Review reduction = fraction of violations eliminated from manual review as low-risk.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Review reduction = low-risk로 판정되어 수동 리뷰에서 제외된 violation의 비율.
-
-</div>
-</div>
 
 ### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Dataset (Table IV):** Testing designs A, B, C contain 2002, 1001, and 3177 violations, with 166, 117, and 539 true issues respectively. This reading maps the four-column table to historical, A, B, C in order.
+- Training data: historical designs (7,000 violations, 284 true issues). Testing: A (2,002 / 166), B (1,001 / 117), C (3,177 / 539).
 
 </div>
 <div class="bi-ko" markdown>
 
-- **데이터셋 (Table IV):** 테스트 설계 A, B, C는 각각 violation 2002, 1001, 3177개와 true issue 166, 117, 539개를 포함함. 4열 표를 historical, A, B, C 순서로 읽은 해석임.
+- 학습 데이터는 historical 설계(violation 7,000건, true issue 284건)입니다. 테스트는 A(2,002 / 166), B(1,001 / 117), C(3,177 / 539)입니다.
 
 </div>
 </div>
@@ -333,12 +225,12 @@ Key quantities:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Ablation (Table VI, five seeds averaged):** Configurations are (1) SVM with preprocessing, (2) XGBoost with preprocessing, (3) XGBoost with novelty feature, (4) XGBoost with novelty and token-cluster features, and (5) the ensemble with all features. Configuration 5 is the proposed approach.
+- The full ensemble (configuration 5) reaches recall 1 on all three designs, with review reduction of 50% (A), 12% (B), and 18% (C). Ablations against an SVM baseline and single-stage XGBoost configurations are shown in Fig. 8, whose values are not given in the text.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Ablation (Table VI, 5개 seed 평균):** 구성은 (1) 전처리만 적용한 SVM, (2) 전처리 XGBoost, (3) novelty 특징 추가 XGBoost, (4) novelty와 token-cluster 특징 추가 XGBoost, (5) 모든 특징을 사용한 앙상블이며, 구성 5가 제안 방식임.
+- 전체 앙상블(configuration 5)은 세 설계 모두에서 recall 1을 달성했으며, 리뷰 감소율은 A 50%, B 12%, C 18%입니다. SVM 기준 모델 및 단계별 XGBoost 구성과의 ablation 비교는 Fig. 8에 있으나 본문에는 수치가 없습니다.
 
 </div>
 </div>
@@ -346,12 +238,12 @@ Key quantities:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Headline results:** Configuration 5 reaches recall 1 on A, B, and C. Review reduction at that recall is 50%, 12%, and 18%. Adding methods increases recall toward 1 and lowers review reduction, so the trade-off is explicit. Per-configuration values are only shown in Fig. 8 and are not in the text.
+- Limitations: one check type, three designs, five-seed averaging without reported variance, and no evaluation beyond these test sets.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **주요 결과:** 구성 5는 A, B, C 모두에서 recall 1에 도달함. 이 recall을 유지할 때 review reduction은 각각 50%, 12%, 18%임. 방법을 추가할수록 recall은 1에 가까워지고 review reduction은 낮아지므로 trade-off가 명시적으로 존재함. 구성별 세부 값은 Fig. 8에만 나오며 본문 텍스트에는 없음.
+- 한계: 검사 종류 하나, 설계 3개, 분산 보고 없는 5-seed 평균이며, 이 테스트 세트 이외의 평가는 없습니다.
 
 </div>
 </div>
@@ -359,12 +251,12 @@ Key quantities:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Cost:** About 3 minutes per design on a 2-core CPU.
+### 배경 및 문제
 
 </div>
 <div class="bi-ko" markdown>
 
-- **비용:** 설계당 2-core CPU에서 약 3분.
+&nbsp;
 
 </div>
 </div>
@@ -372,12 +264,12 @@ Key quantities:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Claimed benefits:** Fewer false alarms, shift-left of issue discovery, and incremental retraining from validated labels.
+- 시뮬레이터가 생성한 저전력 violation(isolation clamp value 검사)의 수동 리뷰는 노동집약적입니다. violation 수가 늘면 시간이 제한된 리뷰가 끝나지 않아 설계 이슈가 RTL freeze 이후에야 드러나고 ECO가 필요해집니다.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **주장된 이점:** 오탐 감소, issue 발견의 shift-left, 검증된 라벨을 이용한 점진적 재학습.
+&nbsp;
 
 </div>
 </div>
@@ -385,12 +277,116 @@ Key quantities:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Limitations:** Evaluation covers one check type and three designs. The paper states that other text-based checks could be applicable but does not test them.
+- 저자들은 violation 신호 이름을 텍스트로 취급하고 스팸 필터링 방식을 따라, 분류 문제를 지도학습 이진 분류(waivable 오탐 vs. high-risk true issue)로 정식화합니다.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **한계:** 검증은 한 종류의 검사와 세 설계로 제한됨. 본문은 다른 텍스트 기반 검사에도 적용 가능할 것이라고 언급하지만 실험으로 검증하지는 않음.
+&nbsp;
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+### 구조 및 방법론
+
+</div>
+<div class="bi-ko" markdown>
+
+&nbsp;
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- 전처리: 신호 이름을 토큰화하고 소문자화하며, 공통 prefix, 숫자, 괄호를 제거한 뒤 BoW 벡터를 만들고, 학습 설계와 테스트 설계에 공통된 토큰으로 제한한 DTM을 구성합니다.
+
+</div>
+<div class="bi-ko" markdown>
+
+&nbsp;
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- 피처 엔지니어링: 과거 waived violation에 없던 토큰을 나타내는 1차원 novelty 피처와, non-common 토큰의 문자 단위 BoW에 대한 K-means로 만든 30차원 token-cluster 피처를 사용합니다.
+
+</div>
+<div class="bi-ko" markdown>
+
+&nbsp;
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- 모델: 5-fold 교차검증으로 학습한 XGBoost 기본 모델을 사용하며, 가장 높은 예측 확률을 출력으로 택하고 고위험 임계값은 0.5입니다.
+
+</div>
+<div class="bi-ko" markdown>
+
+&nbsp;
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+### 결과 및 결론
+
+</div>
+<div class="bi-ko" markdown>
+
+&nbsp;
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- 학습 데이터는 historical 설계(violation 7,000건, true issue 284건)입니다. 테스트는 A(2,002 / 166), B(1,001 / 117), C(3,177 / 539)입니다.
+
+</div>
+<div class="bi-ko" markdown>
+
+&nbsp;
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- 전체 앙상블(configuration 5)은 세 설계 모두에서 recall 1을 달성했으며, 리뷰 감소율은 A 50%, B 12%, C 18%입니다. SVM 기준 모델 및 단계별 XGBoost 구성과의 ablation 비교는 Fig. 8에 있으나 본문에는 수치가 없습니다.
+
+</div>
+<div class="bi-ko" markdown>
+
+&nbsp;
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- 한계: 검사 종류 하나, 설계 3개, 분산 보고 없는 5-seed 평균이며, 이 테스트 세트 이외의 평가는 없습니다.
+
+</div>
+<div class="bi-ko" markdown>
+
+&nbsp;
 
 </div>
 </div>

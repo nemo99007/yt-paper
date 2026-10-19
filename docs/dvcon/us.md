@@ -17,7 +17,7 @@
 | [Design scheme for Emulator-friendly Memory Verification IP to Accelerate Simulation Performance](../papers/ref-20261018-fb94-design-scheme-for-emulator-friendly-memory-verification-ip-t.md) | Emulation | :material-youtube: 1 |
 | [Enhancing SDC Verification in SoCs: Heatmap Visualization and Machine Learning Approaches for Optimal Coverage Closure](../papers/ref-20261018-c3f8-enhancing-sdc-verification-in-socs-heatmap-visualization-and.md) | Verification | :material-youtube: 1 |
 | [Functional Coverage Closure in SoC Interconnect Verification with Iterative Machine Learning](../papers/ref-20261018-7a35-functional-coverage-closure-in-soc-interconnect-verification.md) | Verification | :material-youtube: 1 |
-| [Future Proofing Power Intent Specification through Unified Power Format (UPF) 4.0 for Evolving Advanced State Retention Strategies](../papers/ref-20261018-e797-future-proofing-power-intent-specification-through-unified-p.md) | EDA | :material-youtube: 1 |
+| [Future Proofing Power Intent Specification through Unified Power Format (UPF) 4.0 for Evolving Advanced State Retention Strategies](../papers/ref-20261018-e797-future-proofing-power-intent-specification-through-unified-p.md) | Verification | :material-youtube: 1 |
 | [Leverage Real USB Devices for USB Host DUT verification](../papers/ref-20261018-5443-leverage-real-usb-devices-for-usb-host-dut-verification.md) | Verification | :material-youtube: 1 |
 | [Reaching 100% Functional Coverage Using Machine Learning: A Journey of Persistent Efforts](../papers/ref-20261018-2c1c-reaching-100-functional-coverage-using-machine-learning-a-jo.md) | Verification | :material-youtube: 1 |
 | [Refinable Macros and Terminal Boundaries in UPF 4.0: Empowering Soft IPs of the Future](../papers/ref-20261018-3f9c-refinable-macros-and-terminal-boundaries-in-upf-40-empowerin.md) | EDA | :material-youtube: 1 |
@@ -61,7 +61,7 @@
 | [Creating 5G Test Scenarios, the Constrained-Random way](../papers/ref-20261018-f0b1-creating-5g-test-scenarios-the-constrained-random-way.md) | Verification | :material-youtube: 1 |
 | [DatagenDV: Python Constrained Random Test Stimulus Framework](../papers/ref-20261018-d08e-datagendv-python-constrained-random-test-stimulus-framework.md) | Verification | :material-youtube: 1 |
 | [Early Detection of Functional Corner Case Bugs using Methodologies of the ISO 26262](../papers/ref-20261018-d1ce-early-detection-of-functional-corner-case-bugs-using-methodo.md) | Verification | :material-youtube: 1 |
-| [Improve emulator test quality by applying synthesizable functional coverage](../papers/ref-20261018-2686-improve-emulator-test-quality-by-applying-synthesizable-func.md) | Verification | :material-youtube: 1 |
+| [Improve emulator test quality by applying synthesizable functional coverage](../papers/ref-20261018-2686-improve-emulator-test-quality-by-applying-synthesizable-func.md) | Emulation | :material-youtube: 1 |
 | [Regvue Modern Hardware/Software Interface (HSI) Documentation](../papers/ref-20261018-5ce8-regvue-modern-hardwaresoftware-interface-hsi-documentation.md) | EDA | :material-youtube: 1 |
 | [Strategies to Maximize Reusability of UVM Test Scenarios in SoC Verification](../papers/ref-20261018-912a-strategies-to-maximize-reusability-of-uvm-test-scenarios-in.md) | Verification | :material-youtube: 1 |
 | [System-Level Power Estimation of SSDs under Real Workloads using Emulation](../papers/ref-20261018-9555-system-level-power-estimation-of-ssds-under-real-workloads-u.md) | Emulation | :material-youtube: 1 |
@@ -114,7 +114,7 @@
 |---|---|---|
 | [Improving Verification Predictability and Efficiency Using Big Data](../papers/ref-20261018-c017-improving-verification-predictability-and-efficiency-using-b.md) | Verification | :material-youtube: 1 |
 | [IP-XACT based SoC Interconnect Verification Automation](../papers/ref-20261018-8f13-ip-xact-based-soc-interconnect-verification-automation.md) | Verification | :material-youtube: 1 |
-| [UVM Acceleration Using Hardware Emulator at Pre-silicon Stage](../papers/ref-20261018-979c-uvm-acceleration-using-hardware-emulator-at-pre-silicon-stag.md) | Verification | :material-youtube: 1 |
+| [UVM Acceleration Using Hardware Emulator at Pre-silicon Stage](../papers/ref-20261018-979c-uvm-acceleration-using-hardware-emulator-at-pre-silicon-stag.md) | Emulation | :material-youtube: 1 |
 
 ## 2017
 
@@ -136,7 +136,7 @@
 
 | Paper | Topic | Videos |
 |---|---|---|
-| [Of Camels and Committees: Standards Should Enable Innovation, Not Strangle It](../papers/ref-20261018-2c26-of-camels-and-committees-standards-should-enable-innovation.md) | Verification | :material-youtube: 1 |
+| [Of Camels and Committees](../papers/ref-20261018-2c26-of-camels-and-committees.md) | Verification | :material-youtube: 1 |
 | [UVM Testbench Considerations for Acceleration](../papers/ref-20261018-8282-uvm-testbench-considerations-for-acceleration.md) | Verification | :material-youtube: 1 |
 
 ## 2013

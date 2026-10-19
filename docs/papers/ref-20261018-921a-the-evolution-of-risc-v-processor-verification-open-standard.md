@@ -8,10 +8,10 @@ year: 2023
 category: Verification
 tags:
 - RISC-V
-- UVM
 - RVVI
-- Step-and-Compare
+- UVM
 - CORE-V-VERIF
+- Step-and-Compare
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/1124-The-evolution-of-RISC-V-processor-verification-open-standards-and-verification-IP.pdf
 authors: Lee Moore (Imperas Software), Aimee Sutton (Imperas Software), Mike Thompson (OpenHW Group)
@@ -29,8 +29,8 @@ youtube_videos:
 # The Evolution of RISC-V Processor Verification: Open Standards and Verification IP
 
 <figure class="rep-fig" markdown>
-![Figure 5: The third generation CORE-V-VERIF environment](../assets/figures/ref-20261018-921a.png?v=1792309400){ loading=lazy }
-<figcaption>Figure 5: The third generation CORE-V-VERIF environment — from the original paper (Lee Moore et al.)</figcaption>
+![Figure 3: Testbench for Advanced RISC-V processor verification using RVVI](../assets/figures/ref-20261018-921a.png?v=1792378807){ loading=lazy }
+<figcaption>Figure 3: Testbench for Advanced RISC-V processor verification using RVVI — from the original paper (Lee Moore et al.)</figcaption>
 </figure>
 
 [:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1124-The-evolution-of-RISC-V-processor-verification-open-standards-and-verification-IP.pdf){ .md-button .md-button--primary target=_blank }
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**The paper traces three generations of the OpenHW CORE-V-VERIF UVM environment, showing how the RVVI standard tracer and API interfaces and an architectural reference-model VIP (ImperasDV) replaced ad-hoc step-and-compare logic and enabled independent checking of asynchronous interrupt handling.**
+**The paper traces three generations of OpenHW's CORE-V-VERIF UVM environment, showing how RVVI standard interfaces and ImperasDV VIP replaced ad-hoc tracers and hand-coded step-and-compare, enabling legality checking of random asynchronous interrupts that exposed a CV32E40X RTL bug.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**이 논문은 OpenHW CORE-V-VERIF UVM 환경의 3세대 발전을 정리하며, RVVI 표준 트레이서/API와 아키텍처 참조 모델 VIP(ImperasDV)가 ad-hoc step-and-compare 로직을 대체하여 비동기 인터럽트 처리를 독립적으로 검증할 수 있게 되었음을 보여준다.**
+**이 논문은 OpenHW CORE-V-VERIF UVM 환경의 3세대 발전 과정을 정리하며, RVVI 표준 인터페이스와 ImperasDV VIP가 ad-hoc tracer와 수작업 step-and-compare를 대체하면서 무작위 비동기 인터럽트에 대한 합법성 검사가 가능해졌고, 그 결과 CV32E40X RTL 버그를 찾아냈음을 보여준다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Step-and-compare with an ISS fails on asynchronous events: the ISS sees interrupts and debug requests as aligned to instruction start, while RTL may take them at a different instruction, producing false negatives. Gen 2 avoided this by not connecting async events to the reference model, but that left the DUT's response to async events unverified.
+- Step-and-compare against an instruction-accurate ISS yields false negatives on asynchronous events, because RTL and ISS may take an interrupt on different instructions; gen-2 avoided this by keeping events out of the ISS, but then the reference model could not independently check interrupt priority.
 
 </div>
 <div class="bi-ko" markdown>
 
-- ISS 기반 step-and-compare는 비동기 이벤트에서 실패한다. ISS는 인터럽트와 디버그 요청을 명령 시작에 정렬된 것으로 보는 반면 RTL은 다른 명령에서 이를 받아들일 수 있어 false negative가 발생한다. 2세대는 비동기 이벤트를 참조 모델에 연결하지 않아 이를 피했지만, 그 결과 DUT의 비동기 이벤트 응답은 독립적으로 검증되지 못했다.
+- ISS 기반 step-and-compare는 RTL과 ISS가 인터럽트를 서로 다른 명령에서 수락할 수 있어 비동기 이벤트에서 false negative를 낸다. 2세대는 이벤트를 ISS에서 분리해 이를 피했지만, 그 결과 reference model이 인터럽트 우선순위를 독립적으로 검사할 수 없었다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- RVVI-TRACE stores the net changes that occur between instruction retirements, with timestamps, in a SystemVerilog queue, so a checker can validate the DUT's handling of async inputs. RVFI lacked support for more than one register change per retirement, which RISC-V Zc instructions can require.
+- RVVI-TRACE stores time-stamped net changes between instruction retirements in a SystemVerilog queue, which is what allows the reference model or checker to validate the DUT's response to asynchronous inputs.
 
 </div>
 <div class="bi-ko" markdown>
 
-- RVVI-TRACE는 명령 retire 사이에 발생한 net 변화를 시각 정보와 함께 SystemVerilog 큐에 저장하여, 체커가 DUT의 비동기 입력 처리를 검증할 수 있게 한다. RVFI는 retire당 둘 이상의 레지스터 변화를 표현할 수 없었는데, 이는 RISC-V Zc 명령에서 필요할 수 있다.
+- RVVI-TRACE는 명령 retire 사이에 발생한 시간 스탬프가 붙은 net 변화를 SystemVerilog queue에 저장하며, 이를 통해 reference model이나 checker가 비동기 입력에 대한 DUT 응답을 검증할 수 있다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- For randomly timed interrupts, the architectural model computes the set of legal outcomes. In the paper's staircase example with interrupts 0-7 there are 9 legal outcomes (take any one of 8 interrupts, or none). This analysis found a real CV32E40X bug (GitHub issue #665) where the DUT entered debug via ebreak instead of a legal interrupt.
+- For staggered interrupt pins (staircase waveform) across 8 interrupts, the paper enumerates 9 legal outcomes (take interrupt 0-7 or none); a DUT outcome outside this set is flagged, which exposed a CV32E40X bug where ebreak entered debug instead (OpenHW issue #665).
 
 </div>
 <div class="bi-ko" markdown>
 
-- 무작위 시점의 인터럽트에 대해 아키텍처 모델은 합법적 결과 집합을 계산한다. 인터럽트 0-7이 등장하는 staircase 예제에서 합법적 결과는 9가지이다(8개 인터럽트 중 하나를 받아들이거나 아무것도 받지 않음). 이 분석으로 CV32E40X의 실제 버그(GitHub issue #665)가 발견되었다. DUT가 합법적 인터럽트 대신 ebreak로 디버그 모드에 진입한 것이다.
+- 8개 인터럽트에 걸친 계단형(staircase) 인터럽트 핀 파형에 대해 논문은 9가지 합법적 결과(인터럽트 0-7 중 하나를 수락하거나 없음)를 열거하며, 이 집합을 벗어난 DUT 결과는 오류로 표시된다. 이 방식으로 ebreak가 대신 debug 모드에 진입하는 CV32E40X 버그(OpenHW issue #665)를 발견했다.
 
 </div>
 </div>
@@ -102,12 +102,25 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Gen 3 replaces the hand-coded reference model and step-and-compare logic with ImperasDV VIP, which implements the RVVI-API. The VIP performs state comparison and keeps results in an internal scoreboard. The paper gives no quantitative effort or coverage metrics, so the claimed gains are qualitative.
+- RVVI-API DPI-C functions such as rvviRefCsrSetVolatile and rvviRefMemorySetVolatile move volatile CSR and memory tracking from core-specific testbench masks into the reference model.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 3세대는 손으로 작성한 참조 모델과 step-and-compare 로직을 RVVI-API를 구현한 ImperasDV VIP로 대체한다. VIP는 상태 비교를 수행하고 결과를 내부 scoreboard에 보관한다. 논문은 실행 시간, 작업량, 커버리지 등 정량 지표를 제시하지 않으므로 얻은 이득은 정성적 주장이다.
+- RVVI-API의 DPI-C 함수(rvviRefCsrSetVolatile, rvviRefMemorySetVolatile 등)는 volatile CSR 및 메모리 추적을 코어별 testbench 마스크에서 reference model로 옮긴다.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- Gen-3 replaces the ISS and hand-coded step-and-compare with ImperasDV VIP and an ISA-agnostic RVVI interface, so client components can be reused across cores without modification; the paper gives no quantitative effort or bug-count comparison.
+
+</div>
+<div class="bi-ko" markdown>
+
+- 3세대는 ISS와 수작업 step-and-compare를 ImperasDV VIP 및 ISA에 независимый RVVI 인터페이스로 대체하여, 클라이언트 컴포넌트를 코어 간에 수정 없이 재사용할 수 있게 한다. 논문은 정량적인 엔지니어링 공수나 버그 수 비교는 제시하지 않는다.
 
 </div>
 </div>
@@ -119,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- CORE-V-VERIF is the OpenHW Group Verification Task Group's open-source UVM environment for CORE-V RISC-V cores, developed since 2019. Gens 1 and 2 used a C reference model (Imperas OVPsim ISS) run in lock-step with the DUT. The testbench compared PC, GPRs and CSRs at every instruction retirement (step-and-compare).
+- Gen-1/Gen-2 CORE-V-VERIF used an Imperas OVPsim ISS as reference model with step-and-compare: the RTL clock is gated per retirement and PC/GPR/CSR state is compared at each instruction.
 
 </div>
 <div class="bi-ko" markdown>
 
-- CORE-V-VERIF는 OpenHW Group Verification Task Group이 2019년부터 개발한 CORE-V RISC-V 코어용 오픈소스 UVM 환경이다. 1세대와 2세대는 C 참조 모델(Imperas OVPsim ISS)을 DUT와 lock-step으로 실행했다. 테스트벤치는 명령 retire마다 PC, GPR, CSR 상태를 비교했다(step-and-compare).
+- 1·2세대 CORE-V-VERIF는 Imperas OVPsim ISS를 reference model로 사용하고 step-and-compare 방식을 적용했다. 명령 retire마다 RTL 클록을 gating하고 PC/GPR/CSR 상태를 비교했다.
 
 </div>
 </div>
@@ -132,12 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- An ISS models time in instructions, while RTL models time in clock cycles. Side effects and asynchronous events (interrupts, debug requests) can therefore be timed differently in the ISS and the RTL. In Gen 1 this produced false-negative mismatches and required core-specific handling for each asynchronous event.
+- The ISS is instruction-accurate while RTL is clock-accurate; asynchronous interrupts and debug requests are seen at different instruction boundaries, causing false negatives and core-specific handling code.
 
 </div>
 <div class="bi-ko" markdown>
 
-- ISS는 시간을 명령 단위로, RTL은 클록 사이클 단위로 모델링한다. 따라서 side effect와 비동기 이벤트(인터럽트, 디버그 요청)의 타이밍이 ISS와 RTL에서 다를 수 있다. 1세대에서는 이로 인해 false negative 불일치가 발생했고, 비동기 이벤트마다 코어별 처리가 필요했다.
+- ISS는 instruction-accurate, RTL은 clock-accurate이므로 비동기 인터럽트와 debug 요청이 서로 다른 명령 경계에서 관측되어 false negative와 코어별 예외 처리 코드가 필요했다.
 
 </div>
 </div>
@@ -145,34 +158,27 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The effort needed for Gen 1 and Gen 2 was high, and OpenHW planned verification closure for at least five more cores, so a more reusable methodology was needed.
+- Gen-2 moved to an RVFI-based tracer and removed async events from the ISS, so the model only mirrored the DUT and could not independently check interrupt priority.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 1세대와 2세대의 작업량이 컸고, OpenHW는 최소 5개 이상의 추가 코어에 대해 검증 종료를 계획하고 있었기 때문에 재사용성이 높은 방법론이 필요했다.
+- 2세대는 RVFI 기반 tracer로 전환하고 비동기 이벤트를 ISS에서 분리했다. 이로 인해 모델은 DUT를 단순히 미러링할 뿐 인터럽트 우선순위를 독립적으로 검사할 수 없었다.
 
 </div>
 </div>
 
 ### Architecture and Methodology
 
-```mermaid
-flowchart LR
-  G1["Gen 1: ad-hoc tracer + ISS step-and-compare"] --> G2["Gen 2: RVFI-based tracer + Step-and-Compare 2.0"]
-  G2 --> RVVI["RVVI-TRACE + RVVI-API (standard interfaces)"]
-  RVVI --> G3["Gen 3: RVVI tracer + ImperasDV VIP scoreboard"]
-```
-
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Gen 1:** An ad-hoc, undocumented tracer bound to the RTL exposes GPR, PC and CSR state. The RTL clock is gated at each retirement so the ISS can execute one instruction, and the two states are compared.
+- RVVI-TRACE: a SystemVerilog interface with a queue of time-stamped net changes between retirements, and support for multiple register side effects per retirement (e.g., Zc extension), which RVFI lacked.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **1세대:** 문서화되지 않은 ad-hoc tracer가 RTL에 바인딩되어 GPR, PC, CSR 상태를 노출한다. 각 retire 시점에 RTL 클록을 게이팅하여 ISS가 명령 하나를 실행하게 한 뒤 두 상태를 비교한다.
+- RVVI-TRACE: 명령 retire 사이의 시간 스탬프가 붙은 net 변화를 저장하는 queue를 가진 SystemVerilog interface이며, RVFI에는 없던 retire당 다중 레지스터 side effect(예: Zc 확장)를 지원한다.
 
 </div>
 </div>
@@ -180,12 +186,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Gen 2:** The tracer follows an RVFI-derived interface with CORE-V extensions (e.g., rvfi_dbg, rvfi_dbg_mode). It is usually implemented as a SystemVerilog bind module. Debug entry is seen between instructions. Async events go to the RTL only, and the tracer reports them so the step-and-compare logic can inform the ISS. This fixed the Gen 1 false negatives but left a hole: the reference model cannot independently check the DUT's interrupt priority or selection.
+- RVVI-API: DPI-C functions (e.g., `rvviRefCsrSetVolatile`, `rvviRefMemorySetVolatile`) to mark CSRs and memory as volatile in the reference model.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **2세대:** tracer는 RVFI에서 파생되고 CORE-V 확장(예: rvfi_dbg, rvfi_dbg_mode)을 포함하는 인터페이스를 따른다. 보통 SystemVerilog bind 모듈로 구현된다. 디버그 진입은 명령 사이에서 보인다. 비동기 이벤트는 RTL에만 전달되며, tracer가 이를 보고하면 step-and-compare 로직이 ISS에 알린다. 이로써 1세대의 false negative는 해결되었지만, 참조 모델이 DUT의 인터럽트 우선순위나 선택을 독립적으로 검사할 수 없다는 공백이 남았다.
+- RVVI-API: reference model에서 CSR과 메모리를 volatile로 표시하는 DPI-C 함수(예: `rvviRefCsrSetVolatile`, `rvviRefMemorySetVolatile`)를 제공한다.
 
 </div>
 </div>
@@ -193,12 +199,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **RVVI standard:** RVVI-TRACE is a SystemVerilog interface between the DUT and testbench, with a queue for net changes between retirements. RVVI-API is a set of DPI-C functions for the reference model and VIP. Among them are volatile CSR and memory registration functions (`rvviRefCsrSetVolatile`, `rvviRefMemorySetVolatile`). The reference model then tracks volatile addresses and propagates read/write data, which removes the need for testbench-side register-skip lists.
+- Gen-3: RVVI tracer plus ImperasDV VIP that embeds the reference model, performs comparisons, keeps a scoreboard, and replaces the hand-coded step-and-compare logic.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **RVVI 표준:** RVVI-TRACE는 DUT와 테스트벤치 사이의 SystemVerilog 인터페이스이며, 명령 retire 사이의 net 변화를 담는 큐를 가진다. RVVI-API는 참조 모델과 VIP용 DPI-C 함수 집합이다. 그중에는 volatile CSR 및 메모리 등록 함수(`rvviRefCsrSetVolatile`, `rvviRefMemorySetVolatile`)가 있다. 참조 모델은 volatile 주소를 추적하고 읽기/쓰기 데이터를 전파하므로, 테스트벤치 쪽의 레지스터 제외 목록이 필요 없어진다.
+- 3세대: RVVI tracer와, reference model을 내장하고 비교를 수행하며 scoreboard를 유지하는 ImperasDV VIP를 사용한다. 수작업 step-and-compare 로직은 제거되었다.
 
 </div>
 </div>
@@ -206,25 +212,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Gen 3:** The RVVI tracer replaces the CORE-V tracer. ImperasDV VIP, which embeds an architectural reference model and implements RVVI-API, replaces the Imperas reference model. It performs the comparisons and holds the results in a scoreboard. Hand-coded step-and-compare logic is removed. The migration from RVFI to RVVI was still ongoing when the paper was written.
+- Legality analysis: for interrupt pins that toggle between retirements (staircase), the checker enumerates all legal outcomes (9 for 8 interrupts plus none) and verifies that the DUT's choice belongs to that set.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **3세대:** RVVI tracer가 CORE-V tracer를 대체한다. 아키텍처 참조 모델을 내장하고 RVVI-API를 구현한 ImperasDV VIP가 Imperas 참조 모델을 대체한다. VIP가 비교를 수행하고 결과를 scoreboard에 보관한다. 손으로 작성한 step-and-compare 로직은 제거되었다. 논문 작성 시점에도 RVFI에서 RVVI로의 전환은 진행 중이었다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Async analysis (staircase case):** Interrupt lines ramp up on successive clock edges. The interrupt condition is $\text{IRQ} = \text{MSTATUS.MIE} \land ((\text{MIE} \land \text{MIP}) \neq 0)$. The architectural model cannot know which interrupt the DUT sampled, so it enumerates the legal outcomes from the RVVI-TRACE transitions. The DUT's chosen path must belong to that set. The example has 9 legal outcomes.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **비동기 분석(staircase 사례):** 인터럽트 라인이 연속된 클록 엣지마다 계단식으로 상승한다. 인터럽트 조건은 $\text{IRQ} = \text{MSTATUS.MIE} \land ((\text{MIE} \land \text{MIP}) \neq 0)$이다. 아키텍처 모델은 DUT가 어떤 인터럽트를 샘플링했는지 알 수 없으므로, RVVI-TRACE의 전이 정보로부터 합법적 결과를 열거한다. DUT가 선택한 경로는 이 집합에 속해야 한다. 이 예제의 합법적 결과는 9가지이다.
+- 합법성 분석: 명령 retire 사이에 인터럽트 핀이 토글되는 경우(staircase), checker는 가능한 합법 결과를 모두 열거(8개 인터럽트에 대해 9개, 즉 인터럽트 없음 포함)하고 DUT의 선택이 그 집합에 속하는지 검증한다.
 
 </div>
 </div>
@@ -234,12 +227,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The paper reports no quantitative metrics such as runtime, effort or coverage numbers. Its claims about reuse, robustness and efficiency are qualitative.
+- The analysis flagged a CV32E40X bug (OpenHW issue #665): after `mret` with staggered pending interrupts, the DUT executed `ebreak` and entered debug mode, which matched none of the legal outcomes.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 논문은 실행 시간, 작업량, 커버리지 수치 같은 정량 지표를 제시하지 않는다. 재사용성, 견고성, 효율성에 대한 주장은 정성적이다.
+- 분석을 통해 CV32E40X 버그(OpenHW issue #665)가 발견되었다. 서로 다른 시점에 대기 중인 인터럽트가 있을 때 `mret` 이후 DUT가 `ebreak`를 실행해 debug 모드에 진입했으며, 이는 어떤 합법 결과와도 일치하지 않았다.
 
 </div>
 </div>
@@ -247,12 +240,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The staircase analysis flagged a real CV32E40X bug. After an `mret`, the DUT executed `ebreak` and entered debug mode, which matched none of the legal outcomes. This is tracked as openhwgroup/cv32e40x issue #665.
+- The paper claims Gen-3 is more robust, reusable, and better at finding RTL bugs, but gives no quantitative effort or bug-count comparison.
 
 </div>
 <div class="bi-ko" markdown>
 
-- staircase 분석으로 CV32E40X의 실제 버그가 발견되었다. `mret` 이후 DUT가 `ebreak`를 실행해 디버그 모드에 진입했는데, 이는 어떤 합법적 결과와도 일치하지 않았다. 이 버그는 openhwgroup/cv32e40x issue #665로 추적된다.
+- 논문은 3세대가 더 견고하고 재사용성이 높으며 RTL 버그 탐지에 더 효과적이라고 주장하지만, 정량적인 공수나 버그 수 비교는 제시하지 않는다.
 
 </div>
 </div>
@@ -260,38 +253,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Gen 3 removes the error-prone step-and-compare logic and lets the processor's response to asynchronous events be validated independently.
+- Future work: automated functional coverage of retired instructions from the RVVI trace; RVFI-to-RVVI migration is still ongoing.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 3세대는 오류가 발생하기 쉬운 step-and-compare 로직을 제거하고, 비동기 이벤트에 대한 프로세서 응답을 독립적으로 검증할 수 있게 한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Future work: automated functional coverage of retired instructions, enabled by the common RVVI tracer interface and the standard ISA definition.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 향후 과제: 공통 RVVI tracer 인터페이스와 표준 ISA 정의를 기반으로 retire된 명령의 기능 커버리지를 자동 생성한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The paper is a case study. Its main contribution is the methodology and interface evolution, not a benchmark.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 이 논문은 사례 연구이며, 핵심 기여는 벤치마크가 아니라 방법론과 인터페이스의 발전 과정이다.
+- 향후 과제: RVVI trace로부터 retire된 명령의 기능 커버리지를 자동 생성하는 것이며, RVFI에서 RVVI로의 전환은 아직 진행 중이다.
 
 </div>
 </div>

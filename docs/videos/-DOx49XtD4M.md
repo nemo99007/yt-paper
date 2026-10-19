@@ -19,4 +19,4 @@ resources:
 
 | Paper | Topic | Note |
 |---|---|---|
-| [Improve emulator test quality by applying synthesizable functional coverage](../papers/ref-20261018-2686-improve-emulator-test-quality-by-applying-synthesizable-func.md) | Verification | - |
+| [Improve emulator test quality by applying synthesizable functional coverage](../papers/ref-20261018-2686-improve-emulator-test-quality-by-applying-synthesizable-func.md) | Emulation | - |

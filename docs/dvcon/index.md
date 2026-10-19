@@ -17,6 +17,6 @@
 
 | Topic | Papers |
 |---|---|
-| [Emulation](by-topic.md#emulation) | 22 |
-| [Verification](by-topic.md#verification) | 73 |
-| [EDA](by-topic.md#eda) | 4 |
+| [Emulation](by-topic.md#emulation) | 24 |
+| [Verification](by-topic.md#verification) | 72 |
+| [EDA](by-topic.md#eda) | 3 |

@@ -4,7 +4,7 @@
 
 A reading archive of technical papers, each summarized and linked to its reading video on the [Nemo Reading Archive](https://www.youtube.com/@99007nemo) YouTube channel.
 
-**100** papers · **100** videos
+**106** papers · **106** videos
 
 ## Collections
 
@@ -12,6 +12,9 @@ A reading archive of technical papers, each summarized and linked to its reading
 |---|---|
 | [DVCon](dvcon/index.md) | 99 |
 | [DATE](date/index.md) | 1 |
+| [IEEE](ieee/index.md) | 1 |
+| [arXiv](arxiv/index.md) | 3 |
+| [Others](others/index.md) | 2 |
 
 ## Recently added
 
@@ -21,7 +24,7 @@ A reading archive of technical papers, each summarized and linked to its reading
 | 2026-01-02 | [Simulated Emulation: Enabling Multiple Iterations in a Day During Early-Stage Emulation Bring-up](papers/ref-20261018-3821-simulated-emulation-enabling-multiple-iterations-in-a-day-du.md) | DVCon 2024 | Emulation | :material-youtube: 1 |
 | 2025-12-28 | [Expedited Gate Level Verification: Unleashing the Potential of Netlist Integrated Emulation Platforms](papers/ref-20261018-8aac-expedited-gate-level-verification-unleashing-the-potential-o.md) | DVCon 2024 | Emulation | :material-youtube: 1 |
 | 2025-12-27 | [Unveiling Advance Hybrid Emulation Methodology for Accelerated Android Home Screen Bring-up and System Level Verification](papers/ref-20261018-e0d9-unveiling-advance-hybrid-emulation-methodology-for-accelerat.md) | DVCon 2024 | Emulation | :material-youtube: 1 |
-| 2025-12-21 | [Future Proofing Power Intent Specification through Unified Power Format (UPF) 4.0 for Evolving Advanced State Retention Strategies](papers/ref-20261018-e797-future-proofing-power-intent-specification-through-unified-p.md) | DVCon 2025 | EDA | :material-youtube: 1 |
+| 2025-12-21 | [Future Proofing Power Intent Specification through Unified Power Format (UPF) 4.0 for Evolving Advanced State Retention Strategies](papers/ref-20261018-e797-future-proofing-power-intent-specification-through-unified-p.md) | DVCon 2025 | Verification | :material-youtube: 1 |
 | 2025-12-20 | [Refinable Macros and Terminal Boundaries in UPF 4.0: Empowering Soft IPs of the Future](papers/ref-20261018-3f9c-refinable-macros-and-terminal-boundaries-in-upf-40-empowerin.md) | DVCon 2025 | EDA | :material-youtube: 1 |
 | 2025-10-31 | [Continuous Integration in SoC Design: Challenges and Solutions](papers/ref-20261018-ee89-continuous-integration-in-soc-design-challenges-and-solution.md) | DVCon 2025 | Verification | :material-youtube: 1 |
 | 2025-10-23 | [AI - accelerating coverage closure using intelligent stimulus generation](papers/ref-20261018-ea2b-ai-accelerating-coverage-closure-using-intelligent-stimulus.md) | DVCon 2025 | Verification | :material-youtube: 1 |
@@ -29,6 +32,6 @@ A reading archive of technical papers, each summarized and linked to its reading
 | 2025-10-13 | [Stimulus Diversification and Coverage Closure of 3D NAND Flash with Artificial Intelligence](papers/ref-20261018-cee6-stimulus-diversification-and-coverage-closure-of-3d-nand-fla.md) | DVCon 2025 | Verification | :material-youtube: 1 |
 | 2025-10-11 | [INTROSPECTION INTO SYSTEMVERILOG WITHOUT TURNING IT INSIDE OUT.](papers/ref-20261018-9f02-introspection-into-systemverilog-without-turning-it-inside-o.md) | DVCon 2016 | Verification | :material-youtube: 1 |
 | 2025-10-11 | [Easy Steps Towards Virtual Prototyping using the SystemVerilog DPI](papers/ref-20261018-6a03-easy-steps-towards-virtual-prototyping-using-the-systemveril.md) | DVCon 2013 | Verification | :material-youtube: 1 |
-| 2025-10-11 | [Of Camels and Committees: Standards Should Enable Innovation, Not Strangle It](papers/ref-20261018-2c26-of-camels-and-committees-standards-should-enable-innovation.md) | DVCon 2014 | Verification | :material-youtube: 1 |
+| 2025-10-11 | [Of Camels and Committees](papers/ref-20261018-2c26-of-camels-and-committees.md) | DVCon 2014 | Verification | :material-youtube: 1 |
 | 2025-10-10 | [What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard](papers/ref-20261018-f7f6-whats-next-for-systemverilog-in-the-upcoming-ieee-1800-stand.md) | DVCon 2023 | Verification | :material-youtube: 1 |
 | 2025-10-10 | [The Life of a SystemVerilog Variable](papers/ref-20261018-f51f-the-life-of-a-systemverilog-variable.md) | DVCon 2021 | Verification | :material-youtube: 1 |

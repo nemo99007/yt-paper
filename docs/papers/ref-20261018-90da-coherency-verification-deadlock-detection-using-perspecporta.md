@@ -7,7 +7,7 @@ region: US
 year: 2019
 category: Verification
 tags:
-- PSS
+- Portable Stimulus
 - Perspec
 - Cache Coherency
 - Deadlock Detection
@@ -29,7 +29,7 @@ youtube_videos:
 # Coherency Verification & Deadlock Detection Using Perspec/Portable Stimulus
 
 <figure class="rep-fig" markdown>
-![Figure 5: Deadlock Detection Verification Environment](../assets/figures/ref-20261018-90da.png?v=1792311151){ loading=lazy }
+![Figure 5: Deadlock Detection Verification Environment](../assets/figures/ref-20261018-90da.png?v=1792380038){ loading=lazy }
 <figcaption>Figure 5: Deadlock Detection Verification Environment — from the original paper (Moonki Jang et al.)</figcaption>
 </figure>
 
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Samsung and Cadence describe using Perspec/PSS, with a reusable coherency action library and a heartbeat-based deadlock detection environment, to verify cache coherency and PCIe-induced deadlocks in an automotive multi-core SoC, reporting qualitative rather than quantitative results.**
+**Samsung and Cadence apply PSS/Perspec to automate cache-coherency test generation for an automotive SoC compute subsystem and to build a simulation environment that detects and diagnoses a PCIe-related deadlock, with preliminary results only.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**Samsung과 Cadence는 재사용 가능한 coherency action 라이브러리와 heartbeat 기반 deadlock detection 환경을 결합해 Perspec/PSS로 automotive 멀티코어 SoC의 cache coherency 및 PCIe 유발 deadlock을 검증한 사례를 소개하며, 정량적 결과보다는 정성적 결과를 보고한다.**
+**Samsung과 Cadence는 PSS/Perspec을 적용해 automotive SoC compute subsystem의 cache coherency 테스트 생성을 자동화하고, PCIe 관련 deadlock을 검출·진단하는 시뮬레이션 환경을 구축했으며, 결과는 예비 단계에 한정된다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Perspec configuration tables (Processor Info, Memory Info) in Excel/CSV auto-generate PSS types and control-knob structures; the paper reports the compute subsystem modeling took a couple of hours with no coding, mostly spent collecting the configuration data.
+- Perspec's coherency library lets a compute subsystem of 12 cores in 3 clusters with 3 DDR blocks be modeled from configuration tables without coding, which the authors say took a couple of hours.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Excel/CSV 형태의 Perspec 설정 테이블(Processor Info, Memory Info)로부터 PSS 타입과 control-knob 구조체가 자동 생성되며, 저자들은 compute subsystem 모델링이 코딩 없이 수 시간(a couple of hours)이 걸렸고 대부분의 시간은 설정 정보를 찾는 데 쓰였다고 보고한다.
+- Perspec coherency 라이브러리를 사용하면 3개 클러스터의 12개 코어와 3개 DDR 블록으로 구성된 compute subsystem을 코딩 없이 configuration 테이블만으로 모델링할 수 있으며, 저자들은 이 작업이 수 시간 정도 걸렸다고 보고한다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Atomic coherency actions (write_data, copy_data, read_check_data) are composed into reusable building blocks: pss_wr_cp_rc is combined with parallel blocks for a 3-core scenario and with cdn_coherency_ops_c::false_sharing_rw_base, using constraints to keep processor cores unique across concurrent actions.
+- The deadlock environment combines a System Monitor (heartbeat timeout), a Transaction Latency Monitor (oldest pending transaction), a System Tracker (CPU state and log, then sim end), and a Simulation Manager (save & restore waveform dump) to make post-run root-cause analysis practical.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 원자적 coherency action(write_data, copy_data, read_check_data)을 조합해 재사용 가능한 블록을 만든다. pss_wr_cp_rc는 parallel 블록으로 3-core 시나리오에 쓰이고, cdn_coherency_ops_c::false_sharing_rw_base와도 결합되며, 동시에 실행되는 action들의 코어가 서로 겹치지 않도록 constraint로 제어한다.
+- Deadlock 검증 환경은 System Monitor(heartbeat 타임아웃), Transaction Latency Monitor(가장 오래된 미완료 트랜잭션 추적), System Tracker(CPU 상태 및 로그 생성 후 시뮬레이션 종료), Simulation Manager(save & restore 기반 waveform 덤프)를 결합하여 실행 후 root cause 분석을 실용적으로 만든다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The deadlock detection environment uses a System Monitor (missing CPU heartbeat response), a Transaction Latency Monitor (oldest incomplete transaction), and a System Tracker (CPU state, scenario, suspect transaction, estimated time) to terminate the simulation automatically and capture a log and waveform around the deadlock.
+- A PCIe deadlock is expressed as a 7-step PSS scenario combining non-posted reads, config writes, writebacks, ReadOnce snoops and WriteLineUnique snoops, with Perspec handling timing and resource scheduling.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Deadlock detection 환경은 System Monitor(CPU heartbeat 누락 감지), Transaction Latency Monitor(가장 오래된 미완료 트랜잭션 추적), System Tracker(CPU 상태, 시나리오, 의심 트랜잭션, 추정 발생 시각 기록)로 구성되어 시뮬레이션을 자동 종료하고 deadlock 주변의 로그와 waveform을 확보한다.
+- PCIe deadlock은 non-posted read, config write, writeback, ReadOnce snoop, WriteLineUnique snoop을 조합한 7단계 PSS 시나리오로 표현되며, 타이밍과 리소스 스케줄링은 Perspec이 처리한다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The PCIe deadlock case is a 7-step chain: non-posted reads fill the RC request buffer, config writes stall, a Writeback is blocked, ReadOnce snoops queue behind it, and a WriteLineUnique clean&invalidate snoop cannot be delivered, so the snoop queue saturates. PSS describes the parallel activities and lets Perspec randomize their scheduling.
+- The paper reports no quantitative speedup or deadlock findings; coherency suites ran and PCIe deadlock runs were still in progress, with final results deferred to DVCon 2019.
 
 </div>
 <div class="bi-ko" markdown>
 
-- PCIe deadlock 사례는 7단계 연쇄로 설명된다. Non-posted read가 RC 요청 버퍼를 채우고 config write가 막히며, CPU Writeback이 차단되고, ReadOnce snoop이 그 뒤에서 대기하며, WriteLineUnique의 Clean&Invalidate snoop을 전달할 수 없어 snoop queue가 포화된다. PSS는 이 병렬 활동을 기술하고 Perspec이 스케줄링을 랜덤화한다.
+- 논문은 정량적 속도 향상이나 deadlock 발견 결과를 보고하지 않는다. Coherency 테스트 suite는 실행되었고 PCIe deadlock 실행은 진행 중이며, 최종 결과는 DVCon 2019로 미뤄졌다.
 
 </div>
 </div>
@@ -115,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The paper gives no quantitative speedup or coverage figures. Coherency suites were generated and run, while PCIe deadlock results were still pending (to be presented at DVCon 2019). Reuse across projects requires avoiding hard-coded processor and memory names, which the authors say calls for a methodology and library beyond the PSS language itself.
+- Scenario reuse requires a library and methodology layer and avoiding hard-coded processor/memory names, not just the PSS language itself.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 논문은 속도 향상이나 coverage 수치 등 정량적 결과를 제시하지 않는다. Coherency 테스트 스위트는 생성 및 실행되었고, PCIe deadlock 결과는 DVCon 2019에서 발표 예정으로 보류되었다. 저자들은 프로젝트 간 재사용을 위해 프로세서/메모리 이름을 하드코딩하지 않아야 하며, 이를 위해서는 PSS 언어 외에 methodology와 library가 필요하다고 설명한다.
+- 시나리오 재사용에는 PSS 언어 자체뿐 아니라 라이브러리와 methodology 계층이 필요하며, 특정 processor/memory 리소스 이름을 하드코딩하지 않아야 한다.
 
 </div>
 </div>
@@ -132,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Automotive and mobile SoCs integrate many processor cores, multi-level caches (private L1, cluster L2, optional LLC in the coherent interconnect), a GPU/NPU, and coherent IO masters (PCIe, Ethernet, USB) connected via ACE/ACE-Lite.
+- Automotive/mobile SoCs with many cores, multi-level caches, and coherent IO masters make hand-written coherency and deadlock/livelock tests costly to build and maintain.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Automotive 및 mobile SoC는 다수의 processor core, 다단계 cache(코어별 private L1, 클러스터 L2, coherent interconnect 내 선택적 LLC), GPU/NPU, 그리고 ACE/ACE-Lite로 연결된 coherent IO master(PCIe, Ethernet, USB 등)를 포함한다.
+- Automotive/모바일 SoC는 다수의 코어, 다단계 캐시, coherent IO 마스터를 포함하므로 coherency 및 deadlock/livelock 테스트를 수작업으로 작성하고 유지하는 비용이 크다.
 
 </div>
 </div>
@@ -145,25 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Manually building enough test suites for coherency (false-sharing, true-sharing, exclusive access, DVM) and for deadlock/livelock avoidance is labor-intensive. The number of cores, masters, and cache levels multiplies the combinations.
+- PCIe ordering rules let a stalled posted write block non-posted requests; combined with coherency snoops this can deadlock, and such bugs are hard to root-cause post-silicon.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Coherency(false-sharing, true-sharing, exclusive access, DVM) 및 deadlock/livelock 회피를 위한 테스트 스위트를 수작업으로 만드는 일은 노동 집약적이다. Core 수, master 수, cache 레벨 수에 따라 조합이 크게 늘어난다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- PCIe-related deadlocks arise only from specific transaction sequences and timing. Root-causing them post-silicon is very difficult and costly, so the authors target simulation-level reproduction before tape-out.
-
-</div>
-<div class="bi-ko" markdown>
-
-- PCIe 관련 deadlock은 특정 트랜잭션 순서와 타이밍에서만 발생한다. Post-silicon 단계에서 근본 원인을 찾기는 매우 어렵고 비용이 크므로, 저자들은 tape-out 이전에 시뮬레이션 수준에서 재현하는 것을 목표로 한다.
+- PCIe 순서 규칙에 따라 막힌 posted write가 non-posted 요청을 정체시킬 수 있으며, coherency snoop과 결합하면 deadlock이 발생할 수 있다. 이런 버그는 post-silicon 단계에서 root cause를 찾기 어렵다.
 
 </div>
 </div>
@@ -173,12 +160,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-Test development follows four steps: (1) model the compute subsystem, (2) develop memory coherency scenarios, (3) develop PSS models for other subsystems, (4) develop subsystem scenarios. The paper details only steps 1 and 2 in depth.
+- The compute subsystem is modeled in Perspec's coherency library by filling Excel/CSV tables: Processor Info (12 cores, M0–B3, in 3 clusters) and Memory Info (DDR0–DDR2).
 
 </div>
 <div class="bi-ko" markdown>
 
-테스트 개발은 (1) compute subsystem 모델링, (2) 메모리 coherency 시나리오 개발, (3) 다른 subsystem의 PSS 모델 개발, (4) subsystem 시나리오 개발의 4단계로 진행된다. 논문은 1단계와 2단계만 자세히 다룬다.
+- Compute subsystem은 Perspec coherency 라이브러리에서 Excel/CSV 테이블로 모델링한다. Processor Info(3개 클러스터의 12개 코어 M0–B3)와 Memory Info(DDR0–DDR2)를 채운다.
 
 </div>
 </div>
@@ -186,12 +173,12 @@ Test development follows four steps: (1) model the compute subsystem, (2) develo
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Compute subsystem modeling:** The Perspec coherency library is driven by configuration tables. The Processor Info table (#tag, #kind, #cluster) lists 12 cores (M0–B3) in 3 clusters. The Memory Info table lists DDR0, DDR1, and DDR2 with address ranges and #enabled. Perspec auto-generates types such as sml_processor_tag_e and the control-knob structure sml_proc_subset_select_s.
+- Atomic actions (write_data, copy_data, read_check_data) are composed into pss_wr_cp_rc, then extended to parallel 3-core and false-sharing scenarios with uniqueness constraints.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Compute subsystem 모델링:** Perspec coherency library는 설정 테이블로 구동된다. Processor Info 테이블(#tag, #kind, #cluster)은 3개 클러스터에 걸친 12개 core(M0–B3)를 나열한다. Memory Info 테이블은 DDR0, DDR1, DDR2의 주소 범위와 #enabled 항목을 담는다. Perspec은 sml_processor_tag_e 같은 타입과 control-knob 구조체 sml_proc_subset_select_s를 자동 생성한다.
+- 원자 action(write_data, copy_data, read_check_data)을 pss_wr_cp_rc로 조합하고, 코어 유일성 제약을 둔 3-코어 병렬 시나리오와 false-sharing 시나리오로 확장한다.
 
 </div>
 </div>
@@ -199,12 +186,12 @@ Test development follows four steps: (1) model the compute subsystem, (2) develo
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Atomic actions and composition:** `write_data`, `copy_data`, and `read_check_data` are chained in `pss_wr_cp_rc` with a random `proc_tag_l`. That action is then used in `pss_wr_cp_rc_3cores`, which runs three instances in `parallel` with pairwise `!=` constraints on the core tags. A further scenario, `pss_fs_rw_mem_rw`, runs `pss_wr_cp_rc` in parallel with `cdn_coherency_ops_c::false_sharing_rw_base`, using a soft size/cluster constraint on the subset and a `foreach` constraint so the two sides use different cores.
+- The deadlock environment has a System Monitor (heartbeat timeout), a Transaction Latency Monitor (oldest pending transaction), a System Tracker (CPU state, log, sim end), and a Simulation Manager (save & restore waveform dump).
 
 </div>
 <div class="bi-ko" markdown>
 
-- **원자적 action과 조합:** write_data, copy_data, read_check_data를 pss_wr_cp_rc에서 chain으로 묶고, 무작위 proc_tag_l을 사용한다. 이 action은 pss_wr_cp_rc_3cores에서 쌍별 `!=` constraint로 core tag를 구분한 채 세 인스턴스를 parallel로 실행하는 데 쓰인다. 또 다른 시나리오 pss_fs_rw_mem_rw는 pss_wr_cp_rc를 cdn_coherency_ops_c::false_sharing_rw_base와 병렬로 실행하며, subset 크기/클러스터에 soft constraint를 걸고 foreach constraint로 두 측이 서로 다른 core를 사용하도록 한다.
+- Deadlock 환경은 System Monitor(heartbeat 타임아웃), Transaction Latency Monitor(가장 오래된 미완료 트랜잭션), System Tracker(CPU 상태, 로그, 시뮬레이션 종료), Simulation Manager(save & restore waveform 덤프)로 구성된다.
 
 </div>
 </div>
@@ -212,70 +199,27 @@ Test development follows four steps: (1) model the compute subsystem, (2) develo
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Deadlock detection environment (Fig. 5):**
-  1. *System Monitor:* a status timer raises periodic interrupts; the CPU replies with a heartbeat response, or a failure response on SError, livelock, or similar failures. Missing heartbeats past a timeout mark a deadlock and notify the System Tracker.
-  2. *Transaction Latency Monitor:* records latency for all CPU-originated transactions and passes the oldest incomplete transaction to the System Tracker.
-  3. *System Tracker:* gathers CPU status (PC, GPRs, PSTATE, fault status, ESR), the current scenario, the suspect transaction, and the estimated deadlock time; writes a log and ends the simulation.
-  4. *Simulation Manager:* generates and runs the Perspec scenarios, parses the log, and triggers a waveform dump around the failure point via save & restore.
+- The PCIe deadlock is a 7-step sequence: non-posted reads and config writes saturate the RC buffer, a writeback stalls, and ReadOnce and WriteLineUnique snoops are blocked. It is encoded as PSS parallel/sequence activities.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Deadlock detection 환경(Fig. 5):**
-  1. *System Monitor:* 상태 점검 타이머가 주기적으로 인터럽트를 발생시키고, CPU는 heartbeat response로 응답한다. SError, livelock 등 장애 시에는 failure response를 보낸다. 제한 시간 동안 heartbeat가 없으면 deadlock으로 판단하여 System Tracker에 알린다.
-  2. *Transaction Latency Monitor:* CPU가 발생시킨 모든 트랜잭션의 지연을 기록하고, 가장 오래된 미완료 트랜잭션 정보를 System Tracker에 넘긴다.
-  3. *System Tracker:* CPU 상태(PC, GPR, PSTATE, fault status, ESR), 현재 시나리오, 의심 트랜잭션, 추정 deadlock 시각을 수집하고 로그 파일을 생성한 뒤 시뮬레이션을 종료한다.
-  4. *Simulation Manager:* Perspec 시나리오의 생성과 실행을 관리하고 로그를 분석하며, save & restore를 이용해 장애 지점 주변의 waveform을 dump한다.
+- PCIe deadlock은 7단계 시퀀스로 구성된다. non-posted read와 config write가 RC 버퍼를 포화시키고, writeback이 정체되며, ReadOnce와 WriteLineUnique snoop이 차단된다. 이를 PSS parallel/sequence 활동으로 표현한다.
 
 </div>
 </div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **PCIe deadlock scenario (Fig. 6):** Non-posted reads fill the PCIe RC request buffer, which blocks config writes. A CPU Writeback is then blocked on the write channel. The PCIe EP's ReadOnce for address A generates a snoop that cannot proceed past the outstanding WriteBack. Coherent reads from the EP saturate the snoop queue, and the EP's WriteLineUnique for A generates a Clean&Invalidate snoop that cannot be delivered. The deadlock follows at step 7.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **PCIe deadlock 시나리오(Fig. 6):** Non-posted read가 PCIe RC 요청 버퍼를 채워 config write를 막는다. 이어서 CPU의 Writeback이 write 채널에서 차단된다. PCIe EP가 주소 A에 대해 발행한 ReadOnce는 미완료 WriteBack 뒤에서 진행하지 못하는 snoop을 생성한다. EP의 coherent read들이 snoop queue를 채우고, EP의 WriteLineUnique(주소 A)는 Clean&Invalidate snoop을 생성하지만 queue가 포화되어 CPU cluster에 전달되지 못한다. 7단계에서 deadlock이 완성된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **PSS encoding:** A setup phase (`pcie_config`, `pcie_rc_mem_write`, `write_cache`) is followed by a `parallel` block. Cores A3, A0, A1, and A2 run PCIe RC reads, a read with invalidate, and a read with config write. A sequence in the PCIe EP runs `pcie_ep_mem_write` followed by repeated `pcie_ep_mem_read`. Perspec randomizes core selection and scheduling, and Fig. 7 shows one generated test.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **PSS 표현:** Setup 단계(pcie_config, pcie_rc_mem_write, write_cache) 뒤에 parallel 블록이 온다. Core A3, A0, A1, A2는 각각 PCIe RC read, read와 invalidate, read와 config write를 수행한다. PCIe EP 쪽 sequence는 pcie_ep_mem_write 후 pcie_ep_mem_read를 반복한다. Perspec이 core 선택과 스케줄링을 무작위화하며, Fig. 7은 생성된 테스트 하나를 보여준다.
-
-</div>
-</div>
-
-```mermaid
-flowchart LR
-    CPU[CPU cluster] -->|heartbeat response| SM[System Monitor]
-    SM -->|deadlock alert| ST[System Tracker]
-    TLM[Transaction Latency Monitor] -->|oldest incomplete txn| ST
-    ST -->|state log, end sim| SMG[Simulation Manager]
-    SMG -->|save & restore waveform dump| WF[Waveform]
-```
 
 ### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The coherency test suites were generated and run on the project design. The authors say this was fast because of the Perspec coherency library and scenario reuse from a previous project.
+- Coherency suite generation and execution were completed quickly by reusing scenarios from a previous project; no quantitative speedup is reported.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Coherency 테스트 스위트는 대상 설계에 대해 생성 및 실행되었다. 저자들은 Perspec coherency library와 이전 프로젝트 시나리오 재사용 덕분에 빠르게 진행되었다고 설명한다.
+- 이전 프로젝트의 시나리오를 재사용하여 coherency 테스트 suite의 생성과 실행을 빠르게 완료했으며, 정량적 속도 향상 수치는 보고되지 않았다.
 
 </div>
 </div>
@@ -283,12 +227,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- PCIe deadlock scenarios were still running at the time of writing, and additional SoC-level PCIe scenarios were under development. Final results were deferred to DVCon 2019. The paper reports no quantitative metrics (speedup, coverage percentages, or bugs found).
+- PCIe deadlock runs were still in progress; final results were deferred to DVCon 2019.
 
 </div>
 <div class="bi-ko" markdown>
 
-- PCIe deadlock 시나리오는 작성 시점에 실행 중이었고, 추가 SoC 수준 PCIe 시나리오가 개발 중이었다. 최종 결과는 DVCon 2019로 미뤄졌다. 논문은 속도 향상, coverage 비율, 발견된 버그 수 등 정량적 지표를 제시하지 않는다.
+- PCIe deadlock 실행은 아직 진행 중이었고, 최종 결과는 DVCon 2019로 미뤄졌다.
 
 </div>
 </div>
@@ -296,25 +240,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Qualitative lessons: PSS scenarios were simpler to write than hand-written C tests. Portable stimulus needs a library and methodology in addition to the language, analogous to UVM. Scenarios should avoid referring to project-specific processor or memory names.
+- The authors conclude that portable stimulus needs a methodology and library layer beyond PSS syntax, analogous to UVM, and that scenarios should avoid naming specific resources.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 정성적 교훈: PSS 시나리오는 수작업 C 테스트보다 작성이 쉬웠다. Portable stimulus에는 언어 외에 UVM과 유사하게 library와 methodology가 필요하다. 시나리오는 프로젝트별 프로세서/메모리 이름을 참조하지 않아야 한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Stated contributions: application of PSS to SoC-level coherency and deadlock tasks, a horizontal project-to-project reuse methodology, and a deadlock detection verification environment.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 명시된 기여: SoC 수준 coherency 및 deadlock 작업에 PSS 적용, 프로젝트 간(horizontal) 재사용 methodology, deadlock detection 검증 환경.
+- 저자들은 portable stimulus에는 PSS 문법을 넘어 UVM과 유사한 methodology 및 라이브러리 계층이 필요하며, 시나리오에서는 특정 리소스 이름을 쓰지 않아야 한다고 결론짓는다.
 
 </div>
 </div>

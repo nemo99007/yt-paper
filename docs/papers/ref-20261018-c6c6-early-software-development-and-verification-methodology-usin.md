@@ -8,13 +8,13 @@ year: 2017
 category: Emulation
 tags:
 - Hybrid Emulation
+- ESL
 - Co-emulation
 - Transactor
 - Memory Shadowing
-- Android Boot
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/early-software-development-and-verification-methodology-using-hybrid-emulation-platform.pdf
-authors: Woojoo Kim (Samsung Electronics), Haemin Park (Samsung Electronics), Hyundon Kim (Samsung Electronics), Seonil Brian Choi (Samsung Electronics), SukWon Kim (Samsung Electronics)
+authors: Woojoo Kim, Haemin Park, Hyundon Kim, Seonil Brian Choi, SukWon Kim (Samsung Electronics Co., Ltd.)
 youtube_videos:
 - video_id: X_GWjG3jBPc
   url: https://www.youtube.com/watch?v=X_GWjG3jBPc
@@ -29,7 +29,7 @@ youtube_videos:
 # EARLY SOFTWARE DEVELOPMENT AND VERIFICATION METHODOLOGY USING HYBRID EMULATION PLATFORM
 
 <figure class="rep-fig" markdown>
-![Figure 2. Hybrid Platform Overview.](../assets/figures/ref-20261018-c6c6.png?v=1792310876){ loading=lazy }
+![Figure 2. Hybrid Platform Overview.](../assets/figures/ref-20261018-c6c6.png?v=1792379850){ loading=lazy }
 <figcaption>Figure 2. Hybrid Platform Overview. — from the original paper (Woojoo Kim et al.)</figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ youtube_videos:
 
 | | |
 |---|---|
-| Authors | Woojoo Kim (Samsung Electronics), Haemin Park (Samsung Electronics), Hyundon Kim (Samsung Electronics), Seonil Brian Choi (Samsung Electronics), SukWon Kim (Samsung Electronics) |
+| Authors | Woojoo Kim, Haemin Park, Hyundon Kim, Seonil Brian Choi, SukWon Kim (Samsung Electronics Co., Ltd.) |
 | Venue | DVCon US 2017 |
 | Topic | Emulation |
 | Type | PAPER |
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**The paper proposes a hybrid platform that co-emulates a TLM-LT virtual platform (CPU, memory, storage, display) with an RTL emulator (remaining IPs) via transactors and memory shadowing, enabling Android SW bring-up on a 2.5-billion-gate mobile AP before silicon boards are available, with Android boot reduced from 661 min to 47 min (14.1x).**
+**A hybrid platform co-emulates a TLM LT virtual platform (CPU, memories, storage/display models) with an RTL emulator (remaining IPs) via transactors and memory shadowing, enabling Android bring-up on a 2.5-billion-gate mobile AP before the development board is ready.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**이 논문은 TLM LT 가상 플랫폼(CPU, 메모리, 스토리지, 디스플레이)과 RTL 에뮬레이터(나머지 IP)를 트랜스액터와 메모리 셰도잉으로 공동 에뮬레이션하는 하이브리드 플랫폼을 제안하며, 2.5억 게이트 모바일 AP에서 실리콘 보드 이전에 Android SW bring-up을 가능하게 하고 Android 부팅 시간을 661분에서 47분(14.1배)으로 줄인다.**
+**CPU와 메모리 서브시스템을 TLM LT 가상 플랫폼에, 나머지 IP를 RTL 에뮬레이터에 배치하고 transactor와 memory shadowing으로 연결하는 하이브리드 에뮬레이션 플랫폼으로, 2.5억 게이트 모바일 AP에서 개발 보드 이전에 Android 부팅을 가능하게 합니다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Partitioning CPU, memory and external-device models onto a TLM LT virtual platform while keeping the rest of the RTL on the emulator removes per-cycle synchronization on the boot-critical path: Linux kernel boot dropped from 96 min (pure emulator) to 2 min (48x) and Android boot from 661 min to 47 min (14.1x).
+- Allocating CPU and memory subsystems to a TLM LT virtual platform while the rest of the SoC stays in the emulator cuts Android boot time from 762 min (pure emulation) to 54 min, a 14.1x speedup.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 부팅 핵심 경로인 CPU, 메모리, 외부 장치 모델을 TLM LT 가상 플랫폼에 두고 나머지 RTL은 에뮬레이터에 두면 사이클 단위 동기화가 제거된다. Linux 커널 부팅은 순수 에뮬레이터 96분에서 2분(48배), Android 부팅은 661분에서 47분(14.1배)으로 줄었다.
+- CPU와 메모리 서브시스템을 TLM LT 가상 플랫폼에 두고 나머지 SoC는 에뮬레이터에 둠으로써 Android 부팅 시간이 pure emulation 762분에서 hybrid 54분으로 줄어 14.1배 빨라집니다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Transactors use signal hooking and forcing to translate between TLM transactions in the virtual platform and pin-level protocols in the emulator (AMBA ACE, sideband, eMMC/UFS/Display/Camera PHYs), with an internal buffer and cache scheme that reduces inter-platform synchronization frequency.
+- Linux kernel boot drops from 96 min to 2 min (48x), because most of its operations run on the virtual platform with little cross-domain traffic; Android boot gains less because it is communication- and emulator-heavy.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 트랜스액터는 신호 hooking과 forcing으로 가상 플랫폼의 트랜잭션 수준 프로토콜과 에뮬레이터의 핀 수준 프로토콜을 변환한다(AMBA ACE, sideband, eMMC/UFS/Display/Camera PHY). 내부 버퍼와 캐시 방식으로 두 플랫폼 간 동기화 빈도를 줄인다.
+- Linux 커널 부팅은 96분에서 2분으로 48배 단축되는데, 대부분의 동작이 가상 플랫폼에서 수행되고 도메인 간 통신이 적기 때문입니다. Android 부팅은 통신과 에뮬레이터 작업이 많아 이득이 더 작습니다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Memory shadowing sits between the two domains so that CPU memory accesses on the virtual platform do not have to traverse the emulator backbone at emulation speed, supporting both back-door and front-door transactions.
+- Transactors implement AMBA ACE, sideband, and PHY interfaces for eMMC, UFS, display, and camera, forcing and hooking signals so the emulated DUT is unmodified and the virtual LCD renders the Android home screen.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 두 도메인 사이의 메모리 셰도잉은 가상 플랫폼의 메모리 요청을 에뮬레이터 백본 속도까지 기다리지 않고 처리하게 하며, back-door와 front-door 접근을 모두 지원한다.
+- Transactor는 AMBA ACE, sideband, eMMC/UFS/디스플레이/카메라 PHY 인터페이스를 구현하며, 신호 hooking과 forcing으로 DUT 기능을 바꾸지 않고 가상 LCD에 Android 홈 화면을 표시합니다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Automating hybrid platform generation (memory map, interrupt map, black-boxing emulator IPs, transactor insertion) cut total build time from 620 min (manual) to 390 min (automatic), a 37.1% reduction, at about 3% overhead over a pure emulation build.
+- Memory shadowing with front-door and back-door access plus a cache in transactor buffers reduces cross-domain synchronization frequency, avoiding per-cycle lockstep with the slow emulator.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 하이브리드 플랫폼 생성 자동화(메모리 맵, 인터럽트 맵, 블랙박스 처리, 트랜스액터 삽입)로 전체 빌드 시간이 수동 620분에서 자동 390분으로 줄었다(37.1% 감소). 순수 에뮬레이션 대비 오버헤드는 약 3%다.
+- Front-door/back-door 접근을 지원하는 memory shadowing과 transactor 버퍼의 cache 방식은 도메인 간 동기화 빈도를 줄여 느린 에뮬레이터에 매 사이클 맞추는 병목을 피합니다.
 
 </div>
 </div>
@@ -115,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Android boot-up accounted for about 87% of total operating time; the authors note the gain is smaller for Android than for Linux because initialization and register programming remain on the emulator side and cross-domain communication is heavy.
+- Automating hybrid platform generation from memory-map and interrupt-map inputs cut total build time from 620 min (manual) to 390 min (automatic), a 37.1% reduction, with about 3% overhead over pure emulation.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Android 부팅이 전체 동작 시간의 약 87%를 차지한다. 저자들은 초기화와 레지스터 프로그래밍이 에뮬레이터 측에 남고 도메인 간 통신이 많아 Linux보다 이득이 작다고 설명한다.
+- Memory map과 interrupt map 입력으로 하이브리드 플랫폼 생성을 자동화하여 총 빌드 시간을 수동 620분에서 자동 390분으로 37.1% 줄였으며, pure emulation 대비 오버헤드는 약 3%입니다.
 
 </div>
 </div>
@@ -132,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Mobile AP development is gated by software bring-up, which normally starts only after a silicon development board arrives, even though a functionally complete RTL exists months earlier.
+- Mobile AP SW (drivers, Linux, Android) usually starts only after the board arrives, although RTL is ready months earlier.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 모바일 AP 개발에서 SW bring-up은 보통 개발 보드가 SW 엔지니어에게 전달된 후에 시작된다. 그러나 완성된 RTL은 보드 전달보다 수개월 먼저 존재한다.
+- 모바일 AP의 SW(드라이버, Linux, Android)는 RTL이 몇 달 먼저 준비되어도 개발 보드가 도착한 뒤에야 보통 시작됩니다.
 
 </div>
 </div>
@@ -145,12 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Full-chip RTL simulation is far too slow for OS work. The paper cites simulation at a few dozen KHz for multi-hundred-million-gate designs, roughly $10^6$ times slower than silicon, so one silicon second corresponds to about 11.6 days of simulation.
+- Full-chip RTL simulation runs at a few dozen KHz, and pure emulation boots Linux/Android in over 10 hours; FPGA prototyping is limited by capacity.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 전체 칩 RTL 시뮬레이션은 OS 작업에는 너무 느리다. 논문은 수억 게이트 설계에서 시뮬레이션 속도가 수십 KHz 수준이며 실리콘 대비 약 $10^6$배 느리다고 제시한다. 이 경우 실리콘에서 1초에 해당하는 SW 실행에 약 11.6일이 걸린다.
+- Full-chip RTL 시뮬레이션은 수십 KHz 수준이고, pure emulation으로는 Linux/Android 부팅에 10시간 이상 걸리며, FPGA 프로토타이핑은 용량 제약이 있습니다.
 
 </div>
 </div>
@@ -158,25 +158,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Pure RTL emulation is about 1000x faster than simulation (several hundred KHz to MHz) but still about $10^3$ slower than silicon. Booting Linux and Android on it takes more than ten hours by the authors' account.
+- Prior ESL co-emulation work (GPU driver focus, or VIP-based external devices) cannot support full Android with real external-device behavior.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 순수 RTL 에뮬레이션은 시뮬레이션보다 약 1000배 빠르지만(수백 KHz~MHz) 실리콘 대비 약 $10^3$배 느리다. 저자들에 따르면 에뮬레이터에서 Linux와 Android를 부팅하는 데 10시간 이상 걸린다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Pure ESL/TLM virtual platforms are fast but need extensive modeling. Prior ESL-RTL co-emulation work (GPU verification [10], Palladium Hybrid VIP-based external devices [11]) either covered only a narrow driver-verification scope or relied on VIPs that cannot match full SFR behavior, so they cannot support full Android bring-up.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 순수 ESL/TLM 가상 플랫폼은 빠르지만 모델링 비용이 크다. 기존 ESL-RTL 공동 에뮬레이션 연구(GPU 검증 [10], Palladium Hybrid의 VIP 기반 외부 장치 [11])는 범위가 좁거나 전체 SFR 동작을 재현하지 못하는 VIP에 의존해 전체 Android bring-up을 지원하지 못한다.
+- 기존 ESL co-emulation 연구는 GPU 드라이버 중심이거나 VIP 기반 외부 장치 모델을 사용해 실제 외부 장치 동작을 갖춘 full Android를 지원하지 못합니다.
 
 </div>
 </div>
@@ -186,12 +173,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-The platform splits the SoC between two domains:
+- Virtual platform: CPU, memories, and external-device models at TLM LT, connected to emulator-side IPs through transactors.
 
 </div>
 <div class="bi-ko" markdown>
 
-플랫폼은 SoC를 두 도메인으로 나눈다.
+- 가상 플랫폼: CPU, 메모리, 외부 장치 모델을 TLM LT로 구현하고, transactor를 통해 에뮬레이터 측 IP와 연결합니다.
 
 </div>
 </div>
@@ -199,12 +186,12 @@ The platform splits the SoC between two domains:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Virtual platform (TLM LT):** CPU, memories, external storage and display models, which generate heavy transaction traffic during Android boot. A GIC is also modeled here.
+- Transactors perform signal hooking/forcing and TLM-to-pin protocol conversion, with internal buffers, for AMBA ACE, sideband, and PHY interfaces (eMMC, UFS, display, camera).
 
 </div>
 <div class="bi-ko" markdown>
 
-- **가상 플랫폼(TLM LT):** Android 부팅 중 트랜잭션 트래픽을 많이 만드는 CPU, 메모리, 외부 스토리지 및 디스플레이 모델. GIC도 여기에 모델링된다.
+- Transactor는 신호 hooking/forcing과 TLM-to-pin 프로토콜 변환을 수행하며 내부 버퍼를 가지고, AMBA ACE, sideband, PHY 인터페이스(eMMC, UFS, 디스플레이, 카메라)를 담당합니다.
 
 </div>
 </div>
@@ -212,108 +199,46 @@ The platform splits the SoC between two domains:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Emulator (RTL):** all remaining IPs of the 2.5-billion-gate AP, with PHY models attached to external devices.
+- Memory shadowing sits between the two domains to serve memory accesses locally and reduce emulator-backbone traffic.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **에뮬레이터(RTL):** 2.5억 게이트 AP의 나머지 모든 IP와 외부 장치에 연결된 PHY 모델.
+- Memory shadowing은 두 도메인 사이에 위치해 메모리 접근을 로컬에서 처리하여 에뮬레이터 백본 트래픽을 줄입니다.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- An automated flow generates the emulator DB and virtual platform from predefined memory-map and interrupt-map inputs.
+
+</div>
+<div class="bi-ko" markdown>
+
+- 자동화 흐름은 사전 정의된 memory map과 interrupt map 입력으로 에뮬레이터 DB와 가상 플랫폼을 생성합니다.
 
 </div>
 </div>
 
 ```mermaid
 flowchart LR
-    subgraph VP["Virtual Platform (TLM LT)"]
-        CPU[CPU] --- MEM[Memory / Shadow]
-        CPU --- GIC[GIC]
-        STO[Storage models]
-        DSP[Display / LCD model]
-    end
-    subgraph EMU["HW Emulator (RTL)"]
-        IPS[Other IPs / backbone]
-        PHY[PHY models]
-    end
-    VP <-->|"Transactors: signal hook/force,<br/>protocol conversion, buffer"| EMU
-    MEM -. "memory shadowing" .- IPS
+  VP[Virtual platform: CPU, memory, TLM LT models] <-->|transactors + memory shadow| EMU[Emulator: remaining IPs, RTL DUT]
+  EMU --> PHY[Display / storage / camera PHY models]
 ```
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Key mechanisms:
-
-</div>
-<div class="bi-ko" markdown>
-
-핵심 메커니즘:
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Transactors (Sec. 3-2):** implemented on the emulator side, they perform signal forcing and hooking without altering DUT function. They convert transaction-level protocol to pin-level protocol and include an internal buffer to absorb the speed gap. Transactors cover AMBA ACE, sideband signals, and PHYs for eMMC, UFS, display and camera.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **트랜스액터(Sec. 3-2):** 에뮬레이터 측에 구현되며 DUT 기능을 바꾸지 않고 신호 forcing과 hooking만 수행한다. 트랜잭션 수준 프로토콜을 핀 수준 프로토콜로 변환하고, 속도 차이를 흡수하는 내부 버퍼를 가진다. 대상은 AMBA ACE, sideband 신호, eMMC·UFS·Display·Camera용 PHY이다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Timing synchronization (Sec. 3-3):** a cache scheme in each transactor buffer reduces how often the two platforms must synchronize, instead of syncing every cycle.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **타이밍 동기화(Sec. 3-3):** 각 트랜스액터 버퍼의 캐시 방식으로 매 사이클 동기화 대신 두 플랫폼 간 동기화 빈도를 줄인다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Memory shadowing (Sec. 3-4):** a scheme between the domains serves virtual-platform memory requests locally so they do not stall on emulator backbone speed. It supports back-door and front-door accesses.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **메모리 셰도잉(Sec. 3-4):** 두 도메인 사이에 위치하며, 가상 플랫폼의 메모리 요청을 로컬에서 처리해 에뮬레이터 백본 속도에 묶이지 않게 한다. back-door와 front-door 접근을 모두 지원한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Automation flow (Sec. 3-5, Fig. 5):** a DB-creation script for the emulator is generated from transactor and IP information in a predefined format. Virtual platform creation is generated from a memory map and an interrupt map. Emulator IPs that are modeled in the virtual platform are marked black-box, and the testbench and emulator porting are regenerated.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **자동화 흐름(Sec. 3-5, Fig. 5):** 사전 정의된 형식의 트랜스액터 및 IP 정보로 에뮬레이터 DB 생성 스크립트를 만든다. 메모리 맵과 인터럽트 맵으로 가상 플랫폼을 생성한다. 가상 플랫폼에 모델링된 에뮬레이터 IP는 블랙박스 처리하고, 테스트벤치와 에뮬레이터 포팅을 다시 생성한다.
-
-</div>
-</div>
 
 ### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-Experimental setup: target is a flagship mobile AP with 2.5 billion logic gates, 30 peripherals and 7 external storage devices, validated as a full chip.
+- Target: 2.5-billion-gate flagship mobile AP with 30 peripherals and 7 external storage devices.
 
 </div>
 <div class="bi-ko" markdown>
 
-실험 환경: 목표는 2.5억 논리 게이트, 30개 주변장치, 7개 외부 스토리지 장치를 가진 플래그십 모바일 AP이며, 전체 칩으로 검증했다.
+- 대상: 2.5억(2.5 billion) 로직 게이트 규모의 플래그십 모바일 AP, 주변장치 30개, 외부 스토리지 7개.
 
 </div>
 </div>
@@ -321,12 +246,12 @@ Experimental setup: target is a flagship mobile AP with 2.5 billion logic gates,
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Platform build time (Table 1, minutes):**
+- Boot times: Android 661 min (pure emulation) vs 47 min (hybrid); total 762 min vs 54 min (14.1x). Linux kernel 96 min vs 2 min (48x).
 
 </div>
 <div class="bi-ko" markdown>
 
-**플랫폼 빌드 시간(Table 1, 분):**
+- 부팅 시간: Android는 pure emulation 661분 대비 hybrid 47분이며, 전체 762분 대비 54분(14.1배)입니다. Linux 커널은 96분 대비 2분(48배)입니다.
 
 </div>
 </div>
@@ -334,22 +259,12 @@ Experimental setup: target is a flagship mobile AP with 2.5 billion logic gates,
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-| Step | Pure Emu | Hybrid (Manual) | Hybrid (Auto) |
-|---|---|---|---|
-| Env / Testbench | 20 | 60 | 20 |
-| DB compile | 360 | 360 | 360 |
-| Virtual platform build | 0 | 200 | 10 |
-| Total | 380 | 620 | 390 |
+- Build time: manual hybrid build was 620 min; automatic generation reduced it to 390 min (37.1%), about 3% over pure emulation.
 
 </div>
 <div class="bi-ko" markdown>
 
-| 단계 | 순수 에뮬 | 하이브리드(수동) | 하이브리드(자동) |
-|---|---|---|---|
-| Env / 테스트벤치 | 20 | 60 | 20 |
-| DB 컴파일 | 360 | 360 | 360 |
-| 가상 플랫폼 빌드 | 0 | 200 | 10 |
-| 합계 | 380 | 620 | 390 |
+- 빌드 시간: 수동 hybrid 빌드는 620분이었고, 자동 생성으로 390분(37.1% 단축)이 되었으며, pure emulation 대비 약 3% 증가입니다.
 
 </div>
 </div>
@@ -357,126 +272,12 @@ Experimental setup: target is a flagship mobile AP with 2.5 billion logic gates,
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-Manual hybrid build is 63% longer than pure emulation. Automation reduces the total by 37.1% versus manual, and leaves about 3% overhead over pure emulation (about 10 min).
+- Android was brought up before board delivery; the paper reports no silicon-level accuracy comparison, and the simulation figures are estimates.
 
 </div>
 <div class="bi-ko" markdown>
 
-수동 하이브리드 빌드는 순수 에뮬레이션보다 63% 길다. 자동화는 수동 대비 합계를 37.1% 줄이며, 순수 에뮬레이션 대비 약 3%(약 10분)의 오버헤드만 남긴다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**Performance (Table 2, minutes):**
-
-</div>
-<div class="bi-ko" markdown>
-
-**성능(Table 2, 분):**
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-| Phase | Simulation (est.) | Pure Emulator | Hybrid | Speedup |
-|---|---|---|---|---|
-| Env. init | 4 | 5 | 5 | x1 |
-| Linux kernel | 125,867* | 96 | 2 | x48 |
-| Android | 741,517* | 661 | 47 | x14.1 |
-| Total | 867,384* | 762 | 54 | x14.1 |
-
-</div>
-<div class="bi-ko" markdown>
-
-| 단계 | 시뮬레이션(추정) | 순수 에뮬레이터 | 하이브리드 | 향상 |
-|---|---|---|---|---|
-| 환경 초기화 | 4 | 5 | 5 | x1 |
-| Linux 커널 | 125,867* | 96 | 2 | x48 |
-| Android | 741,517* | 661 | 47 | x14.1 |
-| 합계 | 867,384* | 762 | 54 | x14.1 |
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-\* estimated from cycle count and cps. Android boot accounts for about 87% of total operating time.
-
-</div>
-<div class="bi-ko" markdown>
-
-\* 사이클 수와 cps로 추정한 값. Android 부팅이 전체 동작 시간의 약 87%를 차지한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Conclusions the authors draw:
-
-</div>
-<div class="bi-ko" markdown>
-
-저자들의 결론:
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Android was brought up and device drivers for all IPs were developed on the hybrid platform before the development board arrived, alongside the chipset fab-out.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 개발 보드가 도착하기 전, 칩셋 fab-out과 함께 하이브리드 플랫폼에서 Android를 bring-up하고 모든 IP의 디바이스 드라이버를 개발했다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Multiple debug runs per workday become feasible. The Android home screen was rendered on a virtual LCD by reading the frame buffer through the display PHY transactor (Fig. 6).
-
-</div>
-<div class="bi-ko" markdown>
-
-- 작업일당 여러 번의 디버그 실행이 가능해졌다. Android 홈 화면은 디스플레이 PHY 트랜스액터를 통해 프레임 버퍼를 읽어 가상 LCD에 표시되었다(Fig. 6).
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Limitations and future work: the Android gain is smaller than the Linux gain because of emulator-side register programming and heavy cross-domain traffic. Future work targets IP-XACT-based integration and quantifying communication overhead between the platforms.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 한계 및 향후 과제: 에뮬레이터 측 레지스터 프로그래밍과 도메인 간 트래픽이 많아 Android의 이득이 Linux보다 작다. 향후 과제는 IP-XACT 기반 통합과 두 플랫폼 간 통신 오버헤드 정량화이다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**Inconsistencies in the source:** the text says Linux boot takes "7 minutes" in one place, while Table 2 lists 2 min for the Linux kernel phase. The text also says "less than 1 hour" for Android boot, consistent with the 54 min total. Table values are reported here.
-
-</div>
-<div class="bi-ko" markdown>
-
-**원문 내 불일치:** 본문 한 곳에서는 Linux 부팅이 "7분"이라고 하지만 Table 2의 Linux 커널 단계는 2분이다. 본문의 Android 부팅 "1시간 미만"은 54분 합계와 일치한다. 이 요약은 표의 값을 사용한다.
+- 개발 보드 이전에 Android bring-up을 완료했다고 보고합니다. 다만 실리콘 수준의 정확도 비교는 없으며, 시뮬레이션 수치는 추정치입니다.
 
 </div>
 </div>

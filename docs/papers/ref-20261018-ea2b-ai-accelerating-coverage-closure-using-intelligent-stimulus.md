@@ -7,11 +7,11 @@ region: US
 year: 2025
 category: Verification
 tags:
-- Functional Coverage
 - Coverage Closure
 - Input Bias
 - Xcelium SimAI
-- SoC Interconnect
+- UVM
+- SoC Verification
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/1100.pdf
 authors: Jainender Kumar (Samsung-India), Ronak Bhatt (Samsung-India), Garima Srivastava (Samsung-India), Ashutosh Sinha (Cadence-India), Prashant Teotia (Cadence-India)
@@ -29,8 +29,8 @@ youtube_videos:
 # AI - accelerating coverage closure using intelligent stimulus generation
 
 <figure class="rep-fig" markdown>
-![Figure 3 Script utilizing input files to generate plug n play coverage files.](../assets/figures/ref-20261018-ea2b.png?v=1792305980){ loading=lazy }
-<figcaption>Figure 3 Script utilizing input files to generate plug n play coverage files. — from the original paper (Jainender Kumar et al.)</figcaption>
+![Figure 6. AI generated coverage vs normal coverage after applying ML at 88% and 46% respectively.](../assets/figures/ref-20261018-ea2b.png?v=1792377974){ loading=lazy }
+<figcaption>Figure 6. AI generated coverage vs normal coverage after applying ML at 88% and 46% respectively. — from the original paper (Jainender Kumar et al.)</figcaption>
 </figure>
 
 [:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1100.pdf){ .md-button .md-button--primary target=_blank }
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**The paper proposes using the Cadence Xcelium SimAI "input-bias" feature, driven by a Perl-generated per-initiator/target bias file, to break coverage saturation in SoC bus-matrix regressions, reporting roughly 54–56% simulation-time reduction on a ~600K-bin mobile fabric.**
+**The paper uses the input-bias feature of Cadence Xcelium SimAI, driven by a Perl-generated per-initiator bias file, to steer constrained-random stimulus toward unhit cross-coverage bins, reducing simulation hours to reach 100% coverage on a ~600K-bin SoC fabric from ~8.4K to ~3.8K (reported >54%).**
 
 </div>
 <div class="bi-ko" markdown>
 
-**Cadence Xcelium SimAI의 "input-bias" 기능과 Perl 스크립트로 생성한 initiator/target별 바이어스 파일을 활용해 SoC 버스 매트릭스 regression의 커버리지 포화를 해소하는 방법을 제안하며, 약 600K bin 규모 모바일 패브릭에서 시뮬레이션 시간을 54~56% 이상 줄였다고 보고한다.**
+**이 논문은 Perl 스크립트로 생성한 initiator별 입력 바이어스 파일과 Cadence Xcelium SimAI의 input-bias 기능을 활용해, 제약 기반 랜덤 자극을 미도달 cross-coverage bin 쪽으로 유도함으로써 약 600K bin 규모 SoC 패브릭의 100% 커버리지 도달 시뮬레이션 시간을 ~8.4K에서 ~3.8K시간으로 줄인다고 보고한다(>54% 감소).**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Cross-coverage explodes with interconnect size: the Table I SoCs have 134–202 initiators, 383–598 targets, and 594K–1659K cover bins, and the paper states that a multi-die setup of the same die raises bin count 3–4x.
+- Cross-coverage of initiator, target, size, length, burst and direction in multi-initiator SoC fabrics reaches 594K to 1659K bins across the four SoCs in Table I, and the paper reports random regressions saturating at ~98% before closure.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Interconnect 규모에 따라 cross coverage가 급증한다. Table I의 SoC는 initiator 134–202개, target 383–598개, cover bin 594K–1659K개이며, 같은 die를 multi-die로 구성하면 bin 수가 3–4배 증가한다고 문서는 밝힌다.
+- 멀티 initiator SoC 패브릭의 cross-coverage(initiator, target, size, length, burst, direction)는 Table I의 4개 SoC에서 594K~1659K bin에 이르며, 논문은 랜덤 regression이 closure 이전에 ~98%에서 포화된다고 보고한다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Plain randomization saturates because it keeps hitting the same bins. The input-bias file reweights constraints toward non-hit bins while keeping stimulus random, which the paper credits with avoiding saturation.
+- A Perl-generated, coverage-aware input-bias file listing valid initiator-target-direction-length-size values keeps the AI tool from spending runs on illegal or invalid bins while preserving randomness.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 단순 randomization은 같은 bin을 반복해서 맞히기 때문에 포화된다. input-bias 파일은 stimulus의 무작위성을 유지하면서 제약 조건의 가중치를 미달성 bin 쪽으로 재조정하여 포화를 피한다고 주장한다.
+- Perl로 생성한 coverage-aware 입력 바이어스 파일(initiator-target별 유효한 direction, length, size 값 목록)은 AI 툴이 illegal/invalid bin에 실행을 낭비하지 않도록 하면서 랜덤성을 유지한다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Reported results on a ~100-initiator / ~380-target fabric with ~600K bins: 89%→100% coverage took ~8.4K sim hours originally versus ~3.8K with AI (>54% reduction); 46%→100% took ~8.7K versus ~3.8K (>56%). Training earlier in the regression gave larger gains.
+- On a mobile fabric (~100 initiators, ~380 targets, ~600K bins), input bias reached 100% in ~3.8K simulation hours versus ~8.4K for the original regression, a reduction of more than 54%.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 약 100개 initiator, 약 380개 target, 약 600K bin 규모 패브릭의 결과: 89%→100% 도달에 원래 약 8.4K 시뮬레이션 시간이 필요했으나 AI 적용 시 약 3.8K로 줄었다(54% 이상 감소). 46%→100%는 약 8.7K에서 약 3.8K로 줄었다(56% 이상). regression 초기에 학습시킬수록 이득이 컸다.
+- 모바일 패브릭(~100 initiator, ~380 target, ~600K bin)에서 입력 바이어스는 원래 regression의 ~8.4K 시뮬레이션 시간 대비 ~3.8K 시간에 100%에 도달했으며, 54% 이상 감소에 해당한다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The bias file lists only legal initiator–target–bin combinations, e.g., APB passive targets are restricted to READ, so simulation time is not wasted on illegal crosses. Because the same Perl script generates it, the setup is portable across projects.
+- Per Figure 7, applying the flow earlier in regression yields larger gains, so the authors recommend deploying it before coverage saturates rather than after.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 바이어스 파일은 합법적인 initiator–target–bin 조합만 포함한다. 예를 들어 APB passive target은 READ만 허용되어 불법 cross에 시간을 낭비하지 않는다. 같은 Perl 스크립트로 생성되므로 프로젝트 간 이식이 쉽다.
+- Figure 7에 따르면 regression 초기에 적용할수록 이득이 커지므로, 저자들은 커버리지 포화 이후가 아니라 그 이전에 도입할 것을 권장한다.
 
 </div>
 </div>
@@ -115,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Caveat: all evidence comes from a single proprietary-tool study on anonymized designs. The text is internally inconsistent (saturation at 98% vs. '89% to 98%', and a 30% headline vs. 54–56% in Table II), and it omits ML model details and run-to-run variance, so teams should validate on their own design.
+- The evidence is a single industrial project with no seed-variance, ablation or independent baseline reported, so the overall ~30% closure-time reduction should be treated as vendor-reported.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 주의: 근거는 독점 도구를 사용한 단일 산업 사례 연구 하나뿐이다. 본문도 내부적으로 일관되지 않다(98% 포화 vs. '89%에서 98%', 헤드라인 30% vs. Table II의 54–56%). ML 모델 세부 사항과 실행 간 편차도 생략되어 있으므로, 자신의 설계에서 검증해야 한다.
+- 근거는 단일 산업 프로젝트 사례이며 seed 분산이나 ablation, 독립적인 baseline 비교가 보고되지 않았으므로, 전체 ~30% closure 시간 단축 주장은 벤더 보고 수치로 보아야 한다.
 
 </div>
 </div>
@@ -132,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Modern SoC bus matrices connect many initiators and targets over mixed protocols. Cover groups cross parameters such as initiator, target, size, length, burst type, and direction. The paper cites an example of 150 initiators × 500 targets producing more than half a million bins.
+- Cross-coverage of initiator, target, size, length, burst and direction in large SoC bus fabrics reaches 594K to 1659K bins across the four SoCs in Table I.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 최신 SoC 버스 매트릭스는 다수의 initiator와 target을 혼합 프로토콜로 연결한다. Cover group은 initiator, target, size, length, burst 종류, direction 등 파라미터의 교차곱으로 구성된다. 문서는 150 initiator × 500 target 예시에서 50만 개 이상의 bin이 생성된다고 제시한다.
+- Table I의 4개 SoC에서 initiator, target, size, length, burst, direction의 cross-coverage는 594K~1659K bin에 이른다.
 
 </div>
 </div>
@@ -145,38 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Randomized stimulus saturates: after a point, the randomization engine keeps hitting the same bins, so successive iterations add little coverage. Closure then takes thousands of iterations and substantial manual effort, which lengthens time-to-market.
+- Constrained-random regressions saturate: the randomization engine keeps hitting the same bins, so closure needs thousands of iterations and long simulation campaigns.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Randomized stimulus는 포화된다. 일정 시점 이후 randomization 엔진이 같은 bin을 반복해서 맞히므로 반복 실행에서 커버리지 증가가 미미해진다. 이에 따라 closure에 수천 회의 반복과 많은 수작업이 필요하고 time-to-market이 늘어난다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Illegal or unreachable bins waste simulation time, and simulation farms have memory and compute limits.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 불법 또는 도달 불가능한 bin은 시뮬레이션 시간을 낭비하며, 시뮬레이션 팜은 메모리와 연산 자원에 제약이 있다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Table I reports 134/149/143/202 initiators, 400/383/407/598 targets, and 1033K/604K/594K/1659K cover bins for SoC 1–4.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Table I은 SoC 1–4의 initiator 134/149/143/202개, target 400/383/407/598개, cover bin 1033K/604K/594K/1659K개를 보고한다.
+- 제약 기반 랜덤 regression은 포화된다. 랜덤 엔진이 같은 bin을 반복해서 맞히므로 closure에는 수천 회 반복과 긴 시뮬레이션 캠페인이 필요하다.
 
 </div>
 </div>
@@ -186,12 +160,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Coverage generation (Perl script).** Inputs are initiator constraints, target address space, and initiator–target reachability. The script builds per-initiator covergroups that cross BurstLength, BurstKind, BurstSize, and Direction, gated by `iff (target_target == TARGET_n)`. It also emits monitor connection files for a UVM environment and filters illegal or invalid bins. Initiator and target databases (Figures 4 and 5) hold these fields. For APB, active targets allow READ and WRITE while passive targets allow READ only, which prevents illegal crosses and RTL-altering writes.
+- A Perl script takes initiator constraints, target address maps and reachability to generate per-initiator covergroups, monitor connection files, and a coverage-aware input-bias JSON. The JSON restricts each initiator-target pair to valid direction, length, kind and size values.
 
 </div>
 <div class="bi-ko" markdown>
 
-**커버리지 생성 (Perl 스크립트).** 입력은 initiator 제약 조건, target 주소 공간, initiator–target 도달성 정보이다. 스크립트는 BurstLength, BurstKind, BurstSize, Direction을 교차하고 `iff (target_target == TARGET_n)`로 게이팅한 initiator별 covergroup을 생성한다. 또한 UVM 환경용 monitor 연결 파일을 출력하고, 불법 또는 무효 bin을 걸러낸다. Initiator 및 target 데이터베이스(Figure 4, 5)가 이 필드를 관리한다. APB의 경우 active target은 READ와 WRITE를 허용하고 passive target은 READ만 허용하여, 불법 cross와 RTL 동작을 바꿀 수 있는 쓰기를 방지한다.
+- Perl 스크립트는 initiator 제약, target 주소 맵, reachability를 입력받아 initiator별 covergroup, monitor 연결 파일, coverage-aware input-bias JSON을 생성한다. 이 JSON은 initiator-target 쌍마다 유효한 direction, length, kind, size 값만 허용한다.
 
 </div>
 </div>
@@ -199,12 +173,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**AI flow.** The flow has three stages:
+- Flow: run a base regression (any coverage level) to record random variables and coverage bit-vectors; the AI tool learns a model and synthesizes a regression with coverage maximization enabled; then iteratively re-run the synthesized regression, updating the learning matrix and reweighting constraints toward zero-hit cover groups.
 
 </div>
 <div class="bi-ko" markdown>
 
-**AI 흐름.** 세 단계로 구성된다.
+- 흐름: 기준(base) regression(커버리지 수준 무관)을 실행해 랜덤 변수와 coverage bit-vector를 기록한다. AI 툴이 모델을 학습하고 coverage maximization을 활성화한 regression을 합성한다. 이후 합성된 regression을 반복 실행하며 learning matrix를 갱신하고, zero-hit cover group 쪽으로 제약 가중치를 재조정한다.
 
 </div>
 </div>
@@ -212,79 +186,27 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Base regression:** The simulator logs all random variables during any regression, regardless of coverage level. The AI tool then emits configuration/path info, coverage bit-vectors, and randomization data.
+- Seeds are not committed, so randomness is preserved, and redundant tests are dropped.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Base regression:** 시뮬레이터는 커버리지 수준과 무관하게 모든 regression에서 random 변수를 기록한다. AI 도구는 이로부터 설정/경로 정보, 커버리지 bit-vector, randomization 데이터를 생성한다.
+- Seed를 고정하지 않아 랜덤성을 유지하며, 중복 테스트는 제거한다.
 
 </div>
 </div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Synthesis:** An iterative learning loop, with user-defined use cases and convergence policies (for example, coverage maximization to target uncovered bins), produces a synthesized regression and saves models and reports.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **Synthesis:** 사용자가 정의한 use case와 수렴 정책(예: 미커버 bin을 겨냥하는 coverage maximization)을 바탕으로 반복 학습 루프를 돌려 synthesized regression을 만들고, 모델과 리포트를 저장한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Synthesized run:** A one-time input-bias file, generated by the same Perl script, specifies valid bins per initiator and accessible target. The example file restricts initiator index 83 and target index 210 to Direction [1,2], Length [1], Kind [2], and Size [1,2,4,8]. The learning matrix is updated each run.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **Synthesized run:** Perl 스크립트가 생성한 1회성 input-bias 파일이 initiator별, 접근 가능한 target별 유효 bin을 지정한다. 예시 파일은 initiator 인덱스 83과 target 인덱스 210에 대해 Direction [1,2], Length [1], Kind [2], Size [1,2,4,8]로 제한한다. 매 실행마다 학습 행렬이 갱신된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Claimed features: automatic constraint learning; zero-hit cover-group detection that drives the convergence strategy; biased stimulus that keeps randomization; and elimination of redundant tests.
-
-</div>
-<div class="bi-ko" markdown>
-
-주장하는 기능: 자동 제약 학습, 수렴 전략을 결정하는 zero-hit cover group 탐지, randomization을 유지하는 바이어스 stimulus, 중복 테스트 제거.
-
-</div>
-</div>
-
-```mermaid
-flowchart LR
-    A[Perl script: constraints, address map, reachability] --> B[Per-initiator covergroups + monitor files]
-    A --> C[Input-bias file: legal initiator/target/bin sets]
-    B --> D[Base random regression]
-    D --> E[AI tool: learning model, coverage bit-vectors]
-    E --> F[Synthesized regression: coverage-maximization policy]
-    C --> F
-    F --> G{Coverage closed?}
-    G -- No, zero-hit groups remain --> E
-    G -- Yes --> H[Closure]
-```
 
 ### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Mobile platform** (~100 initiators, ~380 targets, >300K target bins, ~600K total): the original regression needed >8,400 hours after reaching ~98% coverage, while the input-bias approach reached 100% in ~3,800 hours.
+- Mobile fabric (~100 initiators, ~380 targets, ~600K bins): original regression saturated at 98% after ~8.4K hours; input bias reached 100% in ~3.8K hours (>54% reduction).
 
 </div>
 <div class="bi-ko" markdown>
 
-- **모바일 플랫폼** (약 100 initiator, 약 380 target, target bin 30만 개 이상, 전체 약 60만 bin): 원래 regression은 약 98% 커버리지 도달 후 100%까지 8,400시간 이상이 필요했으나, input-bias 방식은 약 3,800시간에 100%에 도달했다.
+- 모바일 패브릭(~100 initiator, ~380 target, ~600K bin): 원래 regression은 ~8.4K시간 후 98%에서 포화되었고, input bias는 ~3.8K시간에 100%에 도달했다(>54% 감소).
 
 </div>
 </div>
@@ -292,12 +214,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Table II:** 89%→100% took ~8.4K hours originally versus ~3.8K with AI (>54% reduction). 46%→100% took ~8.7K hours versus ~3.8K (>56%).
+- Table II reports a 46% to 100% case, where the baseline needed ~8.7K hours versus ~3.8K hours with AI (>56%).
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Table II:** 89%→100%는 원래 약 8.4K시간에서 AI 적용 시 약 3.8K시간으로 줄었다(54% 이상 감소). 46%→100%는 약 8.7K시간에서 약 3.8K시간으로 줄었다(56% 이상).
+- Table II의 46%→100% 사례에서는 기존 방식이 ~8.7K시간, AI 적용 시 ~3.8K시간이 필요했다(>56%).
 
 </div>
 </div>
@@ -305,12 +227,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Hard-to-hit cover group** (wlbt_core, 9,250 bins): the original regression ran >8,700 hours to ~85%, while input bias reached 100% in ~3,800 hours.
+- Authors claim at least 30% less closure time overall and larger gains when applied early (Figure 7 shows a cover group at 85% baseline).
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Hard-to-hit cover group** (wlbt_core, 9,250 bin): 원래 regression은 약 85%까지 8,700시간 이상이 걸렸으나, input bias는 약 3,800시간에 100%에 도달했다.
+- 저자들은 전체적으로 최소 30% 이상의 closure 시간 단축을 주장하며, 조기 적용 시 이득이 더 크다고 한다(Figure 7은 기준 85%인 cover group을 보여준다).
 
 </div>
 </div>
@@ -318,38 +240,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Figure 7 shows that applying AI earlier in the regression yields larger gains.
+- Limitations: single-project industrial data, with no variance across seeds or ablation study reported.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Figure 7은 regression 초기에 AI를 적용할수록 이득이 크다는 것을 보여준다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The conclusion claims 100% closure in at least 30% less time across SoCs with 0.7–1M bins, and says the method is scalable, portable, and applicable to multi-die designs.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 결론은 0.7–1M bin 규모 SoC에서 최소 30% 적은 시간에 100% closure를 달성한다고 주장하며, 방법이 확장 가능하고 이식성이 있으며 multi-die 설계에도 적용 가능하다고 밝힌다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Limitations: the evidence is a single industrial study using a proprietary tool. The paper does not detail the ML model, the number of trials, or run-to-run variance. Its headline figures are also inconsistent (98% saturation vs. "89% to 98%", and 30% vs. 54–56%).
-
-</div>
-<div class="bi-ko" markdown>
-
-- 한계: 근거는 독점 도구를 사용한 단일 산업 사례 연구이다. ML 모델 세부 사항, 시행 횟수, 실행 간 편차는 제시되지 않는다. 헤드라인 수치도 일관되지 않다(98% 포화 vs. "89%에서 98%", 30% vs. 54–56%).
+- 한계: 단일 프로젝트의 산업 데이터이며, seed 간 분산이나 ablation 연구가 보고되지 않았다.
 
 </div>
 </div>

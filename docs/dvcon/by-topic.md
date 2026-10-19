@@ -21,6 +21,7 @@
 | [High-Speed Interface IP Validation based on Virtual Emulation Platform](../papers/ref-20261018-2072-high-speed-interface-ip-validation-based-on-virtual-emulatio.md) | US | Emulation | :material-youtube: 1 |
 | [Hybrid Emulation for faster Android Home screen bring up and Software Development](../papers/ref-20261018-3f06-hybrid-emulation-for-faster-android-home-screen-bring-up-and.md) | Europe | Emulation | :material-youtube: 1 |
 | [Hybrid Emulation: Accelerating Software driven verification and debug](../papers/ref-20261018-6683-hybrid-emulation-accelerating-software-driven-verification-a.md) | US | Emulation | :material-youtube: 1 |
+| [Improve emulator test quality by applying synthesizable functional coverage](../papers/ref-20261018-2686-improve-emulator-test-quality-by-applying-synthesizable-func.md) | US | Emulation | :material-youtube: 1 |
 | [Innovative 4-State Logic Emulation for Power-aware Verification](../papers/ref-20261018-1917-innovative-4-state-logic-emulation-for-power-aware-verificat.md) | US | Emulation | :material-youtube: 1 |
 | [Netlist Enabled Emulation Platform for Accelerated Gate Level Verification](../papers/ref-20261018-22ca-netlist-enabled-emulation-platform-for-accelerated-gate-leve.md) | India | Emulation | :material-youtube: 1 |
 | [OS-aware IP Development Methodology](../papers/ref-20261018-24f2-os-aware-ip-development-methodology.md) | US | Emulation | :material-youtube: 1 |
@@ -28,6 +29,7 @@
 | [Simulated Emulation: Enabling Multiple Iterations in a Day During Early-Stage Emulation Bring-up](../papers/ref-20261018-3821-simulated-emulation-enabling-multiple-iterations-in-a-day-du.md) | India | Emulation | :material-youtube: 1 |
 | [System-Level Power Estimation of SSDs under Real Workloads using Emulation](../papers/ref-20261018-9555-system-level-power-estimation-of-ssds-under-real-workloads-u.md) | US | Emulation | :material-youtube: 1 |
 | [Unveiling Advance Hybrid Emulation Methodology for Accelerated Android Home Screen Bring-up and System Level Verification](../papers/ref-20261018-e0d9-unveiling-advance-hybrid-emulation-methodology-for-accelerat.md) | India | Emulation | :material-youtube: 1 |
+| [UVM Acceleration Using Hardware Emulator at Pre-silicon Stage](../papers/ref-20261018-979c-uvm-acceleration-using-hardware-emulator-at-pre-silicon-stag.md) | US | Emulation | :material-youtube: 1 |
 
 ## Verification
 
@@ -67,8 +69,8 @@
 | [Finding a Needle in a Haystack: A Novel Log Analysis Method with Test Clustering in Distributed Systems](../papers/ref-20261018-bdff-finding-a-needle-in-a-haystack-a-novel-log-analysis-method-w.md) | US | Verification | :material-youtube: 1 |
 | [Functional Coverage Closure in SoC Interconnect Verification with Iterative Machine Learning](../papers/ref-20261018-7a35-functional-coverage-closure-in-soc-interconnect-verification.md) | US | Verification | :material-youtube: 1 |
 | [Functional Safety Workflow of Internal IP (NPU) Within Large Automotive IC Through Analysis and Emulation Usage for SW-based Safety Mechanisms](../papers/ref-20261018-fef8-functional-safety-workflow-of-internal-ip-npu-within-large-a.md) | US | Verification | :material-youtube: 1 |
+| [Future Proofing Power Intent Specification through Unified Power Format (UPF) 4.0 for Evolving Advanced State Retention Strategies](../papers/ref-20261018-e797-future-proofing-power-intent-specification-through-unified-p.md) | US | Verification | :material-youtube: 1 |
 | [Guiding Functional Verification Regression Analysis Using Machine Learning and Big Data Methods](../papers/ref-20261018-ade1-guiding-functional-verification-regression-analysis-using-ma.md) | Europe | Verification | :material-youtube: 1 |
-| [Improve emulator test quality by applying synthesizable functional coverage](../papers/ref-20261018-2686-improve-emulator-test-quality-by-applying-synthesizable-func.md) | US | Verification | :material-youtube: 1 |
 | [Improving Verification Predictability and Efficiency Using Big Data](../papers/ref-20261018-c017-improving-verification-predictability-and-efficiency-using-b.md) | US | Verification | :material-youtube: 1 |
 | [INTROSPECTION INTO SYSTEMVERILOG WITHOUT TURNING IT INSIDE OUT.](../papers/ref-20261018-9f02-introspection-into-systemverilog-without-turning-it-inside-o.md) | US | Verification | :material-youtube: 1 |
 | [IP-XACT based SoC Interconnect Verification Automation](../papers/ref-20261018-8f13-ip-xact-based-soc-interconnect-verification-automation.md) | US | Verification | :material-youtube: 1 |
@@ -79,7 +81,7 @@
 | [Maximize Vertical Reuse, Building Module to System Verification Environments with UVM e](../papers/ref-20261018-7acd-maximize-vertical-reuse-building-module-to-system-verificati.md) | US | Verification | :material-youtube: 1 |
 | [Multimedia IP DMA verification platform](../papers/ref-20261018-86a9-multimedia-ip-dma-verification-platform.md) | US | Verification | :material-youtube: 1 |
 | [New Trends in RTL Verification: Bug Localization, Scan-Chain-Based Methodology, GA-Based Test Generation](../papers/ref-20261018-0c62-new-trends-in-rtl-verification-bug-localization-scan-chain-b.md) | Europe | Verification | :material-youtube: 1 |
-| [Of Camels and Committees: Standards Should Enable Innovation, Not Strangle It](../papers/ref-20261018-2c26-of-camels-and-committees-standards-should-enable-innovation.md) | US | Verification | :material-youtube: 1 |
+| [Of Camels and Committees](../papers/ref-20261018-2c26-of-camels-and-committees.md) | US | Verification | :material-youtube: 1 |
 | [Post-Silicon Performance Validation Using PSS](../papers/ref-20261018-b4a5-post-silicon-performance-validation-using-pss.md) | US | Verification | :material-youtube: 1 |
 | [PRACTICAL SCHEMES TO ENHANCE VERTICAL, HORIZONTAL AND PLATFORM REUSABILITY OF VERIFICATION COMPONENTS IN AMBA BASED SOC DESIGN](../papers/ref-20261018-0299-practical-schemes-to-enhance-vertical-horizontal-and-platfor.md) | US | Verification | :material-youtube: 1 |
 | [Pragmatic Verification Reuse in a Vertical World](../papers/ref-20261018-04d2-pragmatic-verification-reuse-in-a-vertical-world.md) | US | Verification | :material-youtube: 1 |
@@ -100,7 +102,6 @@
 | [Towards Automated Verification IP Instantiation via LLMs](../papers/ref-20261018-ccb0-towards-automated-verification-ip-instantiation-via-llms.md) | US | Verification | :material-youtube: 1 |
 | [Unified Test Writing Framework for Pre and Post Silicon Verification](../papers/ref-20261018-678e-unified-test-writing-framework-for-pre-and-post-silicon-veri.md) | India | Verification | :material-youtube: 1 |
 | [Using PSS-2.0 Hardware-Software Interface to validate 4G/5G Forward Error Correction Encoder/Decoder IP in Emulation & Silicon](../papers/ref-20261018-e10a-using-pss-20-hardware-software-interface-to-validate-4g5g-fo.md) | US | Verification | :material-youtube: 1 |
-| [UVM Acceleration Using Hardware Emulator at Pre-silicon Stage](../papers/ref-20261018-979c-uvm-acceleration-using-hardware-emulator-at-pre-silicon-stag.md) | US | Verification | :material-youtube: 1 |
 | [UVM Testbench Considerations for Acceleration](../papers/ref-20261018-8282-uvm-testbench-considerations-for-acceleration.md) | US | Verification | :material-youtube: 1 |
 | [Variation-Aware Modeling Method for MRAM Behavior Model using System-Verilog](../papers/ref-20261018-d4fc-variation-aware-modeling-method-for-mram-behavior-model-usin.md) | US | Verification | :material-youtube: 1 |
 | [Verification Patterns – Taking Reuse to the Next Level](../papers/ref-20261018-461f-verification-patterns-taking-reuse-to-the-next-level.md) | US | Verification | :material-youtube: 1 |
@@ -112,6 +113,5 @@
 | Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [Automated RTL Update for Abutted Design](../papers/ref-20261018-2fe4-automated-rtl-update-for-abutted-design.md) | US | EDA | :material-youtube: 1 |
-| [Future Proofing Power Intent Specification through Unified Power Format (UPF) 4.0 for Evolving Advanced State Retention Strategies](../papers/ref-20261018-e797-future-proofing-power-intent-specification-through-unified-p.md) | US | EDA | :material-youtube: 1 |
 | [Refinable Macros and Terminal Boundaries in UPF 4.0: Empowering Soft IPs of the Future](../papers/ref-20261018-3f9c-refinable-macros-and-terminal-boundaries-in-upf-40-empowerin.md) | US | EDA | :material-youtube: 1 |
 | [Regvue Modern Hardware/Software Interface (HSI) Documentation](../papers/ref-20261018-5ce8-regvue-modern-hardwaresoftware-interface-hsi-documentation.md) | US | EDA | :material-youtube: 1 |

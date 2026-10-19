@@ -7,14 +7,14 @@ region: US
 year: 2020
 category: EDA
 tags:
-- IP-XACT
-- Abutted Floorplan
 - RTL Automation
-- JSON Metadata
-- Mobile AP SoC
+- IP-XACT
+- Abutted Design
+- JSON
+- SoC Integration
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/automated-rtl-update-for-abutted-design_paper.pdf
-authors: Wonkyung Lee (Samsung Electronics Co., Ltd., Seoul, Korea), Ayoung Kwon (Samsung Electronics Co., Ltd., Seoul, Korea), Soyeong Kwon (Samsung Electronics Co., Ltd., Seoul, Korea), Youngsik Kim (Samsung Electronics Co., Ltd., Seoul, Korea), Seonil Brian Choi (Samsung Electronics Co., Ltd., Seoul, Korea)
+authors: Wonkyung Lee (Samsung Electronics), Ayoung Kwon (Samsung Electronics), Soyeong Kwon (Samsung Electronics), Youngsik Kim (Samsung Electronics), Seonil Brian Choi (Samsung Electronics)
 youtube_videos:
 - video_id: 49BqlsA06io
   url: https://www.youtube.com/watch?v=49BqlsA06io
@@ -29,7 +29,7 @@ youtube_videos:
 # Automated RTL Update for Abutted Design
 
 <figure class="rep-fig" markdown>
-![Fig. 7. RTL Update Automation Flow](../assets/figures/ref-20261018-2fe4.png?v=1792311247){ loading=lazy }
+![Fig. 7. RTL Update Automation Flow](../assets/figures/ref-20261018-2fe4.png?v=1792380098){ loading=lazy }
 <figcaption>Fig. 7. RTL Update Automation Flow — from the original paper (Wonkyung Lee et al.)</figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ youtube_videos:
 
 | | |
 |---|---|
-| Authors | Wonkyung Lee (Samsung Electronics Co., Ltd., Seoul, Korea), Ayoung Kwon (Samsung Electronics Co., Ltd., Seoul, Korea), Soyeong Kwon (Samsung Electronics Co., Ltd., Seoul, Korea), Youngsik Kim (Samsung Electronics Co., Ltd., Seoul, Korea), Seonil Brian Choi (Samsung Electronics Co., Ltd., Seoul, Korea) |
+| Authors | Wonkyung Lee (Samsung Electronics), Ayoung Kwon (Samsung Electronics), Soyeong Kwon (Samsung Electronics), Youngsik Kim (Samsung Electronics), Seonil Brian Choi (Samsung Electronics) |
 | Venue | DVCon US 2020 |
 | Topic | EDA |
 | Type | PAPER |
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**The paper proposes a metadata-driven flow that takes JSON-described abutted-floorplan change requests from physical designers and automatically regenerates block-level and SoC-top RTL connections via IP-XACT-based scripts, with version tags for cross-block consistency.**
+**Proposes a JSON-driven, IP-XACT-based flow that automatically regenerates function-block and SoC-top RTL connections when P&R relocates top-level logic into abutted blocks, reporting error-free updates on a mobile AP SoC project.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**이 논문은 물리 설계자가 JSON으로 기술한 abutted floorplan 변경 요청을 받아, IP-XACT 기반 스크립트로 블록 및 SoC top RTL 연결을 자동 재생성하고, 블록 간 일관성을 버전 태그로 보장하는 메타데이터 기반 흐름을 제안한다.**
+**P&R 과정에서 상위 레벨 로직이 Abutted 기능 블록으로 재배치될 때 JSON과 IP-XACT 메타데이터를 기반으로 기능 블록 및 SoC 탑 RTL 연결을 자동 갱신하는 흐름을 제안하며, 모바일 AP SoC 프로젝트에서 오류 없는 업데이트를 보고한다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Abutted floorplan removes top-level routing channels to save area, but it forces many RTL changes late in the flow (test-mode control IP moves, feed-through routing, register slices, and split flip-flops), which must be repeated whenever P&R changes.
+- Abutted floorplanning multiplies RTL edits: on the mobile AP project, test-mode control IP port connections doubled, data-communication port connections rose 7.3x, and pad test-signal port connections rose 6.9x.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Abutted floorplan은 top-level routing 채널을 제거해 면적을 줄이지만, P&R 이후 feed-through 연결, SoC top 로직의 블록 내 재배치, register slice, flip-flop 분리 등 많은 RTL 변경을 늦은 단계에 요구하며 P&R이 바뀔 때마다 반복된다.
+- Abutted 플로어플랜은 RTL 수정량을 크게 늘린다. 모바일 AP 프로젝트에서 test mode 제어 IP의 포트 연결은 두 배가 되었고, 데이터 통신 포트 연결은 7.3배, pad test signal 포트 연결은 6.9배 증가했다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The approach records each abutted change request (abutted key, source, destination, and block path) in a JSON file; Python tooling with a template engine turns these into integration scripts for function blocks and SoC top.
+- Encoding P&R relocation requests as JSON (Abutted Key, Source, Destination, Path) separates physical-design changes from manual RTL editing; Python with a template engine emits per-block and top-level integration scripts.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 변경 요청은 abutted key, source, destination, path(블록 목록)로 구성된 JSON 파일에 기록되며, Python 파서와 템플릿 엔진이 이를 블록 및 SoC top 통합 스크립트로 변환한다.
+- P&R 재배치 요청을 JSON(Abutted Key, Source, Destination, Path)으로 표현하면 물리 설계 변경을 수동 RTL 편집에서 분리할 수 있으며, Python과 template engine이 블록별 및 탑 레벨 통합 스크립트를 생성한다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Connection changes from the proposed flow: the test-mode control IP port connections doubled, data-communication port connections rose 7.3x, and pad test-signal port connections rose 6.9x (about 2 to 7x overall); the example data path went from 3 to 11 interface connections plus 2 register slice instances.
+- Tagging every abutted connection with a unique version and checking it at block delivery is the mechanism that keeps simultaneous multi-block updates consistent.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 제안 흐름에서 연결 수 변화는 다음과 같다. 테스트 모드 제어 IP 포트 연결은 두 배가 되었고, 블록 간 데이터 통신 포트 연결은 7.3배, 패드 테스트 신호 포트 연결은 6.9배 증가했으며, 전체적으로 최소 2~7배 증가했다. 예시 데이터 경로는 인터페이스 연결 3개에서 11개로, register slice 인스턴스 2개가 추가되었다.
+- 모든 abutted 연결에 고유 버전 태그를 붙이고 블록 전달 시 이를 검사하는 방식이 여러 블록의 동시 업데이트 일관성을 유지하는 핵심 메커니즘이다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Version tagging of every connection written by the scripts, plus a version check at block delivery, keeps all function blocks in sync when many blocks are updated in parallel.
+- Verification is staged: function simulation runs on RTL without abutted information, then equivalence checking confirms connection-level consistency with the updated RTL.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 스크립트가 작성하는 모든 연결에 고유 버전 태그를 붙이고 블록을 SoC top 통합에 전달할 때 이를 확인하여, 여러 블록을 병렬로 갱신할 때도 블록 간 불일치를 막는다.
+- 검증은 단계적으로 수행된다. abutted 정보 없이 RTL에서 기능 시뮬레이션을 수행한 뒤, 업데이트된 RTL과의 연결 수준 일관성을 equivalence check로 확인한다.
 
 </div>
 </div>
@@ -115,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Functional verification runs on RTL without abutted information (since abutted changes are functionally neutral), and the modified connections are then compared against the original with equivalence checking.
+- Quantitative evidence is thin: the only timing figure is 'thousands of seconds' for generating new connections, and the claim of no TAT increase is qualitative, with no tool versions or per-run comparisons given.
 
 </div>
 <div class="bi-ko" markdown>
 
-- abutted 변경은 기능적으로 중립이므로 abutted 정보 없이 RTL에서 기능 검증을 수행하고, 이후 원본 RTL과의 연결 일치 여부를 equivalence check로 확인한다.
+- 정량적 근거는 제한적이다. 유일한 시간 수치는 새 연결 생성에 '수천 초'가 걸린다는 것이며, TAT 증가가 없다는 주장은 정성적이고 툴 버전이나 실행별 비교가 제시되지 않았다.
 
 </div>
 </div>
@@ -132,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Abutted floorplan reduces chip area by eliminating top-level routing channels. Physical designers then request RTL changes after P&R: feed-through connections that pass through intermediate function blocks, and relocation of SoC-top logic into function blocks.
+- Abutted floorplans remove top-level routing channels to cut die area, but force RTL changes: feed-throughs, relocated test-mode control IP, register slices, and flip-flops moved out of pad-test modules.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Abutted floorplan은 top-level 라우팅 채널을 제거해 칩 면적을 줄인다. 그 결과 물리 설계자는 P&R 이후 중간 기능 블록을 통과하는 feed-through 연결과, SoC top 로직을 기능 블록 내부로 옮기는 RTL 변경을 요청한다.
+- Abutted 플로어플랜은 상위 라우팅 채널을 제거해 die 면적을 줄이지만, feed-through, 재배치된 test mode 제어 IP, register slice, pad test 모듈에서 이동된 flip-flop 등으로 인해 RTL 변경이 필요하다.
 
 </div>
 </div>
@@ -145,38 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The SoC is split into many function blocks (about 30 in the example) because of EDA capacity limits. RTL edits must therefore be made by many block integration engineers in parallel, quickly, and without mismatch between blocks.
+- The SoC has about 50 test modes and about 30 function blocks, so edits are spread across many block integrators. Late P&R changes repeat them frequently, and manual editing risks errors and TAT growth.
 
 </div>
 <div class="bi-ko" markdown>
 
-- EDA 툴 용량 한계 때문에 SoC는 많은 기능 블록으로 나뉘며(예시에서 약 30개), RTL 수정은 여러 블록 통합 엔지니어가 동시에, 빠르고 블록 간 불일치 없이 수행해야 한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- In the existing IP-XACT flow, interface connections cover about 50% of ports. The remaining ad-hoc connections number over 50,000 in a typical SoC. Manual editing of these connections is error-prone and slow.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 기존 IP-XACT 흐름에서 인터페이스 연결은 전체 포트의 약 50%를 차지한다. 나머지 ad-hoc 연결은 일반적인 SoC에서 50,000개를 넘는다. 이를 수작업으로 수정하면 오류가 나기 쉽고 시간이 많이 든다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Three abutted change categories were identified: (1) relocation of the test-mode control IP (about 50 test modes), (2) register slices for inter-block data communication on top-level channels, and (3) splitting pad-to-block test flip-flops into per-block instances.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 식별된 abutted 변경 유형은 세 가지다. (1) 테스트 모드 제어 IP 이동(테스트 모드 약 50개), (2) top-level 채널 기반 블록 간 데이터 통신용 register slice, (3) 패드-블록 간 테스트 flip-flop을 블록별로 분리하는 작업.
+- SoC에는 약 50개의 test mode와 약 30개의 기능 블록이 있어 수정 작업이 여러 블록 통합 담당자에게 분산된다. 후반부 P&R 변경이 잦아 수동 편집은 오류와 TAT 증가의 위험이 있다.
 
 </div>
 </div>
@@ -186,12 +160,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **IP-XACT as metadata.** Bus definitions, abstraction definitions, components, and designs are used. Components hold port, bus-interface, SFR, and file information. Designs hold instances and connections. Interface connections are made by matching logical port names. Ad-hoc connections are made by explicit port-to-port links and tie-offs (0/1).
+- Builds on IP-XACT (IEEE 1685) metadata. Interface connections cover about 50% of ports; the rest are adhoc connections, which are generated from specifications and connection scripts.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **메타데이터로서의 IP-XACT.** Bus definition, abstraction definition, component, design을 사용한다. Component에는 포트, bus interface, SFR, 파일 정보가 들어가고, design에는 인스턴스와 연결 정보가 들어간다. 인터페이스 연결은 논리 포트 이름 매칭으로 이루어지고, ad-hoc 연결은 명시적 포트 간 연결과 상수(0/1) 연결로 이루어진다.
+- IP-XACT(IEEE 1685) 메타데이터를 기반으로 한다. Interface 연결은 전체 포트의 약 50%를 차지하며, 나머지는 명세와 연결 스크립트로 생성되는 adhoc 연결이다.
 
 </div>
 </div>
@@ -199,12 +173,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **System-level IP automation.** Specifications are entered in a dedicated editor. Scripts generate the RTL for the test-mode IP, instantiate it, and wire its ports. Block designers execute these scripts for integration.
+- Physical designers deliver a JSON file with Abutted Key (test control IP, register-slice data path, pad test signal), Source, Destination, and Path (block list). Example: a direct C-to-E link is rerouted through block H.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **시스템 레벨 IP 자동화.** 전용 편집기로 사양을 입력한다. 스크립트가 테스트 모드 IP의 RTL을 생성하고, 인스턴스화하며, 포트를 연결한다. 블록 설계자는 이 스크립트를 실행해 통합을 수행한다.
+- 물리 설계 담당자는 Abutted Key(test control IP, register slice 데이터 경로, pad test signal), Source, Destination, Path(블록 목록)를 담은 JSON 파일을 전달한다. 예시로 C에서 E로 직접 가던 연결이 블록 H를 거치도록 재라우팅된다.
 
 </div>
 </div>
@@ -212,12 +186,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **JSON request format.** Each abutted change is described by an abutted key (test-control IP name, register-slice data-communication IP, or pad test-signal IP), a source, a destination, and a path (ordered block list). Example: the direct C-to-E connection becomes C to E routed through H.
+- Python and a template engine generate integration scripts for function blocks and SoC top. All abutted connections carry a version tag that is checked at delivery, so all blocks apply the same update set.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **JSON 요청 형식.** 각 abutted 변경은 abutted key(테스트 제어 IP 이름, 데이터 통신용 register slice IP, 또는 패드 테스트 신호 IP), source, destination, path(순서가 있는 블록 목록)로 기술한다. 예: 직접 연결된 C-E가 H를 경유하도록 바뀐다.
+- Python과 template engine이 기능 블록 및 SoC 탑용 통합 스크립트를 생성한다. 모든 abutted 연결에는 버전 태그가 부여되고 전달 시 검사되어, 모든 블록이 동일한 업데이트 세트를 적용하도록 보장한다.
 
 </div>
 </div>
@@ -225,53 +199,24 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Automation implementation.** Python libraries parse the JSON and generate integration scripts through a template engine. Block scripts run automatically at the final step of block integration. Block RTL is then released to SoC top, where the top-level connection script is run.
+- Verification runs function simulation on RTL without abutted information, then uses equivalence checking on connections.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **자동화 구현.** Python 라이브러리가 JSON을 파싱하고 템플릿 엔진으로 통합 스크립트를 생성한다. 블록 스크립트는 블록 통합의 마지막 단계에서 자동 실행된다. 이후 블록 RTL이 SoC top으로 전달되고, top-level 연결 스크립트가 실행된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Version tagging.** Every connection written by the scripts carries a unique version tag. The tag is checked when each block is delivered to SoC-top integration, so mismatched blocks are caught.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **버전 태깅.** 스크립트가 작성하는 모든 연결에 고유 버전 태그를 붙인다. 블록을 SoC top 통합에 전달할 때 이 태그를 검사해 버전 불일치를 찾아낸다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Verification.** Functional simulation is run on RTL without abutted information, since the change is functionally neutral. Equivalence checking then confirms that the connections in the abutted RTL match the original.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **검증.** abutted 정보 없이 RTL에서 기능 시뮬레이션을 수행한다. 기능적 변경이 없기 때문이다. 이후 equivalence check로 abutted RTL의 연결이 원본과 일치하는지 확인한다.
+- 검증은 abutted 정보 없이 RTL에서 기능 시뮬레이션을 수행한 뒤, 연결에 대해 equivalence check를 적용한다.
 
 </div>
 </div>
 
 ```mermaid
-flowchart TD
-    A["Physical designer: abutted P&R result"] --> B["JSON: abutted key, source, destination, path"]
-    B --> C["Python parser and template engine"]
-    C --> D["Block integration scripts"]
-    C --> E["SoC top connection script"]
-    D --> F["Block RTL updated and version-tagged"]
-    F --> G["Version check at SoC top delivery"]
-    E --> G
-    G --> H["RTL to physical and verification"]
-    H --> I["Equivalence check vs original RTL"]
+flowchart LR
+  PR[P&R relocation] --> J[JSON: key, src, dst, path]
+  J --> G[Python + template engine]
+  G --> FB[Function-block scripts]
+  G --> TOP[SoC-top script]
+  FB --> VT[Version-tagged RTL]
+  TOP --> VT
 ```
 
 ### Results and Conclusions
@@ -279,12 +224,12 @@ flowchart TD
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Port connections for the test-mode control IP doubled.
+- On a mobile AP SoC project, test-mode control IP port connections doubled, data-communication connections rose 7.3x, and pad test-signal connections rose 6.9x.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 테스트 모드 제어 IP의 포트 연결 수가 두 배가 되었다.
+- 모바일 AP SoC 프로젝트에서 test mode 제어 IP의 포트 연결은 두 배가 되었고, 데이터 통신 연결은 7.3배, pad test signal 연결은 6.9배 증가했다.
 
 </div>
 </div>
@@ -292,12 +237,12 @@ flowchart TD
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Port connections for data communication between blocks increased 7.3x, and for pad test-signal transmission 6.9x. The paper describes the overall increase as at least 2x to 7x.
+- Data-communication paths use bus interfaces that cover 80 port connections each. The paper reports that all new connections are generated within thousands of seconds, with RTL produced without errors.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 블록 간 데이터 통신 포트 연결은 7.3배, 패드 테스트 신호 전송 포트 연결은 6.9배 증가했다. 논문은 전체 증가폭을 최소 2배에서 7배로 기술한다.
+- 데이터 통신 경로는 각각 80개의 포트 연결을 커버하는 bus interface를 사용한다. 논문은 모든 새 연결이 수천 초 이내에 생성되고 RTL에 오류가 없었다고 보고한다.
 
 </div>
 </div>
@@ -305,64 +250,12 @@ flowchart TD
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- In the data-path example (Fig. 5), the connections for the Block A to Block E path went from 3 interface connections to 11, plus 2 register slice instances in Blocks B and D.
+- The paper gives little quantitative detail (no per-run TAT, tool versions, or baseline comparison), so the no-TAT-increase claim rests on qualitative argument.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 데이터 경로 예시(Fig. 5)에서 Block A에서 Block E로 가는 연결은 인터페이스 연결 3개에서 11개로 늘었고, Block B와 D에 register slice 인스턴스 2개가 추가되었다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- A bus interface connection covers 80 port connections in the data-communication case.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 데이터 통신 사례에서 bus interface 연결 하나가 80개의 포트 연결을 담당한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The paper states that all new connections are generated automatically "within thousands of seconds" and that RTL for blocks and SoC top was produced without errors. The source text does not give Table 1 values, so no further quantitative breakdown is reported.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 논문은 신규 연결이 모두 "수천 초(within thousands of seconds)" 안에 자동 생성되고, 블록 및 SoC top RTL이 오류 없이 생성되었다고 밝힌다. 원문에는 Table 1의 수치가 없으므로 더 구체적인 정량 분석은 보고되지 않는다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The authors conclude that this flow lets late-stage abutted changes be applied repeatedly, with no added turnaround time (TAT) and no human-induced errors, despite the large RTL delta. The solution was validated on an actual mobile AP SoC project.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 저자들은 이 흐름으로 늦은 단계의 abutted 변경을 반복 적용할 수 있으며, RTL 변경량이 크더라도 사람에 의한 오류 없이 TAT를 늘리지 않는다고 결론짓는다. 실제 mobile AP SoC 프로젝트에 적용해 검증했다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Limitations: the text reports no quantitative comparison against manual effort beyond the connection counts, and it does not describe the tool or standard versions used.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 한계: 연결 수 외에 수작업 대비 공수에 대한 정량 비교가 없고, 사용한 툴이나 표준 버전은 설명되지 않는다.
+- 논문은 정량적 세부 정보(실행별 TAT, 툴 버전, 기준선 비교)를 거의 제공하지 않아, TAT 증가가 없다는 주장은 정성적 논거에 기반한다.
 
 </div>
 </div>

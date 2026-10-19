@@ -8,13 +8,13 @@ year: 2016
 category: Verification
 tags:
 - Triage
-- Debug Productivity
-- Regression Analysis
-- Root Cause Analysis
+- Regression Debug
 - UVM
+- Root Cause Analysis
+- Verification Productivity
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/evolution-of-triage-real-time-improvements-in-debug-productivity.pdf
-authors: Gordon Allan (Mentor Graphics Corporation, Fremont, California), gordon_allan@mentor.com
+authors: Gordon Allan (Mentor Graphics Corporation, Fremont, California)
 youtube_videos:
 - video_id: Ck6qeC80QMs
   url: https://www.youtube.com/watch?v=Ck6qeC80QMs
@@ -29,7 +29,7 @@ youtube_videos:
 # Evolution of Triage: Real-time Improvements in Debug Productivity
 
 <figure class="rep-fig" markdown>
-![Figure 4. Categorizing a regression failure](../assets/figures/ref-20261018-ca4e.png?v=1792311712){ loading=lazy }
+![Figure 4. Categorizing a regression failure](../assets/figures/ref-20261018-ca4e.png?v=1792380369){ loading=lazy }
 <figcaption>Figure 4. Categorizing a regression failure — from the original paper (Gordon Allan et al.)</figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ youtube_videos:
 
 | | |
 |---|---|
-| Authors | Gordon Allan (Mentor Graphics Corporation, Fremont, California), gordon_allan@mentor.com |
+| Authors | Gordon Allan (Mentor Graphics Corporation, Fremont, California) |
 | Venue | DVCon US 2016 |
 | Topic | Verification |
 | Type | PAPER |
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**The paper defines chip-design triage as a distinct, human-driven step between regression failure reporting and expert debug, classifies it into four types (single fail, historical, multi-fail, systemic), and proposes categorization and commonality-analysis techniques that cut debug time by grouping failures on symptoms and root causes.**
+**The paper defines four kinds of regression-failure triage and proposes categorization and cross-failure grouping techniques (symptom, root cause, run history) that shorten triage time and focus expert debug, while arguing that tools can assist but not replace human triage.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**이 논문은 칩 설계 트리아지를 회귀 실패 보고와 전문가 디버그 사이에 위치한, 사람이 수행하는 독립된 단계로 정의하고, 이를 네 가지 유형(단일 실패, 이력, 다중 실패, 시스템적 실패)으로 분류하며, 증상과 root cause 기준으로 실패를 묶는 분류 및 공통성 분석 기법을 제시한다.**
+**이 논문은 회귀 실패 triage를 네 가지 유형으로 정의하고, 증상·근본 원인·실행 이력 기준의 분류 및 그룹화 기법을 제시하여 triage 시간을 줄이고 전문가 디버그를 집중시키는 방법을 설명하며, 도구는 보조 역할에 머물고 최종 판단은 사람이 해야 한다고 주장합니다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Triage is the first 20-50% of each debug effort by the author's estimate, within a flow where industry data suggests engineers spend 40% of verification time on debug.
+- Triage is split into four types (single failure, failure history, multi-failure prioritization, systemic failures), and the triage step is estimated at the first 20-50% of each debug effort, within a context where debug takes about 40% of verification time.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 저자의 추정에 따르면 트리아지는 각 디버그 작업의 처음 20-50%를 차지하며, 업계 데이터에 따르면 엔지니어는 검증 시간의 40%를 디버그에 쓴다.
+- Triage는 네 가지 유형(단일 실패, 실패 이력, 다중 실패 우선순위, 시스템적 실패)으로 나뉘며, 디버그 노력의 처음 20-50%를 차지하는 것으로 추정되고, 디버그는 검증 시간의 약 40%를 차지합니다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Triage is split into four types: A) single failing test disposition, B) historical context of a test or failure mode, C) multi-fail prioritization and resource focus, D) systemic failure identification across projects. The paper argues tools cannot yet automate these; they only assist data gathering, reporting and initial analysis.
+- Categorize each failure by failure mode, first testbench-caught error, and check type (designer assertion, environment assertion, scoreboard, protocol) before allocating it to a specialist.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 트리아지는 네 가지 유형으로 나뉜다: A) 단일 실패 테스트의 처리 방향 결정, B) 테스트 또는 실패 모드의 이력 분석, C) 다중 실패의 우선순위 및 리소스 집중, D) 프로젝트 간 시스템적 실패 식별. 저자는 현재 도구가 이를 자동화할 수 없으며, 도구는 데이터 수집, 리포팅, 초기 분석만 지원한다고 주장한다.
+- 각 실패는 디버그 전문가에게 배정하기 전에 실패 모드, 첫 번째 testbench 오류, 검사 유형(설계자 assertion, 환경 assertion, scoreboard, protocol)으로 분류해야 합니다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Failure categorization should record failure mode (build-time vs run-time, timeout, scoreboard/golden-reference mismatch), the first logged error message, and the earliest fired assertion, since the first error is closest to the root cause.
+- Group failing tests by the first logged error message or fired assertion; structured messages (e.g., UVM reporting) make this comparison programmatic.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 실패 분류 시에는 실패 모드(build-time 대 run-time, timeout, scoreboard/golden-reference 불일치), 최초로 기록된 에러 메시지, 가장 먼저 발생한 assertion을 기록해야 한다. 첫 번째 에러가 root cause에 가장 가깝기 때문이다.
+- 첫 번째로 기록된 오류 메시지나 발생한 assertion을 기준으로 실패 테스트를 묶으며, UVM 같은 구조화된 메시지가 있으면 이 비교를 프로그램으로 자동화할 수 있습니다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Grouping failures by a common root-cause signature rather than by symptom can resolve many failing tests at once. The paper suggests formal property checking around the failure point and a causality check (signal name + simulation time) that traces the fan-in cone back through combinational and sequential logic.
+- Root-cause grouping via formal analysis or a debug-tool causality check from a signal and time can explain many regression failures with diverse symptoms through one design or testbench change.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 증상이 아닌 공통 root-cause signature로 실패를 묶으면 여러 실패 테스트를 한 번에 해결할 수 있다. 논문은 실패 지점 주변에 formal property checking을 적용하고, 신호 이름과 시뮬레이션 시각을 입력으로 조합 및 순차 로직의 fan-in cone을 역추적하는 causality check를 제안한다.
+- Formal 분석이나 신호와 시간을 입력으로 하는 causality check를 통해, 다양한 증상을 보이는 많은 회귀 실패를 하나의 설계 또는 testbench 변경으로 설명할 수 있습니다.
 
 </div>
 </div>
@@ -115,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Run-history analysis of a single test answers whether a failure is new or recurring, whether the test is a noisy/brittle test, what the previous debug session found, and who has debugged similar failures before.
+- Using run history for a test (first-failure date, failure frequency, prior debug notes, prior owner) distinguishes new regressions from noisy or brittle tests and guides allocation to the right engineer.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 단일 테스트의 회귀 이력 분석은 실패가 새로운 것인지 반복되는 것인지, 테스트가 noisy/brittle한지, 이전 디버그 세션에서 무엇이 밝혀졌는지, 유사한 실패를 과거에 누가 디버그했는지를 알려준다.
+- 테스트의 실행 이력(최초 실패 시점, 실패 빈도, 이전 디버그 기록, 이전 담당자)을 활용하면 새로운 회귀와 noisy 또는 brittle 테스트를 구분하고 적임자에게 배정할 수 있습니다.
 
 </div>
 </div>
@@ -132,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-Triage is defined here as the analysis of a discrete set of reported issues of common derivation: determining priority and the method of exploration, analysis, and resolution so that resources are used most effectively. The paper observes that triage of design regression failures differs from medical triage. In medicine, cases are typically isolated and binned quickly, whereas in chip verification, repetition and grouping of failures carry information. Poorly executed triage causes iteration and wasted debug effort. The author estimates that triage makes up the first 20-50% of each debug effort, and industry data cited in the paper says engineers spend 40% of verification time on debug.
+- Triage prepares failing regression results for analysis, categorizes them, and dispatches them to scarce debug resources; poor triage causes iteration and wasted debug effort.
 
 </div>
 <div class="bi-ko" markdown>
 
-이 논문은 트리아지를 공통 원인에서 비롯된 보고된 이슈 집합을 분석하여, 각 이슈의 우선순위와 탐색·분석·해결 방법을 정하고 자원을 가장 효율적으로 사용하도록 하는 활동으로 정의한다. 의료 분야의 트리아지는 사례를 독립적으로 빠르게 분류하지만, 칩 검증에서는 실패의 반복과 그룹핑이 정보를 가진다는 점에서 다르다. 잘못 수행된 트리아지는 반복 작업과 낭비를 초래한다. 저자는 트리아지가 각 디버그 작업의 처음 20-50%를 차지한다고 추정하며, 논문이 인용한 업계 데이터에 따르면 엔지니어는 검증 시간의 40%를 디버그에 쓴다.
+- Triage는 회귀 실패 결과를 분석에 대비해 준비하고, 분류하고, 제한된 디버그 자원에 배정하는 단계이며, 부실한 triage는 반복 작업과 낭비를 초래합니다.
 
 </div>
 </div>
@@ -145,12 +145,12 @@ Triage is defined here as the analysis of a discrete set of reported issues of c
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-The paper identifies four triage patterns:
+- Unlike emergency medicine, design regression failures recur and can be grouped, so history and commonality should inform triage.
 
 </div>
 <div class="bi-ko" markdown>
 
-논문은 네 가지 트리아지 패턴을 제시한다:
+- 응급 의학과 달리 설계 회귀 실패는 반복되고 묶어서 볼 수 있으므로, 이력과 공통성이 triage 판단에 활용되어야 합니다.
 
 </div>
 </div>
@@ -158,51 +158,12 @@ The paper identifies four triage patterns:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **A.** Single failing test: disposition as RTL/GLS bug, testbench false negative, firmware/software bug, or specification ambiguity.
+- Industry data cited: about 40% of verification time is spent on debug; the author estimates triage is the first 20-50% of each debug effort.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **A.** 단일 실패 테스트: RTL/GLS 버그, testbench 오탐(false negative), 펌웨어/소프트웨어 버그, 사양 모호성 중 하나로 처리 방향을 정한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **B.** Historical context: when a test or assertion last failed, and whether it fails intermittently, to find fragile design areas or brittle checks.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **B.** 이력 문맥: 테스트나 assertion이 마지막으로 언제 실패했는지, 간헐적으로 실패하는지를 확인하여 취약한 설계 영역이나 깨지기 쉬운 check를 찾는다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **C.** Multiple failing tests: set resource focus and priority, which is the most common application.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **C.** 다중 실패 테스트: 자원 집중과 우선순위를 정한다. 가장 흔한 적용 사례이다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **D.** Systemic failures: find common root causes across projects.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **D.** 시스템적 실패: 프로젝트 전반에 걸친 공통 root cause를 찾는다.
+- 인용된 산업 데이터: 검증 시간의 약 40%가 디버그에 쓰이며, 저자는 triage가 각 디버그 작업의 처음 20-50%를 차지한다고 추정합니다.
 
 </div>
 </div>
@@ -212,34 +173,12 @@ The paper identifies four triage patterns:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-The paper does not describe a tool. It describes a flow of analysis techniques, with inputs from the regression system, design and testbench collateral, and process/CAD knowledge.
+- Four triage types: (A) single failing test disposition, (B) failure history over time, (C) multi-failure prioritization, (D) systemic failure identification.
 
 </div>
 <div class="bi-ko" markdown>
 
-논문은 도구를 제시하지 않는다. 회귀 시스템, 설계 및 testbench 자료, 프로세스/CAD 지식을 입력으로 하는 분석 기법의 흐름을 설명한다.
-
-</div>
-</div>
-
-```mermaid
-flowchart LR
-    R[Regression run] --> A[A: Categorize each fail<br/>failure mode, first error, assertion, check type]
-    A --> B[B: Group N fails by common symptom<br/>same first error, same assertion]
-    B --> C[C: Group by common root cause<br/>formal checks, causality trace]
-    C --> D[D: Run-history analysis<br/>new vs recurring, noisy test, past debug, owner]
-    D --> E[Allocate to expert for deep debug]
-```
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Main techniques:
-
-</div>
-<div class="bi-ko" markdown>
-
-주요 기법:
+- 네 가지 triage 유형: (A) 단일 실패 테스트 처리, (B) 시간에 따른 실패 이력, (C) 다중 실패의 우선순위 결정, (D) 시스템적 실패 식별.
 
 </div>
 </div>
@@ -247,12 +186,12 @@ Main techniques:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-1. **Categorize an individual failure:** classify it as build-time or run-time, and as testbench-caught, timeout, lack of success, or golden-reference mismatch. Record the first error message, the earliest assertion that fired, and the check's origin (designer assertion, VIP assertion, scoreboard, protocol check). For golden-reference mismatches, record time and mismatched signal.
+- Techniques: (A) categorize each fail by failure mode, first error, and check type; (B) group N fails by common first error message or assertion; (C) group by common root-cause signature using formal analysis or a debug-tool causality check from a signal and time; (D) mine run history for first occurrence, failure frequency (noisy test), prior debug notes, and prior owner.
 
 </div>
 <div class="bi-ko" markdown>
 
-1. **개별 실패 분류:** build-time 또는 run-time, testbench가 잡은 실패, timeout, 성공 조건 미충족, golden-reference 불일치 중 하나로 분류한다. 첫 에러 메시지, 가장 먼저 발생한 assertion, check의 출처(설계자 assertion, VIP assertion, scoreboard, protocol check)를 기록한다. golden-reference 불일치는 시간과 불일치한 신호를 기록한다.
+- 기법: (A) 실패 모드, 첫 번째 오류, 검사 유형으로 각 실패 분류; (B) N개 실패를 공통 첫 오류 메시지나 assertion 기준으로 그룹화; (C) formal 분석 또는 신호와 시간 기반 디버그 도구 causality check로 공통 근본 원인 시그니처 기준 그룹화; (D) 최초 발생 시점, 실패 빈도(noisy test), 이전 디버그 기록, 이전 담당자 등 실행 이력 분석.
 
 </div>
 </div>
@@ -260,51 +199,12 @@ Main techniques:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-2. **Analyze N fails for symptom commonality:** compare first logged errors, which should be well structured (the paper points to UVM [3]) and filtered to tolerate random data. For assertions, check whether the same assertion fires across tests and under what conditions.
+- Flow: the regression system and collateral feed the triage engineer, who works with CAD, PM, and domain specialists before dispatch.
 
 </div>
 <div class="bi-ko" markdown>
 
-2. **N개 실패의 증상 공통성 분석:** 첫 번째 로그 에러를 비교한다. 이 에러는 구조화되어 있어야 하며(논문은 UVM [3]을 언급), 무작위 데이터에 대한 허용 오차를 두고 필터링한다. assertion의 경우 여러 테스트에서 동일한 assertion이 발생하는지, 어떤 조건에서 발생하는지 확인한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-3. **Analyze N fails for root-cause commonality:** apply formal property checking to the region around the failure point, and run a causality check in the debug tool. The causality check takes a signal name and simulation time, then traces the logic fan-in cone back through combinational and sequential logic using captured values to find a root-cause signal and value. One root cause can produce several symptoms.
-
-</div>
-<div class="bi-ko" markdown>
-
-3. **N개 실패의 root cause 공통성 분석:** 실패 지점 주변 영역에 formal property checking을 적용하고, 디버그 도구의 causality check를 실행한다. causality check는 신호 이름과 시뮬레이션 시각을 입력받아, 캡처된 값을 이용해 조합 및 순차 로직의 fan-in cone을 역추적하여 root cause 신호와 값을 찾는다. 하나의 root cause가 여러 증상을 만들 수 있다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-4. **Analyze one test across N regression runs:** determine the test's normal status, maturity, and brittleness; check whether the failure has been seen before and what was found; review the previous debug session; and identify engineers with relevant experience.
-
-</div>
-<div class="bi-ko" markdown>
-
-4. **하나의 테스트를 N회 회귀 실행에 걸쳐 분석:** 테스트의 정상 상태, 성숙도, 취약성을 판단한다. 실패가 이전에 발생했는지와 그때 무엇이 밝혀졌는지 확인하고, 이전 디버그 세션을 검토하며, 관련 경험이 있는 엔지니어를 찾는다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-The paper concludes that tools for automating all four triage types do not yet exist. Data gathering, reporting, and initial analysis can be automated, but interpretation remains manual.
-
-</div>
-<div class="bi-ko" markdown>
-
-논문은 네 가지 트리아지 유형을 모두 자동화하는 도구는 아직 존재하지 않는다고 결론짓는다. 데이터 수집, 리포팅, 초기 분석은 자동화할 수 있지만 해석은 여전히 수작업이다.
+- 흐름: 회귀 시스템과 참고 자료가 triage 엔지니어에게 전달되며, 엔지니어는 CAD, PM, 도메인 전문가와 협력한 뒤 배정합니다.
 
 </div>
 </div>
@@ -314,12 +214,12 @@ The paper concludes that tools for automating all four triage types do not yet e
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-The paper gives no quantitative measurements of productivity gains from the proposed techniques, so the reported figures are the author's estimates (20-50% of debug time for triage) and the industry figure (40% of verification time for debug). The main conclusions are:
+- The paper reports no quantitative benchmark; benefits are argued qualitatively from industry experience.
 
 </div>
 <div class="bi-ko" markdown>
 
-논문은 제안된 기법으로 얻은 생산성 향상을 정량적으로 측정하지 않는다. 따라서 제시된 수치는 저자의 추정치(트리아지는 디버그 시간의 20-50%)와 업계 수치(디버그는 검증 시간의 40%)이다. 주요 결론은 다음과 같다:
+- 논문은 정량적 벤치마크를 제시하지 않으며, 효과는 산업 경험에 근거한 정성적 주장입니다.
 
 </div>
 </div>
@@ -327,12 +227,12 @@ The paper gives no quantitative measurements of productivity gains from the prop
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Triage is a specialized debug activity that can consume significant time. Optimizing it reduces wasted effort in blind debug paths.
+- Conclusion: tools for all four triage types do not yet exist; automation helps data gathering and reporting, but judgment and dispatch stay human.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 트리아지는 상당한 시간을 소모할 수 있는 전문화된 디버그 활동이며, 이를 최적화하면 무분별한 디버그 경로에서 낭비되는 노력을 줄일 수 있다.
+- 결론: 네 가지 triage 유형 전체를 자동화하는 도구는 아직 없으며, 자동화는 데이터 수집과 리포팅에 도움을 주지만 판단과 배정은 사람이 맡습니다.
 
 </div>
 </div>
@@ -340,51 +240,12 @@ The paper gives no quantitative measurements of productivity gains from the prop
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Tools support triage through data and reporting, but judgment, experience, and historical context remain human tasks.
+- Structured logs and historical data capture are presented as the main prerequisites for productive triage.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 도구는 데이터와 리포팅을 통해 트리아지를 지원하지만, 판단, 경험, 이력 문맥은 여전히 사람의 몫이다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Results should be communicated clearly enough that the next engineer can continue deeper debug without repeating earlier work.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 결과는 다음 엔지니어가 앞선 작업을 반복하지 않고 깊은 디버그를 이어갈 수 있을 만큼 명확하게 전달되어야 한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Grouping by root cause resolves many failures together and gives the biggest debug payoff, though the paper does not quantify it.
-
-</div>
-<div class="bi-ko" markdown>
-
-- root cause 기준 그룹화는 많은 실패를 한 번에 해결하여 디버그 효과가 가장 크지만, 논문은 이를 수치로 정량화하지는 않는다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-The paper closes by describing triage engineering as a career role that combines CPU/SoC, firmware, and silicon bring-up skills with debug experience.
-
-</div>
-<div class="bi-ko" markdown>
-
-논문은 트리아지 엔지니어를 CPU/SoC, 펌웨어, 실리콘 bring-up 기술과 디버그 경험을 결합한 경력 직무로 설명하며 마무리한다.
+- 구조화된 로그와 이력 데이터 축적이 생산적인 triage의 주요 전제 조건으로 제시됩니다.
 
 </div>
 </div>

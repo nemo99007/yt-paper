@@ -9,12 +9,12 @@ category: Verification
 tags:
 - UVM
 - Register Test
-- IP-XACT
+- Test Bench Generation
 - Jinja2
-- Perforce p4 trigger
+- BTS
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/1088-2.pdf
-authors: Wonyeong So (Samsung Electronics), Minje Kim (Samsung Electronics), Jihye Lim (Samsung Electronics), Sunil Roe (Samsung Electronics), Youngsik Kim (Samsung Electronics), Sunil Brain Choi (Samsung Electronics)
+authors: Wonyeong So, Minje Kim, Jihye Lim, Sunil Roe, Youngsik Kim, Sunil Brain Choi (Samsung Electronics Co. Ltd., Seoul, Korea)
 youtube_videos:
 - video_id: VN30Q60D1X4
   url: https://www.youtube.com/watch?v=VN30Q60D1X4
@@ -29,7 +29,7 @@ youtube_videos:
 # Test bench Framework for Fully Automated Register Tests of Numerous IPs in SoC
 
 <figure class="rep-fig" markdown>
-![Figure 5. Working flow of the test bench framework](../assets/figures/ref-20261018-7575.png?v=1792306637){ loading=lazy }
+![Figure 5. Working flow of the test bench framework](../assets/figures/ref-20261018-7575.png?v=1792378378){ loading=lazy }
 <figcaption>Figure 5. Working flow of the test bench framework — from the original paper (Wonyeong So et al.)</figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ youtube_videos:
 
 | | |
 |---|---|
-| Authors | Wonyeong So (Samsung Electronics), Minje Kim (Samsung Electronics), Jihye Lim (Samsung Electronics), Sunil Roe (Samsung Electronics), Youngsik Kim (Samsung Electronics), Sunil Brain Choi (Samsung Electronics) |
+| Authors | Wonyeong So, Minje Kim, Jihye Lim, Sunil Roe, Youngsik Kim, Sunil Brain Choi (Samsung Electronics Co. Ltd., Seoul, Korea) |
 | Venue | DVCon US 2025 |
 | Topic | Verification |
 | Type | PAPER |
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**A Python/Go framework that auto-generates UVM register read/write and security-access test benches for every IP in an SoC from IP-XACT, address-map, UVM register model and security (TZPC) specs, then runs regressions, debugs errors with BTS, and reports results, triggered by RTL label releases in Perforce.**
+**A Python/Go framework that auto-generates per-IP UVM register read/write test benches from cross-checked specifications (IP-XACT, address map, UVM register model, TZPC), then runs regression, debugs, and reports them automatically on each RTL label release in Perforce.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**IP-XACT, 주소 맵, UVM 레지스터 모델, 보안(TZPC) 스펙으로부터 SoC 내 모든 IP의 UVM 레지스터 read/write 및 보안 접근 테스트 벤치를 자동 생성하고, 회귀 실행·BTS 기반 디버깅·리포팅을 Perforce RTL 라벨 트리거로 자동화하는 Python/Go 프레임워크이다.**
+**IP별 UVM 레지스터 읽기/쓰기 테스트 벤치를 교차 검증된 사양(IP-XACT, 주소 맵, UVM 레지스터 모델, TZPC)으로부터 자동 생성하고, Perforce의 RTL 라벨 릴리스마다 회귀 실행, 디버그, 리포팅까지 자동화하는 Python/Go 기반 프레임워크이다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Cross-checks three specification sources (IP-XACT XML, SoC address map Excel, UVM register model) for IP-list and base-address mismatches, logging a specification bug when they disagree.
+- Generating register test benches from a YAML spec via Jinja2 templates means spec changes are handled by regeneration instead of per-IP hand maintenance.
 
 </div>
 <div class="bi-ko" markdown>
 
-- IP-XACT XML, SoC 주소 맵 Excel, UVM 레지스터 모델 세 가지 스펙 소스를 교차 검증하여 IP 목록과 base address 불일치를 찾고, 불일치 시 스펙 버그로 로그를 남긴다.
+- Jinja2 템플릿으로 YAML 사양에서 레지스터 테스트 벤치를 생성하므로, 사양 변경 시 IP별 수작업 유지보수 대신 재생성으로 대응할 수 있다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Generates one register access test bench per IP from a YAML intermediate via Jinja2 templates and macros; the template is simple (repeated read/write), so template changes are expected to be minimal.
+- Cross-checking IP-XACT XML, the Excel address map, and the UVM register model flags IP-list and base-address mismatches as specification bugs before simulation.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 중간 표현인 YAML을 거쳐 Jinja2 템플릿과 매크로로 IP별 레지스터 테스트 벤치를 생성한다. 템플릿 구조가 단순한 read/write 반복이라 변경이 최소화된다고 설명한다.
+- IP-XACT XML, Excel 주소 맵, UVM 레지스터 모델을 교차 검증하여 IP 목록 및 베이스 주소 불일치를 시뮬레이션 전에 사양 버그로 식별한다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Error handling is split: predefined UVM_ERROR tags map to fixed solutions, while unexpected bus hangs and error responses are localized by a BTS (Bus Trace System) debugger invoked through VIP callbacks.
+- Triggering on RTL label commits with p4 trigger turns register access tests into a per-label sanity check; IP register tests were 0.33-0.39 of total tests across five SoC projects (~35% average).
 
 </div>
 <div class="bi-ko" markdown>
 
-- 에러 처리는 두 갈래다. 사전 정의된 UVM_ERROR 태그는 고정 해결책에 연결되고, 예상치 못한 bus hang과 error response는 VIP 콜백으로 호출되는 BTS(Bus Trace System) 디버거가 위치를 찾는다.
+- p4 trigger로 RTL 라벨 커밋 시점에 실행하여 레지스터 접근 테스트를 라벨 단위 sanity check로 만들며, 5개 SoC 프로젝트에서 IP 레지스터 테스트는 전체 테스트의 0.33-0.39(평균 약 35%)였다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Across five Samsung SoC projects, IP register access tests accounted for roughly 33-39% of total tests (average ~35%); the IP count matched the number of generated register test benches.
+- Debugging combines predefined solutions keyed by UVM_ERROR tags with BTS tracing via VIP callbacks that pinpoints bus hangs and error responses for unknown failures.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 다섯 개 Samsung SoC 프로젝트에서 IP 레지스터 접근 테스트는 전체 테스트의 약 0.33~0.39(평균 약 35%)를 차지했고, IP 수와 생성된 레지스터 테스트 벤치 수가 일치했다.
+- 디버깅은 UVM_ERROR 태그별 사전 정의 해법과, VIP 콜백 기반 BTS 추적을 결합하여 버스 hang 및 에러 응답의 원인 지점을 짚어낸다.
 
 </div>
 </div>
@@ -115,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Full automation is triggered by p4 trigger on RTL label file commits in predefined paths with fixed naming patterns, giving per-label sanity checks without manual intervention. The paper reports no measured speedup or bug-detection figures.
+- The paper reports no quantitative TAT savings or bug-detection results, and its claim that IP count matches bench count conflicts with Table 4 (IP count 1,184-1,845 vs. register tests 2,839-6,595), so treat the benefits as qualitative.
 
 </div>
 <div class="bi-ko" markdown>
 
-- RTL 라벨 파일이 정해진 경로와 명명 규칙으로 커밋되면 p4 trigger가 작동해 사람 개입 없이 라벨별 sanity check를 수행한다. 논문은 실행 시간 단축이나 버그 검출 수치는 제시하지 않았다.
+- 논문은 TAT 단축 효과나 버그 검출 결과의 정량 수치를 제시하지 않으며, IP 개수와 벤치 개수가 같다는 주장은 Table 4(IP 1,184-1,845개 vs. 레지스터 테스트 2,839-6,595개)와 모순되므로 이점은 정성적으로 해석해야 한다.
 
 </div>
 </div>
@@ -132,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- SoC designs integrate ever more IPs, and each IP needs its own register read/write test bench. Maintaining these by hand is time-consuming and error-prone, and specification changes (common early in projects) force repeated test bench edits.
+- Hand-written, per-IP register read/write test benches multiply with IP count, and frequent early-stage spec changes force repeated edits; specs in Excel, IP-XACT, email, or verbal form are ambiguous, so stale or misread specs create verification holes.
 
 </div>
 <div class="bi-ko" markdown>
 
-- SoC에 통합되는 IP가 늘어날수록 IP마다 레지스터 read/write 테스트 벤치가 필요하다. 이를 수작업으로 유지보수하는 일은 시간이 많이 들고 오류가 생기기 쉬우며, 프로젝트 초기에 빈번한 스펙 변경이 있으면 테스트 벤치를 반복해서 수정해야 한다.
+- IP별로 수작업 작성되는 레지스터 읽기/쓰기 테스트 벤치는 IP 수에 비례해 늘어나며, 프로젝트 초기의 잦은 사양 변경으로 반복 수정이 필요하다. Excel, IP-XACT, 이메일, 구두 등 다양한 형태의 사양은 모호하여 오래되었거나 잘못 해석된 사양이 검증 홀을 만든다.
 
 </div>
 </div>
@@ -145,12 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Specifications come in heterogeneous forms (HDL-format descriptions, Excel address maps, emails, chat, verbal). Misinterpretation or stale specifications create verification holes that let SoC bugs through.
+- Register access tests were chosen because the IP list is predefined and the bench count is large; they are simple but are a prerequisite for complex tests.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 스펙은 HDL 형식 설명, Excel 주소 맵, 이메일, 채팅, 구두 등 여러 형태로 존재한다. 스펙 오해나 최신화되지 않은 스펙은 verification hole을 만들고 SoC 버그를 놓치게 한다.
+- IP 목록이 사전에 정해져 있고 벤치 수가 많다는 이유로 레지스터 접근 테스트를 대상으로 선정했다. 시나리오는 단순하지만 복잡한 테스트의 선행 조건이다.
 
 </div>
 </div>
@@ -158,37 +158,27 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Register access tests were chosen as the target because they are simple in scenario complexity, essential as a prerequisite for deeper tests, and numerous with a predefined IP list.
+- Failure debugging (unexpected SLVERR, bus hang, write/read mismatch) takes variable time, and SoC complexity lengthens it.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 레지스터 접근 테스트는 시나리오 복잡도가 낮지만, 더 복잡한 테스트의 선행 조건으로 필수적이며, 미리 정의된 IP 목록을 가진 대량의 테스트라는 점에서 대상으로 선택되었다.
+- 실패 디버깅(예상치 못한 SLVERR, 버스 hang, write/read 불일치)에 걸리는 시간은 가변적이며 SoC 복잡도에 따라 길어진다.
 
 </div>
 </div>
 
 ### Architecture and Methodology
 
-```mermaid
-flowchart LR
-  A[RTL label commit] -->|p4 trigger| B[Specification collector]
-  B --> C[YAML]
-  C --> D[Test bench generator: Jinja2 template]
-  D --> E[Test executor: DUT compile + regression]
-  E --> F[Debugger: predefined tags + BTS]
-  E --> G[Reporter: Go]
-```
-
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Specification collector (Python):** parses IP-XACT XML (IP names), the SoC address map Excel file (IP-to-block mapping and base addresses), and the UVM register model (UVM handler names and base addresses). Mismatches are reported as specification errors. Security attributes from a structured table (for example a TZPC table) are also collected, enabling tests in which a non-secure master must not access a secure IP. The result is a per-IP YAML file.
+- Five components: Specification Collector (cross-checks IP-XACT, address map, UVM register model, and TZPC security table; emits per-IP YAML), Test Bench Generator (Jinja2 templates with macros), Test Executor (DUT compile and regression), Debugger (tag-based predefined solutions for UVM_ERROR plus BTS-based bus hang/error tracing via VIP callbacks), and Reporter (Go-based block-level pass/fail and pass-rate views).
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Specification collector (Python):** IP-XACT XML(IP 이름), SoC 주소 맵 Excel 파일(IP와 블록 매핑 및 base address), UVM 레지스터 모델(UVM handler 이름 및 base address)을 파싱한다. 불일치는 스펙 오류로 보고한다. TZPC 테이블 같은 구조화된 파일에서 보안 속성도 수집하며, 비보안 master가 보안 IP에 접근하지 못하는지를 검증할 수 있게 한다. 결과는 IP별 YAML 파일이다.
+- 5개 구성 요소: Specification Collector(IP-XACT, 주소 맵, UVM 레지스터 모델, TZPC 보안 테이블을 교차 검사하고 IP별 YAML 출력), Test Bench Generator(Jinja2 템플릿과 매크로 사용), Test Executor(DUT 컴파일 및 회귀 실행), Debugger(UVM_ERROR 태그별 사전 정의 해법과 VIP 콜백 기반 BTS 버스 hang/에러 응답 추적), Reporter(Go 기반 블록 단위 pass/fail 및 pass rate 뷰).
 
 </div>
 </div>
@@ -196,64 +186,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Test bench generator (Python + Jinja2):** a per-IP UVM sequence template (`*_register_rw_access_vseq_c`) plus a macro (`REGISTER_LOOP`) that iterates over register blocks and exposes variables such as register_inst, register_name, security, and security_field. The authors argue that a fixed read/write structure makes template-based generation suitable.
+- Triggered by an RTL label file committed to a fixed path and naming pattern via `p4 trigger` (Git Actions noted as an alternative); the framework then creates a Perforce changelist for the generated benches.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Test bench generator (Python + Jinja2):** IP별 UVM 시퀀스 템플릿(`*_register_rw_access_vseq_c`)과 레지스터 블록을 순회하는 매크로(`REGISTER_LOOP`)를 사용한다. 매크로는 register_inst, register_name, security, security_field 등의 변수를 제공한다. 저자들은 read/write 구조가 고정되어 있어 템플릿 기반 생성이 적합하다고 주장한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Test executor:** compiles the DUT and runs register regressions automatically. Hundreds of test benches make manual execution impractical.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **Test executor:** DUT를 컴파일하고 레지스터 회귀를 자동으로 실행한다. 테스트 벤치가 수백 개에 이르므로 수작업 실행은 비현실적이다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Debugger:** errors are emitted as UVM_ERROR with tags (for example `[SFRSEC][NOSECUREG]`), each linked to a predefined debugging guide. Unpredicted failures are handled by BTS, a UVM monitor that is activated through VIP callbacks. A timeout callback is classified as a bus hang and an end-response error callback as an error response. Both trigger a BTS debug report in the log.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **Debugger:** 에러는 태그(예: `[SFRSEC][NOSECUREG]`)가 붙은 UVM_ERROR로 출력되며, 각 태그는 사전 정의된 디버깅 가이드와 연결된다. 예상하지 못한 실패는 VIP 콜백으로 활성화되는 UVM monitor 형태의 BTS가 처리한다. timeout 콜백은 bus hang으로, end response의 에러 콜백은 error response로 분류되며, 두 경우 모두 BTS 디버그 결과가 로그에 출력된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Reporter (Go):** chosen for responsiveness on large result sets. It provides three views: a per-block pass/fail and pass-rate overview, a per-block regression list, and per-IP error-type drill-down.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **Reporter (Go):** 대용량 결과 데이터에 대한 응답성 때문에 Go로 개발되었다. 블록별 pass/fail 및 pass rate 개요, 블록별 회귀 목록, IP별 에러 유형 상세 보기의 세 가지 뷰를 제공한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Automation trigger:** the framework runs on Perforce `p4 trigger` when an RTL label file is committed to a predefined path with a predefined naming pattern. It then generates the test benches, runs simulations, and submits a Perforce change list. Git Actions is mentioned as an alternative.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **자동화 트리거:** 정해진 경로에 정해진 명명 패턴으로 RTL 라벨 파일이 Perforce에 커밋되면 `p4 trigger`로 실행된다. 이후 테스트 벤치 생성, 시뮬레이션 실행, Perforce change list 제출이 이어진다. Git Actions도 대안으로 언급된다.
+- 고정 경로와 명명 규칙에 맞는 RTL 라벨 파일이 커밋되면 `p4 trigger`로 실행되며(Git Actions도 대안으로 언급), 생성된 벤치에 대한 Perforce changelist를 만든다.
 
 </div>
 </div>
@@ -263,12 +201,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Across five recent SoC projects (A to E), the IP register access tests account for 0.33 to 0.39 of total tests. The reported IP and test counts are: A 1,845 IPs / 5,418 register tests / 13,894 total; B 1,632 / 4,804 / 13,687; C 1,279 / 3,798 / 10,501; D 1,184 / 2,839 / 8,570; E 1,756 / 6,595 / 18,127. The average is approximately 35%.
+- Across five recent SoC projects, IP register tests were 2,839-6,595 of 8,570-18,127 total tests (ratio 0.33-0.39, ~35% average), so ~35% of test benches are auto-generated.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 최근 다섯 개 SoC 프로젝트(A~E)에서 IP 레지스터 접근 테스트는 전체 테스트의 0.33~0.39를 차지했다. 보고된 IP 수 / 레지스터 테스트 수 / 전체 테스트 수는 A 1,845 / 5,418 / 13,894, B 1,632 / 4,804 / 13,687, C 1,279 / 3,798 / 10,501, D 1,184 / 2,839 / 8,570, E 1,756 / 6,595 / 18,127이다. 평균은 약 35%이다.
+- 최근 5개 SoC 프로젝트에서 IP 레지스터 테스트는 전체 8,570-18,127개 테스트 중 2,839-6,595개(비율 0.33-0.39, 평균 약 35%)를 차지하므로, 테스트 벤치의 약 35%가 자동 생성된다.
 
 </div>
 </div>
@@ -276,12 +214,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The number of IPs matches the number of generated register test benches. The extra tests come from security-related variants.
+- No simulation-time, TAT, or bug-detection figures are reported, and the claim that IP count equals bench count contradicts Table 4.
 
 </div>
 <div class="bi-ko" markdown>
 
-- IP 수와 생성된 레지스터 테스트 벤치 수가 일치한다. 추가 테스트는 보안 관련 테스트에서 나온다.
+- 시뮬레이션 시간, TAT, 버그 검출 수치는 보고되지 않았으며, IP 수와 벤치 수가 같다는 주장은 Table 4와 모순된다.
 
 </div>
 </div>
@@ -289,38 +227,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The authors claim the framework removes the maintenance effort for these test benches, proactively catches verification holes from unnoticed specification changes, and acts as a per-label sanity check.
+- The authors position per-label automated runs as early detection of IP spec changes the engineer may have missed.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 저자들은 이 프레임워크가 테스트 벤치 유지보수 부담을 없애고, 인지하지 못한 스펙 변경으로 인한 verification hole을 사전에 방지하며, 라벨별 sanity check 역할을 한다고 주장한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The paper gives no measured runtime savings, debug-time reduction, or bug-detection statistics. The claims are qualitative beyond the coverage ratio. The paper also presents the framework as a partial fraction (about 35%) of total test effort, not a complete replacement.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 실행 시간 절감, 디버그 시간 단축, 버그 검출 통계에 대한 측정 결과는 제시되지 않았다. 커버리지 비율 외의 주장은 정성적이다. 또한 이 프레임워크는 전체 테스트 노력의 약 35%를 다루는 것이며 전면 대체가 아니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The Table 4 counts are reproduced as stated in the paper. The figures are not independently validated.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Table 4의 수치는 논문에 기재된 그대로이며, 독립적으로 검증되지 않았다.
+- 저자들은 라벨마다 자동 실행하는 방식이 엔지니어가 놓칠 수 있는 IP 사양 변경을 조기에 발견한다고 주장한다.
 
 </div>
 </div>

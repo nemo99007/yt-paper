@@ -9,12 +9,12 @@ category: Emulation
 tags:
 - Emulation
 - RNM
-- SystemVerilog Real
 - Mixed-Signal
-- ixcom
+- SystemVerilog
+- DMS
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/157-Enabling-True-System-Level-Mixed-Signal-Emulation.pdf
-authors: Nimay Shah (Analog Devices, Wilmington, MA, USA), Paul Wright (Analog Devices, Limerick, Ireland), Pranav Dhayagude (Analog Devices, Wilmington, MA, USA), Raj Mitra (Cadence Design Systems, Burlington, MA, USA), Adam Sherer (Cadence Design Systems, Burlington, MA, USA); DVCon Europe
+authors: Nimay Shah (Analog Devices), Paul Wright (Analog Devices), Pranav Dhayagude (Analog Devices), Raj Mitra (Cadence Design Systems), Adam Sherer (Cadence Design Systems)
 youtube_videos:
 - video_id: shvv5KRtxp8
   url: https://www.youtube.com/watch?v=shvv5KRtxp8
@@ -29,7 +29,7 @@ youtube_videos:
 # Enabling True System-Level, Mixed-Signal Emulation
 
 <figure class="rep-fig" markdown>
-![Figure 2. Bias generator instantiations within the emulation run.](../assets/figures/ref-20261018-8099.png?v=1792310419){ loading=lazy }
+![Figure 2. Bias generator instantiations within the emulation run.](../assets/figures/ref-20261018-8099.png?v=1792379474){ loading=lazy }
 <figcaption>Figure 2. Bias generator instantiations within the emulation run. — from the original paper (Nimay Shah et al.)</figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ youtube_videos:
 
 | | |
 |---|---|
-| Authors | Nimay Shah (Analog Devices, Wilmington, MA, USA), Paul Wright (Analog Devices, Limerick, Ireland), Pranav Dhayagude (Analog Devices, Wilmington, MA, USA), Raj Mitra (Cadence Design Systems, Burlington, MA, USA), Adam Sherer (Cadence Design Systems, Burlington, MA, USA); DVCon Europe |
+| Authors | Nimay Shah (Analog Devices), Paul Wright (Analog Devices), Pranav Dhayagude (Analog Devices), Raj Mitra (Cadence Design Systems), Adam Sherer (Cadence Design Systems) |
 | Venue | DVCon Europe 2024 |
 | Topic | Emulation |
 | Type | PAPER |
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**The paper extends an emulation compiler (ixcom) and RNM coding guidelines so that SystemVerilog real-number models (RNMs) of analog/mixed-signal blocks can be synthesized and run on an emulator in simulation-acceleration mode, validated on a CP-PLL, an A-PLL, and the bias generator of a 4T4R ORAN transceiver SoC with a 320x speedup over simulation.**
+**Enhanced ixcom compiler and RNM coding guidelines let SystemVerilog real-number models run directly on FPU-based emulation hardware, enabling pre-silicon mixed-signal verification with software in the loop without fixed-point recoding.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**ixcom 에뮬레이션 컴파일러와 RNM 코딩 가이드라인을 확장하여, 아날로그/혼합신호 블록의 SystemVerilog real-number model(RNM)을 수정 없이 합성해 simulation-acceleration 모드에서 에뮬레이터에 실행할 수 있게 하고, CP-PLL, A-PLL, 4T4R ORAN 트랜시버 SoC의 bias generator로 검증하여 시뮬레이션 대비 320배 속도 향상을 보고한 논문입니다.**
+**향상된 ixcom 컴파일러와 RNM 코딩 가이드라인을 통해 SystemVerilog 실수형 모델(RNM)을 FPU 기반 에뮬레이션 하드웨어에서 직접 실행할 수 있게 되어, 고정소수점 재코딩 없이 소프트웨어를 포함한 mixed-signal 검증을 tapeout 이전에 수행할 수 있습니다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Real-number models can be synthesized directly on the emulator (SV-2009 real types, SV-2012 nettypes with resolution functions, # delays, floating-point and math operations), avoiding the months-long recoding into fixed-point models that prior approaches required (e.g., the image sensor case).
+- Synthesizing unmodified RNMs via compiler enhancements removes the months-long fixed-point recoding that prior emulation flows required, and keeps a single RNM codebase for simulation and emulation.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Real-number model을 에뮬레이터에서 직접 합성할 수 있습니다(SV-2009 real 타입, resolution function을 포함한 SV-2012 nettype, # delay, 부동소수점 및 수학 연산 지원). 이로써 기존 방식에서 필요했던, 수개월이 걸리는 fixed-point 모델 재코딩(예: 이미지 센서 사례)을 피할 수 있습니다.
+- 컴파일러 개선과 RNM 코딩 가이드라인으로 수정되지 않은 RNM을 합성할 수 있어, 기존 고정소수점 모델 재코딩에 필요했던 수개월의 작업이 사라지고 시뮬레이션과 에뮬레이션이 단일 RNM 코드베이스를 공유합니다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- On the 4T4R ORAN SoC, the full RNM bias generator reduced maximum emulation frequency from 959 kHz (all-digital bias generator) to 635 kHz (33% degradation); the self-trim run took 45 s on emulation vs. 14400 s in pure simulation (320x speedup), with FPU utilization of 52.47%.
+- Full bias-generator RNM reduced maximum emulation frequency from 959 kHz to 635 kHz (33% degradation), yet emulation runtime was 45 s versus 14,400 s in simulation (320x speedup) at 52.47% FPU utilization.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 4T4R ORAN SoC에서 RNM 기반 bias generator를 적용하면 최대 에뮬레이션 주파수가 959 kHz(all-digital bias generator)에서 635 kHz로 떨어집니다(33% 저하). Self-trim 실행 시간은 에뮬레이션 45 s, 순수 시뮬레이션 14400 s로 320배 속도 향상이며, FPU 사용률은 52.47%입니다.
+- 완전한 bias generator RNM을 적용하면 최대 에뮬레이션 주파수가 959 kHz에서 635 kHz로 떨어지지만(33% 저하), 에뮬레이션 런타임은 45 s로 시뮬레이션 14,400 s 대비 320배 빨랐고 FPU 사용률은 52.47%였습니다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Hard limits to plan around: $atan/$asin/$acos are unsupported (A-PLL used a user-code arctan approximation), $sin/$cos inputs must be bounded to ±40π, dynamic arrays, concurrent/immediate assertions and coverage on real types, force/release of real types, and automatic connect-module insertion are not supported.
+- Unsupported constructs need workarounds: inverse trig ($atan/$asin/$acos) requires a user-code arctan approximation, and dynamic arrays, CM insertion, real-type assertions/coverage, and force/release on reals are not supported.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 계획 시 고려해야 할 제약: $atan/$asin/$acos는 미지원(A-PLL은 사용자 코드 arctan 근사를 사용), $sin/$cos 입력은 ±40π로 제한, dynamic array, real 타입에 대한 concurrent/immediate assertion 및 coverage, real 타입의 force/release, 자동 connect module 삽입은 지원되지 않습니다.
+- 역삼각함수($atan/$asin/$acos)는 지원되지 않아 사용자 코드 arctan 근사가 필요하며, dynamic array, CM insertion, 실수형 assertion/coverage, 실수형 force/release는 지원되지 않습니다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Analog-side integration uses three model categories: emulation-compliant library components, extracted LUT models generated by an internal tool requiring no modification, and a minimal set of hand-written SV guarded by `ifdef emulation/simulation splits; supplies are assumed always on in emulation so supply checks are disabled and inputs are converted to logic types.
+- Emulation assumes always-on supplies, so supply checks were disabled with `ifdef and undriven supply pins default to logic 0, a setup detail needed for DMS reuse.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 아날로그 측 통합은 세 가지 모델 범주를 사용합니다. 에뮬레이션 호환 라이브러리 컴포넌트, 내부 도구로 추출한 LUT 모델(수정 불필요), 그리고 `ifdef emulation/simulation 분기가 필요한 최소한의 수작업 SV입니다. 에뮬레이션에서는 전원이 항상 켜져 있다고 가정하므로 supply check를 비활성화하고 입력을 logic 타입으로 변환합니다.
+- 에뮬레이션 환경은 전원이 항상 켜져 있다고 가정하므로 `ifdef로 전원 체크를 비활성화했고, 구동되지 않은 전원 핀은 logic 0으로 기본 설정되며, 이는 DMS 재사용을 위해 필요한 설정 세부사항입니다.
 
 </div>
 </div>
@@ -115,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- A VPI plus Python script traces every connection from top-level IO to leaf instances and reports signal types (logic, interconnect, coerced wreal, real variable, custom nettype) in a spreadsheet to find DMS connectivity issues before the emulation build.
+- Evidence is limited to a bias generator, a CP-PLL, an A-PLL (waveform comparison against Xcelium), and a 4T4R SoC claimed production-ready; no quantitative fidelity metric is reported beyond waveform matching.
 
 </div>
 <div class="bi-ko" markdown>
 
-- VPI와 Python 스크립트가 최상위 IO에서 leaf 인스턴스까지 모든 연결을 추적하고, 신호 타입(logic, interconnect, coerced wreal, real variable, custom nettype)을 스프레드시트로 보고하여 에뮬레이션 빌드 전에 DMS 연결 문제를 찾아냅니다.
+- 검증 근거는 bias generator, CP-PLL, A-PLL(Xcelium 파형 비교), 그리고 양산 적용 가능하다고 주장한 4T4R SoC에 한정되며, 파형 일치 이외의 정량적 충실도 지표는 보고되지 않았습니다.
 
 </div>
 </div>
@@ -132,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Emulators only handle synthesizable digital logic, so analog/mixed-signal (AMS) content is typically black-boxed in SoC emulation. Analog blocks are replaced by register-only stubs, and calibration loops that depend on analog feedback cannot be verified end-to-end before tapeout.
+- Traditional emulation supports only synthesizable digital logic, and co-simulation with an analog simulator is runtime-limited. Calibration loops and analog-feedback low-power behavior therefore stay unverified pre-silicon.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 에뮬레이터는 합성 가능한 디지털 로직만 처리하므로, SoC 에뮬레이션에서 아날로그/혼합신호(AMS) 부분은 보통 black box로 처리됩니다. 아날로그 블록은 레지스터만 가진 스텁으로 대체되고, 아날로그 피드백에 의존하는 calibration loop는 tapeout 전에 end-to-end로 검증할 수 없습니다.
+- 기존 에뮬레이션은 합성 가능한 디지털 로직만 지원하며, 아날로그 시뮬레이터와의 co-simulation은 런타임 한계가 있습니다. 따라서 calibration loop와 아날로그 피드백 기반 저전력 동작은 tapeout 이전에 검증되지 못했습니다.
 
 </div>
 </div>
@@ -145,25 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Full AMS co-simulation is limited by analog simulator runtime. Fixed-point bit-model conversion of SystemVerilog Real Number Models (RNM) was shown on an image sensor (5.6 s of real system function in 2.1 h of emulation), but required months of recoding, a larger emulation footprint (accuracy vs. size tradeoff), and ongoing synchronization with the RNM simulation models.
+- Prior fixed-point re-modeling of RNMs cost months of recoding and large emulation footprints (image sensor case: 5.6 s of system time in 2.1 h of emulation). Analog blocks were often black-boxed with register-only stubs.
 
 </div>
 <div class="bi-ko" markdown>
 
-- AMS co-simulation은 아날로그 시뮬레이터의 런타임 때문에 테스트 수가 제한됩니다. SystemVerilog Real Number Model(RNM)을 fixed-point bit 모델로 변환하는 방식은 이미지 센서에서 시연되었습니다(에뮬레이션 2.1 h 동안 실제 시스템 기능 5.6 s). 그러나 이 방식은 수개월의 재코딩, 정확도 대 모델 크기 간 trade-off(에뮬레이션 footprint 증가), 그리고 RNM 시뮬레이션 모델과의 지속적인 동기화가 필요했습니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Goal: synthesize the original RNMs to floating-point fidelity without recoding, keeping the existing UVM simulation-acceleration flow (testbench on CPU simulator, DUT on emulator).
-
-</div>
-<div class="bi-ko" markdown>
-
-- 목표: 원래 RNM을 재코딩하지 않고 floating-point 충실도로 합성하며, 기존 UVM simulation-acceleration 흐름(CPU 시뮬레이터의 testbench, 에뮬레이터의 DUT)을 유지하는 것입니다.
+- 기존 고정소수점 RNM 재모델링은 수개월의 재코딩과 큰 에뮬레이션 footprint를 요구했습니다(이미지 센서 사례: 에뮬레이션 2.1 h로 5.6 s의 시스템 기능 구동). 아날로그 블록은 레지스터만 가진 stub으로 black box 처리되는 경우가 많았습니다.
 
 </div>
 </div>
@@ -173,139 +160,72 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-The approach combines RNM coding guidelines, enhancements to the front-end compiler (ixcom) on the emulation platform, and validation on real designs.
+- The enhanced front-end compiler (ixcom) maps SV-2009 real types, SV-2012 nettypes with resolution functions, `#` delays, real math, and conversion system functions onto emulation FPUs.
 
 </div>
 <div class="bi-ko" markdown>
 
-접근법은 RNM 코딩 가이드라인, 에뮬레이션 플랫폼 front-end 컴파일러(ixcom)의 확장, 실제 설계를 통한 검증을 결합합니다.
+- 향상된 front-end 컴파일러(ixcom)는 SV-2009 실수형, resolution function을 포함한 SV-2012 nettype, `# delay`, 실수 연산, 변환 시스템 함수를 에뮬레이션 FPU에 매핑합니다.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- Coding guidelines: resolution functions use fixed-size arrays; $sin/$cos inputs are bounded to ±40π; inverse trig is replaced by user-code approximation. CM insertion is unsupported; a VPI plus Python script traces DMS connections.
+
+</div>
+<div class="bi-ko" markdown>
+
+- 코딩 가이드라인: resolution function은 고정 크기 배열을 사용하고, $sin/$cos 입력은 ±40π로 제한하며, 역삼각함수는 사용자 코드 근사로 대체합니다. CM insertion은 지원되지 않으며, VPI와 Python 스크립트로 DMS 연결을 추적합니다.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- The bias generator (50 µA bias to the oscillator) combines an emulation-compliant library, an extracted LUT, and minimal handwritten SV with `ifdef-guarded supply checks.
+
+</div>
+<div class="bi-ko" markdown>
+
+- bias generator(발진기에 50 µA 바이어스 공급)는 에뮬레이션 호환 라이브러리, 추출된 LUT, `ifdef로 전원 체크를 보호한 최소한의 수기 SV 코드를 조합해 모델링했습니다.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- Runs in simulation-acceleration mode: the UVM testbench runs on the CPU simulator, while the DUT and RNMs run on the emulator.
+
+</div>
+<div class="bi-ko" markdown>
+
+- simulation-acceleration 모드로 동작합니다. UVM testbench는 CPU 시뮬레이터에서, DUT와 RNM은 에뮬레이터에서 실행됩니다.
 
 </div>
 </div>
 
 ```mermaid
 flowchart LR
-  A[RNM source<br/>SV real, nettypes, # delays] --> B[Coding guidelines<br/>ifdef emu/sim splits]
-  B --> C[Enhanced ixcom compiler<br/>real, nettype, math support]
-  C --> D[Emulator FPU compute]
-  E[UVM testbench on CPU simulator] -->|simulation acceleration| D
+  TB[UVM testbench on CPU simulator] -->|simulation acceleration| EMU[Emulator: digital DUT + RNM blocks]
+  RNM[Unmodified RNM source] --> IX[Enhanced ixcom compiler] --> EMU
 ```
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Datatypes**: real, shortreal, realtime, their unpacked arrays and structs; SV-2012 nettypes including synthesizable resolution functions (no dynamic arrays).
-
-</div>
-<div class="bi-ko" markdown>
-
-- **데이터 타입**: real, shortreal, realtime 및 이들의 unpacked 배열과 struct. SV-2012 nettype은 합성 가능한 resolution function을 포함하여 지원됩니다(dynamic array 사용 불가).
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Delays**: `#` delays are supported in always-with-delay, continuous assign with delay, always with explicit event plus delay, and rise/fall gate-primitive delays.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **Delay**: always-with-delay, delay가 있는 continuous assign, 명시적 event와 delay가 있는 always, rise/fall gate primitive delay를 지원합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Math**: real operators from IEEE 1800-2017 Table 11-1 (except `inside`) and most math functions from Table 20-4. $sin/$cos inputs bounded to ±40π; inverse trig functions are not supported. Conversion functions ($rtoi, $itor, $realtobits, $bitstoreal, $shortrealtobits, $bitstoshortreal) are supported. Argument reduction to ±2π is done in user code with $floor.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **수학 연산**: IEEE 1800-2017 Table 11-1의 real 연산자(`inside` 제외)와 Table 20-4의 대부분의 수학 함수를 지원합니다. $sin/$cos 입력은 ±40π로 제한되며, 역삼각 함수는 미지원입니다. 변환 함수($rtoi, $itor, $realtobits, $bitstoreal, $shortrealtobits, $bitstoshortreal)는 지원됩니다. ±2π로의 인자 축소는 $floor를 이용한 사용자 코드로 구현합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **DMS connectivity**: the compiler adds datatype coercion (not 1:1 with simulators), but automatic connect-module (CM) insertion is not supported. A VPI and a Python post-processor trace each hierarchical connection and flag problem segments in a spreadsheet.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **DMS 연결**: 컴파일러는 datatype coercion을 추가하지만 시뮬레이터와 1:1로 일치하지는 않으며, 자동 connect module(CM) 삽입은 지원되지 않습니다. VPI와 Python 후처리 스크립트가 계층 연결 각각을 추적하고 문제 구간을 스프레드시트로 표시합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Unsupported**: dynamic arrays, concurrent and immediate assertions and coverage on real types, force/release of real types.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **미지원 항목**: dynamic array, real 타입에 대한 concurrent 및 immediate assertion과 coverage, real 타입의 force/release.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Model categories** for the bias generator: (1) Analog Devices simulation library components, updated to be emulation-compliant; (2) extracted LUT models generated by an internal tool, which needed no changes; (3) minimal hand-written SV, restricted to `ifdef emulation/simulation differences, discipline management and hand-instantiated connect modules.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **Bias generator 모델 범주**: (1) Analog Devices 시뮬레이션 라이브러리 컴포넌트(에뮬레이션 호환으로 업데이트), (2) 내부 도구로 추출한 LUT 모델(수정 불필요), (3) `ifdef emulation/simulation 차이, 디바이스 관리, 수동 인스턴스화된 connect module이 필요한 경우에 한정된 최소한의 수작업 SV.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Integration**: the `analog_top` module was removed from the `-moduleStubList` of ixcom, and a configuration view instantiates two bias generator instances (Figure 2). Supplies are undriven on emulation (assumed always on), so supply checks are disabled with `ifdef and their inputs are converted to logic types (Figure 3).
-
-</div>
-<div class="bi-ko" markdown>
-
-- **통합**: ixcom의 `-moduleStubList`에서 `analog_top` 모듈을 제외하고, configuration view로 두 개의 bias generator 인스턴스를 인스턴스화합니다(Figure 2). 에뮬레이션에서 supply 핀은 구동되지 않으므로(항상 켜져 있다고 가정), supply check는 `ifdef로 비활성화하고 입력은 logic 타입으로 변환합니다(Figure 3).
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Validation**: the bias generator model is netlisted from the analog design environment and checked against transistor-level, RNM-simulation and RNM-emulation runs for power-down and trim use cases.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **검증**: bias generator 모델은 아날로그 설계 환경에서 netlist되며, power-down 및 trim 사용 사례에 대해 transistor-level, RNM 시뮬레이션, RNM 에뮬레이션 실행 결과와 비교됩니다.
-
-</div>
-</div>
 
 ### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **CP-PLL**: a charge-pump PLL served as the basic proof-of-concept to validate guidelines and tool enhancements.
+- The register-triggered bias-generator self-trim routine completes in both simulation and emulation; waveform differences stem from constraint-solver outputs.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **CP-PLL**: charge-pump PLL을 기본 proof-of-concept로 사용하여 가이드라인과 도구 확장을 검증했습니다.
+- 레지스터 쓰기로 시작되는 bias generator self-trim 루틴은 시뮬레이션과 에뮬레이션 모두에서 완료되었으며, 파형 차이는 constraint solver 출력에서 비롯됩니다.
 
 </div>
 </div>
@@ -313,12 +233,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Bias generator self-trim** (4T4R ORAN transceiver running Ubuntu): the trim routine, triggered by register writes from the processor, completes on both simulation (Figure 4) and emulation (Figure 5). Waveforms are not identical because the constraint-randomization solver outputs differ.
+- Maximum emulation frequency fell from 959 kHz (all-digital bias) to 635 kHz with the full RNM. Emulation ran in 45 s versus 14,400 s in simulation (320x).
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Bias generator self-trim**(Ubuntu를 실행하는 4T4R ORAN 트랜시버): 프로세서의 레지스터 쓰기로 시작되는 trim 루틴이 시뮬레이션(Figure 4)과 에뮬레이션(Figure 5) 모두에서 완료됩니다. 제약 randomization solver의 출력이 달라 파형은 동일하지 않습니다.
+- 최대 에뮬레이션 주파수는 전체 디지털 bias 기준 959 kHz에서 완전한 RNM 적용 시 635 kHz로 떨어졌습니다. 에뮬레이션은 45 s, 시뮬레이션은 14,400 s가 걸려 320배 차이를 보였습니다.
 
 </div>
 </div>
@@ -326,12 +246,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Performance**: maximum emulation frequency drops from 959 kHz (all-digital bias generator) to 635 kHz (33% degradation). Runtime is 45 s on emulation vs. 14400 s in pure DMS simulation, a 320x speedup. FPU utilization is 52.47%. The authors expect larger gains on more complex cases.
+- The A-PLL's arctan approximation locked to the reference, closely matching Xcelium results.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **성능**: 최대 에뮬레이션 주파수는 959 kHz(all-digital bias generator)에서 635 kHz로 떨어집니다(33% 저하). 런타임은 에뮬레이션 45 s, 순수 DMS 시뮬레이션 14400 s로, 320배 속도 향상입니다. FPU 사용률은 52.47%입니다. 저자들은 더 복잡한 사례에서 더 큰 이득을 기대합니다.
+- A-PLL의 arctan 근사는 기준 클록에 락되었으며 Xcelium 결과와 근접하게 일치했습니다.
 
 </div>
 </div>
@@ -339,38 +259,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **A-PLL**: phase detection uses a user-code arctan approximation (Figure 6) based on published references. The PLL locks to the reference (Figure 7), and the results closely match Xcelium reference simulations.
+- The authors call the flow production-ready for the 4T4R ORAN transceiver, with known limitations: dynamic arrays, real-type assertions and coverage, and force/release on reals.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **A-PLL**: 위상 검출은 공개된 참고문헌에 기반한 사용자 코드 arctan 근사(Figure 6)를 사용합니다. PLL은 기준 클럭에 lock되며(Figure 7), 결과는 Xcelium 참조 시뮬레이션과 밀접하게 일치합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Conclusions**: the authors state the tools and methodology are ready for production use with known limitations and workarounds. Future work includes making the Analog Devices simulation library fully emulation-compliant and expanding RNM/DMS construct support in the tools and hardware.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **결론**: 저자들은 알려진 제약과 검증된 우회 방법을 갖춘 상태로 도구와 방법론이 프로덕션 사용 준비가 되었다고 밝힙니다. 향후 과제는 Analog Devices 시뮬레이션 라이브러리를 완전히 에뮬레이션 호환으로 만드는 것과, 도구 및 하드웨어에서 RNM/DMS 구문 지원을 확대하는 것입니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Note: the source text is complete; no truncation.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 원문이 완전하며 잘린 부분은 없습니다.
+- 저자들은 4T4R ORAN 트랜시버에 대해 양산 적용이 가능하다고 주장하며, 알려진 한계로 dynamic array, 실수형 assertion과 coverage, 실수형 force/release를 제시했습니다.
 
 </div>
 </div>

@@ -19,4 +19,4 @@ resources:
 
 | Paper | Topic | Note |
 |---|---|---|
-| [Of Camels and Committees: Standards Should Enable Innovation, Not Strangle It](../papers/ref-20261018-2c26-of-camels-and-committees-standards-should-enable-innovation.md) | Verification | - |
+| [Of Camels and Committees](../papers/ref-20261018-2c26-of-camels-and-committees.md) | Verification | - |

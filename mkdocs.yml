@@ -81,6 +81,21 @@ nav:
   - date/index.md
   - By Year: date/by-year.md
   - By Topic: date/by-topic.md
+- IEEE:
+  - ieee/index.md
+  - ICST: ieee/icst.md
+  - By Year: ieee/by-year.md
+  - By Topic: ieee/by-topic.md
+- arXiv:
+  - arxiv/index.md
+  - By Year: arxiv/by-year.md
+  - By Topic: arxiv/by-topic.md
+- Others:
+  - others/index.md
+  - CACM: others/cacm.md
+  - FPGA: others/fpga.md
+  - By Year: others/by-year.md
+  - By Topic: others/by-topic.md
 - Videos: videos/index.md
 - Tags: tags.md
 # <<< nav

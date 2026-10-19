@@ -19,4 +19,4 @@ resources:
 
 | Paper | Topic | Note |
 |---|---|---|
-| [Future Proofing Power Intent Specification through Unified Power Format (UPF) 4.0 for Evolving Advanced State Retention Strategies](../papers/ref-20261018-e797-future-proofing-power-intent-specification-through-unified-p.md) | EDA | - |
+| [Future Proofing Power Intent Specification through Unified Power Format (UPF) 4.0 for Evolving Advanced State Retention Strategies](../papers/ref-20261018-e797-future-proofing-power-intent-specification-through-unified-p.md) | Verification | - |

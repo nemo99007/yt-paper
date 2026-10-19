@@ -7,14 +7,14 @@ region: US
 year: 2024
 category: Verification
 tags:
-- SystemVerilog
 - MRAM
+- System-Verilog
 - Behavioral Model
-- Variation-Aware Verification
-- IP Validation
+- Variation-Aware
+- IP Verification
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/1091.pdf
-authors: S. Do, S. Shin, J. Jang, D. Kim (Samsung Electronics, Foundry Division). 학회/저널 정보는 본문에 없음. 입력 힌트의 "Laura Leblanc"는 본문과 일치하지 않음.
+authors: S. Do (Samsung Electronics, Foundry Division), S. Shin (Samsung Electronics, Foundry Division), J. Jang (Samsung Electronics, Foundry Division), D. Kim (Samsung Electronics, Foundry Division)
 youtube_videos:
 - video_id: BPcFEl__kKc
   url: https://www.youtube.com/watch?v=BPcFEl__kKc
@@ -28,11 +28,16 @@ youtube_videos:
 
 # Variation-Aware Modeling Method for MRAM Behavior Model using System-Verilog
 
+<figure class="rep-fig" markdown>
+![Fig. 3. Write operation flow chart of MRAM](../assets/figures/ref-20261018-d4fc.png?v=1792379499){ loading=lazy }
+<figcaption>Fig. 3. Write operation flow chart of MRAM — from the original paper (S. Do et al.)</figcaption>
+</figure>
+
 [:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1091.pdf){ .md-button .md-button--primary target=_blank }
 
 | | |
 |---|---|
-| Authors | S. Do, S. Shin, J. Jang, D. Kim (Samsung Electronics, Foundry Division). 학회/저널 정보는 본문에 없음. 입력 힌트의 "Laura Leblanc"는 본문과 일치하지 않음. |
+| Authors | S. Do (Samsung Electronics, Foundry Division), S. Shin (Samsung Electronics, Foundry Division), J. Jang (Samsung Electronics, Foundry Division), D. Kim (Samsung Electronics, Foundry Division) |
 | Venue | DVCon US 2024 |
 | Topic | Verification |
 | Type | PAPER |
@@ -43,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**MRAM의 확률적 쓰기 시간과 bit-cell별 쓰기 전압 편차를 SystemVerilog 행동 모델에 반영해, 프로세스 변동을 고려한 IP 검증을 가능하게 하는 방법을 제안한다.**
+**A System-Verilog behavioral model for embedded MRAM that injects MTJ write-time randomness and per-bit write-voltage variation, enabling variation-aware IP verification for Samsung Foundry's DNA IP.**
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+**MTJ의 쓰기 시간 랜덤성과 비트별 쓰기 전압 변동을 주입하는 System-Verilog 기반 임베디드 MRAM 행동 모델로, Samsung Foundry DNA IP의 variation-aware IP 검증을 가능하게 한다.**
 
 </div>
 </div>
@@ -58,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- MRAM 쓰기는 MTJ의 확률적 특성 때문에 단일 쓰기로 보장되지 않아 내부 write/read 반복이 필요하고, 그 결과 쓰기 시간이 가변적이다. 기존 register 기반 메모리 모델은 이런 동작을 표현할 수 없다.
+- Replacing the fixed-time write model with a probabilistic internal-write loop ($urandom_range) bounded by a maximum write time makes write-busy timing vary as it does on silicon.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 고정 시간 쓰기 모델을 최대 쓰기 시간으로 제한되는 확률적 내부 쓰기 루프($urandom_range)로 대체하여, 쓰기 busy 타이밍이 실리콘처럼 변동하도록 만든다.
 
 </div>
 </div>
@@ -71,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 쓰기 시간 변동은 $urandom_range로 매 클럭 negedge마다 확률 판정을 하고, 제한 시간이 도달하면 강제로 쓰기를 완료시키는 방식으로 모델링한다. 기능 검증 시 타이밍 여유를 점검하는 데 쓸 수 있다.
+- Per-bit minimum write voltage is sampled with $dist_normal and stored in a packed struct 'mbit' (data plus two 10-bit reference voltages), which lets the model inject realistic write failures.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 비트별 최소 쓰기 전압은 $dist_normal로 샘플링되어 packed struct 'mbit'(data와 두 개의 10비트 reference voltage)에 저장되며, 이를 통해 현실적인 쓰기 실패를 주입할 수 있다.
 
 </div>
 </div>
@@ -84,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 쓰기 전압 변동은 bit-cell별 최소 필요 쓰기 전압을 $dist_normal(정규분포)로 생성하고, typedef struct packed(mbit)에 data와 ref0/ref1 전압 필드를 함께 담아 저장하는 구조다. 메모리 배열 타입을 확장하는 방식이라 기존 메모리 선언 구조와 호환성 고려가 필요하다.
+- Table I gives 16 Mb fail-bit ratios of 21.83500% (write-0) and 45.57641% (write-1) at trim code 0, falling to 0.00001% (write-0) at trim code 10.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- Table I에 따르면 trim code 0에서 16 Mb의 fail-bit 비율은 write-0 21.83500%, write-1 45.57641%이며, write-0 trim code 10에서는 0.00001%로 떨어진다.
 
 </div>
 </div>
@@ -97,53 +102,29 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- trim 값(MCS 테스트 핀)에 따른 fail bit 수를 16Mb/128Mb 기준으로 제시해, 트리밍 설정이 불량 bit 수에 미치는 영향을 검증 시나리오에 포함할 수 있음을 보였다. 다만 실제 전압 데이터는 보안상 trim 값으로 대체되었다.
+- The paper argues System-Verilog is preferable to Verilog-A for digital-centric verification of analog-like behavior, but evidence is qualitative: no coverage, runtime, or silicon-correlation data are reported, and voltages are obfuscated as trim codes.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 정량적 성능 지표(시뮬레이션 속도 오버헤드, 실리콘 상관 정확도 등)는 제시되지 않고, 파형 비교와 DNA IP 검증 및 Siemens TMBIST와의 교차 확인 정도로만 검증되었다. 방법론의 일반성은 주장되지만 근거는 제한적이다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
+- 논문은 아날로그 유사 동작의 디지털 중심 검증에는 Verilog-A보다 System-Verilog가 적합하다고 주장하지만, 근거는 정성적이다. 커버리지, 실행 시간, 실리콘 상관관계 데이터는 보고되지 않았고 전압은 trim code로 치환되어 제시된다.
 
 </div>
 </div>
 
 ## Detailed Summary
 
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-### 배경 및 문제 정의
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
+### Background and Problem
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-메모리 IP의 행동 모델(behavioral model)은 논리 시뮬레이션용으로 주요 기능(read, write, scan shift, capture 등)만 구현하는 것이 일반적이다. SRAM처럼 bit-cell을 register로 표현하는 방식은 쓰기/읽기 동작이 단순하므로 충분하다. 그러나 MRAM은 MTJ(Magnetic Tunnel Junction) 소자의 확률적 특성 때문에 이 방식으로는 다음 두 가지 변동을 표현할 수 없다.
+- Behavioral models for large memories abstract away analog detail, so conventional register-based SRAM-style models cannot capture MRAM MTJ randomness: probabilistic write completion (variable write time) and write-voltage spread from process variation.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 대용량 메모리의 행동 모델은 아날로그 세부 동작을 추상화하므로, 기존 SRAM식 register 기반 모델로는 MRAM MTJ의 랜덤성(확률적 쓰기 완료에 따른 가변 쓰기 시간, 공정 변동에 따른 쓰기 전압 편차)을 표현할 수 없다.
 
 </div>
 </div>
@@ -151,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **쓰기 시간 변동**: 단일 쓰기로 데이터가 보장되지 않아 내부적으로 write/read를 반복하며, 그 결과 쓰기 완료 시간이 매번 달라진다.
+- The authors judge Verilog-A (used for prior PMC modeling) as more complex and time-consuming than SystemVerilog, citing a SystemVerilog PLL model as precedent.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 저자들은 (기존 PMC 모델링에 쓰인) Verilog-A가 System-Verilog보다 복잡하고 시간이 많이 든다고 보며, System-Verilog 기반 PLL 모델을 선례로 든다.
 
 </div>
 </div>
@@ -164,12 +145,27 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **쓰기 전압 변동**: 공정 변동에 따라 bit-cell마다 필요한 최소 쓰기 전압이 다르다. 또한 신뢰성/내구성 문제 때문에 MRAM은 공정별 최적 쓰기 전압을 trim으로 찾아 사용한다.
+- Goal: enable variation-aware test operations (write-voltage trimming, failure injection) for embedded MRAM during pre-silicon IP verification.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 목표: 사전 실리콘 IP 검증 중 임베디드 MRAM에 대해 variation-aware 테스트 동작(쓰기 전압 trim, 실패 주입)을 가능하게 하는 것이다.
+
+</div>
+</div>
+
+### Architecture and Methodology
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- Time variation: on each negedge CK while WRITE_BUSY is high, a $urandom_range-based check continues or stops the internal write; a maximum write time forces completion, so write duration fluctuates within spec.
+
+</div>
+<div class="bi-ko" markdown>
+
+- 시간 변동: WRITE_BUSY가 high인 동안 negedge CK마다 $urandom_range 기반 검사가 내부 쓰기를 계속하거나 중단시키며, 최대 쓰기 시간이 완료를 강제하여 쓰기 기간이 규격 내에서 변동한다.
 
 </div>
 </div>
@@ -177,12 +173,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-저자들은 이 두 변동을 SystemVerilog 행동 모델에 반영해, 실리콘 전 디지털 검증에서 trim·calibration 기능까지 검증할 수 있게 하는 것을 목표로 한다. 또한 Verilog-A 대신 SystemVerilog를 쓰는 것이 모델링 용이성 측면에서 바람직하다고 주장한다(관련 연구 PMC의 Verilog-A 모델, PLL의 SystemVerilog 모델을 인용).
+- Voltage variation: per-bit minimum write voltage is drawn with $dist_normal; a packed struct `mbit` (data, ref1_voltage, ref0_voltage) replaces plain reg arrays for main and repair rows.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 전압 변동: 비트별 최소 쓰기 전압을 $dist_normal로 생성하며, packed struct `mbit`(data, ref1_voltage, ref0_voltage)이 main 및 repair row의 일반 reg 배열을 대체한다.
 
 </div>
 </div>
@@ -190,87 +186,37 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-### 핵심 아키텍처 및 방법론
+- A test-pin trim of the reference write voltage shifts the number of failing bits.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-모델링은 두 가지 접근으로 구성된다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**1) 시간 변동 모델링 (Time-Variation)**
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-내부 쓰기 시퀀스를 확률적으로 계속/중단하도록 만든다. 쓰기 busy 신호(WRITE_BUSY)가 1인 동안 negedge CK마다 `$urandom_range(0,100)`으로 난수를 뽑고, 그 값이 설정된 probability보다 작으면 쓰기를 종료(WRITE_DONE)한다. 쓰기 시간이 지정된 제한에 도달하면 쓰기를 강제로 완료시켜, 쓰기 시간은 변동하지만 사양 내에서 항상 쓰기가 보장되도록 한다. 문서의 코드 조각은 일부가 OCR로 깨져 있어(예: `WRITE_BISY`, `endl=`) 정확한 구현은 원문 흐름으로만 파악 가능하다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
+- 테스트 핀으로 reference 쓰기 전압을 trim하면 실패 비트 수가 변한다.
 
 </div>
 </div>
 
 ```mermaid
 flowchart LR
-    A[Write 요청] --> B[WRITE_BUSY = 1]
-    B --> C{negedge CK<br/>random 0-100 < probability?}
-    C -- 예 --> D[WRITE_BUSY 해제<br/>WRITE_DONE]
-    C -- 아니오 --> E{제한 시간 도달?}
-    E -- 예 --> D
-    E -- 아니오 --> B
+  A[Write enable] --> B[Internal write cycle]
+  B --> C{rand < probability?}
+  C -- yes --> D[WRITE_DONE]
+  C -- no --> E{Time limit reached?}
+  E -- yes --> D
+  E -- no --> B
 ```
 
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**2) 전압 변동 모델링 (Voltage-Variation)**
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
+### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-공정 변동으로 생기는 쓰기 전압 편차를 반영한다. 편차 데이터는 공정 엔지니어에게서 받아야 한다. 다음 구조를 사용한다.
+- Verified with Samsung DNA IP controlling embedded MRAM; time-variation mode produces variable write-busy behavior versus the fixed-time baseline (Figs. 9–10).
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- Samsung DNA IP가 임베디드 MRAM을 제어하는 환경에서 검증되었으며, 시간 변동 모드는 고정 시간 기준 대비 가변적인 write-busy 동작을 보인다(Figs. 9–10).
 
 </div>
 </div>
@@ -278,12 +224,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- MTJ의 쓰기 전압 특성이 정규분포를 따른다고 보고, `$dist_normal`로 bit-cell별 최소 필요 쓰기 전압을 생성한다.
+- Table I (16 Mb): at trim code 0, write-0 fail ratio is 21.83500% (3,663,305 bits) and write-1 is 45.57641% (7,646,453 bits); write-0 falls to 0.13499% at trim code 5.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- Table I (16 Mb): trim code 0에서 write-0 실패 비율은 21.83500%(3,663,305 bits), write-1은 45.57641%(7,646,453 bits)이며, write-0은 trim code 5에서 0.13499%로 감소한다.
 
 </div>
 </div>
@@ -291,12 +237,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- `typedef struct packed`로 `mbit` 타입을 정의한다. 필드는 `logic data`, `bit [9:0] ref1_voltage`, `bit [9:0] ref0_voltage`이다.
+- Voltage data are replaced by trim codes for security reasons. Cross-checking with a Siemens TMBIST solution under development is mentioned.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 보안상의 이유로 전압 데이터는 trim code로 치환되었다. 개발 중인 Siemens TMBIST 솔루션과의 교차 검증이 언급된다.
 
 </div>
 </div>
@@ -304,209 +250,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 기존 메모리 배열 선언(`reg [...] mem[...]`, mem0~mem7 repair row 포함)을 `mbit` 배열로 바꾼다(Fig. 6 → Fig. 7).
+- The paper is qualitative: no coverage, runtime, or silicon-correlation results are reported.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 쓰기 시 기준 전압(trim 설정)이 해당 bit-cell의 최소 요구 전압을 만족하지 못하면 의도적으로 쓰기 실패를 발생시킨다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-```mermaid
-flowchart TB
-    P[공정 엔지니어의 전압 편차 데이터] --> N["$dist_normal로<br/>bit-cell별 최소 쓰기 전압 생성"]
-    N --> M["mbit 구조체<br/>data / ref1_voltage / ref0_voltage"]
-    T[테스트 핀 MCS trim 값] --> C{기준 전압 ≥ bit 요구 전압?}
-    M --> C
-    C -- 예 --> OK[쓰기 성공]
-    C -- 아니오 --> F[쓰기 실패 주입]
-```
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-### 실험 결과 및 결론
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**검증 방식**
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 고정 쓰기 시간 시뮬레이션(Fig. 10)에서는 WBF(Write Busy Flag)가 규칙적으로 올라가고 내려간다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 시간 변동 모드(Fig. 9)에서는 쓰기 시간이 무작위로 바뀌는 것을 파형으로 확인했다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 전압 변동 모드에서는 최소 쓰기 전압을 만족하지 못하는 bit-cell에서 의도한 쓰기 실패가 나타났다. 테스트 핀으로 기준 전압을 trim하면 실패 bit 수가 증감했다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 이 모델을 DNA(Digital Nonvolatile-memory Assist) IP 검증에 적용했고, 개발 중인 Siemens TMBIST 솔루션과도 교차 확인했다고 밝혔다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**Fig. 8 / Table I: trim 값별 fail bit 수 (16Mb / 128Mb 기준, ideal)**
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-| trim 값 | Write-0 fail 비율 | Write-0 fail bit (16Mb) | Write-1 fail 비율 | Write-1 fail bit (16Mb) |
-|---|---|---|---|---|
-| 0 | 21.83500% | 3,663,305 | 45.57641% | 7,646,453 |
-| 1 | 11.08118% | 1,859,114 | 25.24925% | 4,236,122 |
-| 2 | 4.77904% | 801,789 | 11.08118% | 1,859,114 |
-| 3 | 1.73814% | 291,611 | 3.77202% | 632,840 |
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-trim 값이 커질수록 fail 비율이 단조 감소하는 경향을 보인다. 원문은 실제 전압 값 대신 trim 값으로 표기했다(보안 이유).
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**결론 및 한계**
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 저자들은 SystemVerilog 기반 행동 모델에 쓰기 시간·전압 변동을 넣어, trim/calibration 및 실패 주입 같은 테스트 기능을 사전 실리콘 검증에서 수행할 수 있게 했다고 결론짓는다. 제안 방법은 다른 메모리 IP에도 확장 가능하다고 주장한다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 다만 문서에는 시뮬레이션 성능 오버헤드, 실리콘 측정 데이터와의 정량적 상관, 커버리지 지표가 제시되지 않았다. 검증 근거는 파형 비교와 IP 검증 적용 사례 수준에 머문다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 학회·발표 정보는 본문에 나타나지 않는다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
+- 본 논문은 정성적이며, 커버리지, 실행 시간, 실리콘 상관관계 결과는 보고되지 않았다.
 
 </div>
 </div>

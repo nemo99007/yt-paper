@@ -9,9 +9,9 @@ category: Verification
 tags:
 - SystemVerilog
 - VPI
-- DPI
-- Introspection
 - DPI-C
+- Introspection
+- Design Query
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/introspection-into-systemverilog-without-turning-it-inside-out.pdf
 authors: Dave Rich (Mentor Graphics)
@@ -28,11 +28,6 @@ youtube_videos:
 
 # INTROSPECTION INTO SYSTEMVERILOG WITHOUT TURNING IT INSIDE OUT.
 
-<figure class="rep-fig" markdown>
-![Figure 8 VPI application using DPI](../assets/figures/ref-20261018-9f02.png?v=1792306191){ loading=lazy }
-<figcaption>Figure 8 VPI application using DPI — from the original paper (Dave Rich et al.)</figcaption>
-</figure>
-
 [:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/introspection-into-systemverilog-without-turning-it-inside-out.pdf){ .md-button .md-button--primary target=_blank }
 
 | | |
@@ -48,12 +43,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**The paper proposes a SystemVerilog package that wraps VPI routines as DPI-C imports, letting engineers query design structure (hierarchy, parameters, nets) from SystemVerilog code without writing C.**
+**The paper shows how to wrap VPI routines as DPI-C imports in an importable SystemVerilog package, so design-query (introspection) code can be written in SystemVerilog without C programming.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**이 논문은 VPI 루틴을 DPI-C import로 감싼 SystemVerilog 패키지를 제안하여, 엔지니어가 C 코드를 작성하지 않고도 SystemVerilog 안에서 설계 구조(계층, 파라미터, 넷)를 질의할 수 있도록 합니다.**
+**이 논문은 importable SystemVerilog 패키지에서 VPI 루틴을 DPI-C import로 감싸, C 프로그래밍 없이 SystemVerilog 안에서 설계 질의(introspection)를 수행하는 방법을 제시한다.**
 
 </div>
 </div>
@@ -63,12 +58,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- VPI provides full design-query access through an opaque vpiHandle object model, but is C-only and cumbersome for model developers; DPI is simple for model integration but offers no design-query features. Combining the two yields native-looking introspection.
+- VPI is C-only and cumbersome for model developers, and DPI passes arguments by value with no design-query capability, so the paper combines the two to expose VPI inside SystemVerilog.
 
 </div>
 <div class="bi-ko" markdown>
 
-- VPI는 불투명한 vpiHandle 객체 모델을 통해 전체 설계 질의 기능을 제공하지만 C 전용이며 모델 개발자에게 번거롭습니다. DPI는 모델 통합에는 간단하지만 설계 질의 기능이 없습니다. 두 가지를 결합하면 네이티브 introspection처럼 보이는 기능을 얻을 수 있습니다.
+- VPI는 C 전용이라 모델 개발자에게 다루기 어렵고, DPI는 인자를 값으로 전달하며 설계 질의 기능이 없으므로, 논문은 두 가지를 결합해 SystemVerilog 내부에서 VPI를 사용할 수 있게 한다.
 
 </div>
 </div>
@@ -76,12 +71,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Pointer-typed VPI routines (e.g., s_vpi_value) cannot be imported directly, so wrappers are needed; vpi_get_value requires eight format-specific wrappers, one per value format, covering every SystemVerilog variable/net type. Aggregates are read by iterating over members.
+- Pointer-based VPI calls need wrappers: vpi_handle maps directly to chandle, while vpi_get_value needs one int-returning wrapper per value format (the paper cites eight formats).
 
 </div>
 <div class="bi-ko" markdown>
 
-- 포인터 타입 VPI 루틴(예: s_vpi_value)은 직접 import할 수 없어 래퍼가 필요합니다. vpi_get_value는 값 포맷별로 8개의 래퍼가 필요하며, 이는 모든 SystemVerilog 변수/넷 타입을 포괄합니다. 집합체는 멤버를 순회하여 읽습니다.
+- 포인터 기반 VPI 호출에는 래퍼가 필요하다. vpi_handle은 chandle로 직접 매핑되지만, vpi_get_value는 값 포맷마다 int를 반환하는 래퍼가 필요하며 논문은 8가지 포맷을 언급한다.
 
 </div>
 </div>
@@ -89,12 +84,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- DPI arguments are passed by value, so the callee cannot get a handle to the caller's expression; objects must be located by full pathname (vpi_handle_by_name). Suggested workarounds include a $get_handle-style system function, prefixing svGetNameFromScope() paths, and vpi_handle(vpiModule,NULL) for the top module.
+- Because DPI arguments are by value, objects cannot be passed as call arguments; they must be located by full path name (vpi_handle_by_name) or by a proposed $get_handle-style system function.
 
 </div>
 <div class="bi-ko" markdown>
 
-- DPI 인자는 값으로 전달되므로 호출된 쪽은 호출 측 표현식에 대한 핸들을 얻을 수 없습니다. 따라서 객체는 전체 경로명(vpi_handle_by_name)으로 찾아야 합니다. 제안된 우회 방법에는 $get_handle 형식의 시스템 함수, svGetNameFromScope() 경로 접두어 추가, 최상위 모듈용 vpi_handle(vpiModule,NULL) 등이 있습니다.
+- DPI 인자는 값으로 전달되므로 객체를 호출 인자로 넘길 수 없다. 따라서 전체 경로 이름(vpi_handle_by_name)으로 찾거나, 제안된 $get_handle 형태의 시스템 함수를 사용해야 한다.
 
 </div>
 </div>
@@ -102,12 +97,25 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The package has been used in several production environments for module parameterization reports and network statistics, but not for interacting with the event scheduler. The paper gives no quantitative benchmarks, and VPI behavior may differ across tool vendors and must be verified beforehand.
+- The package has been used in production for module parameter and net statistics reports, but has not been used to interact with the event scheduler, and VPI behavior may differ across tool vendors and must be verified.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 이 패키지는 모듈 파라미터화 보고서와 넷 통계를 출력하는 용도로 여러 실제 환경에서 사용되었으나, 이벤트 스케줄러와의 상호작용에는 사용되지 않았습니다. 논문은 정량적 벤치마크를 제시하지 않으며, VPI 동작은 툴 벤더마다 다를 수 있어 사전 검증이 필요합니다.
+- 이 패키지는 모듈 파라미터 및 넷 통계 리포트 용도로 여러 실무 환경에서 사용되었으나, 이벤트 스케줄러와의 상호작용에는 사용되지 않았다. VPI 동작은 툴 벤더마다 다를 수 있어 사전 검증이 필요하다.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- The paper reports no quantitative performance or coverage measurements; it is a practical technique description rather than a benchmarked evaluation.
+
+</div>
+<div class="bi-ko" markdown>
+
+- 논문은 정량적인 성능 또는 커버리지 측정 결과를 보고하지 않는다. 벤치마크 평가보다는 실용적인 기법 설명에 가깝다.
 
 </div>
 </div>
@@ -119,12 +127,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Design and verification engineers often need analysis beyond functional behavior: memory bit counts, clock fanout, parameter values, net statistics. Verification tests may also need to change dynamically based on such results.
+- Native SystemVerilog offers only simple queries (file/line, array size and range). Deeper design analysis such as memory bit counts or clock fan-out requires the C-based VPI, which is cumbersome for hardware model developers.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 설계 및 검증 엔지니어는 기능 동작 이상의 분석이 필요한 경우가 많습니다. 예를 들어 메모리 비트 수, 클럭 팬아웃, 파라미터 값, 넷 통계 등입니다. 검증 테스트도 이러한 결과에 따라 동적으로 바뀌어야 할 수 있습니다.
+- 기본 SystemVerilog는 파일/라인 정보, 배열 크기 및 범위 같은 단순 질의만 제공한다. 메모리 비트 수나 클록 fan-out 같은 심층 설계 분석에는 C 기반 VPI가 필요하지만, 하드웨어 모델 개발자에게는 다루기 번거롭다.
 
 </div>
 </div>
@@ -132,12 +140,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- SystemVerilog natively supports only simple queries (filename/line number, array size and index range). Anything deeper requires the VPI, which is C/C++-only and was designed for tool developers.
+- DPI gives clean C model integration by value but provides no design-query access.
 
 </div>
 <div class="bi-ko" markdown>
 
-- SystemVerilog는 기본적으로 단순한 질의(파일명/라인 번호, 배열 크기 및 인덱스 범위)만 지원합니다. 그 이상은 C/C++ 전용이며 툴 개발자를 위해 설계된 VPI가 필요합니다.
+- DPI는 값 전달 방식으로 C 모델 통합을 깔끔하게 해주지만 설계 질의 접근은 제공하지 않는다.
 
 </div>
 </div>
@@ -145,38 +153,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The DPI offers a simple modeling interface that passes arguments across the language boundary by type, but it provides none of the design-query features of the VPI.
+- Goal: make VPI-style queries callable from SystemVerilog, avoiding C expertise, rather than adding native introspection to the language.
 
 </div>
 <div class="bi-ko" markdown>
 
-- DPI는 타입에 따라 인자를 전달하는 간단한 모델링 인터페이스를 제공하지만, VPI의 설계 질의 기능은 전혀 제공하지 않습니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The paper argues that adding introspection natively is a formidable task at this stage of the language, and proposes an alternative built from existing elements: a package that exposes VPI through DPI.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 논문은 현 단계에서 네이티브 introspection을 추가하는 것은 매우 어려운 작업이라고 보고, 기존 요소로 구성된 대안, 즉 VPI를 DPI로 노출하는 패키지를 제안합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The paper also notes that passing data through the VPI across language boundaries is complex and can carry a large performance penalty. No measurement is given for this claim.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 논문은 또한 언어 경계를 넘는 VPI 데이터 전달이 복잡하며 큰 성능 저하를 동반할 수 있다고 언급합니다. 이 주장에 대한 측정 결과는 제시되지 않았습니다.
+- 목표: 언어에 native introspection을 추가하는 대신, C 전문성 없이 SystemVerilog에서 VPI 스타일 질의를 호출할 수 있게 하는 것이다.
 
 </div>
 </div>
@@ -186,12 +168,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **VPI object model**: objects are referenced through a single opaque type, `vpiHandle`, which behaves like a base class. Properties are valid only for the relevant object types (for example, `vpiSize` applies to a net, not a module). The relationship is one-to-many from module to variables, and one-to-one from variable to containing module.
+- A `VPI_pkg` SystemVerilog package declares `import "DPI-C" context` wrappers around VPI calls; `vpiHandle` maps to `chandle`.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **VPI 객체 모델**: 객체는 단일 불투명 타입 `vpiHandle`로 참조되며, 이는 베이스 클래스처럼 동작합니다. 속성은 해당 객체 타입에서만 유효합니다(예: `vpiSize`는 모듈이 아닌 넷에 적용). 모듈에서 변수로는 일대다, 변수에서 포함 모듈로는 일대일 관계입니다.
+- `VPI_pkg` SystemVerilog 패키지가 VPI 호출을 `import "DPI-C" context` 래퍼로 선언하며, `vpiHandle`은 `chandle`에 매핑된다.
 
 </div>
 </div>
@@ -199,12 +181,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Common routines**: `vpi_handle_by_name`, `vpi_handle`, `vpi_iterate`, `vpi_scan`, `vpi_get`, `vpi_get_str`, `vpi_get_value`, and `vpi_put_value`.
+- Pointer-based routines are rewritten to SV-compatible forms: `vpi_get_value` becomes int-returning functions, and `vpi_get_str` becomes a function with an output string.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **주요 루틴**: `vpi_handle_by_name`, `vpi_handle`, `vpi_iterate`, `vpi_scan`, `vpi_get`, `vpi_get_str`, `vpi_get_value`, `vpi_put_value`.
+- 포인터 기반 루틴은 SV 호환 형태로 재작성된다. `vpi_get_value`는 int를 반환하는 함수가 되고, `vpi_get_str`은 출력 문자열을 갖는 함수가 된다.
 
 </div>
 </div>
@@ -212,12 +194,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **DPI mapping**: `chandle` maps directly to `vpiHandle`, so `vpi_handle` can be imported as-is. Routines that take C pointers, such as `s_vpi_value`, need wrappers that return plain integers or strings. `vpi_get_value` needs eight format-specific wrappers, one for each value format. Aggregates such as structs and arrays are read by iterating over their members.
+- Object-type constants (e.g., `vpiModule`) are declared as package parameters.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **DPI 매핑**: `chandle`은 `vpiHandle`에 직접 대응하므로 `vpi_handle`은 그대로 import할 수 있습니다. `s_vpi_value`와 같이 C 포인터를 받는 루틴은 정수나 문자열을 직접 반환하는 래퍼가 필요합니다. `vpi_get_value`는 값 포맷마다 하나씩, 총 8개의 포맷별 래퍼가 필요합니다. 구조체, 배열 같은 집합체는 멤버를 순회하여 읽습니다.
+- 객체 타입 상수(예: `vpiModule`)는 패키지 파라미터로 선언된다.
 
 </div>
 </div>
@@ -225,73 +207,35 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Package `VPI_pkg`**: it contains the DPI-C imports (`VPI_handle_by_name`, `VPI_iterate`, `VPI_scan`, `VPI_get_str`, `VPI_handle`, `VPI_get`, `VPI_get_int_value`, `VPI_put_int_value`), a SystemVerilog wrapper `vpi_get_str` that hides the output-string argument, and object-type constants such as `vpiModule` (the full set is in Annexes K and M of IEEE 1800-2012). The C side is a thin wrapper library (`dpi_vpi.c`) that calls the standard `vpi_user.h` routines.
+- The example walks the module hierarchy, prints timescale and parameters, and collects simulated nets into an associative array keyed by network name.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **패키지 `VPI_pkg`**: DPI-C import(`VPI_handle_by_name`, `VPI_iterate`, `VPI_scan`, `VPI_get_str`, `VPI_handle`, `VPI_get`, `VPI_get_int_value`, `VPI_put_int_value`), 출력 문자열 인자를 숨기는 SystemVerilog 래퍼 `vpi_get_str`, 그리고 `vpiModule` 같은 객체 타입 상수(전체 목록은 IEEE 1800-2012의 Annex K, M)를 포함합니다. C 측은 표준 `vpi_user.h` 루틴을 호출하는 얇은 래퍼 라이브러리(`dpi_vpi.c`)입니다.
+- 예제는 모듈 계층을 순회하며 timescale과 파라미터를 출력하고, 시뮬레이션되는 넷을 네트워크 이름을 키로 하는 연관 배열에 수집한다.
 
 </div>
 </div>
 
 ```mermaid
 flowchart LR
-  TB[SystemVerilog code using VPI_pkg] -->|DPI-C import, context| W[dpi_vpi.c wrappers]
-  W -->|vpi_* calls| VPI[VPI C library]
-  VPI --> SIM[Simulator internal data structures]
+  A[SV test / model] --> B[VPI_pkg: DPI-C imports]
+  B --> C[dpi_vpi.c wrappers]
+  C --> D[VPI routines]
+  D --> E[Simulator design database]
 ```
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Example comparison (Figures 4 to 8)**: a struct-member sum is first written as a VPI call from SystemVerilog, then as a DPI function `sum(const AB_s*)` that receives the struct by value. Figure 8 shows the VPI-through-DPI version. It looks up `top.a` with `vpi_handle_by_name`, iterates `vpiMember` to read fields A and B, and returns `A+B`. The paper states that the same VPI C application can be written in SystemVerilog and looks almost the same.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **예제 비교(Figure 4~8)**: 구조체 멤버 합계를 먼저 SystemVerilog에서 VPI 호출로 작성하고, 이후 값으로 구조체를 받는 DPI 함수 `sum(const AB_s*)`로 작성합니다. Figure 8은 DPI를 통한 VPI 버전을 보여줍니다. `vpi_handle_by_name`으로 `top.a`를 찾고, `vpiMember`를 순회하여 필드 A, B를 읽고, `A+B`를 반환합니다. 논문은 동일한 VPI C 애플리케이션을 SystemVerilog로도 거의 같은 모양으로 작성할 수 있다고 설명합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Limitations and workarounds**: because DPI arguments are passed by value, the callee cannot obtain a handle to the caller's expression, so objects are located by full pathname. Proposed fixes include a `$get_handle(obj)`-style system function, a `vpi_handle_by_name` wrapper that prefixes the scope from `svGetNameFromScope()`, and `vpi_handle(vpiModule,NULL)` for the top of the hierarchy. Package and typedef names cannot be passed as handles and must be found by name or by scanning.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **제약 및 우회 방법**: DPI 인자가 값으로 전달되므로 호출된 쪽은 호출 측 표현식의 핸들을 얻을 수 없어, 객체를 전체 경로명으로 찾아야 합니다. 제안된 해결책은 `$get_handle(obj)` 형태의 시스템 함수, `svGetNameFromScope()`로 얻은 스코프를 접두어로 붙이는 `vpi_handle_by_name` 래퍼, 계층의 최상단을 위한 `vpi_handle(vpiModule,NULL)`입니다. 패키지 및 typedef 이름은 핸들로 전달할 수 없으므로 이름 검색이나 스캔으로 찾아야 합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Complete example**: a `top` module uses `doAllModules` to recurse through `vpiModule` handles. For each module it prints the timescale (`vpiTimeUnit`, `vpiTimePrecision`), prints parameters (`vpiParameter`), and collects nets (`vpiNet`) into an associative array keyed by the full name of the `vpiSimNet` handle. It also reads and writes `top.A` through `vpi_get_value`/`vpi_put_value` wrappers. The test design is a `DUT` with `sub` and `dub` submodules that have different parameters and timescales.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **전체 예제**: `top` 모듈은 `doAllModules`로 `vpiModule` 핸들을 재귀 순회합니다. 각 모듈에 대해 타임스케일(`vpiTimeUnit`, `vpiTimePrecision`)을 출력하고, 파라미터(`vpiParameter`)를 출력하며, 넷(`vpiNet`)을 `vpiSimNet` 핸들의 전체 이름을 키로 하는 연관 배열에 수집합니다. 또한 `vpi_get_value`/`vpi_put_value` 래퍼로 `top.A`를 읽고 씁니다. 테스트 설계는 서로 다른 파라미터와 타임스케일을 가진 `sub`, `dub` 서브모듈을 포함하는 `DUT`입니다.
-
-</div>
-</div>
 
 ### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The package lets verification engineers query and modify the design from SystemVerilog without C expertise, which the paper presents as a route to rapid prototyping.
+- The package has been used in several production environments to report module parameterizations and net statistics; it has not been used for event-scheduler interaction.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 이 패키지를 사용하면 C 전문성 없이도 SystemVerilog에서 설계를 질의하고 수정할 수 있으며, 논문은 이를 빠른 프로토타이핑 경로로 제시합니다.
+- 이 패키지는 여러 실무 환경에서 모듈 파라미터화 및 넷 통계 리포트 용도로 사용되었으며, 이벤트 스케줄러와의 상호작용에는 사용되지 않았다.
 
 </div>
 </div>
@@ -299,12 +243,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- It has been used in several production environments to print module parameterization reports and network statistics. It has not been used to interact with the event scheduler.
+- No quantitative performance measurements are reported.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 여러 실제 환경에서 모듈 파라미터화 보고서와 넷 통계를 출력하는 데 사용되었습니다. 이벤트 스케줄러와의 상호작용에는 사용되지 않았습니다.
+- 정량적 성능 측정 결과는 보고되지 않았다.
 
 </div>
 </div>
@@ -312,38 +256,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The paper reports no quantitative performance measurements, so the performance claim about VPI boundary crossings remains unsupported by data here.
+- The approach gives quick, C-free VPI access for prototyping; vendor-specific VPI implementation differences must be verified beforehand.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 논문은 정량적 성능 측정 결과를 보고하지 않으므로, VPI 경계 횡단 성능에 대한 주장은 여기서 데이터로 뒷받침되지 않습니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The package relies only on DPI and VPI as defined in the SystemVerilog standard. Behavior can differ across tool vendors, so it must be verified per tool.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 패키지는 SystemVerilog 표준에 정의된 DPI와 VPI만 사용합니다. 그러나 툴 벤더마다 동작이 다를 수 있으므로 툴별 검증이 필요합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Native SystemVerilog introspection is left as a future possibility. The paper's approach is an interim, library-level alternative.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 네이티브 SystemVerilog introspection은 향후 과제로 남겨 두었습니다. 논문의 접근법은 라이브러리 수준의 과도기적 대안입니다.
+- 이 방식은 프로토타이핑을 위해 C 없이 빠르게 VPI에 접근할 수 있게 해주며, 벤더별 VPI 구현 차이는 사전에 검증해야 한다.
 
 </div>
 </div>

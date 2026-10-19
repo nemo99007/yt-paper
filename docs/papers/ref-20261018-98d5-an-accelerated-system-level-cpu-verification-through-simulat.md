@@ -10,11 +10,11 @@ tags:
 - Emulation
 - UPF
 - Power-Aware Verification
-- Simulation-Emulation
 - Cache Coherency
+- DVFS
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/74321.pdf
-authors: Ruchi Misra, Samridh Deva, Sai Krishna Pallekonda, Alok Kumar, Garima Srivastava (Samsung Semiconductors India R&D, Bangalore); Youngsik Kim, Seonil Brian Choi (Samsung Electronics, Korea); DVCon Europe
+authors: Ruchi Misra, Samridh Deva, Sai Krishna Pallekonda, Alok Kumar, Garima Srivastava (Samsung Semiconductors India R&D, Bangalore), Youngsik Kim, Seonil Brian Choi (Samsung Electronics, Korea); DVCon Europe
 youtube_videos:
 - video_id: KxjDULVuMQE
   url: https://www.youtube.com/watch?v=KxjDULVuMQE
@@ -29,7 +29,7 @@ youtube_videos:
 # An Accelerated System Level CPU Verification through Simulation-Emulation Co-Existence
 
 <figure class="rep-fig" markdown>
-![Figure 11 : Unified Compilation flow for Power Aware Run](../assets/figures/ref-20261018-98d5.png?v=1792309940){ loading=lazy }
+![Figure 11 : Unified Compilation flow for Power Aware Run](../assets/figures/ref-20261018-98d5.png?v=1792379156){ loading=lazy }
 <figcaption>Figure 11 : Unified Compilation flow for Power Aware Run — from the original paper (Ruchi Misra et al.)</figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ youtube_videos:
 
 | | |
 |---|---|
-| Authors | Ruchi Misra, Samridh Deva, Sai Krishna Pallekonda, Alok Kumar, Garima Srivastava (Samsung Semiconductors India R&D, Bangalore); Youngsik Kim, Seonil Brian Choi (Samsung Electronics, Korea); DVCon Europe |
+| Authors | Ruchi Misra, Samridh Deva, Sai Krishna Pallekonda, Alok Kumar, Garima Srivastava (Samsung Semiconductors India R&D, Bangalore), Youngsik Kim, Seonil Brian Choi (Samsung Electronics, Korea); DVCon Europe |
 | Venue | DVCon Europe 2022 |
 | Topic | Emulation |
 | Type | PAPER |
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Samsung describes a methodology that offloads long-running SoC-level CPU scenarios (cache coherency, DVFS, UPF-based power-aware runs) from simulation to emulation while reusing the same synthesizable design, reporting up to 40x and at least 50x time savings on critical long-pole features.**
+**The paper proposes splitting SoC-level CPU verification between simulation and emulation, moving long-running coherency, DVFS and UPF-based power-aware scenarios to emulators while reusing the same synthesizable RTL in both PA-simulation and PA-emulation flows.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**삼성 연구진은 SoC 레벨 CPU 검증의 장시간 시나리오(캐시 코히어런시, DVFS, UPF 기반 PA 런)를 동일한 합성 가능 설계를 재사용하면서 시뮬레이션에서 에뮬레이션으로 옮기는 방법론을 제시하며, 핵심 long-pole 기능에서 최대 40배 및 최소 50배의 시간 절감을 보고한다.**
+**이 논문은 SoC 수준 CPU 검증을 시뮬레이션과 에뮬레이션으로 나누어, 장시간 실행되는 coherency, DVFS, UPF 기반 power-aware 시나리오를 에뮬레이터로 옮기고 PA-시뮬레이션과 PA-에뮬레이션에서 동일한 synthesizable RTL을 재사용하는 방법을 제안한다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Long-running, multi-iteration scenarios (power-up/power-down sequences, full-chip coherency stress, DVFS sweeps) are the best candidates for emulation; the paper reports up to 40x savings in time and resources (Section III) and at least 50X time savings in closing critical long-pole features on Exynos Mobile and Automotive SoCs (Results item 7).
+- Partition the test plan: long-running low-power and random stress tests go to the emulator, while checker-heavy or debug-heavy cases are recreated in simulation.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 장시간 반복이 필요한 시나리오(전원 on/off 시퀀스, 풀칩 코히어런시 스트레스, DVFS 스윕)가 에뮬레이션에 가장 적합하다. 논문은 시간 및 리소스에서 최대 40배 절감(Section III)과 Exynos Mobile 및 Automotive SoC에서 핵심 long-pole 기능 클로저에 최소 50X 시간 절감(Results 항목 7)을 보고한다.
+- 테스트 플랜을 분할하십시오. 장시간 실행되는 low-power 및 random stress 테스트는 에뮬레이터로 보내고, checker 의존도가 높거나 디버그가 어려운 케이스는 시뮬레이션에서 재현합니다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Keeping synthesizable design components identical between PA simulation and PA emulation targets preserves debug continuity and common UPF semantics, so failures can move between the two environments.
+- Sharing the same synthesizable RTL and UPF intent between PA-simulation and PA-emulation keeps precedence rules and debug continuity across both targets.
 
 </div>
 <div class="bi-ko" markdown>
 
-- PA 시뮬레이션과 PA 에뮬레이션 타깃에서 합성 가능 설계 컴포넌트를 동일하게 유지하여 디버그 연속성과 공통 UPF 시맨틱을 확보하므로, 두 환경 사이에서 실패를 옮겨 분석할 수 있다.
+- PA-시뮬레이션과 PA-에뮬레이션에서 동일한 synthesizable RTL과 UPF intent를 공유하면 두 타깃 사이의 precedence rule과 디버그 연속성을 유지할 수 있습니다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Emulation-specific limitations (missing checkers, difficult debug) are handled by splitting the test plan: long or stress tests run on emulation, and failing cases are recreated in simulation for analysis.
+- The authors report up to 40x savings in time and resources, and at least 50X time saving for critical long-pole features on Exynos mobile and automotive SoCs; these are indicative, and per-scenario numbers appear only in a plot (Fig. 16).
 
 </div>
 <div class="bi-ko" markdown>
 
-- 에뮬레이션의 한계(체커 부재, 디버그 난이도)는 테스트 계획을 분리하여 해결한다. 장시간 또는 스트레스 테스트는 에뮬레이션에서 실행하고, 실패 케이스는 시뮬레이션에서 재현한다.
+- 저자들은 시간 및 리소스를 최대 40x 절감했고, Exynos 모바일 및 자동차 SoC의 critical long-pole 기능에서 최소 50X 시간 절감을 보고했습니다. 이 수치는 참고용이며, 시나리오별 수치는 Fig. 16의 그래프에만 나타납니다.
 
 </div>
 </div>
@@ -102,12 +102,25 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Most frequent UPF-on-emulator compile issues were power-well bias conflicts between IP and SoC top (resolved by setting enable_bias to false) and stale or corrupt cell library paths that must be updated manually because IP library release schedules differ.
+- A common integration pitfall is power-bias enable clashes across IPs, which the authors resolved by setting enable_bias to false for all IPs and the SoC top.
 
 </div>
 <div class="bi-ko" markdown>
 
-- UPF-on-에뮬레이터에서 가장 빈번한 컴파일 이슈는 IP와 SoC top 간 power well bias 충돌(enable_bias를 false로 설정하여 해결)과 IP별 라이브러리 릴리스 일정 차이로 생기는 stale 또는 corrupt cell 라이브러리 경로(수동 갱신 필요)였다.
+- IP 간 power bias enable 충돌은 흔한 통합 문제이며, 저자들은 모든 IP와 SoC top에서 enable_bias를 false로 설정하여 해결했습니다.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- Emulator UPF support is limited to UPF 1.0/2.0 plus a subset of 2.1, so the supported constructs must be verified before adopting the flow.
+
+</div>
+<div class="bi-ko" markdown>
+
+- 에뮬레이터의 UPF 지원은 UPF 1.0/2.0과 UPF 2.1의 일부 명령으로 제한되므로, 도입 전 지원되는 구문을 반드시 확인해야 합니다.
 
 </div>
 </div>
@@ -119,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Full-SoC simulation becomes very slow as designs integrate multiple heterogeneous CPU cores, GPUs, accelerators, peripherals, and DDR. This makes iterative debug slow and sometimes ineffective.
+- SoC-level simulation of multi-core CPUs, GPUs, accelerators, DDR and peripherals is too slow for long power-up/power-down sequences, coherency stress and DVFS sweeps, which makes iterative debug expensive.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 다수의 이기종 CPU 코어, GPU, 가속기, 주변장치, DDR을 통합한 풀 SoC 시뮬레이션은 매우 느려지며, 이로 인해 반복적인 디버그가 시간이 많이 들고 비효율적이 된다.
+- 멀티코어 CPU, GPU, 가속기, DDR, 주변장치를 포함한 SoC 수준 시뮬레이션은 장시간의 power-up/power-down 시퀀스, coherency stress, DVFS 스윕에 비해 너무 느려 반복적인 디버그 비용이 큽니다.
 
 </div>
 </div>
@@ -132,38 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Low-power verification needs many power-up and power-down sequences. Coherency tests that involve real GPU or multimedia RTL with real CPUs also run for a long time in simulation.
+- Emulators map the DUT onto FPGAs and run near real speed, but they lack some checkers and are harder to debug, so the test plan must be partitioned between the two environments.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 저전력 검증에는 많은 power-up 및 power-down 시퀀스가 필요하다. 실제 GPU 또는 멀티미디어 RTL과 실제 CPU가 결합된 코히어런시 테스트도 시뮬레이션에서 장시간 실행된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Multi-cluster SoCs with private L1, private/shared L2, shared L3, and system-level or last-level cache make full-chip coherency verification essential. The processor vendor may not supply the inter-cluster coherency mechanism.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 멀티 클러스터 SoC의 경우 코어별 private L1, private/shared L2, shared L3 캐시와 시스템 레벨 또는 last-level 캐시가 존재하므로 풀칩 코히어런시 검증이 필수적이다. 프로세서 벤더가 클러스터 간 코히어런시 메커니즘을 제공하지 않을 수도 있다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Prior UPF work (DVCon 2009, NORCHIP 2009, DVCon 2010) established simulation-based power-aware verification. The paper argues that power-aware verification is now the long pole of the verification lifecycle.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 기존 UPF 연구(DVCon 2009, NORCHIP 2009, DVCon 2010)는 시뮬레이션 기반 PA 검증을 확립했다. 논문은 이제 PA 검증이 검증 라이프사이클의 long pole이 되었다고 주장한다.
+- 에뮬레이터는 DUT를 FPGA에 매핑하여 실제 속도에 가깝게 동작하지만 일부 checker가 부족하고 디버그가 어려우므로, 테스트 플랜을 두 환경 사이에서 분할해야 합니다.
 
 </div>
 </div>
@@ -173,12 +160,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Emulator setup and compilation.** The DUT is mapped onto one or more FPGAs and memory chips in the emulator server. The test environment runs on interface FPGAs that implement the hardware testbench. The server connects to a host PC over a high-speed board. The compile flow has four stages: front-end RTL synthesis to gate-level netlists; system-level back-compilation (splitting large netlists, system place-and-route, and STA); core-level mapping onto the emulator server; and FPGA place-and-route that produces binaries. The paper notes that an optimized compile balances compile efficiency against emulation performance.
+- Test planning: low-power and random stress tests are prioritized for emulation. Cases that need missing checkers or deep debug are recreated in simulation.
 
 </div>
 <div class="bi-ko" markdown>
 
-**에뮬레이터 구성 및 컴파일.** DUT는 에뮬레이터 서버의 하나 이상의 FPGA와 메모리 칩에 매핑된다. 테스트 환경은 하드웨어 테스트벤치를 구현하는 인터페이스 FPGA에서 동작한다. 서버는 고속 보드를 통해 호스트 PC와 연결된다. 컴파일 흐름은 4단계로 구성된다. 첫째, 프론트엔드 RTL 합성으로 게이트 레벨 넷리스트를 생성한다. 둘째, 시스템 레벨 백엔드 컴파일(대형 넷리스트 분할, 시스템 place-and-route, STA)을 수행한다. 셋째, 코어 레벨 매핑을 에뮬레이터 서버에 수행한다. 넷째, FPGA place-and-route로 바이너리를 생성한다. 논문은 최적화된 컴파일이 컴파일 효율과 에뮬레이션 성능 사이의 균형을 맞춰야 한다고 언급한다.
+- 테스트 계획: low-power 및 random stress 테스트를 에뮬레이션에 우선 배정합니다. checker가 필요하거나 깊은 디버그가 필요한 케이스는 시뮬레이션에서 재현합니다.
 
 </div>
 </div>
@@ -186,12 +173,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Test planning.** Critical and long-running functional and low-power scenarios, plus random stress traffic, are targeted at emulation. Cases that need missing checkers or are hard to debug are recreated in simulation. Tests are prioritized so that milestones are not blocked by long-running scenarios.
+- Migration: sanity tests run first. C tests are compiled into full or base images, and scripts automate binary separation, license checkout and waveform start/stop into a single command.
 
 </div>
 <div class="bi-ko" markdown>
 
-**테스트 계획.** 장시간 실행되는 중요한 기능 및 저전력 시나리오와 랜덤 스트레스 트래픽은 에뮬레이션 대상으로 지정한다. 누락된 체커가 필요하거나 디버그가 어려운 케이스는 시뮬레이션에서 재현한다. 장시간 시나리오로 인해 검증 마일스톤이 막히지 않도록 테스트 우선순위를 정한다.
+- 마이그레이션: sanity 테스트를 먼저 실행합니다. C 테스트는 full 또는 base 이미지로 컴파일되며, 스크립트가 바이너리 분리, 라이선스 획득, 파형 덤프 시작/종료를 단일 명령으로 자동화합니다.
 
 </div>
 </div>
@@ -199,12 +186,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Sim-to-emulation migration.** Sanity tests are migrated first. C test images are built, and either a full image or a base image is used depending on which blocks are involved. Scripts split the binary and a Tcl file handles the setup. The authors automated the manual steps (binary separation, license application, waveform start/stop) into a single-input, single-command flow.
+- Coherency stress mixes DVM, exclusive accesses and IO-coherent traffic, with varied page-table attributes, memory ordering and forced cache evictions. DVFS and clock-gating, retention and power-down scenarios also run on the emulator.
 
 </div>
 <div class="bi-ko" markdown>
 
-**시뮬레이션에서 에뮬레이션으로의 마이그레이션.** 먼저 sanity 테스트를 이관한다. C 테스트 이미지를 빌드하고, 관련 블록에 따라 full image 또는 base image를 사용한다. 스크립트로 바이너리를 분리하고 Tcl 파일로 설정을 처리한다. 저자들은 수동 단계(바이너리 분리, 라이선스 적용, 파형 덤프 시작/종료)를 단일 입력, 단일 명령 흐름으로 자동화했다.
+- Coherency stress는 DVM, exclusive access, IO-coherent 트래픽을 혼합하고, page-table 속성, 메모리 순서, 강제 cache eviction을 변화시킵니다. DVFS, clock gating, retention, power-down 시나리오도 에뮬레이터에서 실행합니다.
 
 </div>
 </div>
@@ -212,129 +199,34 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Scenarios covered:**
+- PA flow: RTL and UPF are analyzed, elaborated, split and synthesized into EDIF. The synthesizable RTL is shared between PA-simulation and PA-emulation, and a PowerMgt C++ API controls power domains.
 
 </div>
 <div class="bi-ko" markdown>
 
-**다룬 시나리오:**
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Coherency: a stress scenario mixing DVM, exclusive accesses, and IO-coherent transactions, with varied page-table attributes and memory ordering, creating multiple cache-line evictions.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 코히어런시: DVM, exclusive access, IO-coherent 트랜잭션을 혼합한 스트레스 시나리오이며, page table 속성과 메모리 오더링을 변화시키고 다수의 cache-line eviction을 생성한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- DVFS: frequency and voltage scaling across memory interface, cores, and coherent interconnect. The authors note these sweeps take huge simulation time.
-
-</div>
-<div class="bi-ko" markdown>
-
-- DVFS: 메모리 인터페이스, 코어, 코히어런트 인터커넥트에 대한 주파수 및 전압 스케일링. 저자들은 이러한 스윕이 시뮬레이션에서 매우 많은 시간을 소요한다고 지적한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Low power: core/cluster clock gating, memory retention, and full power-down and sleep, run both without and with UPF.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 저전력: 코어/클러스터 클록 게이팅, 메모리 리텐션, 완전한 power-down 및 sleep. UPF 적용 전후 모두에서 실행한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**UPF enablement.** The design is compiled with the same synthesizable components for PA simulation and PA emulation. The emulator supports UPF 1.0 and 2.0 (IEEE 1801-2009) and a limited subset of UPF 2.1 (IEEE 1801-2013), along with hierarchical and non-hierarchical UPF. The flow is:
-
-</div>
-<div class="bi-ko" markdown>
-
-**UPF 지원.** PA 시뮬레이션과 PA 에뮬레이션에 동일한 합성 가능 컴포넌트를 사용하여 설계를 컴파일한다. 에뮬레이터는 UPF 1.0 및 2.0(IEEE 1801-2009)과 UPF 2.1(IEEE 1801-2013)의 제한된 부분집합을 지원하며, 계층적 및 비계층적 UPF를 모두 지원한다. 흐름은 다음과 같다.
+- PA 흐름: RTL과 UPF를 analysis, elaboration, split 후 synthesis하여 EDIF를 생성합니다. synthesizable RTL은 PA-시뮬레이션과 PA-에뮬레이션에서 공유되며, PowerMgt C++ API가 power domain을 제어합니다.
 
 </div>
 </div>
 
 ```mermaid
 flowchart LR
-  A[Test plan and priority] --> B[Sim sanity test and C image]
-  B --> C[Migration: binary split, license, waveform automation]
-  C --> D[Emulation run]
-  D --> E[Recreate failures in sim if checkers or debug are limited]
-  F[RTL + UPF] --> G[Analysis, elaboration, splitting, synthesis]
-  G --> H[EDIF netlist]
-  H --> D
+  RTL[RTL] --> AE[Analysis / Elaboration / Split]
+  UPF[UPF 1.0/2.0, subset of 2.1] --> AE
+  AE --> SYN[Synthesis] --> EDIF[EDIF netlist] --> EMU[Emulator mapping / P&R]
 ```
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-The PA compile flow feeds RTL and UPF into the EDA tool. After analysis, elaboration, splitting, and synthesis, it produces EDIF netlists. The authors list the benefits as common semantics between sim and emulation, similar UPF construct support, early error flagging inherited from the simulator, precedence rules carried over from the simulation target, and debug continuity.
-
-</div>
-<div class="bi-ko" markdown>
-
-PA 컴파일 흐름은 RTL과 UPF를 EDA 도구에 입력한다. 분석, elaboration, 분할, 합성 이후 EDIF 넷리스트를 생성한다. 저자들이 제시한 이점은 시뮬레이션과 에뮬레이션 간 공통 시맨틱, 유사한 UPF 구문 지원, 시뮬레이터의 조기 에러 검출 활용, 시뮬레이션 타깃에서 이어받은 우선순위 규칙, 디버그 연속성이다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**Enablement steps.** Update the Makefile and fix power-related ports on IP instances. Gather the full UPF library list. Convert libraries to emulation-compatible formats with a lib-to-DB script. Resolve UPF version and tool-option issues. Then run basic single- and multi-core power-down tests to confirm the test intent. The PowerMgt C++ class exposes APIs for power-aware control on the emulator, and Figure 12 and Figure 13 list the relevant UPF commands and APIs.
-
-</div>
-<div class="bi-ko" markdown>
-
-**활성화 단계.** Makefile을 수정하고 IP 인스턴스의 전원 관련 포트를 수정한다. 전체 UPF 라이브러리 목록을 확보한다. lib-to-DB 스크립트로 라이브러리를 에뮬레이션 호환 형식으로 변환한다. UPF 버전 및 도구 옵션 이슈를 해결한다. 이후 단일/다중 코어 power-down 기본 테스트를 실행하여 테스트 의도를 확인한다. PowerMgt C++ 클래스는 에뮬레이터에서 전원 인식 제어를 위한 API를 제공하며, 관련 UPF 명령과 API는 Figure 12와 Figure 13에 정리되어 있다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**Common errors.** (1) Power-well bias enable/disable rules differ across IPs and clash with the SoC-level rule. The fix was to set enable_bias to false for all IPs and the SoC top. (2) Cell libraries from IPs have different release schedules, so stale or corrupt library paths appear during integration and must be updated manually.
-
-</div>
-<div class="bi-ko" markdown>
-
-**주요 에러.** (1) IP마다 다른 power well bias 활성화/비활성화 규칙이 SoC 레벨 규칙과 충돌한다. 해결책은 모든 IP와 SoC top에 enable_bias를 false로 설정하는 것이었다. (2) IP 셀 라이브러리의 릴리스 일정이 달라 통합 시 stale 또는 corrupt 라이브러리 경로가 발생하며 수동으로 갱신해야 한다.
-
-</div>
-</div>
 
 ### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The paper reports that multiple long-running functional and low-power scenarios were ported to emulation and ran faster than in simulation on the same design drop.
+- Simulation and emulation run times were compared for functional and low-power scenarios on two emulator platforms (Cadence and Synopsys). The per-scenario data appear only as plots (Fig. 16), so no exact figures are given in the text.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 여러 장시간 기능 및 저전력 시나리오를 에뮬레이션으로 이관했으며, 동일 설계 드롭에서 시뮬레이션보다 빠르게 실행되었다고 보고한다.
+- 두 가지 에뮬레이터 플랫폼(Cadence, Synopsys)에서 기능 및 low-power 시나리오의 시뮬레이션과 에뮬레이션 run time을 비교했습니다. 시나리오별 데이터는 그래프(Fig. 16)로만 제시되어 본문에는 정확한 수치가 없습니다.
 
 </div>
 </div>
@@ -342,12 +234,12 @@ PA 컴파일 흐름은 RTL과 UPF를 EDA 도구에 입력한다. 분석, elabora
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Stated savings: up to 40x in time and resources (Section III), and at least 50X in closing certain critical long-pole features on Exynos Mobile and Automotive SoCs (Results item 7).
+- The paper reports up to 40x time and resource savings (Sec. III) and at least 50X time saving on critical long-pole features in Exynos mobile and automotive SoCs.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 명시된 절감 효과: 시간 및 리소스에서 최대 40배(Section III), Exynos Mobile 및 Automotive SoC의 핵심 long-pole 기능 클로저에서 최소 50X(Results 항목 7).
+- 논문은 시간 및 리소스를 최대 40x 절감(Sec. III)했고, Exynos 모바일 및 자동차 SoC의 critical long-pole 기능에서 최소 50X 시간 절감을 보고합니다.
 
 </div>
 </div>
@@ -355,12 +247,12 @@ PA 컴파일 흐름은 RTL과 UPF를 EDA 도구에 입력한다. 분석, elabora
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The authors also report fewer iterations, lower debug time, and a shorter verification schedule. They describe the results as indicative and based on emulators from two vendors, Cadence and Synopsys.
+- Common issues: power-bias enable clashes across IPs (fixed with enable_bias=false on all IPs and the top) and stale or corrupt cell-library paths that need manual updates.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 저자들은 반복 횟수, 디버그 시간, 검증 일정이 줄었다고 보고한다. 결과는 Cadence와 Synopsys 두 벤더의 에뮬레이터 기반이며 참고용(indicative)이라고 설명한다.
+- 주요 이슈: IP 간 power bias enable 충돌(모든 IP와 top에서 enable_bias=false로 해결)과 stale 또는 corrupt cell-library 경로(수동 갱신 필요).
 
 </div>
 </div>
@@ -368,25 +260,12 @@ PA 컴파일 흐름은 RTL과 UPF를 EDA 도구에 입력한다. 분석, elabora
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Emulation is used to find critical bugs early rather than to achieve full coverage. Automation lets engineers move between simulation and emulation as needed.
+- The authors describe the results as indicative and limited to the emulator-supported UPF subset.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 에뮬레이션은 전체 커버리지 달성보다 중요한 버그를 조기에 찾는 데 사용된다. 자동화 덕분에 필요에 따라 시뮬레이션과 에뮬레이션 사이를 쉽게 전환할 수 있다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Limitation: the extracted text includes only figure captions for the run-time comparison (Figure 16) and the PA results on the Synopsys platform (Figure 17). No numeric run-time values are present in the text, so the speedup figures above are the paper's own summary claims.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 한계: 추출된 텍스트에는 런타임 비교(Figure 16)와 Synopsys 플랫폼의 PA 결과(Figure 17)에 대한 figure caption만 있으며, 런타임 수치 값은 없다. 따라서 위의 속도 향상 수치는 논문 저자의 요약 주장이다.
+- 저자들은 결과를 참고용으로 설명하며, 에뮬레이터가 지원하는 UPF 부분집합으로 한정된다고 밝힙니다.
 
 </div>
 </div>

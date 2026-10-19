@@ -8,13 +8,13 @@ year: 2025
 category: Verification
 tags:
 - AI-ML
+- Regression
 - SoC Verification
-- Regression Debug
+- Debug
 - Verisium
-- DTT
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/1132.pdf
-authors: Laura Leblanc
+authors: Laura Leblanc (affiliation not given in document)
 youtube_videos:
 - video_id: jy4eXWjStE8
   url: https://www.youtube.com/watch?v=jy4eXWjStE8
@@ -32,7 +32,7 @@ youtube_videos:
 
 | | |
 |---|---|
-| Authors | Laura Leblanc |
+| Authors | Laura Leblanc (affiliation not given in document) |
 | Venue | DVCon US 2025 |
 | Topic | Verification |
 | Type | PAPER |
@@ -43,12 +43,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Proposes a regression-debug flow that combines an in-house Defect Tracking Tool (DTT) with Cadence Verisium CodeMiner and WaveMiner, using pass/fail tag history to auto-apply known fixes and rank root-cause candidates for new failures, and claims up to 20x reduction in regression debug turnaround time.**
+**Proposes a three-engine AI-ML debug flow (in-house DTT plus Cadence Verisium CodeMiner and WaveMiner) that reuses historical pass/fail data to triage SoC regression failures, claiming 10–20x overall debug-time reduction without quantitative validation beyond a small internal study.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**사내 Defect Tracking Tool(DTT)과 Cadence Verisium CodeMiner·WaveMiner를 결합하여, 통과/실패 태그 이력으로 알려진 실패의 해결책을 자동 적용하고 신규 실패의 근본 원인 후보를 랭킹하는 회귀 디버그 플로우를 제안하며, 회귀 디버그 턴어라운드를 최대 20배 줄일 수 있다고 주장합니다.**
+**과거 회귀 pass/fail 데이터를 재활용해 SoC 회귀 실패를 분류하는 3개 엔진 기반 AI-ML 디버그 플로우(사내 DTT + Cadence Verisium CodeMiner·WaveMiner)를 제안하며, 전체 디버그 시간 10–20배 단축을 주장하지만 소규모 내부 실험 이상의 정량 검증은 제시하지 않는다.**
 
 </div>
 </div>
@@ -58,12 +58,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Known failures are triaged by DTT signature matching: if a registered solution exists, it is applied and the test re-run without user intervention, so tests that passed in an earlier tag are not re-debugged from scratch.
+- Failures are triaged into known (DTT auto-applies registered fix and re-runs), new-with-history (WaveMiner compares pass/fail waveforms), and new-without-history (CodeMiner ranks RTL diffs between tags N-1 and N+1).
 
 </div>
 <div class="bi-ko" markdown>
 
-- DTT 시그니처 매칭으로 알려진 실패를 분류합니다. 등록된 해결책이 있으면 사용자 개입 없이 적용하고 재실행하므로, 이전 태그에서 통과했던 테스트를 처음부터 다시 디버그하지 않습니다.
+- 실패는 알려진 실패(DTT가 등록된 해결책을 자동 적용 후 재실행), 이력이 있는 신규 실패(WaveMiner가 pass/fail 파형 비교), 이력이 없는 신규 실패(CodeMiner가 태그 N-1과 N+1 사이 RTL 차이를 순위화)로 분류됩니다.
 
 </div>
 </div>
@@ -71,12 +71,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Failures are routed by history: a test that passed in an earlier tag but now shows a new error signature goes to WaveMiner (pass-vs-fail waveform comparison); a test with no pass history goes to CodeMiner (RTL diff between tag N-1 and N+1, ranked root-cause list), followed by manual debug.
+- The flow's claimed benefit scales with failure count: manual debug TAT grows with number of failures while the AI-ML flow parallelizes debug across licenses.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 이력에 따라 실패를 분기합니다. 이전 태그에서 통과했지만 새로운 오류 시그니처가 나타난 테스트는 WaveMiner(통과/실패 파형 비교)로, 통과 이력이 없는 테스트는 CodeMiner(태그 N-1과 N+1 사이 RTL 차이, 근본 원인 후보 랭킹)로 보내고 이후 수동 디버그를 수행합니다.
+- 예상 이득은 실패 건수에 따라 커지는데, 수동 디버그 TAT는 실패 수에 비례해 증가하는 반면 AI-ML 플로우는 라이선스 수만큼 병렬 디버그를 수행한다고 주장합니다.
 
 </div>
 </div>
@@ -84,12 +84,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Reported gains: 10-20x (abstract), 20x (regression, applications and results sections), and Table II ranges of 2-20x for regression TAT and 2-5x for debug time of simple tests; Table I shows total gains of ~77.5-91.6% for register access, block-specific and power tests (AI flow 10-45 min vs. manual 1-5 h).
+- Reported gains are 2-20x per metric (e.g., register access test debug 10 min vs 3/2/1 h for low/mid/high experience, ~91.6% gain), but the sample size, test count, and baseline are not described.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 보고된 이득: 초록 10-20배, 응용 및 결과 절의 20배, 표 II의 회귀 TAT 2-20배와 단순 테스트 디버그 2-5배 범위. 표 I은 레지스터 접근, 블록별, 파워 테스트에서 총 약 77.5-91.6%의 절감을 보여주며(AI 플로우 10-45분 대 수동 1-5시간), 단위 및 수치 해석에 주의가 필요합니다.
+- 테스트별로 2–20배 이득이 보고됩니다(예: register access 테스트 디버그 10분 대 저/중/고 경력자 3/2/1시간, 약 91.6% 이득). 다만 표본 규모, 테스트 수, 기준선 설명은 없습니다.
 
 </div>
 </div>
@@ -97,12 +97,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The paper's speedup argument rests on parallel debug: the AI flow can process many failures at once (bounded by license count), whereas manual debug is sequential, so benefit grows with failure count.
+- DTT uses Levenshtein-distance pattern matching for error similarity and BERT/XLNet/RandomForest to categorize simulation errors into 10 classes; the paper gives no accuracy metrics.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 저자들의 속도 향상 논거는 병렬 디버그에 기반합니다. AI 플로우는 라이선스 수가 허용하는 한 여러 실패를 동시에 처리할 수 있으나, 수동 디버그는 순차적입니다. 따라서 이득은 실패 건수가 많을수록 커진다고 주장합니다.
+- DTT는 오류 유사도에 Levenshtein 거리 기반 패턴 매칭을 쓰고, BERT/XLNet/RandomForest로 시뮬레이션 오류를 10개 범주로 분류합니다. 분류 정확도 지표는 제시되지 않습니다.
 
 </div>
 </div>
@@ -110,12 +110,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Evidence is thin: test counts, number of repetitions, engineer sample size and baseline definitions are not specified, Table I units are mixed (hours vs. minutes), and Verisium internals are proprietary; DVChatBoat is future work only.
+- The abstract's 10–20x overall regression speedup and the body's 20x claim are not derived from a documented experiment, so the numbers should be treated as vendor-style estimates.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 근거는 제한적입니다. 테스트 수, 반복 횟수, 엔지니어 표본 크기, 기준선 정의가 명시되지 않았고, 표 I의 단위(시간 대 분)가 혼재하며, Verisium 내부 구현은 비공개입니다. DVChatBoat는 향후 과제로만 언급됩니다.
+- 초록의 10–20배 회귀 가속과 본문의 20배 주장은 문서화된 실험에서 도출되지 않았으므로 벤더 추정치 수준으로 봐야 합니다.
 
 </div>
 </div>
@@ -127,12 +127,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- In SoC regression (the paper cites suites of about 10,000 tests), every new IP, feature or RTL/TB change can break tests that previously passed. Debug is manual, iterative and largely sequential, and the abstract cites a turnaround of around one week per failing simulation.
+- Regression failures after each feature/testbench/design change cause debug to take up to a week; the paper states debug is ~70% of verification time and >50% of verification effort.
 
 </div>
 <div class="bi-ko" markdown>
 
-- SoC 회귀 테스트(논문에서 약 10,000개 테스트 규모 언급)에서는 새 IP, 기능, RTL/TB 변경이 이전에 통과하던 테스트를 깨뜨릴 수 있습니다. 디버그는 수동이고 반복적이며 대부분 순차적으로 진행되며, 초록에서는 실패 시뮬레이션 하나당 턴어라운드가 약 1주일 수준이라고 언급합니다.
+- 기능/테스트벤치/설계 변경마다 기존 통과 테스트가 실패할 수 있으며, 회귀 실패 디버그에 최대 일주일이 걸린다고 보고합니다. 논문은 디버그가 검증 시간의 약 70%, 검증 노력의 50% 이상을 차지한다고 말합니다.
 
 </div>
 </div>
@@ -140,12 +140,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The paper states verification can take up to 65% of the design cycle, with debug above 50% of verification effort (abstract). The introduction states that 70% of time goes to debug and analysis.
+- Debug is manual and sequential; in SoC regressions (~10,000 tests) failures are handled one by one, and simulation duration amplifies per-failure cost.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 초록은 검증이 설계 주기의 최대 65%를 차지하고 디버그가 검증 노력의 50% 이상을 차지한다고 밝히며, 서론은 시간의 70%가 디버그 및 분석에 소요된다고 기술합니다.
+- 디버그는 수동이고 순차적이며, SoC 회귀(약 10,000개 테스트)에서는 실패를 하나씩 처리합니다. 시뮬레이션 시간이 길어 실패 한 건당 비용이 커집니다.
 
 </div>
 </div>
@@ -153,25 +153,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Existing techniques (auto-X detection, coverage-based ranking) use only current-run data and do not learn from history. Commercial AI-ML tools are described only at a high level because vendors disclose little.
+- Existing commercial tools (Verisium, Synopsys.ai) are summarized only at a high level, and the authors note vendor details are undisclosed.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 기존 기법(auto-X 탐지, 커버리지 기반 랭킹)은 현재 실행 데이터만 사용하고 이력으로부터 학습하지 않습니다. 상용 AI-ML 도구는 벤더가 공개한 정보가 적어 개략적으로만 설명됩니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Problem statement: repeated manual re-debug of already-passing tests is inefficient, so the authors propose an AI-ML flow to cut debug time and SoC verification turnaround.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 문제 정의: 이미 통과하던 테스트를 반복적으로 수동 재디버그하는 것은 비효율적이므로, 저자들은 SoC 검증의 디버그 시간과 턴어라운드를 줄이기 위한 AI-ML 플로우를 제안합니다.
+- 상용 도구(Verisium, Synopsys.ai)는 개략적으로만 언급되며, 저자들은 벤더 세부 정보가 공개되지 않는다고 적습니다.
 
 </div>
 </div>
@@ -181,12 +168,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-Three engines form the flow:
+- Three engines: in-house Defect Tracking Tool (DTT: Abnormal Simulation Detector, Debug History Finder using Levenshtein matching, Debug Guide System using BERT/XLNet/RandomForest for 10 error classes), Verisium CodeMiner (RTL diff ranking between tags), Verisium WaveMiner (pass/fail waveform comparison).
 
 </div>
 <div class="bi-ko" markdown>
 
-세 가지 엔진으로 플로우를 구성합니다.
+- 3개 엔진 구성: 사내 Defect Tracking Tool(DTT: Abnormal Simulation Detector, Levenshtein 매칭 기반 Debug History Finder, BERT/XLNet/RandomForest로 10개 오류 범주를 분류하는 Debug Guide System), Verisium CodeMiner(태그 간 RTL 차이 순위화), Verisium WaveMiner(pass/fail 파형 비교).
 
 </div>
 </div>
@@ -194,162 +181,40 @@ Three engines form the flow:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **DTT (in-house Defect Tracking Tool)** mines simulation logs, Jira/bug data and older failure reports. It has three parts: ASD (Abnormal Simulation Detector, multiple linear regression to predict expected run time), DHF (Debug History Finder, Levenshtein-distance matching of error similarity), and DGS (Debug Guide System, BERT/XLNet/RandomForest classification of errors into 10 categories).
+- Regression manager routes each failure: known failure → DTT auto-applies fix and re-runs; new with history → WaveMiner; new without history → CodeMiner, then manual debug; passing tests update the ML database.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **DTT(사내 Defect Tracking Tool)**: 시뮬레이션 로그, Jira/버그 데이터, 과거 실패 보고서를 마이닝합니다. ASD(Abnormal Simulation Detector, 예상 실행 시간 예측을 위한 다중 선형 회귀), DHF(Debug History Finder, Levenshtein 거리 기반 오류 유사도 매칭), DGS(Debug Guide System, BERT/XLNet/RandomForest 기반 오류를 10개 카테고리로 분류)로 구성됩니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **CodeMiner (Verisium)** compares RTL revisions of an IP or SoC, classifies them, and ranks the changes most likely to disrupt behaviour (bug hotspots).
-
-</div>
-<div class="bi-ko" markdown>
-
-- **CodeMiner(Verisium)**: IP 또는 SoC의 RTL 리비전을 비교하고 분류하며, 동작을 가장 크게 바꿀 가능성이 있는 변경을 랭킹합니다(버그 핫스팟).
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **WaveMiner (Verisium)** compares waveforms across the suite and identifies which signals at which times are most likely root causes.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **WaveMiner(Verisium)**: 테스트 스위트 전체의 파형을 비교하여 어떤 신호가 어느 시점에 근본 원인일 가능성이 높은지 식별합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-The process has three phases: Planning (test list plus the first passing tag for each test), Execution (regression on tag N+1), and Debug. The worked example: test T2 failed on tag N+1 but passed on N-1.
-
-</div>
-<div class="bi-ko" markdown>
-
-프로세스는 Planning(테스트 목록과 각 테스트의 최초 통과 태그), Execution(태그 N+1 회귀 실행), Debug의 세 단계로 구성됩니다. 예시: 테스트 T2는 태그 N+1에서 실패했지만 N-1에서는 통과했습니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Regression decision logic:
-
-</div>
-<div class="bi-ko" markdown>
-
-회귀 판단 로직:
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-1. A passing test updates its pass tag in the ML database.
-
-</div>
-<div class="bi-ko" markdown>
-
-1. 통과한 테스트는 ML 데이터베이스의 통과 태그를 갱신합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-2. A failing test is checked against DTT. If the signature is known, the registered fix is applied and the test re-run.
-
-</div>
-<div class="bi-ko" markdown>
-
-2. 실패한 테스트는 DTT에서 확인합니다. 시그니처가 알려진 것이면 등록된 해결책을 적용하고 재실행합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-3. A new failure is one of two kinds: (a) a test that passed in an older tag but now shows a new error signature, or (b) a brand-new test with no history.
-   - (a) goes to WaveMiner for signal-level comparison against the passing run.
-   - (b) goes to CodeMiner, which ranks RTL-diff root-cause candidates. The user then performs the final debug.
-
-</div>
-<div class="bi-ko" markdown>
-
-3. 신규 실패는 두 종류입니다: (a) 이전 태그에서는 통과했지만 새로운 오류 시그니처가 나타난 테스트, (b) 이력이 없는 신규 테스트.
-   - (a)는 WaveMiner로 통과 실행과 신호 단위 비교를 수행합니다.
-   - (b)는 CodeMiner로 전달되어 RTL 차이 기반 근본 원인 후보를 랭킹합니다. 이후 사용자가 최종 디버그를 수행합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-4. Once fixed, the pass tag is recorded in the ML database.
-
-</div>
-<div class="bi-ko" markdown>
-
-4. 수정이 끝나면 통과 태그를 ML 데이터베이스에 기록합니다.
+- 회귀 관리자가 실패를 분기합니다. 알려진 실패는 DTT가 해결책을 자동 적용 후 재실행하고, 이력이 있는 신규 실패는 WaveMiner, 이력이 없는 신규 실패는 CodeMiner 후 수동 디버그로 처리하며, 통과한 테스트는 ML 데이터베이스를 갱신합니다.
 
 </div>
 </div>
 
 ```mermaid
 flowchart TD
-  A[Regression run, tag N+1] --> B{Pass?}
-  B -- Yes --> C[Update ML DB with pass tag]
-  B -- No --> D{Known signature in DTT?}
-  D -- Yes --> E[Apply registered solution and re-run]
-  D -- No --> F{Passed in an earlier tag?}
-  F -- Yes --> G[WaveMiner: pass vs fail waveform compare]
-  F -- No --> H[CodeMiner: RTL diff, ranked root causes]
-  G --> I[User debug and fix]
-  H --> I
-  I --> C
+  R[Regression tag N+1] --> P{Pass?}
+  P -- yes --> DB[(ML DB update)]
+  P -- no --> K{Known in DTT?}
+  K -- yes --> A[Auto-apply fix + re-run]
+  K -- no --> H{Pass history?}
+  H -- yes --> W[WaveMiner]
+  H -- no --> C[CodeMiner + manual debug]
+  W --> DB
+  C --> DB
 ```
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-The authors argue the flow scales from IP to sub-system to SoC. Snapshot creation and mining are faster for IP than for SoC. The flow can also run multiple failures in parallel, subject to license availability. A future DVChatBoat app (document-grounded assistant for debug guidance) is mentioned but not implemented.
-
-</div>
-<div class="bi-ko" markdown>
-
-저자들은 이 플로우가 IP에서 서브시스템, SoC까지 확장 가능하다고 주장합니다. 스냅샷 생성과 마이닝은 IP가 SoC보다 빠릅니다. 라이선스가 허용하는 범위에서 여러 실패를 병렬로 처리할 수 있습니다. 향후 적용 예정인 DVChatBoat(문서 기반 디버그 안내 어시스턴트)이 언급되지만 구현되지는 않았습니다.
-
-</div>
-</div>
 
 ### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Table I** (simple and complex tests) reports debug effort in hours for low-, mid- and high-experience engineers, against AI flow time in minutes. Register access: 3/2/1 h vs. 10 min, ~91.6% gain. Block-specific: 4/2/1 h vs. 30 min, ~78.6%. Power test: 5/3/2 h vs. 45 min, ~77.5%.
+- Debug-time table: register access test 10 min (AI-ML) vs 3/2/1 h, ~91.6% gain; block-specific 30 min vs 4/2/1 h, ~78.6%; power test 45 min vs 5/3/2 h, ~77.5%.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **표 I**(단순 및 복잡 테스트)은 저/중/고 경력 엔지니어의 디버그 노력을 시간 단위로, AI 플로우 시간을 분 단위로 보고합니다. 레지스터 접근: 3/2/1시간 대 10분, 약 91.6% 절감. 블록별 테스트: 4/2/1시간 대 30분, 약 78.6%. 파워 테스트: 5/3/2시간 대 45분, 약 77.5%.
+- 디버그 시간 표: register access 테스트 10분(AI-ML) 대 3/2/1시간, 약 91.6% 이득; block-specific 30분 대 4/2/1시간, 약 78.6%; power 테스트 45분 대 5/3/2시간, 약 77.5%.
 
 </div>
 </div>
@@ -357,12 +222,12 @@ The authors argue the flow scales from IP to sub-system to SoC. Snapshot creatio
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Table II** gives gains over traditional approach (based on an average engineer): simple-test debug 2-10x; simple-test overall TAT 2-5x; complex-test debug 2-5x; complex-test overall TAT 2-20x; regression TAT 2-20x.
+- Claimed ranges: debug 2–10x for simple tests, 2–20x for complex-test TAT and regression TAT; the text states 20x for parallel debug.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **표 II**는 평균 엔지니어 기준 기존 방식 대비 이득을 제시합니다: 단순 테스트 디버그 2-10배, 단순 테스트 전체 TAT 2-5배, 복잡 테스트 디버그 2-5배, 복잡 테스트 전체 TAT 2-20배, 회귀 TAT 2-20배.
+- 주장 범위: 단순 테스트 디버그 2–10배, 복잡 테스트 TAT 및 회귀 TAT 2–20배이며, 본문은 병렬 디버그로 20배라고 적습니다.
 
 </div>
 </div>
@@ -370,326 +235,12 @@ The authors argue the flow scales from IP to sub-system to SoC. Snapshot creatio
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The authors conclude that AI-ML debugging is promising, that re-debug of known failures is avoided, and that engineers can focus on real RTL bugs.
+- Experimental setup (test count, participants' statistics, repetitions) is only loosely described, so the gains are unverified. The paper mainly proposes a workflow, with a future DVChatBot extension.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 저자들은 AI-ML 디버그가 유망하며, 알려진 실패의 재디버그를 피하고 엔지니어가 실제 RTL 버그에 집중할 수 있다고 결론짓습니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Limitations: the number of tests, repetitions and engineers is not specified, and no variance or statistical method is reported. Table I units are inconsistent. Several figures (10-20x, 20x, 2-20x) are not clearly tied to one measured setup. Verisium internals are not disclosed, so the work is not reproducible from the text.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 한계: 테스트 수, 반복 횟수, 엔지니어 표본 수가 명시되지 않았고, 분산이나 통계 방법도 보고되지 않았습니다. 표 I의 단위가 일관되지 않습니다. 여러 수치(10-20배, 20배, 2-20배)가 하나의 측정 환경과 명확히 연결되지 않습니다. Verisium 내부 구현은 공개되지 않아 본문만으로는 재현할 수 없습니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Korean translation:
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-### 배경 및 문제
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- SoC 회귀 테스트(논문에서 약 10,000개 테스트 규모 언급)에서는 새 IP, 기능, RTL/TB 변경이 이전에 통과하던 테스트를 깨뜨릴 수 있습니다. 디버그는 수동이고 반복적이며 대부분 순차적으로 진행되며, 초록에서는 실패 시뮬레이션 하나당 턴어라운드가 약 1주일 수준이라고 언급합니다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 초록은 검증이 설계 주기의 최대 65%를 차지하고 디버그가 검증 노력의 50% 이상을 차지한다고 밝히며, 서론은 시간의 70%가 디버그 및 분석에 소요된다고 기술합니다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 기존 기법(auto-X 탐지, 커버리지 기반 랭킹)은 현재 실행 데이터만 사용하고 이력으로부터 학습하지 않습니다. 상용 AI-ML 도구는 벤더가 공개한 정보가 적어 개략적으로만 설명됩니다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 문제 정의: 이미 통과하던 테스트를 반복적으로 수동 재디버그하는 것은 비효율적이므로, 저자들은 SoC 검증의 디버그 시간과 턴어라운드를 줄이기 위한 AI-ML 플로우를 제안합니다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-### 구조 및 방법론
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-세 가지 엔진으로 플로우를 구성합니다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **DTT(사내 Defect Tracking Tool)**: 시뮬레이션 로그, Jira/버그 데이터, 과거 실패 보고서를 마이닝합니다. ASD(Abnormal Simulation Detector, 예상 실행 시간 예측을 위한 다중 선형 회귀), DHF(Debug History Finder, Levenshtein 거리 기반 오류 유사도 매칭), DGS(Debug Guide System, BERT/XLNet/RandomForest 기반 오류를 10개 카테고리로 분류)로 구성됩니다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **CodeMiner(Verisium)**: IP 또는 SoC의 RTL 리비전을 비교하고 분류하며, 동작을 가장 크게 바꿀 가능성이 있는 변경을 랭킹합니다(버그 핫스팟).
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **WaveMiner(Verisium)**: 테스트 스위트 전체의 파형을 비교하여 어떤 신호가 어느 시점에 근본 원인일 가능성이 높은지 식별합니다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-프로세스는 Planning(테스트 목록과 각 테스트의 최초 통과 태그), Execution(태그 N+1 회귀 실행), Debug의 세 단계로 구성됩니다. 예시: 테스트 T2는 태그 N+1에서 실패했지만 N-1에서는 통과했습니다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-회귀 판단 로직:
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-1. 통과한 테스트는 ML 데이터베이스의 통과 태그를 갱신합니다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-2. 실패한 테스트는 DTT에서 확인합니다. 시그니처가 알려진 것이면 등록된 해결책을 적용하고 재실행합니다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-3. 신규 실패는 두 종류입니다: (a) 이전 태그에서는 통과했지만 새로운 오류 시그니처가 나타난 테스트, (b) 이력이 없는 신규 테스트.
-   - (a)는 WaveMiner로 통과 실행과 신호 단위 비교를 수행합니다.
-   - (b)는 CodeMiner로 전달되어 RTL 차이 기반 근본 원인 후보를 랭킹합니다. 이후 사용자가 최종 디버그를 수행합니다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-4. 수정이 끝나면 통과 태그를 ML 데이터베이스에 기록합니다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-저자들은 이 플로우가 IP에서 서브시스템, SoC까지 확장 가능하다고 주장합니다. 스냅샷 생성과 마이닝은 IP가 SoC보다 빠릅니다. 라이선스가 허용하는 범위에서 여러 실패를 병렬로 처리할 수 있습니다. 향후 적용 예정인 DVChatBoat(문서 기반 디버그 안내 어시스턴트)이 언급되지만 구현되지는 않았습니다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-### 결과 및 결론
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **표 I**(단순 및 복잡 테스트)은 저/중/고 경력 엔지니어의 디버그 노력을 시간 단위로, AI 플로우 시간을 분 단위로 보고합니다. 레지스터 접근: 3/2/1시간 대 10분, 약 91.6% 절감. 블록별 테스트: 4/2/1시간 대 30분, 약 78.6%. 파워 테스트: 5/3/2시간 대 45분, 약 77.5%.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **표 II**는 평균 엔지니어 기준 기존 방식 대비 이득을 제시합니다: 단순 테스트 디버그 2-10배, 단순 테스트 전체 TAT 2-5배, 복잡 테스트 디버그 2-5배, 복잡 테스트 전체 TAT 2-20배, 회귀 TAT 2-20배.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 저자들은 AI-ML 디버그가 유망하며, 알려진 실패의 재디버그를 피하고 엔지니어가 실제 RTL 버그에 집중할 수 있다고 결론짓습니다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 한계: 테스트 수, 반복 횟수, 엔지니어 표본 수가 명시되지 않았고, 분산이나 통계 방법도 보고되지 않았습니다. 표 I의 단위가 일관되지 않습니다. 여러 수치(10-20배, 20배, 2-20배)가 하나의 측정 환경과 명확히 연결되지 않습니다. Verisium 내부 구현은 공개되지 않아 본문만으로는 재현할 수 없습니다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
+- 실험 설정(테스트 수, 참가자 통계, 반복 횟수)은 느슨하게만 설명되어 이득은 검증되지 않았습니다. 논문의 주된 기여는 워크플로 제안이며, DVChatBot 확장은 향후 과제입니다.
 
 </div>
 </div>

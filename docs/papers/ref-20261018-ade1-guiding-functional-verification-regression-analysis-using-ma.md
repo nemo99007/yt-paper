@@ -10,8 +10,8 @@ tags:
 - Regression Analysis
 - X-means Clustering
 - MapReduce
-- Mutation Testing
 - COI Analysis
+- Mutation Testing
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/guiding-functional-verification-regression-analysis-using-machine-learning-and-big-data-methods.pdf
 authors: Eman El Mandouh (Mentor Graphics Siemens Business), Laila Maher (Cairo University), Moutaz Ahmed (Cairo University), Yasmin ElSharnoby (Cairo University), Amr G. Wassal (Cairo University); DVCon Europe
@@ -29,7 +29,7 @@ youtube_videos:
 # Guiding Functional Verification Regression Analysis Using Machine Learning and Big Data Methods
 
 <figure class="rep-fig" markdown>
-![Figure 1. ML Based Regression Testing Bug Detection Proposed Framework](../assets/figures/ref-20261018-ade1.png?v=1792311687){ loading=lazy }
+![Figure 1. ML Based Regression Testing Bug Detection Proposed Framework](../assets/figures/ref-20261018-ade1.png?v=1792380331){ loading=lazy }
 <figcaption>Figure 1. ML Based Regression Testing Bug Detection Proposed Framework — from the original paper (Eman El Mandouh et al.)</figcaption>
 </figure>
 
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**The paper proposes an unsupervised X-means clustering framework that learns good-behavior trace windows from passing regression tests, flags failing windows as outliers, localizes the buggy window, module, and signals using COI-based signal selection and Hadoop MapReduce trace processing, reporting 81% full success and 2.7x speedup on an Ethernet MAC.**
+**The paper proposes learning good behavior from passing regression tests with per-window X-means clustering over MapReduce-encoded trace features, flagging failing trace windows and localizing suspect signals and modules, and reports 81% full-success bug localization on an Ethernet MAC (Ethmac) with mutation-injected bugs.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**이 논문은 통과한 회귀 테스트로부터 정상 동작 트레이스 윈도우를 X-means 클러스터링으로 학습하고, COI 기반 신호 선택과 Hadoop MapReduce 트레이스 처리를 결합해 실패 윈도우, 모듈, 신호를 국소화하는 비지도 학습 프레임워크를 제안하며, Ethernet MAC에서 81% 완전 성공과 2.7배 속도 향상을 보고한다.**
+**이 논문은 통과한 회귀 테스트로부터 X-means 클러스터링을 윈도우 단위로 학습하고, MapReduce로 인코딩한 트레이스 특징을 사용해 실패한 트레이스 윈도우와 의심 신호·모듈을 찾아내며, mutation으로 주입한 버그에 대해 Ethmac(Ethernet MAC)에서 81% 완전 성공률을 보고한다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Trace dumps are split into fixed 100-cycle windows, and one X-means clustering model is trained per window index using passing regression tests; a test whose window fails assignment to all learned clusters is flagged as buggy.
+- Bug localization is cast as outlier detection: a failing test is flagged when its 100-cycle trace windows fail assignment to clusters learned only from passing regression tests, then a 1-NN classifier names suspect signals, module, and window.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 트레이스 덤프를 고정 길이 100 사이클 윈도우로 나누고, 윈도우 인덱스마다 별도의 X-means 클러스터링 모델을 통과한 테스트로 학습한다. 모든 학습된 클러스터에 할당되지 않는 테스트 윈도우를 버그 후보로 판정한다.
+- 버그 위치 추정은 이상 탐지 문제로 구성된다. 통과한 회귀 테스트로만 학습한 클러스터에 100사이클 트레이스 윈도우가 배정되지 않으면 실패로 표시하고, 1-NN 분류기로 의심 신호, 모듈, 윈도우를 지목한다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Feature vector per window = count of 0-to-1 transitions per selected signal; signals are pruned by COI score (threshold 10) from 2342 Ethmac signals, plus RTL static filtering of memories, counters, and equivalent signals.
+- Feature vectors are per-window counts of 0-to-1 transitions per selected signal, with signals pruned by COI size (threshold 10 on 2,342 Ethmac signals) plus RTL static filtering of memories, counters, and equivalent signals.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 윈도우별 특징 벡터는 선택된 각 신호의 0에서 1로의 전이 횟수이다. 신호는 COI 점수(임계값 10)로 Ethmac의 2342개 신호 중에서 선별되며, RTL 정적 분석으로 메모리, 카운터, 등가 신호가 추가로 제외된다.
+- 특징 벡터는 선택된 신호별로 윈도우 내 0→1 전이 횟수이다. 신호는 COI 크기 임계값(2,342개 Ethmac 신호에 대해 10)과 메모리·카운터·동등 신호를 제외하는 RTL 정적 분석으로 선별한다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- MapReduce on a 4-node Hadoop cluster accelerated trace encoding and feature extraction by 2.7x versus sequential processing across five Ethernet test classes (trace sizes 40MB to 5.5GB).
+- MapReduce (Hadoop, 4 nodes) speeds up trace encoding and feature extraction by 2.7x over sequential processing on traces ranging from 40 MB to 5.5 GB.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 4노드 Hadoop 클러스터에서 MapReduce를 적용하여, 5개 Ethernet 테스트 클래스(트레이스 크기 40MB~5.5GB)에 대해 순차 처리 대비 트레이스 인코딩 및 특징 추출을 2.7배 가속했다.
+- Hadoop 4노드 클러스터에서 MapReduce는 트레이스 인코딩과 특징 추출을 순차 처리 대비 2.7배 빠르게 하며, 처리 대상 트레이스 크기는 40 MB에서 5.5 GB이다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Evaluated with mutation-injected bugs: on average 81% full success, 13% partial success (superset of signals), and 6% failure; about 83% of bugs were detected in the same cycle as injection.
+- On mutation-injected bugs the framework reports 81% full success, 13% partial success, and 6% failure, and 83% of bugs are detected in the injection cycle itself.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 뮤테이션으로 주입한 버그에 대해 평균 81% 완전 성공, 13% 부분 성공(버그 신호를 포함하는 상위 집합), 6% 실패를 기록했으며, 주입과 같은 사이클에 검출된 비율은 평균 83%였다.
+- mutation으로 주입한 버그에 대해 완전 성공 81%, 부분 성공 13%, 실패 6%를 보고하며, 버그의 83%는 주입된 사이클에서 바로 탐지되었다.
 
 </div>
 </div>
@@ -115,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Training used 1,500 constrained-random SystemVerilog tests (1,167 to 2M cycles) on the OpenCores Ethernet MAC; X-means was capped at 20 clusters, and the paper reports no false-positive rate on passing tests.
+- Evaluation is limited to one design (Ethmac) and mutation-based bugs, has no baseline comparison, and the stated 1,500 training tests do not match Table 1, which sums to 1,550.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 학습에는 OpenCores Ethernet MAC에 대해 1,500개의 제약 랜덤 SystemVerilog 테스트(1,167~200만 사이클)가 사용되었고, X-means 클러스터 수는 최대 20으로 제한되었다. 본문에는 통과 테스트에 대한 오탐율과 기준 방법과의 비교가 제시되지 않았다.
+- 평가는 한 설계(Ethmac)와 mutation 기반 버그에 한정되고 기준선 비교가 없다. 학습 테스트 수 1,500은 Table 1 합계(1,550)와 일치하지 않는다.
 
 </div>
 </div>
@@ -132,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Regression debugging in functional verification requires manually analyzing very large trace dumps (thousands of GBs across regression) to find the cycle, module, and signals responsible for a mismatch against reference behavior.
+- Debugging regression failures in large HW designs means analyzing thousands of GB of trace dumps, and manually localizing the failing cycle, module, and signals is slow.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 기능 검증의 회귀 디버깅은 매우 큰 트레이스 덤프(회귀 전체에서 수천 GB)를 수작업으로 분석하여, 기준 동작과 불일치하는 사이클, 모듈, 신호를 찾아야 하는 작업이다.
+- 대형 HW 설계의 회귀 실패를 디버깅하려면 수천 GB의 트레이스 덤프를 분석해야 하며, 실패 사이클·모듈·신호를 수작업으로 찾는 일은 느리다.
 
 </div>
 </div>
@@ -145,12 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Prior dynamic-analysis work (Inferno, zamiaCAD-based dynamic slicing with statistical ranking, regression-suite statement ranking) either builds checkers from behavior or ranks HDL statements; this paper instead targets regression-to-regression change analysis by learning good behavior from passing tests.
+- Prior trace-analysis work (Inferno, dynamic slicing with statistical ranking, regression-based statement ranking) relies on invariants, coverage, or per-statement data. This paper instead learns the design's good behavior from passing regression tests.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 기존 동적 분석 연구(Inferno, zamiaCAD 기반 동적 슬라이싱과 통계적 순위, 회귀 스위트 기반 문장 순위 매기기)는 동작으로부터 체커를 생성하거나 HDL 문장을 순위화한다. 본 논문은 통과한 테스트로부터 정상 동작을 학습하여 회귀 간 변화를 분석하는 방향을 취한다.
+- 기존 트레이스 분석 연구(Inferno, 동적 슬라이싱과 통계적 순위화, 회귀 기반 문장 순위화)는 불변식, 커버리지, 문장 단위 데이터에 의존한다. 이 논문은 통과한 회귀 테스트로부터 설계의 정상 동작을 학습하는 방식을 택한다.
 
 </div>
 </div>
@@ -160,12 +160,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Flow: RTL regression simulation (Questa) → trace dump analyzer (CSV traces, MapReduce on Hadoop) → feature extraction per window → X-means clustering trained on passing tests → new test windows checked for cluster membership → failing window assigned to nearest neighbor (1-NN) to derive suspected signals, module name, and window number.
+- Pipeline: RTL regression simulation produces CSV traces, which a MapReduce (Hadoop) trace analyzer encodes. X-means then builds one clustering model per trace window, trained on passing tests. A failing window that fails cluster assignment is flagged, and a 1-NN classifier compares it with its nearest neighbor to list suspect signals, the module, and the window index.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 흐름: RTL 회귀 시뮬레이션(Questa) → 트레이스 덤프 분석기(CSV 트레이스, Hadoop 상의 MapReduce) → 윈도우별 특징 추출 → 통과 테스트로 X-means 클러스터링 학습 → 새 테스트 윈도우의 클러스터 소속 검사 → 실패 윈도우를 최근접 이웃(1-NN)으로 분류하여 의심 신호, 모듈 이름, 윈도우 번호 도출.
+- 파이프라인: RTL 회귀 시뮬레이션이 CSV 트레이스를 생성하고, MapReduce(Hadoop) 트레이스 분석기가 이를 인코딩한다. 이후 통과한 테스트로 윈도우마다 별도의 X-means 모델을 학습한다. 클러스터 배정에 실패한 실패 윈도우를 표시하고, 1-NN 분류기가 가장 가까운 이웃과 비교해 의심 신호, 모듈, 윈도우 번호를 제시한다.
 
 </div>
 </div>
@@ -173,12 +173,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Windowing: the trace is split into fixed windows of 100 cycles; a separate clustering model is built per window index $w_i$.
+- Features: count of $1'b1$ transitions per selected signal in each 100-cycle window. Signal selection combines COI size thresholding with RTL static filtering.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 윈도우 분할: 트레이스를 100 사이클 고정 윈도우로 나누며, 윈도우 인덱스 $w_i$마다 별도의 클러스터링 모델을 구축한다.
+- 특징: 100사이클 윈도우 내에서 선택된 신호별 $1'b1$ 전이 횟수이다. 신호 선별은 COI 임계값 방식과 RTL 정적 필터링을 결합한다.
 
 </div>
 </div>
@@ -186,102 +186,23 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Feature: number of value changes to 1'b1 per selected signal within a window.
+- MapReduce: mappers emit (window_id, count) pairs, shuffle groups them by window, and reducers sum per signal.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 특징: 윈도우 내에서 선택된 신호의 1'b1로의 값 변화 횟수.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Signal selection: light RTL static analysis (elaboration) excludes memories, counters, clocks/resets, and equivalent signals; COI score = number of signals in a signal's cone of influence, computed via DFS tree per signal, with an iterative midway threshold. The threshold is 10 for Ethmac (2342 signals).
-
-</div>
-<div class="bi-ko" markdown>
-
-- 신호 선택: 경량 RTL 정적 분석(elaboration)으로 메모리, 카운터, 클록/리셋, 등가 신호를 제외한다. COI 점수는 신호의 cone of influence에 포함된 신호 수이며, 신호별 DFS 트리로 계산하고 반복적인 중간값 임계치를 사용한다. Ethmac(신호 2342개)에서 임계값은 10이다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Clustering: X-means (extension of k-means) selects k automatically using BIC, starting from one cluster and splitting locally; Euclidean distance; max 20 clusters.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 클러스터링: X-means(k-means 확장)는 BIC를 사용해 k를 자동으로 결정하며, 하나의 클러스터에서 시작해 국소적으로 분할한다. 거리 척도는 유클리드 거리이고 최대 클러스터 수는 20이다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- MapReduce: 128 MB HDFS blocks → mappers emit (window_id, count) for 0-to-1 transitions, shuffle groups by window, reducers sum counts.
-
-</div>
-<div class="bi-ko" markdown>
-
-- MapReduce: 128 MB HDFS 블록 → 매퍼가 (window_id, count) 쌍을 생성(0→1 전이 계수) → 셔플이 윈도우별로 묶음 → 리듀서가 합계를 계산한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Test setup: OpenCores Ethernet MAC (connects PHY to Wishbone bus). Training set of 1,500 constrained-random SystemVerilog tests in five classes (Register Access, Register Reset, TX Packet, TX CRC, TX-RX). Test lengths from 1,167 to 2,000,000 cycles; trace sizes 40 MB to 5.5 GB.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 테스트 환경: OpenCores Ethernet MAC(PHY와 Wishbone 버스 연결). 학습 세트는 다섯 클래스(Register Access, Register Reset, TX Packet, TX CRC, TX-RX)의 1,500개 제약 랜덤 SystemVerilog 테스트다. 테스트 길이는 1,167~2,000,000 사이클, 트레이스 크기는 40 MB~5.5 GB이다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Bug injection: mutation testing (one syntactic fault per version; logical, relational, unary, and constant operator replacements) across modules such as eth_maccontrol, eth_macstatus, eth_rxaddrcheck, eth_transmitcontrol, eth_wishbone, and ethmac (total of 79 mutants in Table 2a).
-
-</div>
-<div class="bi-ko" markdown>
-
-- 버그 주입: 뮤테이션 테스트(버전당 구문상 결함 하나; 논리, 관계, 단항, 상수 연산자 치환)를 사용하며, eth_maccontrol, eth_macstatus, eth_rxaddrcheck, eth_transmitcontrol, eth_wishbone, ethmac 등의 모듈에 적용된다(표 2a 기준 총 79개 뮤턴트).
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Metrics: Success (exact bug signals), Partial Success (superset of signals containing the buggy ones), Failure; bug detection latency = detected cycle minus injected cycle.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 지표: Success(정확한 버그 신호), Partial Success(버그 신호를 포함하는 상위 집합), Failure. 버그 검출 지연 = 검출 사이클 − 주입 사이클.
+- MapReduce: 매퍼가 (window_id, count) 쌍을 출력하고, shuffle 단계가 윈도우 단위로 묶으며, 리듀서가 신호별로 합산한다.
 
 </div>
 </div>
 
 ```mermaid
 flowchart LR
-  A[RTL regression sim] --> B[Trace dump CSV]
-  B --> C[MapReduce feature extraction]
-  C --> D[X-means per window, passing tests]
-  D --> E{New window fits a cluster?}
-  E -- yes --> F[Pass]
-  E -- no --> G[1-NN: suspect signals, module, window]
+  A[RTL regression traces] --> B[MapReduce encoding + COI-selected features]
+  B --> C[Per-window X-means on passing tests]
+  C --> D{Window fits a cluster?}
+  D -- No --> E[1-NN: suspect window, signals, module]
+  D -- Yes --> F[Pass]
 ```
 
 ### Results and Conclusions
@@ -289,12 +210,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- MapReduce on a 4-node Hadoop cluster (quad-core i7, 16 GB per node): 2.7x speedup over sequential processing for encoding and feature extraction across the five test classes.
+- Setup: Ethmac (Ethernet MAC) with 1,500 training tests (text; Table 1 sums to 1,550) across five test classes, lengths from 1,167 to 2M cycles, and mutation-injected faulty tests.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 4노드 Hadoop 클러스터(노드당 쿼드코어 i7, 16 GB)에서 MapReduce는 다섯 테스트 클래스의 인코딩 및 특징 추출에서 순차 처리 대비 2.7배 가속을 달성했다.
+- 실험 환경: Ethmac(Ethernet MAC), 5개 테스트 클래스에 걸친 학습 테스트 1,500개(본문 기준, Table 1 합계는 1,550), 길이 1,167사이클에서 200만 사이클, mutation으로 버그를 주입한 실패 테스트를 사용하였다.
 
 </div>
 </div>
@@ -302,12 +223,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Accuracy across test classes: on average 81% full success, 13% partial success, 6% failure.
+- MapReduce on a 4-node Hadoop cluster gives a 2.7x speedup over sequential encoding and feature extraction.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 테스트 클래스 전체 정확도는 평균 81% 완전 성공, 13% 부분 성공, 6% 실패였다.
+- 4노드 Hadoop 클러스터에서 MapReduce는 순차 인코딩과 특징 추출 대비 2.7배 속도 향상을 보였다.
 
 </div>
 </div>
@@ -315,12 +236,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Latency: on average 83% of detected bugs were flagged in the same cycle as injection.
+- Detection: 81% full success, 13% partial success, and 6% failure, with 83% of bugs detected in the injection cycle. X-means is capped at 20 clusters.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 지연: 검출된 버그의 평균 83%가 주입과 같은 사이클에 플래그되었다.
+- 탐지 결과: 완전 성공 81%, 부분 성공 13%, 실패 6%이며, 버그의 83%가 주입 사이클에서 탐지되었다. X-means 클러스터 수 상한은 20이다.
 
 </div>
 </div>
@@ -328,25 +249,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The conclusion reports detection "with up to 81% accuracy." The paper gives no per-class breakdown in the text, no false-positive rate on passing tests, and no comparison with baseline methods; these are limitations of the reported evidence.
+- Limitations: one design, mutation-based bugs only, and no baseline comparison. The approach is a promising feasibility study rather than a validated production flow.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 결론부는 "최대 81% 정확도"로 검출을 보고한다. 본문에는 클래스별 세부 결과, 통과 테스트에 대한 오탐율, 기준 방법과의 비교가 없으며, 이는 보고된 근거의 한계이다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The paper is a DVCon Europe-style preprint with a fixed 100-cycle window and a Ethmac-specific COI threshold, so generalization to other designs is not demonstrated.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 고정 100 사이클 윈도우와 Ethmac 전용 COI 임계값을 사용하므로 다른 설계로의 일반화는 입증되지 않았다.
+- 한계: 한 설계, mutation 기반 버그만 다루며 기준선 비교가 없다. 실무 검증 흐름보다는 타당성 검토 수준의 연구로 보는 것이 적절하다.
 
 </div>
 </div>

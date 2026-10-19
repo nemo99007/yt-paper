@@ -7,11 +7,11 @@ region: US
 year: 2025
 category: Verification
 tags:
-- SDC
-- Coverage Closure
+- SDC verification
 - Heatmap
+- Coverage closure
 - Random Forest
-- X-Propagation
+- X-propagation
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/1031-2.pdf
 authors: Seungkyu Baek (Samsung Electronics Inc.), Jaein Hong (Samsung Electronics Inc.), Moonki Jun (Samsung Electronics Inc.), Sungcheol Park (Samsung Electronics Inc.)
@@ -29,7 +29,7 @@ youtube_videos:
 # Enhancing SDC Verification in SoCs: Heatmap Visualization and Machine Learning Approaches for Optimal Coverage Closure
 
 <figure class="rep-fig" markdown>
-![Figure 6. SDC coverage closure flow with optimized test suite finding.](../assets/figures/ref-20261018-c3f8.png?v=1792306448){ loading=lazy }
+![Figure 6. SDC coverage closure flow with optimized test suite finding.](../assets/figures/ref-20261018-c3f8.png?v=1792378259){ loading=lazy }
 <figcaption>Figure 6. SDC coverage closure flow with optimized test suite finding. — from the original paper (Seungkyu Baek et al.)</figcaption>
 </figure>
 
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**The paper combines RTL-level SDC-aware simulation, source-to-destination heatmap visualization, and a PuLP integer-programming plus Random Forest test-suite optimizer to close timing-exception coverage, cutting one IP's regression from 78 to 19 vectors and 27 h to 10 h (~63%) while reaching 100% timing-exception path coverage.**
+**The paper proposes heatmap-based visualization of SDC timing-exception coverage plus PuLP integer programming and Random Forest test-suite optimization at RTL, cutting one IP's regression from 78 to 19 vectors and 27 to 10 hours while reaching 100% timing-exception path coverage.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**이 논문은 RTL 수준 SDC-aware 시뮬레이션, source-to-destination 히트맵 시각화, 그리고 PuLP 정수계획법과 Random Forest 기반 테스트 스위트 최적화를 결합해 타이밍 예외 커버리지를 닫는 방법을 제시하며, 한 IP에서 회귀 테스트를 78개에서 19개 벡터로, 27시간에서 10시간(약 63% 단축)으로 줄이면서 타이밍 예외 경로 커버리지 100%를 달성했습니다.**
+**이 논문은 SDC 타이밍 예외 커버리지의 heatmap 시각화와 PuLP 정수계획법 및 Random Forest 기반 테스트 스위트 최적화를 RTL 단계에 적용하여, 한 IP의 회귀 테스트를 78개에서 19개 벡터, 27시간에서 10시간으로 줄이고 타이밍 예외 경로 커버리지 100%를 달성했다고 보고한다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Heatmap as a gap map: a cross-table of SDC source points (rows) × destination points (columns) with covering test IDs in each cell turns summarized simulation-log coverage into actionable gaps; during closure, red cells are re-marked green or blue after review, so a closed heatmap contains only gray and green.
+- A source-by-destination cross-table of SDC paths versus covering test IDs, color-coded through review, makes timing-exception coverage gaps visible and doubles as the feature dataset for optimization.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 히트맵을 갭 맵으로 활용: SDC source 포인트(행)와 destination 포인트(열)의 교차표에 각 셀별 커버 테스트 ID를 표시하면, 요약된 시뮬레이션 로그 커버리지를 실행 가능한 갭 정보로 바꿀 수 있습니다. 커버리지 클로저 과정에서 빨간 셀은 리뷰 후 녹색 또는 파란색으로 변경되어, 클로즈된 히트맵에는 회색과 녹색 셀만 남습니다.
+- 소스 대 목적지 SDC 경로와 이를 커버하는 테스트 ID의 cross-table을 리뷰 상태에 따라 색상으로 구분하면 타이밍 예외 커버리지 공백이 드러나며, 이 표는 최적화를 위한 feature 데이터셋으로도 쓰인다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Set-cover ILP with ML gating: each test is a binary variable, every SDC path must be covered by at least one selected test, and weights reflect unique paths, skippable paths, and simulation time. A Random Forest predicts whether newly added tests should join the suite (re-optimize when predict_proba > 0.5).
+- A PuLP binary integer program (minimize weighted test count subject to each path covered by at least one test) cut a 387-path IP's regression from 78 to 19 vectors and 27 h to 10 h (about 63%) with 100% timing-exception path coverage.
 
 </div>
 <div class="bi-ko" markdown>
 
-- ML로 게이트된 set-cover ILP: 각 테스트는 이진 변수이며, 모든 SDC 경로는 선택된 테스트 중 최소 하나에 의해 커버되어야 합니다. 가중치는 고유 경로, 스킵 가능 경로, 시뮬레이션 시간을 반영합니다. Random Forest는 새로 추가된 테스트가 스위트에 포함되어야 하는지 예측하며, predict_proba가 0.5를 초과하면 최적화를 다시 수행합니다.
+- PuLP 이진 정수계획(가중 테스트 수 최소화, 각 경로는 최소 하나의 테스트가 커버)을 적용해 경로 387개인 IP의 회귀 테스트를 78개에서 19개 벡터로, 27시간에서 10시간(약 63%)으로 줄였고 타이밍 예외 경로 커버리지 100%를 달성했다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Measured results on one IP with 387 timing-exception paths: suite reduced from 78 to 19 test vectors, regression TAT from 27 h to 10 h (~63% reduction), with 100% coverage of the defined timing-exception paths.
+- Enabling X-propagation in RTL simulation exposes misplaced timing exceptions and exceptions based on wrong clock relationships in 'fail' tests before GLS setup, while 'pass' test messages can be waived after architecture review.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 387개 타이밍 예외 경로를 가진 한 IP에서의 측정 결과: 테스트 스위트가 78개에서 19개 벡터로 줄었고, 회귀 TAT는 27시간에서 10시간으로 감소(약 63% 단축)했으며, 정의된 타이밍 예외 경로는 100% 커버되었습니다.
+- RTL 시뮬레이션에서 X-propagation을 활성화하면 GLS 환경 구축 전에 'fail' 테스트에서 잘못 지정된 타이밍 예외와 잘못된 클록 관계에 기반한 예외를 찾아낼 수 있으며, 'pass' 테스트의 메시지는 아키텍처 리뷰를 거쳐 waive할 수 있다.
 
 </div>
 </div>
@@ -102,25 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- X-propagation at RTL catches SDC errors before GLS: 'fail' tests expose timing exceptions defined at incorrect points (e.g., a set_false_path on a cross-clock path); 'pass' test messages, such as a redundant set_false_path where two clocks are tied at top level, can be triaged and waived after architectural review.
+- The reported gains come from a single IP; the paper gives no classifier accuracy or precision/recall, and the CPU-block and LPDDR5X results are only partly quantified, so treat them as early evidence.
 
 </div>
 <div class="bi-ko" markdown>
 
-- RTL에서 X-propagation을 사용하면 GLS 이전에 SDC 오류를 찾을 수 있습니다. 'fail' 테스트는 잘못된 지점에 정의된 타이밍 예외(예: 클록 도메인 교차 신호에 대한 잘못된 set_false_path)를 드러내며, 'pass' 테스트 메시지는 두 클록이 최상위에서 묶여 있어 중복된 set_false_path와 같은 경우를 아키텍처 리뷰 후 분류하고 waive할 수 있습니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Scope limits: the approach was validated on a limited set of subsystem-level IPs; block- or chip-level heatmaps with thousands of rows and columns are flagged as open challenges, and the LPDDR5X controller/PHY application (64,202 paths from 318 constraints) reports TAT reduction without quantified figures.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 적용 범위의 한계: 이 방법은 서브시스템 수준의 제한된 IP 집합에서 검증되었습니다. 수천 개의 행과 열을 가진 블록·칩 수준 히트맵은 미해결 과제로 제시되었으며, LPDDR5X 컨트롤러/PHY 적용 사례(318개 constraint에서 도출된 64,202개 경로)는 TAT 감소가 보고되었으나 정량적 수치는 제시되지 않았습니다.
+- 보고된 성과는 단일 IP에서 나온 것이다. 논문은 분류기의 정확도나 precision/recall을 제시하지 않으며, CPU 블록과 LPDDR5X 결과도 일부만 정량화되어 있으므로 초기 근거로 보는 것이 적절하다.
 
 </div>
 </div>
@@ -132,12 +119,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Gate-level simulation (GLS) for SDC (Synopsys Design Constraints) verification starts only after physical implementation, runs far slower than RTL simulation, and limits the number of tests that can be executed. Timing mismatches found late (including setup/hold issues) have caused silicon re-spins.
+- SDC mismatches with design intent cause PPA degradation or silicon re-spins. Gate-level simulation (GLS) for SDC checking starts late and is slow, so timing exception issues (MCP, FP) surface late.
 
 </div>
 <div class="bi-ko" markdown>
 
-- SDC(Synopsys Design Constraints) 검증을 위한 게이트 레벨 시뮬레이션(GLS)은 물리 구현 이후에야 시작되며, RTL 시뮬레이션보다 훨씬 느려 실행 가능한 테스트 수가 제한됩니다. setup/hold 문제를 포함해 늦게 발견된 타이밍 불일치는 실리콘 re-spin의 원인이 되어 왔습니다.
+- SDC가 설계 의도와 맞지 않으면 PPA 저하나 실리콘 re-spin이 발생한다. SDC 검증에 쓰이는 gate-level simulation(GLS)은 늦게 시작되고 느려서 타이밍 예외(MCP, FP) 문제가 뒤늦게 드러난다.
 
 </div>
 </div>
@@ -145,25 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- RTL-level SDC-aware simulation (e.g., VCS setup checks on multicycle and false paths at elaboration) moves detection earlier. However, RTL X-optimism can yield false passes. Enabling X-propagation adds GLS-like X-pessimism, so setup violations propagate X values through the design.
+- RTL-level SDC-aware simulation (e.g., VCS elaboration checks, X-propagation) moves detection earlier. However, logs give only summarized source/destination data, so coverage gaps and regression redundancy are hard to see.
 
 </div>
 <div class="bi-ko" markdown>
 
-- RTL 수준 SDC-aware 시뮬레이션(예: elaboration 단계에서 multicycle 및 false path에 대한 VCS setup 검사)은 검출 시점을 앞당깁니다. 다만 RTL의 X-optimism으로 인해 거짓 통과가 발생할 수 있습니다. X-propagation을 활성화하면 GLS와 유사한 X-pessimism이 추가되어 setup 위반 시 주입된 X 값이 설계 내부로 전파됩니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Simulation logs and coverage tools report only summarized source/destination information. This makes it hard to find SDC coverage gaps, and regression suites accumulate redundant tests.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 시뮬레이션 로그와 커버리지 도구는 source/destination 정보를 요약해서만 제공합니다. 이 때문에 SDC 커버리지 갭을 찾기 어렵고, 회귀 스위트에는 중복 테스트가 쌓입니다.
+- RTL 단계 SDC-aware 시뮬레이션(예: VCS elaboration 검사, X-propagation)은 검출 시점을 앞당긴다. 그러나 로그가 소스/목적지 정보를 요약한 형태로만 제공되어 커버리지 공백과 회귀 테스트의 중복을 파악하기 어렵다.
 
 </div>
 </div>
@@ -173,12 +147,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-The flow has two parts, both driven by SDC path coverage data.
+- **Heatmap:** simulation logs are parsed into a CSV cross-table (rows = source, columns = destination, cells = covering test IDs). Cells are colored gray/red initially and turn green/blue after review. Only gray and green remain at closure.
 
 </div>
 <div class="bi-ko" markdown>
 
-이 흐름은 두 부분으로 구성되며, 둘 다 SDC 경로 커버리지 데이터에 기반합니다.
+- **Heatmap:** 시뮬레이션 로그를 파싱해 CSV cross-table로 만든다(행 = 소스, 열 = 목적지, 셀 = 커버하는 테스트 ID). 셀은 초기에 gray/red로 표시되며, 리뷰 후 green/blue로 바뀐다. 클로저 시점에는 gray와 green만 남는다.
 
 </div>
 </div>
@@ -186,12 +160,12 @@ The flow has two parts, both driven by SDC path coverage data.
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**(A) Heatmap-based gap identification.** Simulation logs are parsed into a CSV dataset. A cross-table is built with source points as rows, destination points as columns, and covering test IDs in each cell. A summary header reports the test rate, coverage progress, and deltas from the previous regression. During closure, initial cells are gray or red (uncovered); after review, red cells become green or blue. The closed heatmap contains only gray and green cells.
+- **Per-test features:** asynchronous paths covered, unique paths, waivable paths (e.g., counter registers), and simulation time.
 
 </div>
 <div class="bi-ko" markdown>
 
-**(A) 히트맵 기반 갭 식별.** 시뮬레이션 로그를 파싱해 CSV 데이터셋을 만듭니다. source 포인트를 행, destination 포인트를 열로 하고, 각 셀에 커버하는 테스트 ID를 기록한 교차표를 구성합니다. 요약 헤더에는 테스트 비율, 커버리지 진행률, 이전 회귀 대비 변화량이 표시됩니다. 커버리지 클로저 과정에서 초기 셀은 회색 또는 빨간색(미커버)이며, 리뷰 후 빨간 셀은 녹색 또는 파란색으로 바뀝니다. 클로즈된 히트맵에는 회색과 녹색 셀만 남습니다.
+- **테스트별 feature:** 커버하는 비동기 경로 수, 고유 경로 수, waive 가능한 경로 수(예: counter 레지스터), 시뮬레이션 시간.
 
 </div>
 </div>
@@ -199,12 +173,12 @@ The flow has two parts, both driven by SDC path coverage data.
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-Three features are extracted from the heatmap for ML:
+- **Optimization:** PuLP binary ILP minimizes the weighted test count, subject to each path being covered by at least one test.
 
 </div>
 <div class="bi-ko" markdown>
 
-ML을 위해 히트맵에서 세 가지 특징을 추출합니다.
+- **최적화:** PuLP 이진 ILP로 가중 테스트 수를 최소화하며, 각 경로는 최소 하나의 테스트가 커버해야 한다.
 
 </div>
 </div>
@@ -212,12 +186,12 @@ ML을 위해 히트맵에서 세 가지 특징을 추출합니다.
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-1. Number of asynchronous paths covered by individual tests
+- **ML:** a Random Forest is trained on ILP-selected suites as labels. If `predict_proba` > 0.5 for a newly added test, the optimization is re-run and the suite updated.
 
 </div>
 <div class="bi-ko" markdown>
 
-1. 개별 테스트가 커버하는 비동기 경로 수
+- **ML:** ILP로 선택된 스위트를 레이블로 Random Forest를 학습한다. 새로 추가된 테스트의 `predict_proba`가 0.5를 넘으면 최적화를 다시 실행하고 스위트를 갱신한다.
 
 </div>
 </div>
@@ -225,156 +199,12 @@ ML을 위해 히트맵에서 세 가지 특징을 추출합니다.
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-2. Number of unique paths covered by individual tests
+- **X-propagation:** GLS-like X-pessimism is used to classify errors. 'Fail' tests reveal misplaced exceptions and wrong clock-relationship exceptions. 'Pass' test messages are waived when justified.
 
 </div>
 <div class="bi-ko" markdown>
 
-2. 개별 테스트가 커버하는 고유 경로 수
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-3. Number of waivable paths (e.g., counter register paths)
-
-</div>
-<div class="bi-ko" markdown>
-
-3. waive 가능한 경로 수(예: counter register 경로)
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**(B) ML-assisted regression optimization.** The suite is selected with a set-cover integer program solved in PuLP:
-
-</div>
-<div class="bi-ko" markdown>
-
-**(B) ML 기반 회귀 최적화.** 테스트 스위트는 PuLP로 풀는 set-cover 정수계획 문제로 선택합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-$$\text{Minimize } \sum_{i=1}^{n} x_i \quad (1), \qquad \text{Minimize } \sum_{i=1}^{n} w_i x_i \quad (2)$$
-
-</div>
-<div class="bi-ko" markdown>
-
-$$\text{Minimize } \sum_{i=1}^{n} x_i \quad (1), \qquad \text{Minimize } \sum_{i=1}^{n} w_i x_i \quad (2)$$
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-$$x_i \in \{0,1\} \quad (3), \qquad \sum_{i:\, j \in S_i} x_i \ge 1 \;\; \forall j \in A \quad (4)$$
-
-</div>
-<div class="bi-ko" markdown>
-
-$$x_i \in \{0,1\} \quad (3), \qquad \sum_{i:\, j \in S_i} x_i \ge 1 \;\; \forall j \in A \quad (4)$$
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Here $x_i$ selects test $i$, $w_i$ weights unique paths, skippable paths, and simulation time, $A$ is the set of paths to cover, and $S_i$ is the subset of paths covered by test $i$. Only explicit constraints are modeled.
-
-</div>
-<div class="bi-ko" markdown>
-
-여기서 $x_i$는 테스트 $i$의 선택 여부, $w_i$는 고유 경로·스킵 가능 경로·시뮬레이션 시간을 반영한 가중치, $A$는 커버해야 할 전체 경로 집합, $S_i$는 테스트 $i$가 커버하는 경로 부분집합입니다. 명시적 제약만 모델링합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-A scikit-learn RandomForestClassifier is trained on features (time consumption, number of covered points, unique areas, aggregate skipability), with labels of 1 for tests in the optimized suite and 0 otherwise. The paper gives Random Forest's rationale as robustness, interpretability, feature importance, and few hyperparameters. For new tests, predict_proba is evaluated: if it exceeds 0.5, the optimization is re-run and the suite updated.
-
-</div>
-<div class="bi-ko" markdown>
-
-scikit-learn의 RandomForestClassifier를 특징(시뮬레이션 시간, 커버 포인트 수, 고유 영역 수, 누적 스킵 가능성)으로 학습하며, 최적화 스위트에 포함된 테스트는 1, 그렇지 않은 테스트는 0으로 라벨링합니다. 논문은 Random Forest를 선택한 이유로 견고성, 해석 가능성, 특징 중요도 제공, 적은 하이퍼파라미터를 듭니다. 새 테스트에 대해서는 predict_proba를 평가하며, 값이 0.5를 초과하면 최적화를 다시 수행하고 스위트를 갱신합니다.
-
-</div>
-</div>
-
-```mermaid
-flowchart TD
-  A[Simulation logs] --> B[CSV dataset and features]
-  B --> C[Heatmap: source x destination with test IDs]
-  C --> D[Review: red cells to green or blue]
-  B --> E[PuLP ILP: minimal covering suite]
-  E --> F[Random Forest: predict_proba for new tests]
-  F -->|above 0.5| E
-  D --> G{Coverage == 100%?}
-  G -->|No| H[Directed tests or constraint edits]
-  H --> A
-  G -->|Yes| I[Finish]
-```
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**Experimental setup (Section IV).** The target is a CPU block in an HPC-oriented SoC: about 10M gates, 4 nm, 1.5 GHz, with Cortex-M3 and quad-core Cortex-A55 processors plus GPIO, UART, I2C, SPI, QSPI, and timer peripherals. The SDC has 1,069 constraints, including timing exceptions defined by 37 commands (e.g., set_multicycle_path, set_false_path) that affect 82,554 paths. The block has 554 functional regression scenarios.
-
-</div>
-<div class="bi-ko" markdown>
-
-**실험 환경(4장).** 대상은 HPC 지향 SoC의 CPU 블록입니다. 약 10M 게이트, 4 nm, 1.5 GHz이며, Cortex-M3와 쿼드코어 Cortex-A55 프로세서, GPIO, UART, I2C, SPI, QSPI, timer 주변장치를 포함합니다. SDC는 1,069개 constraint로 구성되며, 37개 명령(예: set_multicycle_path, set_false_path)으로 정의된 타이밍 예외가 82,554개 경로에 영향을 줍니다. 이 블록에는 554개의 기능 회귀 시나리오가 있습니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**Error classes found via X-propagation at RTL:**
-
-</div>
-<div class="bi-ko" markdown>
-
-**RTL X-propagation으로 찾은 오류 유형:**
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-1. Timing exception constraints at incorrect points. Found in "fail" tests (Fig. 7), where a set_false_path on a cross-clock-domain signal (ic_enable) was wrong. Fixing it requires an SDC or design change and a full regression rerun, so it is prioritized.
-
-</div>
-<div class="bi-ko" markdown>
-
-1. 잘못된 지점에 정의된 타이밍 예외 constraint. 'fail' 테스트에서 발견되었으며(그림 7), 클록 도메인 교차 신호(ic_enable)에 대한 set_false_path가 잘못된 사례입니다. 수정에는 SDC 또는 설계 변경과 전체 회귀 재실행이 필요해 우선 처리합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-2. Timing exceptions based on misunderstood clock relationships on asynchronous paths. Found in "pass" tests (Fig. 8), where a set_false_path is redundant because two clocks are tied at the top level. It does not immediately affect functionality and can be waived after architectural review.
-
-</div>
-<div class="bi-ko" markdown>
-
-2. 비동기 경로에서 클록 관계를 잘못 이해한 타이밍 예외. 'pass' 테스트에서 발견되었으며(그림 8), 최상위에서 두 클록이 묶여 있어 set_false_path가 중복된 사례입니다. 즉시 기능에 영향을 주지는 않으며, 아키텍처 리뷰 후 waive할 수 있습니다.
+- **X-propagation:** GLS와 유사한 X-pessimism으로 오류를 분류한다. 'fail' 테스트에서는 잘못 지정된 예외와 잘못된 클록 관계 예외가 드러나고, 'pass' 테스트 메시지는 타당한 경우 waive한다.
 
 </div>
 </div>
@@ -384,12 +214,12 @@ flowchart TD
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Specific IP (387 timing-exception paths):** the regression suite shrinks from 78 to 19 test vectors. Runtime drops from 27 h to 10 h (about 63% reduction), with 100% coverage of the defined timing-exception paths (Table III).
+- **Target IP (387 timing-exception paths):** suite reduced from 78 to 19 vectors, regression TAT from 27 h to 10 h (about 63%), and 100% timing-exception path coverage.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **특정 IP(타이밍 예외 경로 387개):** 회귀 테스트 스위트가 78개에서 19개 벡터로 줄었습니다. 실행 시간은 27시간에서 10시간으로 감소(약 63% 단축)했고, 정의된 타이밍 예외 경로는 100% 커버되었습니다(표 III).
+- **대상 IP(타이밍 예외 경로 387개):** 스위트를 78개에서 19개 벡터로 줄였고, 회귀 TAT를 27시간에서 10시간(약 63%)으로 줄였으며, 타이밍 예외 경로 커버리지 100%를 달성했다.
 
 </div>
 </div>
@@ -397,12 +227,12 @@ flowchart TD
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **GLS-based sign-off comparison:** the traditional approach used a single vector covering one path (0.3% coverage). At the SS block level, a single optimized vector verified 203 timing paths, about 60% of SDC-defined paths.
+- **GLS baseline:** a single vector covered 0.3%. An optimized vector verified 203 paths (about 60%) at SS block level.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **GLS 기반 sign-off 비교:** 기존 방식은 경로 1개만 커버하는 단일 벡터(커버리지 0.3%)를 사용했습니다. SS 블록 수준에서는 최적화된 단일 벡터가 203개 타이밍 경로를 검증했으며, 이는 SDC 정의 경로의 약 60%에 해당합니다.
+- **GLS 기준선:** 단일 벡터는 0.3%를 커버했다. 최적화된 벡터 하나는 SS 블록 수준에서 203개 경로(약 60%)를 검증했다.
 
 </div>
 </div>
@@ -410,12 +240,12 @@ flowchart TD
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Scope and limitations:** the method was evaluated on a limited set of subsystem-level IPs. Block- and chip-level use is flagged as challenging, given heatmaps with thousands of rows and columns and the need for system-level scenario definition. The authors also propose replacing structural CDC/RDC checks or subjective designer reviews with functional regression and metric-based closure at RTL freeze.
+- **CPU block:** 1,069 constraints, 82,554 paths, 554 tests. Used to surface RTL-stage SDC errors.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **적용 범위 및 한계:** 이 방법은 서브시스템 수준의 제한된 IP 집합에서 평가되었습니다. 수천 개의 행과 열을 가진 히트맵, 그리고 시스템 수준 시나리오 정의의 필요성 때문에 블록·칩 수준 적용은 어려운 과제로 제시되었습니다. 저자들은 RTL freeze 시점에 구조적 CDC/RDC 검증이나 설계자의 주관적 리뷰를 기능 회귀와 메트릭 기반 커버리지 클로저로 대체하는 방안도 제안합니다.
+- **CPU 블록:** 제약 1,069개, 경로 82,554개, 테스트 554개. RTL 단계에서 SDC 오류를 드러내는 데 사용되었다.
 
 </div>
 </div>
@@ -423,12 +253,12 @@ flowchart TD
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Ongoing work:** the methodology is being applied at block level to an LPDDR5X controller and PHY, covering 64,202 paths from 318 constraints. The paper reports a TAT reduction there but gives no quantified figures.
+- **LPDDR5X block:** 64,202 paths from 318 constraints. Ongoing, with TAT reduction stated but not quantified.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **진행 중인 작업:** LPDDR5X 컨트롤러 및 PHY 블록 수준에 적용 중이며, 318개 constraint에서 도출된 64,202개 경로를 커버하는 작업입니다. 논문은 이 사례에서 TAT 감소를 보고하지만 정량적 수치는 제시하지 않았습니다.
+- **LPDDR5X 블록:** 318개 제약에서 도출된 64,202개 경로. 진행 중이며 TAT 감소는 언급되었으나 수치로 제시되지 않았다.
 
 </div>
 </div>
@@ -436,12 +266,12 @@ flowchart TD
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Future work:** extend to full-system SoC validation, and explore AI-based predictive algorithms that refine the suite automatically.
+- **Limitations:** evaluation is on a limited IP/subsystem scope. Chip-level heatmaps with thousands of rows and columns are noted as challenging. No ML accuracy metrics are reported.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **향후 과제:** 전체 시스템 SoC 검증으로 확장하고, 스위트를 자동으로 개선하는 AI 기반 예측 알고리즘을 탐구할 계획입니다.
+- **한계:** 평가 범위가 제한된 IP/서브시스템이다. 수천 행·열 규모의 칩 수준 heatmap은 어렵다고 언급된다. ML 정확도 지표는 보고되지 않았다.
 
 </div>
 </div>

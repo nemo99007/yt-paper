@@ -7,14 +7,14 @@ region: US
 year: 2024
 category: Verification
 tags:
+- BTS
 - IP-XACT
-- Bus Hang
+- Bus Hang Debug
+- UVM
 - SoC Verification
-- Debug Automation
-- SystemVerilog
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/1078.pdf
-authors: 'Wonyeong So (Samsung Electronics Co. Ltd.), Yonghyun Yang (Samsung Electronics Co. Ltd.), Sun-il Roe (Samsung Electronics Co. Ltd.), Moonki Jang (Samsung Electronics Co. Ltd.), Youngsik Kim (Samsung Electronics Co. Ltd.), Seonil Brian Choi (Samsung Electronics Co. Ltd.); affiliation: Samsung Electronics Co. Ltd., Seoul, Korea'
+authors: Wonyeong So (Samsung Electronics Co. Ltd., Seoul, Korea), Yonghyun Yang (Samsung Electronics), Sun-il Roe (Samsung Electronics), Moonki Jang (Samsung Electronics), Youngsik Kim (Samsung Electronics), Seonil Brian Choi (Samsung Electronics)
 youtube_videos:
 - video_id: zHAIrWaCa3Y
   url: https://www.youtube.com/watch?v=zHAIrWaCa3Y
@@ -29,7 +29,7 @@ youtube_videos:
 # Bus Trace System: Automating Bus Traffic Debugging in IP-XACT Based SoC Beyond Traditional Debugging Methods
 
 <figure class="rep-fig" markdown>
-![Figure 1. BTS overview](../assets/figures/ref-20261018-dded.png?v=1792310347){ loading=lazy }
+![Figure 1. BTS overview](../assets/figures/ref-20261018-dded.png?v=1792379420){ loading=lazy }
 <figcaption>Figure 1. BTS overview — from the original paper (Wonyeong So et al.)</figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ youtube_videos:
 
 | | |
 |---|---|
-| Authors | Wonyeong So (Samsung Electronics Co. Ltd.), Yonghyun Yang (Samsung Electronics Co. Ltd.), Sun-il Roe (Samsung Electronics Co. Ltd.), Moonki Jang (Samsung Electronics Co. Ltd.), Youngsik Kim (Samsung Electronics Co. Ltd.), Seonil Brian Choi (Samsung Electronics Co. Ltd.); affiliation: Samsung Electronics Co. Ltd., Seoul, Korea |
+| Authors | Wonyeong So (Samsung Electronics Co. Ltd., Seoul, Korea), Yonghyun Yang (Samsung Electronics), Sun-il Roe (Samsung Electronics), Moonki Jang (Samsung Electronics), Youngsik Kim (Samsung Electronics), Seonil Brian Choi (Samsung Electronics) |
 | Venue | DVCon US 2024 |
 | Topic | Verification |
 | Type | PAPER |
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**BTS (Bus Trace System) automatically builds SoC bus navigation paths from IP-XACT integration data and, using only simulation interface logs, pinpoints the bus node responsible for bus hangs and error responses without waveform inspection.**
+**BTS builds an IP-XACT-derived bus navigation map and analyzes protocol interface logs in simulation to automatically locate the bus node responsible for bus hangs and error responses, without waveform inspection.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**BTS(Bus Trace System)는 IP-XACT 통합 정보로 SoC 버스 navigation 경로를 자동 생성하고, 시뮬레이션 인터페이스 로그만으로 waveform 확인 없이 bus hang 및 error response를 유발한 버스 노드를 찾아내는 기법이다.**
+**BTS는 IP-XACT에서 만든 버스 네비게이션 맵과 시뮬레이션 중 프로토콜 인터페이스 로그를 분석하여, 파형 확인 없이 bus hang 및 error response를 유발한 버스 노드를 자동으로 찾아냅니다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- BTS replaces node-by-node waveform tracing with a two-phase flow: (1) build SoC bus navigation JSON from IP-XACT (via Magillem export), a bus routing spec, and per-IP base addresses; (2) bind SystemVerilog protocol interfaces/inspectors to all masters and analyze per-protocol logs (AXI.json, CHI.json, ACE.json) during simulation.
+- Bus navigation is built in two passes: a raw master-to-slave search over IP-XACT key interfaces (e.g., MISC_M for AXI slaves), then refinement using bus routing specs and per-IP base-address ranges.
 
 </div>
 <div class="bi-ko" markdown>
 
-- BTS는 노드별 waveform 추적을 두 단계 흐름으로 대체한다. (1) Magillem JSON export, 버스 routing spec, IP별 base address로 SoC 버스 navigation JSON을 만들고, (2) 마스터에 SystemVerilog 프로토콜 인터페이스를 바인딩해 프로토콜별 로그(AXI.json, CHI.json, ACE.json)를 시뮬레이션 중 분석한다.
+- 버스 네비게이션은 두 단계로 생성됩니다. 먼저 IP-XACT 핵심 인터페이스(예: AXI 슬레이브의 MISC_M)를 따라 master에서 slave까지 raw 탐색을 수행하고, 이후 bus routing 명세와 IP별 base address 범위로 정제합니다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Bus navigation uses a two-stage search: a raw navigation file is first built from the key-interface graph (e.g., AXI MISC_M), then rectified with bus routing address ranges so that the counter instance is selected correctly at routing instances.
+- Failure localization scans the interface log backwards from its end along the navigation list, so the most recent response point is found first and already-good traffic is skipped.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Bus navigation은 두 단계 탐색으로 만든다. 먼저 key interface 그래프(예: AXI MISC_M)로 raw navigation 파일을 만들고, 이후 bus routing 주소 범위로 보정해 routing instance에서 counter instance를 정확히 고른다.
+- 고장 위치 추적은 인터페이스 로그의 끝에서부터 네비게이션 목록을 따라 역순으로 진행되므로, 가장 최근의 응답 지점이 먼저 발견되고 정상 트래픽은 건너뜁니다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Log analysis triggers on an error response or when the log stops printing past a timer threshold, then scans traffic backwards from the end of the log along the navigation path; in the worked example the hang was localized to BUS_FABRIC_1 because the last write response appeared at BUS_FABRIC_2.
+- In the worked example, the last write response was seen at BUS_FABRIC_2 but not BUS_FABRIC_1, so BUS_FABRIC_1 was reported as the hang point for the write to 0x1083_0808.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 로그 분석은 error response가 발생하거나 로그 출력이 멈추고 timer가 임계값을 넘으면 시작된다. 이후 navigation 경로를 따라 로그 끝에서부터 역방향으로 스캔한다. 예제에서는 마지막 write response가 BUS_FABRIC_2에서만 나타나 BUS_FABRIC_1이 hang 지점으로 보고되었다.
+- 예시에서 0x1083_0808 write의 마지막 write response는 BUS_FABRIC_2에서 관측되었고 BUS_FABRIC_1에서는 없었으므로, BUS_FABRIC_1이 hang 지점으로 보고되었습니다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Across three Samsung SoC projects, bus hang plus error response bugs were 10.6-12.0% of total bugs (A: 466/3,964; B: 112/1,057; C: 503/4,199), and at least 50% of these occurred before implementation start.
+- Bus hang and error response accounted for 11.8% (466/3,964), 10.6% (112/1,057), and 12.0% (503/4,199) of bugs in three SoC projects, and the paper states at least 50% of these occurred before implementation start.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 세 개 SoC 프로젝트에서 bus hang과 error response 버그는 전체 버그의 10.6~12.0%였다(A: 466/3,964, B: 112/1,057, C: 503/4,199). 이 버그들의 50% 이상은 implementation 시작 이전에 발생했다.
+- bus hang 및 error response는 세 SoC 프로젝트 전체 버그의 11.8%(466/3,964), 10.6%(112/1,057), 12.0%(503/4,199)를 차지했으며, 논문은 이 중 최소 50%가 implementation 시작 이전에 발생했다고 밝힙니다.
 
 </div>
 </div>
@@ -115,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The paper gives no measured debug-time reduction or runtime overhead; the benefit is argued qualitatively (worst case 10T for a 10-node path versus direct localization), so the performance claim is unvalidated.
+- The paper gives no measured debug-time or TAT reduction and no baseline comparison, so the benefit is asserted qualitatively and needs independent validation.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 논문은 디버그 시간 단축 수치나 런타임 오버헤드를 측정해 제시하지 않는다. 이점은 정성적으로만 주장되며(10노드 경로의 최악 10T 대비 직접 위치 파악), 성능 주장은 검증되지 않았다.
+- 논문은 디버그 시간이나 TAT 감소를 측정값으로 제시하지 않고 baseline 비교도 없으므로, 효과는 정성적으로 주장된 것이며 독립적인 검증이 필요합니다.
 
 </div>
 </div>
@@ -132,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- SoC complexity (multi-core coherence, 3D and multi-chip integration) has grown the number of IP interfaces and bus node instances. The paper cites verification engineer peaks rising from 4.8 (2007) to 11.6 (2016), and the verification share of project time rising from 47% (2014) to 54% (2018).
+- Bus hang and error-response bugs in SoC verification are usually debugged by checking every bus node from master to slave; with 10 nodes the worst case is 10T, where T is the time per node.
 
 </div>
 <div class="bi-ko" markdown>
 
-- SoC 복잡도(multi-core coherence, 3D 및 multi-chip 집적)가 증가하면서 IP 인터페이스와 bus node 인스턴스 수가 늘었다. 논문은 검증 엔지니어 피크 수가 2007년 4.8명에서 2016년 11.6명으로 증가했고, 프로젝트 시간 중 검증 비중이 2014년 47%에서 2018년 54%로 늘었다고 인용한다.
+- SoC 검증에서 bus hang 및 error response 버그는 보통 master에서 slave까지 모든 버스 노드를 하나씩 확인하며 디버그합니다. 노드가 10개라면 노드당 시간 T를 기준으로 최악의 경우 10T가 소요됩니다.
 
 </div>
 </div>
@@ -145,25 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- For bus hang and error response, the conventional method traces every relevant bus node to find where the error first appears. In the paper's example, a master reaching a slave through 10 bus nodes requires up to $10T$ in the worst case, where $T$ is the time to check one node.
+- The paper argues that growing interconnect complexity makes this costly. It cites verification engineer peaks rising from 4.8 (2007) to 11.6 (2016), and the verification share of project time rising from 47% (2014) to 54% (2018).
 
 </div>
 <div class="bi-ko" markdown>
 
-- bus hang과 error response의 경우 기존 방식은 관련 bus node를 모두 추적해 오류가 처음 나타난 지점을 찾는다. 논문 예시에서 마스터가 bus node 10개를 거쳐 slave에 접근하면, 노드당 확인 시간을 $T$라 할 때 최악의 경우 $10T$가 필요하다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Engineers with less SoC experience take longer. Even experienced engineers cannot reliably spot the faulty node at a glance.
-
-</div>
-<div class="bi-ko" markdown>
-
-- SoC 경험이 적은 엔지니어일수록 시간이 더 걸린다. 숙련된 엔지니어도 문제 노드를 한눈에 찾기 어렵다.
+- 논문은 상호연결 복잡도가 증가하면서 이 비용이 커진다고 주장합니다. 검증 엔지니어의 평균 피크 인원은 2007년 4.8명에서 2016년 11.6명으로 늘었고, 프로젝트 시간 중 검증 비중은 2014년 47%에서 2018년 54%로 증가했다고 인용합니다.
 
 </div>
 </div>
@@ -173,38 +160,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-BTS runs in two phases.
+- Phase 1 (navigation): IP-XACT is exported to JSON with Magillem. A Python search starts at the host CPU and follows key interfaces (e.g., MISC_M for AXI slaves) to produce a raw navigation file. A second pass applies bus routing specs and per-IP base addresses to produce the final navigation file.
 
 </div>
 <div class="bi-ko" markdown>
 
-BTS는 두 단계로 동작한다.
-
-</div>
-</div>
-
-```mermaid
-flowchart LR
-  A[IP-XACT SoC integration] -->|Magillem JSON export| B[Raw bus navigation]
-  C[Bus routing spec + UVM base addr] --> D[Bus navigation generator]
-  B --> D
-  D --> E[SoC bus navigation JSON]
-  E --> F[SV protocol interfaces bound to masters]
-  F --> G[Per-protocol logs AXI/CHI/ACE .json]
-  G --> H{Error resp or log stall > timer}
-  H -->|yes| I[Reverse log scan along navigation path]
-  I --> J[Reported hang/error instance]
-```
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**Phase 1: SoC bus navigation generation**
-
-</div>
-<div class="bi-ko" markdown>
-
-**1단계: SoC bus navigation 생성**
+- Phase 1(네비게이션 생성): IP-XACT를 Magillem으로 JSON으로 내보냅니다. Python 탐색은 host CPU에서 시작해 핵심 인터페이스(예: AXI 슬레이브의 MISC_M)를 따라가며 raw 네비게이션 파일을 만듭니다. 이후 bus routing 명세와 IP별 base address를 적용해 최종 네비게이션 파일을 만듭니다.
 
 </div>
 </div>
@@ -212,12 +173,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The IP-XACT integration data is exported to JSON with Magillem. A separate script converts the bus integration spec into a bus routing spec JSON, and another reads the SoC-level UVM register base-address SystemVerilog file to produce a base-address JSON per IP.
+- Phase 2 (simulation): SystemVerilog protocol interfaces with inspectors (handshake, burst length, hang timer) are bound to all masters. Only valid traffic is logged per protocol (AXI.json, CHI.json, ACE.json).
 
 </div>
 <div class="bi-ko" markdown>
 
-- IP-XACT 통합 정보를 Magillem으로 JSON으로 export한다. 별도 스크립트가 bus integration spec을 bus routing spec JSON으로 변환하고, SoC 수준 UVM register base-address SystemVerilog 파일을 읽어 IP별 base-address JSON을 만든다.
+- Phase 2(시뮬레이션): 모든 master에 프로토콜별 SystemVerilog 인터페이스와 inspector(handshake, burst length, hang timer)를 바인딩합니다. 유효 트래픽만 프로토콜별로 기록됩니다(AXI.json, CHI.json, ACE.json).
 
 </div>
 </div>
@@ -225,90 +186,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Bus connection search: starting from the host CPU and using the UVM register model file for the final destination list, the algorithm walks adjacent instances via key interfaces per protocol (AXI, ACE, CHI, custom). Example: for AXI slaves, MISC_M is the key interface, and its connected interface identifies the counter instance. The search recurses until a destination is reached, producing a **raw** navigation file. This file ignores routing and may be wrong.
+- A monitor script runs when an error response appears or the log stalls past a threshold. It scans the log backwards along the navigation list to find the last response point. In the example, a write to 0x1083_0808 was last answered at BUS_FABRIC_2, so BUS_FABRIC_1 is reported.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Bus connection search: host CPU에서 시작하며, UVM register model 파일로 최종 목적지 목록을 만든다. 프로토콜별 key interface(AXI, ACE, CHI, custom)를 따라 인접 인스턴스를 탐색한다. 예: AXI slave의 key interface는 MISC_M이며, 연결된 인터페이스가 counter instance를 결정한다. 목적지에 도달할 때까지 재귀 탐색하여 **raw** navigation 파일을 만든다. 이 파일은 routing 정보를 고려하지 않아 잘못된 정보를 포함할 수 있다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Bus navigation generator: the raw file is refined with routing address ranges per destination base address. At each bus routing instance, the counter interface is chosen by matching the target address to the interface's range, producing the final navigation file.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Bus navigation generator: 목적지 IP의 base address별 routing 주소 범위로 raw 파일을 보정한다. Routing instance마다 목표 주소가 속한 인터페이스 범위를 기준으로 counter interface를 고르고, 최종 navigation 파일을 만든다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**Phase 2: Debug-scope discovery during simulation**
-
-</div>
-<div class="bi-ko" markdown>
-
-**2단계: 시뮬레이션 중 디버그 범위 탐지**
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Testbench SystemVerilog interfaces are bound to all DUT masters. Each protocol interface contains inspectors: a handshake detector that accepts only valid transactions, a burst-length checker, and a timer for hang detection.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 테스트벤치의 SystemVerilog 인터페이스를 DUT의 모든 마스터에 바인딩한다. 각 프로토콜 인터페이스에는 inspector가 포함된다. 유효 트랜잭션만 검출하는 handshake detector, burst length 검사기, hang 검출용 timer가 있다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- For efficiency, logs are written per protocol (AXI.json, CHI.json, ACE.json) rather than per master, and only valid traffic is recorded in chronological order.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 효율을 위해 마스터별이 아니라 프로토콜별 로그(AXI.json, CHI.json, ACE.json)를 작성하며, 유효 트래픽만 시간순으로 기록한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- A Python analyzer runs concurrently. It activates on a bus error response, or when log output stalls and the timer exceeds a threshold. It computes the IP base address of the faulty traffic, retrieves that IP's navigation path, and scans the log backwards from the last instance, since responses return along the path. The first point where the response is missing is reported.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Python 분석기가 시뮬레이션과 병행하여 실행된다. Bus error response가 발생하거나 로그 출력이 멈추고 timer가 임계값을 넘으면 동작한다. 문제 트래픽의 IP base address를 계산하고, 해당 IP의 navigation 경로를 가져온 뒤, 마지막 인스턴스부터 로그를 역방향으로 스캔한다. 응답은 경로를 거슬러 돌아오기 때문이다. 응답이 빠진 첫 지점이 보고된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Worked example: BLK_CPU writes to 0x1083_0808 and gets no response from IP_A. The base address is 0x1083_0000. The last write response appears at BUS_FABRIC_2 but not BUS_FABRIC_1, so BUS_FABRIC_1 is reported as the hang point in the terminal output.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 작동 예시: BLK_CPU가 0x1083_0808에 write를 발행했지만 IP_A로부터 응답을 받지 못한다. Base address는 0x1083_0000이다. 마지막 write response 로그는 BUS_FABRIC_2에서만 나타나므로 BUS_FABRIC_1이 hang 지점으로 터미널에 보고된다.
+- 모니터 스크립트는 error response가 나타나거나 로그가 임계값 이상 멈추면 실행됩니다. 네비게이션 목록을 따라 로그를 역순으로 스캔해 마지막 응답 지점을 찾습니다. 예시에서 0x1083_0808 write는 BUS_FABRIC_2에서 마지막으로 응답되었으므로 BUS_FABRIC_1이 보고됩니다.
 
 </div>
 </div>
@@ -318,12 +201,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Table 1 (three SoC projects):
+- Across three SoC projects, bus hang and error response made up roughly 10–12% of all bugs. Shares were 466/3,964 (A), 112/1,057 (B), and 503/4,199 (C).
 
 </div>
 <div class="bi-ko" markdown>
 
-- 표 1 (세 개 SoC 프로젝트):
+- 세 SoC 프로젝트에서 bus hang 및 error response는 전체 버그의 약 10–12%를 차지했습니다. 비율은 A 466/3,964, B 112/1,057, C 503/4,199입니다.
 
 </div>
 </div>
@@ -331,20 +214,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-| Project | Bus hang | Error response | Total bugs | Ratio |
-|---|---|---|---|---|
-| A | 320 | 146 | 3,964 | 0.1176 |
-| B | 76 | 36 | 1,057 | 0.106 |
-| C | 411 | 92 | 4,199 | 0.12 |
+- At least 50% of these errors occurred before implementation start. The authors argue that early bus stabilization shortens the schedule.
 
 </div>
 <div class="bi-ko" markdown>
 
-| Project | Bus hang | Error response | Total bugs | Ratio |
-|---|---|---|---|---|
-| A | 320 | 146 | 3,964 | 0.1176 |
-| B | 76 | 36 | 1,057 | 0.106 |
-| C | 411 | 92 | 4,199 | 0.12 |
+- 이 오류의 최소 50%가 implementation 시작 이전에 발생했습니다. 저자들은 초기 버스 안정화가 일정을 단축한다고 주장합니다.
 
 </div>
 </div>
@@ -352,38 +227,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The paper concludes that about 10-12% of all errors are of the kind BTS can identify.
+- No measured debug-time savings, TAT figures, or baseline comparison are reported. The benefit is qualitative, and results come from in-house projects only.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 논문은 전체 오류의 약 10~12%가 BTS로 식별 가능한 유형이라고 결론짓는다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Cumulative occurrence (Figure 7) shows that at least 50% of these bugs occurred before implementation start in all three projects, and the rate stays above 50% when measured from synthesis start. The authors argue that early bus stabilization shortens the schedule, because bugs found after synthesis can force re-synthesis and delay layout. A hang can also mask IP, security, and other bugs.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 누적 발생률(Figure 7)에 따르면 세 프로젝트 모두 이런 버그의 최소 50%가 implementation 시작 이전에 발생했다. Synthesis 시작 기준으로 측정해도 50% 이상이 관찰된다. 저자들은 초기 bus 안정화가 일정을 단축한다고 주장한다. Synthesis 이후 발견된 버그는 re-synthesis를 유발하고 layout을 지연시킬 수 있기 때문이다. 또한 hang은 IP, 보안 등 다른 버그의 발견을 지연시킬 수 있다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Limitations: the paper reports no measured debug-time reduction, no per-case turnaround numbers, and no runtime overhead. Figure 7 is cited but is not in the provided caption list. The benefits are presented qualitatively.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 한계: 논문은 디버그 시간 단축 수치, 사례별 TAT, 런타임 오버헤드를 측정해 보고하지 않는다. Figure 7은 본문에서 인용되지만 제공된 caption 목록에는 없다. 이점은 정성적으로 제시된다.
+- 측정된 디버그 시간 절감, TAT 수치, baseline 비교는 보고되지 않았습니다. 효과는 정성적이며 결과는 사내 프로젝트에서만 얻어졌습니다.
 
 </div>
 </div>

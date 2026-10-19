@@ -9,7 +9,7 @@ category: EDA
 tags:
 - Register Documentation
 - RDF JSON
-- Web Application
+- Web App
 - TypeScript/Vue
 - Europa Clipper
 source_type: PAPER
@@ -29,7 +29,7 @@ youtube_videos:
 # Regvue Modern Hardware/Software Interface (HSI) Documentation
 
 <figure class="rep-fig" markdown>
-![Figure 9. A working prototype of Regvue Desktop](../assets/figures/ref-20261018-5ce8.png?v=1792309083){ loading=lazy }
+![Figure 9. A working prototype of Regvue Desktop](../assets/figures/ref-20261018-5ce8.png?v=1792378657){ loading=lazy }
 <figcaption>Figure 9. A working prototype of Regvue Desktop — from the original paper (Rob Donnelly et al.)</figcaption>
 </figure>
 
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Regvue is a design-agnostic, web-based register documentation tool driven by a JSON-based Register Description Format (RDF), built with TypeScript and Vue and deployed as static files, which replaces static Word/PDF/HTML register docs with searchable, encode/decode-capable, permalinked views and was used on the NASA Europa Clipper mission.**
+**Regvue is a design-agnostic, web-based register documentation tool that consumes JSON-encoded register descriptions (RDF) and provides search, field/register encode-decode, enumerations, multi-reset display, and permalinks, developed for the NASA JPL Europa Clipper mission.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**Regvue는 JSON 기반 Register Description Format(RDF)으로 구동되는 설계 독립형 웹 레지스터 문서화 도구로, TypeScript와 Vue로 구현되고 정적 파일로 배포되며, 검색, 인코드/디코드, 퍼머링크 기능으로 기존의 Word/PDF/HTML 레지스터 문서를 대체하고 NASA Europa Clipper 미션에 사용되었습니다.**
+**Regvue는 JSON 기반 레지스터 기술(RDF)을 읽어 검색, 필드/레지스터 인코딩·디코딩, 열거형 값, 다중 리셋 표시, 퍼머링크를 제공하는 설계 독립적 웹 기반 레지스터 문서화 도구로, NASA JPL Europa Clipper 미션을 위해 개발되었습니다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Static Word/PDF/HTML register docs cannot decode register values or share a precise section; Regvue addresses this with live field encode/decode, incremental fuzzy search, and direct permalinks to blocks, registers, and fields.
+- Register documentation is delivered as static Word/PDF/HTML, so decoding values, sharing a specific register, or locating a section requires manual steps that Regvue replaces with live, linkable views.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 기존 Word/PDF/HTML 레지스터 문서는 레지스터 값을 필드로 디코드하거나 특정 섹션을 정확히 공유할 수 없습니다. Regvue는 실시간 필드 인코드/디코드, 증분형 퍼지 검색, 블록·레지스터·필드에 대한 직접 퍼머링크로 이 문제를 해결합니다.
+- 레지스터 문서는 정적 Word/PDF/HTML 형태여서 값 디코딩, 특정 레지스터 공유, 섹션 탐색에 수동 작업이 필요하며, Regvue는 이를 실시간의 링크 가능한 뷰로 대체합니다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- RDF is a JSON schema (JSON Schema standard, versioned) chosen over CMSIS-SVD/IP-XACT XML to minimize post-processing: parsing reduces to a single JSON.parse() call, and RDF files can include other RDF files to build system-, chip-, and module-level views.
+- Regvue consumes a custom JSON schema (RDF) validated with JSON Schema and versioned for backward compatibility; RDF files can include other RDF files to build system-to-module hierarchies.
 
 </div>
 <div class="bi-ko" markdown>
 
-- RDF는 버전이 관리되는 JSON Schema 기반 형식으로, CMSIS-SVD/IP-XACT XML 대신 후처리를 최소화하도록 설계되었습니다. 파싱은 단일 JSON.parse() 호출로 끝나며, RDF 파일은 다른 RDF 파일을 include하여 시스템·칩·모듈 수준 뷰를 구성할 수 있습니다.
+- Regvue는 JSON Schema로 검증되고 하위 호환을 위해 버전 관리되는 자체 JSON 스키마(RDF)를 사용하며, RDF 파일은 다른 RDF 파일을 포함하여 시스템-모듈 계층 구조를 구성할 수 있습니다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Hosting is minimal: the app is a static bundle (GitHub Pages, GitLab Pages, or localhost via Python). Hosting RDF JSON in GitHub Enterprise gives free versioning (via Git URLs) and access control, but the Fetch API's same-origin policy forces the app to be hosted on GitHub too, since GitHub raw links do not offer CORS relief.
+- Choosing JSON over CMSIS-SVD or IP-XACT reduces parsing to a single JSON.parse() call instead of XML DOMParser handling.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 호스팅 요구사항은 최소입니다. 앱은 정적 번들(GitHub Pages, GitLab Pages, Python 로컬 서버)로 배포됩니다. GitHub Enterprise에 RDF JSON을 호스팅하면 Git URL을 통한 버전 관리와 접근 제어를 무료로 얻지만, Fetch API의 동일 출처 정책 때문에 GitHub raw 링크가 CORS 완화를 제공하지 않아 앱도 GitHub에 함께 호스팅해야 합니다.
+- CMSIS-SVD나 IP-XACT 대신 JSON을 선택함으로써 XML DOMParser 처리 대신 단일 JSON.parse() 호출로 파싱이 가능합니다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- On Europa Clipper, an existing tool (Register Translator) was extended to auto-generate RDF JSON for most FPGA designs; two designs needed ad hoc Python parsers and a shell script composed the top-level Europa Compute Element RDF JSON from FPGA-level files.
+- Hosting JSON in GitHub gives free versioning and access control, but the browser Same-Origin Policy and absent CORS on GitHub raw links force the Regvue app itself to be hosted on GitHub.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Europa Clipper에서는 기존 도구인 Register Translator를 확장하여 대부분의 FPGA 설계에 대한 RDF JSON을 자동 생성했습니다. 두 설계는 임시 Python 파서가 필요했고, 최상위 Europa Compute Element RDF JSON은 셸 스크립트가 FPGA 수준 파일을 조합해 만들었습니다.
+- GitHub에 JSON을 호스팅하면 버전 관리와 접근 제어를 무료로 얻을 수 있지만, 브라우저의 Same-Origin Policy와 GitHub raw 링크의 CORS 미지원 때문에 Regvue 앱 자체도 GitHub에 호스팅해야 합니다.
 
 </div>
 </div>
@@ -115,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Architecturally, the team dropped a Python/Tk Register Explorer and the cefpython embedded-browser approach because of packaging and support problems; for desktop delivery, Tauri (OS web view) is preferred over Electron, which they note ships a 100+ MB Chromium per app, with Tauri described as 1–2 orders of magnitude smaller. A Regvue Desktop prototype reads/writes registers over a UART serial console.
+- Tauri is proposed over Electron for a desktop version because it uses the OS web view and yields apps 1 to 2 orders of magnitude smaller than Electron's 100+MB installs; the paper reports only a working prototype that reads/writes registers over UART, with no measured numbers.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 구조적으로 팀은 Python/Tk 기반 Register Explorer와 cefpython 내장 브라우저 방식을 패키징 및 지원 문제로 포기했습니다. 데스크톱 배포에는 Electron(Chromium 포함으로 앱당 100+ MB) 대신 OS 웹 뷰를 쓰는 Tauri가 선호되며, 설명에 따르면 1~2 자릿수 더 작습니다. Regvue Desktop 프로토타입은 UART 시리얼 콘솔로 레지스터를 읽고 쓸 수 있습니다.
+- 데스크톱 버전에는 Electron 대신 Tauri가 제안되며, OS 웹 뷰를 사용해 Electron의 100+MB 설치 크기보다 1~2 자릿수 작은 앱을 만들 수 있다고 주장합니다. 논문은 UART를 통해 레지스터를 읽고 쓰는 작동 프로토타입만 보고하며, 정량적 수치는 없습니다.
 
 </div>
 </div>
@@ -132,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Register documentation is usually delivered as Word, PDF, or static HTML. These formats cannot decode a register read value into fields, and sharing a specific part requires the document, the section number, and the heading, which the colleague must then navigate to manually.
+- Register documentation is usually static Word, PDF, or HTML, which cannot decode register values into fields or support direct sharing of a specific register or section.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 레지스터 문서는 보통 Word, PDF 또는 정적 HTML로 제공됩니다. 이 형식들은 레지스터 읽기 값을 필드로 디코드할 수 없고, 특정 부분을 공유하려면 문서, 섹션 번호, 제목을 모두 전달해야 하며 수신자는 이를 수동으로 찾아가야 합니다.
+- 레지스터 문서는 보통 Word, PDF, 정적 HTML 형태여서 값을 필드로 디코딩하거나 특정 레지스터·섹션을 직접 공유할 수 없습니다.
 
 </div>
 </div>
@@ -145,12 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The authors (JPL) wanted an interactive register documentation tool and an earlier concept, Register Explorer (live-hardware register peek/poke GUI), motivated the work.
+- The authors' earlier Register Explorer prototypes (Python/Tk, then embedded CEF browser) showed HTML is the right medium, but cefpython packaging across three OSes was unsupported.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 저자들(JPL)은 대화형 레지스터 문서 도구를 원했으며, 실제 하드웨어 레지스터를 조회·기록하는 GUI인 Register Explorer라는 이전 개념이 이 작업의 출발점이었습니다.
+- 저자들의 이전 Register Explorer 프로토타입(Python/Tk, 이후 내장 CEF 브라우저)은 HTML이 적합한 매체임을 보여주었지만, cefpython의 3개 OS 패키징을 지원하기 어려웠습니다.
 
 </div>
 </div>
@@ -160,12 +160,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Input format:** Design-specific data is loaded from JSON files that follow the Register Description Format (RDF), a schema created for Regvue and loosely inspired by CMSIS-SVD. JSON was chosen because JavaScript parses it natively with `JSON.parse()`, whereas XML formats (CMSIS-SVD, IP-XACT) need DOMParser-based handling. RDF files support `include`s, so system-level views can compose chip-level and module-level RDF files.
+- Design-agnostic TypeScript/Vue web app that loads RDF JSON (Register Description Format), inspired by CMSIS-SVD, with a JSON Schema for validation and schema versioning.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **입력 형식:** 설계별 데이터는 Register Description Format(RDF) 를 따르는 JSON 파일로 로드됩니다. RDF는 Regvue를 위해 만든 스키마이며 CMSIS-SVD에서 일부 영감을 얻었습니다. JSON은 JavaScript가 `JSON.parse()`로 기본 파싱하므로 선택되었고, XML 형식(CMSIS-SVD, IP-XACT)은 DOMParser 기반 처리가 필요합니다. RDF는 `include`를 지원하므로 시스템 수준 뷰가 칩 수준과 모듈 수준 RDF 파일을 조합할 수 있습니다.
+- RDF(Register Description Format) JSON을 로드하는 설계 독립적 TypeScript/Vue 웹 앱이며, CMSIS-SVD에서 영감을 받았습니다. JSON Schema로 검증하고 스키마 버전을 관리합니다.
 
 </div>
 </div>
@@ -173,12 +173,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Schema validation:** RDF is described with JSON Schema (draft 2020-12). Regvue validates documents and reports errors to the user; schema versioning is embedded in each document so that breaking changes can be supported alongside older versions.
+- RDF JSON can include other RDF files, enabling system → chip → module views; loading is by URL (preferred) or filesystem (no includes due to Same Origin Policy).
 
 </div>
 <div class="bi-ko" markdown>
 
-- **스키마 검증:** RDF는 JSON Schema(draft 2020-12)로 기술됩니다. Regvue는 문서를 검증하고 오류를 사용자에게 보고하며, 각 문서에 스키마 버전 정보가 포함되어 호환성을 깨는 변경을 이전 버전과 함께 지원할 수 있습니다.
+- RDF JSON은 다른 RDF 파일을 포함할 수 있어 시스템 → 칩 → 모듈 뷰를 구성합니다. 로드는 URL(권장) 또는 파일시스템으로 하며, 파일시스템은 Same Origin Policy 때문에 include를 지원하지 않습니다.
 
 </div>
 </div>
@@ -186,12 +186,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Features:** incremental fuzzy search over names, descriptions, and offsets of blocks, registers, and fields; real-time bidirectional field/register encode/decode; byte-swap toggling for endianness mismatches between hardware and software; enumerated values mapping raw values to symbols (e.g., 0x0 to IDLE); binary/decimal/hex display; multiple resets per field, with unaffected resets shown as "?"; and permalinks that never change.
+- Features: incremental fuzzy search, real-time field/register encode-decode, byte swap, enumerated values, B|D|H bases, multiple/optional resets, and permanent permalinks.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **기능:** 블록, 레지스터, 필드의 이름·설명·오프셋을 대상으로 한 증분형 퍼지 검색, 실시간 양방향 필드/레지스터 인코드·디코드, 하드웨어와 소프트웨어 간 엔디언 불일치를 위한 바이트 스왑 토글, 원시 값을 기호 값으로 매핑하는 열거형 값(예: 0x0 → IDLE), 2진/10진/16진 표시, 필드마다 여러 리셋 지원(영향을 받지 않는 리셋은 "?"로 표시), 변하지 않는 퍼머링크를 제공합니다.
+- 기능: 점진적 퍼지 검색, 실시간 필드/레지스터 인코딩·디코딩, 바이트 스왑, 열거형 값, B|D|H 진법, 다중/선택적 리셋, 퍼머링크.
 
 </div>
 </div>
@@ -199,75 +199,35 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Web app and hosting:** The app is a static deployment; one instance can serve any number of designs via URL. Loading via URL is preferred over the filesystem because only URL loading supports includes. At JPL, the app runs on GitHub Pages and RDF JSON files are stored in GitHub Enterprise repositories, which provides versioning (through the Git URL) and access control. The constraint is that Fetch obeys the same-origin policy, so the app must be co-hosted with the data on GitHub, because GitHub raw links do not provide CORS relaxation.
+- Hosting: static hosting (GitHub Pages, GitLab Pages, or localhost). On Europa Clipper, Register Translator generated RDF JSON for most FPGAs, with ad hoc Python for two designs, and a shell script assembled the ECE top level.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **웹 앱 및 호스팅:** 정적 배포 방식이며, 하나의 인스턴스가 URL을 통해 임의 개수의 설계를 제공할 수 있습니다. URL 로드가 파일시스템 로드보다 선호되는데, include를 지원하는 것은 URL 로드뿐이기 때문입니다. JPL에서는 앱을 GitHub Pages에서 실행하고 RDF JSON 파일은 GitHub Enterprise 저장소에 보관하여 버전 관리(Git URL 기반)와 접근 제어를 얻습니다. 제약은 Fetch가 동일 출처 정책을 따르므로, GitHub raw 링크가 CORS 완화를 제공하지 않는 한 앱과 데이터를 GitHub에 함께 호스팅해야 한다는 점입니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Implementation:** TypeScript (compile-time type checking) and the Vue component framework, where features such as search and the register layout are components.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **구현:** 컴파일 시점 타입 검사를 위한 TypeScript와 Vue 컴포넌트 프레임워크를 사용하며, 검색과 레지스터 레이아웃 등이 컴포넌트로 구현됩니다.
+- 호스팅: 정적 호스팅(GitHub Pages, GitLab Pages, localhost). Europa Clipper에서는 Register Translator가 대부분의 FPGA용 RDF JSON을 생성했고, 두 설계는 ad hoc Python, ECE 최상위는 셸 스크립트로 구성했습니다.
 
 </div>
 </div>
 
 ```mermaid
 flowchart LR
-  A[Register Translator / ad hoc Python] --> B[Module RDF JSON]
-  B --> C[FPGA RDF JSON]
-  C --> D[Top-level ECE RDF JSON via shell script]
-  D --> E[Static host: GitHub Pages]
-  E --> F[Regvue web app loads RDF via URL]
+  A[Register Translator / Python scripts] --> B[RDF JSON modules]
+  B -->|include| C[Chip-level RDF JSON]
+  C -->|include| D[System-level ECE RDF JSON]
+  D -->|URL fetch| E[Regvue web app]
 ```
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Europa Clipper usage:** An in-house tool, Register Translator, was updated to emit RDF JSON and generated it for most FPGA designs. Two designs needed ad hoc Python scripts. The top-level Europa Compute Element (ECE) RDF JSON is produced by a simple shell script that includes the FPGA-level files.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **Europa Clipper 사용:** 기존 사내 도구인 Register Translator를 RDF JSON을 출력하도록 갱신했고, 대부분의 FPGA 설계에 대해 이를 생성했습니다. 두 설계는 임시 Python 스크립트가 필요했습니다. 최상위 Europa Compute Element(ECE) RDF JSON은 FPGA 수준 파일을 include하는 간단한 셸 스크립트로 만들어졌습니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Design history:** A Tk-based Register Explorer proved too hard to implement, especially the register layout view. An HTML/CSS/JS prototype worked well, and embedding it in Tk via cefpython worked, but packaging for three operating systems and cefpython's uneven support were problems. The team therefore moved to a web app.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **설계 이력:** Tk 기반 Register Explorer는 특히 레지스터 레이아웃 뷰 구현이 어려웠습니다. HTML/CSS/JS 프로토타입은 잘 동작했고, cefpython으로 Tk에 내장하는 방식도 동작했지만 세 가지 운영체제용 패키징과 cefpython의 불안정한 지원이 문제였습니다. 이에 팀은 웹 앱으로 방향을 전환했습니다.
-
-</div>
-</div>
 
 ### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Regvue is deployed for Europa Clipper and is being prepared for open-source release under Apache 2.0 and/or MIT, under the NASA-JPL GitHub organization. Release status is described as in progress.
+- Regvue is in use on Europa Clipper; no quantitative metrics (e.g., user counts or time savings) are reported.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Regvue는 Europa Clipper에 배포되었으며, NASA-JPL GitHub 조직을 통해 Apache 2.0 및/또는 MIT 라이선스 오픈소스 공개가 진행 중입니다. 공개 상태는 진행 중으로 기술되어 있습니다.
+- Regvue는 Europa Clipper에서 사용 중이나, 사용자 수나 시간 절감 등 정량적 지표는 보고되지 않았습니다.
 
 </div>
 </div>
@@ -275,12 +235,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Future work targets a desktop version. Electron was rejected because each app ships a full Chromium (100+ MB). Tauri, which uses the OS web view, is described as 1 to 2 orders of magnitude smaller. A working Regvue Desktop prototype reads and writes registers over a UART serial console, but deployment is not yet ready.
+- Open-source release under Apache 2.0 and/or MIT is planned, not completed, under the NASA-JPL GitHub organization.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 향후 과제는 데스크톱 버전입니다. Electron은 앱마다 전체 Chromium을 포함해 100+ MB가 되어 제외되었습니다. OS 웹 뷰를 사용하는 Tauri는 1~2 자릿수 더 작다고 설명됩니다. Regvue Desktop 프로토타입은 UART 시리얼 콘솔로 레지스터를 읽고 쓸 수 있으나, 배포 준비는 아직 완료되지 않았습니다.
+- Apache 2.0 및/또는 MIT 라이선스의 오픈소스 공개가 진행 중이며(NASA-JPL GitHub 조직 하에), 아직 완료되지 않았습니다.
 
 </div>
 </div>
@@ -288,25 +248,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The paper does not report quantitative evaluation (no user study or benchmark numbers).
+- Future work: a desktop version; a Tauri prototype reads and writes registers over UART, but deployment readiness is unresolved."
 
 </div>
 <div class="bi-ko" markdown>
 
-- 본 논문은 정량적 평가(사용자 연구나 벤치마크 수치)를 보고하지 않습니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Truncation note: none; the full document text was provided.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 잘림 여부: 없음. 전체 문서 본문이 제공되었습니다.
+- 향후 과제: 데스크톱 버전. Tauri 프로토타입은 UART로 레지스터 읽기/쓰기가 가능하지만, 배포 준비 상태는 미해결입니다."
 
 </div>
 </div>

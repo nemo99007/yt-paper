@@ -7,14 +7,14 @@ region: US
 year: 2023
 category: Verification
 tags:
-- Fault Simulation
-- Random Instruction Generation
+- Fault Injection
 - RISC-V
-- Safety Verification (ISO 26262)
-- Model-driven Design
+- Random Instruction Generation
+- Safety Verification
+- ISO 26262
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/1069-Automated-Thread-Evaluation-of-Various-RISC-V-Alternatives-using-Random-Instruction-Generators.pdf
-authors: Endri Kaja, Nicolas Gerlin, Dominik Stoffel, Wolfgang Kunz, Wolfgang Ecker (Infineon Technologies AG / TU München / TU Kaiserslautern). 학회명은 본문에 명시되지 않음.
+authors: Endri Kaja (Infineon Technologies AG; Technische Universität Kaiserslautern), Nicolas Gerlin (Infineon Technologies AG; Technische Universität Kaiserslautern), Dominik Stoffel (Technische Universität Kaiserslautern), Wolfgang Kunz (Technische Universität Kaiserslautern), Wolfgang Ecker (Infineon Technologies AG; Technische Universität München)
 youtube_videos:
 - video_id: JD25fcnTAhA
   url: https://www.youtube.com/watch?v=JD25fcnTAhA
@@ -28,11 +28,16 @@ youtube_videos:
 
 # Automated Thread Evaluation of Various RISC-V Alternatives using Random Instruction Generators
 
+<figure class="rep-fig" markdown>
+![Fig. 4: Fault simulation flow](../assets/figures/ref-20261018-273b.png?v=1792378782){ loading=lazy }
+<figcaption>Fig. 4: Fault simulation flow — from the original paper (Endri Kaja et al.)</figcaption>
+</figure>
+
 [:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1069-Automated-Thread-Evaluation-of-Various-RISC-V-Alternatives-using-Random-Instruction-Generators.pdf){ .md-button .md-button--primary target=_blank }
 
 | | |
 |---|---|
-| Authors | Endri Kaja, Nicolas Gerlin, Dominik Stoffel, Wolfgang Kunz, Wolfgang Ecker (Infineon Technologies AG / TU München / TU Kaiserslautern). 학회명은 본문에 명시되지 않음. |
+| Authors | Endri Kaja (Infineon Technologies AG; Technische Universität Kaiserslautern), Nicolas Gerlin (Infineon Technologies AG; Technische Universität Kaiserslautern), Dominik Stoffel (Technische Universität Kaiserslautern), Wolfgang Kunz (Technische Universität Kaiserslautern), Wolfgang Ecker (Infineon Technologies AG; Technische Universität München) |
 | Venue | DVCon US 2023 |
 | Topic | Verification |
 | Type | PAPER |
@@ -43,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**MetaRTL 기반 모델 구동 RTL 생성, MetaFS 결함 시뮬레이션, 랜덤 RISC-V 명령어 생성기를 결합해 여러 RISC-V CPU 변형의 안전성(고장 커버리지)을 저비용으로 자동 평가하는 기법을 제안한 논문.**
+**Combines model-driven fault simulation (MetaFS) with model-driven random RISC-V instruction generation to automatically evaluate fault coverage of RV32IMC, RV32IMC-Exceptions, and RV32IMC-MAC CPU variants, reaching 40%–99% EFI coverage with 300-instruction tests.**
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+**모델 기반 고장 시뮬레이션(MetaFS)과 모델 기반 랜덤 RISC-V 명령어 생성기를 결합하여 RV32IMC, RV32IMC-Exceptions, RV32IMC-MAC CPU 변형의 고장 커버리지를 자동으로 평가하며, 300개 명령어 테스트로 EFI 기준 40%–99% 커버리지를 달성했다.**
 
 </div>
 </div>
@@ -58,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- MetaRTL(모델 기반 RTL 생성)과 MetaFS(모델 기반 결함 주입)를 결합해 CPU 구성 변경 시에도 테스트벤치와 결함 목록을 자동 재생성하는 흐름을 제시함
+- Model-driven fault simulation plus model-driven random RISC-V instruction generation yields EFI fault coverage of 40%–99% at 300 instructions, and the whole campaign set took 1 person-day.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 모델 기반 고장 시뮬레이션과 모델 기반 랜덤 RISC-V 명령어 생성을 결합하면 300개 명령어에서 EFI 고장 커버리지 40%–99%를 얻을 수 있으며, 전체 캠페인은 1 person-day가 소요되었다.
 
 </div>
 </div>
@@ -71,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- EFI(전수 결함 주입)와 SFI(통계적 결함 주입) 캠페인을 같은 프레임워크에서 지원하며, 결함 모델은 stuck-at, SEU, Timing fault를 포함함
+- On RV32IMC, Forwarding Unit faults reach up to 99% coverage at 300 instructions, while ALU coverage does not rise steadily with test length.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- RV32IMC에서 Forwarding Unit 고장은 300개 명령어에서 최대 99% 커버리지에 도달한 반면, ALU 커버리지는 테스트 길이에 따라 꾸준히 증가하지 않았다.
 
 </div>
 </div>
@@ -84,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 랜덤 명령어 길이(100~300)가 고장 커버리지에 영향을 주며, 이 논문에서는 Forwarding Unit 결함이 300개 명령어에서 최대 99% 커버리지에 도달함
+- Random jumps and branches to out-of-bound memory locations leave many fetch-stage faults unsensitized; constraining jumps to in-bound memory is listed as future work.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 범위를 벗어난 메모리 위치로의 랜덤 점프 및 분기로 인해 fetch 단계의 많은 고장이 활성화되지 않았으며, 점프를 범위 내 메모리로 제한하는 것은 향후 과제로 제시되었다.
 
 </div>
 </div>
@@ -97,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 전체 캠페인 수행 노력이 1 person-day로 보고되어, 정형/ATPG/BIST 대비 저오버헤드 접근으로 제시됨. 다만 정량적 비교 실험은 본문에 없음
+- SFI coverage is significantly lower than EFI coverage, indicating that SEU and timing faults have low impact on the selected CPU components.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- SFI 커버리지는 EFI보다 크게 낮아, 선택된 CPU 컴포넌트에서 SEU 및 timing 고장의 영향이 작음을 시사한다.
 
 </div>
 </div>
@@ -110,40 +115,29 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 분기/점프가 메모리 범위를 벗어나 Fetch stage 결함 활성화가 낮다는 한계가 확인되었고, 향후 과제로 제시됨
+- Mixed RTL/gate-level saboteur injection keeps gate-level fault accuracy while enabling fast RTL fault simulation, but the framework is not planned as open source.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- Mixed RTL/gate-level saboteur 주입은 gate-level 고장 정확도를 유지하면서 빠른 RTL 고장 시뮬레이션을 가능하게 하지만, 이 프레임워크는 오픈소스로 공개될 계획이 없다.
 
 </div>
 </div>
 
 ## Detailed Summary
 
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-### 배경 및 문제 정의
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
+### Background and Problem
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 자동차 등 안전 필수(safety-critical) 설계는 ISO 26262 요구에 따라 하드웨어 결함(방사선, 노화, 공정 결함 등)에 대한 검증이 필요하다.
+- Safety-critical RISC-V CPU subsystems (ISO 26262) need fault-coverage evaluation, but ATPG and BIST carry area and performance costs, and manual fault-simulation effort conflicts with shrinking time-to-market.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- ISO 26262를 따르는 safety-critical RISC-V CPU 서브시스템은 고장 커버리지 평가가 필요하지만, ATPG와 BIST는 면적과 성능 비용이 크고, 수동 고장 시뮬레이션 공수는 줄어드는 time-to-market과 충돌한다.
 
 </div>
 </div>
@@ -151,12 +145,27 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 결함 주입(fault injection)은 안전성 평가의 권장 기법이지만, 시간-to-market 압박 속에서 자동화와 낮은 수작업 비용이 요구된다.
+- Existing options are vendor-specific formal tools (Cadence JasperGold FSV, OneSpin) or academic injectors that target simulators or modify HDL code without an end-to-end, model-driven flow.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 기존 방식은 벤더 종속적인 형식 검증 도구(Cadence JasperGold FSV, OneSpin)이거나, 시뮬레이터를 대상으로 하거나 HDL 코드를 수정하는 학계 인젝터이며, 모델 기반의 end-to-end 흐름은 부족하다.
+
+</div>
+</div>
+
+### Architecture and Methodology
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- MetaRTL generates RISC-V variants from a metamodel (Encoding Tree, Instructions, Architectural States, Exceptions). MetaFS (Simulation Controller, Fault List, Fault Analyzer) emits SystemVerilog/C++ testbenches with saboteurs.
+
+</div>
+<div class="bi-ko" markdown>
+
+- MetaRTL은 메타모델(Encoding Tree, Instructions, Architectural States, Exceptions)로부터 RISC-V 변형을 생성한다. MetaFS(Simulation Controller, Fault List, Fault Analyzer)는 saboteur를 포함한 SystemVerilog/C++ testbench를 생성한다.
 
 </div>
 </div>
@@ -164,12 +173,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 기존 방식은 상용 정형 도구(Cadence JasperGold FSV, OneSpin)처럼 벤더 종속적이거나, BIST/ATPG처럼 면적·성능 오버헤드가 크다는 한계가 있다.
+- Mixed-granularity injector: only target components are kept at gate level; saboteur control lines are primary inputs; a formal equivalence check validates the transformation.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- Mixed-granularity 인젝터: 대상 컴포넌트만 gate level로 유지하고, saboteur 제어 라인은 primary input으로 사용하며, formal equivalence check로 변환을 검증한다.
 
 </div>
 </div>
@@ -177,12 +186,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 본 논문은 모델 기반 RTL 생성(MetaRTL)과 모델 기반 결함 시뮬레이션(MetaFS)을 결합하고, 랜덤 RISC-V 명령어 생성기를 입력 자극으로 사용해 여러 RISC-V CPU 구성의 고장 커버리지를 자동으로 평가하는 것을 목표로 한다.
+- Campaigns: EFI (all stuck-at faults), SFI (random stuck-at, SEU, timing), DFI. Outcomes are classified as safe/dangerous and detected/undetected.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 캠페인: EFI(모든 stuck-at 고장), SFI(랜덤 stuck-at, SEU, timing), DFI. 결과는 safe/dangerous 및 detected/undetected로 분류한다.
 
 </div>
 </div>
@@ -190,12 +199,27 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-### 핵심 아키텍처 및 방법론
+- Python random instruction generator with constraints (instruction class, read-after-write dependencies), length, hex/bin output, and data memory start address. Test lengths were 100–300 instructions on a subsystem with SPI, UART, interrupt controller, and bus fabric; only the CPU changes across variants.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- Python 기반 랜덤 명령어 생성기는 명령어 클래스, read-after-write 의존성 제약, 길이, hex/bin 출력, 데이터 메모리 시작 주소를 설정할 수 있다. 테스트 길이는 100–300 명령어였으며, SPI, UART, interrupt controller, bus fabric으로 구성된 서브시스템에서 CPU만 변경하였다.
+
+</div>
+</div>
+
+### Results and Conclusions
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- RV32IMC EFI: Forwarding Unit coverage reaches up to 99% at 300 instructions. Prefetcher shows the steepest rise, plateauing after 250. ALU coverage does not grow steadily, and fetch-stage faults are poorly sensitized by random out-of-bound jumps.
+
+</div>
+<div class="bi-ko" markdown>
+
+- RV32IMC EFI: Forwarding Unit 커버리지는 300개 명령어에서 최대 99%에 도달했다. Prefetcher는 가장 가파르게 상승하며 250개 이후 포화된다. ALU 커버리지는 꾸준히 증가하지 않았고, fetch 단계 고장은 범위를 벗어난 랜덤 점프로 인해 잘 활성화되지 않았다.
 
 </div>
 </div>
@@ -203,35 +227,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-전체 흐름은 다음과 같이 정리할 수 있다.
+- Exceptions and MAC variants give nearly identical EFI results, with slight gains (MAC adds a small ALU increase). Fetch-stage injected faults rise from 4351 to 18936 with the added exception unit.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
-
-</div>
-</div>
-
-```mermaid
-flowchart LR
-    A[MetaRISC 메타모델] --> B[MetaRTL: RISC-V CPU RTL 생성]
-    B --> C[MetaFS: 결함 목록/테스트벤치 생성]
-    D[랜덤 명령어 생성기<br/>길이·제약·파일형식] --> E[CPU 서브시스템 시뮬레이션]
-    C --> E
-    E --> F[골든 시뮬레이션과 비교]
-    F --> G[Safe/Dangerous × Detected/Undetected 분류]
-```
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-1. **MetaRTL 기반 RTL 생성 (Section I, III)**: Python API로 기술된 메타모델(Encoding Tree, Instructions, Architectural States, Exceptions)에서 다양한 RISC-V 변형(RV32IMC, Exceptions 추가, MAC 확장)을 생성한다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
+- Exceptions 및 MAC 변형은 EFI 결과가 거의 동일하며 약간의 향상을 보였다(MAC은 ALU 커버리지를 소폭 증가). Exception unit 추가로 fetch 단계 주입 고장 수는 4351에서 18936으로 증가했다.
 
 </div>
 </div>
@@ -239,12 +240,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-2. **혼합 granularity 결함 주입기 (Section I, Fig. 1)**: 결함 주입 대상 부분만 gate-level로 유지하고 나머지는 RTL로 표현한다. Saboteur 제어선을 Primary Input으로 전파하며, 원본과의 formal equivalence check로 변환 오류를 확인한다.
+- SFI coverage is significantly lower than EFI; the paper gives no per-component SFI numbers in the text.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- SFI 커버리지는 EFI보다 크게 낮으며, 본문에는 컴포넌트별 SFI 수치가 제시되지 않았다.
 
 </div>
 </div>
@@ -252,354 +253,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-3. **MetaFS 결함 시뮬레이션 (Section IV, Fig. 3, 4)**: Simulation Controller가 SFI, EFI, DFI 캠페인을 정의하고, Fault List가 신호와 결함 모델(Sa0, Sa1, BF, TimingFault)을 관리하며, Simulation Analyzer가 Strobe(functional/checker)를 지정한다. SystemVerilog와 C++ 테스트벤치를 자동 생성한다.
+- Overall: 40%–99% coverage with a minimal memory footprint. Future work includes more fault models, bounded jumps, and comparison with commercial and open-source tools. The framework is not planned as open source.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-4. **결과 분류 (Section IV, Fig. 5)**: Safe Undetected, Safe Detected, Dangerous Undetected, Dangerous Detected의 네 범주로 결함을 분류한다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-5. **랜덤 명령어 생성 (Section V)**: 명령어 클래스 제약(예: load, csr만 생성), read-after-write 의존성 제약, 시퀀스 길이, hex/bin 파일 형식, 데이터 메모리 시작 주소를 설정 가능한 파라미터로 제공한다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 검증 대상 서브시스템은 CPU, 프로그램/데이터 메모리, SPI, UART, Interrupt Controller, bus fabric과 bus bridge로 구성된다. CPU만 바꿔가며 세 가지 변형을 비교한다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 결함은 ALU, Forwarding Unit, Prefetcher, Fetch stage에 주입된다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 시뮬레이션은 Cadence Xcelium에서 수행되었다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-### 실험 결과 및 결론
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**EFI 캠페인 (Fig. 6–8)**
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-| 구성 | ALU | Fw Unit | Prefetcher | Fetch stage |
-|---|---|---|---|---|
-| RV32IMC (Fig. 6) | 2555 | 871 | 1873 | 4351 |
-| RV32IMC-Exceptions (Fig. 7) | 2555 | 871 | 1873 | 18936 |
-| RV32IMC-MAC (Fig. 8) | 2555 | 871 | 1873 | 18936 |
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 테스트 길이는 100, 150, 200, 250, 300 명령어를 사용했다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- RV32IMC에서는 ALU 결함을 제외하고 명령어 수가 늘수록 커버리지가 꾸준히 증가했다. Forwarding Unit 결함은 300개 명령어에서 최대 99%에 도달했다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Prefetcher는 가장 가파르게 증가하고 250개 이후 안정화되었다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Fetch stage 결함은 활성화가 낮았는데, 랜덤 점프·분기가 메모리 범위를 벗어나는 것이 원인으로 제시되었다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Exception Unit 추가 시 Fetch stage 주입 결함 수가 4351에서 18936으로 늘었고, 나머지 구성에서는 커버리지가 약간 증가했다(Forwarding Unit은 변화 없음).
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- MAC 확장은 ALU 결함에서 약간의 커버리지 증가를 가져왔다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**SFI 캠페인 (Fig. 9)**
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 테스트 길이 300개에서 stuck-at, SEU, Timing fault를 무작위 위치·시점에 주입했다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- EFI 대비 커버리지가 크게 낮았고, 이는 SEU와 Timing fault가 선택된 컴포넌트에 낮은 영향을 주었음을 의미한다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**결론**
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 논문은 EFI 캠페인에서 300개 명령어 기준 40%~99% 범위의 허용 가능한 고장 커버리지를 얻었다고 보고한다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 전체 캠페인 수행에 1 person-day가 소요되었다고 한다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 향후 과제로 결함 모델 확장, 분기의 메모리 범위 내 제한, 상용·오픈소스 도구와의 비교가 제시되었다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 내부 정책으로 프레임워크는 당분간 오픈소스로 공개되지 않는다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**한계 (엔지니어 관점)**
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 본문에 정량적 비교 대상(다른 도구, 기존 BIST 등)과 통계적 신뢰도(SFI 샘플 수, 신뢰구간) 정보가 없다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- SFI 결과는 그래프로만 제시되어 수치 확인이 어렵다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 학회명과 발표 연도가 본문에 명시되어 있지 않다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
+- 전체적으로 최소 메모리 사용량으로 40%–99% 커버리지를 얻었다. 향후 과제로 더 많은 고장 모델, 범위 내 점프 제약, 상용 및 오픈소스 도구와의 비교가 제시되었다. 프레임워크는 오픈소스로 공개될 계획이 없다.
 
 </div>
 </div>

@@ -19,4 +19,4 @@ resources:
 
 | Paper | Topic | Note |
 |---|---|---|
-| [UVM Acceleration Using Hardware Emulator at Pre-silicon Stage](../papers/ref-20261018-979c-uvm-acceleration-using-hardware-emulator-at-pre-silicon-stag.md) | Verification | - |
+| [UVM Acceleration Using Hardware Emulator at Pre-silicon Stage](../papers/ref-20261018-979c-uvm-acceleration-using-hardware-emulator-at-pre-silicon-stag.md) | Emulation | - |

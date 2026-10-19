@@ -7,14 +7,14 @@ region: US
 year: 2025
 category: Verification
 tags:
-- ISO 26262
 - Formal Verification
-- Diagnostic Coverage
 - Structural Analysis
-- Software SM
+- ISO 26262
+- Diagnostic Coverage
+- AXI Interconnect
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/1046.pdf
-authors: Hyunsun Ahn (Samsung Electronics Co., Ltd.), Euisang Yoon (Siemens EDA), Namyul Cho (Siemens EDA), Arun Gogineni (Siemens EDA), Ann Keffer (Siemens EDA), Sungjin Park (Siemens EDA), Sungyun Yoo (Siemens EDA), Bumju Kim (Samsung Electronics Co., Ltd.), Junhyuk Park (Samsung Electronics Co., Ltd.), Youngsik Kim (Samsung Electronics Co., Ltd.), Seonil Brian Choi (Samsung Electronics Co., Ltd.)
+authors: Hyunsun Ahn (Samsung Electronics), Euisang Yoon (Siemens EDA), Namyul Cho (Siemens EDA), Arun Gogineni (Siemens EDA), Ann Keffer (Siemens EDA), Sungjin Park (Siemens EDA), Sungyun Yoo (Siemens EDA), Bumju Kim (Samsung Electronics), Junhyuk Park (Samsung Electronics), Youngsik Kim (Samsung Electronics), Seonil Brian Choi (Samsung Electronics)
 youtube_videos:
 - video_id: Wvc4rGGUGJg
   url: https://www.youtube.com/watch?v=Wvc4rGGUGJg
@@ -29,7 +29,7 @@ youtube_videos:
 # Static Structural Analysis and Formal Verification of SoC with Software Safety Mechanisms for Functional Safety
 
 <figure class="rep-fig" markdown>
-![Figure 5. Configuration and the operation flow of formal verification, with Questa® Equivalent RTL](../assets/figures/ref-20261018-1733.png?v=1792306677){ loading=lazy }
+![Figure 5. Configuration and the operation flow of formal verification, with Questa® Equivalent RTL](../assets/figures/ref-20261018-1733.png?v=1792378402){ loading=lazy }
 <figcaption>Figure 5. Configuration and the operation flow of formal verification, with Questa® Equivalent RTL — from the original paper (Hyunsun Ahn et al.)</figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ youtube_videos:
 
 | | |
 |---|---|
-| Authors | Hyunsun Ahn (Samsung Electronics Co., Ltd.), Euisang Yoon (Siemens EDA), Namyul Cho (Siemens EDA), Arun Gogineni (Siemens EDA), Ann Keffer (Siemens EDA), Sungjin Park (Siemens EDA), Sungyun Yoo (Siemens EDA), Bumju Kim (Samsung Electronics Co., Ltd.), Junhyuk Park (Samsung Electronics Co., Ltd.), Youngsik Kim (Samsung Electronics Co., Ltd.), Seonil Brian Choi (Samsung Electronics Co., Ltd.) |
+| Authors | Hyunsun Ahn (Samsung Electronics), Euisang Yoon (Siemens EDA), Namyul Cho (Siemens EDA), Arun Gogineni (Siemens EDA), Ann Keffer (Siemens EDA), Sungjin Park (Siemens EDA), Sungyun Yoo (Siemens EDA), Bumju Kim (Samsung Electronics), Junhyuk Park (Samsung Electronics), Youngsik Kim (Samsung Electronics), Seonil Brian Choi (Samsung Electronics) |
 | Venue | DVCon US 2025 |
 | Topic | Verification |
 | Type | PAPER |
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Combines Siemens SafetyScope RFM data-path analysis with Questa Equivalent RTL formal fault proofs to show that software safety mechanisms cover stuck-at faults on a Samsung SoC AXI bus matrix, raising NOC diagnostic coverage in Safety Island from 66.50% to 93.62% toward ASIL-B.**
+**The paper proposes a flow that uses SafetyScope RFM data-path analysis to scope the design and Questa Equivalent RTL formal checks to prove stuck-at-0/1 detectability, so software safety mechanism coverage can be proven without fault simulation, and applies it to a Samsung automotive NOC case that reached 93.62% diagnostic coverage.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**Siemens SafetyScope의 RFM 데이터 경로 분석과 Questa Equivalent RTL 형식 검증 기반 고장 증명을 결합하여, Samsung SoC AXI 버스 매트릭스에서 소프트웨어 안전 메커니즘이 stuck-at 고장을 커버함을 보이고, ASIL-B 목표를 향해 Safety Island의 NOC 진단 커버리지를 66.50%에서 93.62%로 끌어올렸다.**
+**이 논문은 SafetyScope RFM 데이터 경로 분석으로 설계 범위를 좁히고 Questa Equivalent RTL 형식 검증으로 stuck-at-0/1 고장의 검출 가능성을 증명하여, 시뮬레이션 없이 소프트웨어 안전 메커니즘의 커버리지를 입증하는 흐름을 제시하며, 이를 삼성 자동차 NOC 사례에 적용해 93.62%의 진단 커버리지에 도달했음을 보고합니다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Gap analysis, static structural analysis, and formal verification were chained to close residual fault coverage without new fault simulation: NOC detected coverage in Safety Island went 65.87% (partial HW SM) -> 66.50% (full HW SM) -> 89.21% (with engineering judgement, 22.71% safe) -> 93.62% (with software SM, 4.41%).
+- Gap analysis, SafetyScope RFM data-path analysis, and Questa Equivalent RTL SLEC form a pipeline that proves software SM fault coverage before the full software stack exists, without simulation stimulus.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 갭 분석, 정적 구조 분석, 형식 검증을 연결하여 새로운 고장 시뮬레이션 없이 잔여 고장 커버리지를 닫았다. Safety Island NOC의 검출 커버리지는 65.87%(부분 HW SM) -> 66.50%(전체 HW SM) -> 89.21%(엔지니어링 판단 포함, 22.71% safe) -> 93.62%(소프트웨어 SM 4.41% 포함)로 증가했다.
+- Gap analysis, SafetyScope RFM 데이터 경로 분석, Questa Equivalent RTL SLEC로 이어지는 파이프라인은 전체 소프트웨어 스택이 준비되기 전에, 자극(stimulus) 없이 소프트웨어 SM의 고장 커버리지를 증명할 수 있게 합니다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- SafetyScope RFM data-path analysis (backward CHK traversal, forward GEN traversal, intersection, width-based register filtering) reduces the formal scope to a list of data-path nodes, so Questa Equivalent RTL only proves faults on that reduced set instead of the full hierarchy.
+- In the Samsung case, diagnostic coverage for the NOC in the Safety Island rose from 66.50% (fault simulation with fully configured HW SMs) to 89.21% (with engineering judgement) and to 93.62% (with 4.41% added by software SM), against an ASIL-B target.
 
 </div>
 <div class="bi-ko" markdown>
 
-- SafetyScope RFM 데이터 경로 분석(CHK에서의 역방향 순회, GEN에서의 순방향 순회, 교집합, 폭 기반 레지스터 필터링)은 형식 검증 범위를 데이터 경로 노드 목록으로 줄여, Questa Equivalent RTL이 전체 계층이 아닌 축소된 집합의 고장만 증명하도록 한다.
+- 삼성 사례에서 Safety Island NOC의 진단 커버리지는 66.50%(완전 구성된 HW SM 기준 고장 시뮬레이션)에서 89.21%(엔지니어링 판단 포함)로, 소프트웨어 SM이 추가한 4.41%를 더해 93.62%로 상승했으며, 목표는 ASIL-B였습니다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Formal fault proof is a SPEC-vs-IMPL equivalence check where the faulty point is a cut-point driven to 0 or 1; detection points come from the address map and use VALID/READY handshake conditions. Results are Fired (detectable), Proven (not detectable), or Inconclusive.
+- Formal detect points are the AXI port outputs selected by address map, with VALID/READY handshake conditions; a fault is 'Fired' only if it deviates at these points.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 형식 고장 증명은 faulty 지점을 cut-point로 0 또는 1에 구동하는 SPEC 대 IMPL 동치성 검사이다. 검출 지점은 주소 맵에서 정해지며 VALID/READY 핸드셰이크 조건을 사용한다. 결과는 Fired(검출 가능), Proven(검출 불가), Inconclusive(미확정) 중 하나이다.
+- 형식 검증의 detect point는 주소 맵으로 선택된 AXI 포트 출력이며, VALID/READY 핸드셰이크 조건을 사용합니다. 고장은 이 지점에서 편차가 있을 때만 'Fired'로 판정됩니다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Constraints determine result accuracy and runtime: QFL AXI formal assumptions, black-boxing only validated out-of-COI modules, tying unused ports to constants, and correct clock/reset at CDC bridges. Without them the tool may generate spurious packets.
+- Known limitations: ADDRESS-path faults can only be 'Proven' or 'Inconclusive', and handshake (VALID/READY) faults may be undetectable even when reported 'Fired'; accurate results need QFL AXI assumptions, black-boxing of validated modules, tied unused ports, and CDC clock/reset setup.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 제약 조건이 결과 정확도와 실행 시간을 결정한다. QFL AXI 형식 가정, 검증된 모듈만 black-box 처리, 미사용 포트의 상수 고정, CDC 브리지의 올바른 클럭/리셋 설정이 필요하며, 이것이 없으면 도구가 잘못된 패킷을 생성할 수 있다.
+- 알려진 한계: ADDRESS 경로 고장은 'Proven' 또는 'Inconclusive'만 가능하고, VALID/READY 핸드셰이크 고장은 'Fired'로 보고되더라도 검출 불가능할 수 있습니다. 정확한 결과를 위해서는 QFL AXI 가정, 검증된 모듈의 black-box 처리, 미사용 포트 고정, CDC 클록/리셋 설정이 필요합니다.
 
 </div>
 </div>
@@ -115,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Known limits: address-path faults cannot reach the data-port detection point (result is Proven or Inconclusive), and a Fired result on VALID/READY faults does not guarantee the faulty path is detectable. Transient faults can be modeled with sequential assumptions instead of constant forcing.
+- The paper gives no formal runtime, tool comparison, or per-fault proof statistics, and has minor inconsistencies (Residual safe 6.76% in text vs 6.77% in Table 3; software SM coverage cited as 4.47% and 4.41%); transient-fault extension is proposed but not demonstrated.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 알려진 한계: 주소 경로 고장은 데이터 포트 검출 지점에 도달할 수 없어 Proven 또는 Inconclusive로 귀결되며, VALID/READY 고장의 Fired 결과가 해당 경로의 검출 가능성을 보장하지는 않는다. 과도(transient) 고장은 상수 강제 대신 순차 가정으로 모델링할 수 있다.
+- 논문은 형식 검증 런타임, 도구 비교, 고장별 증명 통계를 제시하지 않으며, 사소한 불일치가 있습니다(Residual 안전 판정이 본문 6.76% vs 표 3 6.77%, 소프트웨어 SM 커버리지가 4.47%와 4.41%로 각각 언급). 과도 고장(transient fault) 확장은 제안만 되고 시연되지 않았습니다.
 
 </div>
 </div>
@@ -132,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Fault campaigns for large automotive SoCs are costly. ISO 26262 diagnostic coverage (DC) targets must be met, here ASIL-B for a Samsung automotive project.
+- Fault campaigns on large SoCs are costly; hardware SMs leave coverage gaps that software safety mechanisms (STLs, RAW checks) can fill, but their coverage is hard to prove by simulation when stimulus is difficult to build.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 대형 차량용 SoC의 고장 캠페인은 비용이 크다. ISO 26262 진단 커버리지(DC) 목표를 충족해야 하며, 본 Samsung 차량 프로젝트에서는 ASIL-B가 목표이다.
+- 대형 SoC의 고장 캠페인은 비용이 크고, 하드웨어 SM은 커버리지 공백을 남깁니다. 소프트웨어 안전 메커니즘(STL, RAW 검사)이 이를 메울 수 있지만, 자극을 만들기 어려워 시뮬레이션으로 커버리지를 입증하기가 힘듭니다.
 
 </div>
 </div>
@@ -145,38 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Software safety mechanisms (SMs), implemented as software test libraries (STLs), can be added after tape-out, help ASIL metrics for levels A through D, and save hardware area.
+- Target: ISO 26262 ASIL-B diagnostic coverage for a Samsung automotive SoC, after 6000 randomly sampled faults were simulated.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 소프트웨어 안전 메커니즘(SM), 즉 소프트웨어 테스트 라이브러리(STL)로 구현된 SM은 tape-out 이후에도 추가할 수 있고, ASIL A~D 메트릭에 기여하며, 하드웨어 면적을 절약한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Hardware SMs did not cover all of the AXI bus matrix. The uncovered "gray area" needs software SM coverage.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 하드웨어 SM은 AXI 버스 매트릭스 전체를 커버하지 못했다. 커버되지 않은 "gray area"에 소프트웨어 SM 커버리지가 필요하다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Traditional fault simulation has difficulty preparing input stimuli for software SM coverage claims. The paper therefore proposes proving coverage by static structural analysis and formal verification.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 기존 고장 시뮬레이션은 소프트웨어 SM 커버리지 주장에 필요한 입력 자극을 준비하기 어렵다. 따라서 본 논문은 정적 구조 분석과 형식 검증으로 커버리지를 증명하는 방법을 제안한다.
+- 목표: 삼성 자동차 SoC의 ISO 26262 ASIL-B 진단 커버리지. 6000개의 무작위 샘플링 고장을 시뮬레이션한 이후의 상황입니다.
 
 </div>
 </div>
@@ -186,12 +160,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-The flow has three steps:
+- Three steps: (1) gap analysis on the AXI bus matrix to find areas not covered by HW SMs; (2) SafetyScope RFM data-path analysis (backward/forward traversal from CHK/GEN points, filtered by rfm_filter_width) to shrink the scope to data-path nodes; (3) Questa Equivalent RTL SLEC comparing SPEC (good RTL) and IMPL (faulty RTL with a cut-point forced to 0/1).
 
 </div>
 <div class="bi-ko" markdown>
 
-흐름은 세 단계로 구성된다.
+- 세 단계: (1) AXI 버스 매트릭스에 대한 gap analysis로 HW SM이 커버하지 않는 영역 식별, (2) SafetyScope RFM 데이터 경로 분석(CHK/GEN 지점에서의 역방향/순방향 순회, rfm_filter_width 필터링)으로 데이터 경로 노드 범위 축소, (3) Questa Equivalent RTL SLEC로 SPEC(정상 RTL)과 IMPL(cut-point를 0/1로 강제한 고장 RTL) 비교.
 
 </div>
 </div>
@@ -199,156 +173,21 @@ The flow has three steps:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-1. **Gap analysis**: compare the target fault space with hardware SM coverage to find areas where software SMs are needed.
+- Results are Fired (detectable), Proven (undetectable), or Inconclusive. Detect points are AXI outputs chosen by the address map.
 
 </div>
 <div class="bi-ko" markdown>
 
-1. **갭 분석**: 대상 고장 공간과 하드웨어 SM 커버리지를 비교하여 소프트웨어 SM이 필요한 영역을 찾는다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-2. **Static structural analysis (Siemens SafetyScope, River Flow Mode, RFM)**: data-path coverage assigns SM coverage from a GEN point (data generation) to a CHK point (data consumption). The algorithm is:
-   - traverse backward from CHK and forward from GEN, then take the intersection;
-   - remove covered register/latch banks narrower than `rfm_filter_width`;
-   - repeat for multi-level paths.
-   The remaining logic cone is the data path. In the crossbar, a USER packet (AXI) is converted to a NOC packet and routed to the master, then converted back. The data stays intact along this path, which the algorithm needs.
-
-</div>
-<div class="bi-ko" markdown>
-
-2. **정적 구조 분석(Siemens SafetyScope, River Flow Mode, RFM)**: 데이터 경로 커버리지는 GEN 지점(데이터 생성)에서 CHK 지점(데이터 소비)까지의 전체 데이터 경로에 SM 커버리지를 부여한다. 알고리즘은 다음과 같다.
-   - CHK에서 역방향, GEN에서 순방향으로 순회한 뒤 교집합을 취한다.
-   - `rfm_filter_width`보다 폭이 좁은 커버된 레지스터/래치 뱅크를 제거한다.
-   - 다단계 경로에 대해 반복한다.
-   남은 로직 콘(cone)이 데이터 경로이다. 크로스바에서 USER 패킷(AXI)은 NOC 패킷으로 변환되어 마스터로 라우팅된 뒤 다시 변환된다. 알고리즘에 필요하므로 이 경로에서 데이터는 손상되지 않는다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-3. **Formal verification on the reduced space (Siemens Questa Equivalent RTL, SLEC)**: the normal RTL is compiled as SPEC and the faulty RTL as IMPL. For each fault in the list, the faulty point is set as a cut-point driven to 0 or 1 (stuck-at), the detection points are mapped, and the engine runs. Outcomes:
-   - **Fired**: the fault is detectable, and a counter-example waveform shows it.
-   - **Proven**: the fault is not detectable.
-   - **Inconclusive**: no result within the time limit.
-
-</div>
-<div class="bi-ko" markdown>
-
-3. **축소된 공간에 대한 형식 검증(Siemens Questa Equivalent RTL, SLEC)**: 정상 RTL은 SPEC, 고장 주입 RTL은 IMPL로 컴파일한다. 고장 목록의 각 고장에 대해 faulty 지점을 cut-point로 설정하고 0 또는 1(stuck-at)로 구동하며, 검출 지점을 매핑하고 엔진을 실행한다. 결과는 다음과 같다.
-   - **Fired**: 고장이 검출 가능하며, counter-example 파형이 이를 보여준다.
-   - **Proven**: 고장이 검출 불가능하다.
-   - **Inconclusive**: 제한 시간 내 결과가 없다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Detection points are chosen per the address map. For example, a WDATA fault on the Slave 0 interface is checked at Master 0 using `Master0.WREADY && Master0.WVALID`. Read data uses Slave0 RREADY/RVALID, and address channels use AWREADY/AWVALID or ARREADY/ARVALID. Sideband signals are analyzed the same way.
-
-</div>
-<div class="bi-ko" markdown>
-
-검출 지점은 주소 맵에 따라 정한다. 예를 들어 Slave 0 인터페이스의 WDATA 고장은 `Master0.WREADY && Master0.WVALID`로 Master 0에서 확인한다. 읽기 데이터는 Slave0 RREADY/RVALID를, 주소 채널은 AWREADY/AWVALID 또는 ARREADY/ARVALID를 사용한다. 사이드밴드 신호도 같은 방식으로 분석한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Constraints used:
-
-</div>
-<div class="bi-ko" markdown>
-
-사용한 제약 조건은 다음과 같다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- QFL AXI formal VIP, which forces AXI compliance (for example, stable DATA/ADDRESS while VALID is asserted, and READY behavior).
-
-</div>
-<div class="bi-ko" markdown>
-
-- QFL AXI 형식 VIP로 AXI 준수를 강제한다(VALID 어서트 중 DATA/ADDRESS 고정, READY 동작 등).
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Black-boxing of modules outside the cone of influence, only for validated modules.
-
-</div>
-<div class="bi-ko" markdown>
-
-- COI 밖 모듈을 black-box 처리하되, 검증된 모듈에만 적용한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Unused master/slave ports tied to constants.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 미사용 마스터/슬레이브 포트를 상수에 고정한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Clock and reset settings at clock-domain-crossing points in asynchronous bridges.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 비동기 브리지의 클럭 도메인 교차(CDC) 지점에 클럭과 리셋을 설정한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Limitations: address-path faults cannot reach the data-port detection point, so they resolve to Proven or Inconclusive. Faults on VALID/READY can change the whole transaction, so a Fired result may not mean the path is detectable. The method is limited to data-path protection and a specific sequential depth. Future work includes auto-generating formal setup from the partitioner, creating design cones for RFM, and dynamic formal analysis. Transient faults could be handled with sequential assumptions.
-
-</div>
-<div class="bi-ko" markdown>
-
-한계: 주소 경로 고장은 데이터 포트 검출 지점에 도달할 수 없어 Proven 또는 Inconclusive가 된다. VALID/READY 고장은 전체 트랜잭션을 바꿀 수 있어 Fired 결과가 나와도 해당 경로가 검출 가능하다는 뜻은 아닐 수 있다. 이 방법은 데이터 경로 보호와 특정 순차 깊이로 한정된다. 향후 과제로는 파티셔너에서 형식 검증 설정을 자동 생성하고, RFM용 설계 콘을 만들고, 동적 형식 분석을 탐구하는 것이 있다. 과도 고장은 순차 가정으로 처리할 수 있다.
+- 결과는 Fired(검출 가능), Proven(검출 불가), Inconclusive(판정 불가) 중 하나이며, detect point는 주소 맵으로 선택된 AXI 출력입니다.
 
 </div>
 </div>
 
 ```mermaid
 flowchart LR
-  A[Gap analysis: uncovered HW SM areas] --> B[SafetyScope RFM: GEN-CHK data path]
-  B --> C[Reduced node list]
-  C --> D[Questa SLEC: SPEC vs IMPL, stuck-at-0/1 cut-point]
-  D --> E{Result}
-  E -->|Fired| F[Detectable]
-  E -->|Proven| G[Not detectable]
-  E -->|Inconclusive| H[Unresolved]
+  A[Gap analysis] --> B[SafetyScope RFM data-path scope]
+  B --> C[Questa SLEC: SPEC vs IMPL per fault]
+  C --> D{Fired / Proven / Inconclusive}
 ```
 
 ### Results and Conclusions
@@ -356,12 +195,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-Fault campaign (6000 statistically random-sampled faults, fully configured SMs, Table 2): Alarm Detected 66.50%, Residual 11.33%, No Deviation 13.57%, Not Injected 8.60%.
+- Fault simulation (66.50% detected) plus judgement (22.71% judged safe) reached 89.21%; the uncovered gray area was 4.88%, of which 4.41% was covered by RAW-based software SM, giving 93.62%.
 
 </div>
 <div class="bi-ko" markdown>
 
-고장 캠페인(무작위 샘플링한 6000개 고장, 전체 구성 SM, 표 2): Alarm Detected 66.50%, Residual 11.33%, No Deviation 13.57%, Not Injected 8.60%.
+- 고장 시뮬레이션(66.50% 검출)에 엔지니어링 판단(22.71% 안전 판정)을 더해 89.21%에 도달했고, 미해결 회색 영역 4.88% 중 RAW 기반 소프트웨어 SM이 4.41%를 커버하여 93.62%가 되었습니다.
 
 </div>
 </div>
@@ -369,12 +208,12 @@ Fault campaign (6000 statistically random-sampled faults, fully configured SMs, 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Engineering judgement covered 33.50% of the not-detected faults. Safe judgements were 6.76% (Residual) and 15.95% (No Deviation), so 22.71% in total. About 11% stayed conservatively unsafe (Table 3 lists 4.57% and 6.22%).
+- Flash-resident fault paths were excluded because RAW SM could not apply there.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 엔지니어링 판단은 미검출 고장의 33.50%를 대상으로 했다. Safe 판정은 Residual 6.76%, No Deviation 15.95%로 합계 22.71%이다. 약 11%는 보수적으로 unsafe로 남았다(표 3에는 4.57%와 6.22%로 기재).
+- RAW SM을 적용할 수 없는 flash 메모리 영역의 고장 경로는 대상에서 제외되었습니다.
 
 </div>
 </div>
@@ -382,38 +221,12 @@ Fault campaign (6000 statistically random-sampled faults, fully configured SMs, 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Gap analysis of the Not Safe faults found a 4.88% gray area that hardware SMs could not cover. The RAW (read-after-write) software SM with STL covered 4.47% in proposal. Flash-located fault paths were excluded because RAW could not be applied there. Structural analysis and formal verification confirmed 4.41%.
+- The paper concludes the method enables early proof of SM coverage, but it lacks runtime data and extensions (control path, transient faults) are only proposed.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Not Safe 고장에 대한 갭 분석에서 하드웨어 SM이 커버하지 못한 4.88% gray area를 찾았다. STL 기반 RAW(read-after-write) 소프트웨어 SM은 제안 기준 4.47%를 커버했다. Flash 영역에 위치한 고장 경로는 RAW를 적용할 수 없어 제외했다. 정적 구조 분석과 형식 검증으로 4.41%가 확인되었다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Final NOC coverage in Safety Island is 93.62% (Table 4). The ASIL-B target needed about 3% more, with a margin of error of 1.06%.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Safety Island NOC의 최종 커버리지는 93.62%이다(표 4). ASIL-B 목표를 위해 약 3%가 더 필요했으며, 오차 한계(MOE)는 1.06%이다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-The authors conclude that combining static and dynamic analysis reaches the targeted ASIL goals, without a full traditional fault simulation for the software SM part. Future integration with Siemens functional safety tools is planned, with all static and dynamic analysis, including engineering judgement, managed in one database and automated for final metrics. The paper is a case study on one bus matrix and one SM type, so generality is not demonstrated.
-
-</div>
-<div class="bi-ko" markdown>
-
-저자들은 정적 분석과 동적 분석을 결합하여 소프트웨어 SM 부분에서 전통적인 전체 고장 시뮬레이션 없이도 ASIL 목표를 달성했다고 결론짓는다. 향후 Siemens 기능 안전 도구에 통합할 계획이며, 엔지니어링 판단을 포함한 모든 정적/동적 분석을 단일 데이터베이스에서 관리하고 최종 메트릭을 자동 보고하는 것이 목표이다. 본 논문은 하나의 버스 매트릭스와 하나의 SM 유형에 대한 사례 연구이므로 일반성은 입증되지 않았다.
+- 논문은 이 방법이 SM 커버리지를 조기에 증명할 수 있다고 결론짓지만, 런타임 데이터가 없으며 제어 경로나 과도 고장으로의 확장은 제안 수준입니다.
 
 </div>
 </div>

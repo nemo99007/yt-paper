@@ -11,7 +11,7 @@ tags:
 - Fault Injection
 - Emulation
 - Diagnostic Coverage
-- Veloce
+- FuSa DB
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/1040.pdf
 authors: Andrey Likhopoy (Samsung Electronics), Sangkyu Park (Samsung Electronics), Hyeonuk Noh (Samsung Electronics), Wonil Cho (Samsung Electronics), Inhwan Kim (Siemens EDA), Robert Serphillips (Siemens EDA), Chanjin Kim (Siemens EDA), Justin Lee (Siemens EDA), James Kim (Siemens EDA), Sougata Bhattacharjee (Samsung Semiconductor India Research), Gulshan Kumar Sharma (Samsung Semiconductor India Research), Akshaya Kumar Jain (Samsung Semiconductor India Research)
@@ -29,7 +29,7 @@ youtube_videos:
 # Functional Safety Workflow of Internal IP (NPU) Within Large Automotive IC Through Analysis and Emulation Usage for SW-based Safety Mechanisms
 
 <figure class="rep-fig" markdown>
-![Figure 2. Fault campaign using an emulation flow.](../assets/figures/ref-20261018-fef8.png?v=1792308991){ loading=lazy }
+![Figure 2. Fault campaign using an emulation flow.](../assets/figures/ref-20261018-fef8.png?v=1792378578){ loading=lazy }
 <figcaption>Figure 2. Fault campaign using an emulation flow. — from the original paper (Andrey Likhopoy et al.)</figcaption>
 </figure>
 
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**The paper presents an ISO 26262 functional-safety fault campaign for an automotive NPU's SW-based safety mechanisms, run on Siemens Veloce emulation with runtime pruning and UU-case analysis, reaching the ASIL B diagnostic coverage target (91.21% with margin).**
+**A Samsung/Siemens EDA case study that runs an emulation-based (Veloce) fault campaign on SW-based safety mechanisms of an automotive NPU, using UU-triage and runtime optimizations to reach the ASIL B diagnostic coverage target, with SM3 final DC at 91.49%.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**이 논문은 자동차 NPU의 SW 기반 안전 메커니즘에 대해 Siemens Veloce 에뮬레이션으로 수행한 ISO 26262 기능 안전 fault campaign을 제시하며, 런타임 가지치기와 UU 케이스 분석을 통해 ASIL B 진단 커버리지 목표(마진 포함 91.21%)를 달성했다.**
+**Samsung과 Siemens EDA의 사례 연구로, 자동차 NPU의 SW 기반 안전 메커니즘에 대해 에뮬레이션(Veloce) 기반 fault campaign을 수행하고 UU 트리아지 및 런타임 최적화를 적용하여 ASIL B 진단 커버리지 목표를 달성했으며, SM3의 최종 DC는 91.49%이다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Pre-injection and runtime pruning drive FC turnaround: FIN count is 2N for N fault nets (SA0/SA1), then dead logic, memories with no read ports, and FIN=FDN faults are optimized out; state save/restore before the trigger, parallel Check Runs, and early termination on DO cases cut runtime.
+- The emulation-based fault campaign on SM3 (self-test) reached a final DC of 91.49% against the 91.21% ASIL B target (1.21% margin on 90%), using a final suite of 30 optimized test scenarios.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 사전 주입 및 런타임 가지치기가 FC 소요 시간을 줄인다. FIN 개수는 N개의 fault net에 대해 2N(SA0/SA1)이며, 이후 dead logic, 읽기 포트가 없는 메모리, FIN=FDN fault를 최적화로 제거한다. 트리거 이전 상태 save/restore, Check Run 병렬 실행, DO 케이스의 early termination으로 런타임을 줄인다.
+- SM3(자가 테스트)에 대한 에뮬레이션 기반 fault campaign은 ASIL B 목표 91.21%(90%에 1.21% 마진)에 대해 최종 DC 91.49%를 달성했으며, 최적화된 테스트 시나리오 30개로 구성된 최종 세트를 사용했다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- UU analysis and test-scenario iteration are the main DC levers: PU0 DO share rose from 36.70% to 90.26% over 5 iterations and PU2 from 38.29% to 81.96% over 8 iterations.
+- Pre-injection pruning (Deadlogic, memory with no read ports, FIN=FDN) and early termination on DO cases cut the Check Run count; the raw fault list is 2N because SA0 and SA1 are both injected, and only permanent faults are covered.
 
 </div>
 <div class="bi-ko" markdown>
 
-- UU 분석과 test scenario 반복이 DC를 끌어올리는 핵심 수단이다. PU0의 DO 비율은 5회 반복에서 36.70%에서 90.26%로, PU2는 8회 반복에서 38.29%에서 81.96%로 상승했다.
+- 주입 전 가지치기(Deadlogic, 읽기 포트 없는 메모리, FIN=FDN)와 DO 케이스에 대한 조기 종료로 Check Run 수를 줄였다. SA0과 SA1을 모두 주입하므로 원시 fault list는 2N이며, 영구 고장(permanent fault)만 다룬다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Test scenarios for FC should mirror functional-verification scenarios rather than SW scenarios, since SW does not exercise all IP features; useful patterns include MSB-only/all-ones data, one LUT active at a time, mixed-sign MAC outputs, and 0/all-1 register write-read checks.
+- UU analysis is the main DC lever: PU0 DO rose from 36.70% to 90.26% over five iterations, and PU2 DO from 38.29% to 81.96% over eight, driven by Fast Triage waveform diffs, formal COI, and expert-judged safe faults.
 
 </div>
 <div class="bi-ko" markdown>
 
-- FC용 test scenario는 SW 시나리오가 아니라 기능 검증 시나리오를 기반으로 해야 한다. SW 시나리오는 IP 기능을 모두 활용하지 않기 때문이다. 유용한 패턴으로는 MSB만 1인 데이터와 all-1 데이터, 한 번에 하나의 LUT만 활성화, 부호가 섞인 MAC 출력, 레지스터에 0과 all-1을 쓰고 읽기 등이 있다.
+- UU 분석이 DC 향상의 핵심 수단이다. PU0의 DO는 5회 반복에 걸쳐 36.70%에서 90.26%로, PU2의 DO는 8회 반복에 걸쳐 38.29%에서 81.96%로 상승했으며, 이는 Fast Triage 파형 비교, 형식 검증 기반 COI, 전문가 판단에 의한 safe fault 분류에 따른 결과이다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Safe-fault classification relies on formal COI analysis plus expert judgement (spec-out, debug, clock-gating, invalid-range, performance faults); these must be justified per fault because they directly raise the reported DC.
+- Test-scenario heuristics such as intermediate values over extremes, bypassing non-target LUTs, zero-crossing MAC outputs, and 0/all-1 register sweeps improve single-bit fault observability.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Safe fault 분류는 형식 검증 기반 COI 분석과 전문가 판단(spec-out, debug, clock-gating, invalid-range, performance fault)에 의존한다. 이 분류는 보고되는 DC를 직접 높이므로 fault별 근거가 필요하다.
+- 비대상 LUT 우회, 0/all-1 레지스터 스윕 등 극단값 대신 중간값을 사용하고 MAC 출력에 부호 전환을 주는 테스트 시나리오 기법은 단일 비트 고장의 관측성을 높인다.
 
 </div>
 </div>
@@ -115,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Final results: SM3 self-test reaches 91.49% total DC (target 91.21%), and SM1/SM2 CPU reaches 61.13% (target 60%); however, the MEM block's final DC of 83.92% is below its 90% expected value, which the paper does not discuss.
+- Block-level margins are uneven: MEM ended at 83.92% against a 90% expected DC and CPU logic at 60.98% depends on ARM-provided STL, so the total pass relies on FIT-weighted averaging and deferred UU analysis.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 최종 결과로 SM3 self-test는 전체 DC 91.49%(목표 91.21%), SM1/SM2 CPU는 61.13%(목표 60%)를 달성했다. 다만 MEM 블록의 최종 DC 83.92%는 기대값 90%에 미치지 못하며, 논문에서는 이를 다루지 않는다.
+- 블록별 마진은 불균일하다. MEM은 예상 DC 90%에 못 미치는 83.92%로 종료되었고, CPU logic은 60.98%이며 ARM 제공 STL에 의존한다. 따라서 전체 통과 여부는 FIT 가중 평균과 보류된 UU 분석에 좌우된다.
 
 </div>
 </div>
@@ -132,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Under ISO 26262, hazards are rated by ASIL (S, E, C). For ASIL B, SPFM must be at least 90%. Diagnostic coverage (DC) is the fraction of failures detected by a safety mechanism (SM).
+- ISO 26262 ASIL B requires SPFM ≥90%; the NPU goal was DC ≥90% plus a 1.21% error margin, i.e. ≥91.21%.
 
 </div>
 <div class="bi-ko" markdown>
 
-- ISO 26262에서는 위험을 ASIL(S, E, C)로 등급화하며, ASIL B의 경우 SPFM이 90% 이상이어야 한다. 진단 커버리지(DC)는 안전 메커니즘(SM)이 검출한 고장의 비율이다.
+- ISO 26262 ASIL B는 SPFM ≥90%를 요구하며, 이 NPU의 목표는 1.21% 오차 마진을 포함한 DC ≥91.21%였다.
 
 </div>
 </div>
@@ -145,12 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The fault campaign (FC) is limited by fault-injection runtime and data management over the campaign.
+- Memory SMs (parity/ECC, SM9–SM13) were already covered by simulation, while logic-side SW-based SMs (CPU STL, self-test SM3, WDT) needed a faster fault campaign for a large design.
 
 </div>
 <div class="bi-ko" markdown>
 
-- fault campaign(FC)은 fault injection 런타임과 캠페인 전반의 데이터 관리에 의해 제약을 받는다.
+- 메모리 SM(parity/ECC, SM9–SM13)은 이미 시뮬레이션으로 검증되었으나, 로직 측 SW 기반 SM(CPU STL, self-test SM3, WDT)은 대규모 설계에 맞는 더 빠른 fault campaign이 필요했다.
 
 </div>
 </div>
@@ -158,38 +158,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The target is an NPU IP (PU0, PU1, PU2, MEM, CTRL) inside an automotive SoC that performs safe video sensing. Faults are reported to the Safety Island FMU.
+- Test scenarios must reach high DC yet stay short enough to double as field tests.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 대상은 자동차 SoC 내부의 NPU IP(PU0, PU1, PU2, MEM, CTRL)로, 안전한 비디오 센싱을 수행한다. 고장 정보는 Safety Island의 FMU로 보고된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Memory SMs (parity/ECC, SM9–SM13) were verified by simulation. This paper covers the SW-based SMs (SM1/SM2 CPU ECC/STL, SM3 self-test) using emulation.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 메모리 SM(parity/ECC, SM9–SM13)은 시뮬레이션으로 검증되었다. 본 논문은 에뮬레이션을 사용해 SW 기반 SM(SM1/SM2 CPU ECC/STL, SM3 self-test)을 다룬다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Targets: DC of 90% plus a 1.21% margin, so at least 91.21%. Expected DC per block was allocated from FIT-rate distribution. SM3 covers all blocks; SM1/SM2 cover the CPU at 60%.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 목표: 90%에 1.21% 마진을 더한 DC, 즉 최소 91.21%. 블록별 기대 DC는 FIT rate 분포를 기준으로 배분했다. SM3는 모든 블록을 커버하며, SM1/SM2는 CPU를 60% 목표로 커버한다.
+- 테스트 시나리오는 높은 DC를 달성해야 하면서도 현장 테스트로 재사용할 수 있을 만큼 짧아야 한다.
 
 </div>
 </div>
@@ -199,131 +173,64 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-Flow: SafetyScope fault list, RTL, and fault detection nets (FDN) feed Compile DB, which stores the fault list in the FuSa DB. Veloce compilation produces the fault injection nets (FIN). Veloce Fault App runs injection, and results return to the FuSa DB for ASIL/FMEDA metrics.
+- Siemens closed-loop flow: SafetyScope fault list and fault detection nets (FDNs) feed Compile DB and the single FuSa DB, then Veloce runs the Golden Run and parallel Check Runs with SA0/SA1 injection.
 
 </div>
 <div class="bi-ko" markdown>
 
-흐름: SafetyScope fault list, RTL, fault detection net(FDN)이 Compile DB에 입력되고, Compile DB는 fault list를 FuSa DB에 저장한다. Veloce 컴파일은 fault injection net(FIN)을 생성한다. Veloce Fault App이 주입을 수행하고, 결과는 ASIL/FMEDA 지표 산출을 위해 FuSa DB로 되돌아간다.
+- Siemens 폐루프 흐름: SafetyScope의 fault list와 fault detection net(FDN)을 Compile DB와 단일 FuSa DB로 연결하고, Veloce에서 Golden Run과 SA0/SA1 주입 병렬 Check Run을 수행한다.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- Outcomes are classified DO, DU, UO, UU. Runtime cuts include pruning optimized nets, saving and restoring the initial state before trigger, and early termination on DO.
+
+</div>
+<div class="bi-ko" markdown>
+
+- 결과는 DO, DU, UO, UU로 분류된다. 런타임 절감 기법으로는 최적화된 net 제거, trigger 이전 초기 상태 저장 및 복원, DO 시 조기 종료가 있다.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- UU triage uses Fast Triage waveform diffs, Codelink configuration checks (ECC, parity, WDT), read-transition checks, formal COI, and expert judgement (spec-out, debug, power, configuration, performance faults).
+
+</div>
+<div class="bi-ko" markdown>
+
+- UU 트리아지는 Fast Triage 파형 차이 비교, Codelink 설정 점검(ECC, parity, WDT), read-transition 점검, 형식 검증 기반 COI, 전문가 판단(spec-out, debug, power, configuration, performance 고장)을 사용한다.
 
 </div>
 </div>
 
 ```mermaid
 flowchart LR
-  A[SafetyScope fault list + RTL + FDN] --> B[Compile DB / FuSa DB]
-  B --> C[Veloce compile: FIN + optimization]
-  C --> D[Golden Run: record FDN]
-  D --> E[Check Run per fault, parallel]
-  E --> F{Classify DO / DU / UO / UU}
-  F -->|UU| G[UU analysis: Fast Triage, Config check, Read check]
-  G --> H[Update test scenarios / Safe classification]
-  H --> E
-  F -->|Done| I[Merge, DC and FMEDA]
+  A[Fault list + FDNs] --> B[Compile DB / FuSa DB]
+  B --> C[Golden Run]
+  C --> D[Check Runs SA0/SA1]
+  D --> E{UU remaining?}
+  E -- yes --> F[Triage, expert judgement, new scenarios]
+  F --> D
+  E -- no --> G[DC / FMEDA]
 ```
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Permanent faults only (SA0/SA1). Fault count is 2N for N nets.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 영구 고장(SA0/SA1)만 고려한다. fault 개수는 net당 2개씩이므로 2N이다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Pre-injection pruning: Deadlogic (no fanout reader), memory with no read ports, and FinAndFdn faults. Vector Analysis removes constant nodes.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 주입 전 가지치기: Deadlogic(fanout reader 없음), 읽기 포트가 없는 메모리, FinAndFdn fault. Vector Analysis는 상수 노드를 제거한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Golden Run records FDN values. Each Check Run is compared against the reference. Outcomes are DO, DU, UO, UU. The DUT state before the trigger is saved and restored to skip initialization. Early termination applies once the alarm and observe nets resolve.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Golden Run은 FDN 값을 기록한다. 각 Check Run은 이 기준값과 비교된다. 결과는 DO, DU, UO, UU로 분류된다. 트리거 이전의 DUT 상태를 저장하고 복원하여 초기화 시간을 생략한다. alarm 및 observe net이 결정되면 early termination을 적용한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- DC accounting: the numerator is DU + DO + compile-optimized items (dead logic, no port in memory, FIN=FDN) + COI + Safe. The denominator is the fault list minus the compile-optimized FIN=FDN items.
-
-</div>
-<div class="bi-ko" markdown>
-
-- DC 계산: 분자는 DU + DO + 컴파일 최적화 항목(dead logic, 메모리 읽기 포트 없음, FIN=FDN) + COI + Safe의 합이다. 분모는 전체 fault list에서 컴파일 최적화된 FIN=FDN 항목을 뺀 값이다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Test-scenario guidelines: model the CPU-driven flow (WDT, CMNS, CRC compare, alarm_pass/fail/hang). Use functional-verification scenarios as the base, since they cover more IP features. Use intermediate values instead of extremes so a single-bit change is not saturated. Activate one LUT at a time. Create MAC outputs with mixed sign. For registers, write and read back 0 and all-1.
-
-</div>
-<div class="bi-ko" markdown>
-
-- test scenario 가이드라인: CPU 주도 흐름(WDT, CMNS, CRC 비교, alarm_pass/fail/hang)을 모델링한다. 더 많은 IP 기능을 커버하는 기능 검증 시나리오를 기반으로 한다. 극단값 대신 중간값을 사용해 1비트 변화가 포화되지 않도록 한다. LUT는 한 번에 하나만 활성화한다. MAC 출력은 부호가 섞이도록 만든다. 레지스터는 0과 all-1을 쓰고 읽어 검사한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- UU debugging: Fast Triage compares Golden and Check waveforms along the FIN-to-alarm/observe path. Configuration check uses Codelink to verify ECC/parity/WDT enables against synchronized SW and waveform. Read-transition check confirms whether memory reads occur (enable and address).
-
-</div>
-<div class="bi-ko" markdown>
-
-- UU 디버깅: Fast Triage는 FIN에서 alarm/observe 경로까지 Golden과 Check 파형을 비교한다. Configuration check는 Codelink로 SW 및 동기화된 파형을 함께 보며 ECC/parity/WDT 활성화 여부를 확인한다. Read-transition check는 enable과 address로 메모리 읽기 발생 여부를 확인한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Safe classification: formal COI analysis for faults outside the cone of influence. Expert judgement covers spec-out, debug, clock-gating (power), invalid-range (configuration), and performance faults.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Safe 분류: COI 밖의 고장은 형식 검증 기반 COI 분석으로 처리한다. 전문가 판단은 spec-out, debug, clock-gating(전력), invalid-range(설정), performance 고장을 대상으로 한다.
-
-</div>
-</div>
 
 ### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- PU2 needed 8 iterations. PU0 went from 36.70% DO after the first iteration to 90.26% after the fifth.
+- SM3 final DC is 91.49% (expected 91.41%) across PU0, PU1, MEM, PU2, CTRL, and PERI; CTRL reached 63.38% versus 60% expected, but MEM reached 83.92% versus 90% expected.
 
 </div>
 <div class="bi-ko" markdown>
 
-- PU2는 8회 반복이 필요했다. PU0는 첫 반복의 DO 36.70%에서 다섯 번째 반복에서 90.26%로 상승했다.
+- SM3 최종 DC는 91.49%(예상 91.41%)이며, PU0, PU1, MEM, PU2, CTRL, PERI에 걸쳐 산출되었다. CTRL은 예상 60%에 대해 63.38%를 달성했으나, MEM은 예상 90%에 대해 83.92%에 그쳤다.
 
 </div>
 </div>
@@ -331,12 +238,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- SM3 final DC (expected in parentheses): PU0 96.44 (96), PU1 96.44 (96), MEM 83.92 (90), PU2 86.43 (80), CTRL 63.38 (60), PERI 81.82 (80). Total 91.49% (expected 91.41%).
+- CPU SM1/SM2 final DC is 61.13% (CPU memory 89.63%, CPU logic 60.98%); remaining UU cases are deferred because ARM provides a limited scenario set.
 
 </div>
 <div class="bi-ko" markdown>
 
-- SM3 최종 DC(괄호 안은 기대값): PU0 96.44(96), PU1 96.44(96), MEM 83.92(90), PU2 86.43(80), CTRL 63.38(60), PERI 81.82(80). 전체 91.49%(기대값 91.41%).
+- CPU SM1/SM2의 최종 DC는 61.13%이다(CPU memory 89.63%, CPU logic 60.98%). ARM이 제공하는 시나리오 수가 제한적이므로 잔존 UU 케이스는 추후 과제로 남겼다.
 
 </div>
 </div>
@@ -344,38 +251,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The MEM block's final DC is below its 90% expected value. The paper does not discuss this gap.
+- The paper reports no emulation runtime figures, and the iteration gains are shown only as DO percentages.
 
 </div>
 <div class="bi-ko" markdown>
 
-- MEM 블록의 최종 DC는 기대값 90%에 미치지 못한다. 논문은 이 차이를 다루지 않는다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- SM1/SM2 (CPU): memory 89.63% (expected 90), logic 60.98% (60). Total 61.13% (expected 60.31%). ARM provided limited test scenarios, so further UU analysis is planned as future work.
-
-</div>
-<div class="bi-ko" markdown>
-
-- SM1/SM2(CPU): 메모리 89.63%(기대값 90), 로직 60.98%(60). 전체 61.13%(기대값 60.31%). ARM이 제공한 시나리오가 제한적이어서 추가 UU 분석은 향후 과제로 남겼다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The final SM3 suite has 30 optimized test scenarios. The paper states that the 91.21% ASIL B target was achieved with SW-based SMs using emulation. Runtime optimization of the scenarios is left for future work.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 최종 SM3 스위트는 최적화된 30개의 test scenario로 구성된다. 논문은 에뮬레이션 기반 SW 안전 메커니즘으로 ASIL B 목표인 91.21%를 달성했다고 밝힌다. 시나리오 런타임 최적화는 향후 과제다.
+- 논문은 에뮬레이션 런타임 수치를 보고하지 않으며, 반복별 개선 효과는 DO 비율로만 제시된다.
 
 </div>
 </div>

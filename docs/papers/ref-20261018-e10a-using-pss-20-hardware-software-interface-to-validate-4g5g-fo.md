@@ -7,14 +7,14 @@ region: US
 year: 2022
 category: Verification
 tags:
-- PSS 2.0
+- PSS
 - HSI
+- Emulation
 - UVM
 - FEC
-- Emulation
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/Using-Portable-Stimulus-Standards-Hardware-Software-Interface-PSS-HSI-to-validate-4G5G-Forward-Error-Correction-EncoderDecoder-IP-in-emulatio.pdf
-authors: Vinit Shenoy (Intel Technology India Pvt Ltd, Bangalore), Suresh Vasu (Intel Technology India Pvt Ltd, Bangalore), Nithin Venkatesh (Intel Technology India Pvt Ltd, Bangalore), Suhas Reddy (Intel Technology India Pvt Ltd, Bangalore), Joydeep Maitra (Intel Technology India Pvt Ltd, Bangalore), Luis Campos (Intel Corporation, Santa Clara)
+authors: Vinit Shenoy, Suresh Vasu, Nithin Venkatesh, Suhas Reddy, Joydeep Maitra (Intel Technology India Pvt Ltd, Bangalore), Luis Campos (Intel Corporation, Santa Clara)
 youtube_videos:
 - video_id: 9xuC8uR_lGc
   url: https://www.youtube.com/watch?v=9xuC8uR_lGc
@@ -29,7 +29,7 @@ youtube_videos:
 # Using PSS-2.0 Hardware-Software Interface to validate 4G/5G Forward Error Correction Encoder/Decoder IP in Emulation & Silicon
 
 <figure class="rep-fig" markdown>
-![Figure 2: PSS HSI based development flow](../assets/figures/ref-20261018-e10a.png?v=1792310716){ loading=lazy }
+![Figure 2: PSS HSI based development flow](../assets/figures/ref-20261018-e10a.png?v=1792379690){ loading=lazy }
 <figcaption>Figure 2: PSS HSI based development flow — from the original paper (Vinit Shenoy et al.)</figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ youtube_videos:
 
 | | |
 |---|---|
-| Authors | Vinit Shenoy (Intel Technology India Pvt Ltd, Bangalore), Suresh Vasu (Intel Technology India Pvt Ltd, Bangalore), Nithin Venkatesh (Intel Technology India Pvt Ltd, Bangalore), Suhas Reddy (Intel Technology India Pvt Ltd, Bangalore), Joydeep Maitra (Intel Technology India Pvt Ltd, Bangalore), Luis Campos (Intel Corporation, Santa Clara) |
+| Authors | Vinit Shenoy, Suresh Vasu, Nithin Venkatesh, Suhas Reddy, Joydeep Maitra (Intel Technology India Pvt Ltd, Bangalore), Luis Campos (Intel Corporation, Santa Clara) |
 | Venue | DVCon US 2022 |
 | Topic | Verification |
 | Type | PAPER |
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Intel 팀은 PSS 2.0의 Hardware-Software Interface(HSI)를 사용해 4G/5G FEC encoder/decoder IP용 테스트 콘텐츠를 하나의 모델로 작성하고, 이를 UVM 기반 IP 환경과 embedded core 기반 emulation/silicon 환경에 재사용하는 방법을 제시한다.**
+**Intel describes deploying PSS-2.0 Hardware-Software Interface (HSI) register sequences to write one driver-style test model that runs on UVM/APB in simulation and on embedded cores in emulation and silicon, for a 4G/5G FEC encoder/decoder IP.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**Intel 팀은 PSS 2.0의 Hardware-Software Interface(HSI)를 사용해 4G/5G FEC encoder/decoder IP용 테스트 콘텐츠를 하나의 모델로 작성하고, 이를 UVM 기반 IP 환경과 embedded core 기반 emulation/silicon 환경에 재사용하는 방법을 제시한다.**
+**Intel은 PSS-2.0 Hardware-Software Interface(HSI) 레지스터 시퀀스를 사용해 하나의 드라이버형 테스트 모델을 작성하고, 이를 시뮬레이션의 UVM/APB 환경과 에뮬레이션·실리콘의 임베디드 코어 환경 모두에서 실행한 사례를 소개하며, 대상은 4G/5G FEC 인코더/디코더 IP이다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- HSI lets one PSS model generate both a C host driving UVM APB agents through SV-DPI (simulation) and direct volatile-pointer register writes (embedded core), addressing the 'portability wall' between UVM and C-driver test content.
+- HSI lets a single PSS model generate both UVM/APB sequences (via SV-DPI) and embedded-C pointer accesses, addressing the UVM-vs-C-driver 'portability wall' across IP, emulation and silicon.
 
 </div>
 <div class="bi-ko" markdown>
 
-- HSI를 사용하면 하나의 PSS 모델로 SV-DPI를 통해 UVM APB agent를 구동하는 C host 코드(시뮬레이션)와 volatile 포인터로 레지스터에 직접 쓰는 코드(embedded core)를 모두 생성할 수 있어, UVM과 C 드라이버 테스트 콘텐츠 사이의 'portability wall'을 해소한다.
+- HSI를 사용하면 하나의 PSS 모델로 UVM/APB 시퀀스(SV-DPI 경유)와 임베디드 C 포인터 접근을 모두 생성할 수 있어, IP·에뮬레이션·실리콘 전반에 걸친 UVM 대 C 드라이버 간 'portability wall' 문제를 해결한다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Register automation: a custom XML-to-HSI script converts Intel's IPXACT-like register descriptions into reg_c models; set_handle() binds each register group to an address region (e.g., base 0x8F700000) before read/write calls.
+- The authors report a 70% reduction in test-content development time versus previous methodologies; the paper gives no baseline, project size or detailed breakdown behind this figure.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 레지스터 자동화: 사내 XML(IPXACT 유사) 레지스터 명세를 전용 스크립트로 HSI 레지스터 모델(reg_c)로 변환하며, 레지스터 그룹은 read/write 호출 전에 set_handle()으로 주소 영역(예: base 0x8F700000)에 바인딩한다.
+- 저자들은 기존 방법론 대비 테스트 콘텐츠 개발 시간이 70% 줄었다고 보고하지만, 이 수치의 기준선, 프로젝트 규모, 세부 분해는 논문에 제시되지 않았다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Vertical reuse is achieved by factoring IP configuration (e.g., NUM_OF_VF, NUM_OF_4G_FEC_DL) into constants and base addresses into CSV tables, plus foreach-based offset generation (e.g., 0x8 stride) for non-contiguous register arrays.
+- Factoring configuration (NUM_OF_VF constants, CSV base-address tables) and using foreach constraints for fixed-offset register arrays lets one model be reused across IP-level and SoC-level register maps.
 
 </div>
 <div class="bi-ko" markdown>
 
-- IP 구성 파라미터(예: NUM_OF_VF, NUM_OF_4G_FEC_DL)는 상수로, base 주소는 CSV 테이블로 분리하고, 불연속 레지스터 배열은 foreach 기반으로 오프셋(예: 0x8 간격)을 생성하여 IP에서 SoC까지 vertical reuse를 달성한다.
+- 구성 파라미터(NUM_OF_VF 상수, CSV 기반 base address 테이블)를 분리하고, 고정 오프셋 레지스터 배열에 foreach 제약을 사용하면 IP 수준과 SoC 수준 레지스터 맵 간에 모델을 재사용할 수 있다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The paper reports a 70% reduction in test-content development time versus previous methodologies, with simple tests run at IP-level simulation and complex/stress tests on emulation and post-silicon.
+- ps_event wait()/emit() models ISRs and ps_event.sync() adds inter-thread sync points, so driver and test case merge into one file while still stressing configuration/data-transfer overlap.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 논문은 기존 방법론 대비 테스트 콘텐츠 개발 시간을 70% 단축했다고 보고하며, 단순 테스트는 IP 레벨 시뮬레이션에서, 복잡한 stress 테스트는 emulation과 post-silicon에서 수행했다.
+- ps_event의 wait()/emit()으로 ISR을 모델링하고 ps_event.sync()로 스레드 간 동기화 지점을 추가하여, 드라이버와 테스트 케이스를 하나의 파일로 합치면서도 설정과 데이터 전송 구간의 중첩을 자극할 수 있다.
 
 </div>
 </div>
@@ -115,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Limitations: target code generation is tool-specific (not mandated by PSS), and the results are qualitative with no reported coverage numbers, cycle counts, or sample sizes.
+- PSS does not mandate target code, so the generated UVM and embedded-C outputs are tool-specific; the paper is an experience report with no coverage metrics or quantified stress results.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 한계: target 코드 생성 방식은 PSS 표준이 규정하지 않고 도구별로 다르며, 결과는 정성적이고 coverage 수치, 사이클 수, 표본 규모 등 정량 데이터가 보고되지 않았다.
+- PSS는 타겟 코드 생성 방식을 규정하지 않으므로 UVM 및 임베디드 C 출력은 툴에 종속적이며, 본 논문은 커버리지 지표나 정량적 스트레스 결과가 없는 경험 보고서이다.
 
 </div>
 </div>
@@ -132,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Verification platforms (simulation, emulation, FPGA prototyping, silicon) use different languages and scopes, from IP to SoC. Industry practice uses UVM testbenches at IP/sub-system level in simulation and C-driver tests on embedded cores in emulation or silicon. The paper calls the resulting gap a 'Portability Wall': UVM sequences cannot run on embedded cores, and C-driver code cannot drive a UVM testbench natively.
+- Current practice splits verification: UVM testbenches at IP/subsystem level in simulation, and C-driver tests on embedded cores in emulation or silicon. UVM sequences cannot run on cores, and C drivers cannot drive UVM, creating a "portability wall."
 
 </div>
 <div class="bi-ko" markdown>
 
-- 검증 플랫폼(시뮬레이션, emulation, FPGA 프로토타이핑, 실리콘)은 서로 다른 언어와 범위(IP부터 SoC까지)를 사용한다. 업계 관행은 시뮬레이션에서 IP/서브시스템 단위 UVM testbench를, emulation이나 실리콘에서는 embedded core 위의 C 드라이버 테스트를 쓴다. 논문은 이로 인한 간극을 'Portability Wall'이라 부른다. UVM sequence는 embedded core에서 실행할 수 없고, C 드라이버 코드는 UVM testbench를 직접 구동할 수 없다.
+- 현재 검증은 시뮬레이션의 IP/서브시스템 수준 UVM 테스트벤치와 에뮬레이션·실리콘의 임베디드 코어 기반 C 드라이버 테스트로 나뉜다. UVM 시퀀스는 코어에서 실행될 수 없고 C 드라이버는 UVM 테스트벤치를 직접 구동할 수 없어 'portability wall'이 생긴다.
 
 </div>
 </div>
@@ -145,25 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The target DUT is a 4G/5G Layer-1 forward error correction (FEC) IP. FEC is one of the most compute-intensive RAN L1 workloads in vRAN deployments. The FEC acceleration transaction carries no cell state, which makes it easy to virtualize and pool.
+- Target DUT: a 4G/5G L1 FEC encoder/decoder IP exposed as a PCIe device with multiple virtual functions (VFs) and replicated encoder/decoder instances, which multiplies register files.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 대상 DUT는 4G/5G Layer-1 forward error correction(FEC) IP다. FEC는 vRAN에서 가장 연산 집약적인 RAN L1 워크로드 중 하나다. FEC 가속 트랜잭션은 cell 상태 정보를 포함하지 않아 가상화와 풀링이 쉽다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The IP is exposed as a PCIe device with multiple virtual functions (VFs). It contains multiple 4G/5G encoder and decoder instances, so there are many register files (PCIe config space per VF, plus per-instance encoder/decoder registers). Maintaining driver code for each instance and revision is the core productivity problem.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 이 IP는 여러 virtual function(VF)을 가진 PCIe 디바이스로 노출되며, 다수의 4G/5G encoder/decoder 인스턴스를 포함한다. 따라서 레지스터 파일이 많다(VF별 PCIe config space, 인스턴스별 encoder/decoder 레지스터). 인스턴스와 리비전마다 드라이버 코드를 유지하는 것이 핵심 생산성 문제다.
+- 대상 DUT는 4G/5G L1 FEC 인코더/디코더 IP로, 여러 virtual function(VF)과 복제된 인코더/디코더 인스턴스를 PCIe 장치로 노출하여 레지스터 파일이 여러 배로 늘어난다.
 
 </div>
 </div>
@@ -173,169 +160,58 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-The PSS HSI flow (Figure 2) has four stages:
+- PSS-2.0 HSI (core library) models registers via `reg_group_c`/`reg_c`, bound to address regions with `set_handle()`. Register descriptions come from a custom IPXACT-like XML converted by script.
 
 </div>
 <div class="bi-ko" markdown>
 
-PSS HSI 흐름(Figure 2)은 네 단계로 구성된다.
+- PSS-2.0 HSI(core library)는 `reg_group_c`/`reg_c`로 레지스터를 모델링하고 `set_handle()`로 address region에 바인딩한다. 레지스터 기술은 IPXACT 유사 사내 XML에서 스크립트로 변환한다.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- Test content is written as PSS actions using `write()`/`read()` in `exec body`, with randomized fields in `post_solve`.
+
+</div>
+<div class="bi-ko" markdown>
+
+- 테스트 콘텐츠는 `exec body`에서 `write()`/`read()`를 호출하는 PSS action으로 작성하며, 랜덤화된 필드는 `post_solve`에서 설정한다.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- Target generation is tool-specific:
+
+</div>
+<div class="bi-ko" markdown>
+
+- 타겟 코드 생성은 툴에 따라 다르다:
 
 </div>
 </div>
 
 ```mermaid
 flowchart LR
-  A[XML register spec] -->|custom script| B[PSS HSI reg_c models]
-  B -->|set_handle to address region| C[PSS model: HSI sequences]
-  C -->|PSS tool target gen| D[C host + SV-DPI]
-  C -->|PSS tool target gen| E[Embedded C pointer access]
-  D --> F[UVM APB agent: IP / sub-system sim]
-  E --> G[Embedded core: emulation / silicon]
+  A[PSS model + HSI sequences] --> B[PSS tool target generation]
+  B --> C[UVM: C host code, SV-DPI write_scalar, APB sequences]
+  B --> D[Embedded C: volatile pointer writes]
 ```
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-1. **Register definition.** Intel uses a custom XML format similar to IPXACT. A script converts it into HSI register models. `reg_c<R>` is parameterized by the register-value type R (packed struct or `bit[N]`), access kind (default READWRITE), and width SZ. It exposes `read()`, `read_val()`, `write()`, and `write_val()`, which are target functions that must be called in an exec body.
+- Reuse and scale: NUM_OF_VF-style constants and CSV base-address tables, `foreach` constraints for fixed-offset arrays, `ps_event` wait/emit for ISRs, and `ps_event.sync()` for concurrent threads.
 
 </div>
 <div class="bi-ko" markdown>
 
-1. **레지스터 정의.** Intel은 IPXACT와 유사한 사내 XML 형식을 사용하며, 스크립트로 이를 HSI 레지스터 모델로 변환한다. `reg_c<R>`은 레지스터 값 타입 R(packed struct 또는 `bit[N]`), 접근 종류(기본값 READWRITE), 폭 SZ로 파라미터화된다. `read()`, `read_val()`, `write()`, `write_val()`을 제공하며, 이들은 target 함수이므로 exec body에서 호출해야 한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-2. **Address binding.** The top-level register group is bound to an address region with `set_handle(make_handle_from_region(...))` after registration with `sys_mem_map.add_nonallocatable_region`.
-
-</div>
-<div class="bi-ko" markdown>
-
-2. **주소 바인딩.** `sys_mem_map.add_nonallocatable_region`으로 영역을 등록한 뒤, 최상위 레지스터 그룹을 `set_handle(make_handle_from_region(...))`으로 주소 영역에 바인딩한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-3. **HSI sequences.** An action with `rand bit[2] qmode` fills the register struct in `post_solve` and calls `write()` in `exec body`.
-
-</div>
-<div class="bi-ko" markdown>
-
-3. **HSI sequence.** `rand bit[2] qmode`를 가진 action이 `post_solve`에서 레지스터 struct를 채우고, `exec body`에서 `write()`를 호출한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-4. **Target code.** The PSS standard does not define target code. The paper shows Intel's tool-specific output:
-   - *UVM target:* the generated C host code calls `write_scalar(addr, 4, data)`, exported via `export "DPI-C"`. That task finds the APB master agent and runs `apb_pkg::write_word_seq`. The host code is forked from the UVM run phase.
-   - *Embedded C target:* the same write becomes `*(volatile unsigned int*)(0x8f700000) = ...`.
-
-</div>
-<div class="bi-ko" markdown>
-
-4. **Target 코드.** PSS 표준은 target 코드를 규정하지 않는다. 논문은 Intel 도구의 고유 출력을 보여준다.
-   - *UVM target:* 생성된 C host 코드가 `export "DPI-C"`로 노출된 `write_scalar(addr, 4, data)`를 호출한다. 이 task는 APB master agent를 찾아 `apb_pkg::write_word_seq`를 실행한다. Host 코드는 UVM run phase에서 fork된다.
-   - *Embedded C target:* 같은 쓰기가 `*(volatile unsigned int*)(0x8f700000) = ...`로 변환된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Scalability techniques described in the paper:
-
-</div>
-<div class="bi-ko" markdown>
-
-논문이 설명하는 확장성 기법:
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Address factorization:** IP parameters (for example NUM_OF_VF) are constants so that one model can be reused across revisions. Base addresses are stored in a CSV table, and the paper notes that register offsets differ between IP-level and SoC-level environments.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **주소 factorization:** NUM_OF_VF 같은 IP 파라미터를 상수로 분리해 하나의 모델을 여러 리비전에 재사용한다. Base 주소는 CSV 테이블에 저장하며, IP 레벨과 SoC 레벨에서 레지스터 오프셋이 다를 수 있음을 지적한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Non-contiguous arrays:** `foreach(IP_INGRESS_AQ[i]) IP_INGRESS_AQ[i].offset = i * 0x8;` sets a fixed stride.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **불연속 배열:** `foreach(IP_INGRESS_AQ[i]) IP_INGRESS_AQ[i].offset = i * 0x8;`로 고정 stride를 설정한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Randomization with HSI:** an access such as `hi_vf_regs[vf_id].QMGR_INGRESS_AQ[queue_id].write_val(enqueue_data)` depends on randomized VF and queue IDs.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **HSI와 randomization 결합:** `hi_vf_regs[vf_id].QMGR_INGRESS_AQ[queue_id].write_val(enqueue_data)`처럼 랜덤화된 VF/queue ID에 따라 접근이 결정된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Interrupts:** a `ps_event` is emitted from the ISR and waited on in the sequence. `wait()` acts as an implicit yield.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **인터럽트:** ISR에서 `ps_event`를 emit하고 sequence에서 wait한다. `wait()`은 암시적 yield 역할을 한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Directed codegen:** `foreach` with `if (i in vf_en_list)` generates writes only for the enabled VFs in the scenario, which keeps the footprint small and makes debugging easier. HSI merges the driver and the test case into one file.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **Directed 코드 생성:** `foreach`와 `if (i in vf_en_list)`를 사용해 시나리오에서 활성화된 VF에만 쓰기를 생성한다. 코드 footprint가 작아지고 디버깅이 쉬워진다. HSI는 드라이버와 테스트 케이스를 하나의 파일로 합친다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Synchronization:** `ps_event.sync()` creates a sync point between IP configuration and the data-transfer phase, which the authors used to stress the design.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **동기화:** `ps_event.sync()`로 IP 설정 단계와 데이터 전송 단계 사이에 sync point를 만들어 설계를 stress하는 데 사용했다.
+- 재사용 및 확장: NUM_OF_VF 형태의 상수와 CSV base-address 테이블, 고정 오프셋 배열에 대한 `foreach` 제약, ISR용 `ps_event` wait/emit, 동시 스레드용 `ps_event.sync()`를 사용한다.
 
 </div>
 </div>
@@ -345,12 +221,12 @@ Scalability techniques described in the paper:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The authors report that reusing test cases from core-less to core-based environments cut test-content development time by **70%** compared with previous methodologies.
+- Reports about 70% reduction in test-content development time versus previous methods, and reuse of tests from core-less to core-based environments.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 저자들은 core-less 환경에서 core 기반 환경까지 테스트 케이스를 재사용하여, 기존 방법론 대비 테스트 콘텐츠 개발 시간을 **70%** 단축했다고 보고한다.
+- 기존 방법 대비 테스트 콘텐츠 개발 시간이 약 70% 감소했다고 보고하며, core-less 환경과 core 기반 환경 간 테스트 재사용이 가능했다고 한다.
 
 </div>
 </div>
@@ -358,12 +234,12 @@ Scalability techniques described in the paper:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- PSS produced a richer set of scenarios with more concurrency and stress. Pre-Si and Post-Si teams shared a common test plan, and coverage closure was faster. These claims are qualitative. No coverage percentages, run counts, or baseline data are given.
+- Richer, more concurrent stress scenarios; Pre- and Post-Si teams share a common test plan; faster coverage closure (qualitative only).
 
 </div>
 <div class="bi-ko" markdown>
 
-- PSS로 동시성과 stress가 더해진 더 풍부한 시나리오 집합을 만들었다. Pre-Si와 Post-Si 팀이 공통 테스트 계획을 공유했고, coverage closure도 빨라졌다고 한다. 다만 이 주장들은 정성적이며, coverage 비율, 실행 횟수, 기준선 데이터는 제시되지 않았다.
+- 동시성과 스트레스가 강화된 더 풍부한 시나리오, Pre-Si와 Post-Si 팀의 공통 테스트 계획, 빠른 커버리지 클로저를 정성적으로 언급한다.
 
 </div>
 </div>
@@ -371,12 +247,12 @@ Scalability techniques described in the paper:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The recommended split is to develop the PSS model and HSI sequences at IP level for fast turnaround. Basic functional tests run in IP simulation, and complex stress scenarios run in emulation and post-silicon.
+- Proposed split: basic tests on IP-level simulation, complex stress on emulation and Post-Si.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 권장 분담은 빠른 turnaround를 위해 PSS 모델과 HSI sequence를 IP 레벨에서 개발하는 것이다. 기본 기능 테스트는 IP 시뮬레이션에서, 복잡한 stress 시나리오는 emulation과 post-silicon에서 수행한다.
+- 제안된 역할 분담: 기본 테스트는 IP 수준 시뮬레이션, 복잡한 스트레스 테스트는 에뮬레이션과 Post-Si에서 수행한다.
 
 </div>
 </div>
@@ -384,12 +260,12 @@ Scalability techniques described in the paper:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The paper is a practitioner overview of one tool's HSI implementation, not a benchmark. Target generation details are specific to Intel's PSS tool.
+- Experience report with no raw coverage numbers or detailed baselines.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 이 논문은 벤치마크가 아니라 한 도구의 HSI 구현을 다룬 실무 개요다. Target 생성 세부사항은 Intel의 PSS 도구에 특화되어 있다.
+- 원시 커버리지 수치나 상세한 기준선이 없는 경험 보고서이다.
 
 </div>
 </div>

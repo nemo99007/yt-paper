@@ -7,11 +7,11 @@ region: Europe
 year: 2022
 category: Emulation
 tags:
-- HW/SW Co-Debugging
+- HW/SW Co-Debug
 - Emulation
+- Trace file
 - ZeBu
-- DPI-C
-- Trace File
+- SV-DPI
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/74436.pdf
 authors: Shreya Morgansgate (Infineon Technologies AG), Johannes Grinschgl (Infineon Technologies AG), Djones Lettnin (Infineon Technologies AG); DVCon Europe
@@ -29,7 +29,7 @@ youtube_videos:
 # Generic Core-Monitor for Hardware/Software Co-Debugging targeting Emulation Platform
 
 <figure class="rep-fig" markdown>
-![Fig 2: CPU-Independent iVC Interface](../assets/figures/ref-20261018-0efa.png?v=1792309963){ loading=lazy }
+![Fig 2: CPU-Independent iVC Interface](../assets/figures/ref-20261018-0efa.png?v=1792379174){ loading=lazy }
 <figcaption>Fig 2: CPU-Independent iVC Interface — from the original paper (Shreya Morgansgate et al.)</figcaption>
 </figure>
 
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Infineon proposes a reusable, CPU-independent Core-Monitor that generates processor state trace files (PC, instructions, memory, registers) in both simulation and ZeBu emulation, requiring users to write only a small CPU-specific adapter.**
+**A CPU-independent Core-Monitor (CPU-specific adapter + reusable iVC interface/BFM + DPI-C tracer) that generates processor trace files for HW/SW co-debugging in both simulation and Synopsys ZeBu emulation, with runtime overhead comparable to or slightly better than the existing setup.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**Infineon은 시뮬레이션과 ZeBu 에뮬레이션 모두에서 PC, 명령어, 메모리, 레지스터 정보를 담은 trace 파일을 생성하며, 사용자는 CPU별 어댑터만 작성하면 되는 재사용 가능한 CPU-독립 Core-Monitor를 제안한다.**
+**CPU 독립형 Core-Monitor(CPU별 SystemVerilog 어댑터 + 재사용 가능한 iVC 인터페이스/BFM + DPI-C 트레이서)로, 시뮬레이션과 Synopsys ZeBu 에뮬레이션 모두에서 HW/SW 공동 디버그용 프로세서 트레이스 파일을 생성하며, 런타임 오버헤드는 기존 방식과 비슷하거나 약간 더 낫다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The architecture splits the design into a CPU-dependent adapter (the only user-written module per processor, about 290 lines of SystemVerilog for the IFX core) and CPU-independent components (iVC interface, iVC BFM, DPI-C trace block), so the reusable part stays unchanged across processors.
+- Only a processor-specific SystemVerilog adapter (about 290 lines for the IFX core in the paper) must be written per CPU; the iVC interface, iVC BFM and DPI-C tracer are reused unchanged.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 구조는 CPU 종속 어댑터(프로세서마다 사용자가 작성하는 유일한 모듈, IFX 코어 기준 약 290 lines의 SystemVerilog)와 CPU 독립 구성요소(iVC interface, iVC BFM, DPI-C trace 블록)로 나뉘어, 프로세서가 바뀌어도 재사용 부분은 그대로 유지된다.
+- CPU마다 작성해야 하는 것은 SystemVerilog 어댑터뿐이며(논문의 IFX 코어 기준 약 290줄), iVC 인터페이스, iVC BFM, DPI-C 트레이서는 수정 없이 재사용한다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The testbench is partitioned into hdl_top (synthesizable, runs on the ZeBu emulator) and hvl_top (untimed UVM, runs on the simulator), communicating at transaction level via a SystemVerilog virtual interface; the DPI-C block acts as a transactor from ZeBu to host.
+- The design is split into hdl_top (synthesizable, runs on the ZeBu emulator) and hvl_top (UVM testbench, runs on the simulator), communicating at transaction level over a SystemVerilog virtual interface.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 테스트벤치는 hdl_top(합성 가능, ZeBu 에뮬레이터에서 실행)과 hvl_top(untimed UVM, 시뮬레이터에서 실행)으로 분할되며, SystemVerilog virtual interface를 통해 transaction 수준으로 통신하고 DPI-C 블록이 ZeBu에서 호스트로 가는 transactor 역할을 한다.
+- 설계는 hdl_top(합성 가능, ZeBu 에뮬레이터에서 실행)과 hvl_top(UVM 테스트벤치, 시뮬레이터에서 실행)으로 나뉘며, SystemVerilog virtual interface를 통해 트랜잭션 수준으로 통신한다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- In the IFX use case, five active cores of a nine-core processor were traced; the emulation build phase took about 5 hours. Trace files feed Indago for source, assembly, and waveform synchronized HW/SW co-debugging.
+- Trace data (PC, instruction, register, memory access, cpu_id) is dumped per core via DPI-C to eswd_coreY.log files, with processor parameters taken from a CSV configuration file, so no BFM or interface edits are needed.
 
 </div>
 <div class="bi-ko" markdown>
 
-- IFX 사용 사례에서는 9개 코어 중 활성 5개 코어를 trace했고 에뮬레이션 build 단계는 약 5시간이 걸렸다. Trace 파일은 Indago에 입력되어 소스, 어셈블리, 파형이 동기화된 HW/SW 공동 디버깅에 쓰인다.
+- PC, 명령어, 레지스터, 메모리 접근 데이터(cpu_id 포함)는 DPI-C를 통해 코어별 eswd_coreY.log 파일로 기록되며, 프로세서 파라미터는 CSV 설정 파일에서 읽어 BFM이나 인터페이스를 수정할 필요가 없다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Emulation runtime results (Table 4, averaged over ten runs): with eswd, Testcase 1 took 3197.3 s (Core-Monitor) vs 3635.9 s (existing); without eswd, 160.3 s vs 239.8 s. Testcase 2 with eswd was 889.2 s vs 921.3 s, and without eswd 34.4 s vs 52.7 s. Tracing overhead is significant, so the paper stresses keeping the monitor lightweight.
+- On the IFX SoC (9 cores, 5 active), emulation with eswd trace enabled took 3197.3 s versus 3635.9 s for the existing method on Testcase 1; without eswd, 160.3 s versus 239.8 s.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 에뮬레이션 runtime 결과(Table 4, 10회 평균): eswd 사용 시 Testcase 1은 Core-Monitor 3197.3 s 대 기존 방식 3635.9 s, Testcase 2는 889.2 s 대 921.3 s이다. eswd 미사용 시 Testcase 1은 160.3 s 대 239.8 s, Testcase 2는 34.4 s 대 52.7 s이다. Trace 오버헤드가 크므로 모니터를 가볍게 유지하는 것이 중요하다고 저자는 강조한다.
+- 9코어 중 5개가 활성화된 IFX SoC에서 eswd 트레이스를 켠 에뮬레이션 실행 시간은 Testcase 1 기준 기존 방식 3635.9초 대비 3197.3초였고, eswd를 끈 경우에는 239.8초 대비 160.3초였다.
 
 </div>
 </div>
@@ -115,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Evaluation is limited: the monitor was tested on OpenRISC and RISC-V in simulation and on the IFX processor in emulation, and the paper gives no quantitative reusability metric beyond qualitative claims.
+- The build phase for the IFX emulation design takes about 5 hours, and the paper validates the approach only on OpenRISC/RISC-V in simulation and one IFX core configuration on ZeBu.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 평가 범위는 제한적이다. 모니터는 시뮬레이션에서 OpenRISC와 RISC-V, 에뮬레이션에서 IFX 프로세서로 테스트되었고, 재사용성에 대한 정량 지표 없이 정성적 주장만 제시된다.
+- IFX 에뮬레이션 설계의 빌드 단계는 약 5시간이 걸리며, 논문은 OpenRISC/RISC-V(시뮬레이션)와 IFX 한 가지 구성(ZeBu)에 대해서만 검증했다.
 
 </div>
 </div>
@@ -132,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Per-processor trace modules (Verilog/SystemVerilog) are duplicated across multicore SoCs, which is effort- and time-intensive. Vendor tools such as ARM Tarmac are ARM-specific and not reusable.
+- Per-processor trace modules (Verilog/SV) for tracing CPU state are duplicated across multicore SoCs, costing effort and time; existing vendor tools such as ARM Tarmac/CoreSight are not reusable across CPUs.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 프로세서마다 trace 모듈(Verilog/SystemVerilog)을 따로 만들면 멀티코어 SoC에서 코드가 중복되어 工数와 시간이 많이 든다. ARM Tarmac 같은 벤더 도구는 ARM 전용이라 재사용할 수 없다.
+- 멀티코어 SoC에서 CPU 상태를 추적하는 프로세서별 Verilog/SV 모듈이 중복 작성되어 工数와 시간이 많이 든다. ARM Tarmac/CoreSight 같은 벤더 도구는 다른 CPU에 재사용할 수 없다.
 
 </div>
 </div>
@@ -145,25 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- HDL simulation becomes too slow for designs of tens of millions of gates (kHz range versus MHz for emulators), so HW/SW co-debugging must move to emulation. Emulators, however, have long compile times (hours) and tighten the tradeoffs on cost and setup.
+- Simulation becomes too slow for large SoCs (kHz range vs. MHz on emulators), but emulators need hours of compile time, and no reusable HW/SW co-debug trace platform spans both simulation and emulation.
 
 </div>
 <div class="bi-ko" markdown>
 
-- HDL 시뮬레이션은 수천만 게이트 규모에서 너무 느려(kHz 대 MHz) HW/SW 공동 디버깅을 에뮬레이션으로 옮길 필요가 커졌다. 그러나 에뮬레이터는 컴파일 시간이 수 시간이며 비용과 셋업 부담이 크다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- No reusable trace infrastructure existed across both simulation and emulation. The related-work survey (Table 1) notes that multicore support is common, while reusability is rare.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 시뮬레이션과 에뮬레이션 모두에서 쓸 수 있는 재사용 가능한 trace 인프라는 없었다. 관련 연구 조사(Table 1)에서는 멀티코어 지원은 흔하지만 재사용성은 드물다.
+- 대형 SoC에서 시뮬레이션은 속도가 kHz 수준으로 병목이 되고, 에뮬레이터는 MHz 속도를 내지만 컴파일에 수 시간이 걸린다. 시뮬레이션과 에뮬레이션을 모두 아우르는 재사용 가능한 HW/SW 공동 디버그 트레이스 플랫폼은 없었다.
 
 </div>
 </div>
@@ -173,12 +160,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Core-Monitor consists of a CPU-dependent processor adapter (timed HDL module, user-written per processor), a CPU-independent iVC (interface Verification Component) SystemVerilog interface with passive modport, an iVC monitor BFM that imports DPI-C calls, and a DPI-C block (.cpp/.h) that writes per-core trace files (eswd_coreY.log).
+- CPU-dependent adapter (timed HDL module, user-written per processor) feeds CPU-independent components: the iVC SystemVerilog interface (standard cpu_pc, cpu_instruction, reg_data, cpu_mem_* and cpu_id signals), the iVC monitor BFM, and a DPI-C tracer.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Core-Monitor는 CPU 종속 프로세서 어댑터(사용자가 프로세서마다 작성하는 timed HDL 모듈), passive modport를 갖는 CPU 독립 iVC(interface Verification Component) SystemVerilog 인터페이스, DPI-C 호출을 가져오는 iVC monitor BFM, 코어별 trace 파일(eswd_coreY.log)을 기록하는 DPI-C 블록(.cpp/.h)으로 구성된다.
+- CPU 종속 어댑터(사용자가 프로세서마다 작성하는 타이밍 HDL 모듈)가 CPU 독립 구성요소에 신호를 전달한다. 구성요소는 표준 신호(cpu_pc, cpu_instruction, reg_data, cpu_mem_*, cpu_id)를 갖는 iVC SystemVerilog 인터페이스, iVC BFM, DPI-C 트레이서다.
 
 </div>
 </div>
@@ -186,12 +173,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Universal iVC signals include cpu_clk, cpu_reset_n, cpu_pc, cpu_instruction, cpu_pc_valid, reg_data, cpu_mem_addr/data/size/ack/str_enable, and cpu_id; PC and register counts are parameterized, and cpu_num selects the active core.
+- Testbench is split into hdl_top (synthesized to ZeBu) and hvl_top (UVM on the simulator), with trace output consumed by Indago for post-processing and ESWD debugging.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 공통 iVC 신호는 cpu_clk, cpu_reset_n, cpu_pc, cpu_instruction, cpu_pc_valid, reg_data, cpu_mem_addr/data/size/ack/str_enable, cpu_id이며, PC 및 레지스터 개수는 parameter로 정의되고 cpu_num으로 활성 코어를 선택한다.
+- 테스트벤치는 hdl_top(ZeBu에 합성)과 hvl_top(시뮬레이터의 UVM)으로 나뉘며, 트레이스 출력은 Indago의 후처리와 ESWD 디버그에 사용된다.
 
 </div>
 </div>
@@ -199,60 +186,36 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- A processor_X.csv configuration file defines core count, core names, register count and names, and instruction settings, so changes are made at the top level without touching the BFM or interface.
+- Processor parameters (core count, register names) come from a configuration CSV; one adapter instance per identical core.
 
 </div>
 <div class="bi-ko" markdown>
 
-- processor_X.csv 설정 파일에 코어 수, 코어 이름, 레지스터 수와 이름, 명령어 설정을 정의하므로 최상위에서 변경하며 BFM과 인터페이스는 수정하지 않는다.
+- 프로세서 파라미터(코어 수, 레지스터 이름)는 설정 CSV에서 읽으며, 동일한 코어마다 어댑터 인스턴스를 하나씩 둔다.
 
 </div>
 </div>
 
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The testbench is split into hdl_top (emulated) and hvl_top (UVM, simulated), using a co-emulation setup with a SystemVerilog virtual interface and DPI-C from ZeBu to host.
 ```mermaid
 flowchart LR
-  DUT[CPU RTL in hdl_top] --> AD[CPU-specific Adapter]
-  AD --> IVC[iVC Interface]
-  IVC --> BFM[iVC Monitor BFM]
-  BFM -->|DPI-C| DPI[DPI-C Trace Block]
-  DPI --> LOG[eswd_coreY.log / trace]
-  CFG[processor_X.csv] --> DPI
-  LOG --> IND[Indago ESWD Debug]
-
-</div>
-<div class="bi-ko" markdown>
-
-- 테스트벤치는 hdl_top(에뮬레이션)과 hvl_top(UVM, 시뮬레이션)으로 나뉘며, co-emulation 구성에서 SystemVerilog virtual interface와 ZeBu에서 호스트로 가는 DPI-C를 사용한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
+  DUT[CPU RTL] --> AD[CPU adapter - user]
+  AD --> IVC[iVC interface]
+  IVC --> BFM[iVC BFM]
+  BFM -->|DPI-C| TR[Trace .log per core]
+  TR --> IND[Indago ESWD]
 ```
-
-</div>
-<div class="bi-ko" markdown>
-
-### 결과 및 결론
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
 
 ### Results and Conclusions
 
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- Tested on OpenRISC and RISC-V in simulation and on an IFX processor (5 active cores) in ZeBu emulation.
+
 </div>
 <div class="bi-ko" markdown>
 
-- 사용 사례: Synopsys ZeBu 위의 IFX 프로세서(9코어 중 5개 활성). 어댑터를 5회 인스턴스화했다. 논문은 trace 예시를 보여준다(6번째 줄: core0의 레지스터 A10이 7176200 ps에 0xd0009820로 기록됨).
+- OpenRISC와 RISC-V는 시뮬레이션에서, IFX 프로세서(활성 5코어)는 ZeBu 에뮬레이션에서 테스트했다.
 
 </div>
 </div>
@@ -260,12 +223,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Use case: IFX processor (nine cores, five active) on Synopsys ZeBu; the adapter is instantiated five times. The paper shows a trace sample (line 6: register A10 of core0 written to 0xd0009820 at 7176200 ps).
+- Average of 10 runs: Testcase 1 with eswd 3197.3 s (Core-Monitor) vs. 3635.9 s (existing); without eswd 160.3 s vs. 239.8 s. Testcase 2 with eswd 889.2 s vs. 921.3 s; without eswd 34.4 s vs. 52.7 s.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Table 4 에뮬레이션 runtime(10회 평균)에서 Core-Monitor는 네 가지 경우 모두 기존 방식보다 약간 빨랐다. eswd 사용 시 Testcase 1은 3197.3 s 대 3635.9 s, Testcase 2는 889.2 s 대 921.3 s이다. eswd 미사용 시 Testcase 1은 160.3 s 대 239.8 s, Testcase 2는 34.4 s 대 52.7 s이다.
+- 10회 평균 기준, Testcase 1에서 eswd 사용 시 Core-Monitor 3197.3초 대비 기존 방식 3635.9초, eswd 미사용 시 160.3초 대비 239.8초였다. Testcase 2는 eswd 사용 시 889.2초 대비 921.3초, 미사용 시 34.4초 대비 52.7초였다.
 
 </div>
 </div>
@@ -273,38 +236,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Table 4 emulation runtimes (average of ten runs) show the Core-Monitor is slightly faster than the existing method in all four cases. With eswd, Testcase 1 is 3197.3 s versus 3635.9 s, and Testcase 2 is 889.2 s versus 921.3 s. Without eswd, Testcase 1 is 160.3 s versus 239.8 s, and Testcase 2 is 34.4 s versus 52.7 s.
+- The authors conclude the approach is reusable and does not degrade performance, though the evaluation is limited (no quantified effort reduction beyond the 290-line adapter figure).
 
 </div>
 <div class="bi-ko" markdown>
 
-- 저자들은 방법론이 프로세서 간 재사용 가능하며(시뮬레이션의 OpenRISC와 RISC-V, 에뮬레이션의 IFX), 동일한 구성요소를 수정 없이 시뮬레이션과 에뮬레이션에서 쓸 수 있고, 중복 코딩 노력을 줄인다고 결론짓는다. 정량적 재사용성 지표는 보고되지 않는다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The authors conclude the methodology is reusable across processors (OpenRISC and RISC-V in simulation, IFX in emulation), that the same components work in simulation and emulation without modification, and that it reduces redundant coding effort. Quantitative reusability metrics are not reported.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 향후 과제: 더 많은 프로세서 유형 지원, C 함수와 SV 모듈 모두에서 설정을 파싱하는 방식 개선.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Future work: support more processor types and let the configuration be parsed in both C functions and SV modules.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
+- 저자들은 이 방식이 재사용 가능하며 성능을 저하시키지 않는다고 결론짓지만, 평가는 제한적이다(어댑터 290줄 외에 작업량 감소를 정량화하지 않음).
 
 </div>
 </div>

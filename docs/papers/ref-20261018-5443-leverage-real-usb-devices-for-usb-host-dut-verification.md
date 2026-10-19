@@ -9,12 +9,12 @@ category: Verification
 tags:
 - USB
 - Transactor
-- Emulation
 - libusb
-- SV DPI
+- Emulation
+- Host DUT
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/1120.pdf
-authors: Suchir Gupta (Synopsys Inc), Amit Sharma (Synopsys Inc)
+authors: Suchir Gupta (Synopsys Inc), Amit Sharma (Synopsys Inc); Sunnyvale, CA, USA
 youtube_videos:
 - video_id: iFhYhIOoQYQ
   url: https://www.youtube.com/watch?v=iFhYhIOoQYQ
@@ -29,7 +29,7 @@ youtube_videos:
 # Leverage Real USB Devices for USB Host DUT verification
 
 <figure class="rep-fig" markdown>
-![Figure 4. Device virtual solution connecting USB mass storage device and Device Transactor](../assets/figures/ref-20261018-5443.png?v=1792306480){ loading=lazy }
+![Figure 4. Device virtual solution connecting USB mass storage device and Device Transactor](../assets/figures/ref-20261018-5443.png?v=1792378282){ loading=lazy }
 <figcaption>Figure 4. Device virtual solution connecting USB mass storage device and Device Transactor — from the original paper (Suchir Gupta et al.)</figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ youtube_videos:
 
 | | |
 |---|---|
-| Authors | Suchir Gupta (Synopsys Inc), Amit Sharma (Synopsys Inc) |
+| Authors | Suchir Gupta (Synopsys Inc), Amit Sharma (Synopsys Inc); Sunnyvale, CA, USA |
 | Venue | DVCon US 2025 |
 | Topic | Verification |
 | Type | PAPER |
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**A user-space Virtual Adapter built on Linux usbfs and libusb forwards USB Device Transactor requests to a real USB mass storage device, so USB Host DUTs can be verified in emulation or simulation without writing a device-side testbench.**
+**A user-space Virtual Adapter built on libusb lets a USB Device Transactor forward host DUT traffic to a real USB mass storage device, removing the need for a custom device testbench, demonstrated in both emulation and simulation.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**Linux usbfs와 libusb 기반의 user-space Virtual Adapter가 USB Device Transactor의 요청을 실제 USB mass storage 장치로 전달하여, 장치 측 testbench를 작성하지 않고도 emulation 또는 simulation에서 USB Host DUT를 검증할 수 있게 한다.**
+**libusb 기반 사용자 공간 Virtual Adapter를 통해 USB Device Transactor가 호스트 DUT 트래픽을 실제 USB 대용량 저장장치로 전달하도록 하여, 별도의 디바이스 테스트벤치 작성 없이 에뮬레이션과 시뮬레이션 양쪽에서 검증할 수 있게 한 방법을 제시합니다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The Virtual Adapter (VA) bridges the Device XTOR C library (reached via SV DPI) and libusb; control and bulk responses come from the real device, so the device testbench only needs initialization and a service loop.
+- Responses to all USB control and bulk requests from the host DUT come directly from the real mass storage device, so no device-side response logic had to be written in the testbench beyond initialization and a service loop.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Virtual Adapter(VA)는 Device XTOR C library(SV DPI 경유)와 libusb를 연결하며, control 및 bulk 응답이 실제 장치에서 나오므로 장치 측 testbench는 초기화와 service loop만 필요하다.
+- 호스트 DUT의 모든 USB 제어 및 벌크 요청에 대한 응답이 실제 대용량 저장장치에서 직접 오므로, 초기화와 서비스 루프 외에 테스트벤치에 디바이스 측 응답 로직을 작성할 필요가 없습니다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The same HW/SW split over SV DPI runs in both domains: the HS test took 5702 s in simulation vs 23 s in emulation (~248x), and the SS test took 4815 s vs 16 s (~301x).
+- The bridge is a Virtual Adapter (user-space driver on libusb/usbfs) reached from the XTOR C library through SV DPI, a pattern the authors suggest can be reused for other protocol transactors.
 
 </div>
 <div class="bi-ko" markdown>
 
-- HW/SW 분할을 SV DPI로 구현한 동일한 구조가 두 도메인 모두에서 동작한다. HS 테스트는 simulation 5702 s, emulation 23 s(약 248배)였고, SS 테스트는 simulation 4815 s, emulation 16 s(약 301배)였다.
+- 브리지는 SV DPI를 통해 XTOR C 라이브러리와 연결되는 사용자 공간 Virtual Adapter(libusb/usbfs 기반 드라이버)이며, 저자들은 이 패턴을 다른 프로토콜 transactor에도 재사용할 수 있다고 제시합니다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Bulk transfers use libusb's asynchronous interface; if a transfer does not complete within the timeout, the VA cancels it and returns a STALL to the Host DUT.
+- For the same test, emulation was about 248x faster than simulation at HS (5702 s sim vs 23 s emu) and about 301x faster at SS (4815 s sim vs 16 s emu).
 
 </div>
 <div class="bi-ko" markdown>
 
-- Bulk 전송은 libusb의 비동기 인터페이스를 사용하며, 제한 시간 내에 완료되지 않으면 VA가 전송을 취소하고 Host DUT에 STALL을 반환한다.
+- 동일한 테스트에서 에뮬레이션은 HS 기준 시뮬레이션 대비 약 248배 빨랐고(시뮬레이션 5702 s 대 에뮬레이션 23 s), SS 기준으로는 약 301배 빨랐습니다(시뮬레이션 4815 s 대 에뮬레이션 16 s).
 
 </div>
 </div>
@@ -102,25 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Only a BBB mass storage device (full SCSI transparent command set) was demonstrated; the other USB device classes, timeout tuning for slow simulation, and broader coverage are listed as future work.
+- Only the BBB (Bulk-Only Transport) mass storage class was implemented and demonstrated on one HS and one SS device; other USB classes are future work, and simulation may need timer tuning to avoid timeouts.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 시연된 것은 BBB mass storage 장치(전체 SCSI transparent 명령 집합)뿐이며, 다른 USB device class, 느린 simulation을 위한 timeout 조정, 더 넓은 커버리지는 향후 과제로 남아 있다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The adapter pattern is reusable: the libusb side stays fixed, while the BFM-facing side can be swapped for other protocol transactors (e.g., user BFMs) and real-world peripherals.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Adapter 구조는 재사용 가능하다. libusb 측은 그대로 두고 BFM 측 인터페이스만 다른 protocol transactor(예: 사용자 BFM)나 실제 주변장치에 맞게 교체할 수 있다.
+- BBB(Bulk-Only Transport) 대용량 저장장치 클래스만 구현되어 HS 장치 1개와 SS 장치 1개에서 시연되었으며, 다른 USB 클래스는 향후 과제이고 시뮬레이션에서는 타임아웃 방지를 위해 타이머 조정이 필요할 수 있습니다.
 
 </div>
 </div>
@@ -132,12 +119,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Transactors expose BFM-level interfaces, but user-level software testbenches are still needed to generate realistic protocol traffic. For complex protocols such as USB and PCIe this is costly.
+- Transactor-based verification needs user-level testbenches to generate realistic protocol traffic; for USB this is complex, and verifying a host-side driver requires fully modeled device functionality across 21 device classes.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Transactor는 BFM 수준 인터페이스를 제공하지만, 현실적인 프로토콜 트래픽을 생성하려면 여전히 사용자 수준 소프트웨어 testbench가 필요하다. USB나 PCIe 같은 복잡한 프로토콜에서는 이 작업의 비용이 크다.
+- Transactor 기반 검증에서는 현실적인 프로토콜 트래픽을 생성하기 위해 사용자 수준 테스트벤치가 필요하며, USB의 경우 이 작업이 복잡합니다. 특히 호스트 측 드라이버를 검증하려면 21개 디바이스 클래스에 걸친 완전한 디바이스 기능 모델이 필요합니다.
 
 </div>
 </div>
@@ -145,25 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- USB Host DUT verification requires a device model for each peripheral class/subclass/protocol (USB defines 21 device classes per the paper), and implementing full device behavior for every use case is a heavy task.
+- Goal: drive a USB Device Transactor (XTOR) with a real USB device so that no custom device testbench is needed, while keeping transactor benefits in both simulation and emulation.
 
 </div>
 <div class="bi-ko" markdown>
 
-- USB Host DUT 검증에는 장치 class/subclass/protocol별 device 모델이 필요하며(논문에 따르면 USB는 21개 device class를 정의), 모든 사용 사례에 대해 완전한 장치 동작을 구현하는 것은 부담이 크다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Goal: let a real USB device supply the device-side responses to a USB Device Transactor, so the Host DUT sees real-world stimulus with minimal testbench code, in both emulation and simulation.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 목표: 실제 USB 장치가 USB Device Transactor에 장치 측 응답을 제공하도록 하여, 최소한의 testbench 코드로 Host DUT가 실제 환경의 자극을 받도록 하는 것이다. emulation과 simulation 모두에서 가능해야 한다.
+- 목표: 별도의 커스텀 디바이스 테스트벤치 없이 실제 USB 디바이스로 USB Device Transactor(XTOR)를 구동하고, 시뮬레이션과 에뮬레이션 모두에서 transactor의 이점을 유지하는 것입니다.
 
 </div>
 </div>
@@ -173,12 +147,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-The Device Transactor has a synthesizable SystemVerilog hardware part and a C/C++ software part (C library plus device testbench). The HW–SW boundary is at transaction level via SV DPI, which makes the transactor portable across simulation and emulation. Control requests are handed up to the C library, which invokes registered user callbacks.
+- Transactor HW is synthesizable SystemVerilog; SW is C/C++. HW-SW transfer is at transaction level via SV DPI, which allows the same flow in simulation and emulation.
 
 </div>
 <div class="bi-ko" markdown>
 
-Device Transactor는 합성 가능한 SystemVerilog HW 부분과 C/C++ SW 부분(C library와 device testbench)으로 구성된다. HW–SW 경계는 SV DPI를 통한 transaction 수준이며, 이로 인해 transactor가 simulation과 emulation 양쪽에서 동작한다. Control 요청은 C library로 전달되고, C library는 등록된 사용자 callback을 호출한다.
+- Transactor HW는 합성 가능한 SystemVerilog로, SW는 C/C++로 작성됩니다. HW-SW 간 전달은 SV DPI를 통한 트랜잭션 수준으로 이루어져, 동일한 흐름을 시뮬레이션과 에뮬레이션 모두에서 사용할 수 있습니다.
 
 </div>
 </div>
@@ -186,166 +160,60 @@ Device Transactor는 합성 가능한 SystemVerilog HW 부분과 C/C++ SW 부분
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-The Device Virtual Solution inserts a Virtual Adapter (user-space device driver) between the transactor C library and libusb:
+- The Device Virtual Solution is a user-space Virtual Adapter (VA) using libusb over Linux usbfs. It receives USB requests from the XTOR C library, performs them on the real device, and returns responses.
 
 </div>
 <div class="bi-ko" markdown>
 
-Device Virtual Solution은 transactor C library와 libusb 사이에 Virtual Adapter(user-space device driver)를 삽입한다. 앞의 Mermaid 다이어그램을 참조한다(한국어 버전에서는 반복하지 않음).
+- Device Virtual Solution은 Linux usbfs 위의 libusb를 사용하는 사용자 공간 Virtual Adapter(VA)입니다. XTOR C 라이브러리로부터 USB 요청을 받아 실제 디바이스에서 수행하고 응답을 되돌려 줍니다.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- VA lifecycle: libusb_init, open device by VID/PID, forward enumeration requests as descriptor reads, set configuration and claim interface, run asynchronous bulk transfers with completion callbacks (timeout leads to cancel and STALL), then libusb_close.
+
+</div>
+<div class="bi-ko" markdown>
+
+- VA 생명주기: libusb_init, VID/PID로 디바이스 열기, 열거 요청을 디스크립터 읽기로 전달, 설정 및 인터페이스 claim, 완료 콜백을 사용한 비동기 벌크 전송 실행(타임아웃 시 취소 후 STALL), 마지막으로 libusb_close.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- Emulation: DUT and XTOR HW on the emulator, SW on the host PC. Simulation: all parts on the host PC. The device testbench reduces to create, USBPlug, and a continuous Loop call.
+
+</div>
+<div class="bi-ko" markdown>
+
+- 에뮬레이션: DUT와 XTOR HW는 에뮬레이터에, SW는 호스트 PC에서 실행됩니다. 시뮬레이션: 모든 요소가 호스트 PC에서 실행됩니다. 디바이스 테스트벤치는 create, USBPlug, 연속적인 Loop 호출로 줄어듭니다.
 
 </div>
 </div>
 
 ```mermaid
 flowchart LR
-  HostDUT[Host DUT / Host XTOR] -->|USB requests| DevHW[Device XTOR HW]
-  DevHW -->|SV DPI| CLib[XTOR C Lib]
-  CLib -->|callback| VA[Virtual Adapter]
-  VA -->|libusb API| usbfs[Linux usbfs /dev]
-  usbfs --> Stick[Real USB mass storage device]
+  DUT[Host DUT] --SV DPI--> XTOR[Device XTOR SW C lib]
+  XTOR --> VA[Virtual Adapter]
+  VA --libusb/usbfs--> DEV[Real USB mass storage]
 ```
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-VA lifecycle:
-
-</div>
-<div class="bi-ko" markdown>
-
-VA 수명 주기:
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-1. **Initialization**: `libusb_init()`, then `libusb_open_device_with_vid_pid()` using VID/PID obtained from `lsusb`.
-
-</div>
-<div class="bi-ko" markdown>
-
-1. **초기화**: `libusb_init()` 호출 후, `lsusb`로 얻은 VID/PID를 사용해 `libusb_open_device_with_vid_pid()` 호출.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-2. **Enumeration**: descriptor requests from the Host DUT are answered by libusb descriptor APIs (device, BOS, and others). On SET CONFIGURATION, the VA calls `libusb_set_configuration()` and `libusb_claim_interface()`.
-
-</div>
-<div class="bi-ko" markdown>
-
-2. **Enumeration**: Host DUT의 descriptor 요청은 libusb descriptor API(device, BOS 등)로 응답한다. SET CONFIGURATION 시 VA는 `libusb_set_configuration()`과 `libusb_claim_interface()`를 호출한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-3. **Transfers**: the asynchronous libusb path has five stages (callback creation, transfer allocation, fill with `libusb_fill_bulk_transfer()`, submit, completion callback). OUT data is stored on the real device; IN data is fetched from it. On timeout, the VA cancels the transfer and issues STALL.
-
-</div>
-<div class="bi-ko" markdown>
-
-3. **전송**: 비동기 libusb 경로는 5단계(callback 생성, transfer 할당, `libusb_fill_bulk_transfer()`로 채우기, submit, 완료 callback)로 구성된다. OUT 데이터는 실제 장치에 저장되고, IN 데이터는 실제 장치에서 가져온다. Timeout 시 VA는 전송을 취소하고 STALL을 발행한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-4. **Destruction**: `libusb_close()`.
-
-</div>
-<div class="bi-ko" markdown>
-
-4. **소멸**: `libusb_close()` 호출.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Testbench flow for the Device side: create the `virtual_usb_device_svs` object, call `USBPlug()` to connect the device, then run `Loop()` continuously until `tbDone` is set. Each loop iteration checks whether the HW raised an interrupt and, if so, services it through libusb.
-
-</div>
-<div class="bi-ko" markdown>
-
-Device 측 testbench 흐름: `virtual_usb_device_svs` 객체를 생성하고, `USBPlug()`로 장치를 연결한 뒤, `tbDone`이 설정될 때까지 `Loop()`를 계속 실행한다. 각 loop 반복에서 HW가 interrupt를 발생시켰는지 확인하고, 발생했다면 libusb를 통해 처리한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Deployment modes:
-
-</div>
-<div class="bi-ko" markdown>
-
-배포 모드:
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Emulation**: Host DUT and Device XTOR HW are synthesized on the emulator, their SW runs on the host PC, and the real USB device is attached to that PC.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **Emulation**: Host DUT와 Device XTOR HW는 emulator에서 합성되고, 그 SW는 host PC에서 실행되며, 실제 USB 장치는 해당 PC에 연결된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Simulation**: HW and SW for both sides run on the host PC, with the real device attached.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **Simulation**: 양쪽의 HW와 SW가 모두 host PC에서 실행되며, 실제 장치가 연결된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-For the demonstration, the Host DUT was replaced by a Host Transactor (XTOR).
-
-</div>
-<div class="bi-ko" markdown>
-
-시연에서는 Host DUT 대신 Host Transactor(XTOR)를 사용했다.
-
-</div>
-</div>
 
 ### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **HS (high speed) mass storage**: the Host XTOR initialized and enumerated the device, ran several SCSI commands, and transferred/received 1800K bytes. All control and bulk responses came from the real device. Simulation took 5702 s and emulation 23 s (~248x).
+- HS mass storage (BBB, SCSI transparent set): 1800K bytes transferred; 5702 s in simulation vs 23 s in emulation (about 248x).
 
 </div>
 <div class="bi-ko" markdown>
 
-- **HS(high speed) mass storage**: Host XTOR가 장치를 초기화하고 enumeration한 뒤 여러 SCSI 명령을 실행하여 1800K bytes를 송수신했다. 모든 control 및 bulk 응답은 실제 장치에서 왔다. Simulation은 5702 s, emulation은 23 s가 걸려 약 248배 차이가 났다.
+- HS 대용량 저장장치(BBB, SCSI transparent 명령 세트): 1800K 바이트 전송, 시뮬레이션 5702 s 대 에뮬레이션 23 s(약 248배).
 
 </div>
 </div>
@@ -353,12 +221,12 @@ For the demonstration, the Host DUT was replaced by a Host Transactor (XTOR).
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **SS (super speed)**: the same flow with an SS device transferred 3600K bytes. Simulation took 4815 s and emulation 16 s (~301x).
+- SS device: 3600K bytes transferred; 4815 s in simulation vs 16 s in emulation (about 301x).
 
 </div>
 <div class="bi-ko" markdown>
 
-- **SS(super speed)**: SS 장치로 동일한 흐름을 수행하여 3600K bytes를 전송했다. Simulation은 4815 s, emulation은 16 s가 걸려 약 301배 차이가 났다.
+- SS 장치: 3600K 바이트 전송, 시뮬레이션 4815 s 대 에뮬레이션 16 s(약 301배).
 
 </div>
 </div>
@@ -366,38 +234,12 @@ For the demonstration, the Host DUT was replaced by a Host Transactor (XTOR).
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The device testbench needed no response-generation logic beyond initialization and the service loop.
+- Authors conclude the approach lets teams validate system-level host use cases without writing complex device testbenches, after basic functionality is covered by traditional methods. The evaluation is a single-device demo with no coverage metrics.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 장치 측 testbench는 초기화와 service loop 이외에 응답 생성 로직이 필요하지 않았다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Stated limitations and future work: only the BBB mass storage protocol is implemented; other device classes could be covered via the same libusb-based approach; timers may need adjustment for slow simulation and timeouts. The paper does not report functional coverage or bug-detection results.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 명시된 한계 및 향후 과제: 현재 BBB mass storage 프로토콜만 구현되었으며, 동일한 libusb 기반 접근으로 다른 device class를 확장할 수 있다. 느린 simulation과 timeout을 위해 timer 조정이 필요할 수 있다. 논문은 기능 커버리지나 버그 검출 결과를 보고하지 않는다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The authors position this as a complement to traditional verification: once basic Host DUT functionality is verified, the approach covers system-level and real-world use cases with less testbench effort.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 저자들은 이 방식을 기존 검증의 보완으로 제시한다. Host DUT의 기본 기능이 전통적인 방법으로 검증된 후, 이 접근으로 더 적은 testbench 작업량으로 시스템 수준 및 실제 환경 사용 사례를 커버할 수 있다고 주장한다.
+- 저자들은 기본 기능을 기존 방식으로 먼저 검증한 뒤, 복잡한 디바이스 테스트벤치를 작성하지 않고도 시스템 수준 호스트 사용 사례를 검증할 수 있다고 결론짓습니다. 평가는 커버리지 지표가 없는 단일 디바이스 시연입니다.
 
 </div>
 </div>

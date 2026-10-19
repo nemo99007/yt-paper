@@ -8,13 +8,12 @@ year: 2023
 category: Verification
 tags:
 - Virtual Prototyping
-- SystemC
-- Co-simulation
+- SystemC-RTL Co-simulation
 - TLM
-- Verification
+- Test Case Reuse
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/1040-A-Study-on-Virtual-Prototyping-based-Design-Verification-Methodology.pdf
-authors: 'Woojoo Kim (Samsung Electronics), Kunhyuk Kang (Samsung Electronics), Seonil Brian Choi (Samsung Electronics). Affiliation: Design Technology Team, Infrastructure Design Center, S.LSI Division, Samsung Electronics, Hwaseong-si, Korea. Venue not stated in the provided text.'
+authors: Woojoo Kim (Samsung Electronics), Kunhyuk Kang (Samsung Electronics), Seonil Brian Choi (Samsung Electronics)
 youtube_videos:
 - video_id: RgAPcMcohTs
   url: https://www.youtube.com/watch?v=RgAPcMcohTs
@@ -29,7 +28,7 @@ youtube_videos:
 # A Study on Virtual Prototyping based Design Verification Methodology
 
 <figure class="rep-fig" markdown>
-![Figure 2. The Proposed Verification Methodology.](../assets/figures/ref-20261018-2416.png?v=1792310844){ loading=lazy }
+![Figure 2. The Proposed Verification Methodology.](../assets/figures/ref-20261018-2416.png?v=1792379798){ loading=lazy }
 <figcaption>Figure 2. The Proposed Verification Methodology. — from the original paper (Woojoo Kim et al.)</figcaption>
 </figure>
 
@@ -37,7 +36,7 @@ youtube_videos:
 
 | | |
 |---|---|
-| Authors | Woojoo Kim (Samsung Electronics), Kunhyuk Kang (Samsung Electronics), Seonil Brian Choi (Samsung Electronics). Affiliation: Design Technology Team, Infrastructure Design Center, S.LSI Division, Samsung Electronics, Hwaseong-si, Korea. Venue not stated in the provided text. |
+| Authors | Woojoo Kim (Samsung Electronics), Kunhyuk Kang (Samsung Electronics), Seonil Brian Choi (Samsung Electronics) |
 | Venue | DVCon US 2023 |
 | Topic | Verification |
 | Type | PAPER |
@@ -48,12 +47,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Proposes a verification flow that reuses SystemC virtual-prototype IP models and SW/SFR test cases from architecture exploration in RTL regression, progressively replacing SystemC IPs with Verilog via SystemC-RTL co-simulation transactors, and reports a ~21% verification-period reduction on a mobile AP SOC.**
+**Proposes a flow that starts with SystemC/TLM virtual-prototype IP models and replaces them with Verilog IPs one at a time via a SystemC-RTL transactor, reusing the same test cases for regression and reporting a 20-21% shorter verification period on a mobile AP SoC.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**SystemC 가상 프로토타입(VP) IP 모델과 SW/SFR 테스트 케이스를 SystemC-RTL 공동 시뮬레이션 트랜스액터를 통해 RTL 회귀 검증에 재사용하고, SystemC IP를 Verilog로 단계적으로 교체하는 검증 흐름을 제안하며, 모바일 AP SOC에서 검증 기간 약 21% 단축을 보고한다.**
+**SystemC/TLM 가상 프로토타입 IP 모델로 시작해 SystemC-RTL transactor를 통해 Verilog IP로 하나씩 교체하면서 동일한 테스트 케이스를 회귀 테스트에 재사용하는 흐름을 제안하며, 모바일 AP SoC에서 검증 기간이 20~21% 단축되었다고 보고한다.**
 
 </div>
 </div>
@@ -63,12 +62,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Progressive SystemC-to-Verilog IP replacement, run with the same test cases, lets regression start as each IP arrives; the paper reports regression starting about one month earlier and failures localized to the most recently replaced IP.
+- Swapping SystemC IP models for Verilog one at a time with the same test cases lets regression start as each IP is delivered, and a failure localizes to the most recently replaced IP.
 
 </div>
 <div class="bi-ko" markdown>
 
-- SystemC에서 Verilog로의 IP 단계적 교체를 동일한 테스트 케이스로 수행하면 IP가 도착할 때마다 회귀 검증을 시작할 수 있으며, 논문은 회귀 검증이 약 1개월 빨리 시작되고 실패 원인이 방금 교체된 IP로 좁혀진다고 보고한다.
+- IP를 한 번에 하나씩 SystemC 모델에서 Verilog로 교체하고 동일한 테스트 케이스를 쓰면, 각 IP가 전달될 때마다 회귀 테스트를 시작할 수 있으며 실패는 가장 최근에 교체된 IP로 국한된다.
 
 </div>
 </div>
@@ -76,12 +75,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- SystemC-only simulation averaged 5.22x faster than RTL-only simulation, but co-simulation averaged only 1.16x faster (bus 12 IPs: 0.84 vs 0.72 MHz; memory controller 7 IPs: 1.53 vs 1.33 MHz), so co-sim gains are modest.
+- SystemC-only simulation averaged 5.22x faster than RTL-only, but SystemC-RTL co-simulation averaged only 1.16x faster (Bus 1.16x, Memory Controller 1.15x), so the main gain comes from early regression rather than raw speed.
 
 </div>
 <div class="bi-ko" markdown>
 
-- SystemC 단독 시뮬레이션은 RTL 단독 대비 평균 5.22배 빨랐지만, 공동 시뮬레이션은 평균 1.16배에 그쳤다(Bus 12 IP: 0.84 vs 0.72 MHz, Memory Controller 7 IP: 1.53 vs 1.33 MHz). 따라서 공동 시뮬레이션의 속도 이득은 제한적이다.
+- SystemC 단독 시뮬레이션은 RTL 단독 대비 평균 5.22배 빨랐지만, SystemC-RTL co-simulation은 평균 1.16배(Bus 1.16배, Memory Controller 1.15배)에 그쳐 주된 이득은 순수 속도보다 조기 회귀 테스트에서 나온다.
 
 </div>
 </div>
@@ -89,12 +88,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Verification period dropped from 8.1 to 6.4 months (21.0%) for the bus block (12 IPs) and from 8 to 6.35 months (20.6%) for the memory controller (7 IPs); the abstract rounds this to 20%.
+- Verification period dropped from 8.1 to 6.4 months (21.0%) for the bus block and from 8 to 6.35 months (20.6%) for the memory controller; the abstract rounds this to 20%.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 검증 기간은 Bus 블록(12 IP)에서 8.1개월에서 6.4개월로 21.0%, Memory Controller 블록(7 IP)에서 8개월에서 6.35개월로 20.6% 단축되었다. 초록은 이를 20%로 반올림해 표기한다.
+- 검증 기간은 bus 블록에서 8.1개월에서 6.4개월(21.0%), memory controller에서 8개월에서 6.35개월(20.6%)로 줄었으며, 초록에서는 이를 20%로 반올림해 제시한다.
 
 </div>
 </div>
@@ -102,12 +101,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Benefit depends on model fidelity: SystemC models were built to match RTL behavior, structure, hierarchy and interfaces, with an SFR wrapper generator that parses the SFR data sheet to reduce wrapper effort.
+- The SystemC models were built to match RTL behavior and structure, not just LT/AT approximations, which the authors say is required for test-case reuse; this requires cross-team coordination.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 효과는 모델 충실도에 의존한다. SystemC 모델은 RTL의 동작, 구조, 계층, 인터페이스와 일치하도록 만들었고, SFR 데이터시트를 파싱하는 생성기로 SFR 래퍼 작업을 줄였다.
+- SystemC 모델은 LT/AT 근사만이 아니라 RTL의 동작과 구조에 맞춰 개발되었으며, 저자들은 이것이 테스트 케이스 재사용에 필요하다고 설명하고 이는 팀 간 긴밀한 협업을 요구한다.
 
 </div>
 </div>
@@ -115,12 +114,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The main cost is SystemC modeling effort, which the authors say is largely absorbed when VP models already exist for early SW development; planning and test-case development time savings did not appear over the whole verification period.
+- Benefits assume SystemC models already exist from VP work for SW development; the paper does not report planning or test-case development time savings and excludes silicon validation from its measurements.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 주된 비용은 SystemC 모델링 공수이며, 저자들은 SW 개발용 VP 모델이 이미 있는 경우 이 비용이 상당 부분 흡수된다고 설명한다. 다만 전체 검증 기간 동안 검증 계획 및 테스트 케이스 개발 시간의 절감은 나타나지 않았다.
+- 이 이점은 SW 개발용 VP에서 이미 SystemC 모델이 존재한다는 전제에 기반하며, 논문은 계획 및 테스트 케이스 개발 시간 절감을 보고하지 않고 실리콘 검증 기간은 측정에서 제외했다.
 
 </div>
 </div>
@@ -132,12 +131,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- SoC complexity keeps rising while design schedules shrink. Virtual Prototyping (VP) built from SystemC models is already used early for SW development, architecture exploration, and performance/power estimation.
+- SoC complexity keeps rising while design schedules shrink; RTL regression typically starts late, delaying bug discovery.
 
 </div>
 <div class="bi-ko" markdown>
 
-- SoC 복잡도는 계속 증가하는 반면 설계 일정은 줄어들고 있다. SystemC 기반 Virtual Prototyping(VP)은 SW 개발, 아키텍처 탐색, 성능/전력 추정을 위해 이미 조기에 사용되고 있다.
+- SoC 복잡도는 증가하는 반면 설계 일정은 줄어들며, RTL 회귀 테스트는 보통 늦게 시작되어 버그 발견이 지연된다.
 
 </div>
 </div>
@@ -145,12 +144,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Model abstraction trades accuracy for speed. The paper cites CA/AT models at about 90% timing accuracy running at KHz to MHz, and LT/FA models at 70-80% timing accuracy (or untimed) running at MHz to hundreds of MHz.
+- VP SystemC models already exist for early SW development and performance estimation, but they are usually not functionally or structurally identical to RTL, so VP test cases cannot be fully verified against RTL.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 모델 추상화 수준은 정확도와 속도를 맞바꾼다. 논문은 약 90% 타이밍 정확도에 KHz~MHz로 동작하는 CA/AT 모델과, 70~80% 타이밍 정확도(또는 타이밍 없음)에 MHz~수백 MHz로 동작하는 LT/FA 모델을 언급한다.
+- SW 개발 및 성능 추정용 VP SystemC 모델은 이미 존재하지만 기능과 구조가 RTL과 동일하지 않은 경우가 많아, VP 테스트 케이스를 RTL 기준으로 완전히 검증하기 어렵다.
 
 </div>
 </div>
@@ -158,38 +157,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- SystemC models built for SW development usually differ functionally and structurally from RTL, so test cases run on VP do not fully cover RTL behavior. RTL verification therefore starts late and test planning is repeated at each stage.
+- Standard SystemC-Verilog co-simulation often needs custom DPI calls or wrappers, because RTL simulators commonly lack slave mode.
 
 </div>
 <div class="bi-ko" markdown>
 
-- SW 개발용으로 만든 SystemC 모델은 기능과 구조가 RTL과 다른 경우가 많아, VP에서 실행한 테스트 케이스가 RTL 동작을 충분히 커버하지 못한다. 그 결과 RTL 검증은 늦게 시작되고 단계마다 테스트 계획이 반복된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Co-simulation of SystemC and Verilog is awkward because most simulators support only one of master or slave mode. Workarounds are custom DPI calls, custom wrappers, or older simulator versions.
-
-</div>
-<div class="bi-ko" markdown>
-
-- SystemC와 Verilog의 공동 시뮬레이션은 대부분의 시뮬레이터가 master 또는 slave 모드 중 하나만 지원하기 때문에 까다롭다. 우회 방법으로는 커스텀 DPI 호출, 커스텀 래퍼, 구버전 시뮬레이터 사용이 있다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The approach aligns with the intent of the Portable Stimulus Standard (PSS): describe test intent once and reuse it across abstraction levels.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 이 접근은 Portable Stimulus Standard(PSS)의 취지, 즉 테스트 의도를 한 번 기술하고 여러 추상화 수준에서 재사용한다는 방향과 일치한다.
+- 일반적인 SystemC-Verilog co-simulation은 RTL 시뮬레이터가 slave 모드를 지원하지 않는 경우가 많아 custom DPI 호출이나 wrapper가 필요하다.
 
 </div>
 </div>
@@ -199,114 +172,73 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-Flow (as described in Figure 2):
+- SystemC IP models are built during architecture exploration with behavior and structure matched to RTL, and wrapped with an SFR wrapper generated from the SFR datasheet.
+
+</div>
+<div class="bi-ko" markdown>
+
+- SystemC IP 모델은 architecture exploration 단계에서 동작과 구조를 RTL에 맞춰 개발하며, SFR 데이터시트에서 생성한 SFR wrapper로 감싼다.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- As RTL matures, IPs are swapped one at a time from SystemC to Verilog, running the same SW or SFR-sequence test cases; the final state equals the existing RTL environment.
+
+</div>
+<div class="bi-ko" markdown>
+
+- RTL이 성숙함에 따라 IP를 한 번에 하나씩 SystemC에서 Verilog로 교체하고, 동일한 SW 또는 SFR 시퀀스 테스트 케이스를 실행하며, 최종 상태는 기존 RTL 검증 환경과 같아진다.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- A FSM-based transactor (SystemC/C++, READY/VALID handshake) maps TLM packets to and from AXI channel signals; a Register Information Signal Driver handles SFR access.
+
+</div>
+<div class="bi-ko" markdown>
+
+- FSM 기반 transactor(SystemC/C++, READY/VALID handshake)가 TLM 패킷과 AXI 채널 신호 간 변환을 수행하며, Register Information Signal Driver가 SFR 접근을 담당한다.
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- Applied to a 100M G/C mobile flagship AP SoC: bus block (12 IP models) and memory controller (7 IP models).
+
+</div>
+<div class="bi-ko" markdown>
+
+- 100M G/C 모바일 플래그십 AP SoC에 적용했으며, bus 블록(IP 모델 12개)과 memory controller(IP 모델 7개)를 대상으로 했다.
+
+</div>
+</div>
+
 ```mermaid
 flowchart LR
-  A[Architecture exploration: SystemC IP models] --> B[SW / SFR test cases on VP]
-  B --> C[Regression on SystemC models in RTL env]
-  C --> D[Replace one IP with Verilog RTL]
-  D --> E[Re-run the same test cases]
-  E -->|next IP| D
-  E -->|all IPs replaced| F[Full RTL verification environment]
+  A[SystemC IP + VP tests] --> B[Co-sim: IP swapped to Verilog via transactor]
+  B --> C[Regression per delivered IP]
+  C --> D[Full RTL environment]
 ```
-
-</div>
-<div class="bi-ko" markdown>
-
-흐름 (Figure 2 기준):
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Test reuse:** Test cases (SystemVerilog, C/C++, SystemC) run on the SoC-level simple OS either as SFR sequences or as driver-level functions. Verification items are managed from the IP design stage and version-controlled with the RTL models.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **테스트 재사용:** 테스트 케이스(SystemVerilog, C/C++, SystemC)는 SoC 수준의 간이 OS 위에서 SFR 시퀀스 또는 드라이버 수준 함수로 실행된다. 검증 항목은 IP 설계 단계부터 관리되고 RTL 모델과 함께 버전 관리된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Model fidelity:** Behavior is modeled first, then wrapped by an SFR wrapper. A generator parses the SFR data sheet to produce these wrappers. A Register Information Signal Driver handles SFR communication with Verilog modules. Interfaces correct hierarchy and protocol differences. These interfaces are merged into each transactor in the actual implementation.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **모델 충실도:** 동작을 먼저 모델링한 뒤 SFR 래퍼로 감싼다. 생성기가 SFR 데이터시트를 파싱해 래퍼를 만든다. Register Information Signal Driver가 Verilog 모듈과의 SFR 통신을 담당하며, 인터페이스는 계층 및 프로토콜 차이를 보정한다. 실제 구현에서 이 인터페이스는 각 트랜스액터에 포함된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Transactor:** The TLM-to-signal converter (Figure 4) is an FSM written in SystemC/C++. It splits TLM packets into AXI channels and signals, drives them with READY/VALID handshaking, and converts them back to TLM in the reverse direction. The paper states that data transfer takes 0 cycles.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **트랜스액터:** TLM-신호 변환기(Figure 4)는 SystemC/C++로 작성된 FSM이다. TLM 데이터를 AXI 채널과 신호로 분해하여 READY/VALID 핸드셰이크로 구동하고, 반대 방향에서는 다시 TLM으로 변환한다. 논문은 데이터 전송이 0 사이클에 이루어진다고 밝힌다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Model accuracy:** Performance-estimation models (cycle-accurate) and SW-oriented LT TLM models were both used, and transactors were developed for each. Figure 3 contrasts signal-level and TLM read/write formats for AMBA AXI.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **모델 정확도:** 성능 추정용(cycle-accurate) 모델과 SW용 LT TLM 모델을 모두 사용했으며, 각각에 대해 트랜스액터를 개발했다. Figure 3은 AMBA AXI의 신호 수준과 TLM 읽기/쓰기 포맷을 비교한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Target:** The flow was applied to a 100M G/C mobile flagship AP SoC, covering the bus block (12 SystemC IP models) and the memory controller block (7 SystemC IP models).
-
-</div>
-<div class="bi-ko" markdown>
-
-- **적용 대상:** 100M G/C급 모바일 플래그십 AP SoC에 적용했으며, 버스 블록(SystemC IP 모델 12개)과 메모리 컨트롤러 블록(SystemC IP 모델 7개)을 대상으로 했다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Diagnosis:** Because each IP is swapped in individually, the regression pass or fail points to the newly replaced IP.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **원인 분석:** IP를 하나씩 교체하므로 회귀 검증의 pass/fail은 새로 교체된 IP를 가리킨다.
-
-</div>
-</div>
 
 ### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-Simulation speed (Table 1, MHz):
+- Simulation speed (Table 1): SystemC-only averaged 5.22x faster than RTL-only (Bus 6.69x, Memory 3.75x); co-sim averaged 1.16x faster (1.16x and 1.15x).
 
 </div>
 <div class="bi-ko" markdown>
 
-시뮬레이션 속도 (Table 1, MHz):
+- 시뮬레이션 속도(Table 1): SystemC 단독은 RTL 단독 대비 평균 5.22배 빨랐고(Bus 6.69배, Memory 3.75배), co-sim은 평균 1.16배 빨랐다(1.16배, 1.15배).
 
 </div>
 </div>
@@ -314,20 +246,12 @@ Simulation speed (Table 1, MHz):
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-| Block | # IP | SystemC | Co-sim | RTL | SystemC vs RTL | Co-sim vs RTL |
-|---|---|---|---|---|---|---|
-| Bus | 12 | 4.82 | 0.84 | 0.72 | x6.69 | x1.16 |
-| Memory Controller | 7 | 4.99 | 1.53 | 1.33 | x3.75 | x1.15 |
-| Average | | | | | x5.22 | x1.16 |
+- Verification period (Table 2): Bus 8.1 to 6.4 months (21.0%); Memory Controller 8 to 6.35 months (20.6%); regression started about a month earlier.
 
 </div>
 <div class="bi-ko" markdown>
 
-| 블록 | IP 수 | SystemC | 공동 시뮬레이션 | RTL | SystemC 대비 RTL | 공동 시뮬레이션 대비 RTL |
-|---|---|---|---|---|---|---|
-| Bus | 12 | 4.82 | 0.84 | 0.72 | x6.69 | x1.16 |
-| Memory Controller | 7 | 4.99 | 1.53 | 1.33 | x3.75 | x1.15 |
-| 평균 | | | | | x5.22 | x1.16 |
+- 검증 기간(Table 2): Bus 8.1개월에서 6.4개월(21.0%), Memory Controller 8개월에서 6.35개월(20.6%)로 단축되었고, 회귀 테스트는 약 한 달 일찍 시작되었다.
 
 </div>
 </div>
@@ -335,129 +259,12 @@ Simulation speed (Table 1, MHz):
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-Verification period (Table 2, months, same test-case count):
+- Limitations: a single industrial case; planning and test-case development time savings were not realized in the measured period; SystemC modeling overhead is required unless VP models already exist; silicon validation is excluded.
 
 </div>
 <div class="bi-ko" markdown>
 
-검증 기간 (Table 2, 개월, 동일 테스트 케이스 수):
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Bus (12 IPs): 8.1 existing vs 6.4 proposed, 21.0% reduction.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Bus (IP 12개): 기존 8.1 → 제안 6.4, 21.0% 단축.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Memory controller (7 IPs): 8 existing vs 6.35 proposed, 20.6% reduction.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Memory Controller (IP 7개): 기존 8 → 제안 6.35, 20.6% 단축.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The period runs from IP/block verification start to SoC verification completion and excludes silicon validation.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 기간은 IP/블록 검증 시작부터 SoC 검증 완료까지이며, 실리콘 검증 기간은 제외된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Conclusions and caveats reported by the authors:
-
-</div>
-<div class="bi-ko" markdown>
-
-저자들이 보고한 결론 및 한계:
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Regression started more than a month earlier, allowing earlier bug finding and fewer debug activities in the SOC phase. The authors attribute the earlier verification completion to this.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 회귀 검증이 1개월 이상 빨리 시작되어 더 이른 단계에서 버그를 발견할 수 있었고, SoC 단계의 디버그 활동이 줄었다. 저자들은 검증 완료 시점이 앞당겨진 이유로 이를 든다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Verification planning and test-case development time did not show a measurable reduction across the full period. The authors expect human-resource savings but do not quantify them.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 검증 계획 및 테스트 케이스 개발 시간은 전체 기간에 걸쳐 측정 가능한 감소가 나타나지 않았다. 인력 절감은 기대되지만 정량화되지는 않았다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Co-simulation speed depends on the number and volume of RTL models included. The authors averaged measurements over configurations that included RTL models.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 공동 시뮬레이션 속도는 포함된 RTL 모델의 수와 규모에 따라 달라진다. 저자들은 RTL 모델이 포함된 구성에서 측정값을 평균했다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The authors note that the method was applied first to functional verification. Specification verification and performance/power estimation are presented as future extensions.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 방법은 기능 검증에 먼저 적용되었다. 스펙 검증과 성능/전력 추정은 향후 확장 대상으로 제시된다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The abstract reports a 20% reduction, while the body and conclusion report 21%. The paper gives no coverage metrics to confirm equal verification quality.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 초록은 20% 감소를, 본문과 결론은 21%를 보고한다. 동등한 검증 품질을 확인할 커버리지 지표는 제시되지 않았다.
+- 한계: 단일 산업 사례이며, 측정 기간 동안 계획 및 테스트 케이스 개발 시간 절감은 나타나지 않았고, VP 모델이 이미 없는 경우 SystemC 모델링 오버헤드가 필요하며, 실리콘 검증 기간은 제외되었다.
 
 </div>
 </div>

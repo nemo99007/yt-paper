@@ -8,13 +8,13 @@ year: 2023
 category: Emulation
 tags:
 - Hybrid Emulation
-- Virtual Prototype
+- Virtual Platform
 - SystemC TLM
 - ZeBu
-- Android Bring-up
+- SW Bring-up
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/90995.pdf
-authors: Rinkesh Yadav, Manoj Khandelwal, Sarang Kalbande, Garima Srivastava, Hyundon Kim (DVCon Europe)
+authors: Rinkesh Yadav (Samsung Semiconductor India Research Bangalore), Manoj Khandelwal (Samsung Semiconductor India Research Bangalore), Sarang Kalbande (Samsung Semiconductor India Research Bangalore), Garima Srivastava (Samsung Semiconductor India Research Bangalore), Hyundon Kim (Samsung Electronics)
 youtube_videos:
 - video_id: WbPgekc9gyE
   url: https://www.youtube.com/watch?v=WbPgekc9gyE
@@ -28,11 +28,16 @@ youtube_videos:
 
 # Hybrid Emulation for faster Android Home screen bring up and Software Development
 
+<figure class="rep-fig" markdown>
+![Figure 6. Hybrid Platform Architecture](../assets/figures/ref-20261018-3f06.png?v=1792379198){ loading=lazy }
+<figcaption>Figure 6. Hybrid Platform Architecture — from the original paper (Rinkesh Yadav et al.)</figcaption>
+</figure>
+
 [:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/90995.pdf){ .md-button .md-button--primary target=_blank }
 
 | | |
 |---|---|
-| Authors | Rinkesh Yadav, Manoj Khandelwal, Sarang Kalbande, Garima Srivastava, Hyundon Kim (DVCon Europe) |
+| Authors | Rinkesh Yadav (Samsung Semiconductor India Research Bangalore), Manoj Khandelwal (Samsung Semiconductor India Research Bangalore), Sarang Kalbande (Samsung Semiconductor India Research Bangalore), Garima Srivastava (Samsung Semiconductor India Research Bangalore), Hyundon Kim (Samsung Electronics) |
 | Venue | DVCon Europe 2023 |
 | Topic | Emulation |
 | Type | PAPER |
@@ -43,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**순수 에뮬레이션에서 약 4일 걸리던 Android 홈 화면 bring-up을, SystemC/TLM 가상 플랫폼(CPU·DRAM 등)과 ZeBu RTL 에뮬레이션을 결합한 하이브리드 에뮬레이션으로 약 72분까지 단축한 사례 보고.**
+**The paper moves the CPU and peripherals of a ZeBu-emulated SoC into a SystemC/TLM virtual platform (ISS-based CPU) with a shared DRAM model, cutting Android home-screen bring-up on a ~2-billion-gate Exynos SoC from about 4 days in pure emulation to about 72 minutes.**
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+**이 논문은 ZeBu로 에뮬레이션되는 SoC의 CPU와 주변장치를 SystemC/TLM 가상 플랫폼(ISS 기반 CPU)으로 옮기고 공유 DRAM 모델을 사용해, 약 20억 게이트 Exynos SoC에서 Android 홈 화면 bring-up 시간을 순수 에뮬레이션의 약 4일에서 약 72분으로 단축한다.**
 
 </div>
 </div>
@@ -58,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Pure emulation(약 1MHz driver clock)에서는 Android 홈 화면 bring-up에 약 4일이 걸려 SW 반복 개발이 비현실적이며, CPU·DRAM 트래픽 병목을 가상 쪽으로 옮기는 것이 핵심 해법이다.
+- Pure emulation at a 1 MHz driver clock takes about 4 days to reach the Android home screen, while the hybrid platform reaches it in about 72 minutes (Linux kernel ~2 min, Android logo ~12 min).
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 1 MHz 드라이버 클럭의 순수 에뮬레이션에서는 Android 홈 화면까지 약 4일이 걸리지만, 하이브리드 플랫폼은 약 72분(Linux 커널 약 2분, Android 로고 약 12분)에 도달한다.
 
 </div>
 </div>
@@ -71,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- CPU를 ISS 기반 가상 모델로, DRAM을 Fastmem 기반 shadow memory로 두고 Transactor로 동기화하는 구조가 CPU-DRAM 트랜잭션 지연을 줄여 가속을 만든다.
+- The partition puts CPU, GIC, MCT, UART, PERI, storage and DRAM on the virtual side (ARM Fast Model ISS) and the bus, memory controller and M/M IPs on RTL, bridged by adaptors and transactors (ZHAL).
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 파티션은 CPU, GIC, MCT, UART, PERI, 스토리지, DRAM을 가상 측(ARM Fast Model ISS)에, 버스, 메모리 컨트롤러, M/M IP를 RTL 측에 배치하며, 어댑터와 트랜스актор(ZHAL)로 두 영역을 연결한다.
 
 </div>
 </div>
@@ -84,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 하이브리드 환경의 trade-off: cache coherency 미지원으로 캐시 일관성 비활성화가 필요하고, ARM Fast Model의 단일 코어 한계로 SMP도 꺼야 하며, 대량 trace 데이터 때문에 장시간 SW 버그의 root cause 추적이 어렵다.
+- A shared DRAM model (ZRM memory on the emulator, shadow memory on the virtual side, synced by a transactor) targets the CPU-DRAM transaction bottleneck that dominates OS boot in pure emulation.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 공유 DRAM 모델(에뮬레이터의 ZRM 메모리, 가상 측의 shadow 메모리, 트랜스액터로 동기화)은 순수 에뮬레이션에서 OS 부팅을 지배하는 CPU-DRAM 트랜잭션 병목을 겨냥한다.
 
 </div>
 </div>
@@ -97,53 +102,29 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- 디버그 가시성은 RTL 에뮬레이션 수준을 유지하면서 SW 디버거(T32), TLM chart view, Transactor 로그, Verdi 파형을 함께 쓸 수 있다는 점이 post-silicon 대비 장점이다.
+- Current limits are no cache coherency and no SMP (single-core Fast Model), so both must be disabled; the ~1-million-cycle debug window is too short for bugs whose injection and observation points are billions of instructions apart.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- 보고된 수치(Linux 커널 약 2분, Android 로고 약 12분, 홈 화면 약 72분)는 2B gate Exynos SoC 기준이며, 제안하는 Gear shift 방식으로 CPU 벤치마크와 SMP/multi-chip 지원은 향후 과제로 남아 있다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
+- 현재 한계는 cache coherency와 SMP 미지원(단일 코어 Fast Model)이며, 따라서 두 기능을 비활성화해야 한다. 또한 약 100만 사이클의 디버그 윈도우는 버그 주입 시점과 관측 시점이 수십억 명령 떨어져 있는 경우에 너무 짧다.
 
 </div>
 </div>
 
 ## Detailed Summary
 
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-### 배경 및 문제 정의
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
+### Background and Problem
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-SoC의 소프트웨어 bring-up과 검증은 전통적으로 post-silicon 단계에서 이뤄지며, 이는 time-to-market 지연과 silicon re-spin 비용으로 이어진다. 또한 post-silicon에서는 RTL 가시성이 낮아 HW/SW 버그를 구분하기 어렵다. 따라서 silicon 확보 수개월 전에 SoC의 고속 모델이 필요하다.
+- SoC software bring-up usually happens post-silicon, where RTL debug visibility is poor and a silicon re-spin is costly, so pre-silicon models are needed months early.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- SoC 소프트웨어 bring-up은 보통 post-silicon 단계에서 이루어지며, RTL 디버그 가시성이 낮고 silicon re-spin 비용이 크므로 몇 달 앞선 pre-silicon 모델이 필요하다.
 
 </div>
 </div>
@@ -151,12 +132,12 @@ SoC의 소프트웨어 bring-up과 검증은 전통적으로 post-silicon 단계
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-검증 방법별 비교는 다음과 같이 정리된다.
+- Simulation (~100 Hz) is too slow for OS boot, and pure ZeBu emulation (~5 MHz peak) is costly; at a 1 MHz driver clock, bringing up the Android home screen on a ~2-billion-gate Exynos SoC takes about 4 days.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 시뮬레이션(약 100 Hz)은 OS 부팅에 너무 느리고, 순수 ZeBu 에뮬레이션(최대 약 5 MHz)도 비용이 크다. 약 20억 게이트 Exynos SoC에서 1 MHz 드라이버 클럭으로 Android 홈 화면을 올리는 데 약 4일이 걸린다.
 
 </div>
 </div>
@@ -164,12 +145,27 @@ SoC의 소프트웨어 bring-up과 검증은 전통적으로 post-silicon 단계
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Simulator**: 최신 코어 기준 약 100Hz 수준으로 OS 부팅에 부적합
+- FPGA prototypes offer limited debug visibility and high cost.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- FPGA 프로토타입은 디버그 가시성이 제한적이고 비용이 높다.
+
+</div>
+</div>
+
+### Architecture and Methodology
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- The SoC is partitioned: the virtual side (VDK/TLM SystemC) hosts the CPU (ARM Fast Model ISS), GIC, MCT, UART, PERI, storage and DRAM; the RTL side on ZeBu 5 hosts the bus, memory controller and M/M IPs.
+
+</div>
+<div class="bi-ko" markdown>
+
+- SoC를 분할한다. 가상 측(VDK/TLM SystemC)에는 CPU(ARM Fast Model ISS), GIC, MCT, UART, PERI, 스토리지, DRAM을 두고, ZeBu 5 기반 RTL 측에는 버스, 메모리 컨트롤러, M/M IP를 둔다.
 
 </div>
 </div>
@@ -177,12 +173,12 @@ SoC의 소프트웨어 bring-up과 검증은 전통적으로 post-silicon 단계
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Emulator**: ZeBu Server 5 기준 약 5MHz급이나 소유 비용이 크고 OS 부팅이 여전히 느림
+- Adaptors in Virtualizer Studio and transactors in the emulation testbench connect the two domains; ZHAL wraps them as TLM models.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- Virtualizer Studio의 어댑터와 에뮬레이션 테스트벤치의 트랜스액터가 두 영역을 연결하며, ZHAL이 이를 TLM 모델로 감싼다.
 
 </div>
 </div>
@@ -190,12 +186,12 @@ SoC의 소프트웨어 bring-up과 검증은 전통적으로 post-silicon 단계
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **FPGA**: 비용이 높고 디버그 가시성이 낮음
+- A shared DRAM model (ZRM on the emulator, shadow memory on the virtual side) is synced through a transactor to cut CPU-DRAM latency.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 공유 DRAM 모델(에뮬레이터의 ZRM, 가상 측의 shadow 메모리)은 트랜스액터를 통해 동기화되어 CPU-DRAM 지연을 줄인다.
 
 </div>
 </div>
@@ -203,120 +199,33 @@ SoC의 소프트웨어 bring-up과 검증은 전통적으로 post-silicon 단계
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Silicon**: SW 개발이 가장 늦게 이뤄지며 디버그가 어려움
+- Debug covers TLM chart view, VP disassembly with T32, adaptor log levels, and Verdi waveforms.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-문서의 핵심 문제는 순수 에뮬레이션에서 driver clock이 약 1MHz일 때 Android 홈 화면 bring-up에 약 4일이 걸린다는 점이다. 이 때문에 SW 개발의 반복(iteration)이 현실적으로 불가능하다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-### 핵심 아키텍처 및 방법론
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-하이브리드 에뮬레이션은 SoC의 일부는 가상 플랫폼(SystemC/TLM, Virtualizer)에서, 나머지는 RTL 에뮬레이터(ZeBu Server 5)에서 실행하는 방식이다. 문서가 제시한 분할은 다음과 같다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Virtual 측(TLM, VDK)**: CPU, GIC, MCT, UART, PERI, Storage, DRAM
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Emulation 측(RTL)**: Bus, Memory Controller, 기타 M/M IP
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
+- 디버그는 TLM chart view, T32를 이용한 VP disassembly, 어댑터 로그 레벨, Verdi 파형 덤프를 포함한다.
 
 </div>
 </div>
 
 ```mermaid
 flowchart LR
-  subgraph VP[Virtual Platform - Virtualizer]
-    CPU[CPU ISS model]
-    SHADOW[Shadow DRAM / Fastmem]
-    PER[GIC, UART, PERI 등]
-  end
-  subgraph EMU[ZeBu Emulator - RTL]
-    BUS[Bus]
-    MC[Memory Controller]
-    DRAM[ZRM DRAM model]
-    IP[M/M IP]
-  end
-  VP -- Adaptors / Transactor / ZHAL --> EMU
-  SHADOW <-. synced via Transactor .-> DRAM
+  VP["Virtual side: CPU ISS, GIC, UART, DRAM shadow"] <-->|"Adaptors / ZHAL"| TR[Transactors]
+  TR <--> HW["ZeBu RTL: bus, MemCtrl, IPs, ZRM DRAM"]
 ```
 
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-주요 구성 요소는 다음과 같다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
+### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-1. **CPU 가상화**: 가상 CPU 모델이 ISS로 동작하여 gate-level 에뮬레이션보다 빠르다. ARM Fast Model을 사용한다.
+- Hybrid bring-up: about 2 min to Linux kernel boot, 12 min to the Android logo, and 72 min to the Android home screen, versus about 4 days in pure emulation.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 하이브리드 bring-up 시간은 Linux 커널 부팅 약 2분, Android 로고 12분, Android 홈 화면 72분이며, 순수 에뮬레이션의 약 4일과 비교된다.
 
 </div>
 </div>
@@ -324,12 +233,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-2. **Shared DRAM**: 에뮬레이터의 ZRM DRAM과 가상 측의 shadow memory를 두고 Transactor로 동기화하여 CPU-DRAM 트랜잭션 지연을 줄인다.
+- Limitations: no cache coherency and no SMP (the Fast Model is single-core), so both are disabled during software development.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
+- 한계: cache coherency와 SMP를 지원하지 않는다(Fast Model이 단일 코어). 따라서 소프트웨어 개발 중에는 두 기능을 비활성화한다.
 
 </div>
 </div>
@@ -337,146 +246,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-3. **Adaptor/Transactor**: Virtualizer Studio에 통합된 Adaptor가 가상 컴포넌트를 에뮬레이션 testbench의 Transactor에 연결한다. ZHAL(Zebu Hybrid Adaptor Library)이 어댑터 wrapper를 제공하며, 이를 TLM 모델처럼 사용할 수 있다.
+- Future work, not yet demonstrated: a gear-shift method to move CPU state into the RTL CPU for benchmarks, plus SMP and multi-chip support. The paper reports no CPU benchmark results.
 
 </div>
 <div class="bi-ko" markdown>
 
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-4. **디버그 방법**: TLM chart view, VP disassembly 기반 SW 디버거와 T32, Transactor/Adaptor 로그 레벨, Verdi 파형 덤프 등을 지원한다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**제약 사항**: SystemC/TLM 모델은 cache coherency를 지원하지 않으므로 이를 비활성화해야 하며, ARM Fast Model은 multi-core 시뮬레이션을 지원하지 않으므로 SMP도 꺼야 한다. 또한 하이브리드 환경은 대량의 데이터를 빠르게 생성하여 수십억 명령 규모의 부팅에서는 버그 주입 지점과 관찰 지점 사이가 기록 창(약 백만 사이클)을 벗어날 수 있어 root cause 추적이 어렵다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**향후 과제(Future Scope)**:
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Gear shift 방법론**: 가상 CPU에서 Linux/Android를 부팅한 뒤 CPU 상태를 RTL CPU로 옮겨 emulator 상에서 CPU 벤치마크를 수행하는 방식
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **SMP 및 cache coherency 지원**: 대안 방법 탐색 중
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Multi-chip/multi-die SoC 지원**: 진행 중
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-### 실험 결과 및 결론
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-대상은 약 2 billion gate 규모의 Samsung Exynos SoC다. 보고된 bring-up 시간은 다음과 같다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-| 플랫폼 | 측정 결과 |
-|---|---|
-| Simulation | SW 개발에 비현실적(수치 원문 표에 명시된 값 없음) |
-| 순수 Emulation | Android 홈 화면까지 약 4일 |
-| 하이브리드 Emulation | Linux 커널 약 2분, Android 로고 약 12분, 홈 화면 약 72분 |
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-결론적으로 하이브리드 에뮬레이션은 CPU와 DRAM 트랜잭션 병목을 가상 측으로 옮겨 순수 에뮬레이션 대비 bring-up 반복 시간을 크게 줄이며, RTL 수준의 디버그 가시성을 유지한다. 다만 cache coherency와 SMP 미지원, 장시간 SW 버그 추적의 어려움이 남아 있다. 본 문서는 발표 논문으로, 속도 향상 배수나 실험 조건(클럭, 호스트 환경)의 세부 값은 제시하지 않는다.
-
-</div>
-<div class="bi-ko" markdown>
-
-&nbsp;
+- 아직 입증되지 않은 향후 과제: 벤치마크를 위해 CPU 상태를 RTL CPU로 옮기는 gear-shift 방법론, SMP 및 multi-chip 지원. 논문은 CPU 벤치마크 결과를 보고하지 않는다.
 
 </div>
 </div>

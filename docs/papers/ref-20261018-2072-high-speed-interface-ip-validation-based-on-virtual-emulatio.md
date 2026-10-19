@@ -7,14 +7,14 @@ region: US
 year: 2019
 category: Emulation
 tags:
-- Emulation
-- Virtual Platform
-- PCIe Gen3
-- PIPE Interface
+- Virtual Emulation
 - HSI IP
+- PCIe Gen3
+- PIPE interface
+- Emulation
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/high-speed-interface-ip-validation-based-on-virtual-emulation-platform.pdf
-authors: Jaehun Lee (Samsung Electronics Co., Ltd.), DaeSeo Cha (Samsung Electronics Co., Ltd.), Sungwook Moon (Samsung Electronics Co., Ltd.)
+authors: Jaehun Lee (Samsung Electronics), DaeSeo Cha (Samsung Electronics), Sungwook Moon (Samsung Electronics)
 youtube_videos:
 - video_id: BO2BW7FTKBg
   url: https://www.youtube.com/watch?v=BO2BW7FTKBg
@@ -29,7 +29,7 @@ youtube_videos:
 # High-Speed Interface IP Validation based on Virtual Emulation Platform
 
 <figure class="rep-fig" markdown>
-![Figure 4. Proposed Work: Virtual Emulation Platform](../assets/figures/ref-20261018-2072.png?v=1792311219){ loading=lazy }
+![Figure 4. Proposed Work: Virtual Emulation Platform](../assets/figures/ref-20261018-2072.png?v=1792380073){ loading=lazy }
 <figcaption>Figure 4. Proposed Work: Virtual Emulation Platform — from the original paper (Jaehun Lee et al.)</figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ youtube_videos:
 
 | | |
 |---|---|
-| Authors | Jaehun Lee (Samsung Electronics Co., Ltd.), DaeSeo Cha (Samsung Electronics Co., Ltd.), Sungwook Moon (Samsung Electronics Co., Ltd.) |
+| Authors | Jaehun Lee (Samsung Electronics), DaeSeo Cha (Samsung Electronics), Sungwook Moon (Samsung Electronics) |
 | Venue | DVCon US 2019 |
 | Topic | Emulation |
 | Type | PAPER |
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**The paper proposes a Virtual Emulation Platform (VEP) that connects a hardware emulator hosting a PCIe Gen3 DUT to a Linux virtual machine with real device drivers, using a synthesizable PHY model in place of an MPW test chip, and reports 33.3% TAT reduction and coverage rising from 68.1% to 87.8%.**
+**The paper proposes a Virtual Emulation Platform (VEP) that connects a hardware emulator to a Linux virtual machine via a software adapter, so PCIe Gen3 HSI IP can be validated with real OS drivers at pre-silicon, reporting 33.3% TAT reduction and coverage rising to 87.8% (from 68.1%).**
 
 </div>
 <div class="bi-ko" markdown>
 
-**이 논문은 PCIe Gen3 DUT를 호스팅하는 하드웨어 에뮬레이터와 실제 디바이스 드라이버를 탑재한 Linux 가상 머신을 연결하는 Virtual Emulation Platform(VEP)을 제안하며, MPW 테스트 칩 대신 synthesizable PHY 모델을 사용해 TAT 33.3% 감소와 커버리지 68.1%에서 87.8%로의 향상을 보고합니다.**
+**이 논문은 하드웨어 에뮬레이터와 Linux 가상 머신을 소프트웨어 어댑터로 연결한 Virtual Emulation Platform(VEP)을 제안하여, 실리콘 이전 단계에서 실제 OS 드라이버로 PCIe Gen3 HSI IP를 검증할 수 있게 하며, TAT 33.3% 단축과 커버리지 68.1%에서 87.8%로의 향상을 보고합니다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- VEP removes the MPW test chip dependency: a synthesizable PHY model in the emulated mini-SoC lets OS-level, real-driver validation start at pre-silicon, but analog features (link equalization, lane margining) remain uncovered and still require FPGA plus MPW.
+- Replacing the MPW PHY test chip with a synthesizable PHY model plus a virtual-interface protocol transactor lets PCIe Gen3 validation start pre-silicon, removing the roughly 10-week MPW fabrication wait.
 
 </div>
 <div class="bi-ko" markdown>
 
-- VEP는 MPW 테스트 칩 의존성을 제거합니다. 에뮬레이션된 mini-SoC의 synthesizable PHY 모델 덕분에 pre-silicon 단계에서 OS 수준의 실제 드라이버 검증을 시작할 수 있지만, 아날로그 기능(link equalization, lane margining)은 여전히 검증되지 않으며 FPGA와 MPW가 필요합니다.
+- MPW PHY 테스트 칩을 합성 가능한 PHY 모델과 가상 인터페이스 프로토콜 트랜스액터로 대체하여, 약 10주의 MPW 제작 대기 없이 PCIe Gen3 검증을 실리콘 이전 단계에서 시작할 수 있습니다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- PIPE interface reduces emulation event capture: a serial PCIe Gen3 interface at 8 GHz captures 32x more data than a 250 MHz, 32-bit PIPE interface, and PIPE cut Gen3 link-up simulation time by 31.35x.
+- A mixed-interface methodology uses the PIPE interface (250MHz, 32-bit) for early firmware and driver development, versus the 8GHz serial interface, to cut emulation run time.
 
 </div>
 <div class="bi-ko" markdown>
 
-- PIPE 인터페이스는 에뮬레이션의 이벤트 캡처량을 줄입니다. 8 GHz 시리얼 인터페이스는 250 MHz, 32-bit PIPE 인터페이스보다 32배 많은 데이터를 캡처하며, PIPE는 Gen3 link-up 시뮬레이션 시간을 31.35배 단축했습니다.
+- 혼합 인터페이스 방법론은 펌웨어 및 드라이버 초기 개발에 PIPE 인터페이스(250MHz, 32비트)를 사용하여 8GHz 시리얼 인터페이스 대비 에뮬레이션 실행 시간을 줄입니다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The mixed interface methodology uses PIPE for early firmware and driver development, then switches to the serial PHY transactor for massive-data and power/aging tests, at the cost of maintaining two emulation environments and higher engineering effort.
+- PIPE reduced PCIe Gen3 link-up simulation time by 31.35x versus the serial interface, though the 4096-burst VM scenario gained less because OS loading dominates.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Mixed interface 방법론은 초기 펌웨어와 드라이버 개발에는 PIPE를, 대용량 데이터 및 전력/에이징 테스트에는 시리얼 PHY 트랜섹터를 사용합니다. 대신 두 개의 에뮬레이션 환경을 유지해야 하며 엔지니어링 부담이 커집니다.
+- PIPE는 PCIe Gen3 링크업 시뮬레이션 시간을 시리얼 인터페이스 대비 31.35배 단축했으나, OS 로딩이 병목인 4096 버스트 VM 시나리오에서는 개선 폭이 작았습니다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Reported results on the PCIe Gen3 IP: functional coverage rose from 68.1% to 87.8% (a 19.7-point gain) and TAT dropped by 33.3%, with VEP used for about 6 weeks of S/W development and validation before FPGA plus MPW for the remaining features.
+- Reported results are 19.7% higher functional coverage and 33.3% TAT reduction; coverage reached 87.8% versus 68.1% for the FPGA+MPW platform, with analog features (equalization, lane margining) still uncovered.
 
 </div>
 <div class="bi-ko" markdown>
 
-- PCIe Gen3 IP에 대한 보고 결과: 기능 커버리지가 68.1%에서 87.8%로 상승(19.7포인트 향상)했고 TAT는 33.3% 감소했습니다. VEP는 나머지 기능을 FPGA와 MPW로 검증하기 전에 약 6주간 S/W 개발 및 검증에 사용되었습니다.
+- 보고된 결과는 기능 커버리지 19.7% 향상과 TAT 33.3% 단축이며, 커버리지는 FPGA+MPW 플랫폼의 68.1%에서 87.8%로 올랐고 이퀄라이제이션, 레인 마진닝 등 아날로그 기능은 여전히 검증되지 않았습니다.
 
 </div>
 </div>
@@ -115,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Debug support is built into the flow: TLP-level log files from the socket server for S/W debugging, virtual JTAG for connecting a software debugger, and timestamped CSV transaction logs to locate waveform points of interest for H/W debugging, all in a static environment without timeouts.
+- The VEP offers full-visibility debug: TLP logs for S/W engineers, timestamped CSV transaction logs for H/W engineers, and static environments without timeout constraints.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 디버그 지원이 흐름에 포함되어 있습니다. S/W 디버깅에는 소켓 서버 측 TLP 수준 로그 파일과 virtual JTAG를, H/W 디버깅에는 파형 관심 지점을 찾기 위한 타임스탬프 CSV 트랜잭션 로그를 사용하며, 모든 과정이 타임아웃 없는 정적 환경에서 이루어집니다.
+- VEP는 S/W 엔지니어를 위한 TLP 로그, H/W 엔지니어를 위한 타임스탬프 CSV 트랜잭션 로그, 타임아웃 제약이 없는 정적 환경을 제공하는 전 가시성 디버그를 지원합니다.
 
 </div>
 </div>
@@ -132,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- HSI IP (here PCIe Gen3) complexity and speed rise every generation, while project schedules stay fixed, so complete functional validation before SoC design is increasingly hard.
+- HSI IP (e.g., PCIe Gen3) complexity and speed rise each generation, and the FPGA + MPW test-chip flow is slow: MPW fabrication takes about 10 weeks and limits functional validation and S/W development.
 
 </div>
 <div class="bi-ko" markdown>
 
-- HSI IP(여기서는 PCIe Gen3)의 복잡도와 속도가 세대마다 증가하는 반면 프로젝트 일정은 고정되어 있어, SoC 설계 이전에 기능 검증을 완료하기가 점점 어려워지고 있습니다.
+- HSI IP(예: PCIe Gen3)의 복잡도와 속도가 세대마다 증가하고 있으며, FPGA + MPW 테스트 칩 흐름은 느립니다. MPW 제작에 약 10주가 걸리고 기능 검증과 S/W 개발을 제약합니다.
 
 </div>
 </div>
@@ -145,44 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The conventional approach is an FPGA-based platform: a mini-SoC (ARM CPU, interconnect, memory, UART) on FPGA with the PHY in a separate MPW test chip connected over PCS/PMA. The authors list several limitations:
-  - An MPW test chip takes about 10 weeks to fabricate, so functional validation with target S/W can start only after silicon is available.
-  - PCIe Endpoint validation needs a back-to-back connection, which makes PCIe protocol compliance checking impossible on this platform.
-  - FPGAs cannot reach full PCIe Gen3 speed, and FPGA visibility and implementation effort are limited.
+- FPGA prototypes cannot reach at-speed operation, and back-to-back PCIe connections cannot check protocol compatibility. Simulation is too slow for long scenarios such as massive data transfer and power/aging tests.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 기존 방식은 FPGA 기반 플랫폼입니다. FPGA에 mini-SoC(ARM CPU, interconnect, memory, UART)를 구성하고 PHY는 PCS/PMA 인터페이스로 연결된 별도 MPW 테스트 칩에 둡니다. 저자들이 지적한 한계는 다음과 같습니다.
-  - MPW 테스트 칩 제작에 약 10주가 걸리므로, 실리콘이 준비되어야 타깃 S/W를 이용한 기능 검증을 시작할 수 있습니다.
-  - PCIe Endpoint 검증에는 back-to-back 연결이 필요하여 이 플랫폼에서는 PCIe 프로토콜 호환성 검사가 불가능합니다.
-  - FPGA로는 PCIe Gen3 full speed에 도달할 수 없으며, FPGA의 visibility와 구현 부담도 큽니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Simulation is too slow to exercise massive data transfers, power management, and aging tests.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 시뮬레이션은 대용량 데이터 전송, 전력 관리, 에이징 테스트를 수행하기에는 속도가 너무 느립니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Firmware or day-of-use (DOU) emulation alone does not cover OS-level scenarios with the IP's real device driver.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 펌웨어나 DOU(day-of-use) 시나리오 에뮬레이션만으로는 IP의 실제 디바이스 드라이버를 사용하는 OS 수준 시나리오를 다룰 수 없습니다.
+- FPGA 프로토타입은 실속도 동작이 불가능하고, back-to-back PCIe 연결로는 프로토콜 호환성을 확인할 수 없습니다. 시뮬레이션은 대량 데이터 전송, 전력/에이징 테스트 같은 장시간 시나리오에 비해 너무 느립니다.
 
 </div>
 </div>
@@ -192,16 +160,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **VEP structure**: a hardware emulator hosts the DUT (mini-SoC with PCIe Link controller and a synthesizable PHY model). A virtual machine running Linux hosts the virtual device and the proven OS driver. A software adapter bridges them:
-  - The driver adapter (DEV1/DEV2 on the VM side) intercepts transactions going to the virtual device and sends them as packets.
-  - The protocol transactor (DEV1/DEV2 on the hardware side, C proxy plus interface xtor) connects over the protocol to the DUT in the emulator.
+- The VEP couples a hardware emulator (mini-SoC with PCIe Link controller, synthesizable PHY model, protocol transactor) to a Linux VM with a virtual device. A software adapter (driver adapter plus C proxy/xtor) intercepts transactions and forwards them over a virtual protocol connection.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **VEP 구조**: 하드웨어 에뮬레이터에 DUT(PCIe Link controller와 synthesizable PHY 모델을 포함한 mini-SoC)를 올립니다. Linux를 실행하는 가상 머신에는 가상 디바이스와 검증된 OS 드라이버가 있습니다. 소프트웨어 어댑터가 둘을 연결합니다.
-  - 드라이버 어댑터(VM 측 DEV1/DEV2)는 가상 디바이스로 향하는 트랜잭션을 가로채 패킷으로 전송합니다.
-  - 프로토콜 트랜섹터(하드웨어 측 DEV1/DEV2, C proxy 및 interface xtor)는 프로토콜을 통해 에뮬레이터의 DUT와 연결됩니다.
+- VEP는 하드웨어 에뮬레이터(PCIe Link 컨트롤러를 포함한 mini-SoC, 합성 가능한 PHY 모델, 프로토콜 트랜스액터)를 가상 디바이스를 가진 Linux VM과 연결합니다. 소프트웨어 어댑터(드라이버 어댑터와 C proxy/xtor)가 트랜잭션을 가로채 가상 프로토콜 연결로 전달합니다.
 
 </div>
 </div>
@@ -209,12 +173,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Versus the previous platform**: the MPW PHY is replaced by a synthesizable PHY model. This model covers the PMA but cannot handle equalization or lane margining. A protocol transactor is added on the hardware side for the virtual interface.
+- Mixed-interface flow: step 1 uses the PIPE interface (parallel data, 250MHz at 32-bit vs. 8GHz serial, a 32x event reduction) for early firmware/driver work; step 2 switches to the serial PHY transactor for link equalization and aging tests.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **기존 플랫폼과의 차이**: MPW PHY 대신 synthesizable PHY 모델을 사용합니다. 이 모델은 PMA를 다루지만 equalization과 lane margining은 처리할 수 없습니다. 가상 인터페이스 통신을 위해 하드웨어 측에 프로토콜 트랜섹터가 추가됩니다.
+- 혼합 인터페이스 흐름: 1단계는 초기 펌웨어/드라이버 작업에 PIPE 인터페이스(병렬 데이터, 32비트에서 250MHz, 시리얼 8GHz 대비 이벤트 32배 감소)를 사용하고, 2단계에서 이퀄라이제이션과 에이징 테스트를 위해 시리얼 PHY 트랜스액터로 전환합니다.
 
 </div>
 </div>
@@ -222,72 +186,32 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Claimed advantages**: (1) no MPW chip, so S/W can be developed at pre-silicon; (2) OS-level applications combined with emulation acceleration for inbound/outbound traffic, massive data, power management, and aging; (3) at-speed benchmarking, for example with IOmeter, to check effective bandwidth against PCI Express Base Spec 3.0 (8.0 GT/s). The environment is also static, with no timeout constraints, and can be replicated across projects.
+- Debug: TLP logs for S/W engineers (virtual JTAG), timestamped CSV transaction logs for H/W engineers to locate waveform points.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **주장하는 장점**: (1) MPW 칩이 필요 없어 pre-silicon 단계에서 S/W 개발이 가능합니다. (2) OS 수준 애플리케이션과 에뮬레이션 가속을 결합해 inbound/outbound 트래픽, 대용량 데이터, 전력 관리, 에이징을 검증합니다. (3) IOmeter 같은 벤치마크로 at-speed 성능을 측정하고, PCI Express Base Spec 3.0(8.0 GT/s)의 effective bandwidth와 비교합니다. 또한 타임아웃 제약이 없는 정적 환경이며 프로젝트 간 복제가 가능합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Mixed interface methodology** (for S/W development):
-  - Serial interface timing: the 8 GHz serial clock captures about 32x more events than the 250 MHz, 32-bit PIPE interface. This degrades emulation run time for long scenarios.
-  - Step 1: integrate a PIPE transactor in place of the PCIe PHY transactor. No synthesizable PHY model is needed, so the VEP builds faster, and basic firmware and drivers can be developed.
-  - Step 2: integrate the synthesizable PHY model and PCIe PHY transactor, then validate the IP with the developed S/W, including massive data and power/aging tests.
-  - This requires two emulation environments, one per interface, and higher engineering effort.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **Mixed interface 방법론**(S/W 개발용):
-  - 시리얼 인터페이스 타이밍: 8 GHz 시리얼 클록은 250 MHz, 32-bit PIPE 인터페이스보다 약 32배 많은 이벤트를 캡처합니다. 이로 인해 긴 시나리오에서 에뮬레이션 실행 시간이 크게 늘어납니다.
-  - 1단계: PCIe PHY 트랜섹터 대신 PIPE 트랜섹터를 통합합니다. synthesizable PHY 모델이 필요 없으므로 VEP 구축이 빠르고, 기본 펌웨어와 드라이버를 개발할 수 있습니다.
-  - 2단계: synthesizable PHY 모델과 PCIe PHY 트랜섹터를 통합한 뒤, 개발된 S/W로 대용량 데이터 및 전력/에이징 테스트를 포함해 IP를 검증합니다.
-  - 인터페이스별로 두 개의 에뮬레이션 환경이 필요하며 엔지니어링 부담이 커집니다.
+- 디버그: S/W 엔지니어는 TLP 로그(가상 JTAG)를, H/W 엔지니어는 파형 관심 지점을 찾기 위한 타임스탬프 CSV 트랜잭션 로그를 사용합니다.
 
 </div>
 </div>
 
 ```mermaid
 flowchart LR
-    A[PIPE transactor<br/>fast emulation] --> B[Firmware and driver<br/>development]
-    B --> C[Integrate synthesizable PHY<br/>+ PCIe PHY transactor]
-    C --> D[Massive data, power<br/>and aging validation]
+  VM[Linux VM + OS driver] --> SA[Software adapter] --> TX[Protocol transactor] --> DUT[PCIe Gen3 DUT in emulator]
 ```
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Debug flows**:
-  - S/W: TLP-level log files (type, address, length, data/header) from the socket on the server side, plus a software debugger attached through virtual JTAG.
-  - H/W: CSV logs of configuration, read/write, address, and data transactions with timestamps, used to find points of interest and dump waveforms at those points.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **디버그 흐름**:
-  - S/W: 소켓 서버 측의 TLP 로그 파일(타입, 주소, 길이, data/header)과 virtual JTAG로 연결된 소프트웨어 디버거를 사용합니다.
-  - H/W: 설정, 읽기/쓰기, 주소, 데이터 트랜잭션을 타임스탬프와 함께 CSV로 기록하여 관심 지점을 찾고 해당 지점의 파형을 덤프합니다.
-
-</div>
-</div>
 
 ### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Link-up performance (Table 1)**: the PIPE interface cut PCIe Gen3 link-up simulation time by a factor of 31.35 relative to the serial interface, and wall-clock time was even faster than estimated. The reduction for the 4096-burst VM-loaded scenario was smaller, which the authors attribute to OS loading as the bottleneck rather than hardware.
+- PIPE interface cut the PCIe Gen3 link-up simulation time by 31.35x versus serial; the 4096-burst VM case showed a smaller gain.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Link-up 성능(Table 1)**: PIPE 인터페이스는 시리얼 인터페이스 대비 PCIe Gen3 link-up 시뮬레이션 시간을 31.35배 단축했으며, wall-clock 시간은 예상보다 더 빨랐습니다. 4096 burst VM 시나리오의 감소폭은 더 작았는데, 저자들은 이를 하드웨어가 아니라 OS 로딩이 병목이기 때문이라고 설명합니다.
+- PIPE 인터페이스는 PCIe Gen3 링크업 시뮬레이션 시간을 시리얼 대비 31.35배 줄였으며, 4096 버스트 VM 시나리오에서는 개선 폭이 더 작았습니다.
 
 </div>
 </div>
@@ -295,12 +219,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Coverage (Table 2)**: the previous FPGA plus MPW platform covered 68.1% of the validated space. VEP reached 87.8%, a 19.7-point gain. The remaining gap is analog behavior (link equalization, lane margining), which only the FPGA plus MPW platform can cover.
+- Coverage rose from 68.1% (FPGA + MPW) to 87.8% (VEP), a 19.7% increase, and TAT dropped 33.3% over a 6-week VEP phase.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **커버리지(Table 2)**: 기존 FPGA+MPW 플랫폼은 검증 공간의 68.1%를 커버했습니다. VEP는 87.8%에 도달해 19.7포인트 향상되었습니다. 남은 영역은 link equalization, lane margining 같은 아날로그 특성으로, FPGA+MPW 플랫폼에서만 커버할 수 있습니다.
+- 커버리지는 68.1%(FPGA + MPW)에서 87.8%(VEP)로 올라 19.7% 증가했고, 6주간의 VEP 단계로 TAT가 33.3% 감소했습니다.
 
 </div>
 </div>
@@ -308,53 +232,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **TAT (Figure 9)**: the flow used simulation and simulation acceleration for initial sanity checks, then VEP for about 6 weeks of early S/W development and validation, then FPGA plus MPW for the remaining features with target S/W. The authors report a 33.3% TAT reduction.
+- Analog features (equalization, lane margining) remain uncovered and need the FPGA/MPW platform; the authors call for EDA vendor support for analog modeling.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **TAT(Figure 9)**: 초기 sanity check에는 시뮬레이션과 시뮬레이션 가속을 사용했고, 이후 약 6주간 VEP로 초기 S/W 개발과 검증을 수행했습니다. 마지막으로 나머지 기능은 타깃 S/W와 OS 수준 시나리오로 FPGA+MPW에서 검증했습니다. 저자들은 TAT가 33.3% 감소했다고 보고합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Limitations stated by the authors**: VEP cannot verify analog characteristics. The approach is at an early stage and is demonstrated on one IP (PCIe Gen3). The paper's own text also describes a 5 Gbps threshold for emulation slowdown and notes that the ECO and silicon debug benefits are argued qualitatively.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **저자가 밝힌 한계**: VEP로는 아날로그 특성을 검증할 수 없습니다. 이 접근은 초기 단계이며 PCIe Gen3 한 가지 IP에 대해서만 시연되었습니다. 논문 본문에는 에뮬레이션 속도 저하가 나타나는 5 Gbps 기준도 언급되며, ECO 및 실리콘 디버그 이점은 정성적으로 논의됩니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Future work**: the authors expect coverage near 100% if EDA vendors add analog modeling or handling to emulation, and they position VEP as complementary to in-circuit emulation.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **향후 과제**: EDA 벤더가 에뮬레이션에 아날로그 모델링이나 처리 기법을 추가한다면 커버리지를 거의 100%까지 높일 수 있다고 저자들은 예상하며, VEP를 in-circuit emulation과 상호 보완적인 방법으로 위치시킵니다.
-
-</div>
-</div>
-
-### Results and Conclusions (summary note)
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The reported numbers are: 33.3% TAT reduction, 68.1% to 87.8% coverage, and 31.35x link-up simulation time reduction. They come from a single PCIe Gen3 IP validation case.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 보고된 수치는 TAT 33.3% 감소, 커버리지 68.1%에서 87.8%로 향상, link-up 시뮬레이션 시간 31.35배 단축입니다. 이는 단일 PCIe Gen3 IP 검증 사례에서 나온 결과입니다.
+- 이퀄라이제이션, 레인 마진닝 같은 아날로그 기능은 여전히 검증되지 않아 FPGA/MPW 플랫폼이 필요하며, 저자들은 아날로그 모델링을 위한 EDA 벤더의 지원을 제안합니다.
 
 </div>
 </div>

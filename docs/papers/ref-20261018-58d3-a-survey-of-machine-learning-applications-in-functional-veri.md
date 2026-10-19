@@ -14,7 +14,7 @@ tags:
 - Open Datasets
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/1135-A-Survey-of-Machine-Learning-Applications-in-Functional-Verification.pdf
-authors: Dan Yu (Siemens), Harry Foster (Siemens), Tom Fitzpatrick (Siemens)
+authors: Dan Yu (Siemens EDA), Harry Foster (Siemens EDA), Tom Fitzpatrick (Siemens EDA)
 youtube_videos:
 - video_id: SgZYDJHGSkg
   url: https://www.youtube.com/watch?v=SgZYDJHGSkg
@@ -32,7 +32,7 @@ youtube_videos:
 
 | | |
 |---|---|
-| Authors | Dan Yu (Siemens), Harry Foster (Siemens), Tom Fitzpatrick (Siemens) |
+| Authors | Dan Yu (Siemens EDA), Harry Foster (Siemens EDA), Tom Fitzpatrick (Siemens EDA) |
 | Venue | DVCon US 2023 |
 | Topic | Verification |
 | Type | PAPER |
@@ -43,12 +43,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**This survey maps machine learning (ML) techniques onto functional verification (FV) tasks spanning requirements, code analysis, formal/simulation acceleration, coverage closure, and bug analysis, and argues that the lack of open, high-quality verification datasets is the main barrier to progress.**
+**A survey mapping ML applications across the functional verification (FV) lifecycle (requirements, static analysis, formal/simulation acceleration, coverage closure, bug analysis), which concludes that progress is bottlenecked by the lack of large open verification datasets and by generalization, scalability, and data governance challenges.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**이 서베이는 요구사항, 코드 분석, 형식/시뮬레이션 가속, 커버리지 클로저, 버그 분석에 걸친 FV(기능 검증) 과제에 ML 기법을 매핑하고, 고품질 검증 데이터셋의 부재가 진전을 가로막는 핵심 장벽이라고 주장합니다.**
+**ML을 기능 검증(FV) 전 생애주기(요구사항, 정적 분석, 형식/시뮬레이션 가속, 커버리지 클로저, 버그 분석)에 적용한 사례를 정리한 서베이로, 대규모 공개 검증 데이터셋 부족과 일반화·확장성·데이터 거버넌스 문제가 진전을 가로막는다고 결론짓는다.**
 
 </div>
 </div>
@@ -58,12 +58,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Formal orchestration with an AdaBoost decision-tree classifier raised the solved-instance ratio from 95% to 97% (average speedup 1.85), and multiple linear regression predicted formal resource needs with a 32% average error.
+- Formal orchestration with an AdaBoost decision-tree classifier raised solved instances from 95% to 97% (average speedup 1.85), and a regression model predicted formal resource needs with 32% average error.
 
 </div>
 <div class="bi-ko" markdown>
 
-- AdaBoost 결정트리 분류기 기반 형식 검증 오케스트레이션은 해결 인스턴스 비율을 95%에서 97%로 높였고(평균 speedup 1.85), 다중 선형 회귀는 형식 검증 리소스 요구량을 평균 32% 오차로 예측했습니다.
+- AdaBoost 결정 트리 분류기를 이용한 형식 검증 오케스트레이션은 해결 인스턴스 비율을 95%에서 97%로 높였고(평균 speedup 1.85), 회귀 모델은 형식 검증 자원 요구량을 평균 32% 오차로 예측했다.
 
 </div>
 </div>
@@ -71,12 +71,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- ML-guided coverage closure reached 100% coverage with 3x to 5x fewer tests than baseline, and FSM and non-FSM designs saw 69% and 72% test reductions versus directed sequence generation; a white-box GNN on CDFGs predicted coverage with 74%, 73%, and 90% accuracy on IBEX v1, IBEX v2, and TPU.
+- The strongest coverage-closure result cited is a white-box GNN over CDFG with gradient-based search, which reached 74%, 73%, and 90% coverage-prediction accuracy on IBEX v1, v2, and TPU, but no prior-design knowledge is reused.
 
 </div>
 <div class="bi-ko" markdown>
 
-- ML 기반 커버리지 클로저는 기준선 대비 3~5배 적은 테스트로 100% 커버리지를 달성했으며, FSM 및 non-FSM 설계에서 directed sequence 생성 대비 각각 69%, 72%의 테스트 감소를 보였습니다. CDFG 기반 white-box GNN은 IBEX v1, IBEX v2, TPU에서 커버리지 예측 정확도 74%, 73%, 90%를 보였습니다.
+- 커버리지 클로저에서 가장 강한 결과로 제시된 것은 CDFG 기반 white-box GNN과 gradient 기반 탐색으로, IBEX v1, v2, TPU에서 각각 74%, 73%, 90%의 커버리지 예측 정확도를 달성했으나 다른 설계의 사전 지식은 활용하지 않는다.
 
 </div>
 </div>
@@ -84,12 +84,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Bug clustering from simulation logs reached only AMI 0.543 (K-means/agglomerative) and 0.593 (DBSCAN), while random forest root-cause classification reached 90.7% accuracy and 0.913 F1; none of the surveyed work addresses automated fix suggestion.
+- Bug clustering on undisclosed simulation logs reached only AMI 0.543 (K-means/agglomerative) and 0.593 (DBSCAN), while random forest root-cause classification reached 90.7% accuracy; root-cause fix suggestion has no published results.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 시뮬레이션 로그 기반 버그 클러스터링은 AMI 0.543(K-means/agglomerative), 0.593(DBSCAN)에 그쳤고, 랜덤 포레스트 root-cause 분류는 정확도 90.7%, F1 0.913을 기록했습니다. 자동 수정 제안에 대한 연구 결과는 없습니다.
+- 미공개 시뮬레이션 로그의 버그 클러스터링은 K-means/agglomerative에서 AMI 0.543, DBSCAN에서 0.593에 그쳤고, random forest 근본 원인 분류는 90.7% 정확도를 보였으며, 수정 제안에 대한 공개 결과는 없다.
 
 </div>
 </div>
@@ -97,12 +97,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Training data scarcity is the dominant bottleneck: the largest NL-to-formal-spec dataset has about 100 sentence pairs, and GitHub/RISC-V/OpenCores hold only about 10 million lines of design and verification code with very little verification data.
+- NL-to-SVA translation is limited by datasets of only about 100 sentence pairs, and the GitHub/RISC-V/OpenCores search found about 10 million lines of code with very sparse verification data.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 학습 데이터 부족이 가장 큰 병목입니다. NL-to-형식 스펙 데이터셋은 약 100개 문장 쌍에 불과하며, GitHub/RISC-V/OpenCores의 설계 및 검증 코드는 약 1,000만 라인 수준이고 검증 데이터는 매우 적습니다.
+- NL-to-SVA 변환은 약 100개 문장 쌍에 불과한 데이터셋으로 제한되며, GitHub/RISC-V/OpenCores 조사에서는 약 1,000만 라인의 코드가 발견되었지만 검증 데이터는 매우 희소했다.
 
 </div>
 </div>
@@ -110,12 +110,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Industrial adoption hinges on generalizability, scalability, and data governance, since tool developers, data owners, and users may sit in different organizations with different compute and MLOps capacity.
+- Generalization, scalability, and data governance are identified as the three main industrial barriers, and the authors call for standardized open verification datasets.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 산업 적용의 핵심은 일반화 능력, 확장성, 데이터 거버넌스입니다. 데이터 소유자, 툴 개발자, 툴 사용자가 서로 다른 조직에 속할 수 있고 컴퓨팅 및 MLOps 역량도 다를 수 있기 때문입니다.
+- 산업 적용의 세 가지 주요 장벽으로 일반화, 확장성, 데이터 거버넌스가 꼽혔으며, 저자들은 표준화된 공개 검증 데이터셋을 요구한다.
 
 </div>
 </div>
@@ -127,12 +127,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Functional verification is cited as consuming about half of design engineers' time, with functional and logic errors as the leading cause of respins (about 50% of ASIC respins per the cited Wilson Research Group surveys [1][2]).
+- FV consumes roughly half of design engineering time, and functional/logic errors remain the top cause of respins, so ML is proposed as a way to speed up verification.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 기능 검증(FV)은 설계 엔지니어 업무 시간의 약 절반을 차지하며, 기능 및 논리 오류가 respin의 주요 원인이라고 인용됩니다(ASIC respin의 약 50%, Wilson Research Group 서베이 [1][2] 인용).
+- FV는 설계 엔지니어 시간의 약 절반을 차지하고, 기능/로직 오류는 여전히 respin의 주요 원인이므로 ML로 검증을 가속하는 방안이 제시된다.
 
 </div>
 </div>
@@ -140,38 +140,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The paper positions FV as computation- and data-intensive, hence a natural ML target, and aims to (a) identify FV problems addressable by ML, (b) list emerging ML techniques, (c) give an industrial perspective, and (d) discuss data unavailability.
+- The paper maps ML topics across requirements engineering, static analysis, verification acceleration, test generation/coverage closure, and bug analysis (Table I), noting which subtopics are unexplored in prior surveys.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 본 논문은 FV를 계산 및 데이터 집약적 문제로 규정해 ML 적용 대상으로 보고, (a) ML로 해결 가능한 FV 과제 식별, (b) 신규 ML 기법 정리, (c) 산업 관점 제시, (d) 데이터 부재 논의를 목표로 합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Prior surveys [6][7][8] were said to cover only subsets of the problem space (e.g., test-set redundancy, formal engine selection, root-cause analysis, code generation). This paper claims a broader topic list.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 기존 서베이 [6][7][8]는 문제 공간의 일부(예: 테스트 세트 중복 제거, 형식 엔진 선택, root-cause 분석, 코드 생성)만 다뤘다고 평가하며, 본 논문은 더 넓은 주제 목록을 제시한다고 주장합니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Central thesis: the scarcity of verification datasets is what keeps ML in FV at primitive techniques trained on hundreds of samples.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 핵심 주장: 검증 데이터셋 부족으로 인해 ML의 FV 적용이 수백 개 샘플로 학습하는 기초적 기법에 머물러 있습니다.
+- 논문은 요구사항 엔지니어링, 정적 분석, 검증 가속, 테스트 생성/커버리지 클로저, 버그 분석에 걸친 ML 주제를 정리하고(Table I), 기존 서베이에서 다루지 않은 하위 주제를 표시한다.
 
 </div>
 </div>
@@ -181,39 +155,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-The work is a literature-based survey, not an experiment. Its taxonomy (Table I) groups FV-ML topics into five areas, each with subtopics:
+- This is a literature survey, not a new system. Each topic is reviewed with its reported results, e.g., NL-to-SVA translation, code summarization, and semantic code search.
 
 </div>
 <div class="bi-ko" markdown>
 
-본 연구는 실험이 아닌 문헌 기반 서베이입니다. 분류 체계(Table I)는 FV-ML 주제를 5개 영역과 하위 주제로 묶습니다:
-
-</div>
-</div>
-
-```mermaid
-graph LR
-    A[ML for FV] --> B[1. Requirement Engineering]
-    A --> C[2. Static Code Analysis]
-    A --> D[3. Verification Acceleration]
-    A --> E[4. Coverage Closure / Test Generation]
-    A --> F[5. Bug Analysis]
-    B --> B1[NL to SVA/PSL spec, code summarization, spec mining]
-    C --> C1[Code smell detection, coding assistance, semantic code search]
-    D --> D1[Formal prover selection, simulation parallelization, module approximation]
-    E --> E1[ML-guided random test generation, CDG, GNN white-box]
-    F --> F1[Bug clustering, root-cause classification, troubleshooting]
-```
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Section III reviews emerging techniques: transformer-based large language models (applied to code tasks) and graph neural networks (GNNs) over code/data-flow graphs.
-
-</div>
-<div class="bi-ko" markdown>
-
-- III장은 신규 기법을 검토합니다: 코드 작업에 적용된 트랜스포머 기반 대규모 언어 모델과, 코드/데이터 흐름 그래프에 적용된 그래프 신경망(GNN).
+- 이 논문은 새로운 시스템이 아닌 문헌 서베이다. NL-to-SVA 변환, 코드 요약, 의미 기반 코드 검색 등 각 주제를 보고된 결과와 함께 검토한다.
 
 </div>
 </div>
@@ -221,12 +168,12 @@ graph LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Section IV covers open datasets. The authors searched GitHub, RISC-V, and OpenCores in May 2022 and counted projects by HDL (for example, 19,861 VHDL projects on GitHub, 470 Verilog and 467 SystemVerilog on OpenCores, 59 VHDL and 11 Verilog on RISC-V) and estimated about 10 million lines of code and comments.
+- Formal: ML-based solver orchestration and resource prediction. Simulation: MLP/RNN surrogate models and RL/SVM/RF/DNN-based coverage-directed test generation, including a white-box GNN over CDFG.
 
 </div>
 <div class="bi-ko" markdown>
 
-- IV장은 공개 데이터셋을 다룹니다. 저자들은 2022년 5월 GitHub, RISC-V, OpenCores를 검색해 HDL별 프로젝트 수를 집계했고(예: GitHub VHDL 19,861개, OpenCores Verilog 470개 및 SystemVerilog 467개, RISC-V VHDL 59개 및 Verilog 11개), 코드 및 주석이 약 1,000만 라인이라고 추정했습니다.
+- 형식 검증: ML 기반 solver orchestration과 자원 예측. 시뮬레이션: MLP/RNN 대리 모델, RL/SVM/RF/DNN 기반 coverage-directed 테스트 생성, CDFG 기반 white-box GNN 포함.
 
 </div>
 </div>
@@ -234,12 +181,12 @@ graph LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Section V discusses industrial constraints: generalization across design types and coding styles, scalability to billion-gate multi-team RTL, and data governance across the dataset owner, tool developer, and tool user.
+- Bug analysis: log clustering with DBSCAN/K-means and root-cause classification, plus commit-based bug prediction with gradient boosting.
 
 </div>
 <div class="bi-ko" markdown>
 
-- V장은 산업 제약을 논의합니다: 설계 유형 및 코딩 스타일 간 일반화, 수십억 게이트 규모 다팀 RTL로의 확장성, 데이터 소유자·툴 개발자·툴 사용자 간 데이터 거버넌스.
+- 버그 분석: DBSCAN/K-means 기반 로그 클러스터링과 근본 원인 분류, gradient boosting 기반 커밋 단위 버그 예측.
 
 </div>
 </div>
@@ -247,26 +194,12 @@ graph LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Key method notes by topic:
-  - Requirements: constrained natural language (CNL) with template engines versus NLP extraction; end-to-end NL-to-SVA translation is not yet production-ready.
-  - Code summarization and smell detection: IR-based and heuristic approaches; the paper says no IC-design code summarization work has been reported.
-  - Specification mining: mining recurring patterns from simulation traces, with rare patterns flagged as anomalies.
-  - Formal acceleration: ML predicts solver time and resource use to schedule solvers.
-  - Simulation acceleration: MLP (Universal Approximation) and RNN models used as surrogates for IC modules.
-  - Coverage closure: black-box approaches (RL on FIFO depth, SVM/random forest/DNN with a ternary classifier) versus a white-box GNN over CDFGs with gradient-based search.
-  - Bug analysis: log-based feature extraction (616 features) for clustering and classification; commit-based gradient boosting (100+ features reduced to 36).
+- Industrial perspective: a data-availability review using GitHub, RISC-V, and OpenCores counts (Table II).
 
 </div>
 <div class="bi-ko" markdown>
 
-- 주제별 방법 요약:
-  - 요구사항: 제약된 자연어(CNL)와 템플릿 엔진 방식 대 NLP 기반 추출. 종단간 NL-to-SVA 변환은 아직 실사용 수준이 아닙니다.
-  - 코드 요약 및 smell 탐지: IR 기반 및 휴리스틱 접근. 본 논문은 IC 설계 코드 요약 연구가 보고된 바 없다고 설명합니다.
-  - 스펙 마이닝: 시뮬레이션 트레이스에서 반복 패턴을 채굴하고, 희귀 패턴은 이상으로 간주합니다.
-  - 형식 가속: ML로 솔버 시간 및 리소스 사용량을 예측해 솔버를 스케줄링합니다.
-  - 시뮬레이션 가속: 모듈의 대리 모델로 MLP(Universal Approximation)와 RNN을 사용합니다.
-  - 커버리지 클로저: 블랙박스 접근(FIFO depth 보상 RL, SVM/랜덤 포레스트/DNN과 ternary classifier)과 CDFG 기반 white-box GNN + gradient 기반 탐색을 비교합니다.
-  - 버그 분석: 로그 기반 특징 616개 추출로 클러스터링·분류를 수행하며, 커밋 기반 gradient boosting은 100개 이상의 특징 중 36개를 선택했습니다.
+- 산업 관점: GitHub, RISC-V, OpenCores 프로젝트 수를 이용한 데이터 가용성 검토(Table II).
 
 </div>
 </div>
@@ -276,12 +209,12 @@ graph LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-Reported results (as cited in the paper):
+- Reported gains are modest: formal orchestration 95%→97% solved (1.85x speedup); GNN coverage prediction 73–90%; bug clustering AMI 0.593 at best; root-cause classification 90.7%.
 
 </div>
 <div class="bi-ko" markdown>
 
-인용된 결과는 다음과 같습니다:
+- 보고된 성과는 제한적이다: 형식 오케스트레이션 95%→97% 해결(1.85x speedup), GNN 커버리지 예측 73–90%, 버그 클러스터링 최고 AMI 0.593, 근본 원인 분류 90.7%.
 
 </div>
 </div>
@@ -289,12 +222,12 @@ Reported results (as cited in the paper):
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Formal orchestration: AdaBoost raised solved ratio from 95% to 97%, average speedup 1.85; resource prediction error 32% on average.
+- Most work uses primitive ML and small datasets, and no published work covers automated fix suggestion or code summarization in IC verification.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 형식 오케스트레이션: AdaBoost로 해결 비율이 95%에서 97%로 상승, 평균 speedup 1.85. 리소스 예측 평균 오차 32%.
+- 대부분의 연구는 단순한 ML 기법과 소규모 데이터셋을 사용하며, IC 검증에서 자동 수정 제안이나 코드 요약에 대한 공개 연구는 없다.
 
 </div>
 </div>
@@ -302,129 +235,12 @@ Reported results (as cited in the paper):
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Coverage-directed test generation: 100% coverage with 3x to 5x fewer tests; FSM and non-FSM reductions of 69% and 72%; GNN coverage-prediction accuracy of 74% (IBEX v1), 73% (IBEX v2), and 90% (TPU), trained with 50% of cover points.
+- The authors conclude that open, standardized verification datasets are the critical enabler, and that generalization, scalability, and data governance must be addressed for industrial use.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 커버리지 지향 테스트 생성: 3~5배 적은 테스트로 100% 커버리지. FSM 및 non-FSM에서 각각 69%, 72% 감소. GNN 커버리지 예측 정확도는 IBEX v1 74%, IBEX v2 73%, TPU 90%(cover point의 50%로 학습).
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Bug clustering: AMI 0.543 (K-means and agglomerative) and 0.593 (DBSCAN), described as far from the ideal 1.0. Random forest root-cause classification: 90.7% accuracy, 0.913 F1.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 버그 클러스터링: AMI 0.543(K-means 및 agglomerative), 0.593(DBSCAN)으로 이상값 1.0과 거리가 멀다고 평가됩니다. 랜덤 포레스트 root-cause 분류: 정확도 90.7%, F1 0.913.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Semantic code search: best model's Mean Reciprocal Rank around 70%.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 시맨틱 코드 검색: 최고 모델의 Mean Reciprocal Rank 약 70%.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Dataset scale: NL-to-formal-spec pairs about 100; ImageNet at 14,197,122 images in 21,841 categories (August 2022) is the contrast point. An internal survey reports up to 70% of ML project time on data preparation.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 데이터 규모: NL-to-형식 스펙 쌍 약 100개. 대조로 ImageNet은 2022년 8월 기준 21,841개 카테고리에 14,197,122개 이미지를 보유합니다. 내부 서베이에 따르면 ML 프로젝트 시간의 최대 70%가 데이터 준비에 쓰입니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Conclusions:
-
-</div>
-<div class="bi-ko" markdown>
-
-결론:
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- ML in FV is in early stages, with most work using primitive techniques restricted by training-data scale.
-
-</div>
-<div class="bi-ko" markdown>
-
-- FV에서의 ML은 초기 단계이며, 대부분 기초적 기법을 사용하고 학습 데이터 규모에 제약을 받습니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Coverage closure has the most mature results; bug-fix suggestion has no published results.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 커버리지 클로저가 가장 성숙한 결과를 보이며, 버그 수정 제안에 대한 발표된 결과는 없습니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The authors call for standardized verification data formats and community-contributed open datasets, and note that Siemens is working with consortia and partners toward this.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 저자들은 표준화된 검증 데이터 포맷과 커뮤니티 기여 기반 공개 데이터셋을 요구하며, Siemens가 컨소시엄 및 파트너와 이를 추진 중이라고 밝힙니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Generalizability, scalability, and data governance are named as the three main industrial challenges.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 산업 적용의 3대 과제로 일반화 가능성, 확장성, 데이터 거버넌스를 꼽습니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-Limitations to note: the paper gives no new experimental results, and several cited numbers come from undisclosed or single designs. Some in-text citation numbers do not match the reference list (e.g., [28] is cited for coverage experiments, but [28] is Cybenko's universal approximation paper).
-
-</div>
-<div class="bi-ko" markdown>
-
-한계: 본 논문은 새로운 실험 결과를 제시하지 않으며, 인용된 수치 중 일부는 비공개 또는 단일 설계에서 나왔습니다. 본문 인용 번호 일부가 참고문헌 목록과 맞지 않습니다(예: 커버리지 실험에 [28]이 인용되었으나 [28]은 Cybenko의 universal approximation 논문).
+- 저자들은 공개된 표준화 검증 데이터셋이 핵심 전제 조건이며, 산업 적용을 위해서는 일반화, 확장성, 데이터 거버넌스를 해결해야 한다고 결론짓는다.
 
 </div>
 </div>

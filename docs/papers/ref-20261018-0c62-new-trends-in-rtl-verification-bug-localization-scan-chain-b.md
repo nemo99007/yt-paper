@@ -7,10 +7,10 @@ region: Europe
 year: 2015
 category: Verification
 tags:
+- RTL Debug
 - Bug Localization
-- Scan-Chain
-- Genetic Algorithm
 - Emulation
+- Genetic Algorithm
 - Coverage Closure
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/new-trends-in-rtl-verification-bug-localization-scan-chain-based-methodology-ga-based-test-generation.pdf
@@ -28,11 +28,6 @@ youtube_videos:
 
 # New Trends in RTL Verification: Bug Localization, Scan-Chain-Based Methodology, GA-Based Test Generation
 
-<figure class="rep-fig" markdown>
-![Fig. 1 The proposed methodology for automated bug localization.](../assets/figures/ref-20261018-0c62.png?v=1792311664){ loading=lazy }
-<figcaption>Fig. 1 The proposed methodology for automated bug localization. — from the original paper (Khaled Salah et al.)</figcaption>
-</figure>
-
 [:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/new-trends-in-rtl-verification-bug-localization-scan-chain-based-methodology-ga-based-test-generation.pdf){ .md-button .md-button--primary target=_blank }
 
 | | |
@@ -48,12 +43,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**The paper proposes three RTL verification techniques: a coverage-based suspiciousness ranking for bug localization, an auto-instrumented run-time scan-chain for FPGA emulation debugging, and a GA-guided stimulus feedback loop that closes functional coverage faster than random testing.**
+**The paper proposes three RTL verification aids: a coverage-based suspiciousness ranking for bug localization, an online scan-chain mux-insertion method for run-time signal forcing in FPGA emulation, and a GA-driven feedback loop that steers constrained-random stimulus toward coverage closure.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**이 논문은 세 가지 RTL 검증 기법을 제안합니다. 커버리지 기반 의심도 랭킹을 이용한 버그 로컬라이제이션, FPGA 에뮬레이션 디버그를 위한 자동 계측 기반 run-time scan-chain, 그리고 커버리지 피드백을 사용하는 GA 기반 자극 생성입니다. GA 기법은 랜덤 테스트보다 빠르게 기능 커버리지를 닫습니다.**
+**이 논문은 RTL 검증을 위한 세 가지 기법을 제안한다. 즉, 버그 위치 추정을 위한 커버리지 기반 의심도 순위화, FPGA 에뮬레이션에서 런타임 신호 강제를 위한 온라인 scan-chain mux 삽입 방식, 그리고 constrained-random 자극을 커버리지 closure 방향으로 유도하는 GA 기반 피드백 루프이다.**
 
 </div>
 </div>
@@ -63,12 +58,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Coverage-based suspiciousness ranking (failed tests executing a statement divided by passed tests executing it) localized 29 injected bugs in a >5000-line RTL design in 1–10 min, versus 1–3 h for manual debug (Table II); the method assumes a single bug and rich, correct testcases.
+- Bug localization ranks statements by failed-tests-executing-statement over passed tests, reducing localization from hours of manual debug to a few minutes on designs of more than 5000 RTL lines (TABLE II: 29 bugs, 1-10 min proposed vs 1-3 h manual).
 
 </div>
 <div class="bi-ko" markdown>
 
-- 커버리지 기반 의심도 랭킹(구문을 실행한 실패 테스트 수를 같은 구문을 실행한 성공 테스트 수로 나눈 값)은 5000라인 이상 RTL 설계에 주입된 29개 버그를 1~10분에 로컬라이즈했으며, 수동 디버그는 1~3시간이 걸렸습니다(Table II). 이 방법은 버그가 하나라는 가정과 풍부하고 올바른 testcase를 전제로 합니다.
+- 버그 위치 추정은 실패 테스트가 해당 statement를 실행한 횟수를 성공 테스트 대비로 정규화해 statement 순위를 매기며, 5000줄 이상 RTL 설계에서 수 시간 걸리던 수동 디버그를 수 분으로 줄인다고 보고한다(TABLE II: 버그 29개, 제안 기법 1–10분 vs 수동 1–3시간).
 
 </div>
 </div>
@@ -76,12 +71,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The scan-chain utility wraps every reg with a mux and glue logic so signal values can be forced at run time on emulation without recompiling the whole design; the authors report negligible area overhead but longer compile time, with no quantitative data.
+- The coverage-based method is simulation-based and needs a regression suite with rich, correct testcases; the paper only localizes bugs and does not correct them.
 
 </div>
 <div class="bi-ko" markdown>
 
-- scan-chain 유틸리티는 모든 reg를 mux와 glue logic으로 감싸 전체 설계를 재컴파일하지 않고도 에뮬레이션 중 신호 값을 강제로 바꿀 수 있게 합니다. 저자들은 면적 오버헤드가 무시할 만하다고 보고하지만 컴파일 시간은 늘어난다고 밝혔고, 정량적 데이터는 제시하지 않았습니다.
+- 커버리지 기반 방법은 시뮬레이션 기반이며 풍부하고 올바른 테스트케이스로 구성된 회귀 스위트가 필요하다. 논문은 버그 위치만 추정하고 수정은 다루지 않는다.
 
 </div>
 </div>
@@ -89,12 +84,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- GA-guided stimulus generation (fitness = functional coverage %, population 50, 200 generations, multi-point crossover) reached 100% coverage on 12 designs with 90–155 stimulus versus 120–215 for random, a per-design reduction of 7.7–46.7% (about 32% aggregate, derived from Table III).
+- The online scan-chain method auto-inserts a glue-logic mux at every reg so internal signals can be forced at run time without recompiling, at the cost of longer compilation time, with area overhead claimed as negligible.
 
 </div>
 <div class="bi-ko" markdown>
 
-- GA 기반 자극 생성(fitness = 기능 커버리지 %, population 50, 200 generations, multi-point crossover)은 12개 설계에서 100% 커버리지에 도달했으며, 자극 수는 90~155회로 랜덤의 120~215회에 비해 설계별로 7.7~46.7% 줄었습니다(Table III 기준 전체 약 32%, 표에서 계산한 값).
+- 온라인 scan-chain 방식은 모든 reg에 glue-logic mux를 자동 삽입하여 재컴파일 없이 내부 신호를 런타임에 강제할 수 있게 하며, 대가는 컴파일 시간 증가이고 면적 오버헤드는 무시할 수 있다고 주장한다.
 
 </div>
 </div>
@@ -102,12 +97,25 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Run time per design fell from 3–4 s (random) to 1–2.6 s (GA) in Table III; however, results come from a short proof-of-concept with Verilog case studies, a random-only baseline, and no variance or statistical reporting.
+- GA-based stimulus generation uses functional coverage percentage as fitness; across 12 designs in TABLE III, the GA reached 100% coverage with fewer stimuli and lower run time than random in every row (e.g., Design #1: 120 stimuli / 3 s random vs 100 / 2 s GA).
 
 </div>
 <div class="bi-ko" markdown>
 
-- Table III에서 설계당 실행 시간은 랜덤 3~4초에서 GA 1~2.6초로 줄었습니다. 다만 이 결과는 Verilog 사례 연구 기반의 짧은 proof-of-concept이며, 기준선은 랜덤뿐이고, 분산이나 통계적 보고는 없습니다.
+- GA 기반 자극 생성은 기능 커버리지 비율을 fitness로 사용하며, TABLE III의 12개 설계 모든 행에서 random 대비 더 적은 자극 수와 더 짧은 실행 시간으로 100% 커버리지에 도달했다(예: Design #1: random 120개 / 3 s, GA 100개 / 2 s).
+
+</div>
+</div>
+
+<div class="bi" markdown>
+<div class="bi-en" markdown>
+
+- Evidence is limited: results are small-scale case studies with no published tool name, no statistical analysis, and no comparison against other coverage-directed methods beyond random testing.
+
+</div>
+<div class="bi-ko" markdown>
+
+- 근거는 제한적이다. 결과는 소규모 사례 연구이며, 도구명이 공개되지 않았고, 통계 분석이 없으며, random 테스트 이외의 다른 커버리지 지향 기법과의 비교가 없다.
 
 </div>
 </div>
@@ -119,12 +127,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Manual RTL bug localization is slow for large designs. Prior localization work is mostly gate-level and small-scale, and assertion-based formal approaches do not scale to large RTL.
+- Manual RTL debug on large designs is slow; prior localization work is mostly gate-level or assertion-based and does not scale to large RTL.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 수동 RTL 버그 로컬라이제이션은 대형 설계에서 시간이 많이 듭니다. 기존 로컬라이제이션 연구는 대부분 gate-level과 소규모 설계를 대상으로 하며, assertion 기반 형식 기법은 대형 RTL로 확장되지 않습니다.
+- 대규모 RTL 디버그를 수동으로 수행하면 시간이 많이 소요되며, 기존 오류 위치 추정 연구는 주로 gate-level 또는 assertion 기반으로 대형 RTL에 적용하기 어렵다.
 
 </div>
 </div>
@@ -132,12 +140,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- FPGA-based RTL emulation is fast but gives poor run-time visibility. In offline debug flows, changing an internal value requires a full recompile, which slows iteration.
+- FPGA emulators give speed but offer poor run-time visibility; changing a signal normally requires full recompilation.
 
 </div>
 <div class="bi-ko" markdown>
 
-- FPGA 기반 RTL 에뮬레이션은 빠르지만 run-time 가시성이 낮습니다. 오프라인 디버그 흐름에서는 내부 값을 바꾸려면 전체 설계를 재컴파일해야 하므로 반복 속도가 떨어집니다.
+- FPGA 에뮬레이터는 속도가 빠르지만 런타임 가시성이 낮고, 신호 값을 바꾸려면 일반적으로 전체 재컴파일이 필요하다.
 
 </div>
 </div>
@@ -145,12 +153,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Constrained-random (CRT) coverage closure needs manual analysis of coverage reports and manual constraint edits to reach 100% coverage. The paper seeks an automated feedback loop from coverage analysis to test generation.
+- Constrained-random verification needs manual coverage-hole analysis to reach 100% coverage.
 
 </div>
 <div class="bi-ko" markdown>
 
-- CRT(Constrained-Random Testing)의 커버리지 closure에는 커버리지 리포트의 수동 분석과 제약 조건의 수동 수정이 필요합니다. 이 논문은 커버리지 분석에서 테스트 생성으로 이어지는 자동 피드백 루프를 목표로 합니다.
+- Constrained-random 검증은 100% 커버리지 달성을 위해 커버리지 홀을 수동으로 분석해야 한다.
 
 </div>
 </div>
@@ -160,12 +168,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-The paper covers three independent techniques.
+- **Bug localization:** run the full regression to 100% coverage, record per-test statement execution and pass/fail, and score each statement as failed tests executing it divided by passed tests (weighted suspiciousness); rank highest first.
 
 </div>
 <div class="bi-ko" markdown>
 
-이 논문은 서로 독립적인 세 가지 기법을 다룹니다.
+- **버그 위치 추정:** 회귀 테스트를 100% 커버리지까지 수행하면서 테스트별 statement 실행 여부와 pass/fail을 기록하고, 각 statement를 해당 statement를 실행한 실패 테스트 수를 성공 테스트 수로 나눈 값(가중 suspiciousness)으로 점수화하여 높은 순으로 순위를 매긴다.
 
 </div>
 </div>
@@ -173,12 +181,12 @@ The paper covers three independent techniques.
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**1. Coverage-based bug localization.** The full regression is run until coverage reaches 100%. For each test, the set of executed statements and its pass/fail status are recorded. The suspiciousness of a statement is defined as (number of failed tests executing it) / (number of successful tests executing it), and statements are ranked from highest to lowest. This is a heuristic borrowed from software fault localization (Tarantula and related coverage-based methods). The approach assumes a single incorrect statement and rich, correct testcases. It localizes but does not repair the bug.
+- **Scan-chain:** a utility inserts a glue-logic mux with an enable and a run-time input at each `reg`, letting the designer force any internal signal during emulation.
 
 </div>
 <div class="bi-ko" markdown>
 
-**1. 커버리지 기반 버그 로컬라이제이션.** 커버리지가 100%에 도달할 때까지 전체 regression을 실행합니다. 각 테스트에 대해 실행된 구문 집합과 pass/fail 상태를 기록합니다. 구문의 의심도는 (해당 구문을 실행한 실패 테스트 수) / (해당 구문을 실행한 성공 테스트 수)로 정의하며, 높은 값부터 순위를 매깁니다. 이는 소프트웨어 결함 로컬라이제이션(Tarantula 및 관련 커버리지 기반 방법)에서 빌려온 휴리스틱입니다. 이 접근법은 잘못된 구문이 하나뿐이라는 가정과 풍부하고 올바른 testcase를 전제로 합니다. 버그를 로컬라이즈할 뿐 수정하지는 않습니다.
+- **Scan-chain:** 유틸리티가 모든 `reg`에 enable과 런타임 입력이 있는 glue-logic mux를 삽입하여, 에뮬레이션 중 설계자가 임의의 내부 신호를 강제(force)할 수 있게 한다.
 
 </div>
 </div>
@@ -186,49 +194,27 @@ The paper covers three independent techniques.
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**2. RTL scan-chain for emulation debug.** A utility tool instruments each `reg` in the RTL with a glue block: a mux with an extra input that is controlled by an Enable_Scan signal, plus a run-time value input (C_RUNTIME in Fig. 3). Using the example `out <= (A+B)*C`, the value of C can be forced at run time without recompiling. The authors state that the area overhead is negligible relative to the performance gained, but that the instrumented design needs more compilation time.
+- **GA test generation:** coverage results feed a GA (population 50, 200 generations, multi-point crossover) whose fitness is functional coverage percentage, guiding the next stimulus batch.
 
 </div>
 <div class="bi-ko" markdown>
 
-**2. 에뮬레이션 디버그용 RTL scan-chain.** 유틸리티 도구가 RTL의 각 `reg`에 glue 블록을 삽입합니다. 이는 추가 입력을 가진 mux이며 Enable_Scan 신호로 제어되고, run-time 값 입력(Fig. 3의 C_RUNTIME)을 가집니다. `out <= (A+B)*C` 예제에서 C 값은 재컴파일 없이 run time에 강제로 바꿀 수 있습니다. 저자들은 면적 오버헤드가 얻는 성능 이득에 비해 무시할 만하다고 밝히지만, 계측된 설계는 컴파일 시간이 더 필요하다고 말합니다.
+- **GA 테스트 생성:** 커버리지 결과를 GA(population 50, 200 generations, multi-point crossover)에 입력하고, fitness를 기능 커버리지 비율로 두어 다음 자극 배치를 안내한다.
 
 </div>
 </div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-**3. GA-based test generation.** Stimulus parameters are encoded as chromosomes. Fitness is the functional coverage ratio. The operators are selection (fitness-proportional), multi-point crossover, mutation, and generational replacement. Termination occurs at a maximum number of generations (200 in the paper's figure) or when the fitness threshold is reached, with population size 50. Coverage collected in each stimulus cycle is fed back to the GA, which generates guided random stimulus aimed at coverage holes. Fig. 4 shows three options: manually generated, randomly generated, and GA-guided random stimulus.
-
-</div>
-<div class="bi-ko" markdown>
-
-**3. GA 기반 테스트 생성.** 자극 파라미터를 chromosome으로 인코딩합니다. Fitness는 기능 커버리지 비율입니다. 연산자는 selection(적합도 비례), multi-point crossover, mutation, 세대 교체(generational replacement)입니다. 종료 조건은 최대 세대 수(논문 그림 기준 200)이거나 fitness 임계값 도달이며, population 크기는 50입니다. 각 자극 주기에서 수집한 커버리지는 GA로 피드백되어 커버리지 hole을 겨냥한 guided random 자극을 생성합니다. Fig. 4는 수동 생성, 랜덤 생성, GA 기반 guided random 자극의 세 가지 옵션을 보여줍니다.
-
-</div>
-</div>
-
-```mermaid
-flowchart LR
-  A[Run stimulus] --> B{Coverage 100%?}
-  B -- Yes --> E[End]
-  B -- No --> C[Collect coverage holes]
-  C --> D[GA: select, crossover, mutate]
-  D --> A
-```
 
 ### Results and Conclusions
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Bug localization:** For 29 injected bugs in a design of more than 5000 RTL lines (Table II), the proposed method took 1–10 min, while manual debug took 1–3 h. The abstract claims detection in several-thousand-line designs within minutes with a 100% success rate. The paper does not give a separate accuracy breakdown.
+- Localization on 29 injected bugs in a >5000-line design took 1–10 min versus 1–3 h manual debug (TABLE II).
 
 </div>
 <div class="bi-ko" markdown>
 
-- **버그 로컬라이제이션:** 5000라인 이상 RTL 설계에 주입된 29개 버그(Table II)에 대해 제안 방법은 1~10분이 걸린 반면, 수동 디버그는 1~3시간이 걸렸습니다. 초록은 수천 라인 규모 설계에서 수 분 내 탐지와 100% 성공률을 주장하지만, 별도의 정확도 분석은 제시하지 않습니다.
+- 5000줄 이상 설계에 주입한 버그 29개의 위치 추정은 수동 디버그 1–3시간 대비 1–10분이 소요되었다(TABLE II).
 
 </div>
 </div>
@@ -236,12 +222,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Scan-chain:** The results are qualitative only. The paper reports negligible area overhead and increased compile time, with no measured values.
+- Scan-chain: area overhead is claimed negligible; the cost is longer compilation time.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Scan-chain:** 결과는 정성적입니다. 면적 오버헤드는 무시할 만하고 컴파일 시간은 늘어난다고 보고하지만, 측정된 수치는 없습니다.
+- Scan-chain: 면적 오버헤드는 무시할 만하다고 주장하며, 비용은 컴파일 시간 증가이다.
 
 </div>
 </div>
@@ -249,38 +235,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **GA test generation (Table III, 12 designs):** Random testing needed 120–215 stimulus and 3–4 s run time. The GA approach needed 90–155 stimulus and 1–2.6 s. The per-design stimulus reduction ranged from 7.7% (design #7) to 46.7% (design #9), and the aggregate reduction is about 32% (computed from the table). The design identities and the variance across runs are not reported.
+- GA reaches 100% coverage on 12 designs with fewer stimuli and lower run time than random in every row (e.g., #1: 120 vs 100 stimuli); the evidence is limited to small case studies.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **GA 테스트 생성(Table III, 12개 설계):** 랜덤 테스트는 120~215회 자극과 3~4초의 실행 시간이 필요했습니다. GA 접근법은 90~155회 자극과 1~2.6초가 필요했습니다. 설계별 자극 감소율은 7.7%(설계 #7)에서 46.7%(설계 #9)였으며, 전체 감소율은 표에서 계산한 약 32%입니다. 설계 식별자와 실행 간 분산은 보고되지 않았습니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Limitations:** This is a proof-of-concept paper. The case studies are Verilog designs, the only baseline is random testing, and no statistical analysis is given. Related coverage-directed methods (for example, Fine and Ziv; Benjamin et al.) are cited but not compared against.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **한계:** 이 논문은 proof-of-concept입니다. 사례 연구는 Verilog 설계이며, 유일한 기준선은 랜덤 테스트이고, 통계 분석은 없습니다. Fine and Ziv, Benjamin et al. 등 관련 커버리지 지향 방법은 인용만 되고 비교되지 않았습니다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Conclusion:** The authors position the three techniques as ways to reduce debug time, emulation debug effort, and coverage-closure effort. The evidence is preliminary and mostly from the authors' own case studies.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **결론:** 저자들은 세 기법을 디버그 시간, 에뮬레이션 디버그 노력, 커버리지 closure 노력을 줄이는 방법으로 제시합니다. 근거는 예비적이며 대부분 저자들의 사례 연구에서 나온 것입니다.
+- GA는 12개 설계에서 100% 커버리지에 도달했으며, 모든 행에서 random 대비 더 적은 자극 수와 더 짧은 실행 시간을 보였다(예: #1: 120 대비 100개 자극). 근거는 소규모 사례 연구에 한정된다.
 
 </div>
 </div>

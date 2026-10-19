@@ -9,9 +9,9 @@ category: Emulation
 tags:
 - Hybrid Emulation
 - Virtual Platform
-- TLM Bridge
+- Fastmodel
+- Smart Memory
 - Capture Replay
-- FPGA Prototyping
 source_type: PAPER
 source_url: https://dvcon-proceedings.org/wp-content/uploads/Hybrid-Emulation-Accelerating-Software-driven-Verification-and-Debug-1.pdf
 authors: Issac P Zacharia (Arm Ltd, Cambridge, UK), Jitendra Aggarwal (Arm Ltd, Bengaluru, India)
@@ -29,7 +29,7 @@ youtube_videos:
 # Hybrid Emulation: Accelerating Software driven verification and debug
 
 <figure class="rep-fig" markdown>
-![Figure 2. Hybrid platform block diagram](../assets/figures/ref-20261018-6683.png?v=1792310644){ loading=lazy }
+![Figure 2. Hybrid platform block diagram](../assets/figures/ref-20261018-6683.png?v=1792379645){ loading=lazy }
 <figcaption>Figure 2. Hybrid platform block diagram — from the original paper (Issac P Zacharia et al.)</figcaption>
 </figure>
 
@@ -48,12 +48,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-**Arm describes a hybrid platform that runs the CPU as a fastmodel virtual platform and the GPU RTL on an emulator, connected through TLM bridges and a shared "smart memory", to get full design visibility and faster OS-level software bring-up than full RTL emulation, while reproducing FPGA-platform issues.**
+**Arm replaces the Cortex-A55 RTL with fastmodels in a virtual platform while the GPU runs in an emulator, gaining full GPU design visibility, a reported 45X faster Linux boot than full-RTL emulation, and the ability to reproduce FPGA (Juno) issues.**
 
 </div>
 <div class="bi-ko" markdown>
 
-**Arm은 CPU를 fastmodel 가상 플랫폼으로, GPU RTL을 에뮬레이터에서 동작시키고 이를 TLM 브리지와 공유 "smart memory"로 연결한 하이브리드 플랫폼을 제시하여, 전체 RTL 에뮬레이션보다 빠르게 OS 레벨 소프트웨어를 부팅하면서도 완전한 설계 가시성을 확보하고 FPGA 플랫폼에서 보고된 문제를 재현할 수 있음을 보인다.**
+**Arm은 Cortex-A55 RTL을 fastmodel로 대체하여 가상 플랫폼에서 실행하고 GPU는 에뮬레이터에서 구동함으로써, 전체 GPU 설계 가시성을 확보하고 full-RTL 에뮬레이션 대비 Linux 부팅 45배 향상(보고값)을 달성했으며 FPGA(Juno) 이슈를 재현할 수 있게 했다.**
 
 </div>
 </div>
@@ -63,12 +63,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The hybrid split replaces the Arm Cortex-A55 RTL, GIC600 and smart memory with fastmodels/virtual models on the VP side, keeping only the GPU (and CCI550 / GIC BFM) in RTL on the emulator, which reduces hardware footprint and speeds up software execution.
+- Partitioning the CPU, GIC600 and smart memory into a virtual platform while the GPU RTL stays in the emulator restores the full design visibility missing on the Juno FPGA platform without the cost of full-RTL OS boot.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 하이브리드 분할은 VP 측의 fastmodel(Cortex-A55, GIC600, smart memory)로 Cortex-A55 RTL, GIC600, smart memory를 대체하고, GPU와 기타 블록(CCI550, GIC BFM)만 에뮬레이터에서 RTL로 유지한다. 이를 통해 하드웨어 풋프린트를 줄이고 소프트웨어 실행을 가속한다.
+- CPU, GIC600, smart memory를 가상 플랫폼에 두고 GPU RTL만 에뮬레이터에 남기는 분할 방식은, full-RTL OS 부팅 비용 없이 Juno FPGA 플랫폼에서 부족했던 전체 설계 가시성을 회복시킨다.
 
 </div>
 </div>
@@ -76,12 +76,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Smart memory is accessed by the virtual CPU via backdoor, avoiding TLM crossings; the paper states frequent VP-to-emulator transactions degrade runtime, so transaction size should be maximized and high-traffic transactors minimized.
+- Reported runtimes are Linux boot 62 s, Debian Buster 11 185 s and Android 10 2640 s, with Linux boot 45X faster than legacy full-RTL emulation.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Smart memory는 가상 CPU가 TLM을 거치지 않고 백도어로 접근하므로 CPU 메모리 트래픽이 RTL 경계를 넘지 않는다. 논문은 VP와 에뮬레이터 간 빈번한 트랜잭션이 런타임 성능을 저하시킨다고 명시하며, 따라서 트랜잭션 크기를 최대화하고 트래픽이 많은 트랜잭터를 최소화할 것을 권장한다.
+- 보고된 실행 시간은 Linux 부팅 62초, Debian Buster 11 185초, Android 10 2640초이며, Linux 부팅은 기존 full-RTL 에뮬레이션 대비 45배 빠르다.
 
 </div>
 </div>
@@ -89,12 +89,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Reported runtimes: Linux boot 62 s, Android 10 2640 s, Debian Buster 11 185 s; a 45X runtime improvement on the Linux boot benchmark versus legacy full RTL emulation.
+- Smart memory lets the CPU access memory by backdoor and avoids crossing the TLM boundary, but the authors warn that frequent VP-emulator transactions degrade runtime, so transaction size should be maximized and high-traffic transactors minimized.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 보고된 런타임은 Linux 부팅 62초, Android 10 2640초, Debian Buster 11 185초이며, Linux 부팅 벤치마크에서 기존 전체 RTL 에뮬레이션 대비 45배의 런타임 향상이 있었다.
+- Smart memory를 통해 CPU는 backdoor로 메모리에 접근하여 TLM 경계를 넘지 않지만, 저자들은 VP와 에뮬레이터 간 빈번한 트랜잭션이 실행 성능을 저하시킨다고 경고하므로 트랜잭션 크기를 최대화하고 트래픽이 많은 transactor는 최소화해야 한다고 권고한다.
 
 </div>
 </div>
@@ -102,12 +102,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Because the virtual CPU runs asynchronously in 0 simulation time, runs are non-deterministic; Hybrid Capture Replay records VP inputs against the design clock and replays them in later sessions for reproducible debug.
+- The Hybrid CPU runs in zero simulation time and is nondeterministic, so Hybrid Capture Replay records VP inputs against the design clock to make failures reproducible across runs.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 가상 CPU는 0 시뮬레이션 시간에 비동기적으로 실행되므로 실행마다 결과가 달라질 수 있다. Hybrid Capture Replay는 VP 입력을 설계 클록 기준으로 기록해 이후 세션에서 재생함으로써 재현 가능한 디버그를 지원한다.
+- Hybrid CPU는 시뮬레이션 시간 0에서 비동기로 동작하여 비결정적이므로, Hybrid Capture Replay는 VP 입력을 design clock 기준으로 기록하여 실행 간 실패를 재현 가능하게 한다.
 
 </div>
 </div>
@@ -115,12 +115,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The platform reproduces hardware/software issues first seen on the FPGA-based Juno platform with full RTL visibility, but the paper positions it as complementary to, not a replacement for, cycle-accurate validation.
+- The authors position Hybrid as a complement to cycle-accurate validation rather than a replacement, and the paper gives no bug counts or emulator capacity figures.
 
 </div>
 <div class="bi-ko" markdown>
 
-- FPGA 기반 Juno 플랫폼에서 나타난 HW/SW 문제를 전체 RTL 가시성을 가진 상태에서 재현할 수 있었다. 다만 논문은 이 방식이 사이클 정확도가 필요한 검증을 대체하는 것이 아니라 보완하는 것이라고 설명한다.
+- 저자들은 Hybrid를 cycle-accurate 검증의 대체가 아닌 보완으로 규정하며, 논문은 버그 건수나 에뮬레이터 용량 수치를 제시하지 않는다.
 
 </div>
 </div>
@@ -132,12 +132,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Arm GPU hardware/software verification was traditionally done on an FPGA-based Juno SoC board. Runtime throughput was high, but design visibility was poor and trace extraction was difficult, which lengthened root-causing.
+- Arm GPU verification on the FPGA-based Juno platform gives high throughput but poor design visibility and difficult trace extraction, so root-causing HW/SW issues took significant time.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Arm GPU의 HW/SW 검증은 전통적으로 FPGA 기반 Juno SoC 보드에서 수행되었다. 런타임 처리량은 높았지만 설계 가시성이 낮고 트레이스 추출이 어려워 원인 분석에 오랜 시간이 걸렸다.
+- Juno FPGA 플랫폼에서의 Arm GPU 검증은 처리량은 높지만 설계 가시성이 낮고 트레이스 추출이 어려워 HW/SW 이슈의 근본 원인 분석에 상당한 시간이 소요되었다.
 
 </div>
 </div>
@@ -145,12 +145,12 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Full RTL emulation cannot load the whole SoC once designs grow, especially when OS boot and application software must be validated.
+- Full-RTL emulation cannot hold the whole SoC when booting an OS and running real software, and unit-level simulation can take weeks to reproduce OS/app issues.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 설계 규모가 커지면 전체 RTL 에뮬레이션에 SoC 전체를 올릴 수 없으며, 특히 OS 부팅과 응용 소프트웨어 검증이 필요한 경우 더욱 그렇다.
+- Full-RTL 에뮬레이션으로는 OS 부팅과 실제 소프트웨어 실행을 위한 전체 SoC를 올리기 어려우며, unit-level 시뮬레이션에서는 OS/앱 이슈 재현에 수 주가 걸릴 수 있다.
 
 </div>
 </div>
@@ -158,76 +158,32 @@ youtube_videos:
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- The authors list four pain points: long debug time due to poor visibility and trace access; weeks to build stimulus for real OS application issues at unit level; difficult GPU HW/SW live debug; and issues not reproducible across verification platforms.
+- Goal: a hybrid platform with full GPU RTL visibility and fast software execution, enabling shift-left HW/SW co-verification before RTL or silicon is available.
 
 </div>
 <div class="bi-ko" markdown>
 
-- 저자들은 네 가지 문제를 제시한다. 가시성 부족과 트레이스 확보 어려움으로 인한 디버그 시간 증가, 실제 OS 응용 프로그램 이슈를 단위 수준 시뮬레이션에서 재현하기 위해 자극을 만드는 데 수 주가 걸림, GPU HW/SW 라이브 디버그의 어려움, 검증 플랫폼 간 이슈 재현 불가.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Goal: shift HW/SW co-verification left, enabling software development before RTL or silicon is available and easing CPU subsystem upgrades.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 목표: RTL이나 실리콘이 준비되기 전에 소프트웨어 개발을 가능하게 하여 HW/SW 공동 검증을 앞당기고, CPU 서브시스템 업그레이드를 쉽게 하는 것.
+- 목표는 GPU RTL의 전체 가시성과 빠른 소프트웨어 실행을 동시에 제공하는 하이브리드 플랫폼으로, RTL이나 실리콘 이전 단계에서 HW/SW 공동 검증을 앞당기는 것이다.
 
 </div>
 </div>
 
 ### Architecture and Methodology
 
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-The platform splits the SoC between a virtual platform (VP) and an emulator. The CPU side is an Arm fastmodel (Cortex-A55 with GIC600 and smart memory) in the VP. The GPU and other SoC blocks remain RTL on the emulator. The paper does not name the EDA vendor or emulator product.
-
-</div>
-<div class="bi-ko" markdown>
-
-이 플랫폼은 SoC를 가상 플랫폼(VP)과 에뮬레이터로 나눈다. CPU 측은 VP의 Arm fastmodel(GIC600 및 smart memory를 포함한 Cortex-A55)이다. GPU와 기타 SoC 블록은 에뮬레이터에서 RTL로 유지된다. 논문은 EDA 벤더나 에뮬레이터 제품명을 밝히지 않는다.
-
-</div>
-</div>
-
 ```mermaid
 flowchart LR
-  subgraph VP["Virtual Platform (fastmodel)"]
-    CPU["Virtual CPU (A55 model)"]
-    GIC["GIC600"]
-    SM["Smart Memory"]
-    VR["Virtual router (EDA interconnect)"]
-    CPU --> VR
-    GIC --> VR
-    SM --> VR
-  end
-  subgraph EMU["Emulator (RTL)"]
-    BR["TLM bridge: BFM + Proxy"]
-    GPU["GPU RTL"]
-    CCI["CCI550"]
-    GICBFM["GIC BFM"]
-    BR --> GPU
-    BR --> CCI
-    BR --> GICBFM
-  end
-  VR -- "SCEMI-DPI / TLM pipes" --> BR
+  VP["Virtual Platform: Cortex-A55 fastmodel, GIC600, smart memory"] <-->|"TLM bridge (BFM + proxy), SCEMI-DPI"| RTL["Emulator: GPU RTL, CCI550, other IPs"]
 ```
 
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Transactors:** Built-in EDA Hybrid toolchain models convert RTL-to-virtual activity into transactions. They use SCEMI-DPI to carry TLM traffic across the boundary. The bridge is a thin BFM plus proxy layer: RTL ports connect to the BFM, and software transactions go to the proxy.
+- The Cortex-A55 RTL, GIC600 and smart memory are replaced by Arm fastmodels in a virtual platform; the GPU and other SoC IP run in the emulator.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **트랜잭터:** EDA Hybrid 툴체인의 기본 제공 모델이 RTL과 가상 환경 간 활동을 트랜잭션으로 변환한다. 경계를 넘는 TLM 트래픽은 SCEMI-DPI로 전달된다. 브리지는 BFM과 proxy로 구성된 얇은 계층으로, RTL 포트는 BFM에 연결되고 소프트웨어 트랜잭션은 proxy 측으로 전달된다.
+- Cortex-A55 RTL, GIC600, smart memory를 가상 플랫폼의 Arm fastmodel로 대체하고, GPU 및 기타 SoC IP는 에뮬레이터에서 구동한다.
 
 </div>
 </div>
@@ -235,12 +191,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Smart memory:** A shared memory visible to both sides. The CPU reaches it through backdoor access, not TLM, so CPU memory traffic does not cross the RTL boundary. The GPU accesses it through the RTL channel.
+- TLM transactor bridges connect the two sides, with EDA-provided built-in models; a virtual router connects to CCI550 on the RTL side.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **Smart memory:** 양쪽에서 모두 보이는 공유 메모리다. CPU는 TLM이 아닌 백도어로 접근하므로 CPU 메모리 트래픽이 RTL 경계를 넘지 않는다. GPU는 RTL 채널을 통해 접근한다.
+- TLM transactor bridge가 두 측을 연결하며, EDA 제공 내장 모델을 사용하고, 가상 router는 RTL 측 CCI550에 연결된다.
 
 </div>
 </div>
@@ -248,12 +204,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Synchronization:** When fastmodel and emulator must sync, the emulator clock is paused and the CPU architectural state and cache data are exchanged.
+- Shared "smart memory" is accessed by the CPU through backdoor, avoiding crossing the RTL boundary. Synchronization uses emulator clock pause to exchange CPU architectural and cache state.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **동기화:** fastmodel과 에뮬레이터를 동기화해야 할 때는 에뮬레이터 클록을 일시 정지하고 CPU 아키텍처 상태와 캐시 데이터를 교환한다.
+- 공유 메모리인 "smart memory"는 CPU가 backdoor로 접근하여 RTL 경계를 넘지 않는다. 동기화는 에뮬레이터 clock pause를 이용해 CPU 아키텍처 상태와 캐시 상태를 교환하는 방식이다.
 
 </div>
 </div>
@@ -261,38 +217,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- **Performance guidance:** Frequent VP-emulator transactions degrade runtime. Maximize transaction size and minimize high-traffic transactors.
+- Hybrid Capture Replay records VP inputs against the design clock for deterministic replay.
 
 </div>
 <div class="bi-ko" markdown>
 
-- **성능 지침:** VP와 에뮬레이터 간 빈번한 트랜잭션은 런타임을 저하시킨다. 트랜잭션 크기를 최대화하고 트래픽이 많은 트랜잭터를 최소화한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Validation sequence:** Bare-metal tests accessed GPU registers and smart memory. The team then booted Linux, Android 10 and Debian Buster 11, and ran graphics tests.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **검증 순서:** 베어메탈 테스트로 GPU 레지스터와 smart memory에 접근했다. 이후 Linux, Android 10, Debian Buster 11을 부팅하고 그래픽 테스트를 실행했다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- **Debug features:** Detailed logging, TLM visualization, CPU register and memory map viewers, and smart-memory debug tools. Hybrid Capture Replay records VP inputs against the design clock and replays them in later sessions. Non-CPU subsystem debug uses native RTL monitors, waveforms and memory dumps.
-
-</div>
-<div class="bi-ko" markdown>
-
-- **디버그 기능:** 상세 로깅, TLM 시각화, CPU 레지스터 및 메모리 맵 뷰어, smart memory 디버그 도구를 제공한다. Hybrid Capture Replay는 VP 입력을 설계 클록 기준으로 기록하고 이후 세션에서 재생한다. CPU 이외의 서브시스템 디버그는 RTL 모니터, 파형, 메모리 덤프 등 기존 방식을 사용한다.
+- Hybrid Capture Replay는 VP 입력을 design clock 기준으로 기록하여 결정적 재실행을 가능하게 한다.
 
 </div>
 </div>
@@ -302,20 +232,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-| Test | Runtime |
-|---|---|
-| Linux Boot | 62 s |
-| Android 10 | 2640 s |
-| Debian Buster 11 | 185 s |
+- Reported runtimes: Linux boot 62 s, Debian Buster 11 185 s, Android 10 2640 s; Linux boot is 45X faster than legacy full-RTL emulation.
 
 </div>
 <div class="bi-ko" markdown>
 
-| 테스트 | 런타임 |
-|---|---|
-| Linux Boot | 62 s |
-| Android 10 | 2640 s |
-| Debian Buster 11 | 185 s |
+- 보고된 실행 시간은 Linux 부팅 62초, Debian Buster 11 185초, Android 10 2640초이며, Linux 부팅은 기존 full-RTL 에뮬레이션 대비 45배 빠르다.
 
 </div>
 </div>
@@ -323,12 +245,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Moving the Linux boot benchmark from legacy full RTL emulation to the hybrid platform gave a 45X runtime improvement. The paper does not report the absolute baseline runtime.
+- Re-running FPGA-captured tests with full visibility let the team reproduce and fix HW/SW bugs earlier than in previous projects.
 
 </div>
 <div class="bi-ko" markdown>
 
-- Linux 부팅 벤치마크를 기존 전체 RTL 에뮬레이션에서 하이브리드 플랫폼으로 옮기자 런타임이 45배 향상되었다. 논문은 기준선의 절대 런타임은 보고하지 않는다.
+- FPGA에서 포착된 테스트를 전체 가시성 환경에서 재실행하여, 이전 프로젝트보다 일찍 HW/SW 버그를 재현하고 수정했다.
 
 </div>
 </div>
@@ -336,51 +258,12 @@ flowchart LR
 <div class="bi" markdown>
 <div class="bi-en" markdown>
 
-- Issues seen on the FPGA Juno platform were reproduced by rerunning the same test on the hybrid model with full visibility. The authors say this cut debug time and let them fix HW and SW bugs earlier than in previous projects.
+- Hybrid is positioned as complementary to cycle-accurate validation; future work targets server/enterprise systems limited by emulator size. The paper gives no quantitative bug or capacity data.
 
 </div>
 <div class="bi-ko" markdown>
 
-- FPGA Juno 플랫폼에서 나타난 이슈는 하이브리드 모델에서 같은 테스트를 다시 실행해 전체 가시성을 확보한 상태에서 재현되었다. 저자들은 이를 통해 디버그 시간이 크게 줄었고, 이전 프로젝트보다 HW 및 SW 버그를 더 일찍 수정할 수 있었다고 설명한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Figure 3 shows a graphics test running on Android after boot.
-
-</div>
-<div class="bi-ko" markdown>
-
-- Figure 3은 부팅 후 Android에서 그래픽 테스트가 실행되는 모습을 보여준다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- The authors say the methodology suits high-level software use cases such as OS boot and driver development. They also note that cycle-accurate CPU validation is still needed, so the hybrid platform complements rather than replaces it.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 저자들은 이 방식이 OS 부팅이나 드라이버 개발 같은 상위 수준 소프트웨어 사용 사례에 적합하다고 본다. 또한 CPU의 사이클 정확도 검증은 여전히 필요하므로 하이브리드 플랫폼은 이를 대체하지 않고 보완한다고 명시한다.
-
-</div>
-</div>
-
-<div class="bi" markdown>
-<div class="bi-en" markdown>
-
-- Next steps: deploy on newer and unreleased Arm CPUs, and extend to server and enterprise infrastructure, where full-system visibility is limited by emulator capacity.
-
-</div>
-<div class="bi-ko" markdown>
-
-- 향후 계획: 최신 및 미출시 Arm CPU에 적용하고, 서버 및 엔터프라이즈 인프라로 확장하는 것. 이 영역에서는 에뮬레이터 용량 때문에 전체 시스템 가시성에 제약이 있다.
+- Hybrid는 cycle-accurate 검증을 보완하는 방식으로 제시되며, 에뮬레이터 크기에 제약받는 서버/엔터프라이즈 시스템으로의 확장이 향후 계획이다. 논문은 정량적인 버그 또는 용량 데이터는 제시하지 않는다.
 
 </div>
 </div>
