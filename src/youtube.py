@@ -18,9 +18,11 @@ from .schemas import Resource, YouTubeVideo
 log = logging.getLogger(__name__)
 
 SCOPES = ["https://www.googleapis.com/auth/youtube.force-ssl"]
-MARK = "── yt-paper ──"
+MARK = "── Paper Reading Archive ──"
+OLD_MARKS = ("── yt-paper ──",)  # earlier divider; replaced on the next update
 MAX_DESC = 5000
-_BLOCK_RE = re.compile(rf"{re.escape(MARK)}.*?{re.escape(MARK)}\n*", re.S)
+_MARKS = "|".join(re.escape(m) for m in (MARK, *OLD_MARKS))
+_BLOCK_RE = re.compile(rf"(?:{_MARKS}).*?(?:{_MARKS})\n*", re.S)
 _YT_ID_RE = re.compile(r"(?:youtu\.be/|v=)([A-Za-z0-9_-]{11})")
 _MD_LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 
@@ -142,7 +144,6 @@ def build_block(res: Resource, extra_links: list[str], insights: int = 5) -> str
         lines.append(f"📄 Summary: {url}")
     if res.source_url.startswith("http"):
         lines.append(f"📑 Paper: {res.source_url}")
-    lines += hierarchy_links(res)
     lines.append("")
     lines.append(res.title)
     if res.authors:
@@ -153,6 +154,7 @@ def build_block(res: Resource, extra_links: list[str], insights: int = 5) -> str
         lines += ["", "💡 Key insights"] + [f"• {k}" for k in res.key_insights[:insights]]
     if res.tags:
         lines += ["", " ".join(_hashtag(t) for t in res.tags if _hashtag(t) != "#")]
+    lines += [""] + hierarchy_links(res)
     lines.append(MARK)
     return _clean("\n".join(lines))
 

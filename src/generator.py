@@ -161,7 +161,7 @@ def venue_of(res: Resource) -> str:
 
 
 def group_of(res: Resource) -> str | None:
-    """Second level: region for the main venues, the conference name inside Others."""
+    """Second level: region (DVCon) or conference (IEEE), the conference name inside Others."""
     return res.region if venue_of(res) != OTHERS else res.venue
 
 
@@ -335,7 +335,7 @@ def render_venue(db: Database, venue: str, papers: list[Resource]) -> tuple[list
             cells = [f"[{c}]({region_slug(g)}.md#{y})" if (c := count[(g, y)]) else "" for y in years]
             rows.append(f"| [{g}]({region_slug(g)}.md) | " + " | ".join(cells) +
                         f" | {sum(1 for r in papers if group_of(r) == g)} |")
-        label = "Conference" if venue == OTHERS else "Region"
+        label = "Region" if venue == "DVCon" else "Conference"
         lines.append(f"## {label} × Year\n\n" + _table(f"| {label} | " + " | ".join(map(str, years)) + " | Total |", rows))
     by_cat = Counter(r.category for r in papers)
     lines.append("## Topics\n\n" + _table("| Topic | Papers |", [

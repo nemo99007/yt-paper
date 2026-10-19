@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import csv
 import logging
+import tempfile
 from pathlib import Path
 from typing import Optional
 
@@ -59,6 +60,12 @@ def _ingest(db: Database, source: str, stype: str | None, title: str | None, ref
 
     local_pdf가 주어지면 본문은 로컬 파일에서 읽고, 출처(source_url)는 source URL로 기록한다.
     """
+    if local_pdf and local_pdf.startswith(("http://", "https://")):
+        # a PDF link (e.g. an open copy of a paywalled paper): read it from a temporary file
+        with tempfile.TemporaryDirectory() as tmp:
+            pdf = Path(tmp) / "paper.pdf"
+            pdf.write_bytes(parser._http_get(local_pdf).content)
+            return _ingest(db, source, stype, title, refresh, str(pdf), figure)
     key = parser.canonical_source(source)
     existing = db.get_by_source(key)
     if existing and not refresh:
@@ -196,7 +203,7 @@ def import_(
                 continue
             stype = (row.get("type") or "").strip().upper() or None
             local_pdf = (row.get("local_pdf") or "").strip() or None
-            if local_pdf and not Path(local_pdf).exists():
+            if local_pdf and not local_pdf.startswith(("http://", "https://")) and not Path(local_pdf).exists():
                 local_pdf = None
             try:
                 prev = db.get_by_source(parser.canonical_source(source))
