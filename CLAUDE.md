@@ -44,8 +44,14 @@ Summaries: `LLM_BACKEND=auto` uses `claude -p` (owner's subscription, model from
 owner chose **haiku**) when no ANTHROPIC_API_KEY is set. If the CLI login expires the batch stops;
 owner runs /login, then re-run (idempotent).
 
-## Open items (as of 2026-10-18)
-1. YouTube descriptions: `yt-desc` previews 101 videos; owner approved "structure first, then apply".
+## Open items (as of 2026-10-19)
+
+- **Remind the owner occasionally:** 4 read papers are waiting for PDFs, because the publisher sites block downloads. If the owner drops PDFs in C:\shared_folder (/mnt/c/shared_folder), add rows to data/reading_list.csv.
+  - CirFix (ASPLOS 2022), video TgM8rl0ounU
+  - K5 emulation (DAC 1996), video -DBP8FH8lYQ
+  - Big Data Lakes (IEEE BigComp 2021), video HYpBOFyspKw
+  - Time-Aware Program Spectrum fault localization (IEEE), video 4zIAfvjzt4M
+1. YouTube descriptions: applied to all 110 videos (2026-10-19). The divider is `── Paper Reading Archive ──`. Block order: Summary/Paper links, then title/authors/one-line/insights/#tags, then collection links (📚📅🏷) last. For any new bulk change, show the owner 1-2 examples first.
    Apply 2 first (ZOCbWSYhnJM, l5LVIft6xNs), let the owner check, then the rest. End screens/cards are not
    available in the API — description links + playlists instead.
 2. Find non-DVCon read papers (DATE, IEEE, arXiv, classics like Tomasulo / Alpha 21264 / MIPS R10000)
