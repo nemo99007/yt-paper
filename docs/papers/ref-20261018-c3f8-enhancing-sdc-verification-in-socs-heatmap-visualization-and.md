@@ -18,7 +18,7 @@ authors: Seungkyu Baek (Samsung Electronics Inc.), Jaein Hong (Samsung Electroni
 youtube_videos:
 - video_id: 67KjBs3Uw-Q
   url: https://www.youtube.com/watch?v=67KjBs3Uw-Q
-  title: '[DVCON2025]Enhancing SDC Verification in SoCs: Heatmap Visualization  Machine Learning Approaches '
+  title: '[DVCON2025]Enhancing SDC Verification in SoCs: Heatmap Visualization  Machine Learning Approaches'
   timestamp: null
 ---
 
@@ -278,6 +278,6 @@ youtube_videos:
 
 ## Videos
 
-<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/67KjBs3Uw-Q" title="[DVCON2025]Enhancing SDC Verification in SoCs: Heatmap Visualization  Machine Learning Approaches " loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/67KjBs3Uw-Q" title="[DVCON2025]Enhancing SDC Verification in SoCs: Heatmap Visualization  Machine Learning Approaches" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2025]Enhancing SDC Verification in SoCs: Heatmap Visualization  Machine Learning Approaches ** — [Watch on YouTube](https://www.youtube.com/watch?v=67KjBs3Uw-Q) · [Video page](../videos/67KjBs3Uw-Q.md)
+**[DVCON2025]Enhancing SDC Verification in SoCs: Heatmap Visualization  Machine Learning Approaches** — [Watch on YouTube](https://www.youtube.com/watch?v=67KjBs3Uw-Q) · [Video page](../videos/67KjBs3Uw-Q.md)

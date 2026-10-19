@@ -18,7 +18,7 @@ authors: Dave Rich (Mentor, a Siemens Business)
 youtube_videos:
 - video_id: b7Xs_FX_gzs
   url: https://www.youtube.com/watch?v=b7Xs_FX_gzs
-  title: '[DVCON2021]The Life of a SystemVerilog Variable '
+  title: '[DVCON2021]The Life of a SystemVerilog Variable'
   timestamp: null
 ---
 
@@ -234,6 +234,6 @@ youtube_videos:
 
 ## Videos
 
-<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/b7Xs_FX_gzs" title="[DVCON2021]The Life of a SystemVerilog Variable " loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/b7Xs_FX_gzs" title="[DVCON2021]The Life of a SystemVerilog Variable" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2021]The Life of a SystemVerilog Variable ** — [Watch on YouTube](https://www.youtube.com/watch?v=b7Xs_FX_gzs) · [Video page](../videos/b7Xs_FX_gzs.md)
+**[DVCON2021]The Life of a SystemVerilog Variable** — [Watch on YouTube](https://www.youtube.com/watch?v=b7Xs_FX_gzs) · [Video page](../videos/b7Xs_FX_gzs.md)

@@ -155,7 +155,7 @@
 | Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [Of Camels and Committees](../papers/ref-20261018-2c26-of-camels-and-committees.md) | US | Verification | :material-youtube: 1 |
-| [UVM Testbench Considerations for Acceleration](../papers/ref-20261018-8282-uvm-testbench-considerations-for-acceleration.md) | US | Verification | :material-youtube: 1 |
+| [UVM Testbench Considerations for Acceleration](../papers/ref-20261018-8282-uvm-testbench-considerations-for-acceleration.md) | US | Emulation | :material-youtube: 1 |
 
 ## 2013
 

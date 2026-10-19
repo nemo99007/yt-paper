@@ -18,7 +18,7 @@ authors: Sunghyeon Kang (SK hynix), Munsik Bae (SK hynix), Jinsung Song (SK hyni
 youtube_videos:
 - video_id: NZnsCEQcW28
   url: https://www.youtube.com/watch?v=NZnsCEQcW28
-  title: '[DVCON2025]Design scheme for Emulator-friendly Memory Verification IP to Accelerate Simulation '
+  title: '[DVCON2025]Design scheme for Emulator-friendly Memory Verification IP to Accelerate Simulation'
   timestamp: null
 ---
 
@@ -239,6 +239,6 @@ youtube_videos:
 
 ## Videos
 
-<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/NZnsCEQcW28" title="[DVCON2025]Design scheme for Emulator-friendly Memory Verification IP to Accelerate Simulation " loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/NZnsCEQcW28" title="[DVCON2025]Design scheme for Emulator-friendly Memory Verification IP to Accelerate Simulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2025]Design scheme for Emulator-friendly Memory Verification IP to Accelerate Simulation ** — [Watch on YouTube](https://www.youtube.com/watch?v=NZnsCEQcW28) · [Video page](../videos/NZnsCEQcW28.md)
+**[DVCON2025]Design scheme for Emulator-friendly Memory Verification IP to Accelerate Simulation** — [Watch on YouTube](https://www.youtube.com/watch?v=NZnsCEQcW28) · [Video page](../videos/NZnsCEQcW28.md)

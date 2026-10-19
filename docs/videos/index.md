@@ -11,11 +11,11 @@
 | [[DVCON2024] Complexities & Challenges of UPF Corruption Model in Low Power Emulation](1jqlMFmjzEY.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=1jqlMFmjzEY) |
 | [[DVCON2014]UVM Testbench Considerations for Acceleration](2Z9lPq8l_h4.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=2Z9lPq8l_h4) |
 | [[DVCON2025]Accelerating Pre-Silicon Verification Coverage with Transaction Sequence Modeling](2on_n4tNWvg.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=2on_n4tNWvg) |
-| [[DVCON2025]AI - accelerating coverage closure using intelligent stimulus generation ](3KjFoF6fVDU.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=3KjFoF6fVDU) |
+| [[DVCON2025]AI - accelerating coverage closure using intelligent stimulus generation](3KjFoF6fVDU.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=3KjFoF6fVDU) |
 | [[DVCon2020] Automated RTL Update for Abutted Design](49BqlsA06io.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=49BqlsA06io) |
 | [[DVCON2019] Coherency Verification & Deadlock Detection Using Perspec/Portable Stimulus](4qtButQK_lU.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=4qtButQK_lU) |
 | [[DVCON2013]Pragmatic Verification Reuse in a Vertical World](5lzMBOmdQkQ.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=5lzMBOmdQkQ) |
-| [[DVCON2025]Enhancing SDC Verification in SoCs: Heatmap Visualization  Machine Learning Approaches ](67KjBs3Uw-Q.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=67KjBs3Uw-Q) |
+| [[DVCON2025]Enhancing SDC Verification in SoCs: Heatmap Visualization  Machine Learning Approaches](67KjBs3Uw-Q.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=67KjBs3Uw-Q) |
 | [[DVCON2023]DatagenDV: Python Constrained Random Test Stimulus Framework](7g-3vBeMZLo.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=7g-3vBeMZLo) |
 | [[DVCON2024_INDIA]Simulated Emulation: Enabling Multiple Iterations During Early-Stage Emulation](8P9cEMiLWCY.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=8P9cEMiLWCY) |
 | [[DVCON2022] Machine Learning Based Verification Planning Methodology Using Design and Verification](8Zp0xkU97Fs.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=8Zp0xkU97Fs) |
@@ -28,7 +28,7 @@
 | [[DVCON2023_EUROPE]A Novel Framework to Accelerate System Validation on Emulation](CKrVtVSJQrs.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=CKrVtVSJQrs) |
 | [[DVCON2016] Evolution of Triage Real time Improvements in Debug Productivity](Ck6qeC80QMs.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=Ck6qeC80QMs) |
 | [[DVCON2016]A Metric-driven Methodology For Firmware Verification In Simulation/Emulation](DDpWoJxADvE.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=DDpWoJxADvE) |
-| [[DVCON2023_JPN]Architectures to Tradeoff Performance vs Debug Software Development on Emulation  ](Ge6veMYhti4.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=Ge6veMYhti4) |
+| [[DVCON2023_JPN]Architectures to Tradeoff Performance vs Debug Software Development on Emulation](Ge6veMYhti4.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=Ge6veMYhti4) |
 | [[DVCON2023]Accelerating Functional Verification Through Stabilization of Testbench Using AI/ML](H947nXpp4No.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=H947nXpp4No) |
 | [[DVCON2020] ISO 26262 Dependent Failure Analysis using PSS](J8PEI2rbgXM.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=J8PEI2rbgXM) |
 | [[DVCON2023]Automated Thread Evaluation of Various RISC-V Alternatives Random Instruction Generators](JD25fcnTAhA.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=JD25fcnTAhA) |
@@ -46,7 +46,7 @@
 | [[DVCON2017] EMULATION BASED FULL CHIP LEVEL LOW POWER VALIDATION AT PRE-SILICON STAGE](MsRDG0FVML8.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=MsRDG0FVML8) |
 | [Dijkstra68 Go To Statement Considered Harmful](MsiSsqUIWY8.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=MsiSsqUIWY8) |
 | [[DVCON2015]New Trends in RTL Verification Bug Localization, Scan Chain Methodology, GA Test Gen](NCZGtajDsYc.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=NCZGtajDsYc) |
-| [[DVCON2025]Design scheme for Emulator-friendly Memory Verification IP to Accelerate Simulation ](NZnsCEQcW28.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=NZnsCEQcW28) |
+| [[DVCON2025]Design scheme for Emulator-friendly Memory Verification IP to Accelerate Simulation](NZnsCEQcW28.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=NZnsCEQcW28) |
 | [[DVCON2022]Emulation Based Power and Performance Workloads on ML NPUs](RQPen0RqbUs.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=RQPen0RqbUs) |
 | [[DVCON2023]A Study on Virtual Prototyping based Design Verification Methodology](RgAPcMcohTs.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=RgAPcMcohTs) |
 | [[DVCON2023] A Survey of Machine Learning Applications in Functional Verification](SgZYDJHGSkg.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=SgZYDJHGSkg) |
@@ -67,7 +67,7 @@
 | [[DVCON2022] Finding a Needle in a Haystack A Novel Log Analysis Method with Test Clustering in](_JOrnyqSEDU.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=_JOrnyqSEDU) |
 | [[DVCON2014]Of Camels and Committees](__Vvwmx-J0M.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=__Vvwmx-J0M) |
 | [[DVCON2020]Multimedia IP DMA verification platform](aYd553EDwmo.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=aYd553EDwmo) |
-| [[DVCON2021]The Life of a SystemVerilog Variable ](b7Xs_FX_gzs.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=b7Xs_FX_gzs) |
+| [[DVCON2021]The Life of a SystemVerilog Variable](b7Xs_FX_gzs.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=b7Xs_FX_gzs) |
 | [[DVCON2013] Maximize Vertical Reuse, Building Module to System Verification Environments with UVM e](bXhsC6gVkK0.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=bXhsC6gVkK0) |
 | [[DVCON2022]Pre-Silicon Validation of Production BIOS, Software Use Cases and Accelerator IP...Hybrid](cslJpCPj7GU.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=cslJpCPj7GU) |
 | [[DVCON2019] Big Data in Verification: Making Your Engineers Smarter](dkn55xILVts.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=dkn55xILVts) |
@@ -76,7 +76,7 @@
 | [Structured Compression by Weight Encryption for Unstructured Pruning and Quantization](fhccnNpI2Xg.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=fhccnNpI2Xg) |
 | [[DVCON2023]Regvue Modern Hardware/Software Interface (HSI) Documentation](gVr4LtO7M2c.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=gVr4LtO7M2c) |
 | [[DVCON2016]INTROSPECTION INTO SYSTEMVERILOG WITHOUT TURNING IT INSIDE OUT](gZAx9-JKQNQ.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=gZAx9-JKQNQ) |
-| [[DVCON2023]What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard ](gk4Nr1n50Ac.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=gk4Nr1n50Ac) |
+| [[DVCON2023]What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard](gk4Nr1n50Ac.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=gk4Nr1n50Ac) |
 | [[DVCON2019_INDIA]A Pragmatic Approach Leveraging Portable Stimulus from Subsystem to SoC  Emulation](hhA-6z-ySy0.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=hhA-6z-ySy0) |
 | [[DVCON2025]Leverage Real USB Devices for USB Host DUT verification](iFhYhIOoQYQ.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=iFhYhIOoQYQ) |
 | [[DVCON2025]Refinable Macros and Terminal Boundariesin UPF 4.0: Empowering Soft IPs of theFuture](j-UGziu6Uj0.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=j-UGziu6Uj0) |
@@ -91,7 +91,7 @@
 | [[DVCON2023]The Untapped Power of UVM Resources and Why Engineers Should Use the uvm_resource_db API](lPtRkWNiksg.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=lPtRkWNiksg) |
 | [Assiting Bug Report Assignment Using Automated Fault Localisation: An Industrial Case Study(RT:KR)](mEc8Yx8MfM0.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=mEc8Yx8MfM0) |
 | [[DVCON2023] Automation for Early Detection of X-propagation in Power-Aware Simulation Verification](nqmA1fsXAJM.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=nqmA1fsXAJM) |
-| [[DVCON2022]Case Study: Successes and Challenges of Validation Content Reuse ](o-x0DYNRIt0.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=o-x0DYNRIt0) |
+| [[DVCON2022]Case Study: Successes and Challenges of Validation Content Reuse](o-x0DYNRIt0.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=o-x0DYNRIt0) |
 | [[DVCON2023_INDIA] Netlist Enabled Emulation Platform for Accelerated Gate Level Verification](oCvKZyb7hQ0.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=oCvKZyb7hQ0) |
 | [[DVCon2020] Post-Silicon Performance Validation Using PSS](oT47WOHEeJ8.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=oT47WOHEeJ8) |
 | [[DVCon2023] Early Detection of Functional Corner Case Bugs using Methodologies of the ISO 26262](q5J0AUqZLUY.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=q5J0AUqZLUY) |

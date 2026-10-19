@@ -18,7 +18,7 @@ authors: Dave Rich (Siemens)
 youtube_videos:
 - video_id: gk4Nr1n50Ac
   url: https://www.youtube.com/watch?v=gk4Nr1n50Ac
-  title: '[DVCON2023]What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard '
+  title: '[DVCON2023]What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard'
   timestamp: null
 ---
 
@@ -247,6 +247,6 @@ youtube_videos:
 
 ## Videos
 
-<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/gk4Nr1n50Ac" title="[DVCON2023]What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard " loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/gk4Nr1n50Ac" title="[DVCON2023]What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023]What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard ** — [Watch on YouTube](https://www.youtube.com/watch?v=gk4Nr1n50Ac) · [Video page](../videos/gk4Nr1n50Ac.md)
+**[DVCON2023]What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard** — [Watch on YouTube](https://www.youtube.com/watch?v=gk4Nr1n50Ac) · [Video page](../videos/gk4Nr1n50Ac.md)

@@ -18,7 +18,7 @@ authors: Loganath Ramachandran, Ph.D. (Verikwest Systems Inc, USA), Ragavender S
 youtube_videos:
 - video_id: Ge6veMYhti4
   url: https://www.youtube.com/watch?v=Ge6veMYhti4
-  title: '[DVCON2023_JPN]Architectures to Tradeoff Performance vs Debug Software Development on Emulation  '
+  title: '[DVCON2023_JPN]Architectures to Tradeoff Performance vs Debug Software Development on Emulation'
   timestamp: null
 ---
 
@@ -247,6 +247,6 @@ youtube_videos:
 
 ## Videos
 
-<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/Ge6veMYhti4" title="[DVCON2023_JPN]Architectures to Tradeoff Performance vs Debug Software Development on Emulation  " loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/Ge6veMYhti4" title="[DVCON2023_JPN]Architectures to Tradeoff Performance vs Debug Software Development on Emulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2023_JPN]Architectures to Tradeoff Performance vs Debug Software Development on Emulation  ** — [Watch on YouTube](https://www.youtube.com/watch?v=Ge6veMYhti4) · [Video page](../videos/Ge6veMYhti4.md)
+**[DVCON2023_JPN]Architectures to Tradeoff Performance vs Debug Software Development on Emulation** — [Watch on YouTube](https://www.youtube.com/watch?v=Ge6veMYhti4) · [Video page](../videos/Ge6veMYhti4.md)

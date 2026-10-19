@@ -30,6 +30,7 @@
 | [System-Level Power Estimation of SSDs under Real Workloads using Emulation](../papers/ref-20261018-9555-system-level-power-estimation-of-ssds-under-real-workloads-u.md) | US | Emulation | :material-youtube: 1 |
 | [Unveiling Advance Hybrid Emulation Methodology for Accelerated Android Home Screen Bring-up and System Level Verification](../papers/ref-20261018-e0d9-unveiling-advance-hybrid-emulation-methodology-for-accelerat.md) | India | Emulation | :material-youtube: 1 |
 | [UVM Acceleration Using Hardware Emulator at Pre-silicon Stage](../papers/ref-20261018-979c-uvm-acceleration-using-hardware-emulator-at-pre-silicon-stag.md) | US | Emulation | :material-youtube: 1 |
+| [UVM Testbench Considerations for Acceleration](../papers/ref-20261018-8282-uvm-testbench-considerations-for-acceleration.md) | US | Emulation | :material-youtube: 1 |
 
 ## Verification
 
@@ -102,7 +103,6 @@
 | [Towards Automated Verification IP Instantiation via LLMs](../papers/ref-20261018-ccb0-towards-automated-verification-ip-instantiation-via-llms.md) | US | Verification | :material-youtube: 1 |
 | [Unified Test Writing Framework for Pre and Post Silicon Verification](../papers/ref-20261018-678e-unified-test-writing-framework-for-pre-and-post-silicon-veri.md) | India | Verification | :material-youtube: 1 |
 | [Using PSS-2.0 Hardware-Software Interface to validate 4G/5G Forward Error Correction Encoder/Decoder IP in Emulation & Silicon](../papers/ref-20261018-e10a-using-pss-20-hardware-software-interface-to-validate-4g5g-fo.md) | US | Verification | :material-youtube: 1 |
-| [UVM Testbench Considerations for Acceleration](../papers/ref-20261018-8282-uvm-testbench-considerations-for-acceleration.md) | US | Verification | :material-youtube: 1 |
 | [Variation-Aware Modeling Method for MRAM Behavior Model using System-Verilog](../papers/ref-20261018-d4fc-variation-aware-modeling-method-for-mram-behavior-model-usin.md) | US | Verification | :material-youtube: 1 |
 | [Verification Patterns – Taking Reuse to the Next Level](../papers/ref-20261018-461f-verification-patterns-taking-reuse-to-the-next-level.md) | US | Verification | :material-youtube: 1 |
 | [VerifLLMBench: An Open-Source Benchmark for Testbenches Generated with Large Language Models](../papers/ref-20261018-b468-verifllmbench-an-open-source-benchmark-for-testbenches-gener.md) | US | Verification | :material-youtube: 1 |

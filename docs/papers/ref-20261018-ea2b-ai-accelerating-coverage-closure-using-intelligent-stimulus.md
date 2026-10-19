@@ -18,7 +18,7 @@ authors: Jainender Kumar (Samsung-India), Ronak Bhatt (Samsung-India), Garima Sr
 youtube_videos:
 - video_id: 3KjFoF6fVDU
   url: https://www.youtube.com/watch?v=3KjFoF6fVDU
-  title: '[DVCON2025]AI - accelerating coverage closure using intelligent stimulus generation '
+  title: '[DVCON2025]AI - accelerating coverage closure using intelligent stimulus generation'
   timestamp: null
 ---
 
@@ -252,6 +252,6 @@ youtube_videos:
 
 ## Videos
 
-<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/3KjFoF6fVDU" title="[DVCON2025]AI - accelerating coverage closure using intelligent stimulus generation " loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/3KjFoF6fVDU" title="[DVCON2025]AI - accelerating coverage closure using intelligent stimulus generation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2025]AI - accelerating coverage closure using intelligent stimulus generation ** — [Watch on YouTube](https://www.youtube.com/watch?v=3KjFoF6fVDU) · [Video page](../videos/3KjFoF6fVDU.md)
+**[DVCON2025]AI - accelerating coverage closure using intelligent stimulus generation** — [Watch on YouTube](https://www.youtube.com/watch?v=3KjFoF6fVDU) · [Video page](../videos/3KjFoF6fVDU.md)

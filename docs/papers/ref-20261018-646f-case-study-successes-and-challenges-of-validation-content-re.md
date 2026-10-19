@@ -18,7 +18,7 @@ authors: Mike Chin (Intel Corporation, Folsom, CA), Jonathan Edwards (Intel Corp
 youtube_videos:
 - video_id: o-x0DYNRIt0
   url: https://www.youtube.com/watch?v=o-x0DYNRIt0
-  title: '[DVCON2022]Case Study: Successes and Challenges of Validation Content Reuse '
+  title: '[DVCON2022]Case Study: Successes and Challenges of Validation Content Reuse'
   timestamp: null
 ---
 
@@ -239,6 +239,6 @@ youtube_videos:
 
 ## Videos
 
-<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/o-x0DYNRIt0" title="[DVCON2022]Case Study: Successes and Challenges of Validation Content Reuse " loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/o-x0DYNRIt0" title="[DVCON2022]Case Study: Successes and Challenges of Validation Content Reuse" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-**[DVCON2022]Case Study: Successes and Challenges of Validation Content Reuse ** — [Watch on YouTube](https://www.youtube.com/watch?v=o-x0DYNRIt0) · [Video page](../videos/o-x0DYNRIt0.md)
+**[DVCON2022]Case Study: Successes and Challenges of Validation Content Reuse** — [Watch on YouTube](https://www.youtube.com/watch?v=o-x0DYNRIt0) · [Video page](../videos/o-x0DYNRIt0.md)

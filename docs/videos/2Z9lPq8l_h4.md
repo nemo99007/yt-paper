@@ -19,4 +19,4 @@ resources:
 
 | Paper | Topic | Note |
 |---|---|---|
-| [UVM Testbench Considerations for Acceleration](../papers/ref-20261018-8282-uvm-testbench-considerations-for-acceleration.md) | Verification | - |
+| [UVM Testbench Considerations for Acceleration](../papers/ref-20261018-8282-uvm-testbench-considerations-for-acceleration.md) | Emulation | - |
