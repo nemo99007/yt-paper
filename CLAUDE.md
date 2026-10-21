@@ -38,6 +38,7 @@ with a Korean translation. Published with MkDocs Material to GitHub Pages.
     python -m src.cli link --ref-id ID --youtube URL
     python -m src.cli rebuild [--push]
     python -m src.cli yt-auth | yt-meta | yt-desc [--video ID] [--apply]
+    python -m src.cli official [--id ID] [--apply]   # match Accellera DVCon talks
     mkdocs build --strict
 
 Summaries: `LLM_BACKEND=auto` uses `claude -p` (owner's subscription, model from CLI_MODEL in .env —
@@ -56,7 +57,8 @@ owner runs /login, then re-run (idempotent).
    available in the API — description links + playlists instead.
 2. Find non-DVCon read papers (DATE, IEEE, arXiv, classics like Tomasulo / Alpha 21264 / MIPS R10000)
    by extracting source links from the channel's video descriptions; add to reading_list.csv.
-3. DVCon official presentation videos: link them on paper pages where they exist.
+3. DVCon official talks: done 2026-10-21 (27/99 matched, incl. start times in session videos). Re-run
+   `python -m src.cli official --apply` then `yt-desc --apply` when Accellera uploads more.
 4. Unmatched video: enlBLibl7wM "[DVCON2026] New RTL Modeling Constructs in Verilog" (no PDF in the
    DVCon download).
 5. Figure crops are heuristic (caption-based); override with the `figure` column in the CSV.
