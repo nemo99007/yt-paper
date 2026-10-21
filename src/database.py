@@ -65,7 +65,7 @@ JSON_COLS = ("tags", "key_insights", "key_insights_ko")
 # Columns added after the first release; ALTER TABLE adds them to older databases.
 _MIGRATIONS = {"venue": "TEXT", "region": "TEXT", "year": "INTEGER", "one_line_summary_ko": "TEXT",
                "key_insights_ko": "TEXT", "detailed_summary_ko": "TEXT", "figure_path": "TEXT",
-               "figure_caption": "TEXT"}
+               "figure_caption": "TEXT", "official_url": "TEXT", "official_label": "TEXT"}
 
 
 class DatabaseError(RuntimeError):
@@ -82,7 +82,7 @@ def _row_to_resource(row: sqlite3.Row) -> Resource:
         d[k] = json.loads(d.get(k) or "[]")
     d["authors"] = d.get("authors") or ""
     for k in ("one_line_summary", "detailed_summary", "created_at", "venue", "region",
-              "one_line_summary_ko", "detailed_summary_ko", "figure_caption"):
+              "one_line_summary_ko", "detailed_summary_ko", "figure_caption", "official_label"):
         d[k] = d.get(k) or ""
     return Resource(**d)
 
@@ -165,6 +165,11 @@ class Database:
         with self.transaction() as c:
             c.execute("UPDATE resources SET figure_path = ?, figure_caption = ? WHERE id = ?",
                       (path, caption, resource_id))
+
+    def set_official(self, resource_id: str, url: str | None, label: str) -> None:
+        with self.transaction() as c:
+            c.execute("UPDATE resources SET official_url = ?, official_label = ? WHERE id = ?",
+                      (url, label, resource_id))
 
     def set_markdown_path(self, resource_id: str, rel_path: str) -> None:
         with self.transaction() as c:

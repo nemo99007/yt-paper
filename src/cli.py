@@ -11,7 +11,7 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
-from . import config, figures, generator, llm, parser, publisher, youtube
+from . import config, figures, generator, llm, official, parser, publisher, youtube
 from .database import Database, DatabaseError
 from .schemas import CATEGORIES, SOURCE_TYPES, Resource, YouTubeVideo
 
@@ -305,6 +305,34 @@ def yt_desc(
                 if "quota" in str(e).lower():
                     break
         console.print(f"[green]완료:[/green] {ok}/{len(todo)}개 반영")
+    except youtube.YouTubeError as e:
+        _fail(str(e))
+    finally:
+        db.close()
+
+
+@app.command("official")
+def official_(
+    apply_: bool = typer.Option(False, "--apply", help="찾은 공식 발표를 DB에 기록하고 페이지를 다시 만듦 (없으면 미리보기만)"),
+    only: list[str] = typer.Option([], "--id", help="특정 자료 ID만 기록 (여러 번 지정 가능)"),
+) -> None:
+    """DVCon 논문의 공식 발표 영상(Accellera 채널)과 시작 시각을 찾습니다."""
+    db = Database()
+    try:
+        matches = official.match(db, official.fetch_talks(youtube.service(interactive=False)))
+        if only:
+            matches = [m for m in matches if m.resource_id in only]
+        for m in matches:
+            console.print(f"{m.ratio:.2f} {m.resource_id} {m.paper_title[:60]}\n     → {m.talk.url}  ({m.talk.label})",
+                          markup=False, highlight=False)
+        console.print(f"찾음: {len(matches)}개")
+        if not apply_:
+            console.print("[yellow]미리보기만 했습니다. 기록하려면 --apply 를 붙이세요.[/yellow]")
+            return
+        for m in matches:
+            db.set_official(m.resource_id, m.talk.url, m.talk.label)
+        generator.rebuild_all(db)
+        console.print(f"[green]기록 완료:[/green] {len(matches)}개")
     except youtube.YouTubeError as e:
         _fail(str(e))
     finally:

@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 2: PSS HSI based development flow — from the original paper (Vinit Shenoy et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/Using-Portable-Stimulus-Standards-Hardware-Software-Interface-PSS-HSI-to-validate-4G5G-Forward-Error-Correction-EncoderDecoder-IP-in-emulatio.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/Using-Portable-Stimulus-Standards-Hardware-Software-Interface-PSS-HSI-to-validate-4G5G-Forward-Error-Correction-EncoderDecoder-IP-in-emulatio.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/8j3c2ZpvWPc?t=1841){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -275,3 +275,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/9xuC8uR_lGc" title="[DVCON2022]Using PSS-2.0 Hardware-Software Interface 4G/5G Forward Error Correction Emulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2022]Using PSS-2.0 Hardware-Software Interface 4G/5G Forward Error Correction Emulation** — [Watch on YouTube](https://www.youtube.com/watch?v=9xuC8uR_lGc) · [Video page](../videos/9xuC8uR_lGc.md)
+
+**Official presentation:** [DVCon U.S. 2022 · Portable Stimulus Standard (PSS) · 30:41](https://youtu.be/8j3c2ZpvWPc?t=1841){ target=_blank }

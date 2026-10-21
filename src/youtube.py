@@ -144,6 +144,8 @@ def build_block(res: Resource, extra_links: list[str], insights: int = 5) -> str
         lines.append(f"📄 Summary: {url}")
     if res.source_url.startswith("http"):
         lines.append(f"📑 Paper: {res.source_url}")
+    if res.official_url:
+        lines.append(f"🎤 Official talk ({res.official_label}): {res.official_url}")
     lines.append("")
     lines.append(res.title)
     if res.authors:

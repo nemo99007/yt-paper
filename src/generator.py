@@ -248,6 +248,9 @@ def render_resource(db: Database, res: Resource) -> str:
                      f"<figcaption>{cap} — from the original paper"
                      f"{' (' + _cell(res.authors.split(',')[0].split('(')[0].strip()) + ' et al.)' if res.authors else ''}"
                      "</figcaption>\n</figure>\n")
+    if res.official_url:
+        source += (f" [:material-presentation-play: Official talk]({res.official_url})"
+                   "{ .md-button target=_blank }")
     parts += [
         source + "\n",
         "| | |\n|---|---|\n"
@@ -266,6 +269,8 @@ def render_resource(db: Database, res: Resource) -> str:
     if videos:
         parts.append("## Videos\n\n" + "\n\n".join(
             _embed(l) + f" · [Video page](../videos/{l.video.video_id}.md)" for l in videos) + "\n")
+    if res.official_url:
+        parts.append(f"**Official presentation:** [{_cell(res.official_label)}]({res.official_url}){{ target=_blank }}\n")
 
     old = res.markdown_path
     _write(config.DOCS_DIR / rel, "\n".join(p for p in parts if p))

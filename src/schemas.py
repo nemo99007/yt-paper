@@ -73,6 +73,8 @@ class Resource(BaseModel):
     detailed_summary_ko: str = ""
     figure_path: str | None = None     # relative to docs/, e.g. assets/figures/ref-xxx.png
     figure_caption: str = ""
+    official_url: str | None = None
+    official_label: str = ""
     venue: str = ""          # e.g. "DVCon", "DATE" ("" → Others)
     region: str = ""         # e.g. "US", "Europe", "India"
     year: int | None = None
