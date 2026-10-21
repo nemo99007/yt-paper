@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 5: The co-simulation architecture — from the original paper (Eric Ohana et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1046-Closing-Functional-Coverage-With-Deep-Reinforcement-Learning-A-Compression-Encoder-Example.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1046-Closing-Functional-Coverage-With-Deep-Reinforcement-Learning-A-Compression-Encoder-Example.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/yVVRmKOca58){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -274,3 +274,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/s-CB6ioRcRo" title="[DVCON2023]Closing Functional Coverage  With Deep Reinforcement Learning: A Compression Encoder" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023]Closing Functional Coverage  With Deep Reinforcement Learning: A Compression Encoder** — [Watch on YouTube](https://www.youtube.com/watch?v=s-CB6ioRcRo) · [Video page](../videos/s-CB6ioRcRo.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/yVVRmKOca58){ target=_blank }

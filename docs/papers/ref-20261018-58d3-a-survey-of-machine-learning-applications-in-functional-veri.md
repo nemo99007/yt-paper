@@ -28,7 +28,7 @@ youtube_videos:
 
 # A Survey of Machine Learning Applications in Functional Verification
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1135-A-Survey-of-Machine-Learning-Applications-in-Functional-Verification.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1135-A-Survey-of-Machine-Learning-Applications-in-Functional-Verification.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/3xxl8B5uGJ0){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -250,3 +250,5 @@ youtube_videos:
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/SgZYDJHGSkg" title="[DVCON2023] A Survey of Machine Learning Applications in Functional Verification" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023] A Survey of Machine Learning Applications in Functional Verification** · 📝 [Previous reading (2024-06-27)](https://youtu.be/BdxT57DYNA8) — [Watch on YouTube](https://www.youtube.com/watch?v=SgZYDJHGSkg) · [Video page](../videos/SgZYDJHGSkg.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/3xxl8B5uGJ0){ target=_blank }

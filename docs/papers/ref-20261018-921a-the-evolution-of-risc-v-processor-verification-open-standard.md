@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 3: Testbench for Advanced RISC-V processor verification using RVVI — from the original paper (Lee Moore et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1124-The-evolution-of-RISC-V-processor-verification-open-standards-and-verification-IP.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1124-The-evolution-of-RISC-V-processor-verification-open-standards-and-verification-IP.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/6mxXZHYhOnU){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -268,3 +268,5 @@ youtube_videos:
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/jRK3zGUbXwc" title="[DVCON2023]The Evolution of RISC-V Processor Verification: Open Standards and Verification IP" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023]The Evolution of RISC-V Processor Verification: Open Standards and Verification IP** — [Watch on YouTube](https://www.youtube.com/watch?v=jRK3zGUbXwc) · [Video page](../videos/jRK3zGUbXwc.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/6mxXZHYhOnU){ target=_blank }

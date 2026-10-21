@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 2: Overall Architecture or Experimental System — from the original paper (Hanna Jang et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/Machine-Learning-Based-Verification-Planning-Methodology-Using-Design-and-Verification-Data-1.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/Machine-Learning-Based-Verification-Planning-Methodology-Using-Design-and-Verification-Data-1.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/AHu4O-IR_dU?t=3249){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -252,3 +252,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/8Zp0xkU97Fs" title="[DVCON2022] Machine Learning Based Verification Planning Methodology Using Design and Verification" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2022] Machine Learning Based Verification Planning Methodology Using Design and Verification** — [Watch on YouTube](https://www.youtube.com/watch?v=8Zp0xkU97Fs) · [Video page](../videos/8Zp0xkU97Fs.md)
+
+**Official presentation:** [DVCon U.S. 2022 · Regression Runtime and Debug Optimization · 54:09](https://youtu.be/AHu4O-IR_dU?t=3249){ target=_blank }

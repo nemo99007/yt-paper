@@ -28,7 +28,7 @@ youtube_videos:
 
 # The Life of a SystemVerilog Variable
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/the-life-of-a-systemverilog-variable.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/the-life-of-a-systemverilog-variable.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/1BbMxanzImY){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -237,3 +237,5 @@ youtube_videos:
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/b7Xs_FX_gzs" title="[DVCON2021]The Life of a SystemVerilog Variable" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2021]The Life of a SystemVerilog Variable** — [Watch on YouTube](https://www.youtube.com/watch?v=b7Xs_FX_gzs) · [Video page](../videos/b7Xs_FX_gzs.md)
+
+**Official presentation:** [DVCon U.S. 2021](https://youtu.be/1BbMxanzImY){ target=_blank }

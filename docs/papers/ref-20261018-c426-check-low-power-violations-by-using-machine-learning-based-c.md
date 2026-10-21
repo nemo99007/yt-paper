@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 4. The overall flow of proposed approach. — from the original paper (Chi-Ming Lee et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1027-Check-Low-Power-Violations-by-Using-Machine-Learning-Based-Classifier.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1027-Check-Low-Power-Violations-by-Using-Machine-Learning-Based-Classifier.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/5Y8RG0LGGWg){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -396,3 +396,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/0cEVwOlM79M" title="[DVCON2023]Check Low-Power Violations by Using Machine Learning Based Classifier" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023]Check Low-Power Violations by Using Machine Learning Based Classifier** — [Watch on YouTube](https://www.youtube.com/watch?v=0cEVwOlM79M) · [Video page](../videos/0cEVwOlM79M.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/5Y8RG0LGGWg){ target=_blank }

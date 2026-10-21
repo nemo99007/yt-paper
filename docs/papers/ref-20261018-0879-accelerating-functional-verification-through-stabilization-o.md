@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 7: L2 Cache Test Bench Environment — from the original paper (Srikanth Vadanaparthi et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1137-Accelerating-Functional-Verification-through-Stabilization-of-Testbench-Using-AIML.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1137-Accelerating-Functional-Verification-through-Stabilization-of-Testbench-Using-AIML.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/yyLKUNb7udg){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -268,3 +268,5 @@ youtube_videos:
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/H947nXpp4No" title="[DVCON2023]Accelerating Functional Verification Through Stabilization of Testbench Using AI/ML" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023]Accelerating Functional Verification Through Stabilization of Testbench Using AI/ML** — [Watch on YouTube](https://www.youtube.com/watch?v=H947nXpp4No) · [Video page](../videos/H947nXpp4No.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/yyLKUNb7udg){ target=_blank }

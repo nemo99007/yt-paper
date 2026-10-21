@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 6. Input and output diagram of proposing methodology — from the original paper (Taeyoung Jeon et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1055-Automation-Methodology-for-Bus-Performance-Verification-using-IP-XACT.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1055-Automation-Methodology-for-Bus-Performance-Verification-using-IP-XACT.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/TdfALcZPwcs){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -278,3 +278,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/Sxhrm6QYo_0" title="[DVCON2023]Automation Methodology for Bus Performance Verification using IP-XACT" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023]Automation Methodology for Bus Performance Verification using IP-XACT** — [Watch on YouTube](https://www.youtube.com/watch?v=Sxhrm6QYo_0) · [Video page](../videos/Sxhrm6QYo_0.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/TdfALcZPwcs){ target=_blank }

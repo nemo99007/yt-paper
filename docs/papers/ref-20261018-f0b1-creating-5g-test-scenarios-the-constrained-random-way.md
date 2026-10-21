@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Fig. 4: Flow chart indicating one of the possible ways a sequence can generate a scenario. — from the original paper (Keshav Kannan et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1003-Creating-5G-Test-Scenarios-the-Constrained-Random-way.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1003-Creating-5G-Test-Scenarios-the-Constrained-Random-way.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/XAdej6mha0c){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -276,3 +276,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/UUzJcTvJEOE" title="[DVCON2023]Creating 5G Test Scenarios, the Constrained-Random way" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023]Creating 5G Test Scenarios, the Constrained-Random way** — [Watch on YouTube](https://www.youtube.com/watch?v=UUzJcTvJEOE) · [Video page](../videos/UUzJcTvJEOE.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/XAdej6mha0c){ target=_blank }

@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 3: Efficient three step workflow with a common database — from the original paper (Daeseo Cha et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1048-Complex-Safety-Mechanisms-Require-Interoperability-For-Validation-And-Final-Metrics.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1048-Complex-Safety-Mechanisms-Require-Interoperability-For-Validation-And-Final-Metrics.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/swFOgETFd1s){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -242,3 +242,5 @@ youtube_videos:
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/fdWhjjj_lxs" title="[DVCON2023]Complex Safety Mechanisms Require Interoperability Automation Validation Metric Closure" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023]Complex Safety Mechanisms Require Interoperability Automation Validation Metric Closure** — [Watch on YouTube](https://www.youtube.com/watch?v=fdWhjjj_lxs) · [Video page](../videos/fdWhjjj_lxs.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/swFOgETFd1s){ target=_blank }

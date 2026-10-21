@@ -32,7 +32,7 @@ youtube_videos:
 <figcaption>Figure 2. The Proposed Verification Methodology. — from the original paper (Woojoo Kim et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1040-A-Study-on-Virtual-Prototyping-based-Design-Verification-Methodology.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1040-A-Study-on-Virtual-Prototyping-based-Design-Verification-Methodology.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/EgBDkUrBeOY){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -274,3 +274,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/RgAPcMcohTs" title="[DVCON2023]A Study on Virtual Prototyping based Design Verification Methodology" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023]A Study on Virtual Prototyping based Design Verification Methodology** — [Watch on YouTube](https://www.youtube.com/watch?v=RgAPcMcohTs) · [Video page](../videos/RgAPcMcohTs.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/EgBDkUrBeOY){ target=_blank }

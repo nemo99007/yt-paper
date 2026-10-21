@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 1. Flow of the Proposed Algorithm. — from the original paper (Jin Choi et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/Finding-a-Needle-in-a-Haystack-A-Novel-Log-Analysis-Method-with-Test-Clustering-in-Distributed-System-1.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/Finding-a-Needle-in-a-Haystack-A-Novel-Log-Analysis-Method-with-Test-Clustering-in-Distributed-System-1.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/AHu4O-IR_dU?t=1983){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -238,3 +238,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/_JOrnyqSEDU" title="[DVCON2022] Finding a Needle in a Haystack A Novel Log Analysis Method with Test Clustering in" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2022] Finding a Needle in a Haystack A Novel Log Analysis Method with Test Clustering in** — [Watch on YouTube](https://www.youtube.com/watch?v=_JOrnyqSEDU) · [Video page](../videos/_JOrnyqSEDU.md)
+
+**Official presentation:** [DVCon U.S. 2022 · Regression Runtime and Debug Optimization · 33:03](https://youtu.be/AHu4O-IR_dU?t=1983){ target=_blank }

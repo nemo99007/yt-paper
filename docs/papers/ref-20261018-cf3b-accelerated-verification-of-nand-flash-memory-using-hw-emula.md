@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 8. Emulator Test Environment — from the original paper (Seyeol Yang et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1090-Accelerated-Verification-of-NAND-Flash-Memory-using-HW-Emulator.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1090-Accelerated-Verification-of-NAND-Flash-Memory-using-HW-Emulator.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/Dh2-yBHvSL0){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -262,3 +262,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/vumYRdATl74" title="[DVCON2023]Accelerated Verification of NAND Flash Memory using HW Emulator" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023]Accelerated Verification of NAND Flash Memory using HW Emulator** — [Watch on YouTube](https://www.youtube.com/watch?v=vumYRdATl74) · [Video page](../videos/vumYRdATl74.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/Dh2-yBHvSL0){ target=_blank }

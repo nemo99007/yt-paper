@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 1. A three-level inheritance code structure to maximize code reusability — from the original paper (Hyeonman Park et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1050-Strategies-to-Maximize-Reusability-of-UVM-Test-Scenarios-in-SoC-Verification.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1050-Strategies-to-Maximize-Reusability-of-UVM-Test-Scenarios-in-SoC-Verification.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/UFKXxtL27D0){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -290,3 +290,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/q6NioNTKDLs" title="[DVCON2023]Strategies to Maximize Reusability of UVM Test Scenarios in SoC Verification" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023]Strategies to Maximize Reusability of UVM Test Scenarios in SoC Verification** — [Watch on YouTube](https://www.youtube.com/watch?v=q6NioNTKDLs) · [Video page](../videos/q6NioNTKDLs.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/UFKXxtL27D0){ target=_blank }

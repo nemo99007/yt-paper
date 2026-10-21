@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 9. A working prototype of Regvue Desktop — from the original paper (Rob Donnelly et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1136-Regvue-Modern-HardwareSoftware-Interface-HSI-Documentation.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1136-Regvue-Modern-HardwareSoftware-Interface-HSI-Documentation.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/m6Dvz0P7UKM){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -263,3 +263,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/gVr4LtO7M2c" title="[DVCON2023]Regvue Modern Hardware/Software Interface (HSI) Documentation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023]Regvue Modern Hardware/Software Interface (HSI) Documentation** — [Watch on YouTube](https://www.youtube.com/watch?v=gVr4LtO7M2c) · [Video page](../videos/gVr4LtO7M2c.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/m6Dvz0P7UKM){ target=_blank }

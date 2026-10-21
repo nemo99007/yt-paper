@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 9. Verification with ML based PSS action sequence model — from the original paper (Moonki Jang et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1096-Early-Detection-of-Functional-Corner-Case-Bugs-using-Methodologies-of-the-ISO-26262.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1096-Early-Detection-of-Functional-Corner-Case-Bugs-using-Methodologies-of-the-ISO-26262.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/cn534ywy1-0){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -253,3 +253,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/q5J0AUqZLUY" title="[DVCon2023] Early Detection of Functional Corner Case Bugs using Methodologies of the ISO 26262" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCon2023] Early Detection of Functional Corner Case Bugs using Methodologies of the ISO 26262** — [Watch on YouTube](https://www.youtube.com/watch?v=q5J0AUqZLUY) · [Video page](../videos/q5J0AUqZLUY.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/cn534ywy1-0){ target=_blank }

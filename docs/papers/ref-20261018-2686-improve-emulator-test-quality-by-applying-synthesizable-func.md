@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 2. Integration of synthesizable functional coverage module — from the original paper (Hoyeon Hwang et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1087-Improve-emulator-test-quality-by-applying-synthesizable-functional-coverage.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1087-Improve-emulator-test-quality-by-applying-synthesizable-functional-coverage.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/9kDEJjWuEyA){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -250,3 +250,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/-DOx49XtD4M" title="[DVCON2023] Improve emulator test quality by applying synthesizable functional coverage" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023] Improve emulator test quality by applying synthesizable functional coverage** — [Watch on YouTube](https://www.youtube.com/watch?v=-DOx49XtD4M) · [Video page](../videos/-DOx49XtD4M.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/9kDEJjWuEyA){ target=_blank }

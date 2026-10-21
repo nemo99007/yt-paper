@@ -28,7 +28,7 @@ youtube_videos:
 
 # What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1114-Whats-Next-for-SystemVerilog-in-the-Upcoming-IEEE-1800-standard.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1114-Whats-Next-for-SystemVerilog-in-the-Upcoming-IEEE-1800-standard.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/jCMKjm4obII){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -250,3 +250,5 @@ youtube_videos:
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/gk4Nr1n50Ac" title="[DVCON2023]What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023]What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard** — [Watch on YouTube](https://www.youtube.com/watch?v=gk4Nr1n50Ac) · [Video page](../videos/gk4Nr1n50Ac.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/jCMKjm4obII){ target=_blank }

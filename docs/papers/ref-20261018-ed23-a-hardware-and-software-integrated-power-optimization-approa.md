@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 1. PA Verification Flow — from the original paper (Eldin Ben Jacob et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1093-A-HW-and-SW-integrated-power-optimization-approaches-with-power-aware-simulations-at-SOC.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1093-A-HW-and-SW-integrated-power-optimization-approaches-with-power-aware-simulations-at-SOC.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/c1ZoedAiFEs){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -250,3 +250,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/Lkms-pIgkfg" title="[DVCON2023]Hardware and Software integrated power optimization approach with power aware simulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023]Hardware and Software integrated power optimization approach with power aware simulation** — [Watch on YouTube](https://www.youtube.com/watch?v=Lkms-pIgkfg) · [Video page](../videos/Lkms-pIgkfg.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/c1ZoedAiFEs){ target=_blank }

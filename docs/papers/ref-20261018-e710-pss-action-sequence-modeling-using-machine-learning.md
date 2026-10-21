@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 2. Structure of PSS action sequence model A. PSS scenario generation — from the original paper (Moonki Jang et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/PSS-action-sequence-modeling-using-Machine-Learning-1.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/PSS-action-sequence-modeling-using-Machine-Learning-1.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/8j3c2ZpvWPc?t=37){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -264,3 +264,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/KsLeNKgw_wU" title="[DVCON2022] PSS action sequence modeling using Machine Learning" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2022] PSS action sequence modeling using Machine Learning** — [Watch on YouTube](https://www.youtube.com/watch?v=KsLeNKgw_wU) · [Video page](../videos/KsLeNKgw_wU.md)
+
+**Official presentation:** [DVCon U.S. 2022 · Portable Stimulus Standard (PSS) · 0:37](https://youtu.be/8j3c2ZpvWPc?t=37){ target=_blank }

@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Fig. 4: Fault simulation flow — from the original paper (Endri Kaja et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1069-Automated-Thread-Evaluation-of-Various-RISC-V-Alternatives-using-Random-Instruction-Generators.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1069-Automated-Thread-Evaluation-of-Various-RISC-V-Alternatives-using-Random-Instruction-Generators.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/iYGcC-4tjhk){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -268,3 +268,5 @@ youtube_videos:
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/JD25fcnTAhA" title="[DVCON2023]Automated Thread Evaluation of Various RISC-V Alternatives Random Instruction Generators" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023]Automated Thread Evaluation of Various RISC-V Alternatives Random Instruction Generators** — [Watch on YouTube](https://www.youtube.com/watch?v=JD25fcnTAhA) · [Video page](../videos/JD25fcnTAhA.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/iYGcC-4tjhk){ target=_blank }

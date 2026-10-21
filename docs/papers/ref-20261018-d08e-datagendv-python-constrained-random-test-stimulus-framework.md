@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Fig. 1. DatagenDV data flow. — from the original paper (Jonathan George et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1044-Datagen-Python-Constrained-Random-Test-Stimulus-Framework.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1044-Datagen-Python-Constrained-Random-Test-Stimulus-Framework.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/djpjecYqZjc){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -279,3 +279,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/7g-3vBeMZLo" title="[DVCON2023]DatagenDV: Python Constrained Random Test Stimulus Framework" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023]DatagenDV: Python Constrained Random Test Stimulus Framework** — [Watch on YouTube](https://www.youtube.com/watch?v=7g-3vBeMZLo) · [Video page](../videos/7g-3vBeMZLo.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/djpjecYqZjc){ target=_blank }

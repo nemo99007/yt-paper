@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 3. Overview of SSD system-level power estimation methodology — from the original paper (Sangmin Kim et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1099-System-Level-Power-Estimation-of-SSDs-under-Real-Workloads-using-Emulation.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1099-System-Level-Power-Estimation-of-SSDs-under-Real-Workloads-using-Emulation.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/_gQT95n8JYg){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -268,3 +268,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/x32Ey9cnaMw" title="[DVCON2023] System-Level Power Estimation of SSDs under Real Workloads using Emulation" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023] System-Level Power Estimation of SSDs under Real Workloads using Emulation** — [Watch on YouTube](https://www.youtube.com/watch?v=x32Ey9cnaMw) · [Video page](../videos/x32Ey9cnaMw.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/_gQT95n8JYg){ target=_blank }

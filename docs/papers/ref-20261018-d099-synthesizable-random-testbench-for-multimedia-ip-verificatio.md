@@ -28,7 +28,7 @@ youtube_videos:
 
 # Synthesizable Random Testbench for Multimedia IP Verification
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/synthesizable-random-testbench-for-multimedia-ip-verification.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/synthesizable-random-testbench-for-multimedia-ip-verification.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/7LNLY8Pstx0){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -276,3 +276,5 @@ youtube_videos:
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/BEUFeKUEctY" title="[DVCON2021]Synthesizable Random Testbench for Multimedia IP Verification" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2021]Synthesizable Random Testbench for Multimedia IP Verification** — [Watch on YouTube](https://www.youtube.com/watch?v=BEUFeKUEctY) · [Video page](../videos/BEUFeKUEctY.md)
+
+**Official presentation:** [DVCon U.S. 2021](https://youtu.be/7LNLY8Pstx0){ target=_blank }

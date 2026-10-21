@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 1 - uvm_resource_pool Block Diagram — from the original paper (Clifford E. Cummings et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1072-The-Untapped-Power-of-UVM-Resources-and-Why-Engineers-Should-Use-the-uvm_resource_db-API.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1072-The-Untapped-Power-of-UVM-Resources-and-Why-Engineers-Should-Use-the-uvm_resource_db-API.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/jnULbRDCvE8){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -268,3 +268,5 @@ youtube_videos:
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/lPtRkWNiksg" title="[DVCON2023]The Untapped Power of UVM Resources and Why Engineers Should Use the uvm_resource_db API" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023]The Untapped Power of UVM Resources and Why Engineers Should Use the uvm_resource_db API** — [Watch on YouTube](https://www.youtube.com/watch?v=lPtRkWNiksg) · [Video page](../videos/lPtRkWNiksg.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/jnULbRDCvE8){ target=_blank }

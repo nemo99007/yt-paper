@@ -33,7 +33,7 @@ youtube_videos:
 <figcaption>Figure 11: Insertion of generated checkers and assertions — from the original paper (Tony Gladvin George et al.)</figcaption>
 </figure>
 
-[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1060-Automation-for-Early-Detection-of-X-propagation-in-Power-Aware-simulation-verification-Using-UPF-IEEE-1801.pdf){ .md-button .md-button--primary target=_blank }
+[:material-open-in-new: Original paper](https://dvcon-proceedings.org/wp-content/uploads/1060-Automation-for-Early-Detection-of-X-propagation-in-Power-Aware-simulation-verification-Using-UPF-IEEE-1801.pdf){ .md-button .md-button--primary target=_blank } [:material-presentation-play: Official talk](https://youtu.be/dHFgAAT77bE){ .md-button target=_blank }
 
 | | |
 |---|---|
@@ -225,3 +225,5 @@ flowchart LR
 <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/nqmA1fsXAJM" title="[DVCON2023] Automation for Early Detection of X-propagation in Power-Aware Simulation Verification" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 **[DVCON2023] Automation for Early Detection of X-propagation in Power-Aware Simulation Verification** — [Watch on YouTube](https://www.youtube.com/watch?v=nqmA1fsXAJM) · [Video page](../videos/nqmA1fsXAJM.md)
+
+**Official presentation:** [DVCon U.S. 2023](https://youtu.be/dHFgAAT77bE){ target=_blank }
