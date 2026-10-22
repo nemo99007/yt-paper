@@ -45,6 +45,12 @@ Summaries: `LLM_BACKEND=auto` uses `claude -p` (owner's subscription, model from
 owner chose **haiku**) when no ANTHROPIC_API_KEY is set. If the CLI login expires the batch stops;
 owner runs /login, then re-run (idempotent).
 
+## Storage / scaling (decided 2026-10-22)
+Stay on SQLite (owner asked about MongoDB; not worth it for a static site). Measured at 106 papers:
+DB ~14 KB, dump ~8 KB, figure ~75 KB, build ~0.12 s per paper. Limits are elsewhere — around 1,000
+papers: split `data/index_dump.json` per paper (GitHub file limit 100 MB) and convert figures to WebP
+(Pages 1 GB limit). The separate ETF project uses MongoDB (database `etf`); nothing is shared.
+
 ## Open items (as of 2026-10-19)
 
 - **Remind the owner occasionally:** 4 read papers are waiting for PDFs, because the publisher sites block downloads. If the owner drops PDFs in C:\shared_folder (/mnt/c/shared_folder), add rows to data/reading_list.csv.
