@@ -238,7 +238,8 @@ def render_resource(db: Database, res: Resource) -> str:
     crumbs.append(f"[{res.category}](../{vs}/by-topic.md#{slugify(res.category)})")
 
     is_url = res.source_url.startswith(("http://", "https://"))
-    source = (f"[:material-open-in-new: Original paper]({res.source_url}){{ .md-button .md-button--primary target=_blank }}"
+    label = "Original paper" if res.one_line_summary else "Page"  # link-only: the abstract page
+    source = (f"[:material-open-in-new: {label}]({res.source_url}){{ .md-button .md-button--primary target=_blank }}"
               if is_url else f":material-file-pdf-box: Local file: `{res.source_url}`")
     where = " ".join(x for x in (venue, group_of(res), str(res.year or "")) if x)
     parts = [_frontmatter(meta), GENERATED_MARK, " › ".join(crumbs) + "\n", f"# {res.title}\n"]

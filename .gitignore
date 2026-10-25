@@ -10,3 +10,4 @@ logs/
 secrets/
 client_secret*.json
 token*.json
+/tmp_doc/

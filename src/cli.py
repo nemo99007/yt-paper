@@ -55,11 +55,19 @@ def _figure(db: Database, res: Resource, pdf: Path | None, number: int | None) -
 
 
 def _ingest(db: Database, source: str, stype: str | None, title: str | None, refresh: bool,
-            local_pdf: str | None = None, figure: int | None = None) -> tuple[Resource, bool]:
+            local_pdf: str | None = None, figure: int | None = None,
+            authors: str = "", category: str = "") -> tuple[Resource, bool]:
     """자료를 파싱·요약해 DB에 넣는다. 이미 있으면(refresh 아님) LLM 호출 없이 기존 자료를 돌려준다.
 
     local_pdf가 주어지면 본문은 로컬 파일에서 읽고, 출처(source_url)는 source URL로 기록한다.
+    local_pdf가 "link"이면 본문을 가져오지 않고 링크(초록 페이지)만 기록한다 — 요약·그림 없음.
     """
+    if local_pdf == "link":
+        return db.upsert_resource({
+            "title": title or source, "source_type": stype or "PAPER",
+            "source_url": parser.canonical_source(source), "authors": authors,
+            "category": category or "General",
+        })
     if local_pdf and local_pdf.startswith(("http://", "https://")):
         # a PDF link (e.g. an open copy of a paywalled paper): read it from a temporary file
         with tempfile.TemporaryDirectory() as tmp:
@@ -203,7 +211,8 @@ def import_(
                 continue
             stype = (row.get("type") or "").strip().upper() or None
             local_pdf = (row.get("local_pdf") or "").strip() or None
-            if local_pdf and not local_pdf.startswith(("http://", "https://")) and not Path(local_pdf).exists():
+            if local_pdf and local_pdf != "link" and not local_pdf.startswith(("http://", "https://")) \
+                    and not Path(local_pdf).exists():
                 local_pdf = None
             try:
                 prev = db.get_by_source(parser.canonical_source(source))
@@ -211,7 +220,8 @@ def import_(
                 redo = refresh and not (resume and prev is not None and prev.detailed_summary_ko)
                 fig = (row.get("figure") or "").strip()
                 res, created = _ingest(db, source, stype, (row.get("title") or "").strip() or None, redo,
-                                       local_pdf, int(fig) if fig.isdigit() else None)
+                                       local_pdf, int(fig) if fig.isdigit() else None,
+                                       (row.get("authors") or "").strip(), (row.get("category") or "").strip())
                 created = created or (redo and existed)
                 year = (row.get("year") or "").strip()
                 db.set_meta(res.id, (row.get("venue") or "").strip(), (row.get("region") or "").strip(),

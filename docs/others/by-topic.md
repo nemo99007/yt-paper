@@ -2,11 +2,23 @@
 
 # Others by topic
 
+## Emulation
+
+| Paper | Region / Conference | Topic | Videos |
+|---|---|---|---|
+| [Hardware Emulation for Functional Verification of K5](../papers/ref-20261025-2ad0-hardware-emulation-for-functional-verification-of-k5.md) | DAC | Emulation | :material-youtube: 1 |
+
 ## Architecture
 
 | Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [Xilinx Adaptive Compute Acceleration Platform: Versal™ Architecture](../papers/ref-20261019-b8bc-xilinx-adaptive-compute-acceleration-platform-versaltm-archi.md) | FPGA | Architecture | :material-youtube: 1 |
+
+## EDA
+
+| Paper | Region / Conference | Topic | Videos |
+|---|---|---|---|
+| [CirFix: Automatically Repairing Defects in Hardware Design Code](../papers/ref-20261025-3d91-cirfix-automatically-repairing-defects-in-hardware-design-co.md) | ASPLOS | EDA | :material-youtube: 1 |
 
 ## General
 

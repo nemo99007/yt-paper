@@ -4424,9 +4424,145 @@
       "year": 1968,
       "markdown_path": "papers/ref-20261019-f6d3-go-to-statement-considered-harmful.md",
       "created_at": "2026-10-19T12:30:19+09:00"
+    },
+    {
+      "id": "ref-20261025-2ad0",
+      "title": "Hardware Emulation for Functional Verification of K5",
+      "source_type": "PAPER",
+      "source_url": "https://dl.acm.org/doi/10.1145/240518.240578",
+      "authors": "Gopi Ganapathy (AMD), Ram Narayan (AMD), Glenn Jorden (AMD), Denzil Fernandez (AMD), Ming Wang (Quickturn Design Systems), Jim Nishimura (Quickturn Design Systems)",
+      "category": "Emulation",
+      "tags": [
+        "Emulation",
+        "FPGA",
+        "X86",
+        "In-Circuit Emulation"
+      ],
+      "one_line_summary": "AMD's account of using Quickturn MARS/Saturn FPGA-based hardware emulation to functionally verify the K5 superscalar x86 CPU, covering partitioning, SIM/ICE modes, and the bring-up cycle that let real x86 OS and application software run before first silicon.",
+      "key_insights": [
+        "Gate-level simulation of K5 runs in the low 100 Hz range, while the emulator runs the model in the high 100 kHz range (paper claims 3-6 orders of magnitude), which made booting Windows and launching applications practical.",
+        "Partitioning the design into 25 LBMs under pin limits was the dominant bring-up cost; tristate wired-OR structures were converted to n-input OR gates with a tristate output, and the register file/reorder buffer was split along write-port boundaries with duplicated storage bits.",
+        "Delay-dependent logic (self-timed structures) was replaced with functional equivalents and kept consistent with the transistor-level design via gate-switch equivalence checking, which required dedicated model-build resources.",
+        "A buffering scheme for in-circuit emulation lets the design switch between SIM and ICE modes without remapping, avoiding two separate emulation views; incremental edits take minutes for a single LBM but hours to a day for multi-LBM changes.",
+        "The paper reports that the emulator ran Windows 3.1/NT/95, OS/2, and Linux workloads and found and fixed key bugs before first silicon, but gives no quantitative bug counts or final emulation speed."
+      ],
+      "detailed_summary": "### Background and Problem\n- K5 is AMD's ~4M-transistor, four-issue superscalar x86 CPU; x86 compatibility must be proven before tapeout, and gate-level simulation in the low 100 Hz range cannot boot Windows or launch applications in practical time.\n- The full-custom, latch-based design has no direct FPGA primitive mapping: switch-level circuits, self-timed structures, and wired-OR tristate buses must be re-modeled for the emulator.\n\n### Architecture and Methodology\n- Quickturn MARS (IP2500, five chassis, up to 2.5M gates) and later Saturn (single chassis, 11 LBMs) map the gate-level emulation view onto Xilinx FPGAs; memory arrays are mapped via CMM black boxes.\n- The design was partitioned into 25 LBMs under pin limits, with tristate wired-OR converted to n-input OR gates and the register file/ROB split along write ports.\n- SIM mode runs x86 test suites from external memory with DebugWare scan readback; ICE mode connects the pins to a real PC through a buffering scheme that switches modes without remapping.\n\n```mermaid\nflowchart LR\n  A[Model Build] --> B[Partitioning into LBMs]\n  B --> C[Per-LBM compile and FPGA P&R]\n  C --> D[Linking]\n  D --> E[Download: SIM or ICE run]\n```\n\n### Results and Conclusions\n- The emulator ran Windows 3.1, Windows NT, Windows 95, OS/2, and Linux with applications, and key bugs were found and fixed before first silicon.\n- The paper states the emulator was instrumental in achieving functional first silicon, but gives no quantitative bug counts or final emulation speed.\n- Costs noted: high startup effort, a dedicated team, and time-to-debug measured in hours rather than minutes.",
+      "one_line_summary_ko": "AMD가 Quickturn MARS/Saturn FPGA 기반 하드웨어 에뮬레이션을 사용해 K5 슈퍼스칼라 x86 CPU를 기능 검증한 경험을 정리한 논문으로, 파티셔닝, SIM/ICE 모드, 브링업 사이클을 다루며 최초 실리콘 이전에 실제 x86 OS 및 응용 소프트웨어를 실행할 수 있었던 과정을 보여준다.",
+      "key_insights_ko": [
+        "K5의 게이트 레벨 시뮬레이션은 낮은 100 Hz 대역에서 동작하는 반면, 에뮬레이터는 높은 100 kHz 대역으로 모델을 실행하며(논문은 3~6자릿수 향상을 주장), 이로 인해 Windows 부팅과 응용 프로그램 실행이 현실적으로 가능해졌다.",
+        "설계를 핀 제약 하에서 25개의 LBM으로 파티셔닝하는 것이 브링업의 가장 큰 비용이었으며, tristate wired-OR 구조는 tristate 출력을 가진 n-입력 OR 게이트로 변환되었고, 레지스터 파일/재정렬 버퍼는 쓰기 포트 경계를 기준으로 나누고 저장 비트를 중복시켰다.",
+        "지연 의존 로직(self-timed 구조)은 기능적으로 동등한 로직으로 대체되었고, gate-switch 등가성 검사로 트랜지스터 레벨 설계와의 일관성을 유지했으며, 이를 위해 전담 모델 빌드 리소스가 필요했다.",
+        "In-circuit emulation을 위한 버퍼링 방식은 재매핑 없이 SIM과 ICE 모드 사이를 전환하게 해 두 개의 별도 에뮬레이션 뷰를 피하며, 증분 수정은 단일 LBM의 경우 몇 분, 다중 LBM 변경의 경우 수 시간에서 하루가 걸린다.",
+        "논문은 에뮬레이터에서 Windows 3.1/NT/95, OS/2, Linux 워크로드를 실행했고 최초 실리콘 이전에 주요 버그를 찾아 수정했다고 보고하지만, 버그 개수나 최종 에뮬레이션 속도의 정량적 수치는 제시하지 않는다."
+      ],
+      "detailed_summary_ko": "### 배경 및 문제\n- K5는 AMD의 약 4M 트랜지스터, 4-issue 슈퍼스칼라 x86 CPU이며, tapeout 이전에 x86 호환성을 입증해야 한다. 낮은 100 Hz 대역의 게이트 레벨 시뮬레이션으로는 Windows 부팅이나 응용 프로그램 실행이 현실적인 시간 안에 불가능하다.\n- Full-custom, latch 기반 설계는 FPGA 기본 요소로 직접 매핑되지 않는다. Switch-level 회로, self-timed 구조, wired-OR tristate 버스를 에뮬레이터용으로 다시 모델링해야 한다.\n\n### 구조 및 방법론\n- Quickturn MARS(IP2500, 5개 chassis, 최대 2.5M 게이트)와 이후의 Saturn(단일 chassis, 11개 LBM)은 게이트 레벨 에뮬레이션 뷰를 Xilinx FPGA에 매핑한다. 메모리 배열은 CMM black box로 매핑된다.\n- 설계는 핀 제약 하에서 25개의 LBM으로 파티셔닝되었으며, tristate wired-OR은 n-입력 OR 게이트로 변환되고 레지스터 파일/ROB는 쓰기 포트 경계를 기준으로 분할되었다.\n- SIM 모드는 외부 메모리에서 x86 테스트 스위트를 실행하고 DebugWare scan readback을 사용한다. ICE 모드는 buffering scheme을 통해 실제 PC에 핀을 연결하며, 재매핑 없이 모드를 전환한다.\n\n### 결과 및 결론\n- 에뮬레이터에서 Windows 3.1, Windows NT, Windows 95, OS/2, Linux 및 응용 프로그램을 실행했으며, 최초 실리콘 이전에 주요 버그를 찾아 수정했다.\n- 논문은 에뮬레이터가 기능적으로 동작하는 최초 실리콘 확보에 기여했다고 밝히지만, 버그 개수나 최종 에뮬레이션 속도의 정량적 수치는 제시하지 않는다.\n- 비용 측면: 초기 투입 노력이 크고, 전담 팀이 필요하며, 디버그 착수까지 걸리는 시간이 시뮬레이션의 분 단위가 아닌 시간 단위다.",
+      "figure_path": "assets/figures/ref-20261025-2ad0.png",
+      "figure_caption": "Fig. 2. K5 Emulation Hardware",
+      "official_url": null,
+      "official_label": "",
+      "venue": "DAC",
+      "region": "",
+      "year": 1996,
+      "markdown_path": "papers/ref-20261025-2ad0-hardware-emulation-for-functional-verification-of-k5.md",
+      "created_at": "2026-10-25T17:47:51+09:00"
+    },
+    {
+      "id": "ref-20261025-3d91",
+      "title": "CirFix: Automatically Repairing Defects in Hardware Design Code",
+      "source_type": "PAPER",
+      "source_url": "https://dl.acm.org/doi/10.1145/3503222.3507763",
+      "authors": "Hammad Ahmad (University of Michigan, Ann Arbor), Yu Huang (University of Michigan, Ann Arbor), Westley Weimer (University of Michigan, Ann Arbor)",
+      "category": "EDA",
+      "tags": [
+        "Program Repair",
+        "Verilog",
+        "Genetic Programming",
+        "Fault Localization"
+      ],
+      "one_line_summary": "CirFix is a genetic-programming framework that automatically repairs Verilog design defects by combining dataflow-based fault localization over wire/register assignments with a bit-level fitness function computed from instrumented testbench outputs, repairing 16 of 32 benchmark defects correctly and 21 plausibly.",
+      "key_insights": [
+        "Spectrum-based fault localization from software APR does not fit parallel HDL; CirFix instead runs a context-insensitive fixed-point analysis over assignments and conditionals and returns an equally-ranked implicated set.",
+        "Instrumenting existing testbenches to log output wires at each clock edge enables a bit-level fitness (e.g., the buggy 4-bit counter scores 0.58 vs. 1.0 for a correct repair), so repair works without formal specifications.",
+        "On 32 expert-transplanted defects across 11 Verilog projects, CirFix produced plausible repairs for 21 and correct repairs for 16, which the authors describe as comparable to successful software APR.",
+        "Restricting insert/replace operators by statement type and syntactic parent cuts non-compiling mutants from 35% to 10%, a key enabler for GP-based search on Verilog.",
+        "Testbench instrumentation was done manually in under 10 lines and at most 5 minutes per testbench, with no circuit-specific knowledge beyond output names and clock period."
+      ],
+      "detailed_summary": "### Background and Problem\n- Verilog designs execute in parallel and are validated by testbenches that often report only final or pass/fail results, so software spectrum-based fault localization and test-based fitness do not transfer directly.\n- Prior HDL approaches either produce many false positives, require formal specifications that do not scale, or do not handle behavioral-level descriptions.\n- Goal: repair real, industry-style defects using existing testbenches, with candidate fixes reviewed by developers before synthesis.\n\n### Architecture and Methodology\n- Testbench is instrumented to log output wires/registers each clock; mismatches against expected output seed fault localization.\n- Dataflow fixed-point analysis (Impl-Data, Impl-Ctrl, Add-Child) implicates assignments and conditionals; localization is repeated every generation.\n- Fitness: +1 per matching bit, −1 per mismatch, penalty $\\varphi$ for $x$/$z$, normalized to [0,1]; 1.0 denotes a testbench-adequate (plausible) repair.\n- Genetic programming with 9 repair templates (conditionals, sensitivity lists, blocking/non-blocking, numeric), replace/insert/delete mutation, single-point crossover, tournament selection, elitism, and delta-debugging based minimization.\n\n```mermaid\nflowchart LR\n  TB[Instrumented testbench] --> SIM[Simulation VCS]\n  SIM --> FL[Dataflow fault localization]\n  FL --> OPS[Templates / mutation / crossover]\n  OPS --> FIT[Bit-level fitness]\n  FIT -->|next generation| OPS\n  FIT -->|fitness = 1.0| MIN[Minimization] --> OUT[Repair for review]\n```\n\n### Results and Conclusions\n- Benchmark of 32 expert-transplanted defects across 11 projects (decoder to reed_solomon_decoder and sdram_controller): plausible repairs for 21/32, correct for 16/32.\n- Motivating 4-bit counter: buggy fitness 0.58 (mismatch in 17 of 26 cycles); a correct overflow fix yields 1.0.\n- Fix localization reduces non-compiling mutants from 35% to 10%.\n- The authors position these rates as comparable to successful software APR; the excerpt is truncated before the full evaluation (RQ results) is presented.",
+      "one_line_summary_ko": "CirFix는 배선/레지스터 할당에 대한 dataflow 기반 fault localization과 계측된 testbench 출력으로부터 계산한 bit-level fitness 함수를 결합해 Verilog 설계 결함을 자동 수정하는 genetic programming 프레임워크이며, 32개 벤치마크 결함 중 16개를 정확히, 21개를 그럴듯하게(plausible) 수정했다.",
+      "key_insights_ko": [
+        "소프트웨어 APR의 spectrum-based fault localization은 병렬 구조의 HDL에 맞지 않으며, CirFix는 대신 할당문과 조건문에 대한 context-insensitive fixed-point 분석을 수행하고 동일 순위의 혐의 집합을 반환한다.",
+        "기존 testbench에 출력 wire를 클록 에지마다 기록하도록 계측하면 bit-level fitness를 얻을 수 있다(예: 결함이 있는 4-bit counter는 0.58, 올바른 수정은 1.0). 따라서 형식 명세 없이도 수정이 가능하다.",
+        "전문가가 이식한 11개 Verilog 프로젝트의 32개 결함에 대해 CirFix는 21개의 plausible 수정과 16개의 correct 수정을 생성했으며, 저자들은 이를 성공적인 소프트웨어 APR과 비슷한 수준이라고 설명한다.",
+        "삽입/대체 연산자를 문장 타입과 문법적 부모 타입으로 제한하여 컴파일되지 않는 mutant 비율을 35%에서 10%로 줄였으며, 이는 Verilog에 대한 GP 기반 탐색을 가능하게 한 핵심 요소이다.",
+        "Testbench 계측은 수동으로 수행되었으며 testbench당 10줄 미만, 최대 5분이 걸렸고 출력 이름과 클록 주기 외에 회로별 지식은 필요하지 않았다."
+      ],
+      "detailed_summary_ko": "### 배경 및 문제\n- Verilog 설계는 병렬로 동작하며, 대개 최종 결과나 pass/fail만 보고하는 testbench로 검증된다. 따라서 소프트웨어의 spectrum-based fault localization과 테스트 기반 fitness는 그대로 적용하기 어렵다.\n- 기존 HDL 접근법은 오탐이 많거나, 확장성이 낮은 형식 명세를 요구하거나, 행위 수준(behavioral) 기술을 다루지 못한다.\n- 목표: 기존 testbench만으로 산업 현장형 결함을 수정하고, 후보 수정안을 합성 전에 개발자가 검토할 수 있도록 제시하는 것이다.\n\n### 구조 및 방법론\n- Testbench를 계측하여 매 클록마다 출력 wire/레지스터를 기록하고, 기대 출력과의 불일치로 fault localization을 시작한다.\n- Dataflow fixed-point 분석(Impl-Data, Impl-Ctrl, Add-Child)이 할당문과 조건문을 혐의 대상으로 지정하며, 세대마다 localization을 반복한다.\n- Fitness: 일치하는 bit마다 +1, 불일치마다 −1, $x$/$z$에는 페널티 $\\varphi$를 적용하고 [0,1]로 정규화한다. 1.0은 testbench를 통과하는(plausible) 수정을 뜻한다.\n- Genetic programming을 사용하며, repair template 9종(조건문, sensitivity list, blocking/non-blocking, 수치), replace/insert/delete mutation, single-point crossover, tournament selection, elitism, delta-debugging 기반 minimization을 포함한다.\n\n### 결과 및 결론\n- 11개 프로젝트에 걸친 전문가 이식 결함 32개 벤치마크(decoder부터 reed_solomon_decoder, sdram_controller까지): plausible 수정 21/32, correct 수정 16/32.\n- 동기 예제인 4-bit counter: 결함 버전의 fitness는 0.58(26 cycle 중 17 cycle 불일치), 올바른 overflow 수정은 1.0이다.\n- Fix localization으로 컴파일되지 않는 mutant 비율을 35%에서 10%로 줄였다.\n- 저자들은 이 수치를 성공적인 소프트웨어 APR과 비슷한 수준이라고 평가한다. 다만 본문이 잘려 있어 전체 평가 결과(RQ)는 확인할 수 없다.",
+      "figure_path": "assets/figures/ref-20261025-3d91.png",
+      "figure_caption": "Figure 2: A comparison between the simulation result and the expected behavior information for the faulty 4-bit counter in the motivating example.",
+      "official_url": null,
+      "official_label": "",
+      "venue": "ASPLOS",
+      "region": "",
+      "year": 2022,
+      "markdown_path": "papers/ref-20261025-3d91-cirfix-automatically-repairing-defects-in-hardware-design-co.md",
+      "created_at": "2026-10-25T17:59:48+09:00"
+    },
+    {
+      "id": "ref-20261025-4df5",
+      "title": "Fault Localization for Hardware Design Code with Time-Aware Program Spectrum",
+      "source_type": "PAPER",
+      "source_url": "https://ieeexplore.ieee.org/document/9978399",
+      "authors": "Jiang Wu, Zhuo Zhang, Deheng Yang, Xiankai Meng, Jiayu He, Xiaoguang Mao, Yan Lei",
+      "category": "Verification",
+      "tags": [],
+      "one_line_summary": "",
+      "key_insights": [],
+      "detailed_summary": "",
+      "one_line_summary_ko": "",
+      "key_insights_ko": [],
+      "detailed_summary_ko": "",
+      "figure_path": null,
+      "figure_caption": "",
+      "official_url": null,
+      "official_label": "",
+      "venue": "IEEE",
+      "region": "ICCD",
+      "year": 2022,
+      "markdown_path": "papers/ref-20261025-4df5-fault-localization-for-hardware-design-code-with-time-aware.md",
+      "created_at": "2026-10-25T17:48:14+09:00"
+    },
+    {
+      "id": "ref-20261025-d8b4",
+      "title": "Big Data Lakes: Models, Frameworks, and Techniques",
+      "source_type": "PAPER",
+      "source_url": "https://ieeexplore.ieee.org/document/9373107",
+      "authors": "Alfredo Cuzzocrea",
+      "category": "General",
+      "tags": [],
+      "one_line_summary": "",
+      "key_insights": [],
+      "detailed_summary": "",
+      "one_line_summary_ko": "",
+      "key_insights_ko": [],
+      "detailed_summary_ko": "",
+      "figure_path": null,
+      "figure_caption": "",
+      "official_url": null,
+      "official_label": "",
+      "venue": "IEEE",
+      "region": "BigComp",
+      "year": 2021,
+      "markdown_path": "papers/ref-20261025-d8b4-big-data-lakes-models-frameworks-and-techniques.md",
+      "created_at": "2026-10-25T17:48:12+09:00"
     }
   ],
   "youtube_videos": [
+    {
+      "video_id": "-DBP8FH8lYQ",
+      "video_url": "https://www.youtube.com/watch?v=-DBP8FH8lYQ",
+      "video_title": "Hardware emulation for functional verification of K5",
+      "published_at": null
+    },
     {
       "video_id": "-DOx49XtD4M",
       "video_url": "https://www.youtube.com/watch?v=-DOx49XtD4M",
@@ -4486,6 +4622,12 @@
       "video_url": "https://www.youtube.com/watch?v=4qtButQK_lU",
       "video_title": "[DVCON2019] Coherency Verification & Deadlock Detection Using Perspec/Portable Stimulus",
       "published_at": "2024-06-21T17:02:42Z"
+    },
+    {
+      "video_id": "4zIAfvjzt4M",
+      "video_url": "https://www.youtube.com/watch?v=4zIAfvjzt4M",
+      "video_title": "Fault Localization for Hardware Design Code with Time-Aware Program Spectrum",
+      "published_at": null
     },
     {
       "video_id": "5lzMBOmdQkQ",
@@ -4582,6 +4724,12 @@
       "video_url": "https://www.youtube.com/watch?v=H947nXpp4No",
       "video_title": "[DVCON2023]Accelerating Functional Verification Through Stabilization of Testbench Using AI/ML",
       "published_at": "2024-12-09T14:05:31Z"
+    },
+    {
+      "video_id": "HYpBOFyspKw",
+      "video_url": "https://www.youtube.com/watch?v=HYpBOFyspKw",
+      "video_title": "Big Data Lakes: Model, Frameworks, and Techniques",
+      "published_at": null
     },
     {
       "video_id": "J8PEI2rbgXM",
@@ -4714,6 +4862,12 @@
       "video_url": "https://www.youtube.com/watch?v=Sxhrm6QYo_0",
       "video_title": "[DVCON2023]Automation Methodology for Bus Performance Verification using IP-XACT",
       "published_at": "2025-03-07T03:43:28Z"
+    },
+    {
+      "video_id": "TgM8rl0ounU",
+      "video_url": "https://www.youtube.com/watch?v=TgM8rl0ounU",
+      "video_title": "CirFix Automatically Repairing Defects in Hardware Design",
+      "published_at": null
     },
     {
       "video_id": "UUzJcTvJEOE",
@@ -5593,6 +5747,26 @@
     {
       "resource_id": "ref-20261019-f6d3",
       "video_id": "MsiSsqUIWY8",
+      "timestamp_note": null
+    },
+    {
+      "resource_id": "ref-20261025-2ad0",
+      "video_id": "-DBP8FH8lYQ",
+      "timestamp_note": null
+    },
+    {
+      "resource_id": "ref-20261025-3d91",
+      "video_id": "TgM8rl0ounU",
+      "timestamp_note": null
+    },
+    {
+      "resource_id": "ref-20261025-4df5",
+      "video_id": "4zIAfvjzt4M",
+      "timestamp_note": null
+    },
+    {
+      "resource_id": "ref-20261025-d8b4",
+      "video_id": "HYpBOFyspKw",
       "timestamp_note": null
     }
   ]

@@ -1,4 +1,4 @@
-﻿source,local_pdf,youtube,title,type,timestamp,venue,region,year
+﻿source,local_pdf,youtube,title,type,timestamp,venue,region,year,authors,category
 https://dvcon-proceedings.org/wp-content/uploads/TS1D-Architecture-to-tradeoff-Performance-vs-Debug-for-SW-Development-on-Emulation-Platform-paper.pdf,/home/kyuhoshim/works/dvcon/papers/2023/japan/TS1D-Architecture-to-tradeoff-Performance-vs-Debug-for-SW-Development-on-Emulation-Platform-paper.pdf,https://youtu.be/Ge6veMYhti4,Architectures to Tradeoff Performance vs. Debug  for Software Development on Emulation Platform,PAPER,,DVCon,Japan,2023
 https://dvcon-proceedings.org/wp-content/uploads/5B2-DVCon_India_2024_Final_Paper_6678.pdf,/home/kyuhoshim/works/dvcon/papers/2024/india/5B2-DVCon_India_2024_Final_Paper_6678.pdf,https://youtu.be/8P9cEMiLWCY,Simulated Emulation: Enabling Multiple Iterations in a Day During Early-Stage Emulation Bring-up,PAPER,,DVCon,India,2024
 https://dvcon-proceedings.org/wp-content/uploads/5B1-DVCon_India_2024_Final_Paper_3974.pdf,/home/kyuhoshim/works/dvcon/papers/2024/india/5B1-DVCon_India_2024_Final_Paper_3974.pdf,https://youtu.be/r5PnSgBREok,Expedited Gate Level Verification: Unleashing the Potential of Netlist Integrated Emulation Platforms,PAPER,,DVCon,India,2024
@@ -105,3 +105,7 @@ https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf,https://homepages
 https://arxiv.org/abs/1706.03762,https://arxiv.org/pdf/1706.03762,https://youtu.be/MG5ukgqkl8w,Attention Is All You Need,ARXIV,,arXiv,,2017
 https://arxiv.org/abs/1301.3781,https://arxiv.org/pdf/1301.3781,https://youtu.be/jcZhMG31mdw,Efficient Estimation of Word Representations in Vector Space,ARXIV,,arXiv,,2013
 https://arxiv.org/abs/1905.10138,https://arxiv.org/pdf/1905.10138,https://youtu.be/fhccnNpI2Xg,Structured Compression by Weight Encryption for Unstructured Pruning and Quantization,ARXIV,,arXiv,,2019
+https://dl.acm.org/doi/10.1145/3503222.3507763,/home/kyuhoshim/works/yt-paper/tmp_doc/3503222.3507763.pdf,https://youtu.be/TgM8rl0ounU,CirFix: Automatically Repairing Defects in Hardware Design Code,PAPER,,ASPLOS,,2022,,
+https://dl.acm.org/doi/10.1145/240518.240578,/home/kyuhoshim/works/yt-paper/tmp_doc/240518.240578.pdf,https://www.youtube.com/watch?v=-DBP8FH8lYQ,Hardware Emulation for Functional Verification of K5,PAPER,,DAC,,1996,,
+https://ieeexplore.ieee.org/document/9373107,link,https://youtu.be/HYpBOFyspKw,"Big Data Lakes: Models, Frameworks, and Techniques",PAPER,,IEEE,BigComp,2021,Alfredo Cuzzocrea,General
+https://ieeexplore.ieee.org/document/9978399,link,https://youtu.be/4zIAfvjzt4M,Fault Localization for Hardware Design Code with Time-Aware Program Spectrum,PAPER,,IEEE,ICCD,2022,"Jiang Wu, Zhuo Zhang, Deheng Yang, Xiankai Meng, Jiayu He, Xiaoguang Mao, Yan Lei",Verification

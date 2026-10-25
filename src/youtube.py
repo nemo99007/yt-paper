@@ -141,9 +141,9 @@ def build_block(res: Resource, extra_links: list[str], insights: int = 5) -> str
     lines = [MARK]
     lines += extra_links
     if url := page_url(res):
-        lines.append(f"📄 Summary: {url}")
+        lines.append(f"📄 {'Summary' if res.one_line_summary else 'Archive'}: {url}")
     if res.source_url.startswith("http"):
-        lines.append(f"📑 Paper: {res.source_url}")
+        lines.append(f"📑 {'Paper' if res.one_line_summary else 'Page'}: {res.source_url}")
     if res.official_url:
         lines.append(f"🎤 Official talk ({res.official_label}): {res.official_url}")
     lines.append("")

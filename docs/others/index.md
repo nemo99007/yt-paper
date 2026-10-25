@@ -2,18 +2,22 @@
 
 # Others
 
-**2** papers · [By year](by-year.md) · [By topic](by-topic.md)
+**4** papers · [By year](by-year.md) · [By topic](by-topic.md)
 
 ## Conference × Year
 
-| Conference | 2019 | 1968 | Total |
-|---|---|---|---|
-| [CACM](cacm.md) |  | [1](cacm.md#1968) | 1 |
-| [FPGA](fpga.md) | [1](fpga.md#2019) |  | 1 |
+| Conference | 2022 | 2019 | 1996 | 1968 | Total |
+|---|---|---|---|---|---|
+| [ASPLOS](asplos.md) | [1](asplos.md#2022) |  |  |  | 1 |
+| [CACM](cacm.md) |  |  |  | [1](cacm.md#1968) | 1 |
+| [DAC](dac.md) |  |  | [1](dac.md#1996) |  | 1 |
+| [FPGA](fpga.md) |  | [1](fpga.md#2019) |  |  | 1 |
 
 ## Topics
 
 | Topic | Papers |
 |---|---|
+| [Emulation](by-topic.md#emulation) | 1 |
 | [Architecture](by-topic.md#architecture) | 1 |
+| [EDA](by-topic.md#eda) | 1 |
 | [General](by-topic.md#general) | 1 |

@@ -2,8 +2,15 @@
 
 # IEEE by year
 
+## 2022
+
+| Paper | Region / Conference | Topic | Videos |
+|---|---|---|---|
+| [Fault Localization for Hardware Design Code with Time-Aware Program Spectrum](../papers/ref-20261025-4df5-fault-localization-for-hardware-design-code-with-time-aware.md) | ICCD | Verification | :material-youtube: 1 |
+
 ## 2021
 
 | Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
 | [Assisting Bug Report Assignment Using Automated Fault Localisation: An Industrial Case Study](../papers/ref-20261019-8207-assisting-bug-report-assignment-using-automated-fault-locali.md) | ICST | EDA | :material-youtube: 1 |
+| [Big Data Lakes: Models, Frameworks, and Techniques](../papers/ref-20261025-d8b4-big-data-lakes-models-frameworks-and-techniques.md) | BigComp | General | :material-youtube: 1 |

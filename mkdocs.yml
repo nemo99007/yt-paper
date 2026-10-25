@@ -83,6 +83,8 @@ nav:
   - By Topic: date/by-topic.md
 - IEEE:
   - ieee/index.md
+  - BigComp: ieee/bigcomp.md
+  - ICCD: ieee/iccd.md
   - ICST: ieee/icst.md
   - By Year: ieee/by-year.md
   - By Topic: ieee/by-topic.md
@@ -92,7 +94,9 @@ nav:
   - By Topic: arxiv/by-topic.md
 - Others:
   - others/index.md
+  - ASPLOS: others/asplos.md
   - CACM: others/cacm.md
+  - DAC: others/dac.md
   - FPGA: others/fpga.md
   - By Year: others/by-year.md
   - By Topic: others/by-topic.md

@@ -4,6 +4,7 @@
 
 | Video | Papers | YouTube |
 |---|---|---|
+| [Hardware emulation for functional verification of K5](-DBP8FH8lYQ.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=-DBP8FH8lYQ) |
 | [[DVCON2023] Improve emulator test quality by applying synthesizable functional coverage](-DOx49XtD4M.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=-DOx49XtD4M) |
 | [[DVCON2025]Towards Automated Verification IP Instantiation via LLMs](-yYSOj4vjM8.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=-yYSOj4vjM8) |
 | [[DVCON2025]Time-Travel Debugging for High-Level Synthesis Code](053-_zK-3xk.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=053-_zK-3xk) |
@@ -14,6 +15,7 @@
 | [[DVCON2025]AI - accelerating coverage closure using intelligent stimulus generation](3KjFoF6fVDU.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=3KjFoF6fVDU) |
 | [[DVCon2020] Automated RTL Update for Abutted Design](49BqlsA06io.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=49BqlsA06io) |
 | [[DVCON2019] Coherency Verification & Deadlock Detection Using Perspec/Portable Stimulus](4qtButQK_lU.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=4qtButQK_lU) |
+| [Fault Localization for Hardware Design Code with Time-Aware Program Spectrum](4zIAfvjzt4M.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=4zIAfvjzt4M) |
 | [[DVCON2013]Pragmatic Verification Reuse in a Vertical World](5lzMBOmdQkQ.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=5lzMBOmdQkQ) |
 | [[DVCON2025]Enhancing SDC Verification in SoCs: Heatmap Visualization  Machine Learning Approaches](67KjBs3Uw-Q.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=67KjBs3Uw-Q) |
 | [[DVCON2023]DatagenDV: Python Constrained Random Test Stimulus Framework](7g-3vBeMZLo.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=7g-3vBeMZLo) |
@@ -30,6 +32,7 @@
 | [[DVCON2016]A Metric-driven Methodology For Firmware Verification In Simulation/Emulation](DDpWoJxADvE.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=DDpWoJxADvE) |
 | [[DVCON2023_JPN]Architectures to Tradeoff Performance vs Debug Software Development on Emulation](Ge6veMYhti4.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=Ge6veMYhti4) |
 | [[DVCON2023]Accelerating Functional Verification Through Stabilization of Testbench Using AI/ML](H947nXpp4No.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=H947nXpp4No) |
+| [Big Data Lakes: Model, Frameworks, and Techniques](HYpBOFyspKw.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=HYpBOFyspKw) |
 | [[DVCON2020] ISO 26262 Dependent Failure Analysis using PSS](J8PEI2rbgXM.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=J8PEI2rbgXM) |
 | [[DVCON2023]Automated Thread Evaluation of Various RISC-V Alternatives Random Instruction Generators](JD25fcnTAhA.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=JD25fcnTAhA) |
 | [[DVCON2016]Verification Patterns – Taking Reuse to the Next Level](KAjqYgvue80.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=KAjqYgvue80) |
@@ -52,6 +55,7 @@
 | [[DVCON2023] A Survey of Machine Learning Applications in Functional Verification](SgZYDJHGSkg.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=SgZYDJHGSkg) |
 | [[DVCON2025]Continuous Integration in SoC Design: Challenges and Solutions](SwaKnaGIp6o.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=SwaKnaGIp6o) |
 | [[DVCON2023]Automation Methodology for Bus Performance Verification using IP-XACT](Sxhrm6QYo_0.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=Sxhrm6QYo_0) |
+| [CirFix Automatically Repairing Defects in Hardware Design](TgM8rl0ounU.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=TgM8rl0ounU) |
 | [[DVCON2023]Creating 5G Test Scenarios, the Constrained-Random way](UUzJcTvJEOE.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=UUzJcTvJEOE) |
 | [[DVCON2025]Test bench Framework for Fully Automated Register Tests of Numerous IPs in SoC](VN30Q60D1X4.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=VN30Q60D1X4) |
 | [[DVCON2019_INDIA]Unified Test Writing Framework for Pre and Post Silicon Verification](W_odEND1SD8.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=W_odEND1SD8) |
