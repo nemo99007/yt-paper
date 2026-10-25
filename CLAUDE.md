@@ -53,11 +53,9 @@ papers: split `data/index_dump.json` per paper (GitHub file limit 100 MB) and co
 
 ## Open items (as of 2026-10-19)
 
-- **Remind the owner occasionally:** 4 read papers are waiting for PDFs, because the publisher sites block downloads. If the owner drops PDFs in C:\shared_folder (/mnt/c/shared_folder), add rows to data/reading_list.csv.
-  - CirFix (ASPLOS 2022), video TgM8rl0ounU
-  - K5 emulation (DAC 1996), video -DBP8FH8lYQ
-  - Big Data Lakes (IEEE BigComp 2021), video HYpBOFyspKw
-  - Time-Aware Program Spectrum fault localization (IEEE), video 4zIAfvjzt4M
+- Paywalled papers with no PDF are link-only: CSV local_pdf=`link` (+ authors, category columns) → page shows a
+  "Page" button to the abstract page, no summary/figure (owner, 2026-10-25). Big Data Lakes, Time-Aware.
+- PDFs the owner hands over go in `tmp_doc/` (gitignored).
 1. YouTube descriptions: applied to all 110 videos (2026-10-19). The divider is `── Paper Reading Archive ──`. Block order: Summary/Paper links, then title/authors/one-line/insights/#tags, then collection links (📚📅🏷) last. For any new bulk change, show the owner 1-2 examples first.
    Apply 2 first (ZOCbWSYhnJM, l5LVIft6xNs), let the owner check, then the rest. End screens/cards are not
    available in the API — description links + playlists instead.
