@@ -1,7 +1,7 @@
 ---
 id: ref-20261025-3d91
 title: 'CirFix: Automatically Repairing Defects in Hardware Design Code'
-date: '2026-10-25'
+date: '2024-01-29'
 venue: Others
 region: null
 year: 2022

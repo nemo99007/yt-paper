@@ -20,10 +20,6 @@ A reading archive of technical papers, each summarized and linked to its reading
 
 | Date | Paper | Venue | Topic | Videos |
 |---|---|---|---|---|
-| 2026-10-25 | [CirFix: Automatically Repairing Defects in Hardware Design Code](papers/ref-20261025-3d91-cirfix-automatically-repairing-defects-in-hardware-design-co.md) | Others 2022 | EDA | :material-youtube: 1 |
-| 2026-10-25 | [Fault Localization for Hardware Design Code with Time-Aware Program Spectrum](papers/ref-20261025-4df5-fault-localization-for-hardware-design-code-with-time-aware.md) | IEEE 2022 | Verification | :material-youtube: 1 |
-| 2026-10-25 | [Big Data Lakes: Models, Frameworks, and Techniques](papers/ref-20261025-d8b4-big-data-lakes-models-frameworks-and-techniques.md) | IEEE 2021 | General | :material-youtube: 1 |
-| 2026-10-25 | [Hardware Emulation for Functional Verification of K5](papers/ref-20261025-2ad0-hardware-emulation-for-functional-verification-of-k5.md) | Others 1996 | Emulation | :material-youtube: 1 |
 | 2026-01-04 | [Architectures to Tradeoff Performance vs. Debug for Software Development on Emulation Platform](papers/ref-20261018-fd31-architectures-to-tradeoff-performance-vs-debug-for-software.md) | DVCon 2023 | Emulation | :material-youtube: 1 |
 | 2026-01-02 | [Simulated Emulation: Enabling Multiple Iterations in a Day During Early-Stage Emulation Bring-up](papers/ref-20261018-3821-simulated-emulation-enabling-multiple-iterations-in-a-day-du.md) | DVCon 2024 | Emulation | :material-youtube: 1 |
 | 2025-12-28 | [Expedited Gate Level Verification: Unleashing the Potential of Netlist Integrated Emulation Platforms](papers/ref-20261018-8aac-expedited-gate-level-verification-unleashing-the-potential-o.md) | DVCon 2024 | Emulation | :material-youtube: 1 |
@@ -35,3 +31,7 @@ A reading archive of technical papers, each summarized and linked to its reading
 | 2025-10-22 | [Reaching 100% Functional Coverage Using Machine Learning: A Journey of Persistent Efforts](papers/ref-20261018-2c1c-reaching-100-functional-coverage-using-machine-learning-a-jo.md) | DVCon 2025 | Verification | :material-youtube: 1 |
 | 2025-10-13 | [Stimulus Diversification and Coverage Closure of 3D NAND Flash with Artificial Intelligence](papers/ref-20261018-cee6-stimulus-diversification-and-coverage-closure-of-3d-nand-fla.md) | DVCon 2025 | Verification | :material-youtube: 1 |
 | 2025-10-11 | [INTROSPECTION INTO SYSTEMVERILOG WITHOUT TURNING IT INSIDE OUT.](papers/ref-20261018-9f02-introspection-into-systemverilog-without-turning-it-inside-o.md) | DVCon 2016 | Verification | :material-youtube: 1 |
+| 2025-10-11 | [Easy Steps Towards Virtual Prototyping using the SystemVerilog DPI](papers/ref-20261018-6a03-easy-steps-towards-virtual-prototyping-using-the-systemveril.md) | DVCon 2013 | Verification | :material-youtube: 1 |
+| 2025-10-11 | [Of Camels and Committees](papers/ref-20261018-2c26-of-camels-and-committees.md) | DVCon 2014 | Verification | :material-youtube: 1 |
+| 2025-10-10 | [What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard](papers/ref-20261018-f7f6-whats-next-for-systemverilog-in-the-upcoming-ieee-1800-stand.md) | DVCon 2023 | Verification | :material-youtube: 1 |
+| 2025-10-10 | [The Life of a SystemVerilog Variable](papers/ref-20261018-f51f-the-life-of-a-systemverilog-variable.md) | DVCon 2021 | Verification | :material-youtube: 1 |

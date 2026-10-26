@@ -1,7 +1,7 @@
 ---
 id: ref-20261025-4df5
 title: Fault Localization for Hardware Design Code with Time-Aware Program Spectrum
-date: '2026-10-25'
+date: '2024-02-08'
 venue: IEEE
 region: ICCD
 year: 2022

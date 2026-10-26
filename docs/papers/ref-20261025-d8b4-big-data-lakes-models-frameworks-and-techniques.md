@@ -1,7 +1,7 @@
 ---
 id: ref-20261025-d8b4
 title: 'Big Data Lakes: Models, Frameworks, and Techniques'
-date: '2026-10-25'
+date: '2024-04-10'
 venue: IEEE
 region: BigComp
 year: 2021

@@ -1,7 +1,7 @@
 ---
 id: ref-20261025-2ad0
 title: Hardware Emulation for Functional Verification of K5
-date: '2026-10-25'
+date: '2024-06-25'
 venue: Others
 region: null
 year: 1996
