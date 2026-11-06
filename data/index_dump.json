@@ -4554,6 +4554,48 @@
       "year": 2021,
       "markdown_path": "papers/ref-20261025-d8b4-big-data-lakes-models-frameworks-and-techniques.md",
       "created_at": "2026-10-25T17:48:12+09:00"
+    },
+    {
+      "id": "ref-20261106-051e",
+      "title": "A 3-tiered agentic AI Framework for Verification Regression",
+      "source_type": "PAPER",
+      "source_url": "https://dvcon-proceedings.org/wp-content/uploads/submission_54.pdf",
+      "authors": "Jin Choi (Samsung), Sangwoo Noh (Samsung), Seonghee Yim (Samsung), Youngsik Kim (Samsung)",
+      "category": "Verification",
+      "tags": [
+        "Regression",
+        "Agentic AI",
+        "Pub-Sub",
+        "RabbitMQ",
+        "SoC Verification"
+      ],
+      "one_line_summary": "Proposes a user/block/central 3-tier agentic regression framework, coordinated by pub-sub bridge agents over RabbitMQ with block-level gating before chip-level runs, and reports preliminary industrial evidence from Samsung SoC verification.",
+      "key_insights": [
+        "Scoping regression by design-change locality and verification maturity, with chip-level runs gated on block pass rates (design target 90–95%; 80% used in the evaluation), is the paper's core idea.",
+        "Before tiering, 2,892 of 20,766 block-level test cases (13.93%) across 33 blocks had no execution record when chip-level regression started, exposing a hidden coverage gap.",
+        "Tier decoupling uses RabbitMQ topic exchanges with acknowledgment-based retries; the polling-based fallback without a bridge (A2) was described as adding latency and maintenance cost.",
+        "Ownership routing is a simple policy: block-owner default, overridden by the most recent matching issue owner when failure similarity exceeds 90%.",
+        "Evidence is preliminary: only representative blocks were evaluated, only the A1 ablation (≈36% delay in central regression start) is quantified, and large-scale metrics are stated as still in progress."
+      ],
+      "detailed_summary": "### Background and Problem\n- Monolithic regression re-runs large test sets without regard to design hierarchy or change locality, causing high latency, weak scalability, and redundant debugging. Prior work (Jenkins CI, ML-based triage, LLM log analysis) optimizes single stages only.\n- Measured gap: before chip-level regression, 2,892 of 20,766 block test cases (13.93%) across 33 blocks were never executed, and some chip runs started at a combined block pass rate of about 23.6%.\n\n### Architecture and Methodology\n- Three tiers: user (per-engineer sanity regression, optimized for fast turnaround), block (change-aware, design-aware, and randomized block regression driven by release notes), and central (full-chip regression with error classification and ownership routing to JIRA).\n- Agent typology: regression agents make tier-level decisions; bridge agents (user–block bridge and a gate agent applying stability thresholds) mediate through an asynchronous pub-sub model on RabbitMQ; operation agents are stateless executors for dispatch (via an adapter layer and MCP interfaces), artifact collection, and ownership routing.\n- Ownership policy: the block-owner database gives the default, overridden by the most recent matching issue owner when failure similarity exceeds 90%.\n\n### Results and Conclusions\n- Evaluation covered representative blocks in an industrial SoC setting. Ablation A1 (no block agent) delayed central-regression start by about 36%; A2 (no bridge) and A3 (static scripts) are described qualitatively.\n- Gated central runs started at block pass rates of 91.2% (1,343 of 1,473 passing) and 83.1% (501 passing, 102 failing), versus a traditional flow that started on largely unstable blocks.\n- The authors state that large-scale quantitative evaluation is still in progress, so the claimed reductions in noise, re-run overhead, and turnaround remain unquantified beyond these examples.",
+      "one_line_summary_ko": "사용자, 블록, 중앙의 3계층 agentic 회귀 프레임워크를 제안한다. 이 구조는 RabbitMQ 기반 pub-sub bridge agent로 조율되며, chip-level 실행 전에 block-level 게이팅을 적용한다. Samsung SoC 검증 환경에서의 예비 산업 적용 결과를 함께 보고한다.",
+      "key_insights_ko": [
+        "회귀 범위를 설계 변경의 국소성과 검증 성숙도에 맞추고, chip-level 실행을 block pass rate로 게이팅하는 것이 이 논문의 핵심 아이디어다(설계 목표 90–95%, 평가에는 80% 사용).",
+        "계층화 이전에는 33개 block에서 20,766개 block 테스트 중 2,892개(13.93%)가 chip-level 회귀 시작 시점까지 실행 기록이 없어, 숨은 커버리지 공백이 드러났다.",
+        "Tier 간 분리는 RabbitMQ topic exchange와 acknowledgment 기반 재시도로 구현되며, bridge 없이 polling에 의존한 구성(A2)은 지연과 유지보수 비용을 늘린 것으로 기술되었다.",
+        "Ownership routing은 단순한 정책을 사용한다. 기본값은 block owner이며, 유사도가 90%를 초과하면 가장 최근의 일치 이슈 owner로 재할당한다.",
+        "근거는 예비 수준이다. 대표 block만 평가했고, 정량화된 것은 A1 ablation(중앙 회귀 시작 약 36% 지연)뿐이며, 대규모 지표는 아직 진행 중이라고 밝혔다."
+      ],
+      "detailed_summary_ko": "### 배경 및 문제\n- 단일체(monolithic) 회귀는 설계 계층이나 변경 국소성을 고려하지 않고 대규모 테스트 세트를 반복 실행하여, 높은 지연, 낮은 확장성, 중복 디버그를 초래한다. 기존 연구(Jenkins CI, ML 기반 triage, LLM 로그 분석)는 개별 단계만 최적화한다.\n- 측정된 공백: chip-level 회귀 시작 전, 33개 block의 block 테스트 20,766건 중 2,892건(13.93%)이 한 번도 실행되지 않았고, 일부 chip 회귀는 합산 block pass rate 약 23.6%에서 시작되었다.\n\n### 구조 및 방법론\n- 3계층: user(엔지니어별 sanity 회귀, 빠른 피드백에 최적화), block(릴리스 노트 기반의 변경 인식, 설계 인식, 랜덤 block 회귀), central(분석 및 ownership routing을 포함한 full-chip 회귀, JIRA 연동).\n- Agent 분류: regression agent는 계층별 판단을 담당하고, bridge agent(user–block bridge 및 안정성 임계값을 적용하는 gate agent)는 RabbitMQ 기반 비동기 pub-sub로 중개한다. Operation agent는 adapter 계층과 MCP 인터페이스를 통한 dispatch, 아티팩트 수집, ownership routing을 수행하는 stateless 실행체다.\n- Ownership 정책: 기본값은 block owner DB이며, 유사도가 90%를 넘으면 가장 최근 일치 이슈의 owner로 재할당한다.\n\n### 결과 및 결론\n- Industrial SoC 환경의 대표 block에서 평가했다. Ablation A1(block agent 제거)은 중앙 회귀 시작을 약 36% 지연시켰고, A2(bridge 제거)와 A3(정적 스크립트)은 정성적으로 기술되었다.\n- 게이팅된 central 회귀는 block pass rate 91.2%(1,473건 중 1,343건 통과)와 83.1%(501건 통과, 102건 실패)에서 시작되었으며, 이는 대부분 불안정한 block에서 시작한 기존 흐름과 대비된다.\n- 저자들은 대규모 정량 평가가 아직 진행 중이라고 밝혔으므로, 노이즈, 재실행 오버헤드, 턴어라운드 감소 효과는 위 사례 이상으로 정량화되지 않았다.",
+      "figure_path": "assets/figures/ref-20261106-051e.png",
+      "figure_caption": "Figure 1. A 3-tiered Regression Framework Architecture",
+      "official_url": null,
+      "official_label": "",
+      "venue": "DVCon",
+      "region": "US",
+      "year": 2026,
+      "markdown_path": "papers/ref-20261106-051e-a-3-tiered-agentic-ai-framework-for-verification-regression.md",
+      "created_at": "2026-11-06T23:44:08+09:00"
     }
   ],
   "youtube_videos": [
@@ -4610,6 +4652,12 @@
       "video_url": "https://www.youtube.com/watch?v=3KjFoF6fVDU",
       "video_title": "[DVCON2025]AI - accelerating coverage closure using intelligent stimulus generation",
       "published_at": "2025-10-23T12:41:55Z"
+    },
+    {
+      "video_id": "3iOQeS7Uzfc",
+      "video_url": "https://www.youtube.com/watch?v=3iOQeS7Uzfc",
+      "video_title": "A 3-tiered agentic AI Framework for Verification Regression",
+      "published_at": null
     },
     {
       "video_id": "49BqlsA06io",
@@ -5767,6 +5815,11 @@
     {
       "resource_id": "ref-20261025-d8b4",
       "video_id": "HYpBOFyspKw",
+      "timestamp_note": null
+    },
+    {
+      "resource_id": "ref-20261106-051e",
+      "video_id": "3iOQeS7Uzfc",
       "timestamp_note": null
     }
   ]

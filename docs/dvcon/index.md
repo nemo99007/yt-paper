@@ -2,21 +2,21 @@
 
 # DVCon
 
-**99** papers · [By year](by-year.md) · [By topic](by-topic.md)
+**100** papers · [By year](by-year.md) · [By topic](by-topic.md)
 
 ## Region × Year
 
-| Region | 2025 | 2024 | 2023 | 2022 | 2021 | 2020 | 2019 | 2018 | 2017 | 2016 | 2015 | 2014 | 2013 | 2012 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| [US](us.md) | [20](us.md#2025) | [9](us.md#2024) | [21](us.md#2023) | [8](us.md#2022) | [2](us.md#2021) | [5](us.md#2020) | [4](us.md#2019) | [3](us.md#2018) | [3](us.md#2017) | [3](us.md#2016) |  | [2](us.md#2014) | [3](us.md#2013) | [1](us.md#2012) | 84 |
-| [Europe](europe.md) |  | [1](europe.md#2024) | [2](europe.md#2023) | [2](europe.md#2022) |  |  |  | [1](europe.md#2018) |  | [1](europe.md#2016) | [1](europe.md#2015) |  |  |  | 8 |
-| [India](india.md) |  | [3](india.md#2024) | [1](india.md#2023) |  |  |  | [2](india.md#2019) |  |  |  |  |  |  |  | 6 |
-| [Japan](japan.md) |  |  | [1](japan.md#2023) |  |  |  |  |  |  |  |  |  |  |  | 1 |
+| Region | 2026 | 2025 | 2024 | 2023 | 2022 | 2021 | 2020 | 2019 | 2018 | 2017 | 2016 | 2015 | 2014 | 2013 | 2012 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| [US](us.md) | [1](us.md#2026) | [20](us.md#2025) | [9](us.md#2024) | [21](us.md#2023) | [8](us.md#2022) | [2](us.md#2021) | [5](us.md#2020) | [4](us.md#2019) | [3](us.md#2018) | [3](us.md#2017) | [3](us.md#2016) |  | [2](us.md#2014) | [3](us.md#2013) | [1](us.md#2012) | 85 |
+| [Europe](europe.md) |  |  | [1](europe.md#2024) | [2](europe.md#2023) | [2](europe.md#2022) |  |  |  | [1](europe.md#2018) |  | [1](europe.md#2016) | [1](europe.md#2015) |  |  |  | 8 |
+| [India](india.md) |  |  | [3](india.md#2024) | [1](india.md#2023) |  |  |  | [2](india.md#2019) |  |  |  |  |  |  |  | 6 |
+| [Japan](japan.md) |  |  |  | [1](japan.md#2023) |  |  |  |  |  |  |  |  |  |  |  | 1 |
 
 ## Topics
 
 | Topic | Papers |
 |---|---|
 | [Emulation](by-topic.md#emulation) | 25 |
-| [Verification](by-topic.md#verification) | 71 |
+| [Verification](by-topic.md#verification) | 72 |
 | [EDA](by-topic.md#eda) | 3 |

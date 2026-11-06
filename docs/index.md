@@ -4,13 +4,13 @@
 
 A reading archive of technical papers, each summarized and linked to its reading video on the [Nemo Reading Archive](https://www.youtube.com/@99007nemo) YouTube channel.
 
-**110** papers · **110** videos
+**111** papers · **111** videos
 
 ## Collections
 
 | Collection | Papers |
 |---|---|
-| [DVCon](dvcon/index.md) | 99 |
+| [DVCon](dvcon/index.md) | 100 |
 | [DATE](date/index.md) | 1 |
 | [IEEE](ieee/index.md) | 3 |
 | [arXiv](arxiv/index.md) | 3 |
@@ -20,6 +20,7 @@ A reading archive of technical papers, each summarized and linked to its reading
 
 | Date | Paper | Venue | Topic | Videos |
 |---|---|---|---|---|
+| 2026-11-06 | [A 3-tiered agentic AI Framework for Verification Regression](papers/ref-20261106-051e-a-3-tiered-agentic-ai-framework-for-verification-regression.md) | DVCon 2026 | Verification | :material-youtube: 1 |
 | 2026-01-04 | [Architectures to Tradeoff Performance vs. Debug for Software Development on Emulation Platform](papers/ref-20261018-fd31-architectures-to-tradeoff-performance-vs-debug-for-software.md) | DVCon 2023 | Emulation | :material-youtube: 1 |
 | 2026-01-02 | [Simulated Emulation: Enabling Multiple Iterations in a Day During Early-Stage Emulation Bring-up](papers/ref-20261018-3821-simulated-emulation-enabling-multiple-iterations-in-a-day-du.md) | DVCon 2024 | Emulation | :material-youtube: 1 |
 | 2025-12-28 | [Expedited Gate Level Verification: Unleashing the Potential of Netlist Integrated Emulation Platforms](papers/ref-20261018-8aac-expedited-gate-level-verification-unleashing-the-potential-o.md) | DVCon 2024 | Emulation | :material-youtube: 1 |
@@ -34,4 +35,3 @@ A reading archive of technical papers, each summarized and linked to its reading
 | 2025-10-11 | [Easy Steps Towards Virtual Prototyping using the SystemVerilog DPI](papers/ref-20261018-6a03-easy-steps-towards-virtual-prototyping-using-the-systemveril.md) | DVCon 2013 | Verification | :material-youtube: 1 |
 | 2025-10-11 | [Of Camels and Committees](papers/ref-20261018-2c26-of-camels-and-committees.md) | DVCon 2014 | Verification | :material-youtube: 1 |
 | 2025-10-10 | [What’s Next for SystemVerilog in the Upcoming IEEE 1800 standard](papers/ref-20261018-f7f6-whats-next-for-systemverilog-in-the-upcoming-ieee-1800-stand.md) | DVCon 2023 | Verification | :material-youtube: 1 |
-| 2025-10-10 | [The Life of a SystemVerilog Variable](papers/ref-20261018-f51f-the-life-of-a-systemverilog-variable.md) | DVCon 2021 | Verification | :material-youtube: 1 |

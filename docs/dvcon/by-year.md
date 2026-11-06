@@ -2,6 +2,12 @@
 
 # DVCon by year
 
+## 2026
+
+| Paper | Region / Conference | Topic | Videos |
+|---|---|---|---|
+| [A 3-tiered agentic AI Framework for Verification Regression](../papers/ref-20261106-051e-a-3-tiered-agentic-ai-framework-for-verification-regression.md) | US | Verification | :material-youtube: 1 |
+
 ## 2025
 
 | Paper | Region / Conference | Topic | Videos |

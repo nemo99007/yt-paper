@@ -89,7 +89,7 @@ def _ingest(db: Database, source: str, stype: str | None, title: str | None, ref
         doc = parser.parse_source(source, stype)  # type: ignore[arg-type]
     result = llm.extract(doc, title_hint=title, figure_captions=caps)
     res, created = db.upsert_resource({
-        "title": result.extracted_title or title or doc.title_hint or key,
+        "title": " ".join((result.extracted_title or title or doc.title_hint or key).split()),
         "source_type": stype or doc.source_type,
         "source_url": doc.source_url,
         "authors": result.authors_or_venue or doc.authors_hint or "",

@@ -13,6 +13,7 @@
 | [[DVCON2014]UVM Testbench Considerations for Acceleration](2Z9lPq8l_h4.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=2Z9lPq8l_h4) |
 | [[DVCON2025]Accelerating Pre-Silicon Verification Coverage with Transaction Sequence Modeling](2on_n4tNWvg.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=2on_n4tNWvg) |
 | [[DVCON2025]AI - accelerating coverage closure using intelligent stimulus generation](3KjFoF6fVDU.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=3KjFoF6fVDU) |
+| [A 3-tiered agentic AI Framework for Verification Regression](3iOQeS7Uzfc.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=3iOQeS7Uzfc) |
 | [[DVCon2020] Automated RTL Update for Abutted Design](49BqlsA06io.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=49BqlsA06io) |
 | [[DVCON2019] Coherency Verification & Deadlock Detection Using Perspec/Portable Stimulus](4qtButQK_lU.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=4qtButQK_lU) |
 | [Fault Localization for Hardware Design Code with Time-Aware Program Spectrum](4zIAfvjzt4M.md) | 1 | [:material-youtube:](https://www.youtube.com/watch?v=4zIAfvjzt4M) |

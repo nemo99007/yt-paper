@@ -36,6 +36,7 @@
 
 | Paper | Region / Conference | Topic | Videos |
 |---|---|---|---|
+| [A 3-tiered agentic AI Framework for Verification Regression](../papers/ref-20261106-051e-a-3-tiered-agentic-ai-framework-for-verification-regression.md) | US | Verification | :material-youtube: 1 |
 | [A Hardware and Software integrated power optimization approach with power aware simulations at SOC](../papers/ref-20261018-ed23-a-hardware-and-software-integrated-power-optimization-approa.md) | US | Verification | :material-youtube: 1 |
 | [A Large Language Model-Based Framework for Enhancing Integrated Regression](../papers/ref-20261018-8b34-a-large-language-model-based-framework-for-enhancing-integra.md) | US | Verification | :material-youtube: 1 |
 | [A Metric-driven Methodology For Firmware Verification In Simulation/Emulation Environments](../papers/ref-20261018-9cff-a-metric-driven-methodology-for-firmware-verification-in-sim.md) | Europe | Verification | :material-youtube: 1 |
