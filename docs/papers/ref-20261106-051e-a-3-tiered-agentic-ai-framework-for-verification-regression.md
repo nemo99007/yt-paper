@@ -1,7 +1,7 @@
 ---
 id: ref-20261106-051e
 title: A 3-tiered agentic AI Framework for Verification Regression
-date: '2026-11-06'
+date: '2026-11-05'
 venue: DVCon
 region: US
 year: 2026

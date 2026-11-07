@@ -20,7 +20,7 @@ A reading archive of technical papers, each summarized and linked to its reading
 
 | Date | Paper | Venue | Topic | Videos |
 |---|---|---|---|---|
-| 2026-11-06 | [A 3-tiered agentic AI Framework for Verification Regression](papers/ref-20261106-051e-a-3-tiered-agentic-ai-framework-for-verification-regression.md) | DVCon 2026 | Verification | :material-youtube: 1 |
+| 2026-11-05 | [A 3-tiered agentic AI Framework for Verification Regression](papers/ref-20261106-051e-a-3-tiered-agentic-ai-framework-for-verification-regression.md) | DVCon 2026 | Verification | :material-youtube: 1 |
 | 2026-01-04 | [Architectures to Tradeoff Performance vs. Debug for Software Development on Emulation Platform](papers/ref-20261018-fd31-architectures-to-tradeoff-performance-vs-debug-for-software.md) | DVCon 2023 | Emulation | :material-youtube: 1 |
 | 2026-01-02 | [Simulated Emulation: Enabling Multiple Iterations in a Day During Early-Stage Emulation Bring-up](papers/ref-20261018-3821-simulated-emulation-enabling-multiple-iterations-in-a-day-du.md) | DVCon 2024 | Emulation | :material-youtube: 1 |
 | 2025-12-28 | [Expedited Gate Level Verification: Unleashing the Potential of Netlist Integrated Emulation Platforms](papers/ref-20261018-8aac-expedited-gate-level-verification-unleashing-the-potential-o.md) | DVCon 2024 | Emulation | :material-youtube: 1 |
